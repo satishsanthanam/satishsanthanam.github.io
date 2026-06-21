@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 5: Molecular Basis of Inheritance</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 5: Molecular Basis of Inheritance</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Structure and Packaging of DNA</summary><details class='sub-topic'><summary><h3>Structure of a Polynucleotide Chain</h3></summary><p>A nucleotide is the basic monomeric unit of nucleic acids like <span class='keyword'>DNA</span> and <span class='keyword'>RNA</span>. It consists of three main components:</p><ul><li><strong>Nitrogenous Base:</strong> Divided into <span class='keyword'>Purines</span> (Adenine and Guanine) and <span class='keyword'>Pyrimidines</span> (Cytosine, Thymine, and Uracil). Thymine is unique to DNA, while Uracil is unique to RNA.</li><li><strong>Pentose Sugar:</strong> Ribose in RNA and Deoxyribose in DNA.</li><li><strong>Phosphate Group:</strong> Linked to the 5'-hydroxyl group of a nucleoside via a phosphoester bond.</li></ul><p>Nucleotides are linked together by <span class='keyword'>3'-5' phosphodiester linkages</span> to form a polynucleotide chain, creating a sugar-phosphate backbone with projecting nitrogenous bases.</p></details><details class='sub-topic'><summary><h3>The Double Helix Model</h3></summary><p>Proposed by Watson and Crick in 1953 based on X-ray diffraction data from Franklin and Wilkins, and Chargaff's rules. Key features include:</p><ul><li>Two polynucleotide chains with <span class='keyword'>antiparallel polarity</span> (one 5' to 3', the other 3' to 5').</li><li>Hydrogen bonding between complementary bases: Adenine pairs with Thymine (2 H-bonds), and Guanine pairs with Cytosine (3 H-bonds).</li><li>Right-handed coiling with a pitch of 3.4 nm and approximately 10 base pairs per turn.</li></ul></details><details class='sub-topic'><summary><h3>Packaging of DNA Helix</h3></summary><p>The length of DNA in a mammalian cell is approximately 2.2 meters, requiring sophisticated packaging:</p><ul><li><strong>Prokaryotes:</strong> DNA is held by positively charged proteins in a region called the <span class='keyword'>nucleoid</span>.</li><li><strong>Eukaryotes:</strong> DNA wraps around a positively charged octamer of <span class='keyword'>histone proteins</span> (rich in lysine and arginine) to form a <span class='keyword'>nucleosome</span>.</li><li>Nucleosomes form a "beads-on-a-string" structure called <span class='keyword'>chromatin</span>.</li><li>Chromatin is classified into transcriptionally active, loosely packed <span class='keyword'>euchromatin</span> and inactive, densely packed <span class='keyword'>heterochromatin</span>.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>The Search for Genetic Material</summary><details class='sub-topic'><summary><h3>Transforming Principle</h3></summary><p><strong>Aim:</strong> To understand the pattern of inheritance and identify the genetic material.</p><p><strong>Apparatus/Setup:</strong> <em>Streptococcus pneumoniae</em> bacteria (virulent S-strain with a polysaccharide coat, and non-virulent R-strain) and mice.</p><p><strong>Observation:</strong> Mice injected with live S-strain die; those with live R-strain or heat-killed S-strain live. However, mice injected with a mixture of heat-killed S-strain and live R-strain die, and live S-strain bacteria are recovered from their bodies.</p><p><strong>Inference:</strong> The R-strain bacteria were transformed by a "transforming principle" from the heat-killed S-strain, enabling them to synthesize a smooth coat and become virulent.</p></details><details class='sub-topic'><summary><h3>Biochemical Characterization</h3></summary><p>Oswald Avery, Colin MacLeod, and Maclyn McCarty purified biochemicals from heat-killed S-cells to determine the transforming substance:</p><ul><li>Proteases and RNases did not affect transformation.</li><li>Digestion with <span class='keyword'>DNase</span> inhibited transformation, proving that DNA is the transforming genetic material.</li></ul></details><details class='sub-topic'><summary><h3>The Hershey-Chase Experiment</h3></summary><p>Unequivocal proof that DNA is the genetic material came from experiments by Alfred Hershey and Martha Chase (1952) using bacteriophages:</p><ul><li>Phages grown on radioactive phosphorus ($^{32}\text{P}$) labeled the DNA.</li><li>Phages grown on radioactive sulfur ($^{35}\text{S}$) labeled the protein coat.</li><li>Only radioactive $^{32}\text{P}$ was detected inside infected <em>Escherichia coli</em> cells, proving that DNA enters the bacteria and acts as the genetic material.</li></ul></details><details class='sub-topic'><summary><h3>Properties of Genetic Material</h3></summary><p>To act as genetic material, a molecule must fulfill these criteria:</p><ol><li>Ability to replicate (generate its replica).</li><li>Chemical and structural stability.</li><li>Scope for slow changes (mutation) required for evolution.</li><li>Ability to express itself in the form of Mendelian characters.</li></ol><p>DNA is chemically less reactive and structurally more stable than RNA due to the absence of the reactive 2'-OH group and the presence of Thymine instead of Uracil.</p></details></details><details class='topic-box'><summary class='topic-title'>RNA World & DNA Replication</summary><details class='sub-topic'><summary><h3>The RNA World</h3></summary><p>RNA was the first genetic material. Essential life processes like translation, splicing, and metabolism evolved around RNA. RNA can act as both genetic material and a catalyst (<span class='keyword'>ribozyme</span>), but its reactivity led to the evolution of the more stable double-stranded DNA.</p></details><details class='sub-topic'><summary><h3>Semiconservative Replication</h3></summary><p>Watson and Crick proposed that the two strands of DNA separate and act as templates for synthesizing new complementary strands. This was experimentally proven by Matthew Meselson and Franklin Stahl (1958) using heavy nitrogen ($^{15}\text{N}$) and normal nitrogen ($^{14}\text{N}$) isotopes in <em>Escherichia coli</em>, demonstrating hybrid density DNA after one generation.</p></details><details class='sub-topic'><summary><h3>Replication Machinery and Enzymes</h3></summary><p>DNA replication is highly accurate and energetically expensive, occurring at a localized <span class='keyword'>replication fork</span>:</p><ul><li><strong>DNA-dependent DNA Polymerase:</strong> Catalyzes polymerization only in the 5' to 3' direction.</li><li><strong>Leading Strand:</strong> Continuous synthesis on the template with 3' to 5' polarity.</li><li><strong>Lagging Strand:</strong> Discontinuous synthesis on the template with 5' to 3' polarity, producing fragments joined by <span class='keyword'>DNA ligase</span>.</li><li>Replication begins at a specific sequence called the <span class='keyword'>origin of replication</span>.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Transcription</summary><details class='sub-topic'><summary><h3>The Transcription Unit</h3></summary><p>Transcription is the process of copying genetic information from one strand of DNA into RNA. A transcription unit consists of:</p><ul><li><strong>Promoter:</strong> Binding site for RNA polymerase, located upstream (5'-end of coding strand).</li><li><strong>Structural Gene:</strong> The template area for transcription.</li><li><strong>Terminator:</strong> Defines the end of transcription, located downstream (3'-end of coding strand).</li><li><strong>Template Strand:</strong> Has 3' to 5' polarity.</li><li><strong>Coding Strand:</strong> Has 5' to 3' polarity and shares the sequence of the transcribed RNA (with Uracil instead of Thymine).</li></ul></details><details class='sub-topic'><summary><h3>Transcription in Prokaryotes vs. Eukaryotes</h3></summary><p>In prokaryotes, a single RNA polymerase transcribes all RNA types, and translation can begin before transcription is complete (coupled transcription-translation).</p><p>In eukaryotes, there are three distinct RNA polymerases and complex post-transcriptional processing:</p><ul><li><strong>Splicing:</strong> Removal of non-coding <span class='keyword'>introns</span> and joining of coding <span class='keyword'>exons</span>.</li><li><strong>Capping:</strong> Addition of methyl guanosine triphosphate to the 5'-end of hnRNA.</li><li><strong>Tailing:</strong> Addition of adenylate residues (poly-A tail) to the 3'-end.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Genetic Code & Translation</summary><details class='sub-topic'><summary><h3>Salient Features of the Genetic Code</h3></summary><p>Deciphered by scientists including George Gamow, Har Gobind Khorana, and Marshall Nirenberg. Key features include:</p><ul><li>The codon is a triplet. There are $4^3 = 64$ codons; 61 code for amino acids, and 3 act as stop codons (UAA, UAG, UGA).</li><li>The code is <span class='keyword'>degenerate</span> (some amino acids are coded by multiple codons) and <span class='keyword'>universal</span>.</li><li><strong>AUG:</strong> Dual function as the initiator codon and coding for Methionine.</li></ul></details><details class='sub-topic'><summary><h3>tRNA - The Adapter Molecule</h3></summary><p>The <span class='keyword'>tRNA</span> molecule acts as an adapter. It features an <span class='keyword'>anticodon loop</span> complementary to the mRNA codon and an amino acid acceptor end that binds to specific amino acids.</p></details><details class='sub-topic'><summary><h3>The Translation Process</h3></summary><p>Translation is the synthesis of a polypeptide chain from mRNA, occurring in the ribosome:</p><ol><li><strong>Charging of tRNA:</strong> Amino acids are activated by ATP and linked to their cognate tRNA.</li><li><strong>Initiation:</strong> Ribosome binds to mRNA at the start codon (AUG), recognized by initiator tRNA.</li><li><strong>Elongation:</strong> Aminoacyl-tRNAs sequentially bind to codons, and peptide bonds are formed, catalyzed by the ribozyme.</li><li><strong>Termination:</strong> A release factor binds to the stop codon, releasing the completed polypeptide.</li></ol></details></details><details class='topic-box'><summary class='topic-title'>Regulation of Gene Expression & Genomics</summary><details class='sub-topic'><summary><h3>The Lac Operon</h3></summary><p>Elucidated by Francois Jacob and Jacques Monod, the <span class='keyword'>lac operon</span> is a transcriptionally regulated system in bacteria:</p><ul><li><strong>Regulatory Gene (i gene):</strong> Codes for the repressor protein.</li><li><strong>Structural Genes:</strong> <em>z</em> (codes for $eta$-galactosidase), <em>y</em> (codes for permease), and <em>a</em> (codes for transacetylase).</li><li><strong>In the Absence of Inducer:</strong> Repressor binds to the operator, blocking RNA polymerase.</li><li><strong>In the Presence of Inducer (Lactose):</strong> Lactose binds and inactivates the repressor, allowing transcription of structural genes.</li></ul></details><details class='sub-topic'><summary><h3>Human Genome Project (HGP)</h3></summary><p>A 13-year mega project (1990-2003) aimed at sequencing the entire human genome ($3 \times 10^9$ base pairs). It utilized methodologies like <span class='keyword'>Expressed Sequence Tags (ESTs)</span> and <span class='keyword'>Sequence Annotation</span>, giving rise to the field of <span class='keyword'>Bioinformatics</span>.</p></details><details class='sub-topic'><summary><h3>DNA Fingerprinting</h3></summary><p>Developed by Alec Jeffreys, this technique identifies genetic variations based on <span class='keyword'>DNA polymorphism</span> in repetitive DNA sequences known as <span class='keyword'>Variable Number of Tandem Repeats (VNTRs)</span>. Steps include DNA isolation, restriction digestion, gel electrophoresis, Southern blotting, hybridization with a VNTR probe, and autoradiography.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-04-principles-of-inheritance-and-vari.html";
+      } else {
+        window.location.href = "12-chapter-06-evolution.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
