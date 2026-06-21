@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 7: Structural Organisation in Animals</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 7: Structural Organisation in Animals</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Introduction to Structural Organisation</summary><p>In multicellular organisms, cells organize into groups to perform specific functions efficiently, exhibiting a division of labour.</p><ul><li><strong>Tissue:</strong> A group of similar cells along with intercellular substances performing a specific function.</li><li><strong>Organ:</strong> Formed by different tissues organized in a specific proportion and pattern (e.g., stomach, heart, lung, kidney).</li><li><strong>Organ System:</strong> Formed when two or more organs coordinate to perform a common physical or chemical function (e.g., digestive system).</li><li><strong>Morphology:</strong> The study of externally visible features or form of organs.</li><li><strong>Anatomy:</strong> The study of the internal structure and morphology of internal organs.</li></ul></details><details class='topic-box'><summary class='topic-title'>Frog: Classification and Morphology</summary><details class='sub-topic'><summary><h3>Taxonomy and General Characteristics</h3></summary><ul><li><strong>Scientific Name:</strong> <strong><em>Rana tigrina</em></strong> (Common Indian bullfrog).</li><li><strong>Classification:</strong> Class <span class='keyword'>Amphibia</span>, Phylum <span class='keyword'>Chordata</span>. Can live on both land and freshwater.</li><li><strong>Thermoregulation:</strong> <span class='keyword'>Poikilothermic</span> (cold-blooded); body temperature fluctuates with environmental temperature.</li><li><strong>Adaptations:</strong><ul><li><span class='keyword'>Camouflage</span> (mimicry): Ability to change skin colour to blend with surroundings and hide from enemies.</li><li><span class='keyword'>Aestivation</span>: Summer sleep to survive extreme heat.</li><li><span class='keyword'>Hibernation</span>: Winter sleep to survive extreme cold.</li></ul></li></ul></details><details class='sub-topic'><summary><h3>External Morphology</h3></summary><ul><li><strong>Skin:</strong> Smooth, slippery (due to mucus secretion), and kept moist. Dorsal side is olive green with dark irregular spots; ventral side is pale yellow. Water is absorbed through the skin (frogs never drink water).</li><li><strong>Body Divisions:</strong> Divided into <span class='keyword'>head</span> and <span class='keyword'>trunk</span>. Neck and tail are completely absent.</li><li><strong>Sensory Structures:</strong><ul><li>A pair of nostrils above the mouth.</li><li>Bulged eyes covered by a transparent <span class='keyword'>nictitating membrane</span> for protection underwater.</li><li>A membranous <span class='keyword'>tympanum</span> (ear) on either side of the eyes to receive sound signals.</li></ul></li><li><strong>Limbs:</strong><ul><li><span class='keyword'>Forelimbs</span>: End in 4 digits; help in swimming, walking, leaping, and burrowing.</li><li><span class='keyword'>Hind limbs</span>: Larger, muscular, and end in 5 webbed digits that facilitate swimming.</li></ul></li><li><strong>Sexual Dimorphism:</strong> Male frogs are distinguished by the presence of sound-producing <span class='keyword'>vocal sacs</span> and a <span class='keyword'>copulatory pad</span> on the first digit of the forelimbs (both absent in females).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Frog: Anatomy and Physiological Systems</summary><details class='sub-topic'><summary><h3>Digestive System</h3></summary><p>Consists of a short alimentary canal (due to carnivorous diet) and digestive glands.</p><ol><li><strong>Ingestion:</strong> Food is captured using a bilobed tongue.</li><li><strong>Pathway:</strong> Mouth &rarr; Buccal cavity &rarr; Pharynx &rarr; Oesophagus &rarr; Stomach &rarr; Intestine &rarr; Rectum &rarr; Cloaca.</li><li><strong>Digestion in Stomach:</strong> Gastric juices and hydrochloric acid ($HCl$) break down food into semi-digested <span class='keyword'>chyme</span>.</li><li><strong>Duodenum & Glands:</strong> Receives <span class='keyword'>bile</span> (secreted by liver, stored in gall bladder) to emulsify fats, and pancreatic juice (from pancreas) to digest carbohydrates and proteins.</li><li><strong>Absorption:</strong> Occurs in the intestine via finger-like folds called <span class='keyword'>villi</span> and <span class='keyword'>microvilli</span>.</li><li><strong>Egestion:</strong> Undigested solid waste passes through the rectum and out via the <span class='keyword'>cloaca</span>.</li></ol></details><details class='sub-topic'><summary><h3>Respiratory System</h3></summary><ul><li><strong>Cutaneous Respiration (In Water):</strong> Skin acts as the respiratory organ. Dissolved oxygen is exchanged via simple diffusion.</li><li><strong>Pulmonary Respiration (On Land):</strong> Performed by a pair of elongated, pink, sac-like <span class='keyword'>lungs</span> in the thorax. Air enters through nostrils into the buccal cavity and then to the lungs.</li><li><strong>Aestivation & Hibernation:</strong> Gaseous exchange occurs exclusively through the skin.</li></ul></details><details class='sub-topic'><summary><h3>Circulatory and Lymphatic Systems</h3></summary><p>Well-developed closed circulatory system and a lymphatic system.</p><ul><li><strong>Heart Structure:</strong> Three-chambered (two atria and one ventricle), covered by the <span class='keyword'>pericardium</span>.<ul><li><span class='keyword'>Sinus venosus</span>: A triangular structure joining the right atrium; receives deoxygenated blood via the vena cava.</li><li><span class='keyword'>Conus arteriosus</span>: A sac-like structure on the ventral side of the heart where the ventricle opens.</li></ul></li><li><strong>Portal Systems:</strong><ul><li><span class='keyword'>Hepatic portal system</span>: Venous connection between liver and intestine.</li><li><span class='keyword'>Renal portal system</span>: Venous connection between kidneys and lower parts of the body.</li></ul></li><li><strong>Blood Composition:</strong> Plasma and blood cells.<ul><li><span class='keyword'>RBCs (Erythrocytes)</span>: Nucleated and contain red-coloured <span class='keyword'>haemoglobin</span>.</li><li><span class='keyword'>WBCs (Leucocytes)</span> and <span class='keyword'>Platelets</span>.</li></ul></li><li><strong>Lymph:</strong> Differs from blood; lacks RBCs and certain proteins.</li></ul></details><details class='sub-topic'><summary><h3>Excretory System</h3></summary><ul><li><strong>Components:</strong> A pair of kidneys, ureters, cloaca, and urinary bladder.</li><li><strong>Kidneys:</strong> Compact, dark red, bean-like structures containing structural units called <span class='keyword'>uriniferous tubules</span> or <span class='keyword'>nephrons</span>.</li><li><strong>Ureters:</strong><ul><li>In males: Act as a <span class='keyword'>urinogenital duct</span> opening directly into the cloaca.</li><li>In females: Open separately into the cloaca alongside the oviducts.</li></ul></li><li><strong>Excretion Type:</strong> <span class='keyword'>Ureotelic</span> (excretes urea, which is filtered from the blood by the kidneys).</li></ul></details><details class='sub-topic'><summary><h3>Control and Coordination</h3></summary><ul><li><strong>Endocrine System:</strong> Chemical coordination via hormones from glands: pituitary, thyroid, parathyroid, thymus, pineal body, pancreatic islets, adrenals, and gonads.</li><li><strong>Nervous System:</strong><ul><li><span class='keyword'>Central Nervous System (CNS)</span>: Brain (enclosed in a bony cranium) and spinal cord.</li><li><span class='keyword'>Peripheral Nervous System (PNS)</span>: 10 pairs of cranial nerves and spinal nerves.</li><li><span class='keyword'>Autonomic Nervous System (ANS)</span>: Sympathetic and parasympathetic systems.</li></ul></li><li><strong>Brain Divisions:</strong><ul><li><span class='keyword'>Fore-brain</span>: Olfactory lobes, paired cerebral hemispheres, and unpaired diencephalon.</li><li><span class='keyword'>Mid-brain</span>: Characterised by a pair of optic lobes.</li><li><span class='keyword'>Hind-brain</span>: Cerebellum and medulla oblongata (passes through the foramen magnum to continue as the spinal cord).</li></ul></li><li><strong>Sense Organs:</strong> Sensory papillae (touch), taste buds (taste), nasal epithelium (smell), simple eyes (vision), and tympanum with internal ears (hearing and balancing/equilibrium).</li></ul></details><details class='sub-topic'><summary><h3>Reproductive System</h3></summary><ul><li><strong>Male Reproductive System:</strong><ul><li>A pair of yellowish ovoid <span class='keyword'>testes</span> adhered to the upper kidneys by a double fold of peritoneum called <span class='keyword'>mesorchium</span>.</li><li>10-12 <span class='keyword'>vasa efferentia</span> arise from testes, enter kidneys, and open into <span class='keyword'>Bidder's canal</span>.</li><li>Communicates with the urinogenital duct to open into the <span class='keyword'>cloaca</span>.</li></ul></li><li><strong>Female Reproductive System:</strong><ul><li>A pair of <span class='keyword'>ovaries</span> situated near the kidneys (no functional connection with kidneys).</li><li>A pair of <span class='keyword'>oviducts</span> opening separately into the cloaca.</li><li>A mature female lays 2500 to 3000 ova at a time.</li></ul></li><li><strong>Fertilisation & Development:</strong><ul><li>Fertilisation is external and occurs in water.</li><li>Development is indirect, involving a larval stage called a <span class='keyword'>tadpole</span>, which undergoes metamorphosis to become an adult.</li></ul></li></ul></details></details><details class='topic-box'><summary class='topic-title'>Economic Importance of Frogs</summary><ul><li><strong>Pest Control:</strong> Beneficial to agriculture as they eat insects and protect crops.</li><li><strong>Ecological Balance:</strong> Serve as an important link in food chains and food webs within ecosystems.</li><li><strong>Food Source:</strong> In some countries, the muscular legs of frogs are used as food by humans.</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-06-anatomy-of-flowering-plants.html";
+      } else {
+        window.location.href = "11-chapter-08-cell-the-unit-of-life.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
