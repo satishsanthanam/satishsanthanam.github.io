@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 6: Evolution</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 6: Evolution</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">6.1 Origin of Life</summary>
+  <p>The origin of life is considered a unique event in the history of the universe, which is vast and ancient (almost 13.8 billion years old).</p>
+  
+  <details class="sub-topic">
+    <summary><h3>The Big Bang Theory & Early Earth</h3></summary>
+    <ul>
+      <li>The <span class="keyword">Big Bang Theory</span> attempts to explain the origin of the universe as a singular, unimaginable physical explosion.</li>
+      <li>As the universe expanded, the temperature came down, allowing hydrogen and helium gases to form and condense under gravitation, forming galaxies.</li>
+      <li>Earth was formed about <strong>4.5 billion years ago</strong> in the solar system of the Milky Way galaxy.</li>
+      <li><strong>Early Earth Conditions:</strong> There was no atmosphere. The surface was covered by water vapour, methane ($CH_4$), carbon dioxide ($CO_2$), and ammonia ($NH_3$) released from molten mass.</li>
+      <li>UV rays from the sun broke up water into hydrogen and oxygen; lighter $H_2$ escaped. Oxygen combined with ammonia and methane to form water, $CO_2$, and other compounds. The <span class="keyword">ozone layer</span> was formed.</li>
+      <li>As the earth cooled, water vapour fell as rain to fill depressions and form oceans. Life appeared 500 million years after Earth's formation (almost <strong>4 billion years ago</strong>).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Theories of the Origin of Life</h3></summary>
+    <ul>
+      <li><span class="keyword">Panspermia</span>: Early Greek thinkers believed units of life called spores were transferred to different planets, including Earth.</li>
+      <li><span class="keyword">Spontaneous Generation</span>: The belief that life arose from decaying and rotting matter (like straw, mud, etc.). This was dismissed by <strong>Louis Pasteur</strong>.</li>
+      <li><strong>Pasteur's Experiment:</strong> Demonstrated that life comes only from pre-existing life using pre-sterilised flasks. Yeast in a closed flask did not produce life, whereas a flask open to air allowed new living organisms to arise from 'killed yeast'.</li>
+      <li><span class="keyword">Chemical Evolution</span>: Proposed by <strong>Oparin</strong> of Russia and <strong>Haldane</strong> of England. They suggested that the first form of life arose from pre-existing non-living organic molecules (RNA, proteins, etc.) and that chemical evolution preceded organic evolution.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Miller's Experiment</h3></summary>
+    <p><strong>Aim:</strong> To recreate and test the conditions of early Earth in a laboratory scale to prove chemical evolution.</p>
+    <p><strong>Apparatus/Setup:</strong> In 1953, S.L. Miller created an electric discharge in a closed flask containing $CH_4$, $H_2$, $NH_3$, and water vapour at 800°C.</p>
+    <p><strong>Observation:</strong> He observed the formation of <span class="keyword">amino acids</span>. Similar experiments by others yielded sugars, nitrogen bases, pigments, and fats.</p>
+    <p><strong>Inference:</strong> Chemical evolution—the formation of organic molecules from inorganic constituents—was accepted as a plausible pathway for the origin of life.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.2 Evolution of Life Forms - A Theory</summary>
+  <details class="sub-topic">
+    <summary><h3>Conventional vs. Evolutionary Theories</h3></summary>
+    <ul>
+      <li><strong>Theory of Special Creation:</strong> Conventional religious literature asserts that: (1) all living organisms were created as they are seen today, (2) diversity was always the same and will remain so, and (3) Earth is about 4000 years old.</li>
+      <li><strong>Darwinian Theory:</strong> Based on observations during a sea voyage on <em>H.M.S. Beagle</em>, <strong>Charles Darwin</strong> concluded that existing life forms share similarities to varying degrees and share common ancestors that existed millions of years ago.</li>
+      <li><span class="keyword">Natural Selection</span>: Individuals with characteristics that enable them to survive better in natural conditions outbreed others. Darwin defined this fitness ultimately as <span class="keyword">reproductive fitness</span>.</li>
+      <li><strong>Alfred Wallace:</strong> A naturalist working in the Malay Archipelago who independently arrived at similar conclusions regarding natural selection around the same time.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.3 Evidences for Evolution</summary>
+  <details class="sub-topic">
+    <summary><h3>Paleontological Evidence</h3></summary>
+    <ul>
+      <li><span class="keyword">Fossils</span> are the remains of hard parts of life-forms found in sedimentary rock layers.</li>
+      <li>Different-aged rock sediments contain fossils of different life-forms, showing that life-forms varied over time and certain organisms were restricted to specific geological time spans.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Embryological Support</h3></summary>
+    <ul>
+      <li>Proposed by <strong>Ernst Heckel</strong> based on embryonic features common to all vertebrates (e.g., vestigial gill slits in human embryos).</li>
+      <li>Disproved by <strong>Karl Ernst von Baer</strong>, who noted that embryos never pass through the adult stages of other animals.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Comparative Anatomy and Morphology</h3></summary>
+    <ul>
+      <li><span class="keyword">Homology</span>: Similarity in anatomy/structure due to common ancestry, though they perform different functions. This represents <span class="keyword">divergent evolution</span>.
+        <ul>
+          <li><em>Examples:</em> Forelimbs of whales, bats, Cheetah, and humans (all share humerus, radius, ulna, carpals, metacarpals, and phalanges); thorns of <em>Bougainvillea</em> and tendrils of <em>Cucurbita</em>.</li>
+        </ul>
+      </li>
+      <li><span class="keyword">Analogy</span>: Anatomically different structures performing similar functions due to adaptation to a similar habitat. This represents <span class="keyword">convergent evolution</span>.
+        <ul>
+          <li><em>Examples:</em> Wings of butterflies and birds; eye of octopus and mammals; flippers of penguins and dolphins; sweet potato (root modification) and potato (stem modification).</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Biochemical & Anthropogenic Evidence</h3></summary>
+    <ul>
+      <li><strong>Biochemical Evidence:</strong> Similarities in proteins and genes performing similar functions across diverse organisms point to a shared ancestry.</li>
+      <li><strong>Anthropogenic Action (Industrial Melanism):</strong> In England, before industrialisation (1850s), white-winged moths outnumbered dark-winged moths on lichen-covered trees. Post-industrialisation (1920), soot covered tree trunks, and dark-winged (melanised) moths survived better due to camouflage against predators.</li>
+      <li><strong>Pesticide/Antibiotic Resistance:</strong> Excess use of herbicides, pesticides, or antibiotics has selected for resistant varieties of microbes and pests in a very short time scale, demonstrating evolution by human action.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.4 What is Adaptive Radiation?</summary>
+  <p>The process of evolution of different species in a given geographical area starting from a point and literally radiating to other areas of geography (habitats) is called <span class="keyword">adaptive radiation</span>.</p>
+  <details class="sub-topic">
+    <summary><h3>Key Examples</h3></summary>
+    <ul>
+      <li><strong>Darwin's Finches:</strong> On the Galapagos Islands, Darwin observed many varieties of finches that evolved from an original seed-eating ancestor into insectivorous and vegetarian forms with altered beaks.</li>
+      <li><strong>Australian Marsupials:</strong> A number of distinct marsupials evolved from an ancestral stock within the isolated Australian continent.</li>
+      <li><strong>Placental Mammals in Australia:</strong> Exhibit adaptive radiation matching corresponding marsupials (e.g., Placental wolf and Tasmanian wolf), which is an example of convergent evolution when multiple adaptive radiations occur in an isolated geographical area.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.5 & 6.6 Biological Evolution & Its Mechanism</summary>
+  <details class="sub-topic">
+    <summary><h3>Darwinian Concepts & Lamarckism</h3></summary>
+    <ul>
+      <li>The two key concepts of Darwinian Theory of Evolution are <span class="keyword">branching descent</span> and <span class="keyword">natural selection</span>.</li>
+      <li><strong>Lamarckism:</strong> French naturalist <strong>Lamarck</strong> argued that evolution was driven by the "use and disuse of organs" (e.g., giraffes elongating their necks to forage leaves on tall trees). This conjecture is no longer accepted.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Mechanism of Evolution (Hugo de Vries)</h3></summary>
+    <ul>
+      <li>In the early 20th century, <strong>Hugo de Vries</strong> proposed the <span class="keyword">Mutation Theory</span> based on his work on evening primrose.</li>
+      <li>He believed that <span class="keyword">mutations</span>—large, sudden differences arising in a population—cause evolution, rather than the minor, gradual variations described by Darwin.</li>
+      <li><strong>Key Differences:</strong>
+        <ul>
+          <li>Darwinian variations are small, gradual, and directional.</li>
+          <li>Mutations are random, directionless, and can cause speciation in a single step, termed <span class="keyword">saltation</span>.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.7 Hardy-Weinberg Principle</summary>
+  <p>This principle states that allele frequencies in a population are stable and remain constant from generation to generation in the absence of evolutionary forces. This state is called <span class="keyword">genetic equilibrium</span>.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Mathematical Formulation</h3></summary>
+    <p>The sum total of all allelic frequencies is 1. For a diploid locus with alleles $A$ and $a$ having frequencies $p$ and $q$ respectively:</p>
+    <p>$$p^2 + 2pq + q^2 = 1$$</p>
+    <ul>
+      <li>$p^2$: Frequency of homozygous dominant individuals ($AA$)</li>
+      <li>$2pq$: Frequency of heterozygous individuals ($Aa$)</li>
+      <li>$q^2$: Frequency of homozygous recessive individuals ($aa$)</li>
+    </ul>
+    <p>Any deviation from this equilibrium indicates that evolutionary change is occurring.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Factors Affecting Hardy-Weinberg Equilibrium</h3></summary>
+    <ol>
+      <li><span class="keyword">Gene Migration / Gene Flow</span>: Transfer of alleles into or out of a population due to migration.</li>
+      <li><span class="keyword">Genetic Drift</span>: Random change in allele frequencies occurring by chance. If a small group drifts to form a new population, they become the founders, causing the <span class="keyword">founder effect</span>.</li>
+      <li><span class="keyword">Mutation</span>: Introduction of new alleles due to random genomic changes.</li>
+      <li><span class="keyword">Genetic Recombination</span>: New combinations of alleles formed during gametogenesis.</li>
+      <li><span class="keyword">Natural Selection</span>: Leads to three possible outcomes on traits:
+        <ul>
+          <li><strong>Stabilising:</strong> More individuals acquire mean character value (peak gets higher and narrower).</li>
+          <li><strong>Directional:</strong> More individuals acquire value other than the mean character value (peak shifts in one direction).</li>
+          <li><strong>Disruptive:</strong> Individuals at both peripheral extremes are favoured (two peaks form).</li>
+        </ul>
+      </li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.8 A Brief Account of Evolution</summary>
+  <details class="sub-topic">
+    <summary><h3>Chronology of Life Forms</h3></summary>
+    <ul>
+      <li><strong>2000 mya (million years ago):</strong> First cellular forms of life appeared on Earth. Some developed the ability to release $O_2$.</li>
+      <li><strong>500 mya:</strong> Invertebrates were formed and active.</li>
+      <li><strong>350 mya:</strong> Jawless fish evolved; fish with stout and strong fins (lobefins) could move on land and go back to water. In 1938, a lobefin fish called <span class="keyword">Coelacanth</span> was caught in South Africa, proving they were ancestors of modern frogs and salamanders.</li>
+      <li><strong>320 mya:</strong> Sea weeds and few plants existed. Plants were the first organisms to invade land.</li>
+      <li><strong>Reptiles:</strong> Amphibians evolved into reptiles, which lay thick-shelled eggs that do not dry up in the sun.</li>
+      <li><strong>200 mya:</strong> Reptiles dominated Earth. Some went back to water to evolve into fish-like reptiles (e.g., <em>Ichthyosaurs</em>). Giant land reptiles were the dinosaurs; the largest was <em>Tyrannosaurus rex</em> (about 20 feet high with dagger-like teeth).</li>
+      <li><strong>65 mya:</strong> Dinosaurs suddenly disappeared from the Earth, possibly due to climatic changes or avian evolution.</li>
+      <li><strong>Mammals:</strong> The first mammals were small, shrew-like, viviparous, and highly intelligent. When reptiles declined, mammals took over the Earth.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.9 Origin and Evolution of Man</summary>
+  <p>The evolutionary lineage of humans traced through fossil records:</p>
+  <details class="sub-topic">
+    <summary><h3>Hominid Evolutionary Stages</h3></summary>
+    <ul>
+      <li><strong>Dryopithecus & Ramapithecus (15 mya):</strong> Hairy, walked like gorillas and chimpanzees. <em>Ramapithecus</em> was more man-like, while <em>Dryopithecus</em> was more ape-like.</li>
+      <li><strong>Australopithecines (3-4 mya):</strong> Walked upright in East African grasslands, hunted with stone weapons, and essentially ate fruit. Height was under 4 feet.</li>
+      <li><strong>Homo habilis (2 mya):</strong> The first human-like hominid. Brain capacity was <strong>650-800cc</strong>. They did not eat meat.</li>
+      <li><strong>Homo erectus (1.5 mya):</strong> Fossils discovered in Java (1891). Had a large brain capacity of around <strong>900cc</strong> and probably ate meat.</li>
+      <li><strong>Neanderthal Man (100,000 - 40,000 years ago):</strong> Lived in near East and Central Asia. Brain size was <strong>1400cc</strong>. Used hides to protect their bodies and buried their dead.</li>
+      <li><strong>Homo sapiens (75,000 - 10,000 years ago):</strong> Arose in Africa during the last ice age and moved across continents, developing into distinct races. Pre-historic cave art developed about 18,000 years ago (e.g., Bhimbetka, MP). Agriculture and human settlements started around 10,000 years ago.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-05-molecular-basis-of-inheritance.html";
+      } else {
+        window.location.href = "12-chapter-07-human-health-and-disease.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
