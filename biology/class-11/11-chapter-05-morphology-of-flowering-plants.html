@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 5: Morphology of Flowering Plants</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 5: Morphology of Flowering Plants</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction to Plant Morphology</summary>
+  <p>Angiosperms exhibit a wide range of structural diversity, yet they are characterized by the presence of roots, stems, leaves, flowers, and fruits. The study of these external features is known as <span class="keyword">morphology</span>.</p>
+  <ul>
+    <li><strong>Root System:</strong> The underground part of the flowering plant.</li>
+    <li><strong>Shoot System:</strong> The portion of the plant above the ground.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.1 The Root</summary>
+  <p>In majority of dicotyledonous plants, the direct elongation of the radicle leads to the formation of the <span class="keyword">primary root</span> which grows inside the soil.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Types of Root Systems</h3></summary>
+    <ul>
+      <li><span class="keyword">Tap Root System:</span> Consists of the primary root and its lateral branches (secondary, tertiary roots). Seen in dicotyledonous plants like the mustard plant.</li>
+      <li><span class="keyword">Fibrous Root System:</span> The primary root is short-lived and replaced by a large number of roots originating from the base of the stem. Seen in monocotyledonous plants like wheat.</li>
+      <li><span class="keyword">Adventitious Roots:</span> Roots that arise from parts of the plant other than the radicle. Examples include grass, <em>Monstera</em>, and the banyan tree.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Regions of the Root</h3></summary>
+    <ol>
+      <li><span class="keyword">Root Cap:</span> A thimble-like structure covering the apex of the root, protecting its tender tip as it makes its way through the soil.</li>
+      <li><span class="keyword">Region of Meristematic Activity:</span> Located a few millimeters above the root cap. Cells are small, thin-walled, with dense protoplasm, and divide repeatedly.</li>
+      <li><span class="keyword">Region of Elongation:</span> Cells undergo rapid elongation and enlargement, responsible for the growth of the root in length.</li>
+      <li><span class="keyword">Region of Maturation:</span> Cells gradually differentiate and mature. Epidermal cells in this region form very fine, delicate, thread-like structures called <span class="keyword">root hairs</span>, which absorb water and minerals from the soil.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.2 The Stem</summary>
+  <p>The stem is the ascending part of the axis bearing branches, leaves, flowers, and fruits. It develops from the plumule of the embryo of a germinating seed.</p>
+  <ul>
+    <li>It bears <span class="keyword">nodes</span> (regions where leaves are born) and <span class="keyword">internodes</span> (portions between two nodes).</li>
+    <li>It bears buds, which may be terminal or axillary.</li>
+    <li><strong>Main Functions:</strong> Spreading out branches, conducting water, minerals, and photosynthates, and performing storage, support, protection, and vegetative propagation.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.3 The Leaf</summary>
+  <p>The leaf is a lateral, generally flattened structure borne on the stem. It develops at the node and bears an <span class="keyword">axillary bud</span> in its axil, which later develops into a branch.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Parts of a Leaf</h3></summary>
+    <ul>
+      <li><span class="keyword">Leaf Base:</span> Attaches the leaf to the stem. May bear two lateral small leaf-like structures called <span class="keyword">stipules</span>. In leguminous plants, the leaf base may become swollen, called the <span class="keyword">pulvinus</span>.</li>
+      <li><span class="keyword">Petiole:</span> Helps hold the leaf blade to light and allows it to flutter in the wind, cooling the leaf.</li>
+      <li><span class="keyword">Lamina (Leaf Blade):</span> The green expanded part with veins and veinlets. The middle prominent vein is the <span class="keyword">midrib</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Venation</h3></summary>
+    <p>The arrangement of veins and veinlets in the lamina of a leaf is called <span class="keyword">venation</span>.</p>
+    <ul>
+      <li><span class="keyword">Reticulate Venation:</span> Veinlets form a network; characteristic of most dicotyledonous plants.</li>
+      <li><span class="keyword">Parallel Venation:</span> Veins run parallel to each other; characteristic of most monocotyledonous plants.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Types of Leaves</h3></summary>
+    <ul>
+      <li><span class="keyword">Simple Leaf:</span> Lamina is entire or, when incised, incisions do not touch the midrib.</li>
+      <li><span class="keyword">Compound Leaf:</span> Incisions of the lamina reach the midrib, breaking it into leaflets. A bud is present in the axil of the petiole but not in the axil of leaflets.</li>
+      <li><span class="keyword">Pinnately Compound Leaf:</span> Leaflets are present on a common axis, the <span class="keyword">rachis</span> (e.g., neem).</li>
+      <li><span class="keyword">Palmately Compound Leaf:</span> Leaflets are attached at a common point at the tip of the petiole (e.g., silk cotton).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Phyllotaxy</h3></summary>
+    <p>The pattern of arrangement of leaves on the stem or branch:</p>
+    <ul>
+      <li><span class="keyword">Alternate:</span> A single leaf arises at each node in an alternate manner (e.g., china rose, mustard, sunflower).</li>
+      <li><span class="keyword">Opposite:</span> A pair of leaves arise at each node and lie opposite to each other (e.g., <em>Calotropis</em>, guava).</li>
+      <li><span class="keyword">Whorled:</span> More than two leaves arise at a node and form a whorl (e.g., <em>Alstonia</em>).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.4 The Inflorescence</summary>
+  <p>The arrangement of flowers on the floral axis is termed as <span class="keyword">inflorescence</span>.</p>
+  <ul>
+    <li><span class="keyword">Racemose:</span> The main axis continues to grow, and flowers are borne laterally in an acropetal succession.</li>
+    <li><span class="keyword">Cymose:</span> The main axis terminates in a flower, limiting its growth. Flowers are borne in a basipetal order.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.5 The Flower</summary>
+  <p>The flower is the reproductive unit in angiosperms, meant for sexual reproduction.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Symmetry of Flowers</h3></summary>
+    <ul>
+      <li><span class="keyword">Actinomorphic (Radial Symmetry):</span> Can be divided into two equal radial halves in any radial plane passing through the center (e.g., mustard, datura, chilli).</li>
+      <li><span class="keyword">Zygomorphic (Bilateral Symmetry):</span> Can be divided into two similar halves only in one particular vertical plane (e.g., pea, gulmohur, bean, <em>Cassia</em>).</li>
+      <li><span class="keyword">Asymmetric (Irregular):</span> Cannot be divided into two similar halves by any vertical plane passing through the center (e.g., canna).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Parts of a Flower</h3></summary>
+    <p>A typical flower has four whorls arranged on the swollen end of the stalk (<span class="keyword">thalamus</span> or <span class="keyword">receptacle</span>):</p>
+    <ol>
+      <li><span class="keyword">Calyx:</span> Outermost whorl composed of <span class="keyword">sepals</span>. Can be <span class="keyword">gamosepalous</span> (sepals united) or <span class="keyword">polysepalous</span> (sepals free).</li>
+      <li><span class="keyword">Corolla:</span> Composed of <span class="keyword">petals</span>. Can be <span class="keyword">gamopetalous</span> (petals united) or <span class="keyword">polypetalous</span> (petals free).</li>
+      <li><span class="keyword">Androecium:</span> Composed of <span class="keyword">stamens</span> (male reproductive organ). Each stamen consists of a filament and a bilobed anther containing pollen-sacs.</li>
+      <li><span class="keyword">Gynoecium:</span> Female reproductive part composed of one or more <span class="keyword">carpels</span> (stigma, style, and ovary).</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Aestivation</h3></summary>
+    <p>The mode of arrangement of sepals or petals in a floral bud with respect to other members of the same whorl:</p>
+    <ul>
+      <li><span class="keyword">Valvate:</span> Sepals or petals just touch one another at the margin without overlapping (e.g., <em>Calotropis</em>).</li>
+      <li><span class="keyword">Twisted:</span> One margin of the appendage overlaps that of the next one (e.g., china rose, lady's finger, cotton).</li>
+      <li><span class="keyword">Imbricate:</span> Margins overlap but not in any particular direction (e.g., <em>Cassia</em>, gulmohur).</li>
+      <li><span class="keyword">Vexillary (Papilionaceous):</span> Five petals: largest (standard) overlaps two lateral petals (wings), which overlap the two smallest anterior petals (keel) (e.g., pea, bean).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Placentation</h3></summary>
+    <p>The arrangement of ovules within the ovary is known as <span class="keyword">placentation</span>:</p>
+    <ul>
+      <li><span class="keyword">Marginal:</span> Placenta forms a ridge along the ventral suture of the ovary (e.g., pea).</li>
+      <li><span class="keyword">Axile:</span> Placenta is axial and ovules are attached to it in a multilocular ovary (e.g., china rose, tomato, lemon).</li>
+      <li><span class="keyword">Parietal:</span> Ovules develop on the inner wall of the ovary (e.g., mustard, <em>Argemone</em>).</li>
+      <li><span class="keyword">Free Central:</span> Ovules are borne on the central axis and septa are absent (e.g., <em>Dianthus</em>, <em>Primrose</em>).</li>
+      <li><span class="keyword">Basal:</span> Placenta develops at the base of the ovary and a single ovule is attached to it (e.g., sunflower, marigold).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.6 The Fruit</summary>
+  <p>The fruit is a mature or ripened ovary developed after fertilization. If formed without fertilization, it is called a <span class="keyword">parthenocarpic fruit</span>.</p>
+  <ul>
+    <li>Consists of a wall called <span class="keyword">pericarp</span> (differentiated into outer <span class="keyword">epicarp</span>, middle <span class="keyword">mesocarp</span>, and inner <span class="keyword">endocarp</span>) and seeds.</li>
+    <li><span class="keyword">Drupe:</span> A type of fruit developed from monocarpellary superior ovaries (e.g., mango, coconut). In mango, the mesocarp is fleshy and edible; in coconut, the mesocarp is fibrous.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.7 The Seed</summary>
+  <p>The ovules after fertilization develop into seeds. A seed is made up of a seed coat and an embryo.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Structure of a Dicotyledonous Seed</h3></summary>
+    <ul>
+      <li><strong>Seed Coat:</strong> Outer <span class="keyword">testa</span> and inner <span class="keyword">tegmen</span>.</li>
+      <li><span class="keyword">Hilum:</span> A scar on the seed coat where the seed was attached to the fruit.</li>
+      <li><span class="keyword">Micropyle:</span> A small pore above the hilum.</li>
+      <li><strong>Embryo:</strong> Consists of an embryonal axis and two cotyledons. The ends of the axis are the <span class="keyword">radicle</span> and the <span class="keyword">plumule</span>.</li>
+      <li><span class="keyword">Endospermic Seeds:</span> Castor (food storing tissue present).</li>
+      <li><span class="keyword">Non-endospermic Seeds:</span> Bean, gram, pea (endosperm absent in mature seeds).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Structure of a Monocotyledonous Seed</h3></summary>
+    <ul>
+      <li>Generally endospermic, but some (like orchids) are non-endospermic.</li>
+      <li><span class="keyword">Aleurone Layer:</span> A proteinous layer separating the embryo from the endosperm.</li>
+      <li><span class="keyword">Scutellum:</span> The single large, shield-shaped cotyledon.</li>
+      <li>The plumule and radicle are enclosed in protective sheaths called <span class="keyword">coleoptile</span> and <span class="keyword">coleorhiza</span>, respectively.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.8 & 5.9 Semi-Technical Description & Solanaceae</summary>
+  <p>Flowering plants are described using standard symbols in a floral formula:</p>
+  <ul>
+    <li>$\text{Br}$ = Bracteate, $\text{K}$ = Calyx, $\text{C}$ = Corolla, $\text{P}$ = Perianth, $\text{A}$ = Androecium, $\text{G}$ = Gynoecium, $\underline{\text{G}}$ = Superior ovary, $\overline{\text{G}}$ = Inferior ovary, $\oplus$ = Actinomorphic, $\%$ = Zygomorphic.</li>
+  </ul>
+
+  <details class="sub-topic">
+    <summary><h3>Family Solanaceae (Potato Family)</h3></summary>
+    <ul>
+      <li><strong>Vegetative Characters:</strong> Mostly herbs, shrubs, and rarely small trees. Leaves are alternate, simple, exstipulate with reticulate venation. Underground stem in potato (<strong><em>Solanum tuberosum</em></strong>).</li>
+      <li><strong>Floral Characters:</strong>
+        <ul>
+          <li>Inflorescence: Solitary, axillary, or cymose.</li>
+          <li>Flower: Bisexual, actinomorphic.</li>
+          <li>Calyx: Sepals 5, united, persistent, valvate.</li>
+          <li>Corolla: Petals 5, united, valvate.</li>
+          <li>Androecium: Stamens 5, epipetalous.</li>
+          <li>Gynoecium: Bicarpellary, syncarpous, ovary superior, bilocular, placenta swollen with many ovules, axile placentation.</li>
+          <li>Fruits: Berry or capsule.</li>
+          <li>Seeds: Many, endospermous.</li>
+        </ul>
+      </li>
+      <li><strong>Floral Formula:</strong> $$\oplus \ \Phi \ K_{(5)} \ \overbrace{C_{(5)} \ A_5} \ \underline{G}_{(2)}$$</li>
+      <li><strong>Economic Importance:</strong> Source of food (tomato, brinjal, potato), spice (chilli), medicine (belladonna, ashwagandha), fumigatory (tobacco), and ornamentals (petunia).</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-04-animal-kingdom.html";
+      } else {
+        window.location.href = "11-chapter-06-anatomy-of-flowering-plants.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
