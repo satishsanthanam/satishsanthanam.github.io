@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 9: Biotechnology : Principles and Processes</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 9: Biotechnology : Principles and Processes</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction & Principles of Biotechnology</summary>
+  <p><strong>Biotechnology</strong> deals with techniques of using live organisms or enzymes from organisms to produce products and processes useful to humans. In a modern restricted sense, it refers to processes that use genetically modified organisms to achieve this on a larger scale.</p>
+  <p>The <span class="keyword">European Federation of Biotechnology (EFB)</span> defines biotechnology as: <em>&lsquo;The integration of natural science and organisms, cells, parts thereof, and molecular analogues for products and services&rsquo;.</em></p>
+  
+  <details class="sub-topic">
+    <summary><h3>Core Techniques of Modern Biotechnology</h3></summary>
+    <ul>
+      <li><strong><span class="keyword">Genetic engineering</span>:</strong> Techniques to alter the chemistry of genetic material (DNA and RNA), to introduce these into host organisms and thus change the phenotype of the host organism.</li>
+      <li><strong><span class="keyword">Bioprocess engineering</span>:</strong> Maintenance of sterile (microbial contamination-free) ambience in chemical engineering processes to enable growth of only the desired microbe/eukaryotic cell in large quantities for the manufacture of biotechnological products like antibiotics, vaccines, enzymes, etc.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Conceptual Development of Genetic Engineering</h3></summary>
+    <p>Asexual reproduction preserves genetic information, while sexual reproduction permits variation. Traditional hybridisation often leads to the inclusion and multiplication of undesirable genes along with desirable ones. Genetic engineering overcomes this limitation by allowing the isolation and introduction of only desirable genes.</p>
+    <p>Key concepts in gene cloning include:</p>
+    <ul>
+      <li><strong><span class="keyword">Origin of replication (ori)</span>:</strong> A specific DNA sequence in a chromosome responsible for initiating replication. An alien DNA must be linked to this sequence to replicate inside the host.</li>
+      <li><strong><span class="keyword">Cloning</span>:</strong> The process of making multiple identical copies of any template DNA.</li>
+      <li><strong>First Recombinant DNA:</strong> Constructed by <span class="keyword">Stanley Cohen</span> and <span class="keyword">Herbert Boyer</span> in 1972. They isolated an antibiotic resistance gene from a plasmid of <strong><em>Salmonella typhimurium</em></strong> and linked it to a plasmid vector, which was then transferred into <strong><em>Escherichia coli</em></strong>.</li>
+    </ul>
+    <p><strong>Three basic steps in genetically modifying an organism:</strong></p>
+    <ol>
+      <li>Identification of DNA with desirable genes.</li>
+      <li>Introduction of the identified DNA into the host.</li>
+      <li>Maintenance of introduced DNA in the host and transfer of the DNA to its progeny.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Tools of Recombinant DNA Technology</summary>
+  <p>Key tools required for recombinant DNA technology include restriction enzymes, polymerase enzymes, ligases, vectors, and a competent host organism.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>1. Restriction Enzymes</h3></summary>
+    <p>Discovered in 1963 in <strong><em>E. coli</em></strong> as enzymes restricting bacteriophage growth. One added methyl groups to DNA, while the other cut DNA (called <span class="keyword">restriction endonuclease</span>).</p>
+    <ul>
+      <li>The first restriction endonuclease isolated was <strong><span class="keyword">Hind II</span></strong>, which cuts DNA at a specific six-base-pair sequence called the <span class="keyword">recognition sequence</span>.</li>
+      <li>Today, more than 900 restriction enzymes have been isolated from over 230 strains of bacteria.</li>
+      <li><strong>Naming Convention:</strong> The first letter comes from the genus, the next two from the species of the prokaryotic cell (e.g., <em>Eco</em>RI from <strong><em>Escherichia coli</em></strong> RY 13), and the Roman number indicates the order of isolation.</li>
+      <li><strong>Classification:</strong> Restriction enzymes belong to a larger class called <span class="keyword">nucleases</span>:
+        <ul>
+          <li><strong><span class="keyword">Exonucleases</span>:</strong> Remove nucleotides from the ends of the DNA.</li>
+          <li><strong><span class="keyword">Endonucleases</span>:</strong> Make cuts at specific positions within the DNA.</li>
+        </ul>
+      </li>
+      <li><strong>Palindromic Nucleotide Sequences:</strong> Restriction endonucleases recognize specific palindromic sequences where the sequence of base pairs reads the same on both strands when the orientation of reading is kept the same (5&prime; &rarr; 3&prime; or 3&prime; &rarr; 5&prime;). For example:
+        <pre>
+        5&prime; &mdash;&mdash; GAATTC &mdash;&mdash; 3&prime;
+        3&prime; &mdash;&mdash; CTTAAG &mdash;&mdash; 5&prime;
+        </pre>
+      </li>
+      <li><strong><span class="keyword">Sticky Ends</span>:</strong> Enzymes cut the strands a little away from the center of the palindrome sites, leaving single-stranded overhanging stretches. These hydrogen-bond with their complementary counterparts, facilitating the action of <span class="keyword">DNA ligase</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2. Separation and Isolation of DNA Fragments</h3></summary>
+    <p><strong><span class="keyword">Gel Electrophoresis</span>:</strong> A technique used to separate DNA fragments based on size.</p>
+    <ul>
+      <li>Since DNA fragments are negatively charged, they move towards the positive electrode (<span class="keyword">anode</span>) under an electric field through a matrix of <span class="keyword">agarose</span> (a natural polymer from sea weeds).</li>
+      <li>The smaller the fragment size, the farther it moves through the sieving effect of the gel.</li>
+      <li><strong>Visualization:</strong> DNA fragments can only be seen after staining with <span class="keyword">ethidium bromide</span> followed by exposure to UV radiation, appearing as bright orange bands.</li>
+      <li><strong><span class="keyword">Elution</span>:</strong> The process of cutting out and extracting the separated bands of DNA from the agarose gel.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>3. Cloning Vectors</h3></summary>
+    <p>Plasmids and bacteriophages are commonly used as vectors because of their ability to replicate independently of chromosomal DNA control within bacterial cells.</p>
+    <p><strong>Essential Features of a Cloning Vector:</strong></p>
+    <ul>
+      <li><strong><span class="keyword">Origin of replication (ori)</span>:</strong> Controls replication and determines the copy number of the linked DNA.</li>
+      <li><strong><span class="keyword">Selectable marker</span>:</strong> Helps identify and eliminate non-transformants and selectively permit the growth of transformants. Examples for <strong><em>E. coli</em></strong> include genes conferring resistance to antibiotics like ampicillin, chloramphenicol, tetracycline, or kanamycin.</li>
+      <li><strong><span class="keyword">Cloning sites</span>:</strong> Recognition sites for restriction enzymes where foreign DNA is ligated. Single or very few recognition sites are preferred. For example, in vector <strong><span class="keyword">pBR322</span></strong>, foreign DNA can be ligated at the <em>Bam</em>H I site of the tetracycline resistance gene.</li>
+      <li><strong><span class="keyword">Insertional Inactivation</span>:</strong> A selection method where a recombinant DNA is inserted within the coding sequence of an enzyme (like <span class="keyword">&beta;-galactosidase</span>), inactivating the gene. Recombinants do not produce color in the presence of a chromogenic substrate, whereas non-recombinants form blue colonies.</li>
+      <li><strong>Vectors for Plants and Animals:</strong>
+        <ul>
+          <li><strong>Plants:</strong> The tumor-inducing (<span class="keyword">Ti plasmid</span>) of <strong><em>Agrobacterium tumefaciens</em></strong> has been modified into a non-pathogenic cloning vector to deliver genes of interest.</li>
+          <li><strong>Animals:</strong> <span class="keyword">Retroviruses</span> have been disarmed and are used to deliver desirable genes into animal cells.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>4. Competent Host (For Transformation)</h3></summary>
+    <p>Since DNA is hydrophilic, it cannot pass through cell membranes. Cells must be made "competent" to take up DNA using various methods:</p>
+    <ul>
+      <li><strong>Chemical Treatment:</strong> Treating bacterial cells with a specific concentration of a divalent cation (such as calcium) followed by <span class="keyword">heat shock</span> (incubating on ice, then briefly at 42&deg;C, and back on ice).</li>
+      <li><strong><span class="keyword">Micro-injection</span>:</strong> Recombinant DNA is directly injected into the nucleus of an animal cell.</li>
+      <li><strong><span class="keyword">Biolistics or Gene Gun</span>:</strong> Cells are bombarded with high-velocity micro-particles of gold or tungsten coated with DNA (suitable for plants).</li>
+      <li><strong>Disarmed Pathogen Vectors:</strong> Allowed to infect the cell and transfer the recombinant DNA.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Processes of Recombinant DNA Technology</summary>
+  <p>Recombinant DNA technology involves a sequence of highly controlled steps.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>1. Isolation of the Genetic Material (DNA)</h3></summary>
+    <p>To obtain pure DNA free from other macromolecules, cells are treated with specific enzymes:</p>
+    <ul>
+      <li><strong><span class="keyword">Lysozyme</span>:</strong> For bacteria.</li>
+      <li><strong><span class="keyword">Cellulase</span>:</strong> For plant cells.</li>
+      <li><strong><span class="keyword">Chitinase</span>:</strong> For fungi.</li>
+      <li><strong>RNA and Protein Removal:</strong> Treated with <span class="keyword">ribonuclease</span> and <span class="keyword">protease</span> respectively.</li>
+      <li><strong>Precipitation:</strong> Purified DNA precipitates out as fine threads after adding chilled ethanol and is removed by <span class="keyword">spooling</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2. Cutting of DNA &amp; Amplification using PCR</h3></summary>
+    <p>DNA is cut at specific locations using restriction enzymes, and the gene of interest is amplified using <span class="keyword">Polymerase Chain Reaction (PCR)</span>.</p>
+    <p><strong>Three Steps of PCR:</strong></p>
+    <ol>
+      <li><strong><span class="keyword">Denaturation</span>:</strong> High temperature separates the double-stranded DNA.</li>
+      <li><strong><span class="keyword">Annealing</span>:</strong> Two sets of primers bind to the single-stranded DNA templates.</li>
+      <li><strong><span class="keyword">Extension</span>:</strong> Thermostable <span class="keyword">Taq polymerase</span> (isolated from the bacterium <strong><em>Thermus aquaticus</em></strong>) extends the primers using deoxynucleotides.</li>
+    </ol>
+    <p>Repeated cycles can amplify the DNA segment approximately 1 billion times.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>3. Insertion, Expression &amp; Bioreactors</h3></summary>
+    <ul>
+      <li><strong>Insertion:</strong> Recombinant DNA is introduced into the host cell (e.g., using ampicillin resistance as a selectable marker).</li>
+      <li><strong><span class="keyword">Recombinant Protein</span>:</strong> Any protein-encoding gene expressed in a heterologous host.</li>
+      <li><strong><span class="keyword">Bioreactors</span>:</strong> Large vessels (100&ndash;1000 liters) used for large-scale production of biological products under optimal conditions (temperature, pH, substrate, salts, vitamins, oxygen).</li>
+      <li><strong>Types of Bioreactors:</strong>
+        <ul>
+          <li><strong>Simple stirred-tank bioreactor:</strong> Facilitates even mixing and oxygen availability.</li>
+          <li><strong>Sparged stirred-tank bioreactor:</strong> Sterile air bubbles are sparged to increase the surface area for oxygen transfer.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>4. Downstream Processing</h3></summary>
+    <p>The processes that occur after the biosynthetic stage to prepare the product for marketing:</p>
+    <ul>
+      <li><strong><span class="keyword">Separation</span></strong> and <strong><span class="keyword">purification</span></strong> of the product.</li>
+      <li>Formulation with suitable preservatives.</li>
+      <li>Clinical trials (especially for drugs) and strict quality control testing.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-08-microbes-in-human-welfare.html";
+      } else {
+        window.location.href = "12-chapter-10-biotechnology-and-its-applications.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
