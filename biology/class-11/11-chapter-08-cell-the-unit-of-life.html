@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 8: Chapter 8: Cell: The Unit of Life</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 8: Chapter 8: Cell: The Unit of Life</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction to Cell & Cell Theory</summary>
+  <p>All organisms are composed of cells. Some are single-celled (<span class="keyword">unicellular organisms</span>) capable of independent existence and performing essential life functions, while others are composed of many cells (<span class="keyword">multicellular organisms</span>).</p>
+  
+  <details class="sub-topic">
+    <summary><h3>What is a Cell?</h3></summary>
+    <ul>
+      <li>The cell is the fundamental structural and functional unit of all living organisms.</li>
+      <li><span class="keyword">Antonie Von Leeuwenhoek</span> first saw and described a live cell.</li>
+      <li><span class="keyword">Robert Brown</span> later discovered the nucleus.</li>
+      <li>The invention of the microscope and electron microscope revealed structural details of the cell.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Cell Theory</h3></summary>
+    <ul>
+      <li>In 1838, <span class="keyword">Matthias Schleiden</span> (German botanist) observed that all plants are composed of different kinds of cells which form plant tissues.</li>
+      <li>In 1839, <span class="keyword">Theodore Schwann</span> (German zoologist) studied animal cells and reported a thin outer layer now known as the <span class="keyword">plasma membrane</span>. He also concluded that the presence of a <span class="keyword">cell wall</span> is a unique character of plant cells.</li>
+      <li>Schwann proposed the hypothesis that the bodies of animals and plants are composed of cells and products of cells.</li>
+      <li><span class="keyword">Rudolf Virchow</span> (1855) first explained that cells divide and new cells are formed from pre-existing cells (<em>Omnis cellula-e cellula</em>).</li>
+      <li><strong>Modern Cell Theory:</strong>
+        <ol>
+          <li>All living organisms are composed of cells and products of cells.</li>
+          <li>All cells arise from pre-existing cells.</li>
+        </ol>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>An Overview of Cell</h3></summary>
+    <ul>
+      <li>Inside each cell is a dense membrane-bound structure called the <span class="keyword">nucleus</span>, which contains chromosomes and genetic material (DNA).</li>
+      <li>Cells with membrane-bound nuclei are <span class="keyword">eukaryotic</span>, while those lacking a membrane-bound nucleus are <span class="keyword">prokaryotic</span>.</li>
+      <li>The <span class="keyword">cytoplasm</span> is a semi-fluid matrix occupying the cell volume, serving as the main arena for cellular activities.</li>
+      <li><span class="keyword">Ribosomes</span> are non-membrane bound organelles found in all cells (cytoplasm, chloroplasts, mitochondria, and on rough ER).</li>
+      <li>Animal cells contain another non-membrane bound organelle called the <span class="keyword">centrosome</span>, which helps in cell division.</li>
+      <li><strong>Cell Sizes:</strong>
+        <ul>
+          <li>Smallest cells: <span class="keyword">Mycoplasmas</span> (0.3 µm in length).</li>
+          <li>Bacteria: 3 to 5 µm.</li>
+          <li>Largest isolated single cell: Egg of an ostrich.</li>
+          <li>Human red blood cells: About 7.0 µm in diameter.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Prokaryotic Cells</summary>
+  <p>Prokaryotic cells are represented by bacteria, blue-green algae, mycoplasma, and PPLO (Pleuro Pneumonia Like Organisms). They are generally smaller and multiply more rapidly than eukaryotic cells.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Cell Envelope and its Modifications</h3></summary>
+    <ul>
+      <li>The cell envelope consists of a tightly bound three-layered structure: outermost <span class="keyword">glycocalyx</span>, followed by the <span class="keyword">cell wall</span>, and the <span class="keyword">plasma membrane</span>.</li>
+      <li>Based on staining response (Gram stain), bacteria are classified into <span class="keyword">Gram positive</span> and <span class="keyword">Gram negative</span>.</li>
+      <li>The glycocalyx can be a loose sheath called the <span class="keyword">slime layer</span> or a thick and tough layer called the <span class="keyword">capsule</span>.</li>
+      <li>The cell wall provides structural support to prevent the bacterium from bursting or collapsing.</li>
+      <li>The plasma membrane is selectively permeable and structurally similar to that of eukaryotes.</li>
+      <li>A special membranous structure called the <span class="keyword">mesosome</span> is formed by extensions of the plasma membrane (vesicles, tubules, lamellae) into the cell. It helps in cell wall formation, DNA replication, respiration, secretion, and increasing surface area.</li>
+      <li>Some prokaryotes (like cyanobacteria) have membranous extensions containing pigments called <span class="keyword">chromatophores</span>.</li>
+      <li>Bacterial flagella are composed of three parts: <span class="keyword">filament</span>, <span class="keyword">hook</span>, and <span class="keyword">basal body</span>.</li>
+      <li>Surface structures not involved in motility: <span class="keyword">pili</span> (tubular proteins) and <span class="keyword">fimbriae</span> (bristle-like fibres for attachment).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Ribosomes and Inclusion Bodies</h3></summary>
+    <ul>
+      <li>Prokaryotic ribosomes are associated with the plasma membrane, sized about 15 nm by 20 nm, and are of the <span class="keyword">70S</span> type (made of 50S and 30S subunits).</li>
+      <li>Several ribosomes may attach to a single mRNA to form a chain called <span class="keyword">polyribosomes</span> or <span class="keyword">polysome</span>.</li>
+      <li><span class="keyword">Inclusion bodies</span> are non-membrane bound reserve materials stored free in the cytoplasm (e.g., phosphate granules, cyanophycean granules, glycogen granules, and gas vacuoles).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Eukaryotic Cells - Membranes & Walls</summary>
+  <p>Eukaryotes include protists, plants, animals, and fungi. They exhibit extensive compartmentalisation of cytoplasm through membrane-bound organelles.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Cell Membrane</h3></summary>
+    <ul>
+      <li>Composed mainly of lipids (arranged in a bilayer with polar heads outwards and hydrophobic tails inwards) and proteins.</li>
+      <li>In human erythrocytes, the membrane has approximately 52% protein and 40% lipids.</li>
+      <li>Membrane proteins are classified as <span class="keyword">peripheral</span> (on the surface) or <span class="keyword">integral</span> (partially or totally buried).</li>
+      <li>The widely accepted structure is the <span class="keyword">Fluid Mosaic Model</span> proposed by Singer and Nicolson (1972).</li>
+      <li>The quasi-fluid nature of lipids enables lateral movement of proteins, measured as membrane fluidity.</li>
+      <li><strong>Transport Mechanisms:</strong>
+        <ul>
+          <li><span class="keyword">Passive transport</span>: Movement of molecules along the concentration gradient without energy requirement (e.g., simple diffusion, osmosis).</li>
+          <li><span class="keyword">Active transport</span>: Energy-dependent process (utilising ATP) transporting molecules against their concentration gradient (e.g., $Na^+/K^+$ Pump).</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Cell Wall</h3></summary>
+    <ul>
+      <li>A non-living rigid structure forming an outer covering for the plasma membrane of fungi and plants.</li>
+      <li>Algae cell wall: Made of cellulose, galactans, mannans, and minerals like calcium carbonate.</li>
+      <li>Plant cell wall: Consists of cellulose, hemicellulose, pectins, and proteins.</li>
+      <li>The <span class="keyword">primary wall</span> of a young plant cell is capable of growth, which diminishes as the cell matures, forming the <span class="keyword">secondary wall</span> on the inner side.</li>
+      <li>The <span class="keyword">middle lamella</span> is a layer of calcium pectate that glues neighbouring cells together.</li>
+      <li>The cell wall and middle lamellae may be traversed by <span class="keyword">plasmodesmata</span> which connect the cytoplasm of neighbouring cells.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">The Endomembrane System</summary>
+  <p>Organelles whose functions are coordinated are considered together as the endomembrane system. This includes the Endoplasmic Reticulum, Golgi complex, Lysosomes, and Vacuoles.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Endoplasmic Reticulum (ER)</h3></summary>
+    <ul>
+      <li>A network of tiny tubular structures scattered in the cytoplasm, dividing the intracellular space into luminal (inside ER) and extra-luminal (cytoplasm) compartments.</li>
+      <li><span class="keyword">Rough Endoplasmic Reticulum (RER)</span>: Bears ribosomes on its surface; actively involved in protein synthesis and secretion.</li>
+      <li><span class="keyword">Smooth Endoplasmic Reticulum (SER)</span>: Lacks ribosomes; major site for lipid and steroidal hormone synthesis.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Golgi Apparatus</h3></summary>
+    <ul>
+      <li>First observed by <span class="keyword">Camillo Golgi</span> (1898).</li>
+      <li>Consists of flat, disc-shaped sacs or <span class="keyword">cisternae</span> (0.5 µm to 1.0 µm diameter) stacked parallel to each other.</li>
+      <li>Features a distinct convex <em>cis</em> (forming) face and concave <em>trans</em> (maturing) face.</li>
+      <li>Principally performs the packaging of materials to be delivered to intracellular targets or secreted outside the cell.</li>
+      <li>Important site for the formation of <span class="keyword">glycoproteins</span> and <span class="keyword">glycolipids</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Lysosomes & Vacuoles</h3></summary>
+    <ul>
+      <li><strong>Lysosomes:</strong> Membrane-bound vesicular structures formed by packaging in the Golgi apparatus. Rich in hydrolytic enzymes (hydrolases - lipases, proteases, carbohydrases) active at acidic pH.</li>
+      <li><strong>Vacuoles:</strong> Membrane-bound space in the cytoplasm bound by a single membrane called <span class="keyword">tonoplast</span>. In plant cells, it can occupy up to 90% of the volume.</li>
+      <li>In plants, the tonoplast facilitates transport of ions against concentration gradients into the vacuole.</li>
+      <li>In <em>Amoeba</em>, the <span class="keyword">contractile vacuole</span> is important for osmoregulation and excretion.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Other Major Eukaryotic Organelles</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Mitochondria</h3></summary>
+    <ul>
+      <li>Double membrane-bound "power houses" of the cell, responsible for aerobic respiration and ATP generation.</li>
+      <li>Sausage-shaped or cylindrical, with a diameter of 0.2-1.0 µm and length of 1.0-4.1 µm.</li>
+      <li>The inner membrane forms infoldings called <span class="keyword">cristae</span> towards the matrix to increase surface area.</li>
+      <li>The matrix contains a single circular DNA molecule, a few RNA molecules, 70S ribosomes, and divides by fission.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Plastids</h3></summary>
+    <ul>
+      <li>Found in all plant cells and euglenoids. Classified based on pigments:</li>
+      <li><span class="keyword">Chloroplasts</span>: Contain chlorophyll and carotenoid pigments for photosynthesis. Double-membrane bound; the space inside the inner membrane is the <span class="keyword">stroma</span>, containing organized flattened sacs called <span class="keyword">thylakoids</span> stacked into <span class="keyword">grana</span>.</li>
+      <li><span class="keyword">Chromoplasts</span>: Contain fat-soluble carotenoid pigments like carotene and xanthophylls, giving yellow, orange, or red colours.</li>
+      <li><span class="keyword">Leucoplasts</span>: Colourless plastids storing nutrients: <span class="keyword">amyloplasts</span> (starch), <span class="keyword">elaioplasts</span> (oils/fats), and <span class="keyword">aleuroplasts</span> (proteins).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Ribosomes & Cytoskeleton</h3></summary>
+    <ul>
+      <li><strong>Ribosomes:</strong> Granular structures composed of RNA and proteins, first observed by George Palade (1953). Eukaryotic ribosomes are <span class="keyword">80S</span> (composed of 60S and 40S subunits).</li>
+      <li><strong>Cytoskeleton:</strong> An elaborate network of filamentous proteinaceous structures (microtubules, microfilaments, intermediate filaments) providing mechanical support, motility, and maintenance of cell shape.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Cilia, Flagella & Centrosome</h3></summary>
+    <ul>
+      <li><strong>Cilia and Flagella:</strong> Hair-like outgrowths of the cell membrane. Their core (<span class="keyword">axoneme</span>) shows a <span class="keyword">9+2 array</span> of microtubules (nine peripheral doublets and one central pair).</li>
+      <li><strong>Centrosome:</strong> Contains two cylindrical structures called <span class="keyword">centrioles</span> lying perpendicular to each other with a cartwheel organization. They form the basal body of cilia/flagella and spindle fibres.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Nucleus & Chromosomes</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Nucleus Structure</h3></summary>
+    <ul>
+      <li>First described by <span class="keyword">Robert Brown</span> (1831). Stained material named <span class="keyword">chromatin</span> by Flemming.</li>
+      <li>The nuclear envelope consists of two parallel membranes with a <span class="keyword">perinuclear space</span> (10 to 50 nm) and is interrupted by <span class="keyword">nuclear pores</span>.</li>
+      <li>The nucleoplasm contains the <span class="keyword">nucleolus</span> (site for active ribosomal RNA synthesis) and chromatin.</li>
+      <li>Chromatin contains DNA, basic proteins called <span class="keyword">histones</span>, non-histone proteins, and RNA.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Chromosomes</h3></summary>
+    <ul>
+      <li>Every chromosome has a primary constriction or <span class="keyword">centromere</span> with disc-shaped structures called <span class="keyword">kinetochores</span> on its sides.</li>
+      <li><strong>Types of Chromosomes based on Centromere Position:</strong>
+        <ul>
+          <li><span class="keyword">Metacentric</span>: Centromere in the middle, forming two equal arms.</li>
+          <li><span class="keyword">Sub-metacentric</span>: Centromere slightly away from the middle, resulting in one shorter and one longer arm.</li>
+          <li><span class="keyword">Acrocentric</span>: Centromere situated close to its end, forming one extremely short and one very long arm.</li>
+          <li><span class="keyword">Telocentric</span>: Has a terminal centromere.</li>
+        </ul>
+      </li>
+      <li>Some chromosomes have non-staining secondary constrictions forming a constant fragment called a <span class="keyword">satellite</span>.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-07-structural-organisation-in-animals.html";
+      } else {
+        window.location.href = "11-chapter-09-biomolecules.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
