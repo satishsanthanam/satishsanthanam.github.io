@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 11: Photosynthesis in Higher Plants</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 11: Photosynthesis in Higher Plants</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction &amp; Historical Milestones</summary>
+  <details class="sub-topic">
+    <summary><h3>Overview of Photosynthesis</h3></summary>
+    <p>Photosynthesis is a vital <span class="keyword">physico-chemical process</span> by which green plants use light energy to drive the synthesis of organic compounds. It is the primary source of all food on Earth and is responsible for releasing oxygen into the atmosphere.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Key Historical Experiments</h3></summary>
+    <ul>
+      <li><strong>Joseph Priestley (1770):</strong> Revealed the essential role of air in plant growth. Using a bell jar, candle, and mouse, he discovered that plants restore oxygen to the air. He discovered oxygen in 1774.</li>
+      <li><strong>Jan Ingenhousz (1730-1799):</strong> Showed that sunlight is essential for this purification process. He observed oxygen bubbles forming around the green parts of aquatic plants only in the presence of light.</li>
+      <li><strong>Julius von Sachs (1854):</strong> Provided evidence that growing plants produce glucose, which is stored as starch, and that chlorophyll is located in special cellular bodies (<span class="keyword">chloroplasts</span>).</li>
+      <li><strong>T.W. Engelmann (1843-1909):</strong> Used a prism to split light and illuminated green algae (<em>Cladophora</em>) in an aerobic bacterial suspension. He plotted the first <span class="keyword">action spectrum</span> of photosynthesis, showing maximum activity in blue and red light.</li>
+      <li><strong>Cornelius van Niel (1897-1985):</strong> Demonstrated that photosynthesis is a light-dependent reaction where hydrogen from an oxidisable compound reduces carbon dioxide. He proved that oxygen evolved by green plants comes from water ($H_2O$), not carbon dioxide ($CO_2$), using purple and green sulphur bacteria ($H_2S$ as donor).</li>
+    </ul>
+    <p>The overall balanced chemical equation is:</p>
+    <p>$$6CO_2 + 12H_2O \xrightarrow{\text{Light}} C_6H_{12}O_6 + 6H_2O + 6O_2$$</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Site of Photosynthesis &amp; Pigments</summary>
+  <details class="sub-topic">
+    <summary><h3>Chloroplast Structure &amp; Division of Labor</h3></summary>
+    <p>Photosynthesis occurs in the green leaves and other green parts of plants, specifically within the <span class="keyword">mesophyll cells</span> which contain a large number of chloroplasts. Within the chloroplast, there is a clear division of labor:</p>
+    <ul>
+      <li><strong>Membranous System:</strong> Consists of <span class="keyword">grana</span>, <span class="keyword">stroma lamellae</span>, and fluid <span class="keyword">stroma</span>. It is responsible for trapping light energy and synthesizing ATP and NADPH (<span class="keyword">light reactions</span>).</li>
+      <li><strong>Stroma Matrix:</strong> Site of enzymatic reactions that synthesize sugar, which in turn forms starch (<span class="keyword">dark reactions</span> / biosynthetic phase).</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Photosynthetic Pigments</h3></summary>
+    <p>Chromatographic separation reveals that leaf color is due to four distinct pigments:</p>
+    <ul>
+      <li><span class="keyword">Chlorophyll a</span> (bright or blue-green): The chief pigment associated with photosynthesis.</li>
+      <li><span class="keyword">Chlorophyll b</span> (yellow-green).</li>
+      <li><span class="keyword">Xanthophylls</span> (yellow).</li>
+      <li><span class="keyword">Carotenoids</span> (yellow to yellow-orange).</li>
+    </ul>
+    <p>Accessory pigments (Chl b, xanthophylls, carotenoids) absorb light at different wavelengths, transfer energy to Chl a, and protect it from <span class="keyword">photo-oxidation</span>.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">The Light Reaction (Photochemical Phase)</summary>
+  <details class="sub-topic">
+    <summary><h3>Light Harvesting Complexes (LHC)</h3></summary>
+    <p>The light reactions include light absorption, water splitting, oxygen release, and the formation of high-energy chemical intermediates (ATP and NADPH). Pigments are organized into two discrete photochemical <span class="keyword">light harvesting complexes (LHC)</span> within <span class="keyword">Photosystem I (PS I)</span> (reaction center $P_{700}$) and <span class="keyword">Photosystem II (PS II)</span> (reaction center $P_{680}$).</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Electron Transport &amp; The Z-Scheme</h3></summary>
+    <p>When PS II absorbs red light at 680 nm, electrons become excited and jump into an orbit farther from the atomic nucleus. These electrons are picked up by an electron acceptor and passed through an electron transport system consisting of cytochromes to PS I.</p>
+    <p>Simultaneously, electrons in the reaction center of PS I are excited by red light of 700 nm and transferred to another acceptor with greater redox potential. These electrons are then moved downhill to reduce $NADP^+$ to $NADPH + H^+$. This continuous pathway is called the <span class="keyword">Z-scheme</span> due to its characteristic shape on a redox potential scale.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Splitting of Water</h3></summary>
+    <p>To supply electrons continuously to PS II, water is split on the inner side of the thylakoid membrane:</p>
+    <p>$$2H_2O \rightarrow 4H^+ + O_2 + 4e^-$$</p>
+    <p>This process releases oxygen as a byproduct and accumulates protons ($H^+$) inside the thylakoid lumen.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Cyclic and Non-cyclic Photophosphorylation</h3></summary>
+    <ul>
+      <li><strong>Non-cyclic Photophosphorylation:</strong> Occurs when PS II and PS I work in series. It results in the synthesis of both ATP and NADPH.</li>
+      <li><strong>Cyclic Photophosphorylation:</strong> Occurs when only PS I is functional (typically in stroma lamellae membranes, which lack PS II and NADP reductase). The excited electron is cycled back to the PS I complex through the electron transport chain, resulting only in the synthesis of ATP (no NADPH is formed). This occurs when only light of wavelengths beyond 680 nm is available.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Chemiosmotic Hypothesis</h3></summary>
+    <p>ATP synthesis is linked to the development of a proton gradient across the thylakoid membrane. Protons accumulate in the lumen due to water splitting, proton translocation via plastoquinone, and the consumption of stroma protons during $NADP^+$ reduction.</p>
+    <p>This gradient is broken down as protons diffuse back to the stroma through the transmembrane channel of <span class="keyword">ATP synthase</span> ($CF_0$ and $CF_1$). This movement releases enough energy to catalyze the synthesis of ATP from ADP and inorganic phosphate.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">The Biosynthetic Phase (Dark Reaction)</summary>
+  <details class="sub-topic">
+    <summary><h3>The Calvin Cycle ($C_3$ Pathway)</h3></summary>
+    <p>The products of the light reaction (ATP and NADPH) are used to drive the synthesis of sugars from $CO_2$ and $H_2O$. The primary $CO_2$ acceptor is a 5-carbon ketose sugar, <span class="keyword">ribulose-1,5-bisphosphate (RuBP)</span>, and the first stable product is a 3-carbon acid, <span class="keyword">3-phosphoglyceric acid (PGA)</span>. The cycle proceeds in three stages:</p>
+    <ol>
+      <li><strong>Carboxylation:</strong> Fixation of $CO_2$ into RuBP, catalyzed by the enzyme <span class="keyword">RuBisCO</span> to form two molecules of 3-PGA.</li>
+      <li><strong>Reduction:</strong> Utilization of 2 ATP and 2 NADPH per $CO_2$ fixed to form triose phosphates, which eventually yield glucose.</li>
+      <li><strong>Regeneration:</strong> Regeneration of the $CO_2$ acceptor RuBP, requiring 1 ATP.</li>
+    </ol>
+    <p>To synthesize one molecule of glucose, 6 turns of the cycle are required:</p>
+    <ul>
+      <li><strong>In:</strong> $6 CO_2 + 18 ATP + 12 NADPH$</li>
+      <li><strong>Out:</strong> $1 \text{ Glucose} + 18 ADP + 12 NADP^+$</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>The $C_4$ Pathway (Hatch and Slack Pathway)</h3></summary>
+    <p>Plants adapted to dry tropical regions use the $C_4$ pathway. They exhibit <span class="keyword">Kranz anatomy</span>, characterized by large bundle sheath cells around vascular bundles that contain many chloroplasts and lack intercellular spaces.</p>
+    <ul>
+      <li>The primary $CO_2$ acceptor is <span class="keyword">phosphoenolpyruvate (PEP)</span> (3-carbon) in mesophyll cells, catalyzed by <span class="keyword">PEP carboxylase (PEPcase)</span>.</li>
+      <li>The first stable product is <span class="keyword">oxaloacetic acid (OAA)</span> (4-carbon).</li>
+      <li>OAA is converted to malic or aspartic acid and transported to bundle sheath cells, where it is decarboxylated to release $CO_2$ (which enters the Calvin cycle) and a 3-carbon molecule that returns to the mesophyll to regenerate PEP.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Photorespiration</h3></summary>
+    <p>A wasteful process in $C_3$ plants where <span class="keyword">RuBisCO</span> binds with $O_2$ instead of $CO_2$ under high oxygen concentrations. RuBP combines with $O_2$ to form one molecule of PGA and one molecule of phosphoglycolate ($C_2$ compound). This pathway does not synthesize sugar, ATP, or NADPH, but instead consumes ATP and releases $CO_2$.</p>
+    <p>$C_4$ plants lack photorespiration because they have a mechanism that increases the concentration of $CO_2$ at the RuBisCO enzyme site, ensuring high productivity and tolerance to high temperatures.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Factors Affecting Photosynthesis</summary>
+  <details class="sub-topic">
+    <summary><h3>Blackman's Law of Limiting Factors</h3></summary>
+    <p>Formulated in 1905, this law states: <em>"If a chemical process is affected by more than one factor, then its rate will be determined by the factor which is nearest to its minimal value."</em></p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Key Limiting Factors</h3></summary>
+    <ul>
+      <li><strong>Light:</strong> There is a linear relationship between incident light and $CO_2$ fixation at low intensities. Light saturation occurs at 10% of full sunlight. Very high light intensities can cause chlorophyll breakdown.</li>
+      <li><strong>Carbon Dioxide Concentration:</strong> The major limiting factor. Atmospheric levels are 0.03-0.04%. Increasing concentration up to 0.05% increases fixation rates. $C_4$ plants show saturation at 360 $\mu L L^{-1}$, while $C_3$ plants respond up to 450 $\mu L L^{-1}$.</li>
+      <li><strong>Temperature:</strong> Dark reactions are enzymatic and highly temperature-controlled. $C_4$ plants have a higher temperature optimum than $C_3$ plants.</li>
+      <li><strong>Water:</strong> Indirectly affects photosynthesis. Water stress causes stomatal closure (reducing $CO_2$ availability) and leaf wilting (reducing surface area).</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-10-cell-cycle-and-cell-division.html";
+      } else {
+        window.location.href = "11-chapter-12-respiration-in-plants.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
