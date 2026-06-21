@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 4: Animal Kingdom</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 4: Animal Kingdom</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Basis of Classification</summary><p>Inspite of differences in structure and form of different animals, there are fundamental features common to various individuals in relation to the arrangement of cells, body symmetry, nature of coelom, and patterns of organ systems.</p><details class='sub-topic'><summary><h3>Levels of Organisation</h3></summary><ul><li><span class='keyword'>Cellular Level</span>: Cells are arranged as loose cell aggregates. Division of labour occurs among cells. Example: Sponges (<span class='keyword'>Porifera</span>).</li><li><span class='keyword'>Tissue Level</span>: Cells performing the same function are arranged into tissues. Example: Coelenterates.</li><li><span class='keyword'>Organ Level</span>: Tissues are grouped together to form organs, each specialised for a particular function. Example: Platyhelminthes.</li><li><span class='keyword'>Organ System Level</span>: Organs associate to form functional systems, each concerned with a specific physiological function. Examples: Annelids, Arthropods, Molluscs, Echinoderms, and Chordates.</li><li><span class='keyword'>Digestive System Patterns</span>:<ul><li><strong>Incomplete</strong>: Has only a single opening to the outside of the body that serves as both mouth and anus (e.g., Platyhelminthes).</li><li><strong>Complete</strong>: Has two distinct openings, a mouth and an anus.</li></ul></li><li><span class='keyword'>Circulatory System Patterns</span>:<ul><li><strong>Open type</strong>: Blood is pumped out of the heart and cells/tissues are directly bathed in it.</li><li><strong>Closed type</strong>: Blood is circulated through a series of vessels of varying diameters (arteries, veins, and capillaries).</li></ul></li></ul></details><details class='sub-topic'><summary><h3>Symmetry</h3></summary><ul><li><span class='keyword'>Asymmetrical</span>: Any plane that passes through the centre does not divide the body into equal halves. Example: Most sponges.</li><li><span class='keyword'>Radial Symmetry</span>: Any plane passing through the central axis of the body divides the organism into two identical halves. Examples: Coelenterates, Ctenophores, and Echinoderms.</li><li><span class='keyword'>Bilateral Symmetry</span>: The body can be divided into identical left and right halves in only one plane. Examples: Annelids, Arthropods, etc.</li></ul></details><details class='sub-topic'><summary><h3>Diploblastic and Triploblastic Organisation</h3></summary><ul><li><span class='keyword'>Diploblastic</span>: Cells are arranged in two embryonic layers: an external <span class='keyword'>ectoderm</span> and an internal <span class='keyword'>endoderm</span>, with an undifferentiated layer called <span class='keyword'>mesoglea</span> in between. Example: Coelenterates.</li><li><span class='keyword'>Triploblastic</span>: Developing embryo has a third germinal layer, the <span class='keyword'>mesoderm</span>, in between the ectoderm and endoderm. Examples: Platyhelminthes to Chordates.</li></ul></details><details class='sub-topic'><summary><h3>Coelom</h3></summary><p>The presence or absence of a cavity between the body wall and the gut wall is key to classification.</p><ul><li><span class='keyword'>Coelomates</span>: Possess a true body cavity (<span class='keyword'>coelom</span>) lined by mesoderm. Examples: Annelids, Molluscs, Arthropods, Echinoderms, Hemichordates, and Chordates.</li><li><span class='keyword'>Pseudocoelomates</span>: The body cavity is not lined by mesoderm; instead, mesoderm is present as scattered pouches. Example: Aschelminthes.</li><li><span class='keyword'>Acoelomates</span>: The body cavity is completely absent. Example: Platyhelminthes.</li></ul></details><details class='sub-topic'><summary><h3>Segmentation & Notochord</h3></summary><ul><li><span class='keyword'>Metamerism</span>: External and internal division of the body into segments with serial repetition of at least some organs (e.g., Earthworm).</li><li><span class='keyword'>Notochord</span>: A mesodermally derived rod-like structure formed on the dorsal side during embryonic development in some animals. Animals with a notochord are <span class='keyword'>chordates</span>; those without are <span class='keyword'>non-chordates</span> (Porifera to Echinoderms).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Classification of Animals (Non-Chordates)</summary><details class='sub-topic'><summary><h3>Phylum - Porifera</h3></summary><ul><li>Commonly known as <strong>sponges</strong>; mostly marine and asymmetrical.</li><li>Exhibit <span class='keyword'>cellular level of organisation</span>.</li><li><span class='keyword'>Water Transport/Canal System</span>: Water enters through minute pores (<span class='keyword'>ostia</span>) into a central cavity (<span class='keyword'>spongocoel</span>) and exits through the <span class='keyword'>osculum</span>. Helps in food gathering, respiratory exchange, and waste removal.</li><li>Lined by collar cells (<span class='keyword'>choanocytes</span>).</li><li>Skeleton made of <span class='keyword'>spicules</span> or <span class='keyword'>spongin fibres</span>.</li><li>Hermaphrodite; reproduce asexually by fragmentation and sexually by gametes. Fertilisation is internal with indirect development.</li><li>Examples: <em>Sycon</em> (Scypha), <em>Spongilla</em> (Fresh water sponge), and <em>Euspongia</em> (Bath sponge).</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Coelenterata (Cnidaria)</h3></summary><ul><li>Aquatic, mostly marine, sessile or free-swimming, radially symmetrical.</li><li>Possess stinging capsules or cnidoblasts (<span class='keyword'>cnidocytes</span>) on tentacles for anchorage, defense, and prey capture.</li><li>Tissue level of organisation; diploblastic.</li><li>Central gastro-vascular cavity with a single opening (mouth on <span class='keyword'>hypostome</span>).</li><li>Two basic body forms:<ul><li><span class='keyword'>Polyp</span>: Sessile and cylindrical (e.g., <em>Hydra</em>, <em>Adamsia</em>).</li><li><span class='keyword'>Medusa</span>: Umbrella-shaped and free-swimming (e.g., <em>Aurelia</em> / jelly fish).</li></ul></li><li><span class='keyword'>Metagenesis</span> (Alternation of generation): Polyps produce medusae asexually, and medusae form polyps sexually (e.g., <em>Obelia</em>).</li><li>Examples: <em>Physalia</em> (Portuguese man-of-war), <em>Adamsia</em> (Sea anemone), <em>Pennatula</em> (Sea-pen), <em>Gorgonia</em> (Sea-fan), and <em>Meandrina</em> (Brain coral).</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Ctenophora</h3></summary><ul><li>Commonly known as <strong>sea walnuts</strong> or <strong>comb jellies</strong>; exclusively marine, radially symmetrical, diploblastic.</li><li>Body bears eight external rows of ciliated <span class='keyword'>comb plates</span> for locomotion.</li><li>Exhibit prominent <span class='keyword'>bioluminescence</span> (emission of light).</li><li>Sexes are not separate; reproduction is exclusively sexual. Fertilisation is external with indirect development.</li><li>Examples: <em>Pleurobrachia</em> and <em>Ctenoplana</em>.</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Platyhelminthes</h3></summary><ul><li>Dorso-ventrally flattened body, commonly called <strong>flatworms</strong>.</li><li>Mostly endoparasites; bilaterally symmetrical, triploblastic, acoelomate with organ level of organisation.</li><li>Possess hooks and suckers in parasitic forms.</li><li>Specialised <span class='keyword'>flame cells</span> help in osmoregulation and excretion.</li><li>Sexes are not separate; fertilisation is internal with many larval stages. High regeneration capacity in <em>Planaria</em>.</li><li>Examples: <em>Taenia</em> (Tapeworm), <em>Fasciola</em> (Liver fluke).</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Aschelminthes</h3></summary><ul><li>Circular in cross-section, commonly called <strong>roundworms</strong>.</li><li>Organ-system level, bilaterally symmetrical, triploblastic, and pseudocoelomate.</li><li>Alimentary canal is complete with a well-developed <span class='keyword'>muscular pharynx</span>.</li><li>Sexes are separate (<span class='keyword'>dioecious</span>); females are often longer than males.</li><li>Examples: <em>Ascaris</em> (Roundworm), <em>Wuchereria</em> (Filaria worm), <em>Ancylostoma</em> (Hookworm).</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Annelida</h3></summary><ul><li>Aquatic or terrestrial; free-living or parasitic.</li><li>Organ-system level, bilateral symmetry, triploblastic, metamerically segmented, and coelomate.</li><li>Body surface marked into segments or <span class='keyword'>metameres</span>.</li><li>Possess longitudinal and circular muscles for locomotion. Aquatic forms like <em>Nereis</em> have lateral appendages called <span class='keyword'>parapodia</span> for swimming.</li><li>Excretory organs are <span class='keyword'>nephridia</span>.</li><li>Examples: <em>Nereis</em> (dioecious), <em>Pheretima</em> (Earthworm - monoecious), and <em>Hirudinaria</em> (Blood sucking leech - monoecious).</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Arthropoda</h3></summary><ul><li>The <strong>largest phylum</strong> of Animalia, including insects (over two-thirds of all named species).</li><li>Organ-system level, bilateral symmetry, triploblastic, segmented, and coelomate.</li><li>Body covered by a <span class='keyword'>chitinous exoskeleton</span>; divided into head, thorax, and abdomen.</li><li>Possess <span class='keyword'>jointed appendages</span>.</li><li>Respiratory organs: gills, book gills, book lungs, or tracheal system.</li><li>Circulatory system is of open type. Excretion via <span class='keyword'>malpighian tubules</span>.</li><li>Mostly dioecious, internal fertilisation, mostly oviparous.</li><li>Examples:<ul><li>Economically important: <em>Apis</em> (Honey bee), <em>Bombyx</em> (Silkworm), <em>Laccifer</em> (Lac insect).</li><li>Vectors: <em>Anopheles</em>, <em>Culex</em>, and <em>Aedes</em> mosquitoes.</li><li>Living fossil: <em>Limulus</em> (King crab).</li></ul></li></ul></details><details class='sub-topic'><summary><h3>Phylum - Mollusca</h3></summary><ul><li>The <strong>second largest</strong> animal phylum; terrestrial or aquatic.</li><li>Organ-system level, bilateral symmetry, triploblastic, and coelomate.</li><li>Body covered by a calcareous shell; unsegmented with a distinct head, muscular foot, and visceral hump.</li><li>A soft, spongy layer of skin forms a mantle over the visceral hump. The space between them is the mantle cavity, containing feather-like gills.</li><li>Mouth contains a file-like rasping organ for feeding called <span class='keyword'>radula</span>.</li><li>Examples: <em>Pila</em> (Apple snail), <em>Pinctada</em> (Pearl oyster), <em>Sepia</em> (Cuttlefish), <em>Octopus</em> (Devil fish).</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Echinodermata</h3></summary><ul><li>Spiny-bodied animals with an endoskeleton of calcareous ossicles; exclusively marine.</li><li>Adults are radially symmetrical, but larvae are bilaterally symmetrical. Triploblastic and coelomate.</li><li>Most distinctive feature: <span class='keyword'>water vascular system</span>, which helps in locomotion, capture/transport of food, and respiration.</li><li>Excretory system is absent. Sexes are separate; fertilisation is external.</li><li>Examples: <em>Asterias</em> (Star fish), <em>Echinus</em> (Sea urchin), <em>Antedon</em> (Sea lily), <em>Ophiura</em> (Brittle star).</li></ul></details><details class='sub-topic'><summary><h3>Phylum - Hemichordata</h3></summary><ul><li>Worm-like marine animals; earlier treated as a sub-phylum of Chordata.</li><li>Have a rudimentary structure in the collar region called <span class='keyword'>stomochord</span>.</li><li>Cylindrical body composed of an anterior <span class='keyword'>proboscis</span>, a <span class='keyword'>collar</span>, and a long <span class='keyword'>trunk</span>.</li><li>Open circulatory system; respiration through gills; excretion via proboscis gland.</li><li>Examples: <em>Balanoglossus</em> and <em>Saccoglossus</em>.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Phylum Chordata & Vertebrata</summary><p>Characterised fundamentally by the presence of a notochord, a dorsal hollow nerve cord, and paired pharyngeal gill slits.</p><details class='sub-topic'><summary><h3>Chordata Subphyla</h3></summary><ul><li><span class='keyword'>Urochordata (Tunicata)</span>: Notochord present only in larval tail. Examples: <em>Ascidia</em>, <em>Salpa</em>, <em>Doliolum</em>.</li><li><span class='keyword'>Cephalochordata</span>: Notochord extends from head to tail and is persistent throughout life. Example: <em>Branchiostoma</em> (Amphioxus or Lancelet).</li><li><span class='keyword'>Vertebrata</span>: Possess notochord during embryonic period; replaced by a cartilaginous or bony vertebral column in adults. <em>"All vertebrates are chordates but all chordates are not vertebrates."</em></li></ul></details><details class='sub-topic'><summary><h3>Class - Cyclostomata</h3></summary><ul><li>Ectoparasites on some fishes; jawless (<span class='keyword'>Agnatha</span>).</li><li>Elongated body with 6-15 pairs of gill slits. Sucking and circular mouth without jaws.</li><li>Devoid of scales and paired fins. Cranium and vertebral column are cartilaginous.</li><li>Marine but migrate to fresh water for spawning, after which they die. Larvae return to the ocean after metamorphosis.</li><li>Examples: <em>Petromyzon</em> (Lamprey) and <em>Myxine</em> (Hagfish).</li></ul></details><details class='sub-topic'><summary><h3>Class - Chondrichthyes</h3></summary><ul><li>Marine animals with streamlined bodies and a cartilaginous endoskeleton.</li><li>Notochord is persistent throughout life. Gill slits are separate and lack an operculum (gill cover).</li><li>Skin contains tough, minute <span class='keyword'>placoid scales</span>. Teeth are modified placoid scales.</li><li>Air bladder is absent; must swim constantly to avoid sinking.</li><li>Cold-blooded (<span class='keyword'>poikilothermous</span>). Heart is two-chambered.</li><li>Some possess electric organs (e.g., <em>Torpedo</em>) or poison stings (e.g., <em>Trygon</em>).</li><li>Examples: <em>Scoliodon</em> (Dog fish), <em>Pristis</em> (Saw fish), <em>Carcharodon</em> (Great white shark).</li></ul></details><details class='sub-topic'><summary><h3>Class - Osteichthyes</h3></summary><ul><li>Marine and fresh water fishes with a bony endoskeleton.</li><li>Four pairs of gills covered by an <span class='keyword'>operculum</span> on each side.</li><li>Skin covered with cycloid/ctenoid scales.</li><li><span class='keyword'>Air bladder</span> is present, which regulates buoyancy.</li><li>Heart is two-chambered; cold-blooded. Mostly oviparous with direct development.</li><li>Examples: <em>Exocoetus</em> (Flying fish), <em>Hippocampus</em> (Sea horse), <em>Labeo</em> (Rohu), <em>Catla</em> (Katla).</li></ul></details><details class='sub-topic'><summary><h3>Class - Amphibia</h3></summary><ul><li>Can live in both aquatic and terrestrial habitats. Most have two pairs of limbs.</li><li>Body divisible into head and trunk; skin is moist and lacks scales.</li><li>A <span class='keyword'>tympanum</span> represents the ear.</li><li>Alimentary, urinary, and reproductive tracts open into a common chamber called <span class='keyword'>cloaca</span>.</li><li>Respiration by gills, lungs, and skin. Heart is three-chambered (two auricles, one ventricle).</li><li>Examples: <em>Bufo</em> (Toad), <em>Rana</em> (Frog), <em>Hyla</em> (Tree frog), <em>Salamandra</em> (Salamander).</li></ul></details><details class='sub-topic'><summary><h3>Class - Reptilia</h3></summary><ul><li>Creeping or crawling mode of locomotion. Mostly terrestrial.</li><li>Body covered by dry and cornified skin, epidermal scales, or scutes.</li><li>Tympanum represents ear. Limbs, when present, are two pairs.</li><li>Heart is usually three-chambered, but <strong>four-chambered in crocodiles</strong>.</li><li>Poikilotherms. Snakes and lizards shed scales as skin cast.</li><li>Examples: <em>Chelone</em> (Turtle), <em>Testudo</em> (Tortoise), <em>Chameleon</em> (Tree lizard), <em>Crocodilus</em> (Crocodile), <em>Naja</em> (Cobra).</li></ul></details><details class='sub-topic'><summary><h3>Class - Aves</h3></summary><ul><li>Presence of feathers; most can fly (except flightless birds like Ostrich).</li><li>Possess a beak. Forelimbs are modified into wings. Hind limbs adapted for walking, swimming, or perching.</li><li>Long bones are hollow with air cavities (<span class='keyword'>pneumatic bones</span>).</li><li>Digestive tract has additional chambers: the crop and gizzard.</li><li>Heart is completely four-chambered. Warm-blooded (<span class='keyword'>homoiothermous</span>) animals.</li><li>Respiration by lungs; air sacs supplement respiration.</li><li>Examples: <em>Corvus</em> (Crow), <em>Columba</em> (Pigeon), <em>Psittacula</em> (Parrot), <em>Struthio</em> (Ostrich).</li></ul></details><details class='sub-topic'><summary><h3>Class - Mammalia</h3></summary><ul><li>Found in diverse habitats. Unique feature: presence of milk-producing <span class='keyword'>mammary glands</span>.</li><li>Skin possesses hair. External ears or <span class='keyword'>pinnae</span> are present.</li><li>Different types of teeth are present in the jaw (thecodont, heterodont).</li><li>Heart is four-chambered; homoiothermous. Respiration by lungs.</li><li>Mostly viviparous with direct development.</li><li>Examples:<ul><li>Oviparous: <em>Ornithorhynchus</em> (Platypus).</li><li>Viviparous: <em>Macropus</em> (Kangaroo), <em>Pteropus</em> (Flying fox), <em>Camelus</em> (Camel), <em>Panthera tigris</em> (Tiger).</li></ul></li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-03-plant-kingdom.html";
+      } else {
+        window.location.href = "11-chapter-05-morphology-of-flowering-plants.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

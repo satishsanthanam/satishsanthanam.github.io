@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 19: Chemical Coordination and Integration</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 19: Chemical Coordination and Integration</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">19.1 Endocrine Glands and Hormones</summary>
+  <p>The neural system provides rapid, point-to-point coordination, but it is short-lived and does not innervate all cells. Continuous cellular regulation is achieved through chemical coordination via hormones.</p>
+  <ul>
+    <li><strong>Endocrine Glands:</strong> These are ductless glands that secrete their products directly into the blood.</li>
+    <li><strong>Hormones (Classical Definition):</strong> Chemicals produced by endocrine glands, released into the blood, and transported to distantly located target organs.</li>
+    <li><strong>Hormones (Scientific Definition):</strong> <span class="keyword">Hormones</span> are non-nutrient chemicals which act as intercellular messengers and are produced in trace amounts.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">19.2 Human Endocrine System</summary>
+  <p>The human endocrine system consists of organized endocrine glands and hormone-producing diffused tissues/cells located in different parts of the body.</p>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.1 The Hypothalamus</h3></summary>
+    <p>Located at the basal part of the diencephalon (forebrain), the <span class="keyword">hypothalamus</span> contains groups of neurosecretory cells called nuclei that produce hormones regulating pituitary hormone synthesis and secretion.</p>
+    <ul>
+      <li><strong>Releasing Hormones:</strong> Stimulate secretion of pituitary hormones. Example: <span class="keyword">Gonadotrophin releasing hormone</span> (GnRH) stimulates the release of gonadotrophins.</li>
+      <li><strong>Inhibiting Hormones:</strong> Inhibit secretion of pituitary hormones. Example: <span class="keyword">Somatostatin</span> inhibits the release of growth hormone.</li>
+      <li><strong>Pathway:</strong> Hypothalamic hormones reach the anterior pituitary through a portal circulatory system, while the posterior pituitary is under direct neural regulation.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.2 The Pituitary Gland</h3></summary>
+    <p>Located in a bony cavity called <span class="keyword">sella tursica</span> and attached to the hypothalamus by a stalk. It is divided anatomically into:</p>
+    <ol>
+      <li><strong>Adenohypophysis:</strong> Consists of two portions:
+        <ul>
+          <li><strong>Pars Distalis (Anterior Pituitary):</strong> Produces <span class="keyword">Growth Hormone</span> (GH), <span class="keyword">Prolactin</span> (PRL), <span class="keyword">Thyroid Stimulating Hormone</span> (TSH), <span class="keyword">Adrenocorticotrophic Hormone</span> (ACTH), <span class="keyword">Luteinizing Hormone</span> (LH), and <span class="keyword">Follicle Stimulating Hormone</span> (FSH).</li>
+          <li><strong>Pars Intermedia:</strong> Secretes <span class="keyword">Melanocyte Stimulating Hormone</span> (MSH). In humans, it is almost merged with pars distalis.</li>
+        </ul>
+      </li>
+      <li><strong>Neurohypophysis (Pars Nervosa / Posterior Pituitary):</strong> Stores and releases <span class="keyword">Oxytocin</span> and <span class="keyword">Vasopressin</span> (synthesized by the hypothalamus and transported axonally).</li>
+    </ol>
+    <h4>Major Pituitary Hormones &amp; Disorders:</h4>
+    <ul>
+      <li><strong>Growth Hormone (GH):</strong> Over-secretion leads to gigantism or <span class="keyword">Acromegaly</span> (severe disfigurement in adults); low secretion causes pituitary dwarfism.</li>
+      <li><strong>Prolactin (PRL):</strong> Regulates mammary gland growth and milk formation.</li>
+      <li><strong>TSH:</strong> Stimulates thyroid hormone synthesis and secretion.</li>
+      <li><strong>ACTH:</strong> Stimulates synthesis of steroid hormones called <span class="keyword">glucocorticoids</span> from the adrenal cortex.</li>
+      <li><strong>LH &amp; FSH (Gonadotrophins):</strong> Stimulate gonadal activity. In males, LH stimulates androgen synthesis, and FSH regulates spermatogenesis. In females, LH induces ovulation and maintains the corpus luteum; FSH stimulates ovarian follicle development.</li>
+      <li><strong>MSH:</strong> Regulates skin pigmentation.</li>
+      <li><strong>Oxytocin:</strong> Stimulates smooth muscle contraction (uterus contraction during childbirth and milk ejection).</li>
+      <li><strong>Vasopressin / Anti-diuretic Hormone (ADH):</strong> Stimulates water and electrolyte resorption in renal distal tubules, reducing water loss. Deficiency causes <span class="keyword">Diabetes Insipidus</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.3 The Pineal Gland</h3></summary>
+    <p>Located on the dorsal side of the forebrain. It secretes <span class="keyword">melatonin</span>, which regulates:</p>
+    <ul>
+      <li>The 24-hour (diurnal) rhythm of the body (sleep-wake cycle, body temperature).</li>
+      <li>Metabolism, pigmentation, menstrual cycle, and defense capability.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.4 Thyroid Gland</h3></summary>
+    <p>Composed of two lobes on either side of the trachea, interconnected by a thin flap of connective tissue called the <span class="keyword">isthmus</span>. It consists of follicles and stromal tissues.</p>
+    <ul>
+      <li><strong>Hormones:</strong> Follicular cells synthesize <span class="keyword">tetraiodothyronine</span> (thyroxine or $T_4$) and <span class="keyword">triiodothyronine</span> ($T_3$). Iodine is essential for their synthesis.</li>
+      <li><strong>Thyrocalcitonin (TCT):</strong> A protein hormone secreted by the thyroid that regulates and lowers blood calcium levels.</li>
+      <li><strong>Hypothyroidism:</strong> Iodine deficiency leads to enlargement of the thyroid gland (<span class="keyword">goitre</span>). During pregnancy, it causes <span class="keyword">cretinism</span> (stunted growth, mental retardation, low IQ) in the baby. In adult women, it causes irregular menstrual cycles.</li>
+      <li><strong>Hyperthyroidism:</strong> Caused by thyroid cancer or nodules, leading to abnormally high hormone levels. Characterized by <span class="keyword">Exophthalmic goitre</span> (Graves' disease), which involves thyroid enlargement, protrusion of eyeballs, increased BMR, and weight loss.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.5 Parathyroid Gland</h3></summary>
+    <p>Four parathyroid glands are present on the back side of the thyroid gland (one pair in each lobe).</p>
+    <ul>
+      <li><strong>Parathyroid Hormone (PTH):</strong> A peptide hormone that increases blood $Ca^{2+}$ levels (hypercalcemic hormone).</li>
+      <li><strong>Mechanism:</strong> Stimulates bone resorption (demineralisation), increases $Ca^{2+}$ reabsorption by renal tubules, and increases $Ca^{2+}$ absorption from digested food.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.6 Thymus</h3></summary>
+    <p>A lobular structure located between the lungs, behind the sternum on the ventral side of the aorta. It plays a major role in immune system development.</p>
+    <ul>
+      <li><strong>Thymosins:</strong> Peptide hormones secreted by the thymus.</li>
+      <li><strong>Function:</strong> Promote differentiation of T-lymphocytes (providing <span class="keyword">cell-mediated immunity</span>) and stimulate antibody production (providing <span class="keyword">humoral immunity</span>).</li>
+      <li><strong>Aging:</strong> The thymus degenerates in old individuals, leading to weakened immune responses.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.7 Adrenal Gland</h3></summary>
+    <p>Located anteriorly on top of each kidney. It consists of two types of tissues:</p>
+    <ol>
+      <li><strong>Adrenal Medulla (Centrally located):</strong> Secretes catecholamines:
+        <ul>
+          <li><span class="keyword">Adrenaline</span> (epinephrine) and <span class="keyword">Noradrenaline</span> (norepinephrine).</li>
+          <li>Known as emergency hormones or hormones of <strong>Fight or Flight</strong>.</li>
+          <li><strong>Effects:</strong> Increase alertness, pupillary dilation, piloerection, sweating, heart rate, strength of heart contraction, respiration rate, and stimulate glycogen, lipid, and protein breakdown.</li>
+        </ul>
+      </li>
+      <li><strong>Adrenal Cortex (Outer layer):</strong> Divided into three layers: zona reticularis (inner), zona fasciculata (middle), and zona glomerulosa (outer). It secretes corticoids:
+        <ul>
+          <li><span class="keyword">Glucocorticoids</span> (mainly cortisol): Regulate carbohydrate metabolism, stimulate gluconeogenesis, lipolysis, proteolysis, and suppress immune responses.</li>
+          <li><span class="keyword">Mineralocorticoids</span> (mainly aldosterone): Regulate water and electrolyte balance, stimulating $Na^+$ and water reabsorption and $K^+$ excretion in renal tubules.</li>
+          <li><span class="keyword">Androgenic steroids</span>: Play a role in the growth of axial, pubic, and facial hair during puberty.</li>
+        </ul>
+      </li>
+    </ol>
+    <p><strong>Disorder:</strong> Underproduction of cortical hormones alters carbohydrate metabolism, causing acute weakness and fatigue, known as <span class="keyword">Addison's disease</span>.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.8 Pancreas</h3></summary>
+    <p>A composite gland acting as both exocrine and endocrine. The endocrine part consists of <span class="keyword">Islets of Langerhans</span> (1-2 million in a normal pancreas).</p>
+    <ul>
+      <li><strong>$\alpha$-cells:</strong> Secrete <span class="keyword">glucagon</span>, a hyperglycemic peptide hormone that stimulates glycogenolysis and gluconeogenesis in hepatocytes, increasing blood glucose.</li>
+      <li><strong>$\beta$-cells:</strong> Secrete <span class="keyword">insulin</span>, a hypoglycemic peptide hormone that enhances cellular glucose uptake and utilization by hepatocytes and adipocytes, and stimulates glycogenesis.</li>
+      <li><strong>Diabetes Mellitus:</strong> Prolonged hyperglycemia leads to this disorder, characterized by loss of glucose in urine and formation of harmful ketone bodies. Treated with insulin therapy.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.9 Testis</h3></summary>
+    <p>A pair of testes is located in the scrotal sac of males. It performs dual functions as a primary sex organ and an endocrine gland.</p>
+    <ul>
+      <li>Composed of seminiferous tubules and stromal/interstitial tissue.</li>
+      <li><strong>Leydig cells (Interstitial cells):</strong> Produce a group of hormones called <span class="keyword">androgens</span> (mainly testosterone).</li>
+      <li><strong>Functions:</strong> Regulate male accessory sex organ development, stimulate muscular growth, facial/axillary hair, low pitch of voice, spermatogenesis, and male sexual behavior (libido).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>19.2.10 Ovary</h3></summary>
+    <p>A pair of ovaries is located in the abdomen of females. It is the primary female sex organ.</p>
+    <ul>
+      <li><strong>Estrogen:</strong> Synthesized and secreted by growing ovarian follicles. Regulates female secondary sex characters, mammary gland development, and sexual behavior.</li>
+      <li><strong>Progesterone:</strong> Secreted by the <span class="keyword">corpus luteum</span> (formed from ruptured follicles after ovulation). It supports pregnancy and stimulates the formation of alveoli (milk-storing structures) and milk secretion in mammary glands.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">19.3 Hormones of Heart, Kidney and Gastrointestinal Tract</summary>
+  <p>Hormones are also secreted by tissues that are not organized endocrine glands:</p>
+  <ul>
+    <li><strong>Heart (Atrial Wall):</strong> Secretes <span class="keyword">Atrial Natriuretic Factor</span> (ANF) when blood pressure increases, causing vasodilation to lower blood pressure.</li>
+    <li><strong>Kidney (Juxtaglomerular cells):</strong> Produce <span class="keyword">erythropoietin</span>, which stimulates erythropoiesis (RBC formation).</li>
+    <li><strong>Gastrointestinal Tract:</strong> Endocrine cells secrete four major peptide hormones:
+      <ul>
+        <li><span class="keyword">Gastrin</span>: Stimulates secretion of hydrochloric acid and pepsinogen from gastric glands.</li>
+        <li><span class="keyword">Secretin</span>: Stimulates secretion of water and bicarbonate ions from the exocrine pancreas.</li>
+        <li><span class="keyword">Cholecystokinin (CCK)</span>: Stimulates secretion of pancreatic enzymes and bile juice from the pancreas and gall bladder, respectively.</li>
+        <li><span class="keyword">Gastric Inhibitory Peptide (GIP)</span>: Inhibits gastric secretion and motility.</li>
+      </ul>
+    </li>
+    <li><strong>Growth Factors:</strong> Non-endocrine tissues secrete these factors, which are essential for normal tissue growth, repair, and regeneration.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">19.4 Mechanism of Hormone Action</summary>
+  <p>Hormones produce their effects on target tissues by binding to specific proteins called <span class="keyword">hormone receptors</span>.</p>
+  <ul>
+    <li><strong>Membrane-bound Receptors:</strong> Present on the cell membrane of target cells. Hormones binding here do not enter the cell but generate second messengers (e.g., cyclic AMP, $IP_3$, $Ca^{2+}$) to regulate cellular metabolism.</li>
+    <li><strong>Intracellular Receptors:</strong> Mostly nuclear receptors present inside the cell. Hormones (e.g., steroid hormones, iodothyronines) interact with these receptors to regulate gene expression or chromosome function by interacting with the genome.</li>
+  </ul>
+  <h4>Chemical Classification of Hormones:</h4>
+  <ol>
+    <li><strong>Peptide, polypeptide, protein hormones:</strong> e.g., insulin, glucagon, pituitary hormones, hypothalamic hormones.</li>
+    <li><strong>Steroids:</strong> e.g., cortisol, testosterone, estradiol, progesterone.</li>
+    <li><strong>Iodothyronines:</strong> Thyroid hormones.</li>
+    <li><strong>Amino-acid derivatives:</strong> e.g., epinephrine.</li>
+  </ol>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 19</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-18-neural-control-and-coordination.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

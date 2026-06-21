@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 12: Ecosystem</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 12: Ecosystem</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">12.1 Ecosystem – Structure and Function</summary>
+  <p>An <span class="keyword">ecosystem</span> is a functional unit of nature, where living organisms interact among themselves and also with the surrounding physical environment. Ecosystems can be classified into two basic categories: <strong>terrestrial</strong> (e.g., forest, grassland, desert) and <strong>aquatic</strong> (e.g., pond, lake, wetland, river, estuary). Crop fields and aquariums are examples of man-made or anthropogenic ecosystems.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Stratification</h3></summary>
+    <p><span class="keyword">Stratification</span> is the vertical distribution of different species occupying different levels in an ecosystem. For example, in a forest ecosystem:</p>
+    <ul>
+      <li><strong>Top vertical strata/layer:</strong> Trees</li>
+      <li><strong>Second layer:</strong> Shrubs</li>
+      <li><strong>Bottom layers:</strong> Herbs and grasses</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Four Basic Components of an Ecosystem</h3></summary>
+    <p>To function as a self-sustaining unit, an ecosystem relies on four key aspects:</p>
+    <ol>
+      <li><strong>Productivity:</strong> Rate of biomass production.</li>
+      <li><strong>Decomposition:</strong> Breakdown of complex organic matter into inorganic substances.</li>
+      <li><strong>Energy flow:</strong> Unidirectional movement of energy from producers to higher trophic levels.</li>
+      <li><strong>Nutrient cycling:</strong> Storage and movement of nutrient elements through ecosystem components.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Case Study: Pond Ecosystem</h3></summary>
+    <p>A pond is a self-sustainable, shallow aquatic ecosystem exhibiting all four basic components:</p>
+    <ul>
+      <li><strong>Abiotic components:</strong> Water with dissolved inorganic and organic substances, solar input, temperature cycle, day-length, and rich soil deposit at the bottom.</li>
+      <li><strong>Autotrophic components (Producers):</strong> Phytoplankton, some algae, and floating, submerged, and marginal plants.</li>
+      <li><strong>Consumers:</strong> Zooplankton, free-swimming, and bottom-dwelling forms.</li>
+      <li><strong>Decomposers:</strong> Fungi, bacteria, and flagellates (abundant at the bottom).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">12.2 Productivity</summary>
+  <p>A constant input of solar energy is the basic requirement for any ecosystem to function and sustain.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Primary Production and Productivity</h3></summary>
+    <ul>
+      <li><span class="keyword">Primary production</span> is defined as the amount of biomass or organic matter produced per unit area over a time period by plants during photosynthesis. It is expressed in terms of weight ($g/m^2$) or energy ($kcal/m^2$).</li>
+      <li><span class="keyword">Productivity</span> is the rate of biomass production, expressed in $g\cdot m^{-2}\cdot yr^{-1}$ or $kcal\cdot m^{-2}\cdot yr^{-1}$ to compare different ecosystems.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>GPP vs. NPP</h3></summary>
+    <ul>
+      <li><span class="keyword">Gross Primary Productivity (GPP)</span>: The rate of production of organic matter during photosynthesis in an ecosystem.</li>
+      <li><span class="keyword">Net Primary Productivity (NPP)</span>: The biomass available for consumption by heterotrophs (herbivores and decomposers). It is GPP minus respiration losses ($R$).</li>
+    </ul>
+    <p><strong>Equation:</strong></p>
+    $$GPP - R = NPP$$
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Secondary Productivity</h3></summary>
+    <p><span class="keyword">Secondary productivity</span> is defined as the rate of formation of new organic matter by consumers.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Global Productivity Patterns</h3></summary>
+    <ul>
+      <li>The annual net primary productivity of the whole biosphere is approximately <strong>170 billion tons</strong> (dry weight) of organic matter.</li>
+      <li>Despite occupying about 70% of the Earth's surface, the productivity of the oceans is only <strong>55 billion tons</strong>, while the rest is produced on land.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">12.3 Decomposition</summary>
+  <p><span class="keyword">Decomposition</span> is the process by which decomposers break down complex organic matter into inorganic substances like carbon dioxide, water, and nutrients. Earthworms are often called the farmer's 'friend' because they help break down complex organic matter and loosen the soil.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Detritus</h3></summary>
+    <p><span class="keyword">Detritus</span> is the raw material for decomposition. It consists of dead plant remains (leaves, bark, flowers) and dead remains of animals, including fecal matter.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Steps in Decomposition</h3></summary>
+    <p>Decomposition involves five simultaneous steps:</p>
+    <ol>
+      <li><strong>Fragmentation:</strong> <span class="keyword">Detritivores</span> (e.g., earthworms) break down detritus into smaller particles.</li>
+      <li><strong>Leaching:</strong> Water-soluble inorganic nutrients migrate down into the soil horizon and precipitate as unavailable salts.</li>
+      <li><strong>Catabolism:</strong> Bacterial and fungal enzymes degrade detritus into simpler inorganic substances.</li>
+      <li><strong>Humification:</strong> Leads to the accumulation of <span class="keyword">humus</span>, a dark-coloured amorphous substance highly resistant to microbial action that decomposes extremely slowly and acts as a nutrient reservoir.</li>
+      <li><strong>Mineralisation:</strong> Humus is further degraded by microbes to release inorganic nutrients.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Factors Affecting Decomposition</h3></summary>
+    <ul>
+      <li>Decomposition is largely an <strong>oxygen-requiring process</strong>.</li>
+      <li><strong>Chemical composition:</strong> Decomposition is slower if detritus is rich in lignin and chitin, and quicker if rich in nitrogen and water-soluble substances like sugars.</li>
+      <li><strong>Climatic factors:</strong> Warm and moist environments favour decomposition, whereas low temperature and anaerobiosis (absence of oxygen) inhibit it, leading to a build-up of organic materials.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">12.4 Energy Flow</summary>
+  <p>Except for deep-sea hydrothermal ecosystems, the sun is the sole source of energy for all ecosystems on Earth.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Solar Radiation and PAR</h3></summary>
+    <ul>
+      <li>Of the incident solar radiation, less than 50% is <span class="keyword">Photosynthetically Active Radiation (PAR)</span>.</li>
+      <li>Plants and photosynthetic bacteria (autotrophs) capture only <strong>2-10%</strong> of this PAR to synthesize food. This small amount of energy sustains the entire living world.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Trophic Levels and Food Chains</h3></summary>
+    <p>Energy flows unidirectionally from producers to consumers. Organisms occupy a specific place in a food chain based on their source of nutrition, known as their <span class="keyword">trophic level</span>:</p>
+    <ul>
+      <li><strong>First Trophic Level (Producers):</strong> Phytoplankton, grass, trees.</li>
+      <li><strong>Second Trophic Level (Primary Consumers / Herbivores):</strong> Zooplankton, grasshopper, cow.</li>
+      <li><strong>Third Trophic Level (Secondary Consumers / Primary Carnivores):</strong> Birds, fishes, wolf.</li>
+      <li><strong>Fourth Trophic Level (Tertiary Consumers / Top Carnivores):</strong> Man, lion.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Types of Food Chains</h3></summary>
+    <ul>
+      <li><strong>Grazing Food Chain (GFC):</strong> Begins with green plants (producers) at the first trophic level.
+        <p><em>Example:</em> Grass (Producer) &rarr; Goat (Primary Consumer) &rarr; Man (Secondary Consumer)</p>
+      </li>
+      <li><strong>Detritus Food Chain (DFC):</strong> Begins with dead organic matter. It is made up of decomposers (<span class="keyword">saprotrophs</span> like fungi and bacteria) which secrete digestive enzymes to break down dead matter and absorb the nutrients.</li>
+    </ul>
+    <p>In aquatic ecosystems, GFC is the major conduit for energy flow. In terrestrial ecosystems, a much larger fraction of energy flows through the DFC than the GFC.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Standing Crop and the 10 Per Cent Law</h3></summary>
+    <ul>
+      <li><span class="keyword">Standing crop</span> is the mass of living material (biomass) or the number of organisms in a unit area at a particular time at each trophic level. Biomass is more accurately measured in terms of dry weight.</li>
+      <li><strong>10 Per Cent Law:</strong> During energy transfer from a lower to a higher trophic level, only 10% of the energy is stored as biomass; the remaining 90% is lost as heat to the environment. This limits the number of trophic levels in a GFC.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">12.5 Ecological Pyramids</summary>
+  <p>An <span class="keyword">ecological pyramid</span> represents the food or energy relationship between organisms at different trophic levels. The base represents producers (first trophic level) and the apex represents top-level consumers.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Types of Pyramids</h3></summary>
+    <ul>
+      <li><strong>Pyramid of Number:</strong> Shows the number of individual organisms at each trophic level. Usually upright (e.g., grassland ecosystem), but can be inverted (e.g., many insects feeding on a single big tree).</li>
+      <li><strong>Pyramid of Biomass:</strong> Shows the total dry weight of living matter at each level. Usually upright in terrestrial ecosystems, but <strong>inverted in aquatic ecosystems</strong> (e.g., a small standing crop of phytoplankton supports a much larger biomass of zooplankton and fish).</li>
+      <li><strong>Pyramid of Energy:</strong> Shows the energy content at each level. It is <strong>always upright</strong> and can never be inverted, because energy is lost as heat at each transfer step.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Limitations of Ecological Pyramids</h3></summary>
+    <ol>
+      <li>They do not accommodate species that belong to two or more trophic levels simultaneously (e.g., sparrows eating both seeds and insects).</li>
+      <li>They assume a simple, linear food chain, which almost never exists in nature; they do not accommodate food webs.</li>
+      <li>Saprophytes and decomposers are not given any place in ecological pyramids, despite playing a vital role in the ecosystem.</li>
+    </ol>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 12</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-11-organisms-and-populations.html";
+      } else {
+        window.location.href = "12-chapter-13-biodiversity-and-conservation.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

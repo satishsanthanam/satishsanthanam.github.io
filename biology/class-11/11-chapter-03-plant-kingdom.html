@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 3: Plant Kingdom</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 3: Plant Kingdom</h1>
+
+    <details class="topic-box"><summary class="topic-title">Classification Systems in Plantae</summary><p>Our understanding of the plant kingdom has evolved over time. Fungi, Monera, and Protista with cell walls are now excluded from Plantae. Cyanobacteria (blue-green algae) are no longer classified as algae.</p><details class="sub-topic"><summary><h3>Types of Classification Systems</h3></summary><ul><li><strong>Artificial Classification System:</strong> Based on gross superficial morphological characters such as habit, colour, number, and shape of leaves, or on the androecium structure (system by Linnaeus). It separated closely related species and gave equal weightage to vegetative and sexual characteristics.</li><li><strong>Natural Classification System:</strong> Based on natural affinities among organisms, considering both external and internal features like ultrastructure, anatomy, embryology, and phytochemistry (system by George Bentham and Joseph Dalton Hooker).</li><li><strong>Phylogenetic Classification System:</strong> Based on evolutionary relationships, assuming that organisms belonging to the same taxa share a common ancestor.</li></ul></details><details class="sub-topic"><summary><h3>Modern Taxonomic Approaches</h3></summary><ul><li><span class="keyword">Numerical Taxonomy</span>: Easily carried out using computers; based on all observable characteristics. Numbers and codes are assigned to all characters and the data are processed so that each character receives equal importance.</li><li><span class="keyword">Cytotaxonomy</span>: Based on cytological information like chromosome number, structure, and behaviour.</li><li><span class="keyword">Chemotaxonomy</span>: Uses the chemical constituents of the plant to resolve taxonomic confusions.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.1 Algae</summary><p>Algae are chlorophyll-bearing, simple, thalloid, autotrophic, and largely aquatic (both fresh water and marine) organisms. They also occur in moist stones, soils, wood, and in association with fungi (lichens) or animals (e.g., on sloth bear).</p><details class="sub-topic"><summary><h3>Reproduction in Algae</h3></summary><ul><li><strong>Vegetative reproduction:</strong> Occurs by fragmentation; each fragment develops into a thallus.</li><li><strong>Asexual reproduction:</strong> Occurs by the production of different types of spores, most commonly motile, flagellated <span class="keyword">zoospores</span>.</li><li><strong>Sexual reproduction:</strong> Occurs through the fusion of two gametes:<ul><li><span class="keyword">Isogamous</span>: Fusion of gametes similar in size, which can be flagellated (e.g., <strong><em>Ulothrix</em></strong>) or non-flagellated (e.g., <strong><em>Spirogyra</em></strong>).</li><li><span class="keyword">Anisogamous</span>: Fusion of two gametes dissimilar in size (e.g., species of <strong><em>Eudorina</em></strong>).</li><li><span class="keyword">Oogamous</span>: Fusion between one large, non-motile (static) female gamete and a smaller, motile male gamete (e.g., <strong><em>Volvox</em></strong>, <strong><em>Fucus</em></strong>).</li></ul></li></ul></details><details class="sub-topic"><summary><h3>Economic Importance of Algae</h3></summary><ul><li>At least a half of the total carbon dioxide ($CO_2$) fixation on earth is carried out by algae through photosynthesis.</li><li>They are primary producers of energy-rich compounds forming the basis of food cycles for aquatic animals.</li><li>Species like <strong><em>Porphyra</em></strong>, <strong><em>Laminaria</em></strong>, and <strong><em>Sargassum</em></strong> are used as food.</li><li>Certain marine brown and red algae produce large amounts of hydrocolloids (water-holding substances), such as <span class="keyword">algin</span> (brown algae) and <span class="keyword">carrageen</span> (red algae).</li><li><span class="keyword">Agar</span>, obtained from <strong><em>Gelidium</em></strong> and <strong><em>Gracilaria</em></strong>, is used to grow microbes and in preparations of ice-creams and jellies.</li><li><span class="keyword">Chlorella</span>, a unicellular alga rich in proteins, is used as a food supplement by space travellers.</li></ul></details><details class="sub-topic"><summary><h3>Classes of Algae</h3></summary><details class="sub-topic"><summary><h4>1. Chlorophyceae (Green Algae)</h4></summary><p>Commonly called green algae. The plant body may be unicellular, colonial, or filamentous.</p><ul><li><strong>Pigments:</strong> Dominance of chlorophyll $a$ and $b$, localized in definite chloroplasts (discoid, plate-like, reticulate, cup-shaped, spiral, or ribbon-shaped).</li><li><strong>Storage Bodies:</strong> Contain one or more <span class="keyword">pyrenoids</span> in chloroplasts, which store protein besides starch. Food may also be stored as oil droplets.</li><li><strong>Cell Wall:</strong> Rigid wall made of an inner layer of cellulose and an outer layer of pectose.</li><li><strong>Examples:</strong> <strong><em>Chlamydomonas</em></strong>, <strong><em>Volvox</em></strong>, <strong><em>Ulothrix</em></strong>, <strong><em>Spirogyra</em></strong>, and <strong><em>Chara</em></strong>.</li></ul></details><details class="sub-topic"><summary><h4>2. Phaeophyceae (Brown Algae)</h4></summary><p>Found primarily in marine habitats. They range from simple branched, filamentous forms (<strong><em>Ectocarpus</em></strong>) to profusely branched kelps which may reach heights of 100 metres.</p><ul><li><strong>Pigments:</strong> Chlorophyll $a$, $c$, carotenoids, and xanthophylls (specifically <span class="keyword">fucoxanthin</span>, which determines the olive green to brown shades).</li><li><strong>Storage Food:</strong> Complex carbohydrates stored as <span class="keyword">laminarin</span> or <span class="keyword">mannitol</span>.</li><li><strong>Cell Wall:</strong> Cellulosic wall covered on the outside by a gelatinous coating of <span class="keyword">algin</span>.</li><li><strong>Structure:</strong> Plant body is attached to the substratum by a <span class="keyword">holdfast</span>, and has a stalk called the <span class="keyword">stipe</span>, and a leaf-like photosynthetic organ called the <span class="keyword">frond</span>.</li><li><strong>Reproduction:</strong> Asexual reproduction by biflagellate, pear-shaped zoospores with two unequal laterally attached flagella.</li><li><strong>Examples:</strong> <strong><em>Ectocarpus</em></strong>, <strong><em>Dictyota</em></strong>, <strong><em>Laminaria</em></strong>, <strong><em>Sargassum</em></strong>, and <strong><em>Fucus</em></strong>.</li></ul></details><details class="sub-topic"><summary><h4>3. Rhodophyceae (Red Algae)</h4></summary><p>Commonly called red algae due to the predominance of the red pigment <span class="keyword">r-phycoerythrin</span>. Mostly marine, occurring in well-lighted surface waters as well as great depths.</p><ul><li><strong>Storage Food:</strong> Stored as <span class="keyword">floridean starch</span>, which is structurally very similar to amylopectin and glycogen.</li><li><strong>Reproduction:</strong> Vegetative by fragmentation; asexual by non-motile spores; sexual by non-motile gametes (oogamous with complex post-fertilisation developments).</li><li><strong>Examples:</strong> <strong><em>Polysiphonia</em></strong>, <strong><em>Porphyra</em></strong>, <strong><em>Gracilaria</em></strong>, and <strong><em>Gelidium</em></strong>.</li></ul></details></details></details><details class="topic-box"><summary class="topic-title">3.2 Bryophytes</summary><p>Bryophytes include mosses and liverworts commonly found in moist, shaded areas in the hills. They are called the <strong>amphibians of the plant kingdom</strong> because they live in soil but rely on water for sexual reproduction.</p><details class="sub-topic"><summary><h3>General Characteristics</h3></summary><ul><li>The plant body is more differentiated than that of algae, thallus-like, prostrate or erect, and attached to the substratum by unicellular or multicellular <span class="keyword">rhizoids</span>. They lack true roots, stems, or leaves.</li><li>The dominant plant body is haploid and produces gametes, hence called a <span class="keyword">gametophyte</span>.</li><li><strong>Sex Organs:</strong> Multicellular. Male organ is the <span class="keyword">antheridium</span> (produces biflagellate <span class="keyword">antherozoids</span>). Female organ is the flask-shaped <span class="keyword">archegonium</span> (produces a single egg).</li><li><strong>Fertilisation:</strong> Antherozoids are released into water to reach the archegonium. The fusion produces a zygote, which does not undergo immediate reduction division but develops into a multicellular <span class="keyword">sporophyte</span>.</li><li>The sporophyte is dependent on the photosynthetic gametophyte for nourishment. Some cells of the sporophyte undergo meiosis to produce haploid spores, which germinate to form gametophytes.</li><li><strong>Economic Importance:</strong> Species of <strong><em>Sphagnum</em></strong> (a moss) provide peat used as fuel and packing material for trans-shipment of living material due to its water-holding capacity. Mosses are ecological pioneers on bare rocks, preventing soil erosion.</li></ul></details><details class="sub-topic"><summary><h3>Classification of Bryophytes</h3></summary><details class="sub-topic"><summary><h4>1. Liverworts</h4></summary><p>Grow in moist, shady habitats. The plant body is thalloid (e.g., <strong><em>Marchantia</em></strong>), dorsiventral, and closely appressed to the substrate.</p><ul><li><strong>Asexual Reproduction:</strong> Takes place by fragmentation of thalli, or by the formation of specialized green, multicellular, asexual buds called <span class="keyword">gemmae</span>, which develop in <span class="keyword">gemma cups</span> on the thalli.</li><li><strong>Sexual Reproduction:</strong> Sporophyte is differentiated into a foot, seta, and capsule. Spores produced within the capsule germinate to form free-living gametophytes.</li></ul></details><details class="sub-topic"><summary><h4>2. Mosses</h4></summary><p>The predominant stage of the life cycle is the gametophyte, consisting of two stages:</p><ol><li><span class="keyword">Protonema stage</span>: Develops directly from a spore; creeping, green, branched, and filamentous.</li><li><span class="keyword">Leafy stage</span>: Develops from the secondary protonema as a lateral bud; consists of upright, slender axes bearing spirally arranged leaves, attached by multicellular branched rhizoids. This stage bears the sex organs.</li></ol><ul><li><strong>Reproduction:</strong> Vegetative reproduction by fragmentation and budding in the secondary protonema. Sexual reproduction involves antheridia and archegonia at the apex of leafy shoots.</li><li><strong>Examples:</strong> <strong><em>Funaria</em></strong>, <strong><em>Polytrichum</em></strong>, and <strong><em>Sphagnum</em></strong>.</li></ul></details></details></details><details class="topic-box"><summary class="topic-title">3.3 Pteridophytes</summary><p>Pteridophytes include horsetails and ferns. They are used for medicinal purposes, as soil-binders, and grown as ornamentals. Evolutionarily, they are the <strong>first terrestrial plants to possess vascular tissues</strong> (xylem and phloem).</p><details class="sub-topic"><summary><h3>General Characteristics</h3></summary><ul><li>The dominant phase is a diploid <span class="keyword">sporophyte</span> differentiated into true roots, stems, and leaves.</li><li>Leaves may be small (<span class="keyword">microphylls</span>, as in <strong><em>Selaginella</em></strong>) or large (<span class="keyword">macrophylls</span>, as in ferns).</li><li>Sporophytes bear sporangia subtended by leaf-like appendages called <span class="keyword">sporophylls</span>. In some cases, sporophylls form compact structures called strobili or cones (e.g., <strong><em>Selaginella</em></strong>, <strong><em>Equisetum</em></strong>).</li><li>Sporangia produce spores by meiosis in spore mother cells. Spores germinate to give rise to <span class="keyword">prothallus</span> (inconspicuous, small, multicellular, free-living, photosynthetic thalloid gametophytes).</li><li>Gametophytes require cool, damp, shady places and water for fertilisation, restricting their geographical spread.</li><li><strong>Spore Types:</strong><ul><li><span class="keyword">Homosporous</span>: Plants producing similar kinds of spores (majority of pteridophytes).</li><li><span class="keyword">Heterosporous</span>: Plants producing two kinds of spores, macro (large) and micro (small) spores (e.g., <strong><em>Selaginella</em></strong> and <strong><em>Salvinia</em></strong>). The megaspores and microspores germinate into female and male gametophytes, respectively. The retention of the female gametophyte on the parent sporophyte is a precursor to the <span class="keyword">seed habit</span>.</li></ul></li></ul></details><details class="sub-topic"><summary><h3>Classification of Pteridophytes</h3></summary><ul><li><strong>Psilopsida:</strong> e.g., <strong><em>Psilotum</em></strong></li><li><strong>Lycopsida:</strong> e.g., <strong><em>Selaginella</em></strong>, <strong><em>Lycopodium</em></strong></li><li><strong>Sphenopsida:</strong> e.g., <strong><em>Equisetum</em></strong></li><li><strong>Pteropsida:</strong> e.g., <strong><em>Dryopteris</em></strong>, <strong><em>Pteris</em></strong>, <strong><em>Adiantum</em></strong></li></ul></details></details><details class="topic-box"><summary class="topic-title">3.4 Gymnosperms</summary><p>Gymnosperms (<em>gymnos</em>: naked, <em>sperma</em>: seeds) are plants in which the ovules are not enclosed by any ovary wall and remain exposed, both before and after fertilisation. The seeds are naked.</p><details class="sub-topic"><summary><h3>Morphological Features</h3></summary><ul><li>Includes medium-sized trees, tall trees, and shrubs. The giant redwood tree <strong><em>Sequoia</em></strong> is one of the tallest tree species.</li><li><strong>Roots:</strong> Generally tap roots. May have fungal associations (<span class="keyword">mycorrhiza</span> in <strong><em>Pinus</em></strong>) or specialized roots associated with $N_2$-fixing cyanobacteria (<span class="keyword">coralloid roots</span> in <strong><em>Cycas</em></strong>).</li><li><strong>Stems:</strong> Unbranched (<strong><em>Cycas</em></strong>) or branched (<strong><em>Pinus</em></strong>, <strong><em>Cedrus</em></strong>).</li><li><strong>Leaves:</strong> Simple or compound. Well-adapted to withstand extremes of temperature, humidity, and wind. Conifers have needle-like leaves, thick cuticles, and sunken stomata to reduce water loss.</li></ul></details><details class="sub-topic"><summary><h3>Reproduction</h3></summary><ul><li>Gymnosperms are heterosporous, producing haploid microspores and megaspores within sporangia borne on spirally arranged sporophylls forming strobili or cones.</li><li><strong>Male Strobili:</strong> Bear microsporophylls and microsporangia. Microspores develop into a highly reduced male gametophyte called a <span class="keyword">pollen grain</span>.</li><li><strong>Female Strobili:</strong> Bear megasporophylls with ovules or megasporangia. The megaspore mother cell divides meiotically to form four megaspores, one of which develops into a multicellular female gametophyte bearing two or more <span class="keyword">archegonia</span>.</li><li>Unlike bryophytes and pteridophytes, male and female gametophytes do not have an independent free-living existence; they remain within the sporangia on the parent sporophyte.</li><li>Pollen grains are carried by air currents to the ovules, where a pollen tube grows to discharge male gametes near the mouth of the archegonia. Fertilisation results in a zygote, which develops into an embryo, and the ovule becomes a naked seed.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.5 Angiosperms</summary><p>Angiosperms (flowering plants) are an exceptionally large group of plants where pollen grains and ovules are developed in specialized structures called flowers, and seeds are enclosed within fruits.</p><ul><li>They range in size from the microscopic <strong><em>Wolffia</em></strong> to tall trees of <strong><em>Eucalyptus</em></strong> (over 100 metres).</li><li>They are divided into two classes: <span class="keyword">dicotyledons</span> (seeds with two cotyledons) and <span class="keyword">monocotyledons</span> (seeds with one cotyledon).</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-02-biological-classification.html";
+      } else {
+        window.location.href = "11-chapter-04-animal-kingdom.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

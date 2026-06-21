@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 3: Reproductive Health</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 3: Reproductive Health</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">3.1 Reproductive Health – Problems and Strategies</summary>
+  <p>According to the <span class="keyword">World Health Organisation (WHO)</span>, reproductive health means a total well-being in all aspects of reproduction, including physical, emotional, behavioural, and social aspects.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>National Programmes & Initiatives</h3></summary>
+    <ul>
+      <li><strong>Family Planning:</strong> Initiated in India in <span class="keyword">1951</span> to attain total reproductive health as a social goal.</li>
+      <li><strong>RCH Programmes:</strong> <span class="keyword">Reproductive and Child Health Care</span> programmes currently operate to create awareness and provide facilities for building a reproductively healthy society.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Key Strategies & Awareness Measures</h3></summary>
+    <ul>
+      <li><strong>Sex Education:</strong> Encouraged in schools to provide right information, discourage myths, and clear misconceptions about sex-related aspects.</li>
+      <li><strong>Information Dissemination:</strong> Educating people about reproductive organs, adolescence, safe and hygienic sexual practices, <span class="keyword">STDs</span>, and <span class="keyword">AIDS</span>.</li>
+      <li><strong>Parental & Post-natal Care:</strong> Educating fertile couples on birth control options, care of pregnant mothers, post-natal care, and the importance of breast feeding.</li>
+      <li><strong>Amniocentesis Ban:</strong> Statutory ban on <span class="keyword">amniocentesis</span> for sex-determination to legally check female foeticide. In this procedure, amniotic fluid is analyzed to test for genetic disorders like <span class="keyword">Down syndrome</span>, <span class="keyword">haemophilia</span>, and <span class="keyword">sickle-cell anemia</span>.</li>
+      <li><strong>Saheli:</strong> A non-steroidal oral contraceptive for females developed by scientists at the <span class="keyword">Central Drug Research Institute (CDRI)</span> in Lucknow, India.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.2 Population Stabilisation and Birth Control</summary>
+  <p>Rapid population growth is driven by a decline in death rate, <span class="keyword">maternal mortality rate (MMR)</span>, and <span class="keyword">infant mortality rate (IMR)</span>, alongside an increase in the number of people of reproducible age.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>An Ideal Contraceptive</h3></summary>
+    <p>An ideal contraceptive must be user-friendly, easily available, effective, reversible with no or least side-effects, and must not interfere with sexual drive or desire.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Contraceptive Methods</h3></summary>
+    <ul>
+      <li><strong>Natural/Traditional Methods:</strong>
+        <ul>
+          <li><span class="keyword">Periodic abstinence</span>: Abstaining from coitus from day 10 to 17 of the menstrual cycle (fertile period).</li>
+          <li><span class="keyword">Withdrawal (coitus interruptus)</span>: Male partner withdraws penis from the vagina before ejaculation.</li>
+          <li><span class="keyword">Lactational amenorrhea</span>: Absence of menstruation during intense lactation post-parturition (effective up to 6 months).</li>
+        </ul>
+      </li>
+      <li><strong>Barrier Methods:</strong>
+        <ul>
+          <li><span class="keyword">Condoms</span>: Thin rubber/latex sheaths (e.g., 'Nirodh' for males) that prevent sperm from entering the female tract and protect against STIs/AIDS.</li>
+          <li><span class="keyword">Diaphragms, cervical caps, and vaults</span>: Reusable rubber barriers inserted into the female tract to cover the cervix.</li>
+        </ul>
+      </li>
+      <li><strong>Intra Uterine Devices (IUDs):</strong> Inserted by doctors into the uterus through the vagina.
+        <ul>
+          <li>Non-medicated IUDs: e.g., <span class="keyword">Lippes loop</span>.</li>
+          <li>Copper-releasing IUDs: e.g., <span class="keyword">CuT</span>, <span class="keyword">Cu7</span>, <span class="keyword">Multiload 375</span> (suppress sperm motility and fertilising capacity).</li>
+          <li>Hormone-releasing IUDs: e.g., <span class="keyword">Progestasert</span>, <span class="keyword">LNG-20</span> (make uterus unsuitable for implantation).</li>
+        </ul>
+      </li>
+      <li><strong>Oral Contraceptives:</strong> Small doses of progestogens or progestogen-estrogen combinations taken daily for 21 days.
+        <ul>
+          <li><span class="keyword">Saheli</span>: A 'once a week' non-steroidal pill with high contraceptive value and minimal side effects.</li>
+        </ul>
+      </li>
+      <li><strong>Injectables and Implants:</strong> Progestogens alone or with estrogen used as injections or subcutaneous implants under the skin.</li>
+      <li><strong>Surgical Methods (Sterilisation):</strong> Terminal, highly effective but poorly reversible methods.
+        <ul>
+          <li><span class="keyword">Vasectomy</span>: Removal or tying up of a small part of the vas deferens in males.</li>
+          <li><span class="keyword">Tubectomy</span>: Removal or tying up of a small part of the fallopian tube in females.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.3 Medical Termination of Pregnancy (MTP)</summary>
+  <p>Intentional or voluntary termination of pregnancy before full term is called <span class="keyword">medical termination of pregnancy (MTP)</span> or induced abortion.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Legal and Safety Aspects</h3></summary>
+    <ul>
+      <li><strong>Legalisation:</strong> Legalised by the Government of India in <span class="keyword">1971</span> with strict conditions to prevent female foeticide.</li>
+      <li><strong>MTP Amendment Act, 2017:</strong> Allows termination within the first 12 weeks on the opinion of one registered medical practitioner. Between 12 and 24 weeks, opinions of two practitioners are required based on specific grounds:
+        <ol>
+          <li>Risk to the life or physical/mental health of the pregnant woman.</li>
+          <li>Substantial risk that the child would suffer from serious physical or mental abnormalities.</li>
+        </ol>
+      </li>
+      <li><strong>Safety:</strong> MTPs are relatively safe during the <span class="keyword">first trimester</span> (up to 12 weeks). Second-trimester abortions are significantly riskier.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.4 Sexually Transmitted Infections (STIs)</summary>
+  <p>Infections transmitted through sexual intercourse are called <span class="keyword">sexually transmitted infections (STIs)</span>, venereal diseases (VD), or reproductive tract infections (RTI).</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Common STIs and Symptoms</h3></summary>
+    <ul>
+      <li><strong>Examples:</strong> Gonorrhoea, syphilis, genital herpes, chlamydiasis, genital warts, trichomoniasis, hepatitis-B, and HIV/AIDS.</li>
+      <li><strong>Curability:</strong> Except for <span class="keyword">hepatitis-B</span>, <span class="keyword">genital herpes</span>, and <span class="keyword">HIV</span>, all other STIs are completely curable if detected early.</li>
+      <li><strong>Early Symptoms:</strong> Itching, fluid discharge, slight pain, and swelling in the genital region. Often asymptomatic in females.</li>
+      <li><strong>Complications:</strong> If untreated, can lead to <span class="keyword">pelvic inflammatory diseases (PID)</span>, abortions, stillbirths, ectopic pregnancies, infertility, or cancer of the reproductive tract.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Prevention Principles</h3></summary>
+    <ol>
+      <li>Avoid sex with unknown or multiple partners.</li>
+      <li>Always use condoms during coitus.</li>
+      <li>Consult a qualified doctor immediately in case of doubt for early detection and treatment.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.5 Infertility</summary>
+  <p>Infertility is the inability to conceive or produce children despite unprotected sexual co-habitation.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Assisted Reproductive Technologies (ART)</h3></summary>
+    <ul>
+      <li><strong>In Vitro Fertilisation (IVF):</strong> Fertilisation outside the body, followed by <span class="keyword">embryo transfer (ET)</span> (commonly known as the "test tube baby" programme).
+        <ul>
+          <li><span class="keyword">ZIFT (Zygote Intra Fallopian Transfer)</span>: Transfer of zygote or early embryo (up to 8 blastomeres) into the fallopian tube.</li>
+          <li><span class="keyword">IUT (Intra Uterine Transfer)</span>: Transfer of embryos with more than 8 blastomeres into the uterus.</li>
+        </ul>
+      </li>
+      <li><strong>In Vivo Fertilisation:</strong> Fusion of gametes within the female, where embryos can be collected for transfer to females who cannot conceive.</li>
+      <li><strong>GIFT (Gamete Intra Fallopian Transfer):</strong> Transfer of an ovum collected from a donor into the fallopian tube of another female who cannot produce one but can provide a suitable environment.</li>
+      <li><strong>ICSI (Intra Cytoplasmic Sperm Injection):</strong> A specialized procedure where a sperm is directly injected into the ovum in the laboratory.</li>
+      <li><strong>Artificial Insemination (AI):</strong> Semen collected from the husband or a healthy donor is artificially introduced into the vagina or uterus (<span class="keyword">IUI - Intra-Uterine Insemination</span>) of the female. Useful for cases of low sperm count or inability to inseminate.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-02-human-reproduction.html";
+      } else {
+        window.location.href = "12-chapter-04-principles-of-inheritance-and-vari.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

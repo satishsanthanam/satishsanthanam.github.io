@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 1: Sexual Reproduction in Flowering Plants</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 1: Sexual Reproduction in Flowering Plants</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction & Floral Structure</summary>
+  <p>Flowers are not only aesthetic and cultural symbols but are also the morphological and embryological marvels where sexual reproduction occurs in angiosperms.</p>
+  <details class="sub-topic">
+    <summary><h3>Structure of a Typical Flower</h3></summary>
+    <p>A typical flower consists of four main whorls attached to the thalamus:</p>
+    <ul>
+      <li><strong>Calyx:</strong> Composed of sepals, protecting the flower in the bud stage.</li>
+      <li><strong>Corolla:</strong> Composed of petals, often brightly colored to attract pollinators.</li>
+      <li><strong>Androecium:</strong> The male reproductive organ, consisting of a whorl of <span class="keyword">stamens</span>.</li>
+      <li><strong>Gynoecium:</strong> The female reproductive organ, consisting of one or more <span class="keyword">pistils</span>.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Pre-fertilisation: Structures and Events</summary>
+  <p>Several hormonal and structural changes lead to the differentiation and development of floral primordia, inflorescences, and reproductive organs.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Stamen, Microsporangium, and Pollen Grain</h3></summary>
+    <p>The stamen consists of two parts: the long, slender stalk called the <span class="keyword">filament</span>, and the terminal, typically bilobed structure called the <span class="keyword">anther</span>.</p>
+    <ul>
+      <li><strong>Anther Structure:</strong> A typical angiosperm anther is bilobed and <span class="keyword">dithecous</span> (each lobe has two theca). It is a tetragonal structure containing four <span class="keyword">microsporangia</span> located at the corners.</li>
+      <li><strong>Microsporangium Wall Layers:</strong> Surrounded by four layers:
+        <ol>
+          <li><span class="keyword">Epidermis</span> (protective)</li>
+          <li><span class="keyword">Endothecium</span> (helps in dehiscence)</li>
+          <li><span class="keyword">Middle layers</span> (protective)</li>
+          <li><span class="keyword">Tapetum</span> (innermost layer; nourishes developing pollen grains; cells are often bi-nucleate with dense cytoplasm)</li>
+        </ol>
+      </li>
+      <li><strong>Microsporogenesis:</strong> The process of formation of microspores from a <span class="keyword">pollen mother cell</span> (PMC) through meiotic division. Microspores are arranged in a cluster of four (<span class="keyword">microspore tetrad</span>).</li>
+      <li><strong>Pollen Grain (Male Gametophyte):</strong>
+        <ul>
+          <li><strong>Exine:</strong> Hard outer layer made of <span class="keyword">sporopollenin</span>, one of the most resistant organic materials known. It has prominent apertures called <span class="keyword">germ pores</span> where sporopollenin is absent.</li>
+          <li><strong>Intine:</strong> Thin, continuous inner wall made of cellulose and pectin.</li>
+          <li><strong>Cellular Composition:</strong> A mature pollen grain contains a large <span class="keyword">vegetative cell</span> (with abundant food reserves) and a small, spindle-shaped <span class="keyword">generative cell</span>.</li>
+          <li>In over 60% of angiosperms, pollen is shed at the 2-celled stage; in others, the generative cell divides mitotically to produce two male gametes (3-celled stage).</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>The Pistil, Megasporangium (Ovule), and Embryo Sac</h3></summary>
+    <p>The gynoecium represents the female reproductive unit and can be <span class="keyword">monocarpellary</span> (one pistil) or <span class="keyword">multicarpellary</span> (multiple pistils). Multiple pistils can be fused (<span class="keyword">syncarpous</span>) or free (<span class="keyword">apocarpous</span>).</p>
+    <ul>
+      <li><strong>Structure of a Pistil:</strong> Consists of the <span class="keyword">stigma</span> (landing platform for pollen), <span class="keyword">style</span> (elongated tube), and <span class="keyword">ovary</span> (basal bulged part containing the ovarian cavity or locule and placenta).</li>
+      <li><strong>Structure of an Anatropous Ovule (Megasporangium):</strong>
+        <ul>
+          <li><span class="keyword">Funicle</span>: Stalk attaching the ovule to the placenta.</li>
+          <li><span class="keyword">Hilum</span>: Junction where the body of the ovule fuses with the funicle.</li>
+          <li><span class="keyword">Integuments</span>: Protective envelopes encircling the nucellus, except at a small opening called the <span class="keyword">micropyle</span>.</li>
+          <li><span class="keyword">Chalaza</span>: Basal part of the ovule, opposite the micropylar end.</li>
+          <li><span class="keyword">Nucellus</span>: Central mass of parenchymatous cells containing abundant reserve food.</li>
+        </ul>
+      </li>
+      <li><strong>Megasporogenesis:</strong> The process of formation of megaspores from the <span class="keyword">megaspore mother cell</span> (MMC) via meiosis, resulting in four megaspores.</li>
+      <li><strong>Female Gametophyte (Embryo Sac) Development:</strong> Only one of the four megaspores remains functional, while the other three degenerate. This is called <span class="keyword">monosporic development</span>.
+        <ul>
+          <li>The functional megaspore undergoes three sequential mitotic divisions to form an 8-nucleate, 7-celled mature embryo sac.</li>
+          <li><strong>Organization:</strong> Three cells group at the micropylar end to form the <span class="keyword">egg apparatus</span> (two <span class="keyword">synergids</span> with <span class="keyword">filiform apparatus</span>, and one egg cell). Three cells at the chalazal end are <span class="keyword">antipodals</span>. The large <span class="keyword">central cell</span> contains two <span class="keyword">polar nuclei</span>.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Pollination</h3></summary>
+    <p>Pollination is the transfer of pollen grains from the anther to the stigma of a pistil.</p>
+    <ul>
+      <li><strong>Kinds of Pollination:</strong>
+        <ul>
+          <li><strong>Autogamy:</strong> Transfer of pollen within the same flower. Some plants (e.g., <em>Viola</em>, <em>Oxalis</em>, <em>Commelina</em>) produce <span class="keyword">chasmogamous</span> (open) and <span class="keyword">cleistogamous</span> (permanently closed, ensuring self-pollination) flowers.</li>
+          <li><strong>Geitonogamy:</strong> Transfer of pollen from the anther of one flower to the stigma of another flower on the same plant (genetically autogamous, functionally cross-pollination).</li>
+          <li><strong>Xenogamy:</strong> Transfer of pollen from anther to stigma of a different plant (brings genetic variation).</li>
+        </ul>
+      </li>
+      <li><strong>Agents of Pollination:</strong>
+        <ul>
+          <li><strong>Abiotic:</strong> Wind (pollen is light and non-sticky; stigmas are feathery) and Water (rare, occurs in aquatic plants like <em>Vallisneria</em>, <em>Hydrilla</em>, and <em>Zostera</em>).</li>
+          <li><strong>Biotic:</strong> Animals, primarily insects (bees, butterflies, moths). Insect-pollinated flowers are typically large, colorful, fragrant, and rich in nectar.</li>
+        </ul>
+      </li>
+      <li><strong>Outbreeding Devices:</strong> Mechanisms to discourage self-pollination and prevent inbreeding depression, including non-synchronous pollen release and stigma receptivity, different positioning of anthers and stigma, self-incompatibility, and production of unisexual flowers.</li>
+      <li><strong>Pollen-pistil Interaction:</strong> A dynamic dialogue involving chemical recognition where the pistil accepts compatible pollen and promotes pollen tube growth, or rejects incompatible pollen.</li>
+      <li><strong>Artificial Hybridisation:</strong> A crop improvement technique involving:
+        <ul>
+          <li><span class="keyword">Emasculation</span>: Removal of anthers from bisexual flower buds before dehiscence.</li>
+          <li><span class="keyword">Bagging</span>: Covering the emasculated flower with a bag (usually butter paper) to prevent contamination by unwanted pollen.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Double Fertilisation</summary>
+  <p>Double fertilisation is an event unique to angiosperms, involving two distinct fusion events inside the embryo sac:</p>
+  <ol>
+    <li><strong>Syngamy:</strong> One male gamete fuses with the egg cell nucleus to form a diploid ($2n$) <span class="keyword">zygote</span>.</li>
+    <li><strong>Triple Fusion:</strong> The second male gamete fuses with the two polar nuclei in the central cell to form a triploid ($3n$) <span class="keyword">primary endosperm nucleus</span> (PEN).</li>
+  </ol>
+  <p>The central cell becomes the <span class="keyword">primary endosperm cell</span> (PEC) and develops into the endosperm, while the zygote develops into an embryo.</p>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Post-fertilisation: Structures and Events</summary>
+  <p>Post-fertilisation events include endosperm and embryo development, maturation of ovules into seeds, and ovary into fruit.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Endosperm Development</h3></summary>
+    <p>Endosperm development always precedes embryo development to ensure a steady nutrient supply. It can be free-nuclear (e.g., coconut water) or cellular (e.g., white coconut kernel). It may be completely consumed during development (e.g., pea, groundnut) or persist in the mature seed (e.g., castor, coconut).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Embryo Development (Embryogeny)</h3></summary>
+    <p>The zygote divides to form a proembryo, which transitions through globular and heart-shaped stages before maturing.</p>
+    <ul>
+      <li><strong>Dicotyledonous Embryo:</strong> Consists of an embryonal axis and two cotyledons. The portion above the cotyledons is the <span class="keyword">epicotyl</span> (terminates in the plumule), and the portion below is the <span class="keyword">hypocotyl</span> (terminates in the radicle, protected by a root cap).</li>
+      <li><strong>Monocotyledonous Embryo:</strong> Possesses only one cotyledon, called the <span class="keyword">scutellum</span>. The embryonal axis has a shoot apex enclosed in a foliar sheath called the <span class="keyword">coleoptile</span>, and a radicle enclosed in an undifferentiated sheath called the <span class="keyword">coleorhiza</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Seed and Fruit Development</h3></summary>
+    <ul>
+      <li><strong>Seed:</strong> The final product of sexual reproduction (fertilised ovule). Consists of seed coats, cotyledons, and an embryo axis.
+        <ul>
+          <li><strong>Non-albuminous (Ex-albuminous):</strong> No residual endosperm (e.g., pea, groundnut).</li>
+          <li><strong>Albuminous:</strong> Retains a part of the endosperm (e.g., wheat, maize, castor).</li>
+          <li><strong>Perisperm:</strong> Persistent, residual nucellus found in some seeds (e.g., black pepper, beet).</li>
+          <li><strong>Dormancy:</strong> A state of metabolic inactivity entered by the embryo when water content is reduced, helping seeds survive unfavorable conditions.</li>
+        </ul>
+      </li>
+      <li><strong>Fruit:</strong> Developed ovary. The ovary wall becomes the <span class="keyword">pericarp</span>.
+        <ul>
+          <li><strong>True Fruits:</strong> Develop only from the ovary.</li>
+          <li><strong>False Fruits:</strong> Thalamus also contributes to fruit formation (e.g., apple, strawberry, cashew).</li>
+          <li><strong>Parthenocarpic Fruits:</strong> Fruits that develop without fertilisation; they are seedless (e.g., banana).</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Apomixis and Polyembryony</summary>
+  <details class="sub-topic">
+    <summary><h3>Apomixis</h3></summary>
+    <p>A form of asexual reproduction that mimics sexual reproduction, where seeds are formed without fertilisation (e.g., in some species of Asteraceae and grasses). It is highly valuable in agriculture to preserve hybrid vigor across generations without segregation of traits.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Polyembryony</h3></summary>
+    <p>The occurrence of more than one embryo in a single seed (common in <em>Citrus</em> and Mango varieties), often arising from the division of nucellar cells protruding into the embryo sac.</p>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "12-chapter-02-human-reproduction.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
