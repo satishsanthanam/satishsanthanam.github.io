@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 11: Organisms and Populations</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 11: Organisms and Populations</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction &amp; Father of Ecology in India</summary>
+  <p>Ecology is the study of the interactions among organisms and between the organisms and their physical (abiotic) environment. It is concerned with four levels of biological organisation: <span class="keyword">organisms</span>, <span class="keyword">populations</span>, <span class="keyword">communities</span>, and <span class="keyword">biomes</span>.</p>
+  <details class="sub-topic">
+    <summary><h3>Ramdeo Misra (1908-1998)</h3></summary>
+    <ul>
+      <li>Revered as the <strong>Father of Ecology in India</strong>.</li>
+      <li>Established teaching and research in ecology at the Department of Botany, Banaras Hindu University (BHU), Varanasi.</li>
+      <li>Laid foundations for understanding tropical communities, succession, environmental responses of plant populations, and nutrient cycling in tropical forest and grassland ecosystems.</li>
+      <li>Formulated the first postgraduate course in ecology in India.</li>
+      <li>His efforts paved the way for the establishment of the National Committee for Environmental Planning and Coordination (1972), which later led to the Ministry of Environment and Forests (1984).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">11.1 Populations</summary>
+  <p>In nature, individuals rarely live in isolation. Most live in groups in well-defined geographical areas, share or compete for similar resources, potentially interbreed, and constitute a <span class="keyword">population</span>.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>11.1.1 Population Attributes</h3></summary>
+    <p>While an individual organism has births and deaths, a population has <span class="keyword">birth rates</span> and <span class="keyword">death rates</span>. These rates are expressed as per capita changes in numbers relative to the population members.</p>
+    <ul>
+      <li><strong>Birth Rate Example:</strong> If 20 lotus plants in a pond increase to 28 in a year, the birth rate is calculated as: $$
+\frac{8}{20} = 0.4 \text{ offspring per lotus per year}
+$$</li>
+      <li><strong>Death Rate Example:</strong> If 4 fruitflies in a laboratory population of 40 die in a week, the death rate is: $$
+\frac{4}{40} = 0.1 \text{ individuals per fruitfly per week}
+$$</li>
+      <li><strong>Sex Ratio:</strong> A population has a sex ratio (e.g., 60% females and 40% males), whereas an individual is either male or female.</li>
+      <li><strong>Age Pyramids:</strong> Graphical representation of the age distribution (percent individuals of a given age group) plotted for a population. For human populations, these show the distribution of males and females:
+        <ul>
+          <li><strong>Expanding:</strong> High proportion of pre-reproductive individuals.</li>
+          <li><strong>Stable:</strong> Pre-reproductive and reproductive individuals are nearly equal.</li>
+          <li><strong>Declining:</strong> Fewer pre-reproductive individuals than reproductive ones.</li>
+        </ul>
+      </li>
+      <li><strong>Population Density (N):</strong> The size of the population in a given habitat. It can be measured by total number, percent cover, biomass, or relative density (e.g., fish caught per trap, tiger pug marks, and fecal pellets).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>11.1.2 Population Growth</h3></summary>
+    <p>The size of a population fluctuates due to changes in four basic processes:</p>
+    <ol>
+      <li><strong>Natality (B):</strong> Number of births in the population during a given period.</li>
+      <li><strong>Mortality (D):</strong> Number of deaths in the population during a given period.</li>
+      <li><strong>Immigration (I):</strong> Number of individuals of the same species that have come into the habitat from elsewhere.</li>
+      <li><strong>Emigration (E):</strong> Number of individuals of the population who left the habitat.</li>
+    </ol>
+    <p>The population density at time $t + 1$ is given by the equation:</p>
+    <p>$$N_{t+1} = N_t + [(B + I) - (D + E)]$$</p>
+    
+    <h4>Growth Models:</h4>
+    <ul>
+      <li><strong>Exponential Growth:</strong> Occurs when resources (food and space) are unlimited. The population grows in a geometric fashion, resulting in a <strong>J-shaped curve</strong>.
+        <ul>
+          <li>Equation: $$\frac{dN}{dt} = (b - d) \times N = rN$$ where $r$ is the <span class="keyword">intrinsic rate of natural increase</span>.</li>
+          <li>Integral form: $$N_t = N_0 e^{rt}$$ where $N_t$ is population density after time $t$, $N_0$ is density at time zero, $r$ is the intrinsic rate of natural increase, and $e$ is the base of natural logarithms (2.71828).</li>
+          <li>Historical $r$ values: Norway rat ($0.015$), flour beetle ($0.12$), human population in India in 1981 ($0.0205$).</li>
+        </ul>
+      </li>
+      <li><strong>Logistic Growth:</strong> More realistic model as resources are finite. A population growing in a habitat with limited resources shows a lag phase, phases of acceleration and deceleration, and finally an asymptote when it reaches the <span class="keyword">carrying capacity (K)</span>. This results in a <strong>sigmoid (S-shaped) curve</strong>, known as <span class="keyword">Verhulst-Pearl Logistic Growth</span>.
+        <ul>
+          <li>Equation: $$\frac{dN}{dt} = rN \left(\frac{K - N}{K}\right)$$</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>11.1.3 Life History Variation</h3></summary>
+    <p>Populations evolve to maximise their reproductive fitness, also called <span class="keyword">Darwinian fitness</span> (high $r$ value):</p>
+    <ul>
+      <li>Some organisms breed only once in their lifetime (e.g., Pacific salmon fish, bamboo).</li>
+      <li>Others breed many times during their lifetime (e.g., most birds and mammals).</li>
+      <li>Some produce a large number of small-sized offspring (e.g., Oysters, pelagic fishes).</li>
+      <li>Others produce a small number of large-sized offspring (e.g., birds, mammals).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>11.1.4 Population Interactions</h3></summary>
+    <p>In nature, different species interact to form biological communities. These interspecific interactions can be beneficial (+), detrimental (-), or neutral (0):</p>
+    
+    <table border="1" cellpadding="5" style="border-collapse: collapse; margin: 10px 0;">
+      <thead>
+        <tr>
+          <th>Species A</th>
+          <th>Species B</th>
+          <th>Name of Interaction</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>+</td>
+          <td>+</td>
+          <td><strong>Mutualism</strong></td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td><strong>Competition</strong></td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>-</td>
+          <td><strong>Predation</strong></td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>-</td>
+          <td><strong>Parasitism</strong></td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>0</td>
+          <td><strong>Commensalism</strong></td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>0</td>
+          <td><strong>Amensalism</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Detailed Interactions:</h4>
+    <ul>
+      <li><strong>(i) Predation:</strong> Nature's way of transferring energy fixed by plants to higher trophic levels. 
+        <ul>
+          <li>Predators keep prey populations under control. For example, the invasive <span class="keyword">prickly pear cactus</span> in Australia was controlled only after its predator (a moth) was introduced.</li>
+          <li>Predators maintain species diversity by reducing competition among prey species (e.g., starfish <em>Pisaster</em> in rocky intertidal communities).</li>
+          <li>Prey defenses: Camouflage (insects, frogs), chemical defenses (Monarch butterfly accumulates toxic chemicals from a poisonous weed during its caterpillar stage), and morphological defenses in plants (thorns of <em>Acacia</em> and <em>Cactus</em>, cardiac glycosides produced by <em>Calotropis</em>).</li>
+        </ul>
+      </li>
+      <li><strong>(ii) Competition:</strong> Occurs when species compete for limiting resources, though totally unrelated species can also compete (e.g., visiting flamingoes and resident fishes in South American lakes competing for zooplankton).
+        <ul>
+          <li><strong>Competitive Release:</strong> A species expands its range when its competitively superior competitor is experimentally removed (e.g., Connell's field experiments where the superior barnacle <em>Balanus</em> excluded <em>Chathamalus</em>).</li>
+          <li><strong>Gause's Competitive Exclusion Principle:</strong> Two closely related species competing for the same resources cannot co-exist indefinitely; the competitively inferior one will eventually be eliminated.</li>
+          <li><strong>Resource Partitioning:</strong> Co-existence mechanism where species choose different times for feeding or different foraging patterns (e.g., MacArthur showed five species of warblers co-existing on the same tree).</li>
+        </ul>
+      </li>
+      <li><strong>(iii) Parasitism:</strong> One species (parasite) benefits by obtaining free lodging and meals at the expense of the host.
+        <ul>
+          <li>Parasites are often host-specific and co-evolve with their hosts.</li>
+          <li>Adaptations: Loss of unnecessary sense organs, presence of suckers/hooks, loss of digestive system, high reproductive capacity.</li>
+          <li>Complex life cycles: Human liver fluke (requires snail and fish as intermediate hosts); malarial parasite (requires mosquito vector).</li>
+          <li><strong>Ectoparasites:</strong> Feed on external surface (e.g., lice on humans, ticks on dogs, marine copepods, and the parasitic plant <em>Cuscuta</em>).</li>
+          <li><strong>Endoparasites:</strong> Live inside the host's body (e.g., in liver, kidney, lungs).</li>
+          <li><strong>Brood Parasitism:</strong> Parasitic birds lay eggs in the host's nest for incubation (e.g., cuckoo/koel laying eggs in a crow's nest).</li>
+        </ul>
+      </li>
+      <li><strong>(iv) Commensalism:</strong> One species benefits, and the other is unaffected.
+        <ul>
+          <li>An orchid growing as an epiphyte on a mango branch.</li>
+          <li>Barnacles growing on the back of a whale.</li>
+          <li>Cattle egrets foraging close to grazing cattle (cattle flush out insects from vegetation).</li>
+          <li>Clown fish living among stinging tentacles of sea anemones (fish gets protection from predators).</li>
+        </ul>
+      </li>
+      <li><strong>(v) Mutualism:</strong> Both interacting species benefit.
+        <ul>
+          <li><strong>Lichens:</strong> Mutualistic relationship between a fungus and photosynthesising algae or cyanobacteria.</li>
+          <li><strong>Mycorrhizae:</strong> Association between fungi and roots of higher plants. Fungi help in nutrient absorption, while the plant provides carbohydrates.</li>
+          <li><strong>Plant-Animal Mutualism:</strong> Fig trees and pollinator wasps (one-to-one relationship where the wasp pollinates the fig inflorescence and uses the fig fruit for egg-laying and larval nourishment).</li>
+          <li><strong>Sexual Deceit:</strong> The Mediterranean orchid <em>Ophrys</em> employs sexual deceit to get pollinated by a species of bee. One petal of its flower resembles a female bee, prompting male bees to "pseudocopulate" and transfer pollen.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-10-biotechnology-and-its-applications.html";
+      } else {
+        window.location.href = "12-chapter-12-ecosystem.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
