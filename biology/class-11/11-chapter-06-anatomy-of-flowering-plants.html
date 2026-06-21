@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 6: Anatomy of Flowering Plants</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 6: Anatomy of Flowering Plants</h1>
+
+    <details class="topic-box"><summary class="topic-title">6.1 The Tissue System</summary><p>Tissues vary depending on their location in the plant body. Based on structure and location, there are three types of tissue systems:</p><ul><li><strong>Epidermal tissue system</strong></li><li><strong>Ground or fundamental tissue system</strong></li><li><strong>Vascular or conducting tissue system</strong></li></ul><details class="sub-topic"><summary><h3>6.1.1 Epidermal Tissue System</h3></summary><p>Forms the outer-most covering of the whole plant body. It comprises:</p><ul><li><span class="keyword">Epidermis</span>: Outermost layer of the primary plant body, made of elongated, compactly arranged parenchymatous cells. Usually single-layered and covered with a waxy thick layer called <span class="keyword">cuticle</span> (absent in roots) to prevent water loss.</li><li><span class="keyword">Stomata</span>: Structures present in the epidermis of leaves that regulate transpiration and gaseous exchange. Each stoma is composed of two bean-shaped <span class="keyword">guard cells</span> (dumb-bell shaped in grasses) enclosing a stomatal pore. Guard cells contain chloroplasts and regulate opening/closing. Specialized neighboring cells are called <span class="keyword">subsidiary cells</span>. The stomatal aperture, guard cells, and subsidiary cells together form the <span class="keyword">stomatal apparatus</span>.</li><li><strong>Epidermal appendages</strong>: Includes unicellular <span class="keyword">root hairs</span> (absorb water/minerals) and multicellular <span class="keyword">trichomes</span> on stems (prevent water loss, can be secretory).</li></ul></details><details class="sub-topic"><summary><h3>6.1.2 The Ground Tissue System</h3></summary><p>All tissues except epidermis and vascular bundles form the <span class="keyword">ground tissue</span>. It consists of simple tissues:</p><ul><li><strong>Parenchyma, Collenchyma, and Sclerenchyma</strong>: Present in cortex, pericycle, pith, and medullary rays of primary stems and roots.</li><li><span class="keyword">Mesophyll</span>: Ground tissue in leaves, consisting of thin-walled, chloroplast-containing cells.</li></ul></details><details class="sub-topic"><summary><h3>6.1.3 The Vascular Tissue System</h3></summary><p>Consists of complex tissues, <span class="keyword">xylem</span> and <span class="keyword">phloem</span>, which together form vascular bundles.</p><ul><li><span class="keyword">Open vascular bundles</span>: Present in dicotyledonous stems; possess <span class="keyword">cambium</span> between xylem and phloem, enabling secondary growth.</li><li><span class="keyword">Closed vascular bundles</span>: Present in monocotyledons; lack cambium and do not form secondary tissues.</li><li><span class="keyword">Radial</span> arrangement: Xylem and phloem arranged alternately along different radii (e.g., in roots).</li><li><span class="keyword">Conjoint</span> arrangement: Xylem and phloem jointly situated along the same radius (common in stems and leaves). Phloem is usually located on the outer side of xylem.</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.2 Anatomy of Dicotyledonous and Monocotyledonous Plants</summary><details class="sub-topic"><summary><h3>6.2.1 Dicotyledonous Root</h3></summary><p>Internal tissue organization (e.g., sunflower root):</p><ul><li><span class="keyword">Epiblema</span>: Outermost layer, many cells protrude as unicellular root hairs.</li><li><span class="keyword">Cortex</span>: Several layers of thin-walled parenchyma cells with intercellular spaces.</li><li><span class="keyword">Endodermis</span>: Innermost layer of cortex, single layer of barrel-shaped cells. Tangential and radial walls have water-impermeable waxy <span class="keyword">suberin</span> deposition called <span class="keyword">casparian strips</span>.</li><li><span class="keyword">Pericycle</span>: Thick-walled parenchymatous cells next to endodermis; initiates lateral roots and vascular cambium.</li><li><span class="keyword">Pith</span>: Small or inconspicuous.</li><li><span class="keyword">Conjunctive tissue</span>: Parenchymatous cells between xylem and phloem.</li><li><span class="keyword">Stele</span>: All tissues on the inner side of endodermis (pericycle, vascular bundles, pith).</li></ul></details><details class="sub-topic"><summary><h3>6.2.2 Monocotyledonous Root</h3></summary><p>Similar to dicot root anatomy but with key differences:</p><ul><li>Has more than six (<span class="keyword">polyarch</span>) xylem bundles (dicot roots have 2 to 4).</li><li><span class="keyword">Pith</span> is large and well-developed.</li><li>Do not undergo any secondary growth.</li></ul></details><details class="sub-topic"><summary><h3>6.2.3 Dicotyledonous Stem</h3></summary><p>Transverse section of a young dicot stem shows:</p><ul><li><strong>Epidermis</strong>: Outermost protective layer, covered with cuticle, may bear trichomes and stomata.</li><li><strong>Cortex</strong>: Divided into three sub-zones: <span class="keyword">hypodermis</span> (collenchymatous, provides mechanical strength), cortical layers (parenchymatous), and endodermis (rich in starch grains, called <span class="keyword">starch sheath</span>).</li><li><strong>Pericycle</strong>: Semi-lunar patches of sclerenchyma on the inner side of endodermis.</li><li><span class="keyword">Medullary rays</span>: Radially placed parenchymatous cells between vascular bundles.</li><li><strong>Vascular Bundles</strong>: Arranged in a ring (characteristic of dicot stems). Each bundle is conjoint, open, and has endarch protoxylem.</li><li><span class="keyword">Pith</span>: Central portion of stem, made of rounded parenchymatous cells with large intercellular spaces.</li></ul></details><details class="sub-topic"><summary><h3>6.2.4 Monocotyledonous Stem</h3></summary><p>Characterized by:</p><ul><li>Sclerenchymatous hypodermis.</li><li>Numerous scattered vascular bundles, each surrounded by a sclerenchymatous <span class="keyword">bundle sheath</span>.</li><li>Conjoint and closed vascular bundles; peripheral bundles are smaller than central ones.</li><li>Phloem parenchyma is absent; water-containing cavities are present within vascular bundles.</li></ul></details><details class="sub-topic"><summary><h3>6.2.5 Dorsiventral (Dicotyledonous) Leaf</h3></summary><p>Vertical section shows three main parts:</p><ul><li><strong>Epidermis</strong>: Covers both upper (<span class="keyword">adaxial epidermis</span>) and lower (<span class="keyword">abaxial epidermis</span>) surfaces. Abaxial epidermis generally bears more stomata.</li><li><span class="keyword">Mesophyll</span>: Photosynthetic tissue between epidermises, containing chloroplasts. Differentiated into:<ul><li><span class="keyword">Palisade parenchyma</span>: Adaxially placed, elongated cells arranged vertically.</li><li><span class="keyword">Spongy parenchyma</span>: Loosely arranged, oval/round cells with large air cavities below palisade cells.</li></ul></li><li><strong>Vascular system</strong>: Vascular bundles seen in veins and midrib, surrounded by thick-walled <span class="keyword">bundle sheath cells</span>.</li></ul></details><details class="sub-topic"><summary><h3>6.2.6 Isobilateral (Monocotyledonous) Leaf</h3></summary><p>Anatomy is similar to dorsiventral leaf but with distinct differences:</p><ul><li>Stomata are present on both surfaces of the epidermis.</li><li>Mesophyll is not differentiated into palisade and spongy parenchyma.</li><li>In grasses, certain adaxial epidermal cells modify into large, empty, colourless <span class="keyword">bulliform cells</span>. When turgid, they expose the leaf surface; when flaccid due to water stress, they make leaves curl inwards to minimize water loss.</li><li>Parallel venation is reflected in near-similar sizes of vascular bundles.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-05-morphology-of-flowering-plants.html";
+      } else {
+        window.location.href = "11-chapter-07-structural-organisation-in-animals.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
