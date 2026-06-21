@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 13: Plant Growth and Development</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 13: Plant Growth and Development</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">13.1 Growth</summary>
+  <p>Growth is defined as an irreversible permanent increase in size of an organ or its parts or even of an individual cell. It is generally accompanied by metabolic processes (both anabolic and catabolic) occurring at the expense of energy.</p>
+
+  <details class="sub-topic">
+    <summary><h3>13.1.1 Plant Growth Generally is Indeterminate</h3></summary>
+    <p>Plants retain the capacity for unlimited growth throughout their life due to the presence of <span class="keyword">meristems</span> at certain locations in their body. The cells of these meristems have the capacity to divide and self-perpetuate.</p>
+    <ul>
+      <li><strong>Open Form of Growth:</strong> A form of growth wherein new cells are always being added to the plant body by the activity of the meristem.</li>
+      <li><span class="keyword">Primary Growth</span>: Attributed to root apical meristem and shoot apical meristem, contributing to the elongation of plants along their axis.</li>
+      <li><span class="keyword">Secondary Growth</span>: Attributed to lateral meristems, vascular cambium, and cork-cambium, causing an increase in the girth of the organs.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>13.1.2 Growth is Measurable</h3></summary>
+    <p>At a cellular level, growth is principally a consequence of increase in the amount of protoplasm. It is measured by various parameters:</p>
+    <ul>
+      <li>Increase in fresh weight and dry weight</li>
+      <li>Increase in length, area, and volume</li>
+      <li>Increase in cell number (e.g., one single maize root apical meristem can give rise to more than 17,500 new cells per hour)</li>
+      <li>Increase in cell size (e.g., cells in a watermelon may increase in size by up to 3,500,000 times)</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>13.1.3 Phases of Growth</h3></summary>
+    <p>The period of growth is divided into three distinct phases:</p>
+    <ol>
+      <li><span class="keyword">Meristematic Phase</span>: Cells at the root and shoot apex. They are rich in protoplasm, possess large conspicuous nuclei, and have thin, cellulosic primary cell walls with abundant plasmodesmatal connections.</li>
+      <li><span class="keyword">Elongation Phase</span>: Cells proximal to the meristematic zone. Characterised by increased vacuolation, cell enlargement, and new cell wall deposition.</li>
+      <li><span class="keyword">Maturation Phase</span>: Cells further away from the apex. These cells attain their maximal size in terms of wall thickening and protoplasmic modifications.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>13.1.4 Growth Rates</h3></summary>
+    <p>The increased growth per unit time is termed as growth rate, which can be expressed mathematically in two ways:</p>
+    <ul>
+      <li>
+        <strong>Arithmetic Growth:</strong> Following mitotic cell division, only one daughter cell continues to divide while the other differentiates and matures.
+        <p>Equation: $L_t = L_0 + rt$</p>
+        <p>Where $L_t$ is length at time $t$, $L_0$ is length at time zero, and $r$ is the growth rate/elongation per unit time.</p>
+      </li>
+      <li>
+        <strong>Geometric Growth:</strong> Both progeny cells retain the ability to divide. Initial growth is slow (<span class="keyword">lag phase</span>), followed by rapid exponential increase (<span class="keyword">log or exponential phase</span>), and finally slows down due to limited nutrient supply (<span class="keyword">stationary phase</span>), forming a sigmoid or S-curve.
+        <p>Equation: $W_1 = W_0 e^{rt}$</p>
+        <p>Where $W_1$ is final size, $W_0$ is initial size, $r$ is relative growth rate (efficiency index), $t$ is time of growth, and $e$ is the base of natural logarithms.</p>
+      </li>
+      <li><strong>Absolute vs. Relative Growth Rates:</strong> <span class="keyword">Absolute growth rate</span> is the measurement and comparison of total growth per unit time. <span class="keyword">Relative growth rate</span> is the growth of a given system per unit time expressed on a common basis (e.g., per unit initial parameter).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>13.1.5 Conditions for Growth</h3></summary>
+    <ul>
+      <li><strong>Water:</strong> Essential for cell enlargement (turgidity) and provides the medium for enzymatic activities.</li>
+      <li><strong>Oxygen:</strong> Helps in releasing metabolic energy essential for growth activities.</li>
+      <li><strong>Nutrients:</strong> Macro and micro essential elements act as a source of energy and are required for the synthesis of protoplasm.</li>
+      <li><strong>Temperature:</strong> An optimum temperature range is required; deviations can be detrimental.</li>
+      <li><strong>Environmental Signals:</strong> Light and gravity affect certain phases/stages of growth.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">13.2 Differentiation, Dedifferentiation and Redifferentiation</summary>
+  <ul>
+    <li><span class="keyword">Differentiation</span>: The process by which cells derived from meristems mature to perform specific functions, undergoing structural changes in cell walls and protoplasm (e.g., tracheary elements lose protoplasm and develop strong, lignocellulosic secondary cell walls).</li>
+    <li><span class="keyword">Dedifferentiation</span>: The phenomenon where living differentiated cells that have lost the capacity to divide regain it under certain conditions (e.g., formation of interfascicular cambium and cork cambium from fully differentiated parenchyma cells).</li>
+    <li><span class="keyword">Redifferentiation</span>: The process where dedifferentiated meristems/tissues produce cells that once again lose the capacity to divide but mature to perform specific functions.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">13.3 Development</summary>
+  <p>Development includes all changes that an organism goes through during its life cycle, from germination of the seed to senescence.</p>
+  <details class="sub-topic">
+    <summary><h3>Plasticity and Heterophylly</h3></summary>
+    <p><span class="keyword">Plasticity</span> is the ability of plants to follow different pathways in response to environment or phases of life to form different kinds of structures.</p>
+    <ul>
+      <li><span class="keyword">Heterophylly</span>: The occurrence of different types of leaves on the same plant.</li>
+      <li><strong>Phase-dependent Heterophylly:</strong> Seen in cotton, coriander, and larkspur, where juvenile leaves differ in shape from mature leaves.</li>
+      <li><strong>Environment-dependent Heterophylly:</strong> Seen in buttercup (<em>Ranunculus</em>), where leaves produced in air differ from those produced in water.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">13.4 Plant Growth Regulators (PGRs)</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>13.4.1 Characteristics and Classification</h3></summary>
+    <p>PGRs are small, simple molecules of diverse chemical composition:</p>
+    <ul>
+      <li><strong>Indole compounds:</strong> Indole-3-acetic acid (IAA)</li>
+      <li><strong>Adenine derivatives:</strong> $N^6$-furfurylamino purine (kinetin)</li>
+      <li><strong>Carotenoid derivatives:</strong> Abscisic acid (ABA)</li>
+      <li><strong>Terpenes:</strong> Gibberellic acid ($GA_3$)</li>
+      <li><strong>Gases:</strong> Ethylene ($C_2H_4$)</li>
+    </ul>
+    <p>They are broadly divided into two functional groups:</p>
+    <ol>
+      <li><span class="keyword">Plant Growth Promoters</span>: Involved in growth promoting activities like cell division, cell enlargement, pattern formation, tropic growth, flowering, fruiting, and seed formation (e.g., auxins, gibberellins, cytokinins).</li>
+      <li><span class="keyword">Plant Growth Inhibitors</span>: Involved in growth inhibiting activities such as dormancy and abscission, and responses to wounds and stresses (e.g., abscisic acid). Ethylene fits largely as an inhibitor but can have promoting effects.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>13.4.2 Discovery of PGRs</h3></summary>
+    <ul>
+      <li><strong>Auxin:</strong> Discovered through observations by Charles Darwin and Francis Darwin on phototropism in canary grass coleoptiles. Isolated by F.W. Went from tips of oat seedlings.</li>
+      <li><strong>Gibberellins:</strong> Identified from the study of 'bakanae' (foolish seedling) disease of rice seedlings caused by the fungal pathogen <em>Gibberella fujikuroi</em>, reported by E. Kurosawa.</li>
+      <li><strong>Cytokinins:</strong> F. Skoog and co-workers observed tobacco callus proliferation only when auxin was supplemented with vascular tissue extracts, yeast extract, coconut milk, or DNA. Miller et al. later crystallised the active substance, kinetin.</li>
+      <li><strong>Abscisic Acid:</strong> Discovered during the mid-1960s when three independent researches purified inhibitor-B, abscission II, and dormin, which were chemically identical.</li>
+      <li><strong>Ethylene:</strong> H.H. Cousins confirmed the release of a volatile substance from ripened oranges that hastened the ripening of stored unripened bananas.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>13.4.3 Physiological Effects of PGRs</h3></summary>
+    <ul>
+      <li>
+        <strong>Auxins:</strong>
+        <ul>
+          <li>Initiate rooting in stem cuttings.</li>
+          <li>Promote flowering (e.g., in pineapples).</li>
+          <li>Prevent early fruit and leaf drop, but promote abscission of older mature leaves and fruits.</li>
+          <li>Induce <span class="keyword">apical dominance</span> (growing apical bud inhibits lateral buds). Decapitation is used in tea plantations and hedge-making.</li>
+          <li>Induce parthenocarpy (e.g., in tomatoes).</li>
+          <li>Used as herbicides (e.g., 2,4-D kills dicotyledonous weeds).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Gibberellins:</strong>
+        <ul>
+          <li>Cause elongation of axis (e.g., grape stalks, apple shape improvement).</li>
+          <li>Delay senescence to extend market period.</li>
+          <li>Speed up the malting process in brewing industry.</li>
+          <li>Increase stem length and yield in sugarcane.</li>
+          <li>Hasten maturity in juvenile conifers for early seed production.</li>
+          <li>Promote <span class="keyword">bolting</span> (internode elongation prior to flowering) in rosette plants like beet and cabbage.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Cytokinins:</strong>
+        <ul>
+          <li>Have specific effects on cytokinesis (cell division).</li>
+          <li>Synthesised in regions of rapid cell division (roots, shoot buds, young fruits).</li>
+          <li>Help produce new leaves, chloroplasts, lateral shoot growth, and adventitious shoots.</li>
+          <li>Overcome apical dominance.</li>
+          <li>Delay leaf senescence by promoting nutrient mobilisation.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Ethylene:</strong>
+        <ul>
+          <li>Promotes horizontal growth, swelling of axis, and apical hook formation in dicot seedlings.</li>
+          <li>Promotes senescence and abscission of leaves and flowers.</li>
+          <li>Highly effective in fruit ripening; enhances respiration rate (<span class="keyword">respiratory climacteric</span>).</li>
+          <li>Breaks seed and bud dormancy (e.g., peanut germination, potato sprouting).</li>
+          <li>Promotes rapid internode/petiole elongation in deep water rice.</li>
+          <li>Promotes root growth and root hair formation.</li>
+          <li>Used as <span class="keyword">ethephon</span> in agriculture to hasten ripening, accelerate abscission (thinning), and promote female flowers in cucumbers.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Abscisic Acid (ABA):</strong>
+        <ul>
+          <li>Acts as a general plant growth inhibitor and metabolism inhibitor.</li>
+          <li>Inhibits seed germination and induces seed dormancy to withstand desiccation.</li>
+          <li>Stimulates the closure of stomata.</li>
+          <li>Increases tolerance of plants to various stresses, hence called the <span class="keyword">stress hormone</span>.</li>
+          <li>Acts as an antagonist to Gibberellins (GAs).</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 13</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-12-respiration-in-plants.html";
+      } else {
+        window.location.href = "11-chapter-14-breathing-and-exchange-of-gases.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
