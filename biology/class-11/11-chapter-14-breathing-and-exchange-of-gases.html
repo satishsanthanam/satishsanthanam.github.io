@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 14: Breathing and Exchange of Gases</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 14: Breathing and Exchange of Gases</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Respiratory Organs</summary><details class="sub-topic"><summary><h3>Alfonso Corti &amp; Auditory System</h3></summary><p><strong>Alfonso Corti</strong> (1822–1888) was an Italian anatomist who described the <span class="keyword">organ of Corti</span> located on the basilar membrane of the cochlea, containing hair cells that convert sound vibrations into nerve impulses.</p></details><details class="sub-topic"><summary><h3>Respiratory Organs Across Taxa</h3></summary><p>Mechanisms of breathing vary depending on habitats and levels of organisation:</p><ul><li><span class="keyword">Simple Diffusion</span>: Lower invertebrates (sponges, coelenterates, flatworms) over their entire body surface.</li><li><span class="keyword">Cutaneous Respiration</span>: Earthworms (moist cuticle), amphibians (frogs through moist skin).</li><li><span class="keyword">Tracheal System</span>: Insects (network of tracheal tubes).</li><li><span class="keyword">Branchial Respiration</span>: Gills in aquatic arthropods, molluscs, and fishes.</li><li><span class="keyword">Pulmonary Respiration</span>: Lungs in terrestrial forms (reptiles, birds, mammals, amphibians).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Human Respiratory System</summary><details class="sub-topic"><summary><h3>Anatomical Pathway</h3></summary><p>The human respiratory tract consists of:</p><ol><li><strong>External Nostrils</strong>: Open above the upper lips.</li><li><strong>Nasal Chamber</strong>: Reached via the nasal passage.</li><li><strong>Pharynx</strong>: Common passage for food and air.</li><li><strong>Larynx</strong>: Cartilaginous sound box. During swallowing, the <span class="keyword">glottis</span> is covered by the <span class="keyword">epiglottis</span> (elastic cartilaginous flap) to prevent food entry.</li><li><strong>Trachea</strong>: Straight tube extending to mid-thoracic cavity, dividing at the 5th thoracic vertebra into right and left primary <span class="keyword">bronchi</span>.</li><li><strong>Bronchioles &amp; Alveoli</strong>: Bronchi branch into secondary, tertiary bronchi, and bronchioles, ending in thin, vascularised, bag-like <span class="keyword">alveoli</span>.</li></ol><p>Note: Trachea, primary/secondary/tertiary bronchi, and initial bronchioles are supported by incomplete cartilaginous rings.</p></details><details class="sub-topic"><summary><h3>Lungs and Thoracic Cavity</h3></summary><p>The lungs are situated in the anatomically air-tight <span class="keyword">thoracic chamber</span>:</p><ul><li><strong>Boundaries</strong>: Dorsally by the vertebral column, ventrally by the sternum, laterally by the ribs, and lower side by the dome-shaped <span class="keyword">diaphragm</span>.</li><li><strong>Pleura</strong>: Double-layered <span class="keyword">pleural membrane</span> with <span class="keyword">pleural fluid</span> reduces friction on the lung surface.</li><li><strong>Conducting Part</strong>: External nostrils to terminal bronchioles (transports, clears, humidifies, and warms air).</li><li><strong>Exchange Part</strong>: Alveoli and their ducts (site of actual diffusion of $O_2$ and $CO_2$).</li></ul></details><details class="sub-topic"><summary><h3>Steps of Respiration</h3></summary><ol><li>Breathing or pulmonary ventilation.</li><li>Diffusion of gases ($O_2$ and $CO_2$) across the alveolar membrane.</li><li>Transport of gases by blood.</li><li>Diffusion of gases between blood and tissues.</li><li>Utilisation of $O_2$ by cells for catabolic reactions (cellular respiration).</li></ol></details></details><details class="topic-box"><summary class="topic-title">Mechanism of Breathing</summary><details class="sub-topic"><summary><h3>Inspiration and Expiration</h3></summary><p>Movement of air is driven by pressure gradients between the lungs and atmosphere:</p><ul><li><strong>Inspiration</strong>: Active process. Contraction of the <span class="keyword">diaphragm</span> (increases antero-posterior volume) and <span class="keyword">external intercostal muscles</span> (lifts ribs and sternum, increasing dorso-ventral volume). This decreases intra-pulmonary pressure below atmospheric pressure, drawing air in.</li><li><strong>Expiration</strong>: Passive process. Relaxation of diaphragm and intercostal muscles reduces thoracic volume, increasing intra-pulmonary pressure above atmospheric pressure, expelling air.</li><li><strong>Breathing Rate</strong>: Healthy human breathes 12–16 times/minute. Volume is measured clinically using a <span class="keyword">spirometer</span>.</li></ul></details><details class="sub-topic"><summary><h3>Respiratory Volumes and Capacities</h3></summary><ul><li><span class="keyword">Tidal Volume (TV)</span>: Volume inspired/expired during normal respiration (~500 mL; 6000–8000 mL/min).</li><li><span class="keyword">Inspiratory Reserve Volume (IRV)</span>: Additional volume inspired forcibly (2500–3000 mL).</li><li><span class="keyword">Expiratory Reserve Volume (ERV)</span>: Additional volume expired forcibly (1000–1100 mL).</li><li><span class="keyword">Residual Volume (RV)</span>: Volume remaining in lungs after forcible expiration (1100–1200 mL).</li><li><span class="keyword">Inspiratory Capacity (IC)</span>: $IC = TV + IRV$</li><li><span class="keyword">Expiratory Capacity (EC)</span>: $EC = TV + ERV$</li><li><span class="keyword">Functional Residual Capacity (FRC)</span>: $FRC = ERV + RV$</li><li><span class="keyword">Vital Capacity (VC)</span>: Maximum air a person can breathe in after forced expiration ($VC = ERV + TV + IRV$).</li><li><span class="keyword">Total Lung Capacity (TLC)</span>: Total air accommodated at the end of forced inspiration ($TLC = RV + ERV + TV + IRV$).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Exchange of Gases</summary><details class="sub-topic"><summary><h3>Diffusion Factors</h3></summary><p>Gas exchange occurs at alveoli and tissues by simple diffusion governed by:</p><ul><li><strong>Pressure/Concentration Gradient</strong>: Measured as <span class="keyword">partial pressure</span> ($pO_2$ and $pCO_2$).</li><li><strong>Solubility of Gases</strong>: $CO_2$ solubility is 20–25 times higher than $O_2$.</li><li><strong>Thickness of Diffusion Membrane</strong>: Three-layered membrane (alveolar squamous epithelium, capillary endothelium, and basement substance) is less than 1 mm thick.</li></ul></details><details class="sub-topic"><summary><h3>Partial Pressures (mm Hg)</h3></summary><ul><li><strong>Alveoli</strong>: $pO_2 = 104$, $pCO_2 = 40$</li><li><strong>Deoxygenated Blood</strong>: $pO_2 = 40$, $pCO_2 = 45$</li><li><strong>Oxygenated Blood</strong>: $pO_2 = 95$, $pCO_2 = 40$</li><li><strong>Tissues</strong>: $pO_2 = 40$, $pCO_2 = 45$</li></ul></details></details><details class="topic-box"><summary class="topic-title">Transport of Gases</summary><details class="sub-topic"><summary><h3>Oxygen Transport</h3></summary><p>97% of $O_2$ is transported by RBCs as <span class="keyword">oxyhaemoglobin</span>; 3% is dissolved in plasma.</p><ul><li><strong>Oxygen Dissociation Curve</strong>: A sigmoid curve plotting percentage saturation of haemoglobin against $pO_2$.</li><li><strong>Association Factors (Alveoli)</strong>: High $pO_2$, low $pCO_2$, low $H^+$ concentration, and lower temperature.</li><li><strong>Dissociation Factors (Tissues)</strong>: Low $pO_2$, high $pCO_2$, high $H^+$ concentration, and higher temperature.</li><li><strong>Delivery</strong>: Every 100 mL of oxygenated blood delivers ~5 mL of $O_2$ to tissues under normal conditions.</li></ul></details><details class="sub-topic"><summary><h3>Carbon Dioxide Transport</h3></summary><p>Transported in three forms: 70% as bicarbonate, 20–25% as <span class="keyword">carbamino-haemoglobin</span>, and 7% dissolved in plasma.</p><ul><li><strong>Bicarbonate Formation</strong>: Facilitated by the enzyme <span class="keyword">carbonic anhydrase</span> in RBCs and plasma:</li></ul>$$CO_2 + H_2O ightleftharpoons H_2CO_3 ightleftharpoons HCO_3^- + H^+$$<ul><li><strong>Delivery</strong>: Every 100 mL of deoxygenated blood delivers ~4 mL of $CO_2$ to the alveoli.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Regulation &amp; Disorders of Respiration</summary><details class="sub-topic"><summary><h3>Neural Regulation</h3></summary><ul><li><span class="keyword">Respiratory Rhythm Centre</span>: Located in the medulla; primarily responsible for regulation.</li><li><span class="keyword">Pneumotaxic Centre</span>: Located in the pons; moderates rhythm centre activity and limits inspiration duration.</li><li><span class="keyword">Chemosensitive Area</span>: Located adjacent to the rhythm centre; highly sensitive to $CO_2$ and hydrogen ions ($H^+$).</li><li><span class="keyword">Receptors</span>: Aortic arch and carotid artery receptors detect changes in $CO_2$ and $H^+$ to signal the rhythm centre.</li><li>Note: The role of oxygen in respiratory rhythm regulation is quite insignificant.</li></ul></details><details class="sub-topic"><summary><h3>Respiratory Disorders</h3></summary><ul><li><span class="keyword">Asthma</span>: Difficulty in breathing causing wheezing due to inflammation of bronchi and bronchioles.</li><li><span class="keyword">Emphysema</span>: Chronic disorder where alveolar walls are damaged, decreasing respiratory surface; majorly caused by cigarette smoking.</li><li><span class="keyword">Occupational Respiratory Disorders</span>: Fibrosis (proliferation of fibrous tissues) and lung damage caused by long exposure to dust in grinding or stone-breaking industries.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 14</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-13-plant-growth-and-development.html";
+      } else {
+        window.location.href = "11-chapter-15-body-fluids-and-circulation.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
