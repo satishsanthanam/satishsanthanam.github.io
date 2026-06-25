@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 1: Redox Reactions</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 1: Redox Reactions</h1>
+
+    <details class="topic-box"><summary class="topic-title">Classical Idea of Redox Reactions</summary><p>Originally, the term <span class="keyword">oxidation</span> was used to describe the addition of oxygen to an element or a compound. Due to the presence of dioxygen in the atmosphere, many elements combine with it to form oxides. Over time, this definition was broadened to include other electronegative elements, as well as the removal of hydrogen and electropositive elements.</p><details class="sub-topic"><summary><h3>Definitions of Oxidation and Reduction</h3></summary><ul><li><span class="keyword">Oxidation</span>: The addition of oxygen or any electronegative element to a substance, or the removal of hydrogen or any electropositive element from a substance.</li><li><span class="keyword">Reduction</span>: The removal of oxygen or any electronegative element from a substance, or the addition of hydrogen or any electropositive element to a substance.</li></ul></details><details class="sub-topic"><summary><h3>Classical Reaction Examples</h3></summary><p>Oxidation by addition of oxygen:</p><div class="example-block">$$2\text{Mg (s)} + \text{O}_2 \text{(g)} \rightarrow 2\text{MgO (s)}$$</div><div class="example-block">$$\text{S (s)} + \text{O}_2 \text{(g)} \rightarrow \text{SO}_2 \text{(g)}$$</div><p>Oxidation by removal of hydrogen:</p><div class="example-block">$$2\text{H}_2\text{S (g)} + \text{O}_2 \text{(g)} \rightarrow 2\text{S (s)} + 2\text{H}_2\text{O (l)}$$</div><p>Reduction by removal of oxygen:</p><div class="example-block">$$2\text{HgO (s)} \xrightarrow{\Delta} 2\text{Hg (l)} + \text{O}_2 \text{(g)}$$</div><p>Reduction by addition of hydrogen:</p><div class="example-block">$$\text{CH}_2=\text{CH}_2 \text{(g)} + \text{H}_2 \text{(g)} \rightarrow \text{H}_3\text{C}-\text{CH}_3 \text{(g)}$$</div></details></details><details class="topic-box"><summary class="topic-title">Redox Reactions in Terms of Electron Transfer</summary><p>Many redox reactions involve the transfer of electrons from one reactant to another. This electronic concept provides a more comprehensive definition of oxidation and reduction processes.</p><details class="sub-topic"><summary><h3>Electronic Definitions</h3></summary><ul><li><span class="keyword">Oxidation</span>: Loss of electron(s) by any species.</li><li><span class="keyword">Reduction</span>: Gain of electron(s) by any species.</li><li><span class="keyword">Oxidising Agent (Oxidant)</span>: Acceptor of electrons.</li><li><span class="keyword">Reducing Agent (Reductant)</span>: Donor of electrons.</li></ul></details><details class="sub-topic"><summary><h3>Competitive Electron Transfer Reactions</h3></summary><p>When different metals are placed in contact with salt solutions of other metals, a competition for electrons occurs. This allows us to design a <span class="keyword">metal activity series</span> or <span class="keyword">electrochemical series</span> based on their relative tendencies to release electrons.</p><p><strong>Experiment: Zinc Rod in Copper Nitrate Solution</strong></p><ul><li><strong>Aim:</strong> To observe competitive electron transfer between zinc and copper.</li><li><strong>Materials Required:</strong> Zinc strip, aqueous copper nitrate solution, beaker.</li><li><strong>Procedure:</strong> Place a strip of metallic zinc in an aqueous solution of copper nitrate for about one hour.</li><li><strong>Observation:</strong> The zinc strip becomes coated with reddish metallic copper, and the blue color of the solution (due to $\text{Cu}^{2+}$ ions) gradually disappears.</li><li><strong>Inference:</strong> Zinc releases electrons to copper. Zinc is oxidised, and copper ions are reduced: <div class="example-block">$$\text{Zn (s)} + \text{Cu}^{2+} \text{(aq)} \rightarrow \text{Zn}^{2+} \text{(aq)} + \text{Cu (s)}$$</div></li></ul><p>Based on similar experiments, the electron-releasing tendency of metals follows the order: $\text{Zn} > \text{Cu} > \text{Ag}$.</p></details></details><details class="topic-box"><summary class="topic-title">Oxidation Number</summary><p>To keep track of electron shifts in chemical reactions, especially those involving covalent compounds, the concept of <span class="keyword">oxidation number</span> (or oxidation state) is used. It is defined as the charge an atom would carry if all bonds to it were completely ionic.</p><details class="sub-topic"><summary><h3>Rules for Assigning Oxidation Numbers</h3></summary><ol><li>In elements in the free or uncombined state, each atom bears an oxidation number of zero (e.g., $\text{H}_2$, $\text{O}_2$, $\text{Na}$, $\text{Mg}$ have an oxidation number of 0).</li><li>For monoatomic ions, the oxidation number is equal to the charge on the ion (e.g., $\text{Na}^+$ is +1, $\text{Mg}^{2+}$ is +2, $\text{Cl}^-$ is -1). Alkali metals always have +1, alkaline earth metals have +2, and aluminium has +3 in their compounds.</li><li>The oxidation number of oxygen is usually -2 in most of its compounds. Exceptions include:<ul><li>Peroxides (e.g., $\text{H}_2\text{O}_2$, $\text{Na}_2\text{O}_2$) where oxygen is -1.</li><li>Superoxides (e.g., $\text{KO}_2$, $\text{RbO}_2$) where oxygen is -1/2.</li><li>Oxygen fluorides (e.g., $\text{OF}_2$ where oxygen is +2, and $\text{O}_2\text{F}_2$ where oxygen is +1).</li></ul></li><li>The oxidation number of hydrogen is +1, except when bonded to metals in binary compounds (metal hydrides like $\text{LiH}$, $\text{NaH}$, $\text{CaH}_2$) where its oxidation number is -1.</li><li>Fluorine always has an oxidation number of -1 in all its compounds. Other halogens ($\text{Cl}$, $\text{Br}$, $\text{I}$) usually have -1, except when combined with oxygen or fluorine (e.g., in oxoacids and oxoanions) where they exhibit positive oxidation states.</li><li>The algebraic sum of the oxidation numbers of all atoms in a neutral compound must be zero. In a polyatomic ion, the sum must equal the charge on the ion.</li></ol></details><details class="sub-topic"><summary><h3>Stock Notation</h3></summary><p>Proposed by German chemist Alfred Stock, <span class="keyword">Stock notation</span> represents the oxidation state of a metal in a compound using Roman numerals in parentheses immediately following the chemical symbol of the metal (e.g., $\text{Au(III)Cl}_3$, $\text{Sn(II)Cl}_2$, $\text{Fe(III)}_2\text{O}_3$).</p></details><details class="sub-topic"><summary><h3>Types of Redox Reactions</h3></summary><ul><li><strong>Combination Reactions:</strong> Two or more reactants combine to form a single product. At least one of the reactants must be in its elemental form. <div class="example-block">$$\text{C (s)} + \text{O}_2 \text{(g)} \rightarrow \text{CO}_2 \text{(g)}$$</div></li><li><strong>Decomposition Reactions:</strong> A compound breaks down into two or more components, at least one of which must be in the elemental state. <div class="example-block">$$2\text{H}_2\text{O (l)} \xrightarrow{\Delta} 2\text{H}_2 \text{(g)} + \text{O}_2 \text{(g)}$$</div></li><li><strong>Displacement Reactions:</strong> An ion or atom in a compound is replaced by an ion or atom of another element. This includes:<ul><li><em>Metal Displacement:</em> A metal in a compound is displaced by another metal in its uncombined state. <div class="example-block">$$\text{CuSO}_4 \text{(aq)} + \text{Zn (s)} \rightarrow \text{Cu (s)} + \text{ZnSO}_4 \text{(aq)}$$</div></li><li><em>Non-Metal Displacement:</em> Typically involves hydrogen displacement from water or acids by active metals, or halogen displacement. <div class="example-block">$$2\text{Na (s)} + 2\text{H}_2\text{O (l)} \rightarrow 2\text{NaOH (aq)} + \text{H}_2 \text{(g)}$$</div></li></ul></li><li><strong>Disproportionation Reactions:</strong> A special class of redox reactions in which a single element in one oxidation state is simultaneously oxidised and reduced. The reacting species must contain an element that can exist in at least three oxidation states. <div class="example-block">$$2\text{H}_2\text{O}_2 \text{(aq)} \rightarrow 2\text{H}_2\text{O (l)} + \text{O}_2 \text{(g)}$$</div></li></ul></details><details class="sub-topic"><summary><h3>The Paradox of Fractional Oxidation Numbers</h3></summary><p>Sometimes, calculating oxidation numbers using standard rules yields fractional values (e.g., carbon in $\text{C}_3\text{O}_2$ is $+4/3$, bromine in $\text{Br}_3\text{O}_8$ is $+16/3$, and sulphur in $\text{S}_4\text{O}_6^{2-}$ is $+2.5$). This is a structural paradox because electrons are never transferred in fractions. Structural analysis reveals that different atoms of the same element in these compounds exist in different integer oxidation states, and the fractional value is merely an average.</p></details></details><details class="topic-box"><summary class="topic-title">Balancing of Redox Reactions</summary><p>Two systematic methods are used to balance chemical equations for redox processes: the Oxidation Number Method and the Half-Reaction Method.</p><details class="sub-topic"><summary><h3>Oxidation Number Method</h3></summary><ol><li>Write the skeletal ionic equation for the reaction.</li><li>Assign oxidation numbers to all elements and identify which atoms undergo a change in oxidation number.</li><li>Calculate the increase and decrease in oxidation number per atom. Multiply by suitable integers to make the total increase equal to the total decrease.</li><li>Balance the charge by adding $\text{H}^+$ ions (for acidic medium) or $\text{OH}^-$ ions (for basic medium) to the appropriate side.</li><li>Balance hydrogen and oxygen atoms by adding water ($\text{H}_2\text{O}$) molecules to the required side.</li></ol></details><details class="sub-topic"><summary><h3>Half-Reaction Method (Ion-Electron Method)</h3></summary><ol><li>Write the unbalanced equation in ionic form.</li><li>Separate the equation into two half-reactions: the oxidation half-reaction and the reduction half-reaction.</li><li>Balance all atoms other than oxygen and hydrogen in each half-reaction individually.</li><li>In acidic medium, balance oxygen atoms by adding $\text{H}_2\text{O}$ and hydrogen atoms by adding $\text{H}^+$ ions. In basic medium, balance as in acidic medium first, then add an equal number of $\text{OH}^-$ ions to both sides to neutralize $\text{H}^+$ into $\text{H}_2\text{O}$.</li><li>Balance the charges in each half-reaction by adding electrons ($e^-$) to the appropriate side.</li><li>Multiply the half-reactions by appropriate integers so that the number of electrons lost in oxidation equals the number of electrons gained in reduction. Add the two half-reactions together and cancel out common terms.</li><li>Verify that both atoms and charges are fully balanced on both sides.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Redox Titrations and Electrode Processes</summary><p>Redox reactions form the basis of quantitative volumetric analysis (titrations) and electrochemical cells.</p><details class="sub-topic"><summary><h3>Redox Titrations</h3></summary><p>The endpoint of a redox titration can be detected using different indicator systems:</p><ul><li><span class="keyword">Self-Indicator</span>: The reagent itself undergoes a dramatic color change at the endpoint (e.g., deeply colored potassium permanganate, $\text{MnO}_4^-$, which turns colorless to a persistent light pink).</li><li><span class="keyword">External/Internal Indicators</span>: Compounds that change color when oxidised immediately after the analyte is consumed (e.g., diphenylamine indicator used with potassium dichromate, $\text{Cr}_2\text{O}_7^{2-}$, producing an intense blue color).</li><li><span class="keyword">Starch Indicator</span>: Specifically used in iodometric titrations, where starch forms an intense blue complex with molecular iodine ($\text{I}_2$), which disappears sharply when iodine is fully reduced by thiosulphate ions.</li></ul></details><details class="sub-topic"><summary><h3>Electrode Processes and Daniell Cell</h3></summary><p>When redox reactions are conducted such that oxidation and reduction half-reactions occur in separate containers, the transfer of electrons occurs through an external metallic wire, generating electrical energy. This setup is called a galvanic or voltaic cell.</p><p>The <span class="keyword">Daniell Cell</span> consists of:</p><ul><li>A zinc rod dipped in a zinc sulphate solution (Anode, where oxidation occurs: $\text{Zn} \rightarrow \text{Zn}^{2+} + 2e^-$).</li><li>A copper rod dipped in a copper sulphate solution (Cathode, where reduction occurs: $\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu}$).</li><li>A <span class="keyword">salt bridge</span> containing an inert electrolyte (like $\text{KCl}$ or $\text{NH}_4\text{NO}_3$ in agar-agar gel) to maintain electrical neutrality and complete the internal circuit.</li></ul><p>The potential difference between the electrodes is measured as the cell potential. Under standard conditions (1 M concentration, 298 K, 1 atm), this is called the <span class="keyword">Standard Electrode Potential</span> ($E^\theta$). By convention, the standard hydrogen electrode is assigned a potential of 0.00 V.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "12-chapter-02-organic-chemistry-some-basic-princ.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

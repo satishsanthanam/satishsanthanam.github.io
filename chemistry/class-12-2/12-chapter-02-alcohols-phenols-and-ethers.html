@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 2: Alcohols, Phenols and Ethers</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 2: Alcohols, Phenols and Ethers</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction and Classification</summary><p><span class="keyword">Alcohols</span> and <span class="keyword">phenols</span> are formed when a hydrogen atom in a hydrocarbon (aliphatic and aromatic respectively) is replaced by an <span class="keyword">-OH group</span>. <span class="keyword">Ethers</span> are formed when the hydrogen atom of a hydroxyl group of an alcohol or phenol is substituted by an alkyl or aryl group ($R-O-R'$ or $R-O-Ar$).</p><details class="sub-topic"><summary><h3>Classification of Alcohols and Phenols</h3></summary><ul><li><strong>Based on the number of hydroxyl groups:</strong><ul><li><span class="keyword">Monohydric</span>: Contains one $-OH$ group (e.g., $C_2H_5OH$).</li><li><span class="keyword">Dihydric</span>: Contains two $-OH$ groups (e.g., ethylene glycol, $CH_2(OH)-CH_2(OH)$).</li><li><span class="keyword">Trihydric</span>: Contains three $-OH$ groups (e.g., glycerol, $CH_2(OH)-CH(OH)-CH_2(OH)$).</li></ul></li><li><strong>Classification of Monohydric Alcohols (based on hybridization of carbon):</strong><ul><li><strong>Compounds containing $sp^3$ C-OH bond:</strong><ul><li><span class="keyword">Primary (1°)</span>, <span class="keyword">Secondary (2°)</span>, and <span class="keyword">Tertiary (3°)</span> alcohols depending on whether the $-OH$ group is attached to a primary, secondary, or tertiary carbon.</li><li><span class="keyword">Allylic alcohols</span>: $-OH$ group is attached to an $sp^3$ hybridized carbon adjacent to a carbon-carbon double bond (allylic carbon).</li><li><span class="keyword">Benzylic alcohols</span>: $-OH$ group is attached to an $sp^3$ hybridized carbon atom next to an aromatic ring.</li></ul></li><li><strong>Compounds containing $sp^2$ C-OH bond:</strong><ul><li><span class="keyword">Vinylic alcohols</span>: $-OH$ group attached directly to a carbon-carbon double bond (e.g., $CH_2=CH-OH$).</li><li><span class="keyword">Phenols</span>: $-OH$ group attached directly to an $sp^2$ hybridized carbon of an aromatic ring.</li></ul></li></ul></li></ul></details><details class="sub-topic"><summary><h3>Classification of Ethers</h3></summary><ul><li><span class="keyword">Simple or Symmetrical Ethers</span>: Alkyl or aryl groups attached to the oxygen atom are the same (e.g., diethyl ether, $C_2H_5OC_2H_5$).</li><li><span class="keyword">Mixed or Unsymmetrical Ethers</span>: Alkyl or aryl groups attached to the oxygen atom are different (e.g., ethylmethyl ether, $C_2H_5OCH_3$).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Nomenclature and Structures of Functional Groups</summary><details class="sub-topic"><summary><h3>Nomenclature Rules</h3></summary><ul><li><strong>Alcohols:</strong> Common names are derived from the alkyl group followed by the word "alcohol". IUPAC names are derived by replacing the ending '-e' of the parent alkane with the suffix '-ol'.</li><li><strong>Phenols:</strong> The simplest hydroxy derivative of benzene is <span class="keyword">phenol</span>. Substituted phenols use prefixes like <em>ortho</em> (1,2-), <em>meta</em> (1,3-), and <em>para</em> (1,4-) in common names, and numbers in IUPAC names.</li><li><strong>Ethers:</strong> Common names list the alkyl/aryl groups in alphabetical order followed by "ether". IUPAC names designate the smaller alkyl group as an alkoxy substituent (e.g., <span class="keyword">methoxymethane</span>).</li></ul></details><details class="sub-topic"><summary><h3>Structures of Functional Groups</h3></summary><p>In alcohols, the oxygen of the $-OH$ group is attached to carbon by a $\sigma$ bond formed by the overlap of an $sp^3$ hybridized orbital of carbon with an $sp^3$ hybridized orbital of oxygen.</p><ul><li>The $C-O-H$ bond angle in methanol is $108.9^\circ$, slightly less than the tetrahedral angle ($109^\circ 28'$) due to repulsion between unshared electron pairs of oxygen.</li><li>In phenol, the $C-O$ bond length ($136\text{ pm}$) is shorter than in methanol ($142\text{ pm}$) due to partial double bond character from conjugation of oxygen's lone pair with the aromatic ring, and the $sp^2$ hybridized state of carbon.</li><li>In ethers, the $C-O-H$ bond angle is slightly greater than the tetrahedral angle (e.g., $111.7^\circ$ in methoxymethane) due to repulsive interactions between bulky alkyl groups.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Preparation of Alcohols and Phenols</summary><details class="sub-topic"><summary><h3>Preparation of Alcohols</h3></summary><ol><li><strong>From Alkenes:</strong><ul><li><strong>Acid catalysed hydration:</strong> Alkenes react with water in the presence of an acid catalyst to form alcohols following Markovnikov's rule.<pre>$$R-CH=CH_2 + H_2O \xrightarrow{H^+} R-CH(OH)-CH_3$$</pre></li><li><strong>Hydroboration-Oxidation:</strong> Diborane reacts with alkenes to yield trialkylboranes, which are oxidised by alkaline hydrogen peroxide to give anti-Markovnikov alcohols.<pre>$$3R-CH=CH_2 + (BH_3)_2 \rightarrow (R-CH_2-CH_2)_3B \xrightarrow{H_2O_2, OH^-} 3R-CH_2-CH_2-OH$$</pre></li></ul></li><li><strong>From Carbonyl Compounds:</strong><ul><li><strong>Reduction of Aldehydes and Ketones:</strong> Catalytic hydrogenation (using $Pd$, $Pt$, or $Ni$) or reduction with $NaBH_4$ or $LiAlH_4$ yields primary alcohols from aldehydes and secondary alcohols from ketones.</li><li><strong>Reduction of Carboxylic Acids and Esters:</strong> Carboxylic acids are reduced to primary alcohols using the strong reducing agent $LiAlH_4$. Commercially, acids are converted to esters and then hydrogenated.</li></ul></li><li><strong>From Grignard Reagents:</strong> Nucleophilic addition of Grignard reagents ($R-MgX$) to carbonyl compounds followed by hydrolysis yields alcohols.<ul><li>Methanal yields primary alcohols.</li><li>Other aldehydes yield secondary alcohols.</li><li>Ketones yield tertiary alcohols.</li></ul></li></ol></details><details class="sub-topic"><summary><h3>Preparation of Phenols</h3></summary><ol><li><strong>From Haloarenes (Dow's Process):</strong> Chlorobenzene is fused with $NaOH$ at $623\text{ K}$ and $320\text{ atm}$ to form sodium phenoxide, which yields phenol upon acidification.</li><li><strong>From Benzenesulphonic Acid:</strong> Benzene is sulphonated with oleum, and the resulting benzenesulphonic acid is fused with molten $NaOH$ and acidified.</li><li><strong>From Diazonium Salts:</strong> Aniline is treated with nitrous acid ($NaNO_2 + HCl$) at $273-278\text{ K}$ to form benzene diazonium chloride, which is hydrolysed by warming with water.</li><li><strong>From Cumene (Industrial Method):</strong> Cumene (isopropylbenzene) is oxidised by air to cumene hydroperoxide, which is converted to phenol and acetone (valuable by-product) using dilute acid.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Physical and Chemical Properties</summary><details class="sub-topic"><summary><h3>Physical Properties</h3></summary><ul><li><strong>Boiling Points:</strong> Alcohols and phenols have higher boiling points than hydrocarbons, ethers, and haloalkanes of comparable molecular masses due to intermolecular <span class="keyword">hydrogen bonding</span>. Boiling points increase with carbon chain length and decrease with branching.</li><li><strong>Solubility:</strong> Lower alcohols are highly soluble in water due to their ability to form hydrogen bonds with water molecules. Solubility decreases as the size of the hydrophobic alkyl/aryl group increases.</li></ul></details><details class="sub-topic"><summary><h3>Chemical Reactions of Alcohols and Phenols</h3></summary><ul><li><strong>Acidity of Alcohols and Phenols:</strong><ul><li>Alcohols and phenols react with active metals (like $Na$, $K$, $Al$) to release hydrogen gas and form alkoxides/phenoxides.</li><li>Phenols are stronger acids than alcohols because the phenoxide ion is resonance-stabilized, whereas the alkoxide ion is not.</li><li>Electron-withdrawing groups (like $-NO_2$) increase the acidity of phenols, especially at <em>ortho</em> and <em>para</em> positions. Electron-releasing groups (like alkyl groups) decrease acidity.</li></ul></li><li><strong>Esterification:</strong> Alcohols and phenols react with carboxylic acids, acid anhydrides, and acid chlorides to form esters. Acetylation of salicylic acid produces <span class="keyword">aspirin</span>.</li><li><strong>Reactions involving C-O bond cleavage in Alcohols:</strong><ul><li><strong>Reaction with HX:</strong> Alcohols react with hydrogen halides to form alkyl halides. The <span class="keyword">Lucas test</span> (conc. $HCl$ and $ZnCl_2$) distinguishes 1°, 2°, and 3° alcohols based on turbidity formation rates.</li><li><strong>Dehydration:</strong> Alcohols undergo dehydration to form alkenes when treated with protic acids (like conc. $H_2SO_4$ or $H_3PO_4$). Ease of dehydration order: $3^\circ > 2^\circ > 1^\circ$.</li><li><strong>Oxidation:</strong> Primary alcohols are oxidised to aldehydes (using <span class="keyword">PCC</span>) and further to carboxylic acids (using strong oxidants like $KMnO_4$). Secondary alcohols yield ketones (using $CrO_3$). Tertiary alcohols resist oxidation.</li></ul></li><li><strong>Reactions of Phenols:</strong><ul><li><strong>Electrophilic Aromatic Substitution:</strong><ul><li><em>Nitration:</em> Dilute $HNO_3$ at $298\text{ K}$ yields a mixture of <em>o</em>- and <em>p</em>-nitrophenols. Concentrated $HNO_3$ yields <span class="keyword">picric acid</span> (2,4,6-trinitrophenol).</li><li><em>Halogenation:</em> Phenol reacts with $Br_2$ in $CS_2$ at low temperature to give mono-bromophenols, and with bromine water to give a white precipitate of 2,4,6-tribromophenol.</li></ul></li><li><strong>Kolbe's Reaction:</strong> Phenoxide ion reacts with $CO_2$ followed by acidification to yield salicylic acid (2-hydroxybenzoic acid).</li><li><strong>Reimer-Tiemann Reaction:</strong> Phenol reacts with chloroform ($CHCl_3$) in the presence of $NaOH$ to introduce a $-CHO$ group at the <em>ortho</em> position, yielding salicylaldehyde.</li><li><strong>Reaction with Zinc Dust:</strong> Phenol is reduced to benzene when heated with zinc dust.</li><li><strong>Oxidation:</strong> Oxidation of phenol with chromic acid produces benzoquinone.</li></ul></li></ul></details></details><details class="topic-box"><summary class="topic-title">Ethers: Preparation and Reactions</summary><details class="sub-topic"><summary><h3>Preparation of Ethers</h3></summary><ol><li><strong>Dehydration of Alcohols:</strong> Dehydration of ethanol at $413\text{ K}$ in the presence of protic acids yields ethoxyethane. (At $443\text{ K}$, ethene is the major product).</li><li><strong>Williamson Synthesis:</strong> An alkyl halide reacts with a sodium alkoxide via an $S_N2$ mechanism. Best yields are obtained with primary alkyl halides; tertiary halides undergo elimination to yield alkenes instead of ethers.</li></ol></details><details class="sub-topic"><summary><h3>Chemical Reactions of Ethers</h3></summary><ul><li><strong>Cleavage of C-O bond:</strong> Ethers are cleaved by strong hydrogen halides ($HX$, especially $HI$ or $HBr$) under drastic conditions.<pre>$$R-O-R' + HX \rightarrow R-X + R'-OH$$</pre>If one of the alkyl groups is tertiary, the reaction proceeds via an $S_N1$ mechanism to yield a tertiary halide.</li><li><strong>Electrophilic Substitution:</strong> The alkoxy group ($-OR$) is <em>ortho</em>, <em>para</em>-directing and activates the aromatic ring. Ethers like anisole undergo halogenation, Friedel-Crafts alkylation/acylation, and nitration.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-01-haloalkanes-and-haloarenes.html";
+      } else {
+        window.location.href = "12-chapter-03-aldehydes-ketones-and-carboxylic-a.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

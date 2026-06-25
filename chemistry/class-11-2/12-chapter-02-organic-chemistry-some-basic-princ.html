@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 2: Organic Chemistry – Some Basic Principles and Techniques</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 2: Organic Chemistry – Some Basic Principles and Techniques</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Tetravalence of Carbon</summary><details class="sub-topic"><summary><h3>General Introduction</h3></summary><p>Organic chemistry is the study of carbon-based compounds. Carbon has a unique property called <span class="keyword">catenation</span>, which allows it to form covalent bonds with other carbon atoms to create long chains and rings. Historically, Berzelius proposed the "vital force theory," suggesting organic compounds could only be produced by living organisms. This was disproved in 1828 when F. Wöhler synthesized the organic compound <span class="keyword">urea</span> from the inorganic compound <span class="keyword">ammonium cyanate</span>:</p><div class="example-block">$$\text{NH}_4\text{CNO} \xrightarrow{\text{Heat}} \text{NH}_2\text{CONH}_2$$</div></details><details class="sub-topic"><summary><h3>Shapes of Carbon Compounds &amp; Hybridisation</h3></summary><p>The tetravalence of carbon and the shapes of its compounds are explained by orbital hybridisation:</p><ul><li><span class="keyword">sp3 Hybridisation</span>: Leads to a tetrahedral shape (e.g., methane, $\text{CH}_4$) with $109.5^\circ$ bond angles.</li><li><span class="keyword">sp2 Hybridisation</span>: Leads to a trigonal planar shape (e.g., ethene, $\text{C}_2\text{H}_4$) with $120^\circ$ bond angles.</li><li><span class="keyword">sp Hybridisation</span>: Leads to a linear shape (e.g., ethyne, $\text{C}_2\text{H}_2$) with $180^\circ$ bond angles.</li></ul><p>The electronegativity and bond strength of carbon increase with the increase in s-character of the hybridised orbitals: $\text{sp} > \text{sp}^2 > \text{sp}^3$.</p></details><details class="sub-topic"><summary><h3>Features of Pi Bonds</h3></summary><p>A <span class="keyword">pi (\pi) bond</span> is formed by the sideways overlap of unhybridised p-orbitals on adjacent atoms. This overlap restricts rotation around the carbon-carbon double bond, providing reactive centers containing multiple bonds where electron-seeking reagents can attack.</p></details></details><details class="topic-box"><summary class="topic-title">Structural Representations &amp; Classification</summary><details class="sub-topic"><summary><h3>Structural Formulas</h3></summary><p>Organic molecules can be represented in several ways:</p><ul><li><span class="keyword">Complete Structural Formulas</span>: Show every single covalent bond as a dash.</li><li><span class="keyword">Condensed Structural Formulas</span>: Omit some or all covalent bonds, grouping identical units together (e.g., $\text{CH}_3(\text{CH}_2)_4\text{CH}_3$).</li><li><span class="keyword">Bond-line Formulas</span>: Represent carbon-carbon bonds as zig-zag lines, where vertices and line ends represent carbon atoms saturated with hydrogen.</li><li><span class="keyword">Three-Dimensional Representation</span>: Uses solid wedges to indicate bonds projecting out of the plane towards the observer, dashed wedges for bonds projecting away, and normal lines for bonds in the plane of the paper.</li></ul></details><details class="sub-topic"><summary><h3>Classification of Organic Compounds</h3></summary><p>Organic compounds are broadly classified into:</p><ul><li><span class="keyword">Acyclic or Open Chain Compounds</span>: Also called aliphatic compounds, consisting of straight or branched chains.</li><li><span class="keyword">Cyclic or Closed Chain Compounds</span>: Divided into:<ul><li><span class="keyword">Alicyclic</span>: Ring compounds that behave like aliphatic compounds (e.g., cyclohexane).</li><li><span class="keyword">Aromatic</span>: Special cyclic compounds containing conjugated systems, classified into benzenoid (e.g., benzene, aniline) and non-benzenoid (e.g., tropone).</li><li><span class="keyword">Heterocyclic</span>: Ring systems containing heteroatoms like oxygen, nitrogen, or sulphur (e.g., furan, thiophene, pyridine).</li></ul></li></ul></details><details class="sub-topic"><summary><h3>Functional Groups &amp; Homologous Series</h3></summary><p>A <span class="keyword">functional group</span> is an atom or group of atoms joined in a specific manner that determines the chemical properties of an organic compound. A <span class="keyword">homologous series</span> is a family of organic compounds containing the same functional group, where successive members differ by a $-\text{CH}_2-$ unit.</p></details></details><details class="topic-box"><summary class="topic-title">IUPAC Nomenclature</summary><details class="sub-topic"><summary><h3>Nomenclature of Alkanes</h3></summary><p>IUPAC rules for naming branched-chain alkanes include:</p><ol><li>Identify the longest continuous carbon chain to determine the parent alkane.</li><li>Number the carbon atoms of the parent chain such that the branched carbon atoms get the lowest possible locant numbers.</li><li>Name the alkyl substituents and prefix them to the parent name in alphabetical order.</li><li>If identical substituents are present, use prefixes like di-, tri-, tetra-, separated by commas for locants.</li></ol></details><details class="sub-topic"><summary><h3>Nomenclature with Functional Groups</h3></summary><p>When multiple functional groups are present, one is selected as the principal functional group based on the following priority order:</p><p>$-\text{COOH} > -\text{SO}_3\text{H} > -\text{COOR} > -\text{COCl} > -\text{CONH}_2 > -\text{CN} > -\text{CHO} > >\text{C}=\text{O} > -\text{OH} > -\text{NH}_2 > >\text{C}=\text{C}< > -\text{C}\equiv\text{C}-$</p><p>The remaining groups are treated as substituents and named using prefixes.</p></details></details><details class="topic-box"><summary class="topic-title">Isomerism</summary><details class="sub-topic"><summary><h3>Structural Isomerism</h3></summary><p>Compounds with the same molecular formula but different structural arrangements are called structural isomers:</p><ul><li><span class="keyword">Chain Isomerism</span>: Difference in the carbon skeleton (e.g., pentane and isopentane).</li><li><span class="keyword">Position Isomerism</span>: Difference in the position of a functional group or substituent (e.g., propan-1-ol and propan-2-ol).</li><li><span class="keyword">Functional Group Isomerism</span>: Difference in the nature of the functional group (e.g., ethanol and dimethyl ether).</li><li><span class="keyword">Metamerism</span>: Unequal distribution of alkyl chains on either side of a polyvalent functional group (e.g., methoxypropane and ethoxyethane).</li></ul></details><details class="sub-topic"><summary><h3>Stereoisomerism</h3></summary><p>Compounds with the same molecular formula and connectivity but different spatial orientations of atoms. It is classified into <span class="keyword">geometrical isomerism</span> and <span class="keyword">optical isomerism</span>.</p></details></details><details class="topic-box"><summary class="topic-title">Reaction Mechanisms &amp; Electronic Effects</summary><details class="sub-topic"><summary><h3>Fission of a Covalent Bond</h3></summary><ul><li><span class="keyword">Heterolytic Cleavage</span>: The shared pair of electrons remains with one of the fragments, producing a <span class="keyword">carbocation</span> (positively charged carbon) or a <span class="keyword">carbanion</span> (negatively charged carbon).</li><li><span class="keyword">Homolytic Cleavage</span>: Each fragment takes one electron from the shared pair, producing highly reactive neutral species called <span class="keyword">free radicals</span>.</li></ul></details><details class="sub-topic"><summary><h3>Nucleophiles and Electrophiles</h3></summary><ul><li><span class="keyword">Nucleophiles</span>: Electron-rich species that donate an electron pair to electron-deficient centers (e.g., $\text{HO}^-$, $\text{H}_2\text{O}$, $\text{NH}_3$).</li><li><span class="keyword">Electrophiles</span>: Electron-deficient species that accept an electron pair from reactive sites (e.g., $\text{NO}_2^+$, $\text{Cl}^+$, $\text{BF}_3$).</li></ul></details><details class="sub-topic"><summary><h3>Electronic Displacement Effects</h3></summary><ul><li><span class="keyword">Inductive Effect</span>: Permanent displacement of $\sigma$-electrons along a carbon chain due to electronegativity differences. It can be electron-withdrawing ($-I$) or electron-donating ($+I$).</li><li><span class="keyword">Resonance Effect</span>: Polarity produced in a molecule by the interaction of two $\pi$-bonds or a $\pi$-bond and a lone pair of electrons. It includes $+R$ and $-R$ effects.</li><li><span class="keyword">Electromeric Effect</span>: A temporary effect involving the complete transfer of a shared pair of $\pi$-electrons to one of the atoms in the presence of an attacking reagent.</li><li><span class="keyword">Hyperconjugation</span>: A permanent stabilizing interaction involving the delocalisation of $\sigma$-electrons of a $\text{C}-\text{H}$ bond of an alkyl group directly attached to an atom of an unsaturated system or a carbocation.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Purification of Organic Compounds</summary><details class="sub-topic"><summary><h3>Common Purification Techniques</h3></summary><ul><li><span class="keyword">Sublimation</span>: Used to separate sublimable compounds from non-sublimable impurities.</li><li><span class="keyword">Crystallisation</span>: Based on differences in solubilities of the compound and impurities in a suitable solvent.</li><li><span class="keyword">Distillation</span>: Used to separate volatile liquids from non-volatile impurities or liquids with sufficient differences in boiling points. Variations include:<ul><li><span class="keyword">Fractional Distillation</span>: For liquids with close boiling points.</li><li><span class="keyword">Distillation under reduced pressure</span>: For liquids that decompose at or below their boiling points.</li><li><span class="keyword">Steam Distillation</span>: For steam-volatile, water-immiscible substances.</li></ul></li><li><span class="keyword">Differential Extraction</span>: Separates an organic compound from an aqueous solution using an organic solvent in which the compound is more soluble.</li><li><span class="keyword">Chromatography</span>: Based on differential migration of components through a stationary phase under the influence of a mobile phase. Includes <span class="keyword">Adsorption Chromatography</span> (Column and Thin Layer) and <span class="keyword">Partition Chromatography</span> (Paper).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Qualitative &amp; Quantitative Analysis</summary><details class="sub-topic"><summary><h3>Qualitative Analysis</h3></summary><ul><li><span class="keyword">Carbon and Hydrogen</span>: Detected by heating the compound with copper(II) oxide, converting carbon to $\text{CO}_2$ (turns lime water milky) and hydrogen to $\text{H}_2\text{O}$ (turns anhydrous copper sulphate blue).</li><li><span class="keyword">Lassaigne's Test</span>: Used to detect Nitrogen, Sulphur, and Halogens by fusing the organic compound with sodium metal to form soluble sodium salts ($\text{NaCN}$, $\text{Na}_2\text{S}$, $\text{NaX}$).</li></ul></details><details class="sub-topic"><summary><h3>Quantitative Analysis</h3></summary><ul><li><span class="keyword">Carbon and Hydrogen</span>: Estimated by Liebig's combustion method, measuring the masses of $\text{CO}_2$ and $\text{H}_2\text{O}$ produced.</li><li><span class="keyword">Nitrogen</span>: Estimated using either the <span class="keyword">Dumas Method</span> (collecting nitrogen gas) or the <span class="keyword">Kjeldahl Method</span> (converting nitrogen to ammonia, which is titrated against standard acid).</li><li><span class="keyword">Halogens</span>: Estimated by the <span class="keyword">Carius Method</span>, where the compound is heated with fuming nitric acid and silver nitrate to precipitate silver halides.</li><li><span class="keyword">Sulphur</span>: Oxidized to sulphuric acid and precipitated as barium sulphate ($\text{BaSO}_4$).</li><li><span class="keyword">Phosphorus</span>: Precipitated as ammonium phosphomolybdate or magnesium pyrophosphate.</li><li><span class="keyword">Oxygen</span>: Usually calculated by subtracting the sum of percentages of all other elements from 100.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-01-redox-reactions.html";
+      } else {
+        window.location.href = "12-chapter-03-hydrocarbons.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

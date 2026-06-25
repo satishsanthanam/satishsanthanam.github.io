@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 1: Haloalkanes and Haloarenes</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 1: Haloalkanes and Haloarenes</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction and Classification</summary>
+  <p>The replacement of hydrogen atom(s) in an aliphatic or aromatic hydrocarbon by halogen atom(s) results in the formation of <span class="keyword">alkyl halide</span> (haloalkane) and <span class="keyword">aryl halide</span> (haloarene), respectively.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Classification Based on Number of Halogen Atoms</h3></summary>
+    <p>Compounds are classified depending on whether they contain one, two, or more halogen atoms in their structures:</p>
+    <ul>
+      <li><strong>Monohaloalkanes / Monohaloarenes:</strong> Contain one halogen atom (e.g., $C_2H_5X$).</li>
+      <li><strong>Dihaloalkanes / Dihaloarenes:</strong> Contain two halogen atoms (e.g., $CH_2X-CH_2X$).</li>
+      <li><strong>Trihaloalkanes / Trihaloarenes:</strong> Contain three halogen atoms.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Compounds Containing $sp^3$ C—X Bond</h3></summary>
+    <ul>
+      <li><strong>Alkyl halides or haloalkanes (R—X):</strong> The halogen atom is bonded to an alkyl group. They form a homologous series represented by $C_nH_{2n+1}X$. They are further classified into:
+        <ul>
+          <li><strong>Primary ($1^\circ$):</strong> Halogen attached to a primary carbon.</li>
+          <li><strong>Secondary ($2^\circ$):</strong> Halogen attached to a secondary carbon.</li>
+          <li><strong>Tertiary ($3^\circ$):</strong> Halogen attached to a tertiary carbon.</li>
+        </ul>
+      </li>
+      <li><strong>Allylic halides:</strong> Halogen atom is bonded to an $sp^3$-hybridised carbon atom adjacent to a carbon-carbon double bond ($C=C$).</li>
+      <li><strong>Benzylic halides:</strong> Halogen atom is bonded to an $sp^3$-hybridised carbon atom attached to an aromatic ring.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Compounds Containing $sp^2$ C—X Bond</h3></summary>
+    <ul>
+      <li><strong>Vinylic halides:</strong> Halogen atom is bonded to an $sp^2$-hybridised carbon atom of a carbon-carbon double bond ($C=C$).</li>
+      <li><strong>Aryl halides:</strong> Halogen atom is directly bonded to the $sp^2$-hybridised carbon atom of an aromatic ring.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Nomenclature and Nature of C—X Bond</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Nomenclature Rules</h3></summary>
+    <ul>
+      <li><strong>Common Names:</strong> Derived by naming the alkyl group followed by the halide name (e.g., n-propyl bromide).</li>
+      <li><strong>IUPAC Names:</strong> Named as halosubstituted hydrocarbons (e.g., 1-Bromopropane).</li>
+      <li><strong>Dihaloalkanes:</strong> Classified as:
+        <ul>
+          <li><span class="keyword">Geminal halides</span> (gem-dihalides): Both halogen atoms are on the same carbon atom (alkylidene halides).</li>
+          <li><span class="keyword">Vicinal halides</span> (vic-dihalides): Halogen atoms are on adjacent carbon atoms (alkylene dihalides).</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Nature of C—X Bond</h3></summary>
+    <p>Halogen atoms are more electronegative than carbon, making the carbon-halogen bond highly polarized. The carbon atom bears a partial positive charge ($\delta+$) while the halogen atom bears a partial negative charge ($\delta-$).</p>
+    <ul>
+      <li><strong>Bond Length:</strong> Increases down the group from C—F to C—I as the size of the halogen increases ($C-F < C-Cl < C-Br < C-I$).</li>
+      <li><strong>Bond Enthalpy:</strong> Decreases down the group as bond length increases.</li>
+      <li><strong>Dipole Moment:</strong> Highly influenced by electronegativity and bond length.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Methods of Preparation of Haloalkanes</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>From Alcohols</h3></summary>
+    <p>The hydroxyl group of an alcohol is replaced by halogen using various reagents:</p>
+    <ul>
+      <li>By reaction with concentrated halogen acids in the presence of a catalyst ($ZnCl_2$):
+        $$R-OH + HCl \xrightarrow{ZnCl_2} R-Cl + H_2O$$
+      </li>
+      <li>By reaction with phosphorus halides:
+        $$3R-OH + PX_3 \rightarrow 3R-X + H_3PO_3 \quad (X = Cl, Br)$$
+        $$R-OH + PCl_5 \rightarrow R-Cl + POCl_3 + HCl$$
+      </li>
+      <li>By reaction with thionyl chloride (<span class="keyword">Thionyl chloride</span> is preferred because the other products, $SO_2$ and $HCl$, are escapable gases, yielding pure alkyl halides):
+        $$R-OH + SOCl_2 \rightarrow R-Cl + SO_2(g) + HCl(g)$$
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>From Hydrocarbons</h3></summary>
+    <ul>
+      <li><strong>By Free Radical Halogenation of Alkanes:</strong> Chlorination or bromination in the presence of UV light or heat yields a complex mixture of isomeric mono- and polyhaloalkanes.</li>
+      <li><strong>From Alkenes:</strong>
+        <ul>
+          <li><strong>Addition of hydrogen halides:</strong> Alkenes react with $HX$ ($HCl, HBr, HI$) to form alkyl halides. Unsymmetrical alkenes follow <span class="keyword">Markovnikov's rule</span>.
+            $$CH_3-CH=CH_2 + H-I \rightarrow CH_3-CH(I)-CH_3 \quad (Major)$$
+          </li>
+          <li><strong>Addition of halogens:</strong> Addition of bromine in $CCl_4$ to an alkene results in the discharge of the reddish-brown color of bromine, serving as an important test for unsaturation.
+            $$CH_2=CH_2 + Br_2 \xrightarrow{CCl_4} BrCH_2-CH_2Br \quad (vic\text{-Dibromide})$$
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Halogen Exchange Reactions</h3></summary>
+    <ul>
+      <li><strong>Finkelstein Reaction:</strong> Alkyl iodides are prepared by reacting alkyl chlorides/bromides with sodium iodide ($NaI$) in dry acetone.
+        $$R-X + NaI \xrightarrow{\text{dry acetone}} R-I + NaX \quad (X = Cl, Br)$$
+      </li>
+      <li><strong>Swarts Reaction:</strong> Alkyl fluorides are synthesized by heating alkyl chlorides/bromides in the presence of metallic fluorides such as $AgF$, $Hg_2F_2$, $CoF_2$, or $SbF_3$.
+        $$H_3C-Br + AgF \rightarrow H_3C-F + AgBr$$
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Preparation of Haloarenes</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>From Hydrocarbons by Electrophilic Substitution</h3></summary>
+    <p>Aryl chlorides and bromides are prepared by direct halogenation of arenes with chlorine or bromine in the presence of a Lewis acid catalyst like iron or iron(III) chloride ($FeCl_3$) in the dark.</p>
+    <ul>
+      <li>The ortho and para isomers can be separated due to a large difference in their melting points.</li>
+      <li>Reactions with iodine are reversible and require the presence of an oxidizing agent ($HNO_3$, $HIO_4$) to oxidize the $HI$ formed.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>From Amines by Sandmeyer's Reaction</h3></summary>
+    <p>When a primary aromatic amine dissolved in cold aqueous mineral acid is treated with sodium nitrite ($NaNO_2$), a diazonium salt is formed. Shaking the freshly prepared diazonium salt with cuprous chloride or cuprous bromide results in the replacement of the diazonium group by $-Cl$ or $-Br$.</p>
+    <ol>
+      <li><strong>Diazotisation:</strong>
+        $$Ar-NH_2 + NaNO_2 + 2HX \xrightarrow{273-278 K} Ar-N_2^+X^- + NaX + 2H_2O$$
+      </li>
+      <li><strong>Sandmeyer Reaction:</strong>
+        $$Ar-N_2^+X^- \xrightarrow{Cu_2X_2} Ar-X + N_2 \quad (X = Cl, Br)$$
+      </li>
+      <li><strong>Iodide Replacement:</strong> Shaking the diazonium salt with potassium iodide ($KI$) yields aryl iodides without requiring cuprous halide.
+        $$Ar-N_2^+X^- + KI \rightarrow Ar-I + K+ + N_2$$
+      </li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Physical Properties</summary>
+  <ul>
+    <li><strong>State and Odour:</strong> Alkyl halides are colorless when pure. Bromides and iodides develop color when exposed to light. Volatile halogen compounds often have a sweet smell.</li>
+    <li><strong>Boiling Points:</strong> For a given alkyl group, the boiling points of alkyl halides decrease in the order:
+      $$RI > RBr > RCl > RF$$
+      This is due to the increase in size and mass of the halogen atom, which increases the magnitude of van der Waals forces.
+    </li>
+    <li><strong>Effect of Branching:</strong> Boiling points of isomeric haloalkanes decrease with an increase in branching due to a decrease in surface area.
+      $$\text{n-butyl bromide} > \text{isobutyl bromide} > \text{tert-butyl bromide}$$
+    </li>
+    <li><strong>Melting Points of Dihalobenzenes:</strong> The para-isomers have higher melting points than their ortho- and meta-isomers due to the symmetry of the para-isomer, which fits better into the crystal lattice.</li>
+    <li><strong>Solubility:</strong> Haloalkanes are only very slightly soluble in water because they cannot form hydrogen bonds with water molecules. However, they are highly soluble in organic solvents.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Chemical Reactions of Haloalkanes</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>1. Nucleophilic Substitution Reactions</h3></summary>
+    <p>A nucleophile attacks the electron-deficient carbon bonded to the halogen, displacing the halide ion (leaving group):</p>
+    $$Nu^- + C^{\delta+}-X^{\delta-} \rightarrow C-Nu + X^-$$
+    
+    <h4>Mechanisms of Substitution:</h4>
+    <ul>
+      <li><strong>$S_N2$ (Substitution Nucleophilic Bimolecular):</strong>
+        <ul>
+          <li>Occurs in a single step via a transition state with no intermediate.</li>
+          <li>The incoming nucleophile attacks from the side opposite to the leaving group, resulting in complete <span class="keyword">inversion of configuration</span> (Walden inversion).</li>
+          <li>Order of reactivity: $\text{Primary } (1^\circ) > \text{Secondary } (2^\circ) > \text{Tertiary } (3^\circ)$ (governed by steric hindrance).</li>
+        </ul>
+      </li>
+      <li><strong>$S_N1$ (Substitution Nucleophilic Unimolecular):</strong>
+        <ul>
+          <li>Occurs in two steps. Step I (slow, rate-determining) involves the cleavage of the C—X bond to form a stable <span class="keyword">carbocation</span>. Step II (fast) involves the attack of the nucleophile.</li>
+          <li>Accompanied by <span class="keyword">racemisation</span> due to the planar nature of the carbocation intermediate.</li>
+          <li>Order of reactivity: $\text{Tertiary } (3^\circ) > \text{Secondary } (2^\circ) > \text{Primary } (1^\circ)$ (governed by carbocation stability).</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2. Elimination Reactions ($\beta$-Elimination)</h3></summary>
+    <p>When a haloalkane with a $\beta$-hydrogen atom is heated with an alcoholic solution of potassium hydroxide ($KOH$), elimination of a hydrogen atom from the $\beta$-carbon and a halogen atom from the $\alpha$-carbon occurs, forming an alkene.</p>
+    <ul>
+      <li><strong>Zaitsev (Saytzeff) Rule:</strong> In dehydrohalogenation reactions, the preferred product is the highly substituted alkene (the one with the greater number of alkyl groups attached to the doubly bonded carbon atoms).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>3. Reaction with Metals</h3></summary>
+    <ul>
+      <li><strong>Formation of Grignard Reagents:</strong> Alkyl halides react with magnesium metal in dry ether to form alkyl magnesium halides ($RMgX$), known as <span class="keyword">Grignard Reagents</span>.
+        $$R-X + Mg \xrightarrow{\text{dry ether}} RMgX$$
+        Grignard reagents are highly reactive and decompose in the presence of any proton source (like water, alcohols) to form hydrocarbons:
+        $$RMgX + H_2O \rightarrow R-H + Mg(OH)X$$
+      </li>
+      <li><strong>Wurtz Reaction:</strong> Alkyl halides react with sodium in dry ether to give hydrocarbons containing double the number of carbon atoms.
+        $$2R-X + 2Na \xrightarrow{\text{dry ether}} R-R + 2NaX$$
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Chemical Reactions of Haloarenes</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Low Reactivity towards Nucleophilic Substitution</h3></summary>
+    <p>Aryl halides are extremely unreactive towards nucleophilic substitution due to:</p>
+    <ol>
+      <li><strong>Resonance Effect:</strong> The electron pairs on the halogen atom are conjugated with the $\pi$-electrons of the benzene ring, giving the C—X bond a partial double bond character, making it difficult to break.</li>
+      <li><strong>Difference in Hybridisation:</strong> The carbon attached to the halogen is $sp^2$-hybridised in haloarenes (shorter, stronger bond) compared to $sp^3$-hybridised in haloalkanes.</li>
+      <li><strong>Instability of Phenyl Cation:</strong> Self-ionization to form a phenyl cation is highly unstable.</li>
+    </ol>
+    <p><strong>Dow's Process (Drastic Conditions):</strong> Chlorobenzene can be converted to phenol under high temperature and pressure:
+      $$\text{Chlorobenzene} \xrightarrow{\text{(i) NaOH, 623K, 300 atm, (ii) } H^+} \text{Phenol}$$
+      The presence of electron-withdrawing groups (like $-NO_2$) at ortho- and para-positions significantly increases the reactivity of haloarenes.
+    </p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Electrophilic Substitution Reactions</h3></summary>
+    <p>The halogen atom on the benzene ring is deactivating but $o, p$-directing due to resonance.</p>
+    <ul>
+      <li><strong>Halogenation:</strong> Reaction with $Cl_2$ in anhydrous $FeCl_3$ yields 1,4-dichlorobenzene (major) and 1,2-dichlorobenzene (minor).</li>
+      <li><strong>Nitration:</strong> Reaction with concentrated $HNO_3$ and $H_2SO_4$ yields 1-chloro-4-nitrobenzene (major).</li>
+      <li><strong>Sulphonation:</strong> Heating with concentrated $H_2SO_4$ yields 4-chlorobenzenesulfonic acid (major).</li>
+      <li><strong>Friedel-Crafts Alkylation/Acylation:</strong> Reaction with alkyl/acyl halides in the presence of anhydrous $AlCl_3$.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Reaction with Metals</h3></summary>
+    <ul>
+      <li><strong>Wurtz-Fittig Reaction:</strong> A mixture of an alkyl halide and aryl halide treated with sodium in dry ether gives an alkylarene.
+        $$Ar-X + Na + R-X \xrightarrow{\text{dry ether}} Ar-R + 2NaX$$
+      </li>
+      <li><strong>Fittig Reaction:</strong> Aryl halides treated with sodium in dry ether yield diaryl compounds.
+        $$2Ar-X + 2Na \xrightarrow{\text{dry ether}} Ar-Ar + 2NaX$$
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Polyhalogen Compounds</summary>
+  <p>Carbon compounds containing more than one halogen atom are called <span class="keyword">polyhalogen compounds</span>. Key examples include:</p>
+  <ul>
+    <li><strong>Dichloromethane (Methylene chloride, $CH_2Cl_2$):</strong> Used as a solvent, paint remover, and propellant. Harmful to the central nervous system.</li>
+    <li><strong>Trichloromethane (Chloroform, $CHCl_3$):</strong> Historically used as an anesthetic; now used to produce Freon refrigerant R-22. Oxidizes slowly in air and light to form highly poisonous phosgene gas ($COCl_2$):
+      $$2CHCl_3 + O_2 \xrightarrow{\text{light}} 2COCl_2 + 2HCl$$
+    </li>
+    <li><strong>Triiodomethane (Iodoform, $CHI_3$):</strong> Used as an antiseptic due to the liberation of free iodine.</li>
+    <li><strong>Tetrachloromethane (Carbon tetrachloride, $CCl_4$):</strong> Used in refrigerants, propellants, and as an industrial solvent. Causes ozone depletion and is highly toxic to the liver.</li>
+    <li><strong>Freons:</strong> Chlorofluorocarbon (CFC) compounds of methane and ethane (e.g., Freon-12, $CCl_2F_2$). Extremely stable but deplete the stratospheric ozone layer.</li>
+    <li><strong>DDT (p,p'-Dichlorodiphenyltrichloroethane):</strong> The first chlorinated organic insecticide. Highly effective against malaria-carrying mosquitoes but banned in many countries due to its high toxicity to fish, chemical stability, and bioaccumulation in fatty tissues.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "12-chapter-02-alcohols-phenols-and-ethers.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

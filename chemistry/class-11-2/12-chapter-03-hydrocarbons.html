@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 3: Hydrocarbons</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 3: Hydrocarbons</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">9.1 Classification of Hydrocarbons</summary>
+  <p><span class="keyword">Hydrocarbons</span> are compounds composed entirely of carbon and hydrogen. Depending upon the types of carbon-carbon bonds present, they are classified into three main categories:</p>
+  <ul>
+    <li><strong>Saturated Hydrocarbons:</strong> Contain carbon-carbon and carbon-hydrogen single bonds (e.g., open-chain <span class="keyword">alkanes</span> and cyclic <span class="keyword">cycloalkanes</span>).</li>
+    <li><strong>Unsaturated Hydrocarbons:</strong> Contain carbon-carbon multiple bonds—double bonds, triple bonds, or both (e.g., <span class="keyword">alkenes</span> and <span class="keyword">alkynes</span>).</li>
+    <li><strong>Aromatic Hydrocarbons:</strong> A special class of cyclic, highly unsaturated compounds that exhibit unique stability (e.g., <span class="keyword">benzene</span>).</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.2 Alkanes</summary>
+  <p><span class="keyword">Alkanes</span> are saturated, open-chain hydrocarbons with the general formula $C_nH_{2n+2}$. They are relatively inert under normal conditions and were historically referred to as <span class="keyword">paraffins</span>.</p>
+
+  <details class="sub-topic">
+    <summary><h3>9.2.1 Nomenclature and Isomerism</h3></summary>
+    <p>Alkanes exhibit <span class="keyword">structural isomerism</span>, specifically <span class="keyword">chain isomerism</span>, starting from butane ($C_4H_{10}$):</p>
+    <ul>
+      <li><strong>Butane ($C_4H_{10}$):</strong> Has 2 isomers ($n$-butane and isobutane).</li>
+      <li><strong>Pentane ($C_5H_{12}$):</strong> Has 3 isomers ($n$-pentane, isopentane, and neopentane).</li>
+      <li><strong>Hexane ($C_6H_{14}$):</strong> Has 5 isomers.</li>
+    </ul>
+    <p>Carbon atoms in alkanes are classified based on the number of other carbon atoms attached to them:</p>
+    <ul>
+      <li><strong>Primary ($1^\circ$):</strong> Attached to no other or only one other carbon atom.</li>
+      <li><strong>Secondary ($2^\circ$):</strong> Attached to two carbon atoms.</li>
+      <li><strong>Tertiary ($3^\circ$):</strong> Attached to three carbon atoms.</li>
+      <li><strong>Quaternary ($4^\circ$):</strong> Attached to four carbon atoms.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.2.2 Preparation of Alkanes</h3></summary>
+    <ol>
+      <li>
+        <strong>From Unsaturated Hydrocarbons (Hydrogenation):</strong>
+        <p>Dihydrogen gas adds to alkenes and alkynes in the presence of finely divided catalysts like <span class="keyword">platinum</span>, <span class="keyword">palladium</span>, or <span class="keyword">nickel</span>.</p>
+        <div class="example-block">
+          $$CH_2=CH_2(g) + H_2(g) \xrightarrow{Pt/Pd/Ni} CH_3-CH_3(g)$$
+        </div>
+      </li>
+      <li>
+        <strong>From Alkyl Halides:</strong>
+        <ul>
+          <li>
+            <strong>Reduction:</strong> Alkyl halides (except fluorides) are reduced with zinc and dilute hydrochloric acid.
+            <div class="example-block">
+              $$CH_3-Cl + H_2 \xrightarrow{Zn, H^+} CH_4 + HCl$$
+            </div>
+          </li>
+          <li>
+            <strong>Wurtz Reaction:</strong> Alkyl halides in dry ethereal solution react with sodium to give higher alkanes containing an even number of carbon atoms.
+            <div class="example-block">
+              $$2CH_3-Br + 2Na \xrightarrow{\text{dry ether}} CH_3-CH_3 + 2NaBr$$
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>From Carboxylic Acids:</strong>
+        <ul>
+          <li>
+            <strong>Decarboxylation:</strong> Sodium salts of carboxylic acids heated with <span class="keyword">soda lime</span> ($NaOH$ and $CaO$) yield alkanes with one less carbon atom.
+            <div class="example-block">
+              $$CH_3COONa + NaOH \xrightarrow[\Delta]{CaO} CH_4 + Na_2CO_3$$
+            </div>
+          </li>
+          <li>
+            <strong>Kolbe's Electrolytic Method:</strong> Electrolysis of an aqueous solution of sodium or potassium salt of a carboxylic acid gives alkanes containing an even number of carbon atoms at the anode.
+            <div class="example-block">
+              $$2CH_3COONa + 2H_2O \xrightarrow{\text{Electrolysis}} CH_3-CH_3 + 2CO_2 + H_2 + 2NaOH$$
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.2.3 Properties of Alkanes</h3></summary>
+    <p><strong>Physical Properties:</strong> Alkanes are non-polar, colourless, and odourless. Boiling points increase regularly with molecular mass due to increasing van der Waals forces. Branching decreases the boiling point by reducing the surface area of contact.</p>
+    <p><strong>Chemical Properties:</strong></p>
+    <ul>
+      <li>
+        <strong>Substitution Reactions (Halogenation):</strong> Occurs via a <span class="keyword">free radical chain mechanism</span> (Initiation, Propagation, and Termination) in the presence of ultraviolet light or high temperature.
+        <div class="example-block">
+          $$CH_4 + Cl_2 \xrightarrow{h\nu} CH_3Cl + HCl$$
+        </div>
+      </li>
+      <li>
+        <strong>Combustion:</strong> Complete oxidation to carbon dioxide and water with the evolution of large amounts of heat.
+        <div class="example-block">
+          $$C_nH_{2n+2} + \left(\frac{3n+1}{2}\right)O_2 \rightarrow nCO_2 + (n+1)H_2O$$
+        </div>
+      </li>
+      <li>
+        <strong>Controlled Oxidation:</strong> Yields different products depending on catalysts and conditions (e.g., copper at 523 K/100 atm yields methanol; molybdenum oxide yields methanal).
+      </li>
+      <li>
+        <strong>Isomerisation:</strong> $n$-Alkanes isomerise to branched-chain alkanes when heated with anhydrous $AlCl_3$ and $HCl$ gas.
+      </li>
+      <li>
+        <strong>Aromatization:</strong> $n$-Alkanes with six or more carbon atoms cyclise and dehydrogenate to benzene or its derivatives at 773 K and 10-20 atm in the presence of oxides of vanadium, molybdenum, or chromium.
+      </li>
+      <li>
+        <strong>Pyrolysis (Cracking):</strong> Decomposition of higher alkanes into lower alkanes and alkenes upon heating.
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.2.4 Conformations of Ethane</h3></summary>
+    <p>Rotation about the carbon-carbon single bond ($\sigma$-bond) in ethane results in different spatial arrangements called <span class="keyword">conformations</span> or <span class="keyword">rotamers</span>. The two extreme conformations are:</p>
+    <ul>
+      <li><strong>Eclipsed Conformation:</strong> Hydrogen atoms on adjacent carbons are as close together as possible, resulting in maximum <span class="keyword">torsional strain</span> and minimum stability.</li>
+      <li><strong>Staggered Conformation:</strong> Hydrogen atoms are as far apart as possible, resulting in minimum torsional strain and maximum stability.</li>
+    </ul>
+    <p>These conformations are represented using <span class="keyword">Sawhorse projections</span> and <span class="keyword">Newman projections</span>. The energy barrier between the two forms is about $12.5\text{ kJ mol}^{-1}$.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.3 Alkenes</summary>
+  <p><span class="keyword">Alkenes</span> are unsaturated hydrocarbons containing at least one double bond, with the general formula $C_nH_{2n}$. They are also known as <span class="keyword">olefins</span>.</p>
+
+  <details class="sub-topic">
+    <summary><h3>9.3.1 Structure of Double Bond</h3></summary>
+    <p>The carbon-carbon double bond consists of one strong $\sigma$-bond (formed by head-on overlap of $sp^2$ hybridised orbitals) and one weak $\pi$-bond (formed by lateral overlap of unhybridised $2p$ orbitals).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.3.2 Isomerism</h3></summary>
+    <p>Alkenes exhibit both structural isomerism (chain and position) and <span class="keyword">geometrical isomerism</span> (*cis-trans* isomerism):</p>
+    <ul>
+      <li><strong>*cis*-Isomer:</strong> Two identical atoms or groups lie on the same side of the double bond. It is generally more polar and has a higher boiling point.</li>
+      <li><strong>*trans*-Isomer:</strong> Two identical atoms or groups lie on opposite sides of the double bond. It is non-polar or less polar and has a higher melting point due to symmetry.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.3.3 Preparation of Alkenes</h3></summary>
+    <ol>
+      <li>
+        <strong>From Alkynes:</strong> Partial reduction with calculated dihydrogen in the presence of palladised charcoal deactivated with quinoline (<span class="keyword">Lindlar's catalyst</span>) yields *cis*-alkenes. Reduction with sodium in liquid ammonia yields *trans*-alkenes.
+      </li>
+      <li>
+        <strong>From Alkyl Halides (Dehydrohalogenation):</strong> Heating alkyl halides with alcoholic potash ($KOH$) undergoes $\beta$-elimination.
+        <div class="example-block">
+          $$CH_3-CH_2-X + KOH(\text{alc.}) \xrightarrow{\Delta} CH_2=CH_2 + KX + H_2O$$
+        </div>
+      </li>
+      <li>
+        <strong>From Vicinal Dihalides (Dehalogenation):</strong> Treatment of vicinal dihalides with zinc dust.
+        <div class="example-block">
+          $$CH_2Br-CH_2Br + Zn \rightarrow CH_2=CH_2 + ZnBr_2$$
+        </div>
+      </li>
+      <li>
+        <strong>From Alcohols (Acidic Dehydration):</strong> Heating alcohols with concentrated sulphuric acid.
+        <div class="example-block">
+          $$CH_3-CH_2-OH \xrightarrow[\Delta]{\text{Conc. } H_2SO_4} CH_2=CH_2 + H_2O$$
+        </div>
+      </li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.3.4 Chemical Properties of Alkenes</h3></summary>
+    <p>Alkenes primarily undergo <span class="keyword">electrophilic addition reactions</span>:</p>
+    <ul>
+      <li><strong>Addition of Dihydrogen:</strong> Yields alkanes in the presence of $Ni/Pt/Pd$.</li>
+      <li><strong>Addition of Halogens:</strong> Addition of bromine water serves as a test for unsaturation (decolourisation of reddish-orange bromine solution).</li>
+      <li>
+        <strong>Addition of Hydrogen Halides:</strong>
+        <ul>
+          <li><strong>Markovnikov's Rule:</strong> In the addition of unsymmetrical reagents to unsymmetrical alkenes, the negative part of the addendum gets attached to the carbon atom possessing fewer hydrogen atoms.</li>
+          <li><strong>Anti-Markovnikov / Peroxide Effect (Kharash Effect):</strong> In the presence of organic peroxides, the addition of $HBr$ (only) to unsymmetrical alkenes occurs contrary to Markovnikov's rule, yielding 1-bromoalkanes via a free radical mechanism.</li>
+        </ul>
+      </li>
+      <li><strong>Addition of Water:</strong> Acid-catalysed hydration yields alcohols in accordance with Markovnikov's rule.</li>
+      <li><strong>Oxidation:</strong> Cold, dilute, aqueous potassium permanganate (<span class="keyword">Baeyer's reagent</span>) oxidises alkenes to vicinal glycols. Acidic $KMnO_4$ cleaves alkenes to ketones and/or carboxylic acids.</li>
+      <li><strong>Ozonolysis:</strong> Addition of ozone followed by cleavage with $Zn$ and $H_2O$ yields aldehydes and/or ketones, which is highly useful in locating the position of double bonds.</li>
+      <li><strong>Polymerisation:</strong> Alkenes polymerise under high temperature and pressure in the presence of a catalyst (e.g., polythene from ethene).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.4 Alkynes</summary>
+  <p><span class="keyword">Alkynes</span> are unsaturated hydrocarbons containing at least one carbon-carbon triple bond, with the general formula $C_nH_{2n-2}$.</p>
+
+  <details class="sub-topic">
+    <summary><h3>9.4.1 Structure of Triple Bond</h3></summary>
+    <p>Each carbon in a triple bond is $sp$ hybridised, forming one $\sigma$-bond along the internuclear axis and two mutually perpendicular $\pi$-bonds by lateral overlap of unhybridised $p$ orbitals. The molecule is linear with a bond angle of $180^\circ$.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.4.2 Preparation of Alkynes</h3></summary>
+    <ol>
+      <li>
+        <strong>From Calcium Carbide:</strong> Industrial preparation by treating calcium carbide with water.
+        <div class="example-block">
+          $$CaC_2 + 2H_2O \rightarrow Ca(OH)_2 + C_2H_2$$
+        </div>
+      </li>
+      <li>
+        <strong>From Vicinal Dihalides:</strong> Double dehydrohalogenation using alcoholic $KOH$ followed by sodamide ($NaNH_2$).
+      </li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.4.3 Properties of Alkynes</h3></summary>
+    <ul>
+      <li><strong>Acidic Character:</strong> Hydrogen atoms attached to $sp$ hybridised carbons in terminal alkynes are weakly acidic and can react with strong bases like sodium metal or sodamide to form sodium acetylides.</li>
+      <li>
+        <strong>Addition Reactions:</strong> Alkynes add two molecules of dihydrogen, halogens, or hydrogen halides in a stepwise manner.
+      </li>
+      <li>
+        <strong>Addition of Water:</strong> Hydration in the presence of mercuric sulphate ($Hg^{2+}$) and dilute sulphuric acid at 333 K yields carbonyl compounds via tautomerisation.
+        <div class="example-block">
+          $$HC\equiv CH + H_2O \xrightarrow{Hg^{2+}/H^+} [CH_2=CH-OH] \rightarrow CH_3-CHO$$
+        </div>
+      </li>
+      <li>
+        <strong>Polymerisation:</strong>
+        <ul>
+          <li><strong>Linear:</strong> Yields polyacetylene (conducts electricity under special conditions).</li>
+          <li><strong>Cyclic:</strong> Passing ethyne through a red-hot iron tube at 873 K causes cyclic polymerisation to form benzene.
+            <div class="example-block">
+              $$3C_2H_2 \xrightarrow{\text{Red hot Fe, 873 K}} C_6H_6$$
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.5 Aromatic Hydrocarbons</summary>
+  <p>Also known as <span class="keyword">arenes</span>, these compounds are cyclic, planar, and possess a high degree of unsaturation but are exceptionally stable and undergo substitution rather than addition reactions.</p>
+
+  <details class="sub-topic">
+    <summary><h3>9.5.1 Structure of Benzene and Aromaticity</h3></summary>
+    <p>Benzene ($C_6H_6$) is a planar ring of six $sp^2$ hybridised carbon atoms. The delocalised $\pi$-electron cloud lies above and below the plane of the ring, making all C-C bond lengths equal ($139\text{ pm}$).</p>
+    <p><strong>Hückel Rule of Aromaticity:</strong> For a cyclic, planar, conjugated system to be aromatic, it must contain $(4n+2)\pi$ electrons, where $n$ is an integer ($n = 0, 1, 2, \dots$).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.5.2 Preparation of Benzene</h3></summary>
+    <ol>
+      <li><strong>Cyclic Polymerisation of Ethyne:</strong> (See section 9.4.3).</li>
+      <li>
+        <strong>Decarboxylation of Sodium Benzoate:</strong> Heating sodium benzoate with soda lime.
+        <div class="example-block">
+          $$C_6H_5COONa + NaOH \xrightarrow[\Delta]{CaO} C_6H_6 + Na_2CO_3$$
+        </div>
+      </li>
+      <li>
+        <strong>Reduction of Phenol:</strong> Passing phenol vapours over heated zinc dust.
+        <div class="example-block">
+          $$C_6H_5OH + Zn \xrightarrow{\Delta} C_6H_6 + ZnO$$
+        </div>
+      </li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.5.3 Chemical Properties of Benzene</h3></summary>
+    <p>Benzene undergoes <span class="keyword">electrophilic aromatic substitution</span> reactions:</p>
+    <ul>
+      <li><strong>Nitration:</strong> Heating with a mixture of concentrated nitric acid and concentrated sulphuric acid (nitrating mixture) to introduce a nitro group ($-NO_2$).</li>
+      <li><strong>Halogenation:</strong> Reaction with chlorine or bromine in the presence of a Lewis acid catalyst (e.g., anhydrous $FeCl_3$, $AlCl_3$) to yield halobenzenes.</li>
+      <li><strong>Sulphonation:</strong> Heating with fuming sulphuric acid (oleum) to introduce a sulphonic acid group ($-SO_3H$).</li>
+      <li><strong>Friedel-Crafts Alkylation:</strong> Treatment with an alkyl halide in the presence of anhydrous $AlCl_3$ to form alkylbenzenes.</li>
+      <li><strong>Friedel-Crafts Acylation:</strong> Treatment with an acyl halide or acid anhydride in the presence of anhydrous $AlCl_3$ to form acylbenzenes.</li>
+    </ul>
+    <p><strong>Mechanism of Electrophilic Substitution:</strong> Proceeds via three steps: (a) Generation of the electrophile ($E^+$), (b) Formation of a carbocation intermediate (sigma complex/arenium ion) stabilised by resonance, and (c) Removal of a proton to restore aromaticity.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>9.5.4 Directive Influence of Functional Groups</h3></summary>
+    <p>When monosubstituted benzene undergoes further substitution, the existing substituent directs the incoming group:</p>
+    <ul>
+      <li><strong>Ortho and Para Directing Groups:</strong> Electron-donating groups (e.g., $-OH$, $-NH_2$, $-OCH_3$, $-CH_3$) increase electron density at the *ortho* and *para* positions via resonance, activating the ring. Halogens are deactivating due to strong $-I$ effect but are *ortho/para* directing due to resonance.</li>
+      <li><strong>Meta Directing Groups:</strong> Electron-withdrawing groups (e.g., $-NO_2$, $-CN$, $-CHO$, $-COOH$, $-SO_3H$) decrease electron density on the ring, particularly at *ortho* and *para* positions, directing the incoming electrophile to the relatively richer *meta* position.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.6 Carcinogenicity and Toxicity</summary>
+  <p>Benzene and polynuclear hydrocarbons containing more than two fused benzene rings (e.g., 1,2-benzanthracene, 3-methylcholanthrene, 1,2-benzpyrene) are toxic and possess <span class="keyword">carcinogenic</span> (cancer-producing) properties. They are formed during the incomplete combustion of organic matter like tobacco, coal, and petroleum, and can damage DNA inside the human body.</p>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-02-organic-chemistry-some-basic-princ.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

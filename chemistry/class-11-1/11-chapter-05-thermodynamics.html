@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 5: Thermodynamics</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 5: Thermodynamics</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Thermodynamic Terms & System Classification</summary>
+  <p>Thermodynamics deals with energy changes of macroscopic systems involving a large number of molecules. To study these changes, we divide the universe into two parts: the system and the surroundings.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>The System, Surroundings, and Boundary</h3></summary>
+    <ul>
+      <li><span class="keyword">System</span>: The specific part of the universe in which observations and measurements are made.</li>
+      <li><span class="keyword">Surroundings</span>: Everything in the universe other than the system that can interact with it.</li>
+      <li><span class="keyword">Boundary</span>: The real or imaginary wall that separates the system from its surroundings, allowing control over the movement of matter and energy.</li>
+      <li>Relationship: $$\text{Universe} = \text{System} + \text{Surroundings}$$</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Types of Systems</h3></summary>
+    <p>Systems are classified based on the exchange of matter and energy with the surroundings:</p>
+    <ul>
+      <li><span class="keyword">Open System</span>: Can exchange both energy and matter with the surroundings (e.g., reactants in an open beaker).</li>
+      <li><span class="keyword">Closed System</span>: Can exchange energy but not matter with the surroundings (e.g., reactants in a closed vessel made of conducting material like copper).</li>
+      <li><span class="keyword">Isolated System</span>: Cannot exchange either energy or matter with the surroundings (e.g., reactants in a thermos flask).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>State of the System & State Functions</h3></summary>
+    <ul>
+      <li>The state of a thermodynamic system is described by its macroscopic properties such as pressure ($p$), volume ($V$), temperature ($T$), and amount of substance ($n$).</li>
+      <li><span class="keyword">State Variables</span> (or <span class="keyword">State Functions</span>): Properties whose values depend only on the current state of the system and are independent of the path taken to reach that state (e.g., $U, H, S, G, p, V, T$).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Internal Energy & The First Law of Thermodynamics</summary>
+  <p>The total energy stored within a system is called its internal energy ($U$). It represents the sum of all forms of kinetic and potential energies of the constituent particles.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Internal Energy as a State Function</h3></summary>
+    <p>The internal energy $U$ can change when:</p>
+    <ul>
+      <li>Heat passes into or out of the system ($q$).</li>
+      <li>Work is done on or by the system ($w$).</li>
+      <li>Matter enters or leaves the system.</li>
+    </ul>
+    <p>An <span class="keyword">adiabatic process</span> is one in which there is no transfer of heat between the system and surroundings ($q = 0$). The wall separating them is called an adiabatic wall.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Sign Conventions (IUPAC)</h3></summary>
+    <ul>
+      <li>Work done <strong>on</strong> the system: $w > 0$ (positive)</li>
+      <li>Work done <strong>by</strong> the system: $w < 0$ (negative)</li>
+      <li>Heat absorbed <strong>by</strong> the system: $q > 0$ (positive)</li>
+      <li>Heat released <strong>to</strong> the surroundings: $q < 0$ (negative)</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>The First Law of Thermodynamics</h3></summary>
+    <p>The First Law states that energy can neither be created nor destroyed; the energy of an isolated system is constant.</p>
+    <p>Mathematical statement:</p>
+    <p>$$\Delta U = q + w$$</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Thermodynamic Work & Enthalpy</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Pressure-Volume (pV) Work</h3></summary>
+    <p>For a gas confined in a cylinder with a frictionless piston under constant external pressure ($p_{ex}$):</p>
+    <ul>
+      <li>Irreversible compression/expansion: $$w = -p_{ex} \Delta V = -p_{ex} (V_f - V_i)$$</li>
+      <li>Reversible isothermal expansion of an ideal gas: $$w_{rev} = -2.303 nRT \log \frac{V_f}{V_i}$$</li>
+      <li><span class="keyword">Free Expansion</span>: Expansion of a gas into a vacuum ($p_{ex} = 0$). Here, $w = 0$.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Enthalpy ($H$)</h3></summary>
+    <p>Enthalpy is a state function defined as the heat content of a system at constant pressure:</p>
+    <p>$$H = U + pV$$</p>
+    <p>For finite changes at constant pressure:</p>
+    <p>$$\Delta H = \Delta U + p\Delta V$$</p>
+    <p>Using the ideal gas law ($pV = nRT$), for reactions involving gases:</p>
+    <p>$$\Delta H = \Delta U + \Delta n_g RT$$</p>
+    <p>Where $\Delta n_g$ is the number of moles of gaseous products minus the number of moles of gaseous reactants.</p>
+    <ul>
+      <li>For <span class="keyword">exothermic reactions</span> (heat evolved): $\Delta H < 0$</li>
+      <li>For <span class="keyword">endothermic reactions</span> (heat absorbed): $\Delta H > 0$</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Properties of a System & Heat Capacity</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Extensive vs. Intensive Properties</h3></summary>
+    <ul>
+      <li><span class="keyword">Extensive Property</span>: A property whose value depends on the quantity or size of matter present in the system (e.g., mass, volume, internal energy $U$, enthalpy $H$, heat capacity $C$).</li>
+      <li><span class="keyword">Intensive Property</span>: A property whose value is independent of the quantity or size of matter present (e.g., temperature $T$, density, pressure $p$, molar properties like molar volume $V_m$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Heat Capacity ($C$)</h3></summary>
+    <p>The heat capacity of a system is the quantity of heat required to raise its temperature by one degree Celsius (or one Kelvin):</p>
+    <p>$$q = C \Delta T$$</p>
+    <ul>
+      <li><span class="keyword">Molar Heat Capacity</span> ($C_m$): Heat capacity for one mole of a substance ($C_m = C/n$).</li>
+      <li><span class="keyword">Specific Heat Capacity</span> ($c$): Heat capacity per unit mass of a substance ($q = c \times m \times \Delta T$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Relationship between $C_p$ and $C_v$ for an Ideal Gas</h3></summary>
+    <ul>
+      <li>At constant volume: $q_V = C_V \Delta T = \Delta U$</li>
+      <li>At constant pressure: $q_p = C_p \Delta T = \Delta H$</li>
+      <li>For one mole of an ideal gas: $$C_p - C_V = R$$</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Calorimetry: Measurement of $\Delta U$ and $\Delta H$</summary>
+  <p>Energy changes associated with chemical or physical processes are measured experimentally using calorimetry.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Measurement of $\Delta U$ (Bomb Calorimeter)</h3></summary>
+    <p>For chemical reactions at constant volume, heat changes are measured in a sealed steel vessel called a <span class="keyword">bomb calorimeter</span> immersed in a water bath.</p>
+    <ul>
+      <li>Since volume is constant ($\Delta V = 0$), no work is done ($w = 0$).</li>
+      <li>The heat evolved is equal to the change in internal energy: $q_V = \Delta U$.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Measurement of $\Delta H$ (Constant Pressure Calorimeter)</h3></summary>
+    <p>For reactions carried out at constant atmospheric pressure, a simple coffee-cup calorimeter can be used.</p>
+    <ul>
+      <li>The heat absorbed or evolved is equal to the enthalpy change: $q_p = \Delta H$.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Thermochemistry & Enthalpy Changes</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Enthalpy Change of a Reaction ($\Delta_r H$)</h3></summary>
+    <p>The enthalpy change accompanying a chemical reaction is the difference between the sum of enthalpies of products and reactants:</p>
+    <p>$$\Delta_r H = \sum a_i H_{\text{products}} - \sum b_i H_{\text{reactants}}$$</p>
+    <p>Where $a_i$ and $b_i$ are the stoichiometric coefficients.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Standard Enthalpy of Reactions ($\Delta_r H^\ominus$)</h3></summary>
+    <p>The enthalpy change when all participating substances are in their standard states (pure form at $1\text{ bar}$ and a specified temperature, usually $298\text{ K}$).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Enthalpy Changes during Phase Transformations</h3></summary>
+    <ul>
+      <li><span class="keyword">Standard Enthalpy of Fusion</span> ($\Delta_{fus} H^\ominus$): Enthalpy change accompanying the melting of one mole of a solid substance in its standard state.</li>
+      <li><span class="keyword">Standard Enthalpy of Vaporisation</span> ($\Delta_{vap} H^\ominus$): Enthalpy change required to vaporize one mole of a liquid at constant temperature and standard pressure.</li>
+      <li><span class="keyword">Standard Enthalpy of Sublimation</span> ($\Delta_{sub} H^\ominus$): Enthalpy change when one mole of a solid substance directly sublimes into gas at constant temperature and standard pressure.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Standard Enthalpy of Formation ($\Delta_f H^\ominus$)</h3></summary>
+    <p>The enthalpy change for the formation of one mole of a compound from its constituent elements in their most stable reference states of aggregation.</p>
+    <ul>
+      <li>By convention, the standard enthalpy of formation of any element in its most stable reference state is taken as zero (e.g., $\Delta_f H^\ominus [\text{O}_2(g)] = 0$, $\Delta_f H^\ominus [\text{C}(\text{graphite})] = 0$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Hess's Law of Constant Heat Summation</h3></summary>
+    <p>If a reaction takes place in several steps, its standard reaction enthalpy is the sum of the standard enthalpies of the intermediate reactions into which the overall reaction may be divided at the same temperature.</p>
+    <p>Enthalpy is a state function, meaning $\Delta_r H$ is independent of the path taken.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Enthalpies of Different Types of Reactions</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Standard Enthalpy of Combustion ($\Delta_c H^\ominus$)</h3></summary>
+    <p>The enthalpy change per mole of a substance when it undergoes complete combustion with oxygen under standard conditions.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Enthalpy of Atomization ($\Delta_a H^\ominus$)</h3></summary>
+    <p>The enthalpy change on breaking one mole of bonds completely to obtain atoms in the gas phase (e.g., $\text{H}_2(g) \rightarrow 2\text{H}(g)$).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Bond Enthalpy ($\Delta_{bond} H^\ominus$)</h3></summary>
+    <ul>
+      <li><span class="keyword">Bond Dissociation Enthalpy</span>: Energy required to break one mole of a specific covalent bond in a gaseous diatomic molecule.</li>
+      <li><span class="keyword">Mean Bond Enthalpy</span>: The average energy required to break a specific bond in polyatomic molecules (e.g., C-H bond in methane).</li>
+      <li>Reaction enthalpy calculation using bond enthalpies: $$\Delta_r H^\ominus = \sum \text{Bond enthalpies}_{\text{reactants}} - \sum \text{Bond enthalpies}_{\text{products}}$$</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Lattice Enthalpy ($\Delta_{lattice} H^\ominus$)</h3></summary>
+    <p>The enthalpy change when one mole of an ionic compound dissociates into its gaseous ions. It is determined indirectly using the <span class="keyword">Born-Haber Cycle</span>.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Enthalpy of Solution ($\Delta_{sol} H^\ominus$) & Dilution</h3></summary>
+    <ul>
+      <li><span class="keyword">Enthalpy of Solution</span>: Enthalpy change when one mole of a substance dissolves in a specified amount of solvent. At infinite dilution, ionic interactions become negligible.</li>
+      <li>$$\Delta_{sol} H^\ominus = \Delta_{lattice} H^\ominus + \Delta_{hyd} H^\ominus$$</li>
+      <li><span class="keyword">Enthalpy of Dilution</span>: The heat change associated with adding more solvent to a solution.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Spontaneity, Entropy & Gibbs Energy</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Spontaneity</h3></summary>
+    <p>A spontaneous process is an irreversible process that has a natural tendency to occur without the assistance of an external agency.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Entropy ($S$) & The Second Law</h3></summary>
+    <p>Entropy is a measure of the degree of randomness or disorder in a system.</p>
+    <ul>
+      <li>Mathematical definition for a reversible process: $$\Delta S = \frac{q_{rev}}{T}$$</li>
+      <li><span class="keyword">Second Law of Thermodynamics</span>: For any spontaneous process in an isolated system, there is a natural tendency for entropy to increase ($\Delta S_{total} = \Delta S_{sys} + \Delta S_{surr} > 0$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Gibbs Energy ($G$) & Spontaneity Criteria</h3></summary>
+    <p>Gibbs energy is a state function defined to predict spontaneity for closed systems at constant temperature and pressure:</p>
+    <p>$$G = H - TS$$</p>
+    <p>The <span class="keyword">Gibbs Equation</span>:</p>
+    <p>$$\Delta G = \Delta H - T\Delta S$$</p>
+    <p>Criteria for spontaneity at constant $T$ and $p$:</p>
+    <ul>
+      <li>$\Delta G < 0$ (negative): The process is <strong>spontaneous</strong>.</li>
+      <li>$\Delta G > 0$ (positive): The process is <strong>non-spontaneous</strong>.</li>
+      <li>$\Delta G = 0$: The system is at <strong>equilibrium</strong>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>The Third Law of Thermodynamics</h3></summary>
+    <p>The entropy of any pure crystalline substance approaches zero as the temperature approaches absolute zero ($0\text{ K}$).</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Gibbs Energy Change and Equilibrium</summary>
+  <p>For a reversible reaction, the standard Gibbs energy change ($\Delta_r G^\ominus$) is directly related to the equilibrium constant ($K$):</p>
+  <p>$$\Delta_r G^\ominus = -RT \ln K = -2.303 RT \log K$$</p>
+  <ul>
+    <li>If $\Delta_r G^\ominus < 0$, then $K > 1$, favoring product formation.</li>
+    <li>If $\Delta_r G^\ominus > 0$, then $K < 1$, favoring reactants.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-04-chemical-bonding-and-molecular-str.html";
+      } else {
+        window.location.href = "11-chapter-06-equilibrium.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

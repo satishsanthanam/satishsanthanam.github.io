@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 2: Structure of Atom</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 2: Structure of Atom</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">2.1 Discovery of Sub-atomic Particles</summary>
+  <p>Experiments on electrical discharge through gases established that atoms are not indivisible but are composed of sub-atomic particles: <span class="keyword">electrons</span>, <span class="keyword">protons</span>, and <span class="keyword">neutrons</span>.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>2.1.1 Discovery of Electron</h3></summary>
+    <p>In the mid-1850s, Michael Faraday and other scientists studied electrical discharge in partially evacuated tubes called <span class="keyword">cathode ray discharge tubes</span>.</p>
+    <ul>
+      <li><strong>Results of Cathode Ray Experiments:</strong>
+        <ul>
+          <li>Cathode rays start from the cathode (negative electrode) and move towards the anode (positive electrode).</li>
+          <li>These rays are invisible but cause fluorescent materials (like zinc sulphide) to glow when hit.</li>
+          <li>In the absence of electrical or magnetic fields, they travel in straight lines.</li>
+          <li>In the presence of electrical or magnetic fields, they behave like negatively charged particles, called <span class="keyword">electrons</span>.</li>
+          <li>The characteristics of cathode rays do not depend on the material of the electrodes or the nature of the gas present in the tube.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.1.2 Charge to Mass Ratio of Electron</h3></summary>
+    <p>In 1897, J.J. Thomson measured the ratio of electrical charge ($e$) to the mass of the electron ($m_e$) using a cathode ray tube by applying mutually perpendicular electrical and magnetic fields:</p>
+    <p>$$\frac{e}{m_e} = 1.758820 \times 10^{11} \text{ C kg}^{-1}$$</p>
+    <p>Where $m_e$ is the mass of the electron in kg and $e$ is the magnitude of the charge on the electron in Coulombs (C).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.1.3 Charge on the Electron</h3></summary>
+    <p>R.A. Millikan determined the charge on the electron using the <span class="keyword">Millikan's oil drop experiment</span>.</p>
+    <ul>
+      <li>The charge on an electron is $-1.602176 \times 10^{-19} \text{ C}$.</li>
+      <li>The mass of the electron ($m_e$) was calculated by combining this with Thomson's $e/m_e$ ratio:
+        <p>$$m_e = \frac{e}{e/m_e} = 9.1094 \times 10^{-31} \text{ kg}$$</p>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.1.4 Discovery of Protons and Neutrons</h3></summary>
+    <ul>
+      <li><strong>Protons:</strong> Discovered using modified cathode ray tubes (canal rays) carrying positively charged particles. The smallest and lightest positive ion was obtained from hydrogen and called a <span class="keyword">proton</span> (characterized in 1919).</li>
+      <li><strong>Neutrons:</strong> Discovered by James Chadwick in 1932 by bombarding a thin sheet of beryllium with $\alpha$-particles. They are electrically neutral particles with a mass slightly greater than that of a proton.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.2 Atomic Models</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>2.2.1 Thomson Model of Atom</h3></summary>
+    <p>Proposed by J.J. Thomson in 1898, also known as the <span class="keyword">plum pudding</span>, raisin pudding, or watermelon model.</p>
+    <ul>
+      <li>An atom is visualized as a sphere of uniform positive charge (radius $\approx 10^{-10} \text{ m}$) with electrons embedded in it.</li>
+      <li>It explained the overall neutrality of the atom but failed to explain the results of later scattering experiments.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.2.2 Rutherford's Nuclear Model of Atom</h3></summary>
+    <p>Rutherford, Geiger, and Marsden bombarded a thin gold foil (thickness $\approx 100 \text{ nm}$) with high-energy $\alpha$-particles.</p>
+    <ul>
+      <li><strong>Observations:</strong>
+        <ul>
+          <li>Most $\alpha$-particles passed through the gold foil undeflected.</li>
+          <li>A small fraction was deflected by small angles.</li>
+          <li>A very few ($\approx 1$ in $20,000$) bounced back (deflected by nearly $180^\circ$).</li>
+        </ul>
+      </li>
+      <li><strong>Conclusions:</strong>
+        <ul>
+          <li>Most of the space in an atom is empty.</li>
+          <li>The positive charge and most of the mass are concentrated in an extremely small volume called the <span class="keyword">nucleus</span> (radius $\approx 10^{-15} \text{ m}$).</li>
+          <li>The nucleus is surrounded by electrons that move around it in circular paths called <span class="keyword">orbits</span>.</li>
+          <li>Electrons and the nucleus are held together by electrostatic forces of attraction.</li>
+        </ul>
+      </li>
+      <li><strong>Drawbacks:</strong> It could not explain the stability of the atom (accelerating electrons in orbits should emit electromagnetic radiation, lose energy, and spiral into the nucleus) and was silent about the electronic structure of atoms.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.2.3 Atomic Number, Mass Number, Isobars, and Isotopes</h3></summary>
+    <ul>
+      <li><strong>Atomic Number ($Z$):</strong> Number of protons in the nucleus of an atom = number of electrons in a neutral atom.
+        <p>$$Z = \text{number of protons}$$</p>
+      </li>
+      <li><strong>Mass Number ($A$):</strong> Total number of protons ($Z$) and neutrons ($n$) in the nucleus (collectively called <span class="keyword">nucleons</span>).
+        <p>$$A = Z + n$$</p>
+      </li>
+      <li><strong>Isobars:</strong> Atoms with the same mass number ($A$) but different atomic numbers ($Z$) (e.g., $_{6}^{14}\text{C}$ and $_{7}^{14}\text{N}$).</li>
+      <li><strong>Isotopes:</strong> Atoms with identical atomic numbers ($Z$) but different mass numbers ($A$) (e.g., Protium $_{1}^{1}\text{H}$, Deuterium $_{1}^{2}\text{H}$ or $\text{D}$, and Tritium $_{1}^{3}\text{H}$ or $\text{T}$).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.3 Developments Leading to the Bohr's Model of Atom</summary>
+  <p>Two major developments played a key role: the dual character of electromagnetic radiation (wave-like and particle-like) and experimental results regarding atomic spectra.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>2.3.1 Wave Nature of Electromagnetic Radiation</h3></summary>
+    <p>James Maxwell (1870) proposed that when electrically charged particles move under acceleration, alternating electrical and magnetic fields are produced and transmitted as <span class="keyword">electromagnetic waves</span>.</p>
+    <ul>
+      <li>Electromagnetic waves do not require a medium and can move in a vacuum.</li>
+      <li>All electromagnetic radiations travel at the speed of light ($c \approx 3.0 \times 10^8 \text{ m s}^{-1}$ in vacuum).</li>
+      <li>The relationship between frequency ($\nu$), wavelength ($\lambda$), and velocity of light ($c$) is:
+        <p>$$c = \nu \lambda$$</p>
+      </li>
+      <li><span class="keyword">Wavenumber</span> ($\bar{\nu}$): The number of wavelengths per unit length, defined as $\bar{\nu} = 1/\lambda$.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.3.2 Particle Nature of Electromagnetic Radiation: Planck's Quantum Theory</h3></summary>
+    <p>Some phenomena like <span class="keyword">black-body radiation</span> and the <span class="keyword">photoelectric effect</span> could not be explained by wave theory.</p>
+    <ul>
+      <li><strong>Planck's Theory (1900):</strong> Atoms and molecules can emit or absorb energy only in discrete quantities called <span class="keyword">quanta</span>.</li>
+      <li>The energy ($E$) of a single quantum of radiation is proportional to its frequency ($\nu$):
+        <p>$$E = h\nu$$</p>
+        <p>Where $h$ is Planck's constant ($6.626 \times 10^{-34} \text{ J s}$).</p>
+      </li>
+      <li><strong>Photoelectric Effect:</strong> Ejection of electrons from a metal surface when light of a certain minimum frequency (threshold frequency, $\nu_0$) strikes it. Einstein explained this using Planck's quantum theory:
+        <p>$$h\nu = h\nu_0 + \frac{1}{2}m_e v^2$$</p>
+        <p>Where $h\nu_0$ is the work function ($W_0$) of the metal, and $\frac{1}{2}m_e v^2$ is the kinetic energy of the ejected electron.</p>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.3.3 Atomic Spectra and Line Spectrum of Hydrogen</h3></summary>
+    <p>When a ray of white light is passed through a prism, it spreads into a continuous spectrum. However, excited atoms in the gas phase emit light only at specific wavelengths, producing a <span class="keyword">line spectrum</span> (or atomic spectrum).</p>
+    <ul>
+      <li><strong>Rydberg Formula for Hydrogen Spectral Lines:</strong>
+        <p>$$\bar{\nu} = 109,677 \left( \frac{1}{n_1^2} - \frac{1}{n_2^2} \right) \text{ cm}^{-1}$$</p>
+        <p>Where $109,677 \text{ cm}^{-1}$ is the Rydberg constant for hydrogen, $n_1$ and $n_2$ are integers such that $n_2 > n_1$.</p>
+      </li>
+      <li><strong>Spectral Series of Hydrogen:</strong>
+        <ul>
+          <li><em>Lyman Series:</em> $n_1 = 1$, $n_2 = 2, 3, \dots$ (Ultraviolet region)</li>
+          <li><em>Balmer Series:</em> $n_1 = 2$, $n_2 = 3, 4, \dots$ (Visible region)</li>
+          <li><em>Paschen Series:</em> $n_1 = 3$, $n_2 = 4, 5, \dots$ (Infrared region)</li>
+          <li><em>Brackett Series:</em> $n_1 = 4$, $n_2 = 5, 6, \dots$ (Infrared region)</li>
+          <li><em>Pfund Series:</em> $n_1 = 5$, $n_2 = 6, 7, \dots$ (Infrared region)</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.4 Bohr's Model for Hydrogen Atom</summary>
+  <p>Neils Bohr (1913) proposed a model based on the following postulates:</p>
+  <ul>
+    <li>The electron in the hydrogen atom moves around the nucleus in circular paths of fixed radius and energy, called <span class="keyword">orbits</span> or stationary states.</li>
+    <li>The energy of an electron in an orbit does not change with time. Transition occurs between stationary states by absorbing or emitting a photon of energy $\Delta E = E_2 - E_1 = h\nu$.</li>
+    <li>The angular momentum of an electron is quantized:
+      <p>$$m_e v r = n \frac{h}{2\pi} \quad (n = 1, 2, 3, \dots)$$</p>
+    </li>
+  </ul>
+  
+  <details class="sub-topic">
+    <summary><h3>2.4.1 Energy and Radii of Orbits</h3></summary>
+    <ul>
+      <li><strong>Radii of Stationary States:</strong>
+        <p>$$r_n = n^2 a_0$$</p>
+        <p>Where $a_0 = 52.9 \text{ pm}$ (Bohr radius).</p>
+      </li>
+      <li><strong>Energy of Stationary States:</strong>
+        <p>$$E_n = -R_H \left( \frac{1}{n^2} \right)$$</p>
+        <p>Where $R_H$ is the Rydberg constant ($2.18 \times 10^{-18} \text{ J}$). For hydrogen-like ions ($\text{He}^+$, $\text{Li}^{2+}$, etc.):</p>
+        <p>$$E_n = -2.18 \times 10^{-18} \left( \frac{Z^2}{n^2} \right) \text{ J}$$</p>
+        <p>$$r_n = \frac{52.9 n^2}{Z} \text{ pm}$$</p>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.4.2 Limitations of Bohr's Model</h3></summary>
+    <ul>
+      <li>It fails to explain the finer details (doublets) of the hydrogen spectrum.</li>
+      <li>It cannot explain the spectra of multi-electron atoms (e.g., Helium).</li>
+      <li>It cannot explain the splitting of spectral lines in magnetic fields (<span class="keyword">Zeeman effect</span>) or electric fields (<span class="keyword">Stark effect</span>).</li>
+      <li>It fails to explain the ability of atoms to form molecules by chemical bonds.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.5 Towards Quantum Mechanical Model of the Atom</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>2.5.1 Dual Behaviour of Matter</h3></summary>
+    <p>Louis de Broglie (1924) proposed that matter exhibits both particle and wave-like properties. The <span class="keyword">de Broglie relation</span> is:</p>
+    <p>$$\lambda = \frac{h}{mv} = \frac{h}{p}$$</p>
+    <p>Where $m$ is the mass of the particle, $v$ is its velocity, and $p$ is its momentum.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.5.2 Heisenberg's Uncertainty Principle</h3></summary>
+    <p>Werner Heisenberg (1927) stated that it is impossible to determine simultaneously both the exact position and exact momentum (or velocity) of an electron:</p>
+    <p>$$\Delta x \cdot \Delta p_x \ge \frac{h}{4\pi}$$</p>
+    <p>$$\Delta x \cdot (m \Delta v_x) \ge \frac{h}{4\pi}$$</p>
+    <p>Where $\Delta x$ is the uncertainty in position and $\Delta p_x$ (or $\Delta v_x$) is the uncertainty in momentum (or velocity).</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.6 Quantum Mechanical Model of Atom</summary>
+  <p><span class="keyword">Quantum mechanics</span> is a theoretical science that deals with the study of the motions of microscopic objects that have both wave-like and particle-like properties.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>2.6.1 Schrödinger Equation</h3></summary>
+    <p>Developed by Erwin Schrödinger in 1926, the fundamental equation of quantum mechanics is:</p>
+    <p>$$\hat{H}\psi = E\psi$$</p>
+    <p>Where $\hat{H}$ is the Hamiltonian operator, $E$ is the total energy of the system, and $\psi$ is the wave function. The square of the wave function, $|\psi|^2$, represents the <span class="keyword">probability density</span> of finding the electron at a given point.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.6.2 Quantum Numbers</h3></summary>
+    <p>Each atomic orbital is designated by three quantum numbers, while an electron is fully described by four:</p>
+    <ul>
+      <li><strong>Principal Quantum Number ($n$):</strong> Defines the main shell, size, and energy of the orbital ($n = 1, 2, 3, \dots$).</li>
+      <li><strong>Azimuthal Quantum Number ($l$):</strong> Defines the three-dimensional shape of the subshell ($l = 0$ to $n-1$).
+        <ul>
+          <li>$l = 0$ ($s$ subshell)</li>
+          <li>$l = 1$ ($p$ subshell)</li>
+          <li>$l = 2$ ($d$ subshell)</li>
+          <li>$l = 3$ ($f$ subshell)</li>
+        </ul>
+      </li>
+      <li><strong>Magnetic Orbital Quantum Number ($m_l$):</strong> Defines the spatial orientation of the orbital ($m_l = -l$ to $+l$, total $2l+1$ values).</li>
+      <li><strong>Electron Spin Quantum Number ($m_s$):</strong> Defines the orientation of the spin of the electron ($m_s = +\frac{1}{2}$ or $-\frac{1}{2}$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.6.3 Shapes of Atomic Orbitals</h3></summary>
+    <ul>
+      <li><strong>s-Orbitals:</strong> Spherically symmetric. The number of radial nodes is given by $n - 1$.</li>
+      <li><strong>p-Orbitals:</strong> Dumbbell-shaped, consisting of three mutually perpendicular orientations ($p_x, p_y, p_z$). They have one angular node ($l=1$).</li>
+      <li><strong>d-Orbitals:</strong> Cloverleaf-shaped (except $d_{z^2}$), consisting of five orientations ($d_{xy}, d_{yz}, d_{xz}, d_{x^2-y^2}, d_{z^2}$). They have two angular nodes ($l=2$).</li>
+      <li><strong>Total Nodes:</strong> The total number of nodes is given by $n - 1$ (sum of $l$ angular nodes and $n - l - 1$ radial nodes).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.6.4 Energies of Orbitals and $(n+l)$ Rule</h3></summary>
+    <p>In multi-electron atoms, the energy of an orbital depends on both $n$ and $l$:</p>
+    <ul>
+      <li><strong>$(n+l)$ Rule:</strong> Orbitals with a lower value of $(n+l)$ have lower energy. If two orbitals have the same $(n+l)$ value, the one with the lower value of $n$ has lower energy.</li>
+      <li><strong>Degenerate Orbitals:</strong> Orbitals having the same energy (e.g., the three $2p$ orbitals in a given shell).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.6.5 Rules for Filling of Orbitals</h3></summary>
+    <ul>
+      <li><strong>Aufbau Principle:</strong> In the ground state of atoms, orbitals are filled in order of their increasing energies:
+        <p>$$1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p < 5s \dots$$</p>
+      </li>
+      <li><strong>Pauli Exclusion Principle:</strong> No two electrons in an atom can have the same set of four quantum numbers. Alternatively, only two electrons can exist in the same orbital, and they must have opposite spins.</li>
+      <li><strong>Hund's Rule of Maximum Multiplicity:</strong> Pairing of electrons in orbitals belonging to the same subshell ($p, d,$ or $f$) does not take place until each orbital is singly occupied with parallel spins.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2.6.6 Electronic Configuration and Stability of Half-filled/Completely Filled Subshells</h3></summary>
+    <p>The distribution of electrons into orbitals is called <span class="keyword">electronic configuration</span>.</p>
+    <ul>
+      <li><strong>Extra Stability:</strong> Half-filled and completely filled subshells acquire extra stability due to: 
+        <ol>
+          <li>Symmetrical distribution of electrons.</li>
+          <li>Maximum exchange energy.</li>
+        </ol>
+      </li>
+      <li><strong>Exceptions:</strong> Chromium ($[\text{Ar}] 3d^5 4s^1$ instead of $3d^4 4s^2$) and Copper ($[\text{Ar}] 3d^{10} 4s^1$ instead of $3d^9 4s^2$).</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-01-some-basic-concepts-of-chemistry.html";
+      } else {
+        window.location.href = "11-chapter-03-classification-of-elements-and-per.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
