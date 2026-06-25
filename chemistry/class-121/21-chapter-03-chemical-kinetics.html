@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 121 — Chapter 3: Chemical Kinetics</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 121 — Chapter 3: Chemical Kinetics</h1>
+
+    <details class="topic-box"><summary class="topic-title">Rate of a Chemical Reaction</summary><p>The speed or <span class="keyword">rate of a chemical reaction</span> is defined as the change in concentration of a reactant or product in unit time.</p><details class="sub-topic"><summary><h3>Average and Instantaneous Rates</h3></summary><ul><li><strong>Average Rate ($r_{av}$):</strong> Depends on the change in concentration of reactants or products over a finite time interval $\Delta t$.</li><li><strong>Instantaneous Rate ($r_{inst}$):</strong> The rate of reaction at a specific instant of time, obtained when the time interval $\Delta t$ approaches zero.</li></ul><div class="example-block">$$r_{av} = -\frac{\Delta [R]}{\Delta t} = \frac{\Delta [P]}{\Delta t}$$$$r_{inst} = -\frac{d[R]}{dt} = \frac{d[P]}{dt}$$</div><p><strong>Units of Rate:</strong> Expressed in $\text{mol L}^{-1} \text{s}^{-1}$ (or $\text{atm s}^{-1}$ for gaseous reactions where concentration is expressed in terms of partial pressures).</p></details><details class="sub-topic"><summary><h3>Stoichiometric Coefficients and Rate Expressions</h3></summary><p>When the stoichiometric coefficients of reactants and products are not equal to one, the rate of consumption of reactants or formation of products is divided by their respective stoichiometric coefficients to obtain a uniform rate of reaction.</p><div class="example-block">For the reaction: $$5\text{Br}^-(\text{aq}) + \text{BrO}_3^-(\text{aq}) + 6\text{H}^+(\text{aq}) \rightarrow 3\text{Br}_2(\text{aq}) + 3\text{H}_2\text{O}(\text{l})$$$$\text{Rate} = -\frac{1}{5}\frac{\Delta [\text{Br}^-]}{\Delta t} = -\frac{\Delta [\text{BrO}_3^-]}{\Delta t} = -\frac{1}{6}\frac{\Delta [\text{H}^+]}{\Delta t} = \frac{1}{3}\frac{\Delta [\text{Br}_2]}{\Delta t} = \frac{1}{3}\frac{\Delta [\text{H}_2\text{O}]}{\Delta t}$$</div></details></details><details class="topic-box"><summary class="topic-title">Factors Influencing Rate of a Reaction</summary><p>The rate of a chemical reaction depends on experimental conditions such as concentration of reactants, temperature, and the presence of a catalyst.</p><details class="sub-topic"><summary><h3>Rate Law and Rate Constant</h3></summary><p>The <span class="keyword">rate law</span> is the mathematical expression in which reaction rate is given in terms of molar concentration of reactants, with each term raised to some power which may or may not be equal to the stoichiometric coefficient of the reacting species in a balanced chemical equation.</p><div class="example-block">For a general reaction: $$a\text{A} + b\text{B} \rightarrow c\text{C} + d\text{D}$$$$\text{Rate} = k [\text{A}]^x [\text{B}]^y$$</div><p>Where $k$ is a proportionality constant called the <span class="keyword">rate constant</span>, and exponents $x$ and $y$ must be determined experimentally.</p></details><details class="sub-topic"><summary><h3>Order of a Reaction</h3></summary><p>The <span class="keyword">order of a reaction</span> is defined as the sum of the powers of the concentration of the reactants in the rate law expression. It can be $0, 1, 2, 3,$ or even a fraction.</p><ul><li><strong>Zero Order:</strong> The rate of reaction is independent of the concentration of reactants.</li><li><strong>First Order:</strong> The rate depends on the first power of reactant concentration.</li></ul><p><strong>Units of Rate Constant ($k$) for Different Orders:</strong></p><ul><li><strong>Zero Order:</strong> $\text{mol L}^{-1} \text{s}^{-1}$</li><li><strong>First Order:</strong> $\text{s}^{-1}$</li><li><strong>Second Order:</strong> $\text{L mol}^{-1} \text{s}^{-1}$</li></ul></details><details class="sub-topic"><summary><h3>Molecularity of a Reaction</h3></summary><p>The <span class="keyword">molecularity</span> of a reaction is the number of reacting species (atoms, ions, or molecules) taking part in an elementary reaction, which must collide simultaneously to bring about a chemical reaction.</p><ul><li><strong>Unimolecular:</strong> One reacting species (e.g., decomposition of ammonium nitrite).</li><li><strong>Bimolecular:</strong> Two reacting species colliding simultaneously (e.g., dissociation of hydrogen iodide).</li><li><strong>Trimolecular:</strong> Three reacting species colliding simultaneously (rare and slow).</li></ul><p><strong>Key Differences between Order and Molecularity:</strong></p><ol><li>Order is an experimental quantity (can be zero or fractional); molecularity is a theoretical concept applicable only to elementary reactions (cannot be zero or non-integer).</li><li>For complex reactions, order is determined by the slowest step, known as the <span class="keyword">rate determining step</span>, while molecularity has no meaning for the overall complex reaction.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Integrated Rate Equations</summary><p>Differential rate equations are integrated to provide direct relationships between measured concentrations at different times and the rate constant.</p><details class="sub-topic"><summary><h3>Zero Order Reactions</h3></summary><p>For a zero-order reaction $R \rightarrow P$, the rate is proportional to the zero power of reactant concentration.</p><div class="example-block">$$\text{Rate} = -\frac{d[R]}{dt} = k [R]^0 = k$$$$[R] = -kt + [R]_0$$$$k = \frac{[R]_0 - [R]}{t}$$</div><p>A plot of $[R]$ vs $t$ gives a straight line with slope $= -k$ and intercept $= [R]_0$.</p></details><details class="sub-topic"><summary><h3>First Order Reactions</h3></summary><p>For a first-order reaction $R \rightarrow P$, the rate is proportional to the first power of reactant concentration.</p><div class="example-block">$$\text{Rate} = -\frac{d[R]}{dt} = k [R]$$$$\ln [R] = -kt + \ln [R]_0$$$$k = \frac{2.303}{t} \log \frac{[R]_0}{[R]}$$</div><p>A plot of $\ln [R]$ vs $t$ yields a straight line with slope $= -k$ and intercept $= \ln [R]_0$. A plot of $\log \frac{[R]_0}{[R]}$ vs $t$ yields a slope $= \frac{k}{2.303}$.</p></details><details class="sub-topic"><summary><h3>Half-Life of a Reaction</h3></summary><p>The <span class="keyword">half-life</span> ($t_{1/2}$) of a reaction is the time in which the concentration of a reactant is reduced to one-half of its initial concentration.</p><ul><li><strong>For a Zero Order Reaction:</strong> $$t_{1/2} = \frac{[R]_0}{2k}$$ (directly proportional to initial concentration).</li><li><strong>For a First Order Reaction:</strong> $$t_{1/2} = \frac{0.693}{k}$$ (independent of initial concentration).</li></ul></details><details class="sub-topic"><summary><h3>Pseudo First Order Reactions</h3></summary><p>Reactions which are higher-order chemically but behave as first-order due to one of the reactants being present in large excess (such that its concentration remains virtually constant).</p><ul><li><strong>Hydrolysis of Ethyl Acetate:</strong> Water is in large excess, so the rate depends only on ethyl acetate concentration.</li><li><strong>Inversion of Cane Sugar:</strong> $$C_{12}H_{22}O_{11} + H_2O \xrightarrow{H^+} C_6H_{12}O_6 + C_6H_{12}O_6$$</li></ul></details></details><details class="topic-box"><summary class="topic-title">Temperature Dependence of Reaction Rates</summary><p>For most chemical reactions, the rate constant nearly doubles with a rise in temperature by $10^\circ\text{C}$. This temperature dependence is quantitatively explained by the <span class="keyword">Arrhenius Equation</span>.</p><details class="sub-topic"><summary><h3>The Arrhenius Equation</h3></summary><div class="example-block">$$k = A e^{-E_a / RT}$$</div><p>Where:</p><ul><li>$A$ is the Arrhenius factor, frequency factor, or pre-exponential factor.</li><li>$E_a$ is the <span class="keyword">activation energy</span> (measured in $\text{J mol}^{-1}$).</li><li>$R$ is the gas constant, and $T$ is the absolute temperature.</li></ul><p>Taking natural logarithms:</p><div class="example-block">$$\ln k = -\frac{E_a}{RT} + \ln A$$$$\log \frac{k_2}{k_1} = \frac{E_a}{2.303 R} \left[ \frac{T_2 - T_1}{T_1 T_2} \right]$$</div></details><details class="sub-topic"><summary><h3>Activated Complex and Energy Barriers</h3></summary><p>According to Arrhenius, reactants must form an unstable intermediate called an <span class="keyword">activated complex</span> before converting to products. The energy required to form this complex is the activation energy ($E_a$).</p></details><details class="sub-topic"><summary><h3>Effect of Catalyst</h3></summary><p>A <span class="keyword">catalyst</span> increases the rate of a reaction by providing an alternate pathway with a lower activation energy barrier.</p><ul><li>It does not alter the Gibbs energy ($\Delta G$) of a reaction.</li><li>It catalyses spontaneous reactions but cannot force non-spontaneous reactions to occur.</li><li>It helps attain equilibrium faster but does not change the equilibrium constant.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Collision Theory of Chemical Reactions</summary><p>Developed by Max Trautz and William Lewis, collision theory is based on the kinetic theory of gases.</p><details class="sub-topic"><summary><h3>Key Postulates</h3></summary><ul><li>Reactant molecules are assumed to be hard spheres, and reactions occur when they collide.</li><li><strong>Collision Frequency ($Z$):</strong> The number of collisions per second per unit volume of the reaction mixture.</li><li><strong>Effective Collisions:</strong> Only collisions with sufficient kinetic energy (threshold energy) and proper orientation lead to product formation.</li><li><strong>Steric Factor ($P$):</strong> A probability factor introduced to account for the requirement of proper molecular orientation during collision.</li></ul><div class="example-block">$$\text{Rate} = P Z_{AB} e^{-E_a / RT}$$</div></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 121 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-02-electrochemistry.html";
+      } else {
+        window.location.href = "21-chapter-04-the-d-and-f-block-elements.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
