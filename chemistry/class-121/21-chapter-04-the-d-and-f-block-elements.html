@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 121 — Chapter 4: The d- and f-Block Elements</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 121 — Chapter 4: The d- and f-Block Elements</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Position in the Periodic Table</summary><p>The <span class="keyword">d-block</span> elements (groups 3-12) are positioned in the large middle section of the periodic table, flanked between the s- and p-blocks. The <span class="keyword">f-block</span> elements, also known as the <span class="keyword">inner transition elements</span>, are placed in a separate panel at the bottom of the periodic table.</p><details class="sub-topic"><summary><h3>Definition of Transition Metals</h3></summary><p>According to IUPAC, a <span class="keyword">transition metal</span> is defined as an element which has an incomplete d-subshell either in its neutral atom or in its common oxidation states. Group 12 elements ($Zn$, $Cd$, and $Hg$) have a completely filled $d^{10}$ configuration in their ground state as well as in their common oxidation states, and are therefore not strictly regarded as transition metals. However, their chemistry is studied alongside transition metals due to periodic trends.</p></details></details><details class="topic-box"><summary class="topic-title">Electronic Configurations of the d-Block Elements</summary><p>The general electronic configuration of the outer orbitals of d-block elements is $(n-1)d^{1-10} ns^{1-2}$ (except for Palladium, which has a unique configuration of $4d^{10} 5s^0$).</p><details class="sub-topic"><summary><h3>Stability of Half-filled and Completely Filled Orbitals</h3></summary><p>The energy difference between the $(n-1)d$ and $ns$ orbitals is very small. Consequently, half-filled ($d^5$) and completely filled ($d^{10}$) configurations acquire extra stability. This is reflected in the anomalous configurations of certain elements:</p><ul><li><span class="keyword">Chromium (Cr)</span>: $[Ar] 3d^5 4s^1$ instead of $3d^4 4s^2$</li><li><span class="keyword">Copper (Cu)</span>: $[Ar] 3d^{10} 4s^1$ instead of $3d^9 4s^2$</li></ul></details></details><details class="topic-box"><summary class="topic-title">General Properties of Transition Elements (d-Block)</summary><details class="sub-topic"><summary><h3>Physical Properties</h3></summary><p>Transition metals exhibit typical metallic properties including high tensile strength, ductility, malleability, high thermal and electrical conductivity, and metallic lustre. They are generally very hard and have low volatility, resulting in high melting and boiling points. The high melting points are attributed to the involvement of greater numbers of electrons from $(n-1)d$ in addition to the $ns$ electrons in interatomic metallic bonding.</p></details><details class="sub-topic"><summary><h3>Variation in Atomic and Ionic Sizes</h3></summary><p>In general, ions of the same charge in a given series show a progressive decrease in radius with increasing atomic number. This is due to the poor shielding effect of d-electrons, which fails to compensate for the increasing nuclear charge, pulling the outer electrons closer.</p><p>An important phenomenon is the <span class="keyword">Lanthanoid Contraction</span>: the filling of $4f$ orbitals before the $5d$ series results in a regular decrease in atomic radii. This contraction essentially compensates for the expected increase in size down the group, making the atomic radii of the second ($4d$) and third ($5d$) transition series nearly identical (e.g., $Zr$ and $Hf$).</p></details><details class="sub-topic"><summary><h3>Ionisation Enthalpies</h3></summary><p>There is a general increase in ionisation enthalpy along each series from left to right due to the increase in nuclear charge. However, the trend is irregular because the removal of one electron alters the relative energies of the $4s$ and $3d$ orbitals. The second and third ionisation enthalpies show breaks in steady increases at stable configurations like $d^5$ and $d^{10}$.</p></details><details class="sub-topic"><summary><h3>Oxidation States</h3></summary><p>One of the most notable features of transition elements is their great variety of oxidation states. This variability arises from the incomplete filling of d-orbitals, allowing oxidation states to differ by units of one (e.g., $V^{II}$, $V^{III}$, $V^{IV}$, $V^{V}$).</p><ul><li>Elements near the middle of the series exhibit the maximum number of oxidation states (e.g., <span class="keyword">Manganese</span> shows all states from +2 to +7).</li><li>The lowest common oxidation state for most transition metals is +2.</li><li>In the d-block, heavier members of a group prefer higher oxidation states (e.g., $Mo(VI)$ and $W(VI)$ are more stable than $Cr(VI)$), which is opposite to the p-block trend.</li></ul></details><details class="sub-topic"><summary><h3>Magnetic Properties</h3></summary><p>Transition metal ions frequently exhibit magnetic behavior, classified into <span class="keyword">diamagnetism</span> (repelled by magnetic fields) and <span class="keyword">paramagnetism</span> (attracted by magnetic fields). Paramagnetism arises from the presence of unpaired electrons.</p><p>The magnetic moment ($\mu$) is calculated using the "spin-only" formula:</p><div class="example-block">$$\mu = \sqrt{n(n+2)}$$</div><p>where $n$ is the number of unpaired electrons and the unit is the <span class="keyword">Bohr Magneton (BM)</span>.</p></details><details class="sub-topic"><summary><h3>Formation of Coloured Ions</h3></summary><p>When an electron from a lower-energy d-orbital is excited to a higher-energy d-orbital (d-d transition), it absorbs light of a specific frequency in the visible region. The observed colour of the transition metal ion corresponds to the complementary colour of the light absorbed.</p></details><details class="sub-topic"><summary><h3>Catalytic Properties</h3></summary><p>Transition metals and their compounds are highly effective catalysts due to their ability to adopt multiple oxidation states and form complexes. Examples include:</p><ul><li><span class="keyword">Vanadium(V) oxide</span> ($V_2O_5$) in the Contact Process.</li><li>Finely divided <span class="keyword">Iron</span> in Haber's Process.</li><li><span class="keyword">Nickel</span> in catalytic hydrogenation.</li></ul></details><details class="sub-topic"><summary><h3>Formation of Interstitial Compounds</h3></summary><p>These are formed when small atoms like $H$, $C$, or $N$ are trapped inside the crystal lattices of transition metals. They are typically non-stoichiometric (e.g., $TiC$, $Fe_3H$) and exhibit high melting points, extreme hardness, and metallic conductivity while remaining chemically inert.</p></details><details class="sub-topic"><summary><h3>Alloy Formation</h3></summary><p>Because transition metals have similar metallic radii (within 15% of each other), atoms of one metal can easily replace atoms of another in the crystal lattice, readily forming homogeneous solid solutions called <span class="keyword">alloys</span> (e.g., brass, bronze, and stainless steel).</p></details></details><details class="topic-box"><summary class="topic-title">Important Compounds of Transition Elements</summary><details class="sub-topic"><summary><h3>Potassium Dichromate ($K_2Cr_2O_7$)</h3></summary><p>An important chemical used in the leather industry and as an oxidant. It is prepared from chromite ore ($FeCr_2O_4$) via the following steps:</p><ol><li>Fusion of chromite ore with sodium carbonate in free access of air:</li></ol><div class="example-block">$$4FeCr_2O_4 + 8Na_2CO_3 + 7O_2 \rightarrow 8Na_2CrO_4 + 2Fe_2O_3 + 8CO_2$$</div><ol><li>Acidification of the yellow sodium chromate solution to obtain orange sodium dichromate:</li></ol><div class="example-block">$$2Na_2CrO_4 + 2H^+ \rightarrow Na_2Cr_2O_7 + 2Na^+ + H_2O$$</div><ol><li>Treatment of sodium dichromate with potassium chloride to crystallize potassium dichromate:</li></ol><div class="example-block">$$Na_2Cr_2O_7 + 2KCl \rightarrow K_2Cr_2O_7 + 2NaCl$$</div><p>Chromate ($CrO_4^{2-}$) and dichromate ($Cr_2O_7^{2-}$) ions are interconvertible in aqueous solution depending on pH: chromate is stable in alkaline solution, while dichromate is stable in acidic solution.</p></details><details class="sub-topic"><summary><h3>Potassium Permanganate ($KMnO_4$)</h3></summary><p>Prepared by the fusion of pyrolusite ore ($MnO_2$) with an alkali metal hydroxide ($KOH$) and an oxidising agent like $KNO_3$ or oxygen, producing dark green potassium manganate ($K_2MnO_4$), which then disproportionates in neutral or acidic solution to yield permanganate:</p><div class="example-block">$$2MnO_2 + 4KOH + O_2 \rightarrow 2K_2MnO_4 + 2H_2O$$</div><div class="example-block">$$3MnO_4^{2-} + 4H^+ \rightarrow 2MnO_4^- + MnO_2 + 2H_2O$$</div><p>In acidic solutions, $KMnO_4$ acts as a powerful oxidising agent, oxidising iodides to iodine, iron(II) to iron(III), oxalates to carbon dioxide, and nitrites to nitrates.</p></details></details><details class="topic-box"><summary class="topic-title">The Inner Transition Elements (f-Block)</summary><p>The f-block consists of two series: <span class="keyword">Lanthanoids</span> (the 14 elements following Lanthanum, $Ce$ to $Lu$) and <span class="keyword">Actinoids</span> (the 14 elements following Actinium, $Th$ to $Lr$).</p><details class="sub-topic"><summary><h3>The Lanthanoids</h3></summary><ul><li><strong>Electronic Configuration:</strong> Generally feature a common $6s^2$ configuration with variable occupancy of the $4f$ level. The tripositive state ($Ln^{3+}$) is the most stable.</li><li><strong>Atomic and Ionic Sizes:</strong> Exhibit a steady decrease in atomic and ionic radii (Lanthanoid Contraction) due to poor shielding of one $4f$ electron by another.</li><li><strong>Oxidation States:</strong> +3 is the predominant oxidation state. Occasionally, +2 and +4 states are exhibited by elements that can achieve stable $f^0$, $f^7$, or $f^{14}$ configurations (e.g., $Ce^{4+}$, $Eu^{2+}$).</li><li><strong>Chemical Reactivity:</strong> Highly electropositive metals; they react with water to liberate hydrogen and burn in oxygen to form oxides ($M_2O_3$).</li><li><strong>Uses:</strong> Used in the production of alloy steels. A well-known alloy is <span class="keyword">mischmetall</span> (consisting of ~95% lanthanoid metals and ~5% iron), used in lighter flints and magnesium-based alloys.</li></ul></details><details class="sub-topic"><summary><h3>The Actinoids</h3></summary><ul><li><strong>Electronic Configuration:</strong> Involves the progressive filling of the $5f$ subshell. They are all radioactive elements.</li><li><strong>Oxidation States:</strong> Exhibit a wider range of oxidation states compared to lanthanoids (up to +7 for $Np$ and $Pu$) because the $5f$, $6d$, and $7s$ energy levels are of comparable energies.</li><li><strong>Actinoid Contraction:</strong> A gradual decrease in atomic and ionic sizes across the series. The contraction is greater from element to element than in lanthanoids due to even poorer shielding by $5f$ electrons.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 121 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-03-chemical-kinetics.html";
+      } else {
+        window.location.href = "21-chapter-05-coordination-compounds.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
