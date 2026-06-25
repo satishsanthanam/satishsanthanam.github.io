@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 5: Biomolecules</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 5: Biomolecules</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">10.1 Carbohydrates</summary>
+  <p>Carbohydrates are naturally occurring organic compounds primarily produced by plants. Chemically, they are defined as optically active polyhydroxy aldehydes or ketones, or compounds that yield such units upon hydrolysis.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>10.1.1 Classification of Carbohydrates</h3></summary>
+    <ul>
+      <li><strong><span class="keyword">Monosaccharides</span>:</strong> Carbohydrates that cannot be further hydrolyzed into simpler units of polyhydroxy aldehyde or ketone (e.g., <span class="keyword">glucose</span>, <span class="keyword">fructose</span>, <span class="keyword">ribose</span>).</li>
+      <li><strong><span class="keyword">Oligosaccharides</span>:</strong> Carbohydrates that yield two to ten monosaccharide units on hydrolysis. They are further classified as disaccharides, trisaccharides, etc. (e.g., <span class="keyword">sucrose</span>, <span class="keyword">maltose</span>).</li>
+      <li><strong><span class="keyword">Polysaccharides</span>:</strong> High molecular mass carbohydrates that yield a large number of monosaccharide units on hydrolysis (e.g., <span class="keyword">starch</span>, <span class="keyword">cellulose</span>, <span class="keyword">glycogen</span>). These are generally non-sugars and are not sweet.</li>
+      <li><strong><span class="keyword">Reducing Sugars</span>:</strong> Carbohydrates containing free aldehydic or ketonic groups that can reduce Fehling's solution and Tollens' reagent. All monosaccharides are reducing sugars.</li>
+      <li><strong><span class="keyword">Non-reducing Sugars</span>:</strong> Carbohydrates in which the reducing groups are bonded and cannot reduce these reagents (e.g., <span class="keyword">sucrose</span>).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.1.2 Monosaccharides: Glucose and Fructose</h3></summary>
+    <h4>Glucose ($C_6H_{12}O_6$)</h4>
+    <p>Also known as dextrose, glucose is an aldohexose and is highly abundant on Earth.</p>
+    <ul>
+      <li><strong>Preparation:</strong>
+        <ol>
+          <li><em>From Sucrose:</em> Boiling sucrose with dilute $HCl$ or $H_2SO_4$ in alcoholic solution yields equal amounts of glucose and fructose:
+            $$\text{C}_{12}\text{H}_{22}\text{O}_{11} + \text{H}_2\text{O} \xrightarrow{\text{H}^+} \text{C}_6\text{H}_{12}\text{O}_6 \text{ (Glucose)} + \text{C}_6\text{H}_{12}\text{O}_6 \text{ (Fructose)}$$
+          </li>
+          <li><em>From Starch:</em> Commercial production by hydrolysis of starch with dilute $H_2SO_4$ at $393\text{ K}$ under pressure:
+            $$(\text{C}_6\text{H}_{10}\text{O}_5)_n + n\text{H}_2\text{O} \xrightarrow[393\text{ K, 2-3 atm}]{\text{H}^+} n\text{C}_6\text{H}_{12}\text{O}_6$$
+          </li>
+        </ol>
+      </li>
+      <li><strong>Structure Elucidation:</strong>
+        <ul>
+          <li>Prolonged heating with $HI$ yields <span class="keyword">n-hexane</span>, proving a straight chain of six carbon atoms.</li>
+          <li>Reaction with hydroxylamine ($NH_2OH$) forms an oxime, and with hydrogen cyanide ($HCN$) forms a cyanohydrin, confirming the presence of a carbonyl group ($>C=O$).</li>
+          <li>Mild oxidation with bromine water yields <span class="keyword">gluconic acid</span>, indicating that the carbonyl group is an aldehyde ($-CHO$).</li>
+          <li>Acetylation with acetic anhydride yields glucose pentaacetate, confirming the presence of five hydroxyl ($-OH$) groups on different carbon atoms.</li>
+          <li>Oxidation with nitric acid ($HNO_3$) yields <span class="keyword">saccharic acid</span> (a dicarboxylic acid), indicating the presence of a primary alcoholic group.</li>
+        </ul>
+      </li>
+      <li><strong>Cyclic Structure:</strong> Glucose exists in two crystalline cyclic hemiacetal forms, $\alpha$ and $\beta$, which differ only in the configuration of the hydroxyl group at C1 (the <span class="keyword">anomeric carbon</span>). These isomers are called <span class="keyword">anomers</span>. The six-membered cyclic structure is referred to as a <span class="keyword">pyranose structure</span>.</li>
+    </ul>
+
+    <h4>Fructose ($C_6H_{12}O_6$)</h4>
+    <p>Fructose is a ketohexose found in fruits, honey, and vegetables. It belongs to the D-series and is laevorotatory, represented as D-(-)-fructose. It exists in cyclic forms containing a five-membered ring called a <span class="keyword">furanose structure</span>.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.1.3 Disaccharides</h3></summary>
+    <p>Disaccharides consist of two monosaccharide units joined by an oxide linkage formed by the loss of a water molecule, known as a <span class="keyword">glycosidic linkage</span>.</p>
+    <ul>
+      <li><strong><span class="keyword">Sucrose</span>:</strong> Composed of $\alpha$-D-glucose and $\beta$-D-fructose linked via C1 of glucose and C2 of fructose. It is a non-reducing sugar. Hydrolysis of sucrose reverses its optical rotation from dextrorotatory to laevorotatory, producing <span class="keyword">invert sugar</span>.</li>
+      <li><strong><span class="keyword">Maltose</span>:</strong> Composed of two $\alpha$-D-glucose units linked via a C1–C4 glycosidic bond. It is a reducing sugar.</li>
+      <li><strong><span class="keyword">Lactose</span>:</strong> Known as milk sugar, composed of $\beta$-D-galactose and $\beta$-D-glucose linked via a C1–C4 glycosidic bond. It is a reducing sugar.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.1.4 Polysaccharides</h3></summary>
+    <ul>
+      <li><strong><span class="keyword">Starch</span>:</strong> The main storage polysaccharide in plants. It consists of two components:
+        <ul>
+          <li><em>Amylose:</em> Water-soluble, linear polymer of $\alpha$-D-glucose units linked by C1–C4 glycosidic bonds (15-20% of starch).</li>
+          <li><em>Amylopectin:</em> Water-insoluble, branched polymer of $\alpha$-D-glucose units with C1–C4 linkages in the main chain and C1–C6 linkages at branching points (80-85% of starch).</li>
+        </ul>
+      </li>
+      <li><strong><span class="keyword">Cellulose</span>:</strong> A straight-chain structural polysaccharide found in plant cell walls, composed of $\beta$-D-glucose units linked by C1–C4 glycosidic bonds.</li>
+      <li><strong><span class="keyword">Glycogen</span>:</strong> Known as animal starch, stored in the liver, muscles, and brain. Its structure is highly branched and similar to amylopectin.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.2 Proteins and Amino Acids</summary>
+  <p>Proteins are high molecular mass polymers of $\alpha$-amino acids and serve as the fundamental structural and functional units of life.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>10.2.1 Amino Acids</h3></summary>
+    <p>Amino acids contain both amino ($-NH_2$) and carboxyl ($-COOH$) functional groups.</p>
+    <ul>
+      <li><strong>Classification:</strong>
+        <ul>
+          <li><em>Acidic, Basic, or Neutral:</em> Based on the relative number of amino and carboxyl groups.</li>
+          <li><em>Essential Amino Acids:</em> Cannot be synthesized by the body and must be obtained through diet (e.g., valine, leucine).</li>
+          <li><em>Non-essential Amino Acids:</em> Can be synthesized by the body (e.g., glycine, alanine).</li>
+        </ul>
+      </li>
+      <li><strong><span class="keyword">Zwitterion</span>:</strong> In aqueous solution, the carboxyl group loses a proton and the amino group accepts a proton, forming a dipolar, neutral ion with both positive and negative charges. Zwitterions exhibit amphoteric behavior.</li>
+      <li><strong>Optical Activity:</strong> Except for glycine, all naturally occurring $\alpha$-amino acids are optically active and generally possess the L-configuration.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.2.2 Structure of Proteins</h3></summary>
+    <p>Amino acids are linked together by <span class="keyword">peptide bonds</span> (amide linkages, $-CO-NH-$) formed between the carboxyl group of one amino acid and the amino group of another.</p>
+    <ul>
+      <li><strong>Classification by Shape:</strong>
+        <ul>
+          <li><em>Fibrous Proteins:</em> Parallel polypeptide chains held together by hydrogen and disulfide bonds; insoluble in water (e.g., <span class="keyword">keratin</span>, <span class="keyword">myosin</span>).</li>
+          <li><em>Globular Proteins:</em> Polypeptide chains folded into spherical shapes; soluble in water (e.g., <span class="keyword">insulin</span>, <span class="keyword">albumin</span>).</li>
+        </ul>
+      </li>
+      <li><strong>Levels of Protein Structure:</strong>
+        <ol>
+          <li><strong>Primary Structure:</strong> The specific linear sequence of amino acids in the polypeptide chain.</li>
+          <li><strong>Secondary Structure:</strong> The spatial conformation of the polypeptide chain, stabilized by hydrogen bonding (e.g., <span class="keyword">$\alpha$-helix</span> and <span class="keyword">$\beta$-pleated sheet</span>).</li>
+          <li><strong>Tertiary Structure:</strong> The overall folding of the secondary structure into fibrous or globular shapes, stabilized by hydrogen bonds, disulfide linkages, van der Waals forces, and electrostatic attractions.</li>
+          <li><strong>Quaternary Structure:</strong> The spatial arrangement of multiple polypeptide subunits relative to one another.</li>
+        </ol>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.2.3 Denaturation of Proteins</h3></summary>
+    <p>When a native protein is subjected to physical changes (like temperature) or chemical changes (like pH), its hydrogen bonds are disrupted. The globules unfold and helices uncoil, causing the protein to lose its biological activity. During <span class="keyword">denaturation</span>, secondary and tertiary structures are destroyed, but the primary structure remains intact (e.g., coagulation of egg white, curdling of milk).</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.3 Enzymes</summary>
+  <p>Enzymes are highly specific globular proteins that act as biological catalysts, significantly reducing the activation energy of biochemical reactions.</p>
+  <ul>
+    <li><strong>Specificity:</strong> Each enzyme catalyzes a specific reaction for a specific substrate (e.g., <span class="keyword">maltase</span> catalyzes the hydrolysis of maltose to glucose).</li>
+    <li><strong>Mechanism:</strong> Enzymes lower the activation energy barrier, allowing reactions to proceed rapidly under mild physiological conditions.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.4 Vitamins</summary>
+  <p>Vitamins are organic compounds required in small amounts in the diet to perform specific biological functions for normal growth and health maintenance.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Classification of Vitamins</h3></summary>
+    <ul>
+      <li><strong>Fat-Soluble Vitamins:</strong> Soluble in fats and oils but insoluble in water. Stored in the liver and adipose tissues (Vitamins <span class="keyword">A</span>, <span class="keyword">D</span>, <span class="keyword">E</span>, and <span class="keyword">K</span>).</li>
+      <li><strong>Water-Soluble Vitamins:</strong> Soluble in water. Must be supplied regularly in the diet as they are readily excreted in urine and cannot be stored, except for Vitamin $B_{12}$ (B-group vitamins and Vitamin <span class="keyword">C</span>).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Deficiency Diseases</h3></summary>
+    <ul>
+      <li><strong>Vitamin A:</strong> Xerophthalmia, Night blindness.</li>
+      <li><strong>Vitamin $B_1$ (Thiamine):</strong> Beri-beri.</li>
+      <li><strong>Vitamin $B_2$ (Riboflavin):</strong> Cheilosis.</li>
+      <li><strong>Vitamin C (Ascorbic acid):</strong> Scurvy.</li>
+      <li><strong>Vitamin D:</strong> Rickets, Osteomalacia.</li>
+      <li><strong>Vitamin K:</strong> Increased blood clotting time.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.5 Nucleic Acids</summary>
+  <p>Nucleic acids are long-chain polymers of nucleotides (polynucleotides) responsible for the transmission of hereditary characters and protein synthesis.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>10.5.1 Chemical Composition</h3></summary>
+    <p>Complete hydrolysis of nucleic acids yields:</p>
+    <ul>
+      <li>A pentose sugar: $\beta$-D-2-deoxyribose in <span class="keyword">DNA</span>, and $\beta$-D-ribose in <span class="keyword">RNA</span>.</li>
+      <li>Phosphoric acid.</li>
+      <li>Nitrogenous bases:
+        <ul>
+          <li>Purines: Adenine (A) and Guanine (G).</li>
+          <li>Pyrimidines: Cytosine (C), Thymine (T) [only in DNA], and Uracil (U) [only in RNA].</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.5.2 Structure of Nucleic Acids</h3></summary>
+    <ul>
+      <li><strong><span class="keyword">Nucleoside</span>:</strong> A unit formed by attaching a nitrogenous base to the 1' position of a pentose sugar.</li>
+      <li><strong><span class="keyword">Nucleotide</span>:</strong> Formed when a nucleoside is linked to phosphoric acid at the 5' position of the sugar.</li>
+      <li><strong>Polynucleotide Chain:</strong> Nucleotides are joined together by <span class="keyword">phosphodiester linkages</span> between the 5' and 3' carbon atoms of adjacent pentose sugars.</li>
+      <li><strong>DNA Double Helix:</strong> Proposed by Watson and Crick. Two complementary polynucleotide strands are wound around each other and held together by hydrogen bonds between specific base pairs (A pairs with T via two hydrogen bonds; G pairs with C via three hydrogen bonds).</li>
+      <li><strong>RNA Structure:</strong> Usually single-stranded. Three main types exist: messenger RNA (<span class="keyword">m-RNA</span>), ribosomal RNA (<span class="keyword">r-RNA</span>), and transfer RNA (<span class="keyword">t-RNA</span>).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.5.3 DNA Fingerprinting</h3></summary>
+    <p>A unique sequence of bases on DNA exists for every individual, which cannot be altered by surgery. This is utilized in forensic laboratories, paternity testing, and evolutionary studies.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.6 Hormones</summary>
+  <p>Hormones are molecules that act as intercellular messengers, produced by endocrine glands and secreted directly into the bloodstream.</p>
+  <ul>
+    <li><strong>Chemical Nature:</strong>
+      <ul>
+        <li>Steroids (e.g., estrogens, androgens, progesterone).</li>
+        <li>Polypeptides (e.g., insulin, glucagon).</li>
+        <li>Amino acid derivatives (e.g., epinephrine, norepinephrine, thyroxine).</li>
+      </ul>
+    </li>
+    <li><strong>Functions:</strong> Help maintain biological balance (homeostasis). For example, insulin and glucagon regulate blood glucose levels, while thyroxine regulates metabolism.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-04-amines.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
