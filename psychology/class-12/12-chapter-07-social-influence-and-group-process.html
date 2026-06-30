@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 7: Social Influence and Group Processes</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 7: Social Influence and Group Processes</h1>
+
+    <details class="topic-box"><summary class="topic-title">Nature and Formation of Groups</summary><details class="sub-topic"><summary><h3>What is a Group?</h3></summary><p>A <span class="keyword">group</span> is defined as an organised system of two or more individuals, who are interacting and interdependent, who have common motives, have a set of role relationships among its members, and have norms that regulate the behaviour of its members.</p><p>Groups are distinguished from other collections of people such as crowds, teams, and audiences:</p><ul><li><span class="keyword">Crowd</span>: A collection of people who are present at a place/situation by chance (e.g., spectators at an accident). There is no structure, feeling of belongingness, or interdependence. Behaviour in crowds can often be irrational.</li><li><span class="keyword">Audience</span>: A collection of people assembled for a special purpose (e.g., watching a movie or a match). They are generally passive but can sometimes turn into a <span class="keyword">mob</span>, which is characterised by a definite sense of purpose, polarisation of attention, homogeneity of thought, and impulsivity.</li><li><span class="keyword">Team</span>: A special kind of group where members have complementary skills, are committed to a common goal, and are mutually accountable. There is a positive synergy attained through coordinated efforts.</li></ul><table><thead><tr><th>Feature</th><th>Groups</th><th>Teams</th></tr></thead><tbody><tr><td>Performance Dependency</td><td>Dependent on individual contributions of members.</td><td>Both individual contributions and teamwork matter.</td></tr><tr><td>Responsibility</td><td>The leader or head holds responsibility for the work.</td><td>Members hold themselves individually and mutually responsible.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Why Do People Join Groups?</h3></summary><p>People join groups to satisfy a variety of psychological and social needs:</p><ul><li><span class="keyword">Security</span>: Groups reduce feelings of insecurity, providing comfort, protection, and strength.</li><li><span class="keyword">Status</span>: Membership in prestigious groups provides recognition and a sense of power.</li><li><span class="keyword">Self-esteem</span>: Groups provide feelings of self-worth and establish a positive social identity.</li><li><span class="keyword">Satisfaction of Psychological and Social Needs</span>: Groups satisfy needs for belongingness, attention, love, and power.</li><li><span class="keyword">Goal Achievement</span>: Groups facilitate the attainment of goals that cannot be achieved individually.</li><li><span class="keyword">Provide Knowledge and Information</span>: Group membership broadens views and supplements individual knowledge.</li></ul></details><details class="sub-topic"><summary><h3>Group Formation and Stages</h3></summary><p>Group formation is facilitated by several key conditions:</p><ul><li><span class="keyword">Proximity</span>: Repeated interactions with individuals living nearby or sharing the same spaces facilitate liking and group formation.</li><li><span class="keyword">Similarity</span>: People prefer consistency and are attracted to others with similar interests, attitudes, and backgrounds.</li><li><span class="keyword">Common Motives and Goals</span>: People form groups to facilitate the attainment of shared objectives.</li></ul><p>According to Tuckman, groups pass through five developmental stages:</p><ol><li><span class="keyword">Forming Stage</span>: Members meet for the first time; high uncertainty about goals and structure.</li><li><span class="keyword">Storming Stage</span>: Intragroup conflict regarding leadership, roles, and how to achieve goals.</li><li><span class="keyword">Norming Stage</span>: Development of norms and rules, leading to a positive group identity and cohesiveness.</li><li><span class="keyword">Performing Stage</span>: The group structure is accepted, and energy is channeled toward task performance.</li><li><span class="keyword">Adjourning Stage</span>: For temporary groups, the group is disbanded after the task is completed.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Group Structure and Types</summary><details class="sub-topic"><summary><h3>Elements of Group Structure</h3></summary><p>Over time, regularities in interactions shape the group structure, which consists of four main elements:</p><ul><li><span class="keyword">Roles</span>: Socially defined expectations that individuals in a given situation are expected to fulfil.</li><li><span class="keyword">Norms</span>: Expected standards of behaviour and beliefs established, agreed upon, and enforced by group members.</li><li><span class="keyword">Status</span>: The relative social position given to group members, which can be ascribed (based on seniority/birth) or achieved (based on expertise/hard work).</li><li><span class="keyword">Cohesiveness</span>: Togetherness, binding, or mutual attraction among group members, often referred to as the "we-feeling".</li></ul></details><details class="sub-topic"><summary><h3>Groupthink</h3></summary><p>Extreme cohesiveness can lead to <span class="keyword">Groupthink</span>, a phenomenon conceptualised by Irving Janis. It occurs when a highly cohesive group overrides realistic appraisal of alternative courses of action to maintain unanimity.</p><div class="example-block"><p><strong>Case/Experiment Title:</strong> The Vietnam War Escalation Decision</p><p><strong>Background/Subject:</strong> President Lyndon Johnson and his advisors (1964–1967).</p><p><strong>Method/Procedure:</strong> Analysis of policy decisions to escalate the Vietnam War despite clear warnings and alternative viewpoints.</p><p><strong>Observations/Results:</strong> The group ignored warning signs, suppressed dissenting opinions to maintain harmony, and overestimated their own power, leading to a major political and humanitarian fiasco.</p><p><strong>Psychological Inference:</strong> Groupthink leads to irrational, uncritical decision-making, ignoring external realities to preserve internal cohesion.</p></div><p>Ways to prevent Groupthink include encouraging critical thinking, inviting outside experts, and presenting alternative courses of action.</p></details><details class="sub-topic"><summary><h3>Types of Groups</h3></summary><p>Groups can be classified into three major categories:</p><ul><li><span class="keyword">Primary vs. Secondary Groups</span>: Primary groups are pre-existing formations (e.g., family, religion) with face-to-face, warm emotional bonds. Secondary groups are joined by choice (e.g., political parties) with impersonal, indirect relationships.</li><li><span class="keyword">Formal vs. Informal Groups</span>: Formal groups have explicitly stated functions, rules, and roles (e.g., an office organisation). Informal groups are based on close personal relationships rather than rigid rules (e.g., a peer group).</li><li><span class="keyword">Ingroup vs. Outgroup</span>: Ingroup refers to one's own group ("we"), viewed favourably with desirable traits. Outgroup refers to other groups ("they"), often perceived negatively or differently.</li></ul><div class="example-block"><p><strong>Case/Experiment Title:</strong> The Minimal Group Paradigm Experiments</p><p><strong>Background/Subject:</strong> British schoolboys studied by Henri Tajfel and colleagues.</p><p><strong>Method/Procedure:</strong> Boys were categorized into "Kandinsky group" or "Klee group" based on a flimsy preference for paintings. They were then asked to distribute money to others identified only by code numbers and group membership.</p><p><strong>Observations/Results:</strong> Despite having no past history or future interaction, the boys consistently favoured members of their own group (ingroup) over the outgroup.</p><p><strong>Psychological Inference:</strong> Categorisation itself is sufficient to trigger ingroup favouritism and outgroup discrimination.</p></div></details></details><details class="topic-box"><summary class="topic-title">Influence of Group on Individual Behaviour</summary><details class="sub-topic"><summary><h3>Social Loafing</h3></summary><p>While <span class="keyword">Social Facilitation</span> refers to enhanced performance in the presence of others, <span class="keyword">Social Loafing</span> is the reduction in individual effort when working on a collective task where individual outputs are pooled.</p><div class="example-block"><p><strong>Case/Experiment Title:</strong> Noise Production in Groups (Latané et al.)</p><p><strong>Background/Subject:</strong> Groups of male students.</p><p><strong>Method/Procedure:</strong> Subjects were asked to clap or cheer as loudly as possible, either alone or in groups of two, four, and six.</p><p><strong>Observations/Results:</strong> Although the total noise increased with group size, the individual noise output per participant dropped significantly as the group size increased.</p><p><strong>Psychological Inference:</strong> Individuals exert less effort when their individual contribution cannot be identified or evaluated.</p></div><p>Social loafing occurs because of diffused responsibility, decreased motivation, lack of group comparison, or poor coordination. It can be reduced by making individual efforts identifiable, increasing task importance, and strengthening group cohesiveness.</p></details><details class="sub-topic"><summary><h3>Group Polarisation</h3></summary><p><span class="keyword">Group Polarisation</span> is the tendency for groups to make decisions that are more extreme than the initial inclination of its individual members.</p><p>Group polarisation occurs due to three main reasons:</p><ul><li>Exposure to new, persuasive arguments favouring the initial viewpoint.</li><li>The bandwagon effect, where finding others with similar views validates and strengthens one's own position.</li><li>Ingroup identification, which encourages conformity and strengthens shared attitudes.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-06-attitude-and-social-cognition.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

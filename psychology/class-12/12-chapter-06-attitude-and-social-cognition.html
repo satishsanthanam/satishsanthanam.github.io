@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 6: Attitude and Social Cognition</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 6: Attitude and Social Cognition</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Explaining Social Behaviour</summary><p><span class="keyword">Social psychology</span> is the branch of psychology that investigates how the behaviour of individuals is affected by others and the social environment. Social behaviour is a crucial part of human life, extending beyond mere physical presence to include imagined or implied presence of others.</p><p>To understand human interaction, social psychologists study both social-cognitive processes and social behaviour, moving beyond common sense to explain how people observe, interpret, and make sense of their own and others' actions.</p></details><details class="topic-box"><summary class="topic-title">Nature and Components of Attitudes</summary><details class="sub-topic"><summary><h3>The A-B-C Components of Attitude</h3></summary><p>An <span class="keyword">attitude</span> is a state of mind, a set of views, or thoughts regarding a specific topic (the 'attitude object') that possesses an evaluative feature (positive, negative, or neutral). It consists of three core components:</p><ul><li><strong>Affective Aspect (A):</strong> The emotional component (e.g., feeling happy or angry about the attitude object).</li><li><strong>Behavioural Aspect (B):</strong> The tendency to act or behave in a particular way toward the attitude object.</li><li><strong>Cognitive Aspect (C):</strong> The thought or belief component regarding the attitude object.</li></ul><p>These are collectively known as the <span class="keyword">A-B-C components</span> of attitude. While they are generally consistent, discrepancies can exist where thoughts do not align with emotions or actions.</p></details><details class="sub-topic"><summary><h3>Attitudes, Beliefs, and Values</h3></summary><table><thead><tr><th>Concept</th><th>Definition</th><th>Characteristics</th></tr></thead><tbody><tr><td><span class="keyword">Attitudes</span></td><td>Evaluative states of mind with emotional and action tendencies.</td><td>Subject to change; direct behaviour.</td></tr><tr><td><span class="keyword">Beliefs</span></td><td>The cognitive ground on which attitudes stand.</td><td>Represent subjective truths (e.g., belief in God).</td></tr><tr><td><span class="keyword">Values</span></td><td>Attitudes or beliefs containing a moral 'should' or 'ought' aspect.</td><td>Highly central, stable, and difficult to change.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Properties of Attitudes</h3></summary><p>Attitudes possess four significant features that determine their influence and stability:</p><ul><li><strong><span class="keyword">Valence</span>:</strong> Indicates whether the attitude is positive, negative, or neutral.</li><li><strong><span class="keyword">Extremeness</span>:</strong> Reflects how strongly positive or negative an attitude is.</li><li><strong><span class="keyword">Simplicity or Complexity</span>:</strong> Refers to the number of member attitudes within a broader attitude system. A system is simple if it has few attitudes, and complex if it contains many.</li><li><strong><span class="keyword">Centrality</span>:</strong> The role and influence of a specific attitude within the wider attitude system; central attitudes heavily influence peripheral ones.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Attitude Formation and Change</summary><details class="sub-topic"><summary><h3>Process of Attitude Formation</h3></summary><p>Attitudes are primarily learned through social interaction and personal experiences. The key learning processes include:</p><ul><li><strong>Learning by <span class="keyword">association</span>:</strong> Developing an attitude by linking a target with a positive or negative stimulus (e.g., liking a subject due to a liked teacher).</li><li><strong>Learning by being rewarded or punished:</strong> Developing positive attitudes toward praised behaviours and negative attitudes toward punished ones.</li><li><strong>Learning through <span class="keyword">modelling</span>:</strong> Observing others being rewarded or punished for their actions and imitating them.</li><li><strong>Learning through <span class="keyword">group or cultural norms</span>:</strong> Internalizing unwritten societal rules and expectations over time.</li><li><strong>Learning through <span class="keyword">exposure to information</span>:</strong> Acquiring attitudes via media, books, and digital platforms.</li></ul></details><details class="sub-topic"><summary><h3>Factors Influencing Attitude Formation</h3></summary><ol><li><strong>Family and School Environment:</strong> Crucial during early development through direct reinforcement and observational learning.</li><li><strong><span class="keyword">Reference Groups</span>:</strong> Groups that establish acceptable norms of thinking and behaving, especially influential during adolescence.</li><li><strong>Personal Experiences:</strong> Direct, impactful life events that can drastically alter one's outlook.</li><li><strong>Media-related Influences:</strong> Audio-visual media and the internet that shape cognitive and affective components of attitudes.</li></ol></details><details class="sub-topic"><summary><h3>Theories of Attitude Change</h3></summary><p>Attitude change occurs through distinct cognitive and social processes, explained by three major concepts:</p><ul><li><strong>Heider's Balance Theory:</strong> Proposed by Fritz Heider, this uses the <span class="keyword">P-O-X triangle</span> (Person, Other, Topic/Object) to show that cognitive imbalance is uncomfortable, driving attitude change toward a balanced state.</li><li><strong>Festinger's Cognitive Dissonance:</strong> Proposed by Leon Festinger, this emphasizes <span class="keyword">cognitive consistency</span>. When two cognitions are dissonant, mental discomfort drives a change in one of the cognitions to achieve consonance.</li><li><strong>Mohsin's Two-Step Concept:</strong> Proposed by S.M. Mohsin, this states that attitude change occurs in two steps: first, the target identifies with the source; second, the source changes their own behaviour, prompting the target to imitate and change.</li></ul><div class="example-block"><p><strong>Case/Experiment Title:</strong> Telling a Lie for Twenty Dollars</p><p><strong>Background/Subject:</strong> A group of students who participated in a highly boring experimental task.</p><p><strong>Method/Procedure:</strong> Participants were asked to lie to waiting students, telling them the task was interesting. Half the participants were paid $1 for the lie, while the other half were paid $20. Later, all participants rated the actual interest level of the task.</p><p><strong>Observations/Results:</strong> The $1 group rated the boring task as significantly more interesting than the $20 group. The $1 group experienced high <span class="keyword">cognitive dissonance</span> because $1 was insufficient justification for lying, forcing them to change their attitude to align with their behaviour. The $20 group had sufficient external justification and felt no dissonance.</p><p><strong>Psychological Inference:</strong> When external rewards are low, individuals experience greater cognitive dissonance, leading to internal attitude change to restore consistency.</p></div></details><details class="sub-topic"><summary><h3>Factors Influencing Attitude Change</h3></summary><ul><li><strong>Existing Attitude Characteristics:</strong> Positive, simple, and peripheral attitudes are easier to change than negative, complex, and central ones. Change can be <span class="keyword">congruent</span> (moving further in the same direction) or <span class="keyword">incongruent</span> (moving in the opposite direction).</li><li><strong>Source Characteristics:</strong> <span class="keyword">Source credibility</span> and <span class="keyword">attractiveness</span> increase the likelihood of attitude change.</li><li><strong>Message Characteristics:</strong> The amount of information, rational vs. emotional appeals, and the motives activated by the message influence persuasiveness.</li><li><strong>Target Characteristics:</strong> Qualities like persuasibility, self-esteem, intelligence, and existing prejudices determine how easily a target's attitude can be modified.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Attitude-Behaviour Relationship</summary><details class="sub-topic"><summary><h3>Consistency Conditions</h3></summary><p>Attitudes do not always predict actual behaviour. Consistency is highest when:</p><ul><li>The attitude is strong and central.</li><li>The person is highly aware of their attitude.</li><li>There is minimal external or group pressure.</li><li>The behaviour is not being actively evaluated by others.</li><li>The person anticipates positive consequences from the behaviour.</li></ul><div class="example-block"><p><strong>Case/Experiment Title:</strong> LaPiere's Attitude-Behaviour Consistency Study</p><p><strong>Background/Subject:</strong> An American social psychologist, Richard LaPiere, and a Chinese couple travelling across the United States during a period of high anti-Chinese prejudice.</p><p><strong>Method/Procedure:</strong> LaPiere accompanied the Chinese couple to various hotels and restaurants. Later, he sent questionnaires to the same establishments asking if they would accommodate Chinese guests.</p><p><strong>Observations/Results:</strong> The couple was refused service only once in person. However, when surveyed later via questionnaire, a vast majority of the establishments stated they would refuse accommodation to Chinese guests.</p><p><strong>Psychological Inference:</strong> Expressed attitudes (questionnaire responses) can differ drastically from actual behaviour (in-person accommodation), demonstrating that attitudes are not perfect predictors of actions.</p></div></details></details><details class="topic-box"><summary class="topic-title">Prejudice and Discrimination</summary><details class="sub-topic"><summary><h3>Definitions and Differences</h3></summary><p><span class="keyword">Prejudices</span> are typically negative attitudes directed toward a specific group, often based on <span class="keyword">stereotypes</span> (overgeneralized, cognitive beliefs about the group's characteristics). When prejudice translates into negative actions, it becomes <span class="keyword">discrimination</span> (the behavioural component).</p></details><details class="sub-topic"><summary><h3>Sources of Prejudice</h3></summary><ul><li><strong>Learning:</strong> Prejudices are acquired through association, reinforcement, modelling, and exposure to biased information.</li><li><strong>Strong Social Identity & Ingroup Bias:</strong> Elevating one's own group by devaluing outgroups.</li><li><strong><span class="keyword">Scapegoating</span>:</strong> Blaming a minority outgroup for societal, economic, or political frustrations.</li><li><strong><span class="keyword">Kernel of Truth</span>:</strong> Maintaining stereotypes by focusing on isolated examples that seem to support them.</li><li><strong><span class="keyword">Self-fulfilling Prophecy</span>:</strong> Behaving in ways that provoke the target group to act in a manner that seemingly justifies the original prejudice.</li></ul></details><details class="sub-topic"><summary><h3>Strategies for Handling Prejudice</h3></summary><p>Prejudice can be mitigated through targeted interventions:</p><ol><li><strong>Education and Information Dissemination:</strong> Correcting stereotypes and reducing ingroup bias.</li><li><strong>Increasing Intergroup Contact:</strong> Encouraging direct communication under cooperative, equal-status conditions.</li><li><strong>Highlighting Individual Identity:</strong> Evaluating people based on personal characteristics rather than group membership.</li></ol></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-05-therapeutic-approaches.html";
+      } else {
+        window.location.href = "12-chapter-07-social-influence-and-group-process.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

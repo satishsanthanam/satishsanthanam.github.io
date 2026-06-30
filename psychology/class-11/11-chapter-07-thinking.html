@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 7: Thinking</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 7: Thinking</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Nature of Thinking</summary>
+  <p><span class="keyword">Thinking</span> is the base of all cognitive activities or processes and is unique to human beings. It is a higher mental process through which we manipulate and analyse acquired or existing information. This manipulation and analysis occur by means of abstracting, reasoning, imagining, problem solving, judging, and decision-making. Thinking is mostly organised, goal-directed, and is an internal mental process that can be inferred from overt behaviour.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Building Blocks of Thought</h3></summary>
+    <p>Thinking relies on knowledge represented either in the form of mental images or words/concepts:</p>
+    <ul>
+      <li><span class="keyword">Mental Image</span>: A mental representation of a sensory experience; it can be used to think about things, places, and events in the "mind's eye".</li>
+      <li><span class="keyword">Concepts</span>: A mental representation of a category. It refers to a class of objects, ideas, or events that share common properties. Concept formation helps in organising knowledge systematically, making thought processes quick and efficient.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Culture and Thinking</h3></summary>
+    <div class="example-block">
+      <p><strong>Experiment Title:</strong> Culture and Thinking Study on American and Asian Students</p>
+      <p><strong>Background/Subject:</strong> American and Japanese students.</p>
+      <p><strong>Method/Procedure:</strong> Subjects were shown a picture of an underwater scene for a brief period and asked to describe what they saw.</p>
+      <p><strong>Observations/Results:</strong> American students focused on the biggest, brightest, and most outstanding features (e.g., "the large fish swimming to the right"). In contrast, Japanese students focused on the background (e.g., "the bottom was rocky" or "the water was green").</p>
+      <p><strong>Psychological Inference:</strong> Beliefs, values, and social practices influence cognitive styles. Americans usually analyse each object separately, demonstrating <span class="keyword">analytical thinking</span>. Asian people think more about the relationship between objects and backgrounds, demonstrating <span class="keyword">holistic thinking</span>.</p>
+    </div>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">The Processes of Thinking</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Problem Solving</h3></summary>
+    <p><span class="keyword">Problem Solving</span> is thinking that is goal-directed, connecting an initial state (the problem) to an end state (the goal) through a series of mental operations.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Mental Operation</th>
+          <th>Nature of Problem (Example: Organising a School Play)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Identify the problem</td>
+          <td>A week is left and you are given the task of organising a play.</td>
+        </tr>
+        <tr>
+          <td>2. Represent the problem</td>
+          <td>Organising involves identifying a theme, screening actors, arranging money, etc.</td>
+        </tr>
+        <tr>
+          <td>3. Plan the solution (Set sub-goals)</td>
+          <td>Search and survey available themes, consult experts, decide based on cost and suitability.</td>
+        </tr>
+        <tr>
+          <td>4. Evaluate all solutions</td>
+          <td>Collect all information and conduct stage rehearsals.</td>
+        </tr>
+        <tr>
+          <td>5. Select one solution and execute it</td>
+          <td>Compare and verify options to get the best play.</td>
+        </tr>
+        <tr>
+          <td>6. Evaluate the outcome</td>
+          <td>Assess if the play is appreciated; note steps for future reference.</td>
+        </tr>
+        <tr>
+          <td>7. Rethink and redefine</td>
+          <td>Think about ways to plan a better play in the future.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Obstacles to Solving Problems</h4>
+    <ul>
+      <li><span class="keyword">Mental Set</span>: A tendency to solve problems by following already tried mental operations or steps. While it can enhance speed, it creates mental rigidity that obstructs thinking of new rules or strategies.</li>
+      <li><span class="keyword">Functional Fixedness</span>: Occurs when people fail to solve a problem because they are fixed on a thing’s usual function (e.g., failing to use a hardbound book to hammer a nail).</li>
+      <li><span class="keyword">Lack of Motivation</span>: Giving up easily when encountering a problem or failure in implementing the first step.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Reasoning</h3></summary>
+    <p><span class="keyword">Reasoning</span> is the process of gathering and analysing information to arrive at conclusions. It is a form of problem solving with the goal of determining what conclusion can be drawn from given information.</p>
+    <ul>
+      <li><span class="keyword">Deductive Reasoning</span>: Reasoning that begins with a general assumption or premise known to be true, and draws a specific conclusion (reasoning from general to particular).</li>
+      <li><span class="keyword">Inductive Reasoning</span>: Reasoning based on specific facts and observations to draw a general conclusion (reasoning from particular to general).</li>
+      <li><span class="keyword">Analogy</span>: A form of reasoning involving four parts ($A$ is to $B$ as $C$ is to $D$), where the relation between the first two parts is the same as the relation between the last two.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Decision-making</h3></summary>
+    <p>In <span class="keyword">judgment</span>, we draw conclusions, form opinions, and evaluate events or objects based on knowledge and available evidence. <span class="keyword">Decision-making</span> is a specific type of problem solving where we choose among alternatives by evaluating the cost and benefit associated with each option. In decision-making, the various solutions or choices are already known, and the task is to select the best one.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Nature and Process of Creative Thinking</summary>
+  <p><span class="keyword">Creative Thinking</span> involves the production of novel, unique, and original ideas or solutions to problems. To be considered creative, an idea must be reality-oriented, appropriate, constructive, and socially desirable.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Convergent vs. Divergent Thinking</h3></summary>
+    <ul>
+      <li><span class="keyword">Convergent Thinking</span>: Thinking required to solve problems which have only one correct answer; the mind converges to the correct solution.</li>
+      <li><span class="keyword">Divergent Thinking</span>: Open-ended thinking where an individual can think of different answers based on their experiences. It includes:
+        <ul>
+          <li><strong>Fluency:</strong> The ability to produce many ideas for a given task.</li>
+          <li><strong>Flexibility:</strong> Variety in thinking and shifting perspectives.</li>
+          <li><strong>Originality:</strong> The ability to produce rare or unusual ideas.</li>
+          <li><strong>Elaboration:</strong> The ability to go into details and work out implications of new ideas.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Lateral Thinking</h3></summary>
+    <p>Edward de Bono coined the term <span class="keyword">Lateral Thinking</span>, distinguishing it from vertical (logical) thinking. Vertical thinking digs the same hole deeper (logical progression), whereas lateral thinking is concerned with digging a hole in another place (seeking alternative pathways). De Bono developed the <strong>'Six Thinking Hats'</strong> technique to stimulate different modes of thinking:</p>
+    <ul>
+      <li><strong>White Hat:</strong> Gathering information, facts, and figures.</li>
+      <li><strong>Red Hat:</strong> Expressing feelings and emotions.</li>
+      <li><strong>Black Hat:</strong> Judgment, caution, and logic.</li>
+      <li><strong>Yellow Hat:</strong> Thinking on what will work and why it is beneficial.</li>
+      <li><strong>Green Hat:</strong> Creativity, alternatives, and changes.</li>
+      <li><strong>Blue Hat:</strong> Thinking about the thinking process itself.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Process of Creative Thinking</h3></summary>
+    <ol>
+      <li><strong>Preparation:</strong> Understanding the task, analysing the problem, and gathering background facts.</li>
+      <li><strong>Incubation:</strong> A period of no conscious effort where the individual is not actively thinking about the problem, allowing ideas to develop unconsciously.</li>
+      <li><strong>Illumination:</strong> The "Aha!" experience; the sudden emergence of the creative idea or solution.</li>
+      <li><strong>Verification:</strong> Testing and judging the worth or appropriateness of the solution.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Strategies for Creative Thinking</h3></summary>
+    <ul>
+      <li>Cultivate wider reading, exposure, and the art of asking questions.</li>
+      <li>Deliberately look for multiple angles and generate multiple solutions.</li>
+      <li>Use Osborn's <span class="keyword">Brainstorming</span> technique, which separates idea generation from evaluation to allow free-thinking.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Thought and Language</summary>
+  <p>The relationship between language and thought is examined through three major viewpoints:</p>
+  <ul>
+    <li><span class="keyword">Language as Determinant of Thought</span>: Benjamin Lee Whorf's <span class="keyword">Linguistic Relativity Hypothesis</span> states that language determines the contents of thought (<span class="keyword">linguistic determinism</span>).</li>
+    <li><span class="keyword">Thought as Determinant of Language</span>: Jean Piaget believed that thought not only determines language but also precedes it. Language is just one of the vehicles of thinking; underlying concepts must be understood before language can express them.</li>
+    <li><span class="keyword">Different Origins of Language and Thought</span>: Lev Vygotsky argued that thought and language develop separately in a child until about two years of age, when they merge to produce verbal thought and rational speech.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Development of Language and Language Use</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Meaning and Nature of Language</h3></summary>
+    <p>Language consists of a system of symbols organised by means of certain rules that we use to communicate with each other. It has three basic characteristics:</p>
+    <ol>
+      <li>The presence of symbols.</li>
+      <li>A set of rules (syntax) to organise these symbols.</li>
+      <li>Communication of thoughts, ideas, intentions, and feelings.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Stages of Language Development</h3></summary>
+    <ol>
+      <li><strong>Crying:</strong> The first undifferentiated sound produced by infants, which gradually varies in pitch to signify hunger, pain, or sleepiness.</li>
+      <li><strong>Cooing:</strong> Meaningful vowel-like sounds (e.g., 'aaa', 'uuu') to express happiness, appearing in early infancy.</li>
+      <li><strong>Babbling:</strong> Appears around 6 months; prolonged repetition of consonant and vowel combinations (e.g., 'da', 'ba').</li>
+      <li><strong>Echolalia:</strong> Appears around 9 months; repetitive imitative patterns of adult voices (e.g., 'dadadadada').</li>
+      <li><strong>One-Word Stage:</strong> Around the first birthday; children use single words (<span class="keyword">holophrases</span>) to convey complete meanings.</li>
+      <li><strong>Two-Word Stage:</strong> Around 18 to 20 months; children use two-word combinations, exemplifying <span class="keyword">telegraphic speech</span> (mostly nouns and verbs, e.g., "get milk").</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Theories of Language Acquisition</h3></summary>
+    <ul>
+      <li><strong>Behaviorist View (B.F. Skinner):</strong> Language is learned through association, imitation, and reinforcement (shaping).</li>
+      <li><strong>Innate View (Noam Chomsky):</strong> Children are born with an inborn capacity for language acquisition, including a "universal grammar". Language development is like physical maturation, occurring during a critical period.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Bilingualism and Multilingualism</h3></summary>
+    <p><span class="keyword">Bilingualism</span> refers to attaining proficiency in communicating through any two languages. Learning more than two languages is <span class="keyword">multilingualism</span>. Studies show that bilingualism and multilingualism facilitate cognitive, linguistic, and academic competence in children.</p>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-06-human-memory.html";
+      } else {
+        window.location.href = "11-chapter-08-motivation-and-emotion.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

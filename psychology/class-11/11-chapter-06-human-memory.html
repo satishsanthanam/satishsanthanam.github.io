@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 6: Human Memory</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 6: Human Memory</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Nature of Memory</summary><p><span class="keyword">Memory</span> is conceptualised as a cognitive system consisting of three independent, though interrelated, stages: encoding, storage, and retrieval. Any information received by us goes through these stages.</p><details class="sub-topic"><summary><h3>The Three Stages of Memory</h3></summary><ul><li><strong><span class="keyword">Encoding</span>:</strong> The first stage where incoming sensory information is registered and recorded for the first time so that it becomes usable by the memory system.</li><li><strong><span class="keyword">Storage</span>:</strong> The second stage where encoded information is retained and held over a period of time.</li><li><strong><span class="keyword">Retrieval</span>:</strong> The third stage where stored information is recovered and brought back into conscious awareness for use in cognitive tasks.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Information Processing Approach: The Stage Model</summary><p>Proposed by <span class="keyword">Atkinson and Shiffrin</span> (1968), this model compares human memory to a computer system, processing information through three distinct memory stores.</p><details class="sub-topic"><summary><h3>Comparison of Memory Systems</h3></summary><table><thead><tr><th>Feature</th><th>Sensory Memory</th><th>Short-term Memory (STM)</th><th>Long-term Memory (LTM)</th></tr></thead><tbody><tr><td><strong>Capacity</strong></td><td>Large</td><td>Small (7 &plusmn; 2 chunks)</td><td>Unlimited</td></tr><tr><td><strong>Duration</strong></td><td>Less than 1 second</td><td>Less than 30 seconds</td><td>Up to a lifetime</td></tr><tr><td><strong>Encoding</strong></td><td>Exact sensory replica (Iconic/Echoic)</td><td>Primarily Acoustic</td><td>Semantic (Meaning-based)</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Control Processes</h3></summary><p>Control processes monitor and guide the flow of information between different memory stores:</p><ul><li><strong><span class="keyword">Selective Attention</span>:</strong> Determines what information enters STM from sensory registers.</li><li><strong><span class="keyword">Maintenance Rehearsal</span>:</strong> Repetitive silent or vocal rehearsal to keep information active in STM.</li><li><strong><span class="keyword">Chunking</span>:</strong> Combining smaller units of information into larger, meaningful groups to expand STM capacity.</li><li><strong><span class="keyword">Elaborative Rehearsal</span>:</strong> Connecting new information with existing knowledge in LTM to facilitate permanent storage.</li></ul></details><details class="sub-topic"><summary><h3>Working Memory (Box 6.1)</h3></summary><p>Proposed by <span class="keyword">Baddeley</span> (1986), <span class="keyword">Working Memory</span> is an active workbench rather than a passive storehouse. It consists of three components:</p><ol><li><strong><span class="keyword">Phonological Loop</span>:</strong> Holds and manipulates a limited number of sounds; decays within 2 seconds unless rehearsed.</li><li><strong><span class="keyword">Visuospatial Sketchpad</span>:</strong> Stores and manipulates visual and spatial information.</li><li><strong><span class="keyword">Central Executive</span>:</strong> Allocates attentional resources, coordinates the other components, and integrates information from LTM.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Levels of Processing</summary><p>Proposed by <span class="keyword">Craik and Lockhart</span> (1972) as an alternative to the Stage Model, suggesting that the durability of memory depends on the depth of processing.</p><details class="sub-topic"><summary><h3>Three Levels of Processing</h3></summary><ol><li><strong>Physical/Structural (Shallowest):</strong> Focusing on the visual or structural features of a stimulus (e.g., whether a word is in capital letters).</li><li><strong>Phonetic (Intermediate):</strong> Focusing on the acoustic features and sounds associated with the letters (e.g., what the word rhymes with).</li><li><strong>Semantic (Deepest):</strong> Analyzing the meaning of the stimulus and connecting it to existing knowledge (e.g., defining the word or imagining its characteristics).</li></ol></details></details><details class="topic-box"><summary class="topic-title">Types of Long-term Memory</summary><p>Long-term memory is non-unitary and consists of structurally and functionally distinct systems.</p><details class="sub-topic"><summary><h3>Declarative vs. Procedural Memory</h3></summary><ul><li><strong><span class="keyword">Declarative Memory</span>:</strong> Memory for facts, names, dates, and events that can be consciously recalled and verbally described.</li><li><strong><span class="keyword">Procedural Memory</span>:</strong> Memory for motor skills, habits, and procedures to accomplish tasks (e.g., riding a bicycle) which cannot be easily verbalized.</li></ul></details><details class="sub-topic"><summary><h3>Episodic vs. Semantic Memory (Tulving)</h3></summary><ul><li><strong><span class="keyword">Episodic Memory</span>:</strong> Contains biographical details of our lives; personal experiences tied to specific times and places. These memories are often emotional in nature.</li><li><strong><span class="keyword">Semantic Memory</span>:</strong> General awareness, concepts, ideas, rules of logic, and facts that are affect-neutral and not tied to a specific time or place.</li></ul></details><details class="sub-topic"><summary><h3>Other Classifications (Box 6.2)</h3></summary><ul><li><strong><span class="keyword">Flashbulb Memories</span>:</strong> Highly detailed, vivid memories of extremely arousing or surprising events that feel like a frozen photograph.</li><li><strong><span class="keyword">Autobiographical Memory</span>:</strong> Personal memories distributed unevenly across life, characterized by <span class="keyword">childhood amnesia</span> during the first 4-5 years.</li><li><strong><span class="keyword">Implicit Memory</span>:</strong> Memories that remain outside conscious awareness and are retrieved automatically, influencing behavior without conscious recall.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Methods of Memory Measurement</summary><p>Different experimental methods are used to measure different types of memory systems:</p><ul><li><strong>Free Recall and Recognition:</strong> Used for declarative/episodic memory. Free recall requires generating items in any order; recognition requires identifying previously learned items among distracters.</li><li><strong>Sentence Verification Task:</strong> Used for semantic memory; measures the speed of verifying true/false statements.</li><li><strong>Priming:</strong> Used for implicit memory; measures how exposure to a stimulus influences subsequent performance on word-completion or identification tasks.</li></ul></details><details class="topic-box"><summary class="topic-title">Nature and Causes of Forgetting</summary><p>Forgetting is the inability to retrieve stored information from the memory system.</p><details class="sub-topic"><summary><h3>Ebbinghaus's Curve of Forgetting</h3></summary><p><strong>Experiment Title:</strong> Ebbinghaus's Nonsense Syllables Study<br/><strong>Background/Subject:</strong> Hermann Ebbinghaus (1885) conducted experiments on himself.<br/><strong>Method/Procedure:</strong> Memorized lists of nonsense syllables (CVC trigrams like NOK or SEP) and measured the number of trials needed to relearn the lists at varying time intervals.<br/><strong>Observations/Results:</strong> Discovered a sharp, rapid drop in memory within the first nine hours (especially the first hour), after which the rate of forgetting stabilizes and declines very gradually.<br/><strong>Psychological Inference:</strong> Forgetting is not a linear process; the initial rate of memory loss is highly accelerated before plateauing.</p></details><details class="sub-topic"><summary><h3>Theories of Forgetting</h3></summary><ul><li><strong><span class="keyword">Trace Decay (Disuse Theory)</span>:</strong> Assumes memory leaves physical traces in the brain that fade and decay over time if not used. (Inadequate because sleep reduces forgetting compared to waking activity).</li><li><strong><span class="keyword">Interference Theory</span>:</strong> Forgetting is caused by competition between different associations stored in memory.</li><li><strong><span class="keyword">Retrieval Failure</span>:</strong> Proposed by Tulving; forgetting occurs because appropriate retrieval cues are absent or inaccessible at the time of recall.</li></ul></details><details class="sub-topic"><summary><h3>Interference Designs</h3></summary><table><thead><tr><th>Type of Interference</th><th>Phase 1</th><th>Phase 2</th><th>Testing Phase</th></tr></thead><tbody><tr><td><strong>Retroactive (New interferes with Old)</strong></td><td>Learns A</td><td>Learns B</td><td>Recalls A (Interference from B)</td></tr><tr><td><strong>Proactive (Old interferes with New)</strong></td><td>Learns A</td><td>Learns B</td><td>Recalls B (Interference from A)</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Repressed Memories (Box 6.4)</h3></summary><p>According to Sigmund Freud, painful, threatening, or traumatic memories are actively pushed down into the unconscious mind (<span class="keyword">repression</span>) and become unavailable for conscious retrieval, sometimes leading to psychological amnesia or a <span class="keyword">fugue state</span>.</p></details></details><details class="topic-box"><summary class="topic-title">Enhancing Memory (Mnemonics)</summary><p>Strategies and techniques used to improve memory retention and retrieval.</p><details class="sub-topic"><summary><h3>Mnemonics using Images</h3></summary><ul><li><strong><span class="keyword">The Keyword Method</span>:</strong> Associating a foreign word with a similar-sounding native word, then creating a mental image of the two interacting.</li><li><strong><span class="keyword">The Method of Loci</span>:</strong> Placing items to be remembered as visual objects along a familiar physical path or sequence of locations.</li></ul></details><details class="sub-topic"><summary><h3>Mnemonics using Organisation</h3></summary><ul><li><strong>Chunking:</strong> Grouping smaller units into larger, meaningful structures.</li><li><strong><span class="keyword">First Letter Technique</span>:</strong> Taking the first letter of each word to be remembered and arranging them to form an acronym (e.g., VIBGYOR).</li></ul></details><details class="sub-topic"><summary><h3>Scientific Strategies for Memory Improvement</h3></summary><ol><li><strong>Engage in Deep Level Processing:</strong> Focus on the meaning and establish associations with existing knowledge.</li><li><strong>Minimise Interference:</strong> Avoid studying highly similar subjects consecutively; distribute learning sessions with rest periods.</li><li><strong>Give Yourself Enough Retrieval Cues:</strong> Create cognitive links and contextual cues during encoding.</li><li><strong>The <span class="keyword">PQRST Method</span>:</strong> A study method consisting of <strong>P</strong>review, <strong>Q</strong>uestion, <strong>R</strong>ead, <strong>S</strong>elf-recitation, and <strong>T</strong>est.</li></ol></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-05-learning.html";
+      } else {
+        window.location.href = "11-chapter-07-thinking.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
