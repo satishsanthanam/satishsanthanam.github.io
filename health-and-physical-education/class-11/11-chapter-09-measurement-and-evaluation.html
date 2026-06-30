@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 9: Measurement and Evaluation</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 9: Measurement and Evaluation</h1>
+
+    <h1>Physical and Health Education: Class 11 (Part 09) — Chapter 09: Measurement and Evaluation</h1>
+
+<details class="topic-box">
+  <summary class="topic-title">Introduction to Test, Measurement, and Evaluation</summary>
+  <p>Everyday life is largely associated with knowing the status, level, attitude, skill, cause, or effect of human effort. To answer these queries, we use test, measurement, and evaluation, which are interrelated, interdependent, and follow a continuous process.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Test</h3></summary>
+    <p>A <span class="keyword">Test</span> is a tool used to obtain information to determine the specific characteristics or qualities of an individual regarding knowledge, physical abilities, skill abilities, etc. Examples include unit tests, annual examinations, physical fitness tests, or body measurements (height, weight).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Measurement</h3></summary>
+    <p><span class="keyword">Measurement</span> can be quantitative, qualitative, or both. It is a score or data in numerical or grading values, indicating the capacity or ability of an individual, obtained on the basis of an applied test. A student's score in a test or examination, either on the field or in the classroom, is called measurement.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Evaluation</h3></summary>
+    <p><span class="keyword">Evaluation</span> is the process of interpreting collected data to measure and make a professional judgement of value or worth. It provides feedback on the effectiveness of measures. Evaluation can be formative or summative, and involves three sequential steps: process education, objectives, learning experiences, and change of behaviour.</p>
+    <p>The <span class="keyword">TME process</span> (Test, Measurement, and Evaluation) is useful for achievement, diagnosis, prescription, improvement, classification, grading, motivation, and predicting performance.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Measurement and Evaluation of Selected Physical Fitness Components</summary>
+  <p>This section covers the measurement and evaluation of major physical fitness components: muscular strength, muscular endurance, flexibility, Body Mass Index (BMI), and Waist-to-Hip Ratio (WHR).</p>
+
+  <details class="sub-topic">
+    <summary><h3>Muscular Strength</h3></summary>
+    <p><span class="keyword">Muscular Strength</span> refers to the ability of a muscle or group of muscles to overcome or act against resistance. It depends on physiological factors (cross-section of muscle, ratio of slow/fast twitch fibers, muscle coordination, ATP and CP stores) and psychic factors (anger, motivation, emotional state).</p>
+    
+    <h4>Push-up Test (Upper Body Strength & Endurance)</h4>
+    <p>Measures upper limb muscular strength and endurance.</p>
+    <ul>
+      <li><strong>Procedure:</strong> Begin in a plank position with hands and toes touching the floor, body in a straight line. Lower the body until there is a 90-degree angle at the elbows, then return to the starting position. Repeat until exhaustion or loss of rhythm.</li>
+      <li><strong>Scoring:</strong> Maximum number of correct push-ups completed.</li>
+    </ul>
+
+    <h4>Abdominal Curl Test (Abdominal Strength & Endurance)</h4>
+    <p>Identifies and assesses the strength and endurance of abdominal muscles.</p>
+    <ul>
+      <li><strong>Procedure:</strong> Lie in a supine position with flexed knees and elbows, fingers clubbed behind the head. Raise the upper body and return to the initial position repeatedly within a set time duration.</li>
+      <li><strong>Scoring:</strong> Number of curl-ups completed in the specified time.</li>
+    </ul>
+
+    <h4>Squat Thrust (Lower Body Strength & Endurance)</h4>
+    <p>Assesses muscular strength and endurance of the lower body.</p>
+    <ul>
+      <li><strong>Procedure:</strong> Start from a standing position, drop to a low squat with palms on the floor, thrust legs back into a plank position, return to squat, and stand up.</li>
+      <li><strong>Scoring:</strong> Maximum number of successive squat thrusts performed in 1 minute.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Muscular Endurance</h3></summary>
+    <p><span class="keyword">Muscular Endurance</span> is the ability of muscles to perform activity over a period of time. It is highly related to slow-twitch muscle fibers and is often referred to as stamina.</p>
+    
+    <h4>1000 Metre Run or Walk Test</h4>
+    <p>Assesses cardiovascular and muscular endurance.</p>
+    <ul>
+      <li><strong>Procedure:</strong> Run or walk a distance of 1000 metres in the shortest possible time.</li>
+      <li><strong>Scoring:</strong> Recorded time to cover the distance in minutes and seconds.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Flexibility</h3></summary>
+    <p><span class="keyword">Flexibility</span> is the range of motion around various joints, helping execute movements with greater range and less muscle tension.</p>
+    
+    <h4>Sit and Reach Test</h4>
+    <p>Measures flexibility of the lower back and hamstring muscles using a sit-and-reach box.</p>
+    <ul>
+      <li><strong>Procedure:</strong> Sit with legs straight, feet flat against the box. Bend forward slowly, sliding hands along the scale without jerky movements.</li>
+      <li><strong>Scoring:</strong> Recorded in centimeters.</li>
+    </ul>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Poor</th>
+          <th>Fair</th>
+          <th>Good</th>
+          <th>Very Good</th>
+          <th>Excellent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6 in (15 cm)</td>
+          <td>10 in (25 cm)</td>
+          <td>12 in (30 cm)</td>
+          <td>14 in (35 cm)</td>
+          <td>16 in (40 cm)</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Body Mass Index (BMI)</h3></summary>
+    <p><span class="keyword">Body Mass Index (BMI)</span> assesses an individual's level of obesity by dividing weight by the square of height.</p>
+    
+    <div class="example-block">
+      $$\text{BMI} = \frac{\text{Weight in kg}}{(\text{Height in meters})^2}$$
+    </div>
+
+    <h4>Measurement Procedures</h4>
+    <ul>
+      <li><strong>Body Weight:</strong> Measured in kilograms using a weighing machine with minimal garments.</li>
+      <li><strong>Height:</strong> Measured in centimeters/meters using an Anthropometer or Stadiometer.</li>
+    </ul>
+
+    <h4>BMI Classification Table</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>BMI (kg/m²) From</th>
+          <th>BMI (kg/m²) To</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Very severely underweight</td>
+          <td>-</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Severely underweight</td>
+          <td>15</td>
+          <td>16</td>
+        </tr>
+        <tr>
+          <td>Underweight</td>
+          <td>16</td>
+          <td>18.5</td>
+        </tr>
+        <tr>
+          <td>Normal (healthy weight)</td>
+          <td>18.5</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <td>Overweight</td>
+          <td>25.0</td>
+          <td>29.9</td>
+        </tr>
+        <tr>
+          <td>Obesity</td>
+          <td>30 and above</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>For children aged 2 to 20, BMI is evaluated using percentiles: less than 5th percentile is underweight, 5th to 85th is normal, 85th to 95th is overweight, and above 95th is obese.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Waist-to-Hip Ratio (WHR)</h3></summary>
+    <p>The <span class="keyword">Waist-to-Hip Ratio (WHR)</span> evaluates fat distribution and health risks. Carrying more weight around the middle increases health risks.</p>
+    
+    <div class="example-block">
+      $$\text{WHR} = \frac{\text{Waist Circumference}}{\text{Hip Circumference}}$$
+    </div>
+
+    <h4>WHR Health Risk Categories</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Men</th>
+          <th>Women</th>
+          <th>Health Risk Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0.95 or less</td>
+          <td>0.80 or less</td>
+          <td>Low risk</td>
+        </tr>
+        <tr>
+          <td>0.96 to 1.0</td>
+          <td>0.81 to 0.85</td>
+          <td>Moderate risk</td>
+        </tr>
+        <tr>
+          <td>1.0 or higher</td>
+          <td>0.85 or higher</td>
+          <td>High risk</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Somatotypes (Body Types)</summary>
+  <p>Developed by American Psychologist William Herbert Sheldon in the 1940s, <span class="keyword">Somatotypes</span> classify human physiques into three distinct body types based on embryonic germ layers.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Endomorph</h3></summary>
+    <p>Characterized by a high percentage of body fat and a pear-shaped body.</p>
+    <ul>
+      <li><strong>Physical Traits:</strong> Short arms and legs, rounded head, wide hips and shoulders, wider front-to-back, significant fat on upper arms and thighs.</li>
+      <li><strong>Sporting Suitability:</strong> Pure strength sports like powerlifting, rugby, or rowing. They gain weight easily and struggle with high-agility or speed-based endurance sports.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Mesomorph</h3></summary>
+    <p>Characterized by a well-muscled, athletic frame with low body fat levels.</p>
+    <ul>
+      <li><strong>Physical Traits:</strong> Wedge-shaped body, cubical head, wide broad shoulders, muscled arms and legs, narrow hips, minimal fat.</li>
+      <li><strong>Sporting Suitability:</strong> Excels in strength, agility, and speed-related sports. Responds exceptionally well to cardiovascular and resistance training.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Ectomorph</h3></summary>
+    <p>Characterized by a lean, thin, and slender build with minimal muscle mass.</p>
+    <ul>
+      <li><strong>Physical Traits:</strong> High forehead, receding chin, narrow shoulders and hips, narrow chest and abdomen, thin limbs, very little muscle and fat.</li>
+      <li><strong>Sporting Suitability:</strong> Dominates endurance sports (marathons) and gymnastics. Not suited for contact or pure strength sports due to injury susceptibility.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Assessment</summary>
+  <details class="sub-topic">
+    <summary><h3>Long Answer Questions</h3></summary>
+    <ol>
+      <li>List and explain the tests related to muscular strength.</li>
+      <li>List and explain the tests related to muscular endurance.</li>
+      <li>Write down the procedure of Abdominal Curl-up test.</li>
+      <li>Explain the waist-hip ratio in detail.</li>
+      <li>Explain the three somato types in detail.</li>
+    </ol>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Short Answer Questions</h3></summary>
+    <ol>
+      <li>What is test?</li>
+      <li>What is measurement?</li>
+      <li>What is evaluation?</li>
+      <li>What is flexibility?</li>
+      <li>Write down two characteristics of each somato type.</li>
+    </ol>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-08-health-related-physical-fitness.html";
+      } else {
+        window.location.href = "11-chapter-10-tournaments-and-competitions.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
