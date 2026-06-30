@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 122 — Chapter 1: Accounting Ratios</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 122 — Chapter 1: Accounting Ratios</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">5.1 Meaning of Accounting Ratios</summary>
+  <p>Financial statements provide financial data which require analysis, comparison, and interpretation for decision-making by both external and internal users. This process is termed as <span class="keyword">financial statement analysis</span>.</p>
+  <p>An <span class="keyword">accounting ratio</span> is a mathematical relationship between two or more accounting numbers derived from financial statements. It can be expressed as a fraction, proportion, percentage, or number of times.</p>
+  <div class="example-block">
+    <p>For example, if Gross Profit is Rs. 10,000 and Revenue from Operations is Rs. 1,00,000, the Gross Profit Ratio is:</p>
+    $$\text{Gross Profit Ratio} = \frac{10,000}{1,00,000} \times 100 = 10\%$$
+  </div>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.2 Objectives of Ratio Analysis</summary>
+  <p>Ratio analysis is an indispensable part of interpreting financial statements. Its primary objectives are:</p>
+  <ul>
+    <li>To identify areas of the business requiring more attention.</li>
+    <li>To highlight potential areas for improvement.</li>
+    <li>To provide a deeper analysis of profitability, liquidity, solvency, and efficiency.</li>
+    <li>To facilitate cross-sectional analysis by comparing performance against industry standards.</li>
+    <li>To assist in making projections and future estimates.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.3 & 5.4 Advantages and Limitations of Ratio Analysis</summary>
+  <details class="sub-topic">
+    <summary><h3>Advantages of Ratio Analysis</h3></summary>
+    <ul>
+      <li><span class="keyword">Efficacy of Decisions</span>: Helps understand the impact of operating, investing, and financing decisions.</li>
+      <li><span class="keyword">Simplification</span>: Simplifies complex accounting figures and establishes clear relationships.</li>
+      <li><span class="keyword">Comparative Analysis</span>: Enables trend analysis over multiple years and inter-firm comparisons.</li>
+      <li><span class="keyword">SWOT Analysis</span>: Assists management in identifying strengths, weaknesses, opportunities, and threats.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Limitations of Ratio Analysis</h3></summary>
+    <ul>
+      <li><span class="keyword">Limitations of Accounting Data</span>: Ratios inherit any errors or biases present in the underlying financial statements.</li>
+      <li><span class="keyword">Ignores Price-level Changes</span>: Inflationary changes can render historical comparisons misleading.</li>
+      <li><span class="keyword">Ignores Qualitative Factors</span>: Focuses purely on monetary aspects, ignoring non-monetary factors like management quality.</li>
+      <li><span class="keyword">Variations in Accounting Practices</span>: Differences in inventory valuation or depreciation methods hinder cross-sectional comparisons.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.5 Types of Ratios</summary>
+  <p>Ratios are broadly classified into two categories: Traditional Classification (based on financial statements) and Functional Classification (based on purpose). The functional classification is most commonly used:</p>
+  <ol>
+    <li><span class="keyword">Liquidity Ratios</span>: Measure short-term solvency.</li>
+    <li><span class="keyword">Solvency Ratios</span>: Measure long-term ability to meet obligations.</li>
+    <li><span class="keyword">Activity (or Turnover) Ratios</span>: Measure efficiency of resource utilization.</li>
+    <li><span class="keyword">Profitability Ratios</span>: Measure earning capacity.</li>
+  </ol>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.6 Liquidity Ratios</summary>
+  <p>Liquidity ratios assess the firm's ability to meet its current obligations.</p>
+  <details class="sub-topic">
+    <summary><h3>5.6.1 Current Ratio</h3></summary>
+    <p>The proportion of current assets to current liabilities.</p>
+    $$\text{Current Ratio} = \frac{\text{Current Assets}}{\text{Current Liabilities}}$$
+    <p>An ideal current ratio is generally considered to be <span class="keyword">2:1</span>.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.6.2 Quick (or Liquid) Ratio</h3></summary>
+    <p>Measures the ability to meet short-term obligations using highly liquid assets (excluding inventory and prepaid expenses).</p>
+    $$\text{Quick Ratio} = \frac{\text{Quick Assets}}{\text{Current Liabilities}}$$
+    <p>Where:</p>
+    $$\text{Quick Assets} = \text{Current Assets} - (\text{Inventories} + \text{Prepaid Expenses})$$
+    <p>An ideal quick ratio is <span class="keyword">1:1</span>.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.7 Solvency Ratios</summary>
+  <p>Solvency ratios determine the long-term viability and debt-servicing capacity of a business.</p>
+  <details class="sub-topic">
+    <summary><h3>5.7.1 Debt-Equity Ratio</h3></summary>
+    $$\text{Debt-Equity Ratio} = \frac{\text{Long-term Debts}}{\text{Shareholders' Funds}}$$
+    <p>A safe norm is generally considered to be <span class="keyword">2:1</span>.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.7.2 Debt to Capital Employed Ratio</h3></summary>
+    $$\text{Debt to Capital Employed Ratio} = \frac{\text{Long-term Debt}}{\text{Capital Employed}}$$
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.7.3 Proprietary Ratio</h3></summary>
+    $$\text{Proprietary Ratio} = \frac{\text{Shareholders' Funds}}{\text{Capital Employed (or Total Assets)}}$$
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.7.4 Total Assets to Debt Ratio</h3></summary>
+    $$\text{Total Assets to Debt Ratio} = \frac{\text{Total Assets}}{\text{Long-term Debts}}$$
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.7.5 Interest Coverage Ratio</h3></summary>
+    $$\text{Interest Coverage Ratio} = \frac{\text{Net Profit before Interest and Tax}}{\text{Interest on Long-term Debts}}$$
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.8 Activity (or Turnover) Ratios</summary>
+  <p>These ratios measure how efficiently a firm uses its assets to generate sales.</p>
+  <details class="sub-topic">
+    <summary><h3>5.8.1 Inventory Turnover Ratio</h3></summary>
+    $$\text{Inventory Turnover Ratio} = \frac{\text{Cost of Revenue from Operations}}{\text{Average Inventory}}$$
+    <p>Where:</p>
+    $$\text{Average Inventory} = \frac{\text{Opening Inventory} + \text{Closing Inventory}}{2}$$
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.8.2 Trade Receivables Turnover Ratio</h3></summary>
+    $$\text{Trade Receivables Turnover Ratio} = \frac{\text{Net Credit Revenue from Operations}}{\text{Average Trade Receivables}}$$
+    <p>Average Collection Period is calculated as:</p>
+    $$\text{Average Collection Period} = \frac{365}{\text{Trade Receivables Turnover Ratio}}$$
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.8.3 Trade Payables Turnover Ratio</h3></summary>
+    $$\text{Trade Payables Turnover Ratio} = \frac{\text{Net Credit Purchases}}{\text{Average Trade Payables}}$$
+  </details>
+  <details class="sub-topic">
+    <summary><h3>5.8.4 Working Capital Turnover Ratio</h3></summary>
+    $$\text{Working Capital Turnover Ratio} = \frac{\text{Net Revenue from Operations}}{\text{Working Capital}}$$
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.9 Profitability Ratios</summary>
+  <p>Profitability ratios analyze the earning capacity of the business in relation to sales or capital employed.</p>
+  <details class="sub-topic">
+    <summary><h3>Key Profitability Formulas</h3></summary>
+    <ul>
+      <li><strong>Gross Profit Ratio:</strong>
+        $$\text{Gross Profit Ratio} = \frac{\text{Gross Profit}}{\text{Net Revenue of Operations}} \times 100$$
+      </li>
+      <li><strong>Operating Ratio:</strong>
+        $$\text{Operating Ratio} = \frac{\text{Cost of Revenue from Operations} + \text{Operating Expenses}}{\text{Net Revenue from Operations}} \times 100$$
+      </li>
+      <li><strong>Net Profit Ratio:</strong>
+        $$\text{Net Profit Ratio} = \frac{\text{Net Profit}}{\text{Revenue from Operations}} \times 100$$
+      </li>
+      <li><strong>Return on Investment (ROI):</strong>
+        $$\text{ROI} = \frac{\text{Profit before Interest and Tax}}{\text{Capital Employed}} \times 100$$
+      </li>
+      <li><strong>Earnings Per Share (EPS):</strong>
+        $$\text{EPS} = \frac{\text{Profit available for Equity Shareholders}}{\text{Number of Equity Shares}}$$
+      </li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 122 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
