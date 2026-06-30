@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 121 — Chapter 5: Secondary Activities</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 121 — Chapter 5: Secondary Activities</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Secondary Activities</summary><p>All economic activities—primary, secondary, tertiary, and quaternary—revolve around obtaining and utilising resources necessary for survival. <span class="keyword">Secondary activities</span> add value to natural resources by transforming raw materials into valuable products. For example, cotton in the boll has limited use, but once transformed into yarn, it becomes more valuable and can be used for making clothes. Similarly, iron ore cannot be used directly from mines, but after conversion into steel, it gains value and is used for making machines and tools. Therefore, secondary activities are concerned with manufacturing, processing, and construction (infrastructure) industries.</p></details><details class="topic-box"><summary class="topic-title">Manufacturing</summary><p><span class="keyword">Manufacturing</span> involves a full array of production, from handicrafts to moulding iron and steel, stamping out plastic toys, and assembling delicate computer components or space vehicles. The common characteristics of manufacturing processes include the application of power, mass production of identical products, and specialised labour in factory settings for the production of standardised commodities.</p><details class="sub-topic"><summary><h3>Characteristics of Modern Large Scale Manufacturing</h3></summary><ul><li><span class="keyword">Specialisation of Skills/Methods of Production</span>: Under the craft method, factories produce only a few made-to-order pieces, resulting in high costs. In contrast, mass production involves producing large quantities of standardised parts by each worker performing a single, repetitive task.</li><li><span class="keyword">Mechanisation</span>: This refers to using gadgets to accomplish tasks. <span class="keyword">Automation</span> is the advanced stage of mechanisation where manufacturing occurs without human thinking, utilizing feedback and closed-loop computer control systems.</li><li><span class="keyword">Technological Innovation</span>: Achieved through research and development (R&D) strategies, it is crucial for quality control, eliminating waste and inefficiency, and combating pollution.</li><li><span class="keyword">Organisational Structure and Stratification</span>: Characterised by complex machine technology, extreme specialisation, division of labour, vast capital requirements, large organisations, and executive bureaucracy.</li><li><span class="keyword">Uneven Geographic Distribution</span>: Major concentrations of modern manufacturing cover less than 10% of the world's land area. These regions serve as centres of economic and political power.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Factors Influencing Industrial Location</summary><p>Industries maximise profits by reducing costs. They are located at points where production costs are minimised. The key factors influencing industrial location include:</p><ul><li><span class="keyword">Access to Market</span>: The existence of a market (people with demand and purchasing power) is the most important factor. Developed regions like Europe, North America, Japan, and Australia offer large global markets, while densely populated regions of South and South-east Asia also provide massive markets.</li><li><span class="keyword">Access to Raw Material</span>: Industries using cheap, bulky, and weight-losing materials (like steel, sugar, and cement) are located close to raw material sources. Perishability is also vital, leading agro-processing and dairy industries to locate near farms or milk supplies.</li><li><span class="keyword">Access to Labour Supply</span>: Despite increasing mechanisation and automation, some manufacturing types still require skilled labour.</li><li><span class="keyword">Access to Sources of Energy</span>: Energy-intensive industries, such as aluminium manufacturing, are located close to power sources. While coal was historically dominant, hydroelectricity and petroleum are now major energy sources.</li><li><span class="keyword">Access to Transportation and Communication Facilities</span>: Speedy and efficient transport is essential for carrying raw materials to factories and finished goods to markets. Highly developed transport systems in Western Europe and eastern North America have induced industrial concentration.</li><li><span class="keyword">Government Policy</span>: Governments adopt regional policies to promote balanced economic development by setting up industries in backward areas.</li><li><span class="keyword">Access to Agglomeration Economies</span>: Many industries benefit from being near a leader-industry and other related industries, deriving savings from mutual linkages.</li></ul><details class="sub-topic"><summary><h3>Foot Loose Industries</h3></summary><p><span class="keyword">Foot loose industries</span> can be located in a wide variety of places. They are not dependent on any specific raw material (weight-losing or otherwise) and largely depend on component parts that can be obtained anywhere. They produce in small quantities, employ a small labour force, are generally non-polluting, and rely heavily on accessibility by road networks.</p></details></details><details class="topic-box"><summary class="topic-title">Classification of Manufacturing Industries</summary><p>Manufacturing industries are classified based on their size, inputs/raw materials, output/products, and ownership.</p><table><thead><tr><th>Basis of Classification</th><th>Categories</th><th>Key Characteristics / Examples</th></tr></thead><tbody><tr><td><strong>Size</strong></td><td>Household/Cottage, Small-scale, Large-scale</td><td>Determined by capital invested, workers employed, and production volume.</td></tr><tr><td><strong>Inputs/Raw Materials</strong></td><td>Agro-based, Mineral-based, Chemical-based, Forest-based, Animal-based</td><td>Classified by the source of raw materials used in production.</td></tr><tr><td><strong>Output/Product</strong></td><td>Basic Industries, Consumer Goods</td><td>Basic industries produce raw materials for other industries (e.g., iron and steel); consumer goods are directly consumed (e.g., biscuits, textiles).</td></tr><tr><td><strong>Ownership</strong></td><td>Public Sector, Private Sector, Joint Sector</td><td>Classified by whether they are managed by governments, private individuals, or joint stock companies.</td></tr></tbody></table><details class="sub-topic"><summary><h3>Industries Based on Size</h3></summary><ul><li><span class="keyword">Household Industries or Cottage Manufacturing</span>: The smallest manufacturing unit. Artisans use local raw materials and simple tools to produce everyday goods (foodstuffs, fabrics, mats, pottery) in their homes with family labour. Capital and transportation have low influence, and products are sold locally or bartered.</li><li><span class="keyword">Small Scale Manufacturing</span>: Distinguished by production techniques and workshops outside the home. It uses local raw materials, simple power-driven machines, and semi-skilled labour, providing significant employment in countries like India, China, Indonesia, and Brazil.</li><li><span class="keyword">Large Scale Manufacturing</span>: Involves large markets, diverse raw materials, enormous energy, specialised workers, advanced technology, assembly-line mass production, and large capital. It originated in the UK, north-eastern USA, and Europe, and has now diffused globally.</li></ul></details><details class="sub-topic"><summary><h3>Industries Based on Inputs/Raw Materials</h3></summary><ul><li><span class="keyword">Agro-based Industries</span>: Involves processing raw materials from fields and farms into finished products (e.g., food processing, sugar, fruit juices, beverages, spices, textiles). <span class="keyword">Agri-business</span> refers to commercial farming on an industrial scale, often run by large corporations (e.g., tea plantations).</li><li><span class="keyword">Mineral-based Industries</span>: Use minerals as raw materials. Divided into metallic (ferrous like iron/steel, non-ferrous like copper/aluminium) and non-metallic (cement, pottery).</li><li><span class="keyword">Chemical-based Industries</span>: Use natural chemical minerals (petroleum, salts, sulphur, potash) or raw materials from wood and coal to produce synthetic fibres, plastics, and fertilisers.</li><li><span class="keyword">Forest-based Raw Material Industries</span>: Use forest products like timber, wood, bamboo, and grass for furniture, paper, and lac industries.</li><li><span class="keyword">Animal-based Industries</span>: Rely on animal products, such as leather for the leather industry and wool for woollen textiles.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Concept of High Technology Industry</summary><p><span class="keyword">High technology</span> (high-tech) is the latest generation of manufacturing activities, characterized by intensive research and development (R&D) leading to advanced scientific and engineering products. Professional (white-collar) workers form a large share of the workforce, outnumbering blue-collar production workers. Examples include robotics, computer-aided design (CAD), electronic controls, and pharmaceuticals.</p><p>High-tech industrial landscapes feature neatly spaced, low, modern, dispersed office-plant-lab buildings rather than massive assembly structures. High-tech industries that are regionally concentrated, self-sustained, and highly specialised are called <span class="keyword">technopolies</span> (e.g., Silicon Valley near San Francisco and Silicon Forest near Seattle).</p></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 121 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-04-primary-activities.html";
+      } else {
+        window.location.href = "21-chapter-06-tertiary-and-quaternary-activities.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
