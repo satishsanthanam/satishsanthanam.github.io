@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 8: Financial Statements - I</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 8: Financial Statements - I</h1>
+
+    <details class="topic-box"><summary class="topic-title">8.1 Stakeholders and their Information Requirements</summary><p>Financial accounting is a sequential activity starting from Journalizing, Posting, and Trial Balance, leading to the preparation of <span class="keyword">Financial Statements</span>. The objective is to communicate meaningful financial information to various <span class="keyword">stakeholders</span> (users) to help them make informed decisions.</p><details class="sub-topic"><summary><h3>Classification of Stakeholders</h3></summary><p>Stakeholders are classified into internal and external users:</p><table border="1"><thead><tr><th>User Category</th><th>Type</th><th>Objective for Participating</th><th>Accounting Information Requirements</th></tr></thead><tbody><tr><td><strong>Current Owners</strong></td><td>Internal</td><td>To make investment and wealth grow.</td><td>Wants to know the extent of profit/loss and current position of assets/liabilities.</td></tr><tr><td><strong>Managers</strong></td><td>Internal</td><td>For career progression; act as agents of owners.</td><td>Wants financial statements as a report card of profits and financial position.</td></tr><tr><td><strong>Government</strong></td><td>External</td><td>Regulatory role, tax levying, and public interest.</td><td>Interested in profitability, tax compliance, and protection of stakeholder rights.</td></tr><tr><td><strong>Prospective Owners</strong></td><td>External</td><td>Expecting to make future investments.</td><td>Interested in past profits and financial position as indicators of future performance.</td></tr><tr><td><strong>Banks / Lenders</strong></td><td>External</td><td>Safety of principal and periodic interest.</td><td>Interested in adequacy of profits and liquidity (how assets are held).</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">8.2 Distinction between Capital and Revenue</summary><p>A fundamental distinction in accounting is between capital and revenue items. Revenue items form part of the <span class="keyword">Trading and Profit and Loss Account</span>, while capital items help in the preparation of the <span class="keyword">Balance Sheet</span>.</p><details class="sub-topic"><summary><h3>8.2.1 Expenditure</h3></summary><p>An outlay made for a purpose other than settling an existing liability is called expenditure.</p><ul><li><span class="keyword">Revenue Expenditure</span>: Benefits the business for only one accounting period (e.g., salaries, rent). It is recurring and maintains earning capacity.</li><li><span class="keyword">Capital Expenditure</span>: Benefits the business for more than one accounting period (e.g., purchase of machinery, furniture). It is non-recurring and increases earning capacity.</li><li><span class="keyword">Deferred Revenue Expenditure</span>: Large revenue expenditures that yield benefits over multiple periods (e.g., heavy advertising campaigns).</li></ul></details><details class="sub-topic"><summary><h3>8.2.2 Receipts</h3></summary><ul><li><span class="keyword">Capital Receipts</span>: Receipts that create a liability or reduce a fixed asset (e.g., additional capital introduced, bank loans, sale of machinery).</li><li><span class="keyword">Revenue Receipts</span>: Receipts arising from routine business operations (e.g., sales revenue, interest received on investments).</li></ul></details></details><details class="topic-box"><summary class="topic-title">8.3 &amp; 8.4 Trading and Profit and Loss Account</summary><p>The <span class="keyword">Trading and Profit and Loss Account</span> (Income Statement) is prepared to determine the financial performance of the business over an accounting period.</p><details class="sub-topic"><summary><h3>8.4.1 Relevant Items</h3></summary><p><strong>Debit Side (Expenses/Losses):</strong></p><ul><li>Opening Stock, Purchases (less returns), Wages, Carriage Inwards, Fuel/Power, Salaries, Rent, Interest, Commission, Repairs, Depreciation, and Bad Debts.</li></ul><p><strong>Credit Side (Revenues/Gains):</strong></p><ul><li>Sales (less returns) and Other Incomes (e.g., rent received, interest received, discount received).</li></ul></details><details class="sub-topic"><summary><h3>8.4.2 Closing Entries</h3></summary><p>Closing entries transfer the balances of nominal accounts to the Trading and Profit and Loss Account:</p><div class="example-block"><p><strong>For closing expenses:</strong><br>Trading A/c Dr.<br>&nbsp;&nbsp;To Purchases A/c<br>&nbsp;&nbsp;To Wages A/c</p><p><strong>For closing revenues:</strong><br>Sales A/c Dr.<br>&nbsp;&nbsp;To Trading A/c</p></div></details><details class="sub-topic"><summary><h3>8.4.3 Concept of Gross Profit and Net Profit</h3></summary><p>The Trading Account determines <span class="keyword">Gross Profit</span>, while the Profit and Loss Account determines <span class="keyword">Net Profit</span>.</p><div class="example-block">$$\text{Gross Profit} = \text{Sales} - (\text{Purchases} + \text{Direct Expenses})$$</div><div class="example-block">$$\text{Net Profit} = \text{Gross Profit} + \text{Other Incomes} - \text{Indirect Expenses}$$</div><div class="example-block">$$\text{Cost of Goods Sold} = \text{Opening Stock} + \text{Purchases} + \text{Direct Expenses} - \text{Closing Stock}$$</div></details></details><details class="topic-box"><summary class="topic-title">8.5 Operating Profit (EBIT)</summary><p><span class="keyword">Operating Profit</span> is the profit earned through the normal operating activities of the business, excluding purely financial incomes/expenses and abnormal items.</p><div class="example-block">$$\text{Operating Profit} = \text{Net Profit} + \text{Non-Operating Expenses} - \text{Non-Operating Incomes}$$</div></details><details class="topic-box"><summary class="topic-title">8.6 Balance Sheet</summary><p>The <span class="keyword">Balance Sheet</span> is a statement showing the financial position of a business at a given date, listing its assets, liabilities, and capital.</p><details class="sub-topic"><summary><h3>8.6.2 Relevant Items</h3></summary><ul><li><span class="keyword">Current Assets</span>: Cash, bank balance, debtors, bills receivable, closing stock.</li><li><span class="keyword">Fixed Assets</span>: Land, buildings, plant, machinery, furniture.</li><li><span class="keyword">Intangible Assets</span>: Goodwill, patents, trademarks.</li><li><span class="keyword">Current Liabilities</span>: Creditors, bills payable, bank overdraft.</li><li><span class="keyword">Long-term Liabilities</span>: Long-term bank loans.</li><li><span class="keyword">Capital</span>: Owner&#39;s equity, adjusted for net profit/loss and drawings.</li></ul></details><details class="sub-topic"><summary><h3>8.6.3 Marshalling and Grouping</h3></summary><p><span class="keyword">Marshalling</span> is the arrangement of assets and liabilities in a specific order:</p><ol><li><strong>Order of Permanence:</strong> Most permanent assets (e.g., Fixed Assets) and liabilities (e.g., Capital) are shown first.</li><li><strong>Order of Liquidity:</strong> Most liquid assets (e.g., Cash) and urgent liabilities (e.g., Creditors) are shown first.</li></ol></details></details><details class="topic-box"><summary class="topic-title">8.7 Opening Entry</summary><p>An <span class="keyword">Opening Entry</span> is recorded in the journal at the beginning of a new financial year to open the accounts of assets, liabilities, and capital carried forward from the previous year&#39;s balance sheet.</p><div class="example-block"><p><strong>Example Journal Entry:</strong><br>Assets A/c Dr.<br>&nbsp;&nbsp;To Liabilities A/c<br>&nbsp;&nbsp;To Capital A/c</p></div></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "12-chapter-09-financial-statements-ii.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
