@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 111 — Chapter 3: Recording of Transactions-I</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 111 — Chapter 3: Recording of Transactions-I</h1>
+
+    <details class="topic-box"><summary class="topic-title">Business Transactions and Source Documents</summary><p>Accounting involves identifying, recording, classifying, and summarising business transactions to communicate financial information to interested users. The first step in this process is identifying transactions and preparing source documents.</p><details class="sub-topic"><summary><h3>Source Documents</h3></summary><p>A <span class="keyword">Source Document</span> is a written document that provides evidence of a business transaction. It contains essential details such as the date, amount, parties involved, and nature of the transaction. Common examples include:</p><ul><li><span class="keyword">Cash Memo</span>: Prepared by the seller for cash sales of goods.</li><li><span class="keyword">Invoice / Bill</span>: Prepared by the seller when goods are sold on credit.</li><li><span class="keyword">Pay-in-slip</span>: Used for depositing cash or cheques into a bank account.</li><li><span class="keyword">Cheque</span>: A written order to a bank to pay a specific sum to the bearer or named person.</li><li><span class="keyword">Salary Slip</span>: Evidence of salary payment to employees.</li></ul></details><details class="sub-topic"><summary><h3>Accounting Vouchers</h3></summary><p>An <span class="keyword">Accounting Voucher</span> is a document prepared by an accountant to analyze and record transactions in the books of accounts. Vouchers are arranged chronologically, serially numbered, and kept as audit evidence.</p><ul><li><span class="keyword">Transaction Voucher</span>: Prepared for simple transactions involving one debit and one credit.</li><li><span class="keyword">Compound Voucher</span>: Prepared for transactions involving multiple debits and one credit, or multiple credits and one debit. These include <span class="keyword">Debit Vouchers</span> and <span class="keyword">Credit Vouchers</span>.</li><li><span class="keyword">Complex Voucher / Journal Voucher</span>: Prepared for complex transactions involving multiple debits and multiple credits.</li></ul></details></details><details class="topic-box"><summary class="topic-title">The Accounting Equation</summary><p>The <span class="keyword">Accounting Equation</span> signifies that the assets of a business are always equal to the total of its liabilities and capital (owner's equity). It is also known as the <span class="keyword">Balance Sheet Equation</span>.</p><div class="example-block">$$\text{Assets (A)} = \text{Liabilities (L)} + \text{Capital (C)}$$</div><p>Derivatives of the accounting equation include:</p><ol><li>$$\text{Capital (C)} = \text{Assets (A)} - \text{Liabilities (L)}$$</li><li>$$\text{Liabilities (L)} = \text{Assets (A)} - \text{Capital (C)}$$</li></ol><p>Every business transaction has a two-fold effect (dual aspect) that keeps the accounting equation balanced at all times.</p></details><details class="topic-box"><summary class="topic-title">Rules of Debit and Credit</summary><p>In double-entry bookkeeping, every transaction affects at least two accounts. The terms <span class="keyword">Debit (Dr.)</span> and <span class="keyword">Credit (Cr.)</span> indicate whether transactions are recorded on the left or right side of an account, which is structured like a <span class="keyword">T-Account</span>.</p><details class="sub-topic"><summary><h3>Classification of Accounts and Rules</h3></summary><p>Accounts are divided into five categories, each following specific rules for recording increases and decreases:</p><table border="1"><thead><tr><th>Category of Account</th><th>Debit (Dr.) Side</th><th>Credit (Cr.) Side</th></tr></thead><tbody><tr><td><span class="keyword">Assets</span></td><td>Increase (+)</td><td>Decrease (-)</td></tr><tr><td><span class="keyword">Expenses / Losses</span></td><td>Increase (+)</td><td>Decrease (-)</td></tr><tr><td><span class="keyword">Liabilities</span></td><td>Decrease (-)</td><td>Increase (+)</td></tr><tr><td><span class="keyword">Capital</span></td><td>Decrease (-)</td><td>Increase (+)</td></tr><tr><td><span class="keyword">Revenues / Gains</span></td><td>Decrease (-)</td><td>Increase (+)</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Books of Original Entry: The Journal</summary><p>The <span class="keyword">Journal</span> is the basic book of original entry where transactions are recorded chronologically as they occur. The process of recording transactions in a journal is called <span class="keyword">Journalising</span>.</p><details class="sub-topic"><summary><h3>Journal Format</h3></summary><p>A standard journal contains five columns: Date, Particulars, Ledger Folio (L.F.), Debit Amount, and Credit Amount.</p><table border="1"><thead><tr><th>Date</th><th>Particulars</th><th>L.F.</th><th>Debit Amount (₹)</th><th>Credit Amount (₹)</th></tr></thead><tbody><tr><td>2017 Dec.24</td><td>Purchases A/c<br>&nbsp;&nbsp;&nbsp;&nbsp;To Govind Traders A/c<br>(Being goods purchased on credit)</td><td></td><td>30,000</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td>30,000</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Simple and Compound Journal Entries</h3></summary><ul><li><span class="keyword">Simple Journal Entry</span>: Involves only two accounts—one debited and one credited.</li><li><span class="keyword">Compound Journal Entry</span>: Involves more than two accounts, where multiple accounts are debited and/or credited.</li></ul></details><details class="sub-topic"><summary><h3>Accounting Entries under Goods and Services Tax (GST)</h3></summary><p>GST is an indirect tax levied on the supply of goods and services. It comprises:</p><ul><li><span class="keyword">CGST</span> (Central GST) and <span class="keyword">SGST</span> (State GST): Charged on intra-state sales (within the same state).</li><li><span class="keyword">IGST</span> (Integrated GST): Charged on inter-state sales (between different states).</li></ul><p>GST paid on purchases is recorded as <span class="keyword">Input GST</span> (an asset), while GST collected on sales is recorded as <span class="keyword">Output GST</span> (a liability).</p></details></details><details class="topic-box"><summary class="topic-title">The Ledger and Posting</summary><p>The <span class="keyword">Ledger</span> is the principal book of accounting where transactions of a similar nature are classified and recorded in individual accounts.</p><details class="sub-topic"><summary><h3>Ledger Format</h3></summary><p>A ledger account is divided into two symmetric sides: Debit (left) and Credit (right).</p><table border="1"><thead><tr><th colspan="4">Dr. (Debit Side)</th><th colspan="4">Cr. (Credit Side)</th></tr><tr><th>Date</th><th>Particulars</th><th>J.F.</th><th>Amount (₹)</th><th>Date</th><th>Particulars</th><th>J.F.</th><th>Amount (₹)</th></tr></thead><tbody><tr><td>2017 June 5</td><td>To Capital A/c</td><td></td><td>2,00,000</td><td>2017 June 8</td><td>By Bank A/c</td><td></td><td>80,000</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Posting from Journal</h3></summary><p>The process of transferring journal entries to the ledger accounts is called <span class="keyword">Posting</span>. It involves locating the account in the ledger, entering the date, writing the corresponding account name in the particulars column, entering the journal folio page, and recording the amount.</p></details><details class="sub-topic"><summary><h3>Distinction between Journal and Ledger</h3></summary><table border="1"><thead><tr><th>Basis of Comparison</th><th>Journal</th><th>Ledger</th></tr></thead><tbody><tr><td>Type of Book</td><td>Book of first/original entry.</td><td>Book of second/principal entry.</td></tr><tr><td>Record Format</td><td>Chronological record (date-wise).</td><td>Analytical record (account-wise).</td></tr><tr><td>Process Name</td><td>Journalising.</td><td>Posting.</td></tr><tr><td>Legal Evidence</td><td>Greater importance as legal evidence.</td><td>Lesser importance as legal evidence.</td></tr></tbody></table></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 111 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-02-theory-base-of-accounting.html";
+      } else {
+        window.location.href = "11-chapter-04-recording-of-transactions-ii.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
