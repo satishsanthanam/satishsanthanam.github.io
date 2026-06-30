@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 8: Motivation and Emotion</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 8: Motivation and Emotion</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Nature of Motivation</summary><p>The concept of <span class="keyword">motivation</span> focuses on explaining what "moves" behaviour. Derived from the Latin word <em>movere</em> (referring to movement of activity), motivation is a primary determinant of human behaviour, encompassing instincts, drives, needs, goals, and incentives.</p><details class="sub-topic"><summary><h3>The Motivational Cycle</h3></summary><p>The motivational cycle is a dynamic process that regulates goal-directed behaviour to maintain homeostasis. It consists of the following sequential stages:</p><ol><li><span class="keyword">Need</span>: A state of lack or deficit of some necessity (biological or psychological).</li><li><span class="keyword">Drive</span>: A state of tension or arousal produced by a need, which energises random activity.</li><li><span class="keyword">Arousal</span>: Heightened physiological and psychological state triggering action.</li><li><span class="keyword">Goal-directed behaviour</span>: Actions initiated to satisfy the active need.</li><li><span class="keyword">Achievement</span>: Attaining the goal or incentive.</li><li><span class="keyword">Reduction of arousal</span>: The organism returns to a balanced, calm state.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Types of Motives</summary><p>Motives are broadly classified into biological and psychosocial categories, though they are highly interdependent in real-world situations.</p><details class="sub-topic"><summary><h3>Biological Motives</h3></summary><p><span class="keyword">Biological motives</span> (or physiological motives) are guided by the body's internal physiological mechanisms and are essential for survival.</p><ul><li><span class="keyword">Hunger</span>: Regulated by a complex feeding-satiety system involving stomach contractions, blood glucose levels, liver signals, and the <span class="keyword">hypothalamus</span>, alongside external cues like aroma and taste.</li><li><span class="keyword">Thirst</span>: Triggered by cell dehydration and reduction of blood volume. The anterior hypothalamus contains <span class="keyword">osmoreceptors</span> that detect cellular water loss and initiate drinking behaviour.</li><li><span class="keyword">Sex</span>: A powerful drive that, unlike hunger and thirst, is not necessary for individual survival, does not seek homeostasis, and is heavily influenced by age, physiology, and cultural factors.</li></ul></details><details class="sub-topic"><summary><h3>Psychosocial Motives</h3></summary><p><span class="keyword">Psychosocial motives</span> are primarily learned or acquired through social interactions within families, peer groups, and cultures.</p><ul><li><span class="keyword">Need for Affiliation</span>: The drive to seek the company of others, form groups, and maintain close physical and psychological relationships. It is often heightened during times of threat or happiness.</li><li><span class="keyword">Need for Power</span>: The ability to produce intended effects on the behaviour and emotions of others. David McClelland identified four ways it is expressed: external sources (reading about power), internal sources (bodybuilding), individual impact (arguing/competing), and organizational impact (leadership).</li><li><span class="keyword">Need for Achievement</span> (n-Ach): The desire to meet standards of excellence, overcome obstacles, and succeed in challenging tasks.</li><li><span class="keyword">Curiosity and Exploration</span>: The innate drive to seek novel experiences, gain information, and interact with the environment, driven by a need for sensory stimulation.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Maslow's Hierarchy of Needs</summary><p>Abraham Maslow portrayed human motivation as an ascending hierarchy of needs, where lower-level needs must be met before higher-level needs can occupy an individual's attention.</p><table><thead><tr><th>Level</th><th>Need Category</th><th>Description</th></tr></thead><tbody><tr><td>5 (Highest)</td><td><span class="keyword">Self-actualisation needs</span></td><td>The drive to realize one's fullest potential; characterized by self-awareness, creativity, and openness to challenge.</td></tr><tr><td>4</td><td><span class="keyword">Esteem needs</span></td><td>The need to develop a sense of self-worth, competence, and gain respect from others.</td></tr><tr><td>3</td><td><span class="keyword">Belongingness needs</span></td><td>The need to seek out others, love, be loved, and avoid loneliness.</td></tr><tr><td>2</td><td><span class="keyword">Safety needs</span></td><td>The need for physical and psychological security, and freedom from threatened danger.</td></tr><tr><td>1 (Lowest)</td><td><span class="keyword">Physiological needs</span></td><td>Basic biological survival needs such as hunger, thirst, and sleep.</td></tr></tbody></table></details><details class="topic-box"><summary class="topic-title">Nature and Expression of Emotions</summary><p>An <span class="keyword">emotion</span> is a complex pattern of physical arousal, subjective feeling, and cognitive interpretation.</p><details class="sub-topic"><summary><h3>Distinguishing Emotion, Feeling, and Mood</h3></summary><ul><li><strong>Feeling</strong>: Denotes the pleasure or pain dimension of an experience, usually involving localized bodily functions.</li><li><strong>Mood</strong>: An affective state of long duration but lower intensity than an emotion.</li><li><strong>Emotion</strong>: A highly intense, short-lived state involving physiological activation and cognitive appraisal.</li></ul></details><details class="sub-topic"><summary><h3>Theories of Basic Emotions</h3></summary><ul><li><strong>Izard's Set</strong>: Proposes ten basic emotions (joy, surprise, anger, disgust, contempt, fear, shame, guilt, interest, and excitement).</li><li><strong>Plutchik's Model</strong>: Proposes eight basic emotions arranged in four pairs of opposites (joy-sadness, acceptance-disgust, fear-anger, surprise-anticipation).</li></ul></details><details class="sub-topic"><summary><h3>Expression and Culture</h3></summary><p>Emotions are communicated through verbal and non-verbal channels, including <span class="keyword">paralanguage</span> (pitch, loudness) and facial expressions.</p><ul><li><strong>Universality</strong>: Research supports Charles Darwin's view that facial expressions for basic emotions (joy, fear, anger, disgust, sadness, surprise) are inborn and universal.</li><li><strong>Cultural Differences</strong>: Culture influences gaze behaviour (e.g., direct eye contact in Western cultures vs. peripheral gaze in Asian cultures) and emotional labeling (e.g., Tahitian has 46 labels for anger, while ancient Indian literature identifies eight core aesthetic emotions or <em>rasas</em>).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Managing Emotions</summary><details class="sub-topic"><summary><h3>Managing Negative Emotions</h3></summary><p>Effective emotion management is crucial for psychological well-being. Key strategies include:</p><ul><li><span class="keyword">Self-awareness</span>: Understanding the 'how' and 'why' of one's feelings.</li><li><span class="keyword">Objective Appraisal</span>: Evaluating events realistically to prevent unnecessary activation of the sympathetic nervous system.</li><li><span class="keyword">Cognitive Restructuring</span>: Viewing events from alternative perspectives to eliminate negative thoughts.</li><li><span class="keyword">Empathy</span>: Understanding and validating the feelings of others.</li></ul><div class="example-block"><strong>Case/Experiment Title:</strong> Box 8.1 - Post-Traumatic Stress Disorder (PTSD)<br/><strong>Background/Subject:</strong> Individuals experiencing severe trauma from natural disasters (earthquakes, tsunamis) or man-made crises (war).<br/><strong>Observations/Results:</strong> Survivors tend to re-experience the traumatic event through flashbacks, intrusive thoughts, and autonomic arousal, leading to emotional disturbance and maladaptive coping.<br/><strong>Psychological Inference:</strong> Severe negative emotional experiences require structured clinical coping strategies to restore normal psychological functioning.</div><div class="example-block"><strong>Case/Experiment Title:</strong> Box 8.2 - Management of Examination Anxiety<br/><strong>Method/Procedure:</strong> Utilizing coping strategies categorized into Monitoring (direct action) and Blunting (avoidance/relaxation).<br/><strong>Observations/Results:</strong> Direct action strategies include preparing well, mock rehearsals, cognitive inoculation, positive thinking, and seeking social support. Blunting strategies include relaxation techniques and physical exercise.<br/><strong>Psychological Inference:</strong> High anxiety impairs performance; structured cognitive and physiological interventions successfully mitigate stress.</div></details><details class="sub-topic"><summary><h3>Managing Anger</h3></summary><p>Anger is a self-induced cognitive choice rather than an automatic reflex. Key anger management techniques include:</p><ul><li>Recognising the power of thoughts and realizing that you alone control your anger.</li><li>Avoiding "self-talk that burns" and refraining from magnifying negative feelings.</li><li>Resisting irrational beliefs and avoiding ascribing ulterior motives to others.</li><li>Finding constructive, controlled ways to express anger and looking inward for control.</li></ul></details><details class="sub-topic"><summary><h3>Enhancing Positive Emotions</h3></summary><p>Positive emotions (hope, joy, optimism, gratitude) expand our cognitive horizons and build psychological resilience. They can be enhanced by:</p><ul><li>Developing positive personality traits like optimism and self-regard.</li><li>Finding positive meaning in difficult circumstances.</li><li>Nurturing quality connections and supportive social networks.</li><li>Engaging in meaningful work and pursuing personal mastery.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-07-thinking.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
