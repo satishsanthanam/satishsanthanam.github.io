@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 5: Therapeutic Approaches</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 5: Therapeutic Approaches</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Nature and Process of Psychotherapy</summary>
+  <p><span class="keyword">Psychotherapy</span> is a voluntary relationship between the one seeking treatment (the client) and the one who treats (the therapist). The purpose of this relationship is to help the client solve psychological problems, decrease personal distress, and adapt better to their environment.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Characteristics of Psychotherapeutic Approaches</h3></summary>
+    <ul>
+      <li>Systematic application of principles underlying different theories of therapy.</li>
+      <li>Practiced only by persons who have received practical training under expert supervision.</li>
+      <li>Involves a therapeutic situation with a therapist and a client who is the focus of attention.</li>
+      <li>Results in the formation of a confidential, interpersonal, and dynamic <span class="keyword">therapeutic relationship</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Goals of Psychotherapy</h3></summary>
+    <ol>
+      <li>Reinforcing client's resolve for betterment.</li>
+      <li>Lessening emotional pressure.</li>
+      <li>Unfolding the potential for positive growth.</li>
+      <li>Modifying habits.</li>
+      <li>Changing thinking patterns.</li>
+      <li>Increasing self-awareness.</li>
+      <li>Improving interpersonal relations and communication.</li>
+      <li>Facilitating decision-making.</li>
+      <li>Becoming aware of one's choices in life.</li>
+      <li>Relating to one's social environment in a more creative and self-aware manner.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>The Therapeutic Relationship</h3></summary>
+    <p>The special relationship between the client and the therapist is known as the <span class="keyword">therapeutic relationship</span> or <span class="keyword">therapeutic alliance</span>. It has two major components:</p>
+    <ul>
+      <li><strong>Contractual Nature:</strong> Two willing individuals entering into a partnership to help the client overcome problems.</li>
+      <li><strong>Limited Duration:</strong> The alliance lasts only until the client becomes able to deal with their problems independently.</li>
+    </ul>
+    <p>Key properties of this relationship include:</p>
+    <ul>
+      <li><span class="keyword">Unconditional Positive Regard</span>: The therapist shows total, non-judgmental acceptance of the client, regardless of their behavior or disclosures.</li>
+      <li><span class="keyword">Empathy</span>: The therapist understands the client's plight from the client's perspective ("putting oneself in the other person's shoes"). Empathy is distinct from sympathy (compassion/pity without feeling like the other) and intellectual understanding (cold cognitive awareness).</li>
+      <li>Strict confidentiality of all disclosures.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Classification of Psychotherapies</summary>
+  <p>Psychotherapies can be classified into three broad groups: psychodynamic, behaviour, and existential. The table below compares these systems across key parameters:</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Psychodynamic Therapy</th>
+        <th>Behaviour Therapy</th>
+        <th>Existential Therapy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Cause of the Problem</strong></td>
+        <td>Intrapsychic conflicts within the psyche.</td>
+        <td>Faulty learning of behaviours and cognitions.</td>
+        <td>Questions about the meaning of one's life and existence.</td>
+      </tr>
+      <tr>
+        <td><strong>How Cause Arose</strong></td>
+        <td>Unfulfilled childhood desires and unresolved childhood fears.</td>
+        <td>Faulty conditioning patterns, faulty learning, and beliefs.</td>
+        <td>Current feelings of loneliness, alienation, and futility of existence.</td>
+      </tr>
+      <tr>
+        <td><strong>Chief Method of Treatment</strong></td>
+        <td>Free association and reporting of dreams to elicit and interpret thoughts.</td>
+        <td>Identifying faulty conditioning and setting up alternate contingencies.</td>
+        <td>Providing a positive, accepting, non-judgmental environment for personal growth.</td>
+      </tr>
+      <tr>
+        <td><strong>Nature of Relationship</strong></td>
+        <td>Therapist understands conflicts better and interprets them to the client.</td>
+        <td>Therapist discerns faulty patterns and designs adaptive ones.</td>
+        <td>Therapist acts as a facilitator, providing a warm, empathic relationship.</td>
+      </tr>
+      <tr>
+        <td><strong>Chief Benefit to Client</strong></td>
+        <td>Emotional insight (intellectual and emotional acceptance of conflicts).</td>
+        <td>Changing faulty behaviors and thoughts to adaptive ones.</td>
+        <td>Personal growth (gaining understanding of self, aspirations, and motives).</td>
+      </tr>
+      <tr>
+        <td><strong>Duration of Treatment</strong></td>
+        <td>Classical: several years. Recent versions: 10–15 sessions.</td>
+        <td>Shorter, completed in a few months.</td>
+        <td>Shorter, completed in a few months.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <details class="sub-topic">
+    <summary><h3>Steps in the Formulation of a Client's Problem</h3></summary>
+    <p><span class="keyword">Clinical formulation</span> refers to conceptualizing the client's problem within the therapeutic model being used. It serves three main advantages:</p>
+    <ol>
+      <li><strong>Understanding of the problem:</strong> Understanding the full implications of the distress.</li>
+      <li><strong>Identification of target areas:</strong> Pinpointing specific areas for therapeutic intervention (e.g., lack of assertiveness and anxiety).</li>
+      <li><strong>Choice of techniques:</strong> Selecting specific therapeutic methods based on the formulation.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Behaviour Therapy</summary>
+  <p><span class="keyword">Behaviour therapy</span> postulates that psychological distress arises from faulty behavior or thought patterns. It focuses on the present, aiming to correct these faulty patterns using principles of learning theories.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Method of Treatment</h3></summary>
+    <p>A <span class="keyword">behavioural analysis</span> is conducted to identify:</p>
+    <ul>
+      <li><strong>Malfunctioning Behaviours:</strong> Behaviours causing distress to the client.</li>
+      <li><strong>Antecedent Factors:</strong> Causes that predispose the person to indulge in the behavior.</li>
+      <li><strong>Maintaining Factors:</strong> Factors that lead to the persistence of the behavior.</li>
+    </ul>
+    <p>The therapist modifies behavior by establishing <strong>antecedent operations</strong> (changing what precedes behavior) and <strong>consequent operations</strong> (changing the reinforcement that follows behavior).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Behavioural Techniques</h3></summary>
+    <ul>
+      <li><span class="keyword">Negative Reinforcement</span>: Responses that lead to escaping or avoiding painful stimuli (e.g., wearing woollens to avoid cold).</li>
+      <li><span class="keyword">Aversive Conditioning</span>: Associating an undesired response with an painful consequence (e.g., pairing the smell of alcohol with a mild electric shock).</li>
+      <li><span class="keyword">Positive Reinforcement</span>: Providing a pleasant stimulus to increase a deficit adaptive behavior (e.g., preparing a child's favorite dish when homework is completed).</li>
+      <li><span class="keyword">Token Economy</span>: Giving tokens as rewards for wanted behaviors, which can later be exchanged for privileges or treats.</li>
+      <li><span class="keyword">Differential Reinforcement</span>: Simultaneously reinforcing wanted behavior while ignoring or negatively reinforcing unwanted behavior.</li>
+      <li><span class="keyword">Systematic Desensitisation</span>: A technique introduced by Wolpe to treat phobias. The therapist builds a hierarchy of anxiety-provoking stimuli, teaches relaxation, and guides the client to imagine progressively fearful scenes while remaining relaxed. This operates on the <span class="keyword">principle of reciprocal inhibition</span> (two opposing forces cannot exist together; relaxation inhibits anxiety).</li>
+      <li><span class="keyword">Modelling</span>: Learning a behavior by observing a role model or the therapist.</li>
+      <li><span class="keyword">Vicarious Learning</span>: Learning by observing others being rewarded or punished for their actions.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Relaxation Procedures</h3></summary>
+    <p>Anxiety increases arousal levels, acting as an antecedent for maladaptive behaviors (like smoking or overeating). <span class="keyword">Progressive Muscular Relaxation</span> teaches clients to contract and release muscle groups to achieve a deep state of physical and mental calm.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Cognitive Therapy</summary>
+  <p><span class="keyword">Cognitive therapies</span> locate the cause of psychological distress in irrational thoughts and beliefs.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Rational Emotive Therapy (RET)</h3></summary>
+    <p>Formulated by Albert Ellis, the central thesis of <span class="keyword">Rational Emotive Therapy</span> is that irrational beliefs mediate between antecedent events and their emotional consequences. It uses the <strong>ABC Analysis</strong>:</p>
+    <ul>
+      <li><strong>A (Antecedent Event):</strong> The external event causing distress.</li>
+      <li><strong>B (Belief System):</strong> Irrational beliefs characterized by "musts" and "shoulds" (e.g., "I must be loved by everyone").</li>
+      <li><strong>C (Consequence):</strong> Negative emotions and dysfunctional behaviors resulting from the irrational belief.</li>
+    </ul>
+    <p>The therapist refutes these beliefs through gentle, non-directive questioning, helping the client replace irrational beliefs with a rational belief system.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Aaron Beck's Cognitive Therapy</h3></summary>
+    <p>Aaron Beck's theory states that childhood experiences develop <span class="keyword">core schemas</span> (e.g., "I am not wanted"). Critical life incidents trigger these schemas, leading to <span class="keyword">negative automatic thoughts</span> characterized by <span class="keyword">cognitive distortions</span> (dysfunctional cognitive structures). The therapist uses gentle questioning to achieve <span class="keyword">cognitive restructuring</span>, reducing anxiety and depression.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Cognitive Behaviour Therapy (CBT)</h3></summary>
+    <p><span class="keyword">Cognitive Behaviour Therapy</span> is a highly popular, short, and efficacious treatment that combines cognitive and behavioral techniques. It adopts a bio-psychosocial approach, addressing biological aspects (via relaxation), psychological aspects (via cognitive and behavior therapy), and social aspects (via environmental manipulations).</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Humanistic-Existential Therapy</summary>
+  <p>These therapies postulate that psychological distress arises from feelings of loneliness, alienation, and an inability to find meaning in life. They emphasize the human drive toward <span class="keyword">self-actualisation</span> (an innate force to become integrated and balanced).</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Logotherapy</h3></summary>
+    <p>Propounded by Victor Frankl, <span class="keyword">Logotherapy</span> (treatment for the soul) focuses on <span class="keyword">meaning making</span> even in life-threatening circumstances. It addresses <span class="keyword">existential anxiety</span> (neurotic anxiety of spiritual origin) and helps patients find meaning and responsibility in their lives.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Client-Centred Therapy</h3></summary>
+    <p>Developed by Carl Rogers, <span class="keyword">Client-centred therapy</span> provides a warm, empathic relationship with unconditional positive regard. The therapist acts as a facilitator, reflecting the client's feelings in a non-judgmental manner to help them become their real self.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Gestalt Therapy</h3></summary>
+    <p>Founded by Fritz and Laura Perls, <span class="keyword">Gestalt therapy</span> aims to increase self-awareness and self-acceptance. Clients are taught to recognize bodily processes and emotions blocked from awareness by acting out fantasies and conflicts.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Factors Contributing to Healing and Ethics</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Healing Factors in Psychotherapy</h3></summary>
+    <ol>
+      <li><strong>Therapeutic Techniques:</strong> Specific methods like relaxation or cognitive restructuring.</li>
+      <li><strong>Therapeutic Alliance:</strong> The warmth, empathy, and regular availability of the therapist.</li>
+      <li><strong>Catharsis:</strong> The process of emotional unburdening in early sessions.</li>
+      <li><strong>Patient Variables:</strong> Motivation for change and expectation of improvement.</li>
+      <li><strong>Therapist Variables:</strong> Positive nature, absence of unresolved conflicts, and good mental health.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Ethics in Psychotherapy</h3></summary>
+    <ul>
+      <li>Informed consent must be obtained.</li>
+      <li>Strict confidentiality of the client must be maintained.</li>
+      <li>Alleviating personal distress must be the therapist's primary goal.</li>
+      <li>Integrity of the practitioner-client relationship must be preserved.</li>
+      <li>Respect for human rights and dignity.</li>
+      <li>Professional competence and skills are essential.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Alternative Therapies</summary>
+  <p>Alternative therapies serve as non-conventional treatment options for psychological distress, combining physical practices with mental focus.</p>
+  <ul>
+    <li><span class="keyword">Yoga</span>: An ancient Indian technique detailed in Patanjali's Yoga Sutras, involving <span class="keyword">asanas</span> (body postures) and <span class="keyword">pranayama</span> (breathing practices).</li>
+    <li><span class="keyword">Meditation</span>: Focusing attention on breath, an object, or a mantra.</li>
+    <li><span class="keyword">Vipasana Meditation</span>: Mindfulness-based meditation where the person passively observes bodily sensations and thoughts without a fixed object of focus.</li>
+    <li><span class="keyword">Sudarshana Kriya Yoga (SKY)</span>: A rapid breathing technique found to be a beneficial, low-cost adjunct in treating PTSD, depression, stress, and substance abuse.</li>
+    <li><span class="keyword">Kundalini Yoga</span>: Combines pranayama with chanting of mantras; effective in treating obsessive-compulsive disorder.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Rehabilitation of the Mentally Ill</summary>
+  <p>While mild disorders require symptom reduction, severe mental disorders (like schizophrenia) require rehabilitation to help patients become self-sufficient and productive members of society.</p>
+  <ul>
+    <li><span class="keyword">Occupational Therapy</span>: Teaching skills like candle making, paper bag making, and weaving to form work discipline.</li>
+    <li><span class="keyword">Social Skills Training</span>: Developing interpersonal skills through role-play, imitation, and instruction.</li>
+    <li><span class="keyword">Cognitive Retraining</span>: Improving basic cognitive functions such as attention, memory, and executive functions.</li>
+    <li><span class="keyword">Vocational Therapy</span>: Training in skills necessary to undertake productive employment.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-04-psychological-disorders.html";
+      } else {
+        window.location.href = "12-chapter-06-attitude-and-social-cognition.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
