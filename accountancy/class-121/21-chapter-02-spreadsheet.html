@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 121 — Chapter 2: Spreadsheet</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 121 — Chapter 2: Spreadsheet</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Basic Concepts</summary><p>A <span class="keyword">spreadsheet</span> (or worksheet) is a configuration of rows and columns used to record, calculate, and compare numerical or financial data. In <span class="keyword">MS-Excel 2007</span>, the user interface features a series of horizontal tabs known as the <span class="keyword">Ribbon</span>.</p><details class="sub-topic"><summary><h3>Workbooks and Worksheets</h3></summary><p>A file in Excel is called a <span class="keyword">Workbook</span>, which is a collection of <span class="keyword">Worksheets</span>. By default, three sheets (Sheet1, Sheet2, Sheet3) are available. Only one sheet can be the <span class="keyword">Active Worksheet</span> at a time.</p></details><details class="sub-topic"><summary><h3>Rows, Columns, and Cells</h3></summary><ul><li><span class="keyword">Rows</span>: Horizontal vectors numbered numerically from 1 to 65,536.</li><li><span class="keyword">Columns</span>: Vertical vectors identified by letters (A, B, C, ... IV) totaling 256.</li><li><span class="keyword">Cell</span>: The intersection of a row and a column, identified by a unique <span class="keyword">Cell Address</span> (e.g., A1).</li><li><span class="keyword">Active Cell</span>: The cell currently pointed to by the cursor.</li></ul></details><details class="sub-topic"><summary><h3>Cell References</h3></summary><p>A <span class="keyword">Cell Reference</span> identifies the location of a cell or group of cells (range, e.g., A1:E2):</p><ul><li><span class="keyword">Relative Reference</span>: Adjusts automatically when a formula is copied to another cell (e.g., A1).</li><li><span class="keyword">Absolute Reference</span>: Remains fixed on a specific cell using dollar signs (e.g., $C$4).</li><li><span class="keyword">Mixed Reference</span>: Holds either the row or column constant (e.g., $C4 or C$4).</li></ul></details><details class="sub-topic"><summary><h3>Navigation Keystrokes</h3></summary><table><thead><tr><th>Movement</th><th>Key Stroke</th></tr></thead><tbody><tr><td>One cell down</td><td>Down arrow or Enter</td></tr><tr><td>One cell up</td><td>Up arrow</td></tr><tr><td>One cell left</td><td>Left arrow</td></tr><tr><td>One cell right</td><td>Right arrow or Tab</td></tr><tr><td>Top of Worksheet</td><td>Ctrl + Home</td></tr><tr><td>End of Worksheet data</td><td>Ctrl + End</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Elements of Spreadsheet</summary><details class="sub-topic"><summary><h3>Labels, Formulas, and Functions</h3></summary><ul><li><span class="keyword">Labels</span>: Text or special characters used for descriptive information. They cannot be treated mathematically.</li><li><span class="keyword">Formulas</span>: Mathematical calculations on a set of cells that must start with an equal (=) sign.</li><li><span class="keyword">Functions</span>: Special keywords entered into a cell to perform and process data appended within brackets.</li></ul></details><details class="sub-topic"><summary><h3>Order of Mathematical Operations</h3></summary><p>Excel follows algebraic rules to determine the order of operations, remembered by acronyms such as GEMS, PEMDAS, or BEMDAS:</p><ul><li><strong>GEMS</strong>: Grouping, Exponents, Multiplication/Division, Subtraction/Addition</li><li><strong>PEMDAS</strong>: Parentheses, Exponents, Multiplication/Division, Addition/Subtraction</li><li><strong>BEMDAS</strong>: Brackets, Exponents, Multiplication/Division, Addition/Subtraction</li></ul></details><details class="sub-topic"><summary><h3>Basic and Derived Values</h3></summary><p>Basic values are independent inputs, while derived values are calculated using formulas.</p><div class="example-block"><p>If quantity ($Q$) of an item is purchased at a price ($P$), the derived value ($V$) is calculated as:</p>$$V = Q 	imes P$$</div></details></details><details class="topic-box"><summary class="topic-title">Spreadsheet Functions</summary><details class="sub-topic"><summary><h3>Date and Time Functions</h3></summary><ul><li><span class="keyword">TODAY()</span>: Returns the serial number of the current date.</li><li><span class="keyword">NOW()</span>: Returns the serial number of the current date and time.</li><li><span class="keyword">DAY(serial_number)</span>: Returns the day of a date as an integer (1 to 31).</li><li><span class="keyword">MONTH(serial_number)</span>: Returns the month of a date as an integer (1 to 12).</li><li><span class="keyword">YEAR(serial_number)</span>: Returns the year of a date as an integer (1900 to 9999).</li><li><span class="keyword">DATEVALUE(date_text)</span>: Converts a date in text format to a serial number.</li></ul></details><details class="sub-topic"><summary><h3>Mathematical and Statistical Functions</h3></summary><ul><li><span class="keyword">SUM(range)</span>: Adds all numbers in a range of cells.</li><li><span class="keyword">AVERAGE(range)</span>: Returns the average (arithmetic mean) of the arguments.</li><li><span class="keyword">COUNT(range)</span>: Counts the number of cells that contain numbers.</li><li><span class="keyword">COUNTA(range)</span>: Counts the number of non-blank cells.</li><li><span class="keyword">COUNTBLANK(range)</span>: Counts the number of empty cells.</li><li><span class="keyword">COUNTIF(range, criteria)</span>: Counts the number of cells that meet a given criteria.</li><li><span class="keyword">SUMIF(range, criteria, sum_range)</span>: Adds cells specified by a given criteria.</li><li><span class="keyword">ROUND(number, num_digits)</span>: Rounds a number to a specified number of digits.</li><li><span class="keyword">ROUNDUP(number, num_digits)</span>: Rounds a number up, away from zero.</li><li><span class="keyword">ROUNDDOWN(number, num_digits)</span>: Rounds a number down, toward zero.</li></ul></details><details class="sub-topic"><summary><h3>Text Manipulation Functions</h3></summary><ul><li><span class="keyword">TEXT(value, format_text)</span>: Converts a numeric value to text in a specific number format.</li><li><span class="keyword">CONCATENATE(text1, text2, ...)</span>: Joins two or more text strings into one text string.</li></ul></details><details class="sub-topic"><summary><h3>Logical Functions</h3></summary><ul><li><span class="keyword">IF(logical_test, value_if_true, value_if_false)</span>: Returns one value if a condition is true and another if false.</li><li><span class="keyword">AND(logical1, logical2, ...)</span>: Returns TRUE if all arguments evaluate to TRUE.</li><li><span class="keyword">OR(logical1, logical2, ...)</span>: Returns TRUE if any argument evaluates to TRUE.</li></ul></details><details class="sub-topic"><summary><h3>Lookup and Reference Functions</h3></summary><ul><li><span class="keyword">LOOKUP(lookup_value, lookup_vector, result_vector)</span>: Looks up a value in a one-row or one-column range and returns a value from the same position in a second range.</li><li><span class="keyword">VLOOKUP(lookup_value, table_array, col_index_num, range_lookup)</span>: Searches for a value in the first column of a table array and returns a value in the same row from another column.</li><li><span class="keyword">HLOOKUP(lookup_value, table_array, row_index_num, range_lookup)</span>: Searches for a value in the top row of a table array and returns a value in the same column from another row.</li></ul></details><details class="sub-topic"><summary><h3>Financial Functions</h3></summary><ul><li><span class="keyword">ACCRINT</span>: Returns the accrued interest for a security that pays periodic interest.<div class="example-block">$$ACCRINT = par 	imes rac{rate}{frequency} 	imes 	imes rac{A}{NL}$$</div></li><li><span class="keyword">CUMIPMT(rate, nper, pv, start_period, end_period, type)</span>: Returns the cumulative interest paid between two periods.</li><li><span class="keyword">PV(rate, nper, pmt, fv, type)</span>: Returns the present value of an investment.</li><li><span class="keyword">FV(rate, nper, pmt, pv, type)</span>: Returns the future value of an investment.</li><li><span class="keyword">PMT(rate, nper, pv, fv, type)</span>: Calculates the periodic payment for an annuity.</li><li><span class="keyword">RATE(nper, pmt, pv, fv, type, guess)</span>: Returns the interest rate per period of an annuity.</li><li><span class="keyword">NPV(rate, value1, value2, ...)</span>: Calculates the net present value of an investment.<div class="example-block">$$NPV = 	imes rac{values_i}{(1 + rate)^i}$$</div></li></ul></details></details><details class="topic-box"><summary class="topic-title">Data Entry, Validation &amp; Formatting</summary><details class="sub-topic"><summary><h3>Data Entry and Import</h3></summary><p>Data can be entered manually, filled automatically using the <span class="keyword">Fill Handle</span>, or imported from external text files (such as .txt or .csv files) using the "From Text" option under the Data tab.</p></details><details class="sub-topic"><summary><h3>Data Validation</h3></summary><p><span class="keyword">Data Validation</span> restricts the type of data or values users can enter into a cell. It can be used to create drop-down lists, set limits (e.g., age between 18 and 58), or enforce custom formulas (e.g., preventing duplicate entries using COUNTIF).</p></details><details class="sub-topic"><summary><h3>Formatting Tools</h3></summary><ul><li><span class="keyword">Number Formatting</span>: Formats numbers as currency, percentages, dates, or custom formats.</li><li><span class="keyword">Conditional Formatting</span>: Changes the appearance of cells based on specified conditions (e.g., highlighting values using color scales or data bars).</li><li><span class="keyword">Merging Cells</span>: Combines two or more adjacent cells into one large cell.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Reports and Pivot Tables</summary><details class="sub-topic"><summary><h3>Data Tables</h3></summary><ul><li><span class="keyword">One-Variable Data Table</span>: Shows the results of substituting different values in one formula.</li><li><span class="keyword">Two-Variable Data Table</span>: Uses one formula with two lists of input values.</li></ul></details><details class="sub-topic"><summary><h3>Pivot Tables</h3></summary><p>A <span class="keyword">Pivot Table</span> is an interactive way to quickly summarize, analyze, and explore large amounts of data. It allows users to group data by categories, subtotal values, and pivot rows to columns to see different summaries of the source data.</p></details></details><details class="topic-box"><summary class="topic-title">Common Errors in Spreadsheet</summary><ul><li><span class="keyword">#####</span>: Column is not wide enough, or a negative date/time is used.</li><li><span class="keyword">#DIV/0!</span>: A number is divided by zero (0).</li><li><span class="keyword">#N/A</span>: A value is not available to a function or formula.</li><li><span class="keyword">#NAME?</span>: Excel does not recognize text in a formula.</li><li><span class="keyword">#NULL!</span>: An intersection of two areas that do not intersect is specified.</li><li><span class="keyword">#NUM!</span>: Invalid numeric values are used in a formula or function.</li><li><span class="keyword">#REF!</span>: A cell reference is not valid (e.g., deleted cells).</li><li><span class="keyword">#VALUE!</span>: The wrong type of argument or operand is used.</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 121 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-01-overview-of-computerised-accountin.html";
+      } else {
+        window.location.href = "21-chapter-03-use-of-spreadsheet-in-business-app.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
