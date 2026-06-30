@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 5: Emerging Modes of Business</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 5: Emerging Modes of Business</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Introduction to Emerging Modes of Business</summary><p>The manner of conducting business is referred to as the <span class='keyword'>mode of business</span>. The prefix 'emerging' underlines that these changes are happening here and now, and are likely to continue.</p><details class='sub-topic'><summary><h3>Three Strongest Trends Shaping Business</h3></summary><ul><li><span class='keyword'>Digitisation</span>: The conversion of text, sound, images, video, and other content into a series of ones and zeroes that can be transmitted electronically.</li><li><span class='keyword'>Outsourcing</span>: Contracting out non-core business processes to specialized agencies.</li><li><span class='keyword'>Internationalisation and Globalisation</span>: Expansion of business operations beyond national boundaries.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Concept and Scope of e-Business</summary><details class='sub-topic'><summary><h3>e-Business vs e-Commerce</h3></summary><p><span class='keyword'>e-business</span> is defined as the conduct of industry, trade, and commerce using computer networks. While <span class='keyword'>e-commerce</span> covers a firm's interactions with its customers and suppliers over the internet, <span class='keyword'>e-business</span> is a broader term that includes other electronically conducted business functions such as production, inventory management, product development, accounting, finance, and human resource management.</p></details><details class='sub-topic'><summary><h3>Scope of e-Business</h3></summary><ul><li><span class='keyword'>B2B Commerce</span>: Business-to-Business transactions where both parties involved are business firms (e.g., automobile manufacturer interacting with component suppliers).</li><li><span class='keyword'>B2C Commerce</span>: Business-to-Customers transactions featuring business firms at one end and customers at the other (e.g., online shopping, ATM withdrawals).</li><li><span class='keyword'>Intra-B Commerce</span>: Transactions and interactions within a single business firm using an intranet (e.g., marketing department interacting with production department, <span class='keyword'>B2E</span> or Business-to-Employees commerce).</li><li><span class='keyword'>C2C Commerce</span>: Consumer-to-Consumer transactions originating from a consumer and ending with a consumer (e.g., selling used books on eBay, peer-to-peer payment via PayPal, consumer forums).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Comparison: Traditional vs e-Business</summary><div class='table-container'><table><thead><tr><th>Basis of Distinction</th><th>Traditional Business</th><th>e-Business</th></tr></thead><tbody><tr><td>Ease of formation</td><td>Difficult</td><td>Simple</td></tr><tr><td>Physical presence</td><td>Required</td><td>Not required</td></tr><tr><td>Locational requirements</td><td>Proximity to source of raw materials or market</td><td>None</td></tr><tr><td>Cost of setting up</td><td>High</td><td>Low (no physical facilities needed)</td></tr><tr><td>Operating cost</td><td>High (fixed charges, storage, distribution)</td><td>Low (reliance on network of relationships)</td></tr><tr><td>Nature of contact</td><td>Indirect through intermediaries</td><td>Direct</td></tr><tr><td>Internal communication</td><td>Hierarchical (top to bottom)</td><td>Non-hierarchical (vertical, horizontal, diagonal)</td></tr><tr><td>Response time</td><td>Long</td><td>Instantaneous</td></tr><tr><td>Organisational structure</td><td>Vertical/tall (hierarchy)</td><td>Horizontal/flat</td></tr><tr><td>Business processes</td><td>Sequential (longer cycle)</td><td>Simultaneous (shorter cycle)</td></tr><tr><td>Interpersonal touch</td><td>Much more</td><td>Less</td></tr><tr><td>Physical pre-sampling</td><td>Much more</td><td>Less (except for digitable products)</td></tr><tr><td>Ease of going global</td><td>Less</td><td>Much (cyberspace is boundaryless)</td></tr><tr><td>Transaction risk</td><td>Low (face-to-face contact)</td><td>High (distance and anonymity)</td></tr></tbody></table></div></details><details class='topic-box'><summary class='topic-title'>Benefits and Limitations of e-Business</summary><details class='sub-topic'><summary><h3>Benefits of e-Business</h3></summary><ul><li><span class='keyword'>Ease of formation and lower investment</span>: Relatively easy to start; network connections are more vital than high net worth.</li><li><span class='keyword'>Convenience</span>: Offers 24x7x365 access to shopping and business operations.</li><li><span class='keyword'>Speed</span>: Information exchange and transactions occur at the click of a mouse.</li><li><span class='keyword'>Global reach/access</span>: Allows sellers access to global markets and buyers freedom to choose globally.</li><li><span class='keyword'>Movement towards a paperless society</span>: Reduces dependence on paperwork and red tape, supported by the <span class='keyword'>Information Technology Act 2000</span>.</li></ul></details><details class='sub-topic'><summary><h3>Limitations of e-Business</h3></summary><ul><li><span class='keyword'>Low personal touch</span>: Lacks the warmth of interpersonal interactions, making it less suitable for products like garments or toiletries.</li><li><span class='keyword'>Incongruence in speed</span>: Information flows instantly, but physical delivery takes time.</li><li><span class='keyword'>Need for technology capability</span>: Requires familiarity with computers, leading to a <span class='keyword'>digital divide</span>.</li><li><span class='keyword'>Increased transaction risk</span>: High risk of impersonation, leakage of credit card details, virus attacks, and hacking due to anonymity.</li><li><span class='keyword'>People resistance</span>: Stress and insecurity regarding new technology can lead to employee resistance.</li><li><span class='keyword'>Ethical fallouts</span>: Use of electronic monitoring ('electronic eye') to track employee files and emails.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Online Transactions Process</summary><p>Online transactions involve three main operational stages: pre-purchase/sale (advertising/information), purchase/sale (negotiation, payment), and delivery.</p><details class='sub-topic'><summary><h3>Steps in Online Buying and Selling</h3></summary><ol><li><span class='keyword'>Registration</span>: Registering with the online vendor by filling out a form and creating a password-protected account.</li><li><span class='keyword'>Placing an order</span>: Picking and dropping items into an online <span class='keyword'>shopping cart</span>, followed by checkout.</li><li><span class='keyword'>Payment mechanism</span>: Choosing a payment option:<ul><li><span class='keyword'>Cash-on-Delivery (CoD)</span>: Cash payment made at the time of physical delivery.</li><li><span class='keyword'>Cheque</span>: Vendor picks up the cheque; delivery occurs upon realization.</li><li><span class='keyword'>Net-banking Transfer</span>: Electronic fund transfer using IMPS, NEFT, or RTGS.</li><li><span class='keyword'>Credit or Debit Cards</span>: 'Plastic money' used for instant electronic deduction or credit.</li><li><span class='keyword'>Digital Cash</span>: Electronic currency existing only in cyberspace, drawn from a bank account using special software.</li></ul></li></ol></details></details><details class='topic-box'><summary class='topic-title'>Security and Safety of e-Transactions</summary><details class='sub-topic'><summary><h3>Transaction Risks</h3></summary><ul><li><span class='keyword'>Default on order taking/giving</span>: Seller or buyer denies the order was placed.</li><li><span class='keyword'>Default on delivery</span>: Goods delivered to the wrong address, or wrong goods delivered.</li><li><span class='keyword'>Default on payment</span>: Seller does not receive payment, but customer claims it was made.</li><li><em>Remedies</em>: Identity/address verification, cookies, and using secure shopping sites with seller ratings.</li></ul></details><details class='sub-topic'><summary><h3>Data Storage and Transmission Risks</h3></summary><ul><li><span class='keyword'>VIRUS (Vital Information Under Siege)</span>: Programs that replicate and disrupt systems, ranging from Level-1 (annoyance) to Level-4 (complete destruction). Protected via anti-virus software.</li><li><span class='keyword'>Hacking</span>: Unauthorized access to data.</li><li><span class='keyword'>Cryptography</span>: Protecting data by encrypting it into <span class='keyword'>cyphertext</span>, which can only be decrypted back to <span class='keyword'>plaintext</span> with a secret key.</li><li><span class='keyword'>SSL (Secure Sockets Layer)</span>: Encryption technology used to protect credit card details.</li></ul></details><details class='sub-topic'><summary><h3>Threat to Intellectual Property and Privacy</h3></summary><p>Once information is on the internet, it can be copied easily. Personal data can also be supplied to third parties, leading to spam/junk mail.</p></details></details><details class='topic-box'><summary class='topic-title'>Resources Required for e-Business</summary><details class='sub-topic'><summary><h3>Key Implementation Resources</h3></summary><p>Successful e-business requires standard business resources (money, men, machines) along with specialized resources:</p><ul><li>Developing, operating, and maintaining a robust <span class='keyword'>website</span>.</li><li>Adequate computer hardware and telecommunication links.</li><li>Trained workforce capable of handling electronic queries and transactions.</li><li>Secure payment gateway integration.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-04-business-services.html";
+      } else {
+        window.location.href = "11-chapter-06-social-responsibilities-of-busines.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

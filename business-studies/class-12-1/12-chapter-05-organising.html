@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 1) — Chapter 5: Organising</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 1) — Chapter 5: Organising</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Meaning of Organising</summary><div class="example-block"><p><strong>Business Case Title:</strong> Way To Go, Wipro!</p><p><strong>Corporate Context/Problem:</strong> Wipro Technologies, one of India's largest IT solutions providers, needed to restructure to become a global giant and improve customer orientation.</p><p><strong>Strategic Action Taken:</strong> Wipro separated itself into several product-line subsidiaries (telecommunications, engineering, financial services, etc.), shifted from a centralised to a decentralised management system, and de-layered the executive hierarchy to empower business leaders.</p><p><strong>Managerial Inference:</strong> Organising by product lines and decentralising authority empowers business leaders and aligns the structure with strategic growth goals.</p></div><details class="sub-topic"><summary><h3>Concept of Organising</h3></summary><p><span class="keyword">Organising</span> is the process of identifying and grouping the work to be performed, defining and delegating responsibility and authority, and establishing relationships for the purpose of enabling people to work most effectively together in accomplishing objectives.</p><p>It essentially coordinates human efforts, assembles resources, and integrates both into a unified whole to translate plans into action.</p></details></details><details class="topic-box"><summary class="topic-title">Steps in the Process of Organising</summary><details class="sub-topic"><summary><h3>The Organising Process</h3></summary><p>Organising involves a series of sequential steps that must be followed systematically:</p><ol><li><strong>Identification and division of work:</strong> The first step involves identifying and dividing the total work into manageable activities in accordance with previously determined plans to avoid duplication and share the burden among employees.</li><li><strong>Departmentalisation:</strong> Activities of a similar nature are grouped together into departments. This can be done on the basis of territory (e.g., north, south) or products (e.g., cosmetics, garments).</li><li><strong>Assignment of duties:</strong> Defining the work of different job positions and allocating work to employees based on their skills, competencies, and qualifications.</li><li><strong>Establishing authority and reporting relationships:</strong> Creating clear hierarchical relationships so that every individual knows from whom to take orders and to whom they are accountable.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Importance of Organising</summary><details class="sub-topic"><summary><h3>Key Benefits of Organising</h3></summary><ul><li><strong>Benefits of specialisation:</strong> Systematic allocation of jobs leads to occupational specialisation, reducing workload and enhancing productivity.</li><li><strong>Clarity in working relationships:</strong> Establishes clear lines of communication and specifies who reports to whom, removing ambiguity.</li><li><strong>Optimum utilisation of resources:</strong> Avoids overlapping of work and duplication of effort, leading to the best use of material, financial, and human resources.</li><li><strong>Adaptation to change:</strong> Allows the organisation structure to be suitably modified to accommodate changes in the dynamic business environment.</li><li><strong>Effective administration:</strong> Clear job descriptions and defined authority-responsibility relationships bring effectiveness to management.</li><li><strong>Development of personnel:</strong> Delegation of routine tasks stimulates creativity and allows managers to explore new areas for growth.</li><li><strong>Expansion and growth:</strong> Helps the enterprise to diversify, add new product lines, and expand into new geographical territories.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Organisation Structure</summary><details class="sub-topic"><summary><h3>Concept of Structure</h3></summary><p><span class="keyword">Organisation Structure</span> is the framework within which managerial and operating tasks are performed. It specifies the relationships between people, work, and resources.</p><p>An important factor shaping the structure is the <span class="keyword">Span of Management</span>, which refers to the number of subordinates that can be effectively managed by a superior.</p></details><details class="sub-topic"><summary><h3>Functional Structure</h3></summary><p>A <span class="keyword">Functional Structure</span> is an organisational design that groups similar or related jobs together into major departments (e.g., Production, Marketing, Finance, HR).</p><ul><li><strong>Advantages:</strong> Leads to occupational specialisation, promotes control and coordination, increases managerial efficiency, minimizes duplication of effort, and makes training easier.</li><li><strong>Disadvantages:</strong> Places less emphasis on overall enterprise objectives, creates coordination problems across departments, leads to conflicts of interest, and can cause inflexibility.</li><li><strong>Suitability:</strong> Most suitable for large organisations with diversified activities where operations require a high degree of specialisation.</li></ul></details><details class="sub-topic"><summary><h3>Divisional Structure</h3></summary><p>A <span class="keyword">Divisional Structure</span> comprises separate business units or divisions based on product lines. Each division is multifunctional and contains its own production, marketing, finance, and HR departments.</p><ul><li><strong>Advantages:</strong> Promotes product specialisation, establishes clear accountability for profits/losses, increases flexibility and faster decision-making, and facilitates expansion and growth.</li><li><strong>Disadvantages:</strong> May lead to conflicts over fund allocation, increases costs due to duplication of activities across divisions, and divisional heads may ignore overall corporate interests.</li><li><strong>Suitability:</strong> Suitable for large enterprises manufacturing a wide variety of products using different productive resources.</li></ul></details><details class="sub-topic"><summary><h3>Comparative View: Functional vs. Divisional Structure</h3></summary><table><thead><tr><th>Basis</th><th>Functional Structure</th><th>Divisional Structure</th></tr></thead><tbody><tr><td><strong>Formation</strong></td><td>Based on functions.</td><td>Based on product lines, supported by functions.</td></tr><tr><td><strong>Specialisation</strong></td><td>Functional specialisation.</td><td>Product specialisation.</td></tr><tr><td><strong>Responsibility</strong></td><td>Difficult to fix on a single department.</td><td>Easy to fix responsibility for performance.</td></tr><tr><td><strong>Managerial Development</strong></td><td>Difficult, as functional managers report to top management.</td><td>Easier, as autonomy helps in overall managerial development.</td></tr><tr><td><strong>Cost</strong></td><td>Economical (functions are not duplicated).</td><td>Costly (duplication of resources in divisions).</td></tr><tr><td><strong>Coordination</strong></td><td>Difficult for a multi-product company.</td><td>Easy, as all functions of a product are integrated.</td></tr></tbody></table></details><div class="example-block"><p><strong>Business Case Title:</strong> Structural Transformation at ONGC</p><p><strong>Corporate Context/Problem:</strong> In the 1990s, ONGC suffered from organisational atrophy, delays in decision-making by functional heads, and conflicts over shared responsibilities.</p><p><strong>Strategic Action Taken:</strong> ONGC adopted an asset-based approach recommended by McKinsey, vesting control of service personnel in asset managers and devolving procurement powers.</p><p><strong>Managerial Inference:</strong> Transitioning from a rigid functional structure to an asset-based (divisional/autonomous) structure improves coordination, accountability, and speed of decision-making.</p></div></details><details class="topic-box"><summary class="topic-title">Formal and Informal Organisation</summary><details class="sub-topic"><summary><h3>Formal Organisation</h3></summary><p><span class="keyword">Formal Organisation</span> refers to the structure designed by management to accomplish specific tasks, guided by systematic rules, procedures, and defined authority relationships.</p><ul><li><strong>Features:</strong> Specifies relationships, is a means to achieve objectives, coordinates efforts, is deliberately designed, and places emphasis on work rather than interpersonal relationships.</li><li><strong>Advantages:</strong> Easier to fix responsibility, eliminates ambiguity, maintains unity of command, leads to effective goal accomplishment, and provides stability.</li><li><strong>Limitations:</strong> Leads to procedural delays (red tape), may ignore creative talent, and fails to capture the complete picture of human relationships.</li></ul></details><details class="sub-topic"><summary><h3>Informal Organisation</h3></summary><p><span class="keyword">Informal Organisation</span> is a network of social and personal relationships that arises spontaneously when people interact at work beyond their official roles.</p><ul><li><strong>Features:</strong> Originates from within the formal structure, behavior is guided by group norms, has independent channels of communication, emerges spontaneously, and has no definite structure.</li><li><strong>Advantages:</strong> Leads to faster spread of information and quick feedback, fulfills social needs of members, and compensates for inadequacies in the formal structure.</li><li><strong>Disadvantages:</strong> May spread rumors (destructive force), can resist management changes, and pressurizes members to conform to group expectations.</li></ul></details><details class="sub-topic"><summary><h3>Comparative View: Formal vs. Informal Organisation</h3></summary><table><thead><tr><th>Basis</th><th>Formal Organisation</th><th>Informal Organisation</th></tr></thead><tbody><tr><td><strong>Meaning</strong></td><td>Structure of authority created by management.</td><td>Network of social relationships arising from interaction.</td></tr><tr><td><strong>Origin</strong></td><td>Arises from company rules and policies.</td><td>Arises from social interaction.</td></tr><tr><td><strong>Authority</strong></td><td>Arises by virtue of position in management.</td><td>Arises out of personal qualities.</td></tr><tr><td><strong>Behavior</strong></td><td>Directed by rules.</td><td>No set behavior pattern.</td></tr><tr><td><strong>Flow of Communication</strong></td><td>Takes place through the scalar chain.</td><td>Flows in any direction (grapevine).</td></tr><tr><td><strong>Nature</strong></td><td>Rigid.</td><td>Flexible.</td></tr><tr><td><strong>Leadership</strong></td><td>Managers are leaders.</td><td>Leaders are chosen by the group.</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Delegation</summary><details class="sub-topic"><summary><h3>Concept of Delegation</h3></summary><p><span class="keyword">Delegation</span> refers to the downward transfer of authority from a superior to a subordinate. It is essential for efficient functioning but does not mean abdication; the manager remains ultimately accountable.</p></details><details class="sub-topic"><summary><h3>Elements of Delegation</h3></summary><p>Delegation consists of three core elements:</p><ol><li><strong>Authority:</strong> The right of an individual to command subordinates and take action within their position. It flows downward.</li><li><strong>Responsibility:</strong> The obligation of a subordinate to properly perform the assigned duty. It flows upward.</li><li><strong>Accountability:</strong> Being answerable for the final outcome of the assigned task. It cannot be delegated and flows upward.</li></ol></details><details class="sub-topic"><summary><h3>Comparative View: Elements of Delegation</h3></summary><table><thead><tr><th>Basis</th><th>Authority</th><th>Responsibility</th><th>Accountability</th></tr></thead><tbody><tr><td><strong>Meaning</strong></td><td>Right to command.</td><td>Obligation to perform task.</td><td>Answerability for outcome.</td></tr><tr><td><strong>Delegation</strong></td><td>Can be delegated.</td><td>Cannot be entirely delegated.</td><td>Cannot be delegated at all.</td></tr><tr><td><strong>Origin</strong></td><td>Arises from formal position.</td><td>Arises from delegated authority.</td><td>Arises from responsibility.</td></tr><tr><td><strong>Flow</strong></td><td>Flows downward.</td><td>Flows upward.</td><td>Flows upward.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Importance of Delegation</h3></summary><ul><li><strong>Effective management:</strong> Empowers employees, allowing managers to focus on high-priority areas.</li><li><strong>Employee development:</strong> Provides opportunities to utilize talent, developing future managers.</li><li><strong>Motivation of employees:</strong> Builds self-esteem and confidence through trust.</li><li><strong>Facilitation of growth:</strong> Creates a ready workforce to lead new ventures.</li><li><strong>Basis of management hierarchy:</strong> Establishes superior-subordinate relationships.</li><li><strong>Better coordination:</strong> Clarifies powers, duties, and answerability to avoid overlapping.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Decentralisation</summary><details class="sub-topic"><summary><h3>Concept of Decentralisation</h3></summary><p><span class="keyword">Decentralisation</span> refers to the systematic effort to delegate authority to the lowest levels of the organisation, except that which can only be exercised at central points.</p><p>An organisation is centralised when decision-making authority is retained by top management, and decentralised when authority is dispersed throughout all levels.</p></details><details class="sub-topic"><summary><h3>Importance of Decentralisation</h3></summary><ul><li><strong>Develops initiative among subordinates:</strong> Promotes self-reliance and confidence by giving lower levels freedom to make decisions.</li><li><strong>Develops managerial talent for the future:</strong> Gives subordinates experience in handling assignments independently.</li><li><strong>Quick decision making:</strong> Pushes decision-making authority closest to the points of action, avoiding long communication channels.</li><li><strong>Relief to top management:</strong> Reduces the need for direct supervision, allowing top executives to focus on policy decisions.</li><li><strong>Facilitates growth:</strong> Awards greater autonomy to divisions, fostering healthy competition and productivity.</li><li><strong>Better control:</strong> Enables performance evaluation at each level, making it easier to analyze variances.</li></ul></details><details class="sub-topic"><summary><h3>Comparative View: Delegation vs. Decentralisation</h3></summary><table><thead><tr><th>Basis</th><th>Delegation</th><th>Decentralisation</th></tr></thead><tbody><tr><td><strong>Nature</strong></td><td>Compulsory act (no individual can do all tasks).</td><td>Optional policy decision (at discretion of top management).</td></tr><tr><td><strong>Freedom of Action</strong></td><td>Less freedom (more control by superiors).</td><td>Greater freedom of action (less direct control).</td></tr><tr><td><strong>Status</strong></td><td>Process followed to share tasks.</td><td>Result of policy decisions by top management.</td></tr><tr><td><strong>Scope</strong></td><td>Narrow scope (limited to superior and immediate subordinate).</td><td>Wide scope (extends to the lowest level of management).</td></tr><tr><td><strong>Purpose</strong></td><td>To lessen the burden of the manager.</td><td>To increase the role and autonomy of subordinates.</td></tr></tbody></table></details><div class="example-block"><p><strong>Business Case Title:</strong> Decentralisation: A Strength (McNeil & Johnson & Johnson)</p><p><strong>Corporate Context/Problem:</strong> Managing a massive, multi-billion dollar global pharmaceutical and consumer health corporation while maintaining agility and customer closeness.</p><p><strong>Strategic Action Taken:</strong> Operated J&J as 190 smaller, decentralised, highly focused companies, each targeting specific product franchises or geographic areas.</p><p><strong>Managerial Inference:</strong> Decentralisation combines the resource advantages of a large corporation with the speed, focus, and customer-closeness of a small firm.</p></div></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 12 (Part 1) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-04-planning.html";
+      } else {
+        window.location.href = "12-chapter-06-staffing.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

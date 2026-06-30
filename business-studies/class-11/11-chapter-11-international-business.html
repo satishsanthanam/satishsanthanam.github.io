@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 11: International Business</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 11: International Business</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction & Meaning of International Business</summary>
+  <p>In the modern era, national economies are shifting away from complete self-reliance toward mutual interdependence. Driven by rapid advancements in communication, technology, and transportation infrastructure, the world has transformed into a "global village" where cross-border trade and investment are standard business practices.</p>
+  
+  <div class="example-block">
+    <p><strong>Business Case Title:</strong> Sudhir Manchanda's Global Expansion Dilemma</p>
+    <p><strong>Corporate Context/Problem:</strong> Mr. Sudhir Manchanda, a small-scale manufacturer of automobile components in Gurgaon, faces a domestic market recession. While some competitors are already exporting, he is uncertain about the complexities of international trade and how to enter overseas markets in South-East Asia and the Middle East.</p>
+    <p><strong>Strategic Action Taken:</strong> He evaluates multiple entry strategies, including direct exporting, routing products through specialized export houses, or establishing a fully owned manufacturing plant in Bangkok as suggested by his MBA-graduate son to save transportation costs.</p>
+    <p><strong>Managerial Inference:</strong> Transitioning from domestic to international business introduces environmental complexities (political, socio-cultural, and economic) that require managers to carefully analyze risks, control requirements, and resource commitments before selecting an entry mode.</p>
+  </div>
+
+  <details class="sub-topic">
+    <summary><h3>Defining International Business</h3></summary>
+    <p><span class="keyword">International Business</span> refers to business activities that take place across national frontiers. It is a much broader term than international trade, as it encompasses not only the movement of goods and services, but also the cross-border flow of capital, personnel, technology, and intellectual property (such as patents, trademarks, and copyrights).</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">International Business vs. Domestic Business</summary>
+  <p>Conducting business operations across national borders is significantly more complex than operating within a single country due to environmental variations. The key differences are summarized below:</p>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Basis of Comparison</th>
+        <th>Domestic Business</th>
+        <th>International Business</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Nationality of buyers and sellers</strong></td>
+        <td>Participants are from the same country, making mutual understanding easier.</td>
+        <td>Participants are from different countries, introducing language and cultural barriers.</td>
+      </tr>
+      <tr>
+        <td><strong>Nationality of other stakeholders</strong></td>
+        <td>Stakeholders (employees, suppliers, shareholders) share a relatively consistent value system.</td>
+        <td>Stakeholders belong to different nations, requiring a wider set of values to be managed.</td>
+      </tr>
+      <tr>
+        <td><strong>Mobility of factors of production</strong></td>
+        <td>Factors like labor and capital move relatively freely within the country.</td>
+        <td>Mobility is restricted by legal, socio-cultural, and geographic barriers across nations.</td>
+      </tr>
+      <tr>
+        <td><strong>Customer heterogeneity</strong></td>
+        <td>Markets are relatively homogeneous in tastes, preferences, and behaviors.</td>
+        <td>Markets lack homogeneity due to diverse socio-cultural backgrounds and customs.</td>
+      </tr>
+      <tr>
+        <td><strong>Business systems and practices</strong></td>
+        <td>Systems and practices are uniform and consistent within the nation.</td>
+        <td>Systems, infrastructure, and customs vary considerably from country to country.</td>
+      </tr>
+      <tr>
+        <td><strong>Political system and risks</strong></td>
+        <td>Subject to the political system and risks of a single nation.</td>
+        <td>Subject to diverse political ideologies, systems, and cross-border political risks.</td>
+      </tr>
+      <tr>
+        <td><strong>Business regulations and policies</strong></td>
+        <td>Governed by a single, uniform set of domestic laws and taxation policies.</td>
+        <td>Governed by multiple sets of laws, tariffs, quotas, and regulations of different nations.</td>
+      </tr>
+      <tr>
+        <td><strong>Currency used</strong></td>
+        <td>Involves the use of a single domestic currency.</td>
+        <td>Involves multiple currencies, exposing firms to fluctuating exchange rates.</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Reasons for and Scope of International Business</summary>
+  <details class="sub-topic">
+    <summary><h3>Fundamental Reasons for International Trade</h3></summary>
+    <p>The primary driver of international business is that no single country can produce all its required goods and services equally well or cheaply. This is due to:</p>
+    <ul>
+      <li>Unequal distribution of natural resources among nations.</li>
+      <li>Differences in productivity levels and labor costs.</li>
+      <li>Varying availability of production factors like capital, raw materials, and technology.</li>
+    </ul>
+    <p>Consequently, countries specialize in producing goods where they hold a comparative advantage and trade their surpluses to procure other necessities.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Scope of International Business</h3></summary>
+    <p>The scope of international operations extends across four major areas:</p>
+    <ul>
+      <li><strong>Merchandise Exports and Imports:</strong> Trade in tangible, physical goods (also known as trade in goods).</li>
+      <li><strong>Service Exports and Imports:</strong> Trade in intangibles (also known as invisible trade), which includes tourism, transportation, banking, insurance, and professional consulting.</li>
+      <li><strong>Licensing and Franchising:</strong> Contractual permissions granted to foreign entities to use trademarks, patents, or technology in exchange for a fee (<span class="keyword">Royalty</span>).</li>
+      <li><strong>Foreign Investments:</strong> Financial investments made abroad, divided into:</li>
+      <ul>
+        <li><span class="keyword">Foreign Direct Investment (FDI)</span>: Direct investment in physical assets like plants and machinery, providing controlling interest.</li>
+        <li><span class="keyword">Portfolio Investment</span>: Acquisition of shares or provision of loans to foreign companies without direct operational control.</li>
+      </ul>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Benefits of International Business</summary>
+  <details class="sub-topic">
+    <summary><h3>Benefits to Countries</h3></summary>
+    <ul>
+      <li><strong>Earning of Foreign Exchange:</strong> Enables countries to import critical capital goods, technology, petroleum, and pharmaceuticals.</li>
+      <li><strong>Efficient Resource Utilization:</strong> Promotes specialization, allowing nations to produce what they make most efficiently, maximizing global output.</li>
+      <li><strong>Growth and Employment:</strong> Export-led growth strategies (e.g., Singapore, South Korea) help scale up production and generate employment.</li>
+      <li><strong>Higher Standard of Living:</strong> Allows citizens to consume diverse goods and services produced globally, improving quality of life.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Benefits to Firms</h3></summary>
+    <ul>
+      <li><strong>Prospects for Higher Profits:</strong> International markets often offer higher prices and profit margins than saturated domestic markets.</li>
+      <li><strong>Increased Capacity Utilization:</strong> Firms can utilize surplus production capacity by catering to overseas demand, achieving economies of scale.</li>
+      <li><strong>Prospects for Growth:</strong> Offers a path to expansion when domestic demand becomes saturated.</li>
+      <li><strong>Mitigating Domestic Competition:</strong> Serves as a strategic buffer when domestic competition becomes highly intense.</li>
+      <li><strong>Improved Business Vision:</strong> Enhances competitiveness, diversification, and strategic positioning on a global scale.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Modes of Entry into International Business</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>1. Exporting and Importing</h3></summary>
+    <p>The easiest and most common entry mode, involving the physical movement of goods across borders. Can be direct (handling all formalities internally) or indirect (using middlemen like export houses).</p>
+    <ul>
+      <li><strong>Advantages:</strong> Low complexity, minimal financial investment, and zero or low foreign investment risk.</li>
+      <li><strong>Limitations:</strong> High transportation and packaging costs, vulnerability to import tariffs/quotas, and lack of direct contact with foreign customers.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2. Contract Manufacturing</h3></summary>
+    <p>Also known as <span class="keyword">Outsourcing</span>, this involves contracting with local manufacturers in foreign countries to produce components or complete products according to specifications.</p>
+    <ul>
+      <li><strong>Advantages:</strong> Large-scale production without capital investment in facilities, minimal investment risk, and access to lower labor/material costs.</li>
+      <li><strong>Limitations:</strong> Risk of quality deviations by local firms, loss of operational control by the local manufacturer, and restrictions on selling the output independently.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>3. Licensing and Franchising</h3></summary>
+    <p><span class="keyword">Licensing</span> is a contractual agreement where a licensor grants a foreign licensee access to patents, trade secrets, or technology for a royalty fee. <span class="keyword">Franchising</span> is a similar but more stringent arrangement used in service industries (e.g., fast food chains) where the franchiser sets strict operational rules.</p>
+    <ul>
+      <li><strong>Advantages:</strong> Extremely low cost of entry, zero exposure to foreign business losses, and utilization of local market expertise.</li>
+      <li><strong>Limitations:</strong> Risk of the licensee becoming a competitor, potential leakage of trade secrets, and frequent conflicts over royalties or quality standards.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>4. Joint Ventures</h3></summary>
+    <p>Establishing a business enterprise that is jointly owned by two or more independent firms (e.g., a foreign investor partnering with a local entrepreneur).</p>
+    <ul>
+      <li><strong>Advantages:</strong> Shared financial burden, capability to execute massive projects, and access to the local partner's cultural, legal, and market knowledge.</li>
+      <li><strong>Limitations:</strong> Risk of disclosing proprietary technology/secrets, and potential conflicts over management control and strategic direction.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>5. Wholly Owned Subsidiaries</h3></summary>
+    <p>The parent company exercises 100% control over foreign operations by investing entirely in its equity. This can be done via a greenfield venture (setting up a new plant) or acquisition of an existing foreign firm.</p>
+    <ul>
+      <li><strong>Advantages:</strong> Complete operational control and absolute protection of technology and trade secrets.</li>
+      <li><strong>Limitations:</strong> Requires massive capital investment (unsuitable for small/medium firms), high risk of bearing all losses, and exposure to political risks.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Export-Import Procedures and Documentation</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>The Export Procedure</h3></summary>
+    <p>Exporting involves a structured sequence of regulatory and logistical steps:</p>
+    <ol>
+      <li><strong>Receipt of Enquiry and Sending Quotations:</strong> Exporter responds to an importer's inquiry with a <span class="keyword">Proforma Invoice</span> detailing price, quality, and terms.</li>
+      <li><strong>Receipt of Order or Indent:</strong> Importer places an order (<span class="keyword">Indent</span>) containing product descriptions, shipping instructions, and price.</li>
+      <li><strong>Assessing Importer's Creditworthiness:</strong> Exporter verifies the importer's financial standing and secures a <span class="keyword">Letter of Credit</span> from the importer's bank.</li>
+      <li><strong>Obtaining Export Licence:</strong> Exporter registers with the RBI, obtains an <span class="keyword">Import Export Code (IEC)</span> from the DGFT, and registers with Export Promotion Councils.</li>
+      <li><strong>Obtaining Pre-shipment Finance:</strong> Securing working capital from banks to procure raw materials and process goods.</li>
+      <li><strong>Production or Procurement of Goods:</strong> Manufacturing or purchasing goods as per the importer's specifications.</li>
+      <li><strong>Pre-shipment Inspection:</strong> Ensuring quality compliance through designated government inspection agencies.</li>
+      <li><strong>Excise Clearance:</strong> Obtaining clearance under excise laws; exporters may receive a refund known as <span class="keyword">Duty Drawback</span>.</li>
+      <li><strong>Obtaining Certificate of Origin:</strong> Securing proof of manufacture from trade consulates to help the importer claim tariff concessions.</li>
+      <li><strong>Reservation of Shipping Space:</strong> Applying to a shipping company to secure cargo space, resulting in a <span class="keyword">Shipping Order</span>.</li>
+      <li><strong>Packing and Forwarding:</strong> Packing, marking, and transporting goods to the port, obtaining a railway receipt if applicable.</li>
+      <li><strong>Insurance of Goods:</strong> Securing marine insurance to protect against transit risks.</li>
+      <li><strong>Customs Clearance:</strong> Submitting a <span class="keyword">Shipping Bill</span> and other documents to customs authorities for clearance.</li>
+      <li><strong>Obtaining Mate's Receipt:</strong> The ship's commanding officer issues a <span class="keyword">Mate's Receipt</span> once cargo is loaded.</li>
+      <li><strong>Payment of Freight and Issuance of Bill of Lading:</strong> Exchanging the Mate's Receipt for a <span class="keyword">Bill of Lading</span> (or Airway Bill) from the shipping company.</li>
+      <li><strong>Preparation of Invoice:</strong> Generating the final commercial invoice attested by customs.</li>
+      <li><strong>Securing Payment:</strong> Sending documents (including a <span class="keyword">Bill of Exchange</span>) through banks to secure payment via sight draft or usance draft.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>The Import Procedure</h3></summary>
+    <p>Importing requires systematic coordination with foreign suppliers and domestic customs:</p>
+    <ol>
+      <li><strong>Trade Enquiry:</strong> Gathering information on foreign suppliers and requesting quotations.</li>
+      <li><strong>Procurement of Import Licence:</strong> Checking EXIM policy and obtaining an IEC number.</li>
+      <li><strong>Obtaining Foreign Exchange:</strong> Applying to an authorized bank to secure foreign exchange sanctioned by the RBI.</li>
+      <li><strong>Placing Order or Indent:</strong> Sending a formal purchase order with detailed specifications.</li>
+      <li><strong>Obtaining Letter of Credit:</strong> Getting a bank guarantee to secure payment for the exporter.</li>
+      <li><strong>Arranging for Finance:</strong> Planning funds to pay for the goods upon arrival to avoid demurrage penalties.</li>
+      <li><strong>Receipt of Shipment Advice:</strong> Receiving details of the vessel, invoice number, and dispatch date from the exporter.</li>
+      <li><strong>Retirement of Import Documents:</strong> Accepting the Bill of Exchange to receive the title documents from the bank.</li>
+      <li><strong>Arrival of Goods:</strong> The carrier submits an <span class="keyword">Import General Manifest</span> to unload the cargo.</li>
+      <li><strong>Customs Clearance and Release of Goods:</strong> Paying dock dues, submitting a <span class="keyword">Bill of Entry</span>, paying import duties, and obtaining a release order.</li>
+    </ol>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-10-internal-trade.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

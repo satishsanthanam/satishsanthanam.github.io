@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 1) — Chapter 8: Controlling</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 1) — Chapter 8: Controlling</h1>
+
+    <details class="topic-box"><summary class="topic-title">Meaning of Controlling</summary><p><span class="keyword">Controlling</span> is an indispensable function of management that ensures activities within an organisation are performed as per the plans. It also ensures that resources are used effectively and efficiently to achieve predetermined goals.</p><ul><li>It is a <span class="keyword">goal-oriented</span> function.</li><li>It is a <span class="keyword">pervasive</span> function, required at all levels of management (top, middle, and lower) and in all types of organisations (business, educational, military, hospitals).</li><li>It is a continuous process that brings the management cycle back to the planning function by analysing deviations and taking corrective actions.</li></ul></details><details class="topic-box"><summary class="topic-title">Importance of Controlling</summary><p>A good control system helps an organisation in the following ways:</p><ul><li><strong>Accomplishing organisational goals:</strong> Measures progress towards goals, highlights deviations, and guides corrective action.</li><li><strong>Judging accuracy of standards:</strong> Enables management to verify if the standards set are accurate, objective, and realistic in the face of environmental changes.</li><li><strong>Making efficient use of resources:</strong> Reduces wastage and spoilage of resources by ensuring every activity conforms to predetermined standards.</li><li><strong>Improving employee motivation:</strong> Ensures employees know in advance what is expected of them and the standards against which they will be appraised.</li><li><strong>Ensuring order and discipline:</strong> Minimises dishonest behaviour by keeping a close check on employee activities.</li><li><strong>Facilitating coordination in action:</strong> Provides direction to all departments and employees, ensuring their efforts are well-coordinated to achieve overall objectives.</li></ul></details><details class="topic-box"><summary class="topic-title">Limitations of Controlling</summary><p>Although critical, controlling suffers from several limitations:</p><ul><li><strong>Difficulty in setting quantitative standards:</strong> It is difficult to establish quantitative standards for areas like employee morale, job satisfaction, and human behaviour, making comparison challenging.</li><li><strong>Little control on external factors:</strong> An enterprise cannot control external environmental variables such as government policies, technological changes, and competitor actions.</li><li><strong>Resistance from employees:</strong> Employees often resist control systems, perceiving them as a restriction on their freedom (e.g., objection to CCTV monitoring).</li><li><strong>Costly affair:</strong> Implementing and operating a control system involves significant expenditure, time, and effort, which small enterprises may find difficult to justify.</li></ul><div class="example-block"><p><strong>Business Case Title:</strong> Control Through Computer Monitoring</p><p><strong>Corporate Context/Problem:</strong> Managers at a New York City import-export company suspected that two employees were deleting orders from corporate books, pocketing revenues, and planning to steal a large shipment of electronics.</p><p><strong>Strategic Action Taken:</strong> On the advice of Corporate Defense Strategies (CDS), the firm installed software to secretly log keystrokes and send encrypted reports. Police apprehended the suspects inside the warehouse, charging them with embezzling $3 million.</p><p><strong>Managerial Inference:</strong> Modern technological tools like computer monitoring serve as powerful control mechanisms to maintain order, discipline, and protect corporate assets.</p></div></details><details class="topic-box"><summary class="topic-title">Relationship between Planning and Controlling</summary><p>Planning and controlling are inseparable twins of management:</p><ul><li>Planning provides the standards for controlling. Without planning, controlling is blind as there are no benchmarks to measure performance against.</li><li>Controlling monitors progress, detects deviations, and initiates corrective actions. Without controlling, planning is meaningless.</li><li>Planning is a <span class="keyword">prescriptive</span> function (looking ahead), whereas controlling is an <span class="keyword">evaluative</span> function (looking back).</li><li>However, both functions are forward-looking (planning guides future action; controlling provides feedback to improve future plans) and backward-looking (planning is guided by past experiences; controlling analyses past performance).</li></ul></details><details class="topic-box"><summary class="topic-title">The Controlling Process</summary><p>Controlling is a systematic process involving the following sequential steps:</p><ol><li><strong>Setting performance standards:</strong> Establishing benchmarks (both quantitative, like cost and revenue, and qualitative, like goodwill and motivation) against which actual performance is measured. Standards must be flexible enough to adapt to environmental changes.</li><li><strong>Measurement of actual performance:</strong> Measuring performance in an objective and reliable manner, preferably in the same units as the standards, using techniques like personal observation, sample checking, and performance reports.</li><li><strong>Comparing actual performance with standards:</strong> Comparing actual results with desired standards to reveal deviations.</li><li><strong>Analysing deviations:</strong> Determining the acceptable range of deviations and focusing on critical areas using:<ul><li><span class="keyword">Critical Point Control (CPC):</span> Focusing control on key result areas (KRAs) that are critical to the success of the organisation.</li><li><span class="keyword">Management by Exception (MBE):</span> An important principle holding that an attempt to control everything results in controlling nothing; only significant deviations going beyond the permissible limit should be brought to the attention of top management.</li></ul></li><li><strong>Taking corrective action:</strong> Initiating corrective measures (such as training employees, assigning additional resources, or revising standards) when deviations exceed acceptable limits, ensuring standards are met and deviations do not recur.</li></ol></details><details class="topic-box"><summary class="topic-title">Standards used in Functional Areas to Gauge Performance</summary><p>The following table outlines typical standards used across different functional departments:</p><table><thead><tr><th>Production</th><th>Marketing</th><th>Human Resource Management</th><th>Finance and Accounting</th></tr></thead><tbody><tr><td>Quantity</td><td>Sales volume</td><td>Labour relations</td><td>Capital expenditures</td></tr><tr><td>Quality</td><td>Sales expense</td><td>Labour turnover</td><td>Inventories</td></tr><tr><td>Cost</td><td>Advertising expenditures</td><td>Labour absenteeism</td><td>Flow of capital</td></tr><tr><td>Individual job performance</td><td>Sales-person's performance</td><td>-</td><td>Liquidity</td></tr></tbody></table></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 12 (Part 1) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-07-directing.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
