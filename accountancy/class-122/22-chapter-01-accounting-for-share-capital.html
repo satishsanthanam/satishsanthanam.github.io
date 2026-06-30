@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 122 — Chapter 1: Accounting for Share Capital</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 122 — Chapter 1: Accounting for Share Capital</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1.1 Features and Kinds of a Company</summary>
+  <p>A <span class="keyword">company</span> is an association of persons who contribute money or money's worth to a common inventory and use it for a common purpose. It is an artificial person having a corporate legal entity distinct from its members, with perpetual succession and a common seal.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Salient Features of a Company</h3></summary>
+    <ul>
+      <li><span class="keyword">Body Corporate</span>: Formed and registered under the Companies Law.</li>
+      <li><span class="keyword">Separate Legal Entity</span>: Distinct from its members; can hold property and enter contracts in its own name.</li>
+      <li><span class="keyword">Limited Liability</span>: Liability of members is limited to the unpaid amount of shares held or the guarantee given.</li>
+      <li><span class="keyword">Perpetual Succession</span>: Continuous existence unaffected by death, insanity, or insolvency of members.</li>
+      <li><span class="keyword">Common Seal</span>: Acts as the official signature of the company.</li>
+      <li><span class="keyword">Transferability of Shares</span>: Shares of a public limited company are freely transferable.</li>
+      <li><span class="keyword">May Sue or be Sued</span>: Can enforce legal rights and be legally held liable in its own name.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Kinds of Companies</h3></summary>
+    <ol>
+      <li><strong>On the Basis of Liability:</strong>
+        <ul>
+          <li><span class="keyword">Companies Limited by Shares</span>: Liability limited to the nominal value of shares held.</li>
+          <li><span class="keyword">Companies Limited by Guarantee</span>: Liability limited to the amount members undertake to contribute during winding up.</li>
+          <li><span class="keyword">Unlimited Companies</span>: No limit on the liability of members (rare in India).</li>
+        </ul>
+      </li>
+      <li><strong>On the Basis of Number of Members:</strong>
+        <ul>
+          <li><span class="keyword">Public Company</span>: Not a private company; minimum 7 members, no maximum limit.</li>
+          <li><span class="keyword">Private Company</span>: Restricts share transfer; minimum 2 members, maximum 200 (excluding employees).</li>
+          <li><span class="keyword">One Person Company (OPC)</span>: Only one person as a member; paid-up capital $\le$ Rs. 50 Lakhs, average annual turnover $\le$ Rs. 2 Crores.</li>
+        </ul>
+      </li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.2 Share Capital of a Company</summary>
+  <p>The capital of a company is collected from several persons called shareholders, and the total amount contributed is merged into a common <span class="keyword">Share Capital Account</span>.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Categories of Share Capital</h3></summary>
+    <ul>
+      <li><span class="keyword">Authorised/Nominal Capital</span>: Maximum amount of share capital a company is authorised to issue by its Memorandum of Association.</li>
+      <li><span class="keyword">Issued Capital</span>: Part of authorised capital offered to the public for subscription.</li>
+      <li><span class="keyword">Subscribed Capital</span>: Part of issued capital actually subscribed by the public.
+        <ul>
+          <li><em>Subscribed and Fully Paid-up</em>: Entire face value called and paid.</li>
+          <li><em>Subscribed but not Fully Paid-up</em>: Called up but not fully paid, or face value not fully called.</li>
+        </ul>
+      </li>
+      <li><span class="keyword">Called-up Capital</span>: Part of subscribed capital called by the company to pay.</li>
+      <li><span class="keyword">Paid-up Capital</span>: Actual amount received from shareholders.</li>
+    </ul>
+    <div class="example-block">
+      <p><strong>Accounting Equation:</strong></p>
+      $$\text{Paid-up Capital} = \text{Called-up Capital} - \text{Calls in Arrears}$$
+    </div>
+    <ul>
+      <li><span class="keyword">Reserve Capital</span>: Portion of uncalled capital reserved to be called only in the event of winding up.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Classes of Shares</h3></summary>
+    <ul>
+      <li><span class="keyword">Preference Shares</span>: Carry preferential rights to receive dividends at a fixed rate and repayment of capital on winding up before equity shares. Types include Cumulative/Non-cumulative, Participating/Non-participating, and Redeemable/Irredeemable.</li>
+      <li><span class="keyword">Equity Shares</span>: Shares that do not enjoy preferential rights; they receive dividends based on available profits and carry voting rights.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.3 Issue and Allotment of Shares</summary>
+  <p>The process of issuing shares involves three main steps: issuing a prospectus, receiving applications, and making the allotment of shares.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Minimum Subscription</h3></summary>
+    <p>According to SEBI guidelines, <span class="keyword">minimum subscription</span> cannot be less than <strong>90%</strong> of the issued amount. If this condition is not satisfied, the company must refund the entire subscription amount within the prescribed period (usually 8 days from closure of subscription), failing which interest at 15% p.a. is applicable.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Basic Accounting Entries for Share Issue</h3></summary>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Transaction</th>
+          <th>Journal Entry</th>
+          <th>Debit</th>
+          <th>Credit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Receipt of Application Money</td>
+          <td>Bank A/c<br>&nbsp;&nbsp;To Share Application A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2. Transfer of Application Money</td>
+          <td>Share Application A/c<br>&nbsp;&nbsp;To Share Capital A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3. Refund on Rejected Applications</td>
+          <td>Share Application A/c<br>&nbsp;&nbsp;To Bank A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4. Allotment Money Due</td>
+          <td>Share Allotment A/c<br>&nbsp;&nbsp;To Share Capital A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5. Receipt of Allotment Money</td>
+          <td>Bank A/c<br>&nbsp;&nbsp;To Share Allotment A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6. Share Call Money Due</td>
+          <td>Share Call A/c<br>&nbsp;&nbsp;To Share Capital A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7. Receipt of Call Money</td>
+          <td>Bank A/c<br>&nbsp;&nbsp;To Share Call A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.4 Special Accounting Scenarios</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Calls in Arrears and Calls in Advance</h3></summary>
+    <ul>
+      <li><span class="keyword">Calls in Arrears</span>: Unpaid called-up capital. Interest is charged as per Table F at a rate not exceeding <strong>10% p.a.</strong></li>
+      <li><span class="keyword">Calls in Advance</span>: Amount paid by shareholders before it is called up. Interest is paid as per Table F at a rate not exceeding <strong>12% p.a.</strong></li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Over Subscription and Pro-rata Allotment</h3></summary>
+    <p>When applications exceed the shares offered, it is a case of <span class="keyword">Over Subscription</span>. Directors have three alternatives:</p>
+    <ol>
+      <li>Reject excess applications and refund money.</li>
+      <li>Make <span class="keyword">pro-rata allotment</span> (proportionate allotment) to all applicants, adjusting excess application money towards allotment/calls.</li>
+      <li>A combination of rejection and pro-rata allotment.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Issue of Shares at a Premium</h3></summary>
+    <p>Shares issued at a price higher than nominal value are issued at a premium. The excess is credited to the <span class="keyword">Securities Premium Account</span>, which can only be used for:</p>
+    <ul>
+      <li>Issuing fully paid bonus shares.</li>
+      <li>Writing off preliminary expenses.</li>
+      <li>Writing off commission paid or discount allowed on issue of securities.</li>
+      <li>Providing for premium payable on redemption of preference shares or debentures.</li>
+      <li>Buy-back of own shares.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Issue of Shares for Consideration Other than Cash</h3></summary>
+    <p>When assets are purchased and paid for by issuing shares:</p>
+    <div class="example-block">
+      $$\text{Number of Shares to be Issued} = \frac{\text{Amount Payable to Vendor}}{\text{Issue Price per Share}}$$
+    </div>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.5 Forfeiture and Reissue of Shares</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Forfeiture of Shares</h3></summary>
+    <p><span class="keyword">Forfeiture</span> refers to the cancellation of allotment and confiscation of the amount already paid due to non-payment of calls.</p>
+    <p><strong>Journal Entry (Issued at Par):</strong></p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>Share Capital A/c (Called-up Amount)</td>
+          <td>Dr.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;To Share Forfeiture A/c (Amount Paid)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;To Share Allotment A/c (Unpaid Allotment)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;To Share Call A/c (Unpaid Call)</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Reissue of Forfeited Shares</h3></summary>
+    <p>Forfeited shares can be reissued at par, premium, or discount. The discount allowed on reissue cannot exceed the amount forfeited on those shares. Any remaining balance in the Share Forfeiture Account after reissue is transferred to the <span class="keyword">Capital Reserve Account</span>.</p>
+    <p><strong>Journal Entry for Transfer of Profit:</strong></p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>Share Forfeiture A/c</td>
+          <td>Dr.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;To Capital Reserve A/c</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 122 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
