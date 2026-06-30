@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 12: Water (Oceans)</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 12: Water (Oceans)</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction</summary><p>Water is an essential component of all life forms on Earth. Due to the abundant supply of water on its surface, Earth is known as the <span class="keyword">Blue Planet</span>.</p></details><details class="topic-box"><summary class="topic-title">Hydrological Cycle</summary><p>The <span class="keyword">Hydrological Cycle</span> is the continuous circulation of water within the earth's hydrosphere in different phases: liquid, solid, and gaseous. It describes the movement of water on, in, and above the earth.</p><details class="sub-topic"><summary><h3>Water Distribution and Balance</h3></summary><p>About 91 per cent of the planetary water is found in the oceans. The remaining is held as freshwater in glaciers, icecaps, groundwater sources, lakes, soil moisture, atmosphere, streams, and within life. Nearly 59 per cent of the water that falls on land returns to the atmosphere through evaporation from over the oceans and other places.</p></details><details class="sub-topic"><summary><h3>Components and Processes of the Water Cycle</h3></summary><table><thead><tr><th>Components</th><th>Processes</th></tr></thead><tbody><tr><td>Water storage in oceans</td><td>Evaporation, Evapotranspiration, Sublimation</td></tr><tr><td>Water in the atmosphere</td><td>Condensation, Precipitation</td></tr><tr><td>Water storage in ice and snow</td><td>Snowmelt runoff to streams</td></tr><tr><td>Surface runoff</td><td>Stream flow, freshwater storage, infiltration</td></tr><tr><td>Groundwater storage</td><td>Groundwater discharge, springs</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Relief of the Ocean Floor</summary><p>The ocean floor exhibits complex and varied features similar to those observed on land, including mountain ranges, deep trenches, and large plains, shaped by tectonic, volcanic, and depositional processes.</p><details class="sub-topic"><summary><h3>Major Divisions of the Ocean Floor</h3></summary><ul><li><span class="keyword">Continental Shelf</span>: The extended margin of each continent occupied by relatively shallow seas and gulfs. It is the shallowest part of the ocean with an average gradient of 1° or less, ending at the shelf break.</li><li><span class="keyword">Continental Slope</span>: Connects the continental shelf and the ocean basins, beginning where the shelf bottom sharply drops. The gradient varies between 2° and 5°, and the depth varies between 200 and 3,000 m.</li><li><span class="keyword">Deep Sea Plain</span>: Gently sloping, extremely flat, and smooth regions of the ocean basins, with depths varying between 3,000 and 6,000 m. Covered with fine-grained sediments like clay and silt.</li><li><span class="keyword">Oceanic Deeps or Trenches</span>: The deepest parts of the oceans, relatively steep-sided and narrow. They are 3-5 km deeper than the surrounding ocean floor and are associated with active volcanoes and strong earthquakes.</li></ul></details><details class="sub-topic"><summary><h3>Minor Relief Features</h3></summary><ul><li><span class="keyword">Mid-Oceanic Ridges</span>: Two chains of mountains separated by a large depression, forming the world's longest mountain ranges under water.</li><li><span class="keyword">Seamount</span>: A mountain with pointed summits, rising from the seafloor but not reaching the ocean surface. They are volcanic in origin.</li><li><span class="keyword">Submarine Canyons</span>: Deep valleys cutting across continental shelves and slopes, often extending from the mouths of large rivers.</li><li><span class="keyword">Guyots</span>: Flat-topped seamounts showing evidence of gradual subsidence.</li><li><span class="keyword">Atoll</span>: Low islands found in tropical oceans consisting of coral reefs surrounding a central lagoon.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Temperature of Ocean Waters</summary><p>Ocean waters are heated by solar energy. The process of heating and cooling of oceanic water is slower than that of land.</p><details class="sub-topic"><summary><h3>Factors Affecting Temperature Distribution</h3></summary><ol><li><span class="keyword">Latitude</span>: Surface water temperature decreases from the equator towards the poles as insolation decreases poleward.</li><li><span class="keyword">Unequal distribution of land and water</span>: Oceans in the Northern Hemisphere receive more heat due to greater contact with land compared to the Southern Hemisphere.</li><li><span class="keyword">Prevailing wind</span>: Offshore winds drive warm surface water away from the coast, causing upwelling of cold water from below. Onshore winds pile up warm water near the coast.</li><li><span class="keyword">Ocean currents</span>: Warm currents raise temperatures in cold areas, while cold currents lower temperatures in warm areas.</li></ol></details><details class="sub-topic"><summary><h3>Vertical Distribution of Temperature</h3></summary><p>Temperature decreases with increasing depth. The boundary region where there is a rapid decrease of temperature is called the <span class="keyword">Thermocline</span>. Below this zone, which contains about 90% of the total volume of water, temperatures approach 0°C.</p><p>The temperature structure in low and middle latitudes forms a three-layer system:</p><ul><li><strong>First Layer</strong>: Top layer of warm water, about 500 m thick, with temperatures between 20°C and 25°C.</li><li><strong>Second Layer (Thermocline)</strong>: Characterized by a rapid decrease in temperature with depth, about 500 - 1,000 m thick.</li><li><strong>Third Layer</strong>: Extremely cold layer extending to the deep ocean floor.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Salinity of Ocean Waters</summary><p><span class="keyword">Salinity</span> is the term used to define the total content of dissolved salts in sea water. It is calculated as the amount of salt (in grams) dissolved in 1,000 grams (1 kg) of seawater, expressed as parts per thousand ($^o/_{oo}$ or ppt).</p><details class="sub-topic"><summary><h3>Factors Affecting Ocean Salinity</h3></summary><ul><li>Evaporation and precipitation.</li><li>Freshwater flow from rivers and freezing/thawing of ice in polar regions.</li><li>Wind, by transferring water to other areas.</li><li>Ocean currents, which contribute to salinity variations.</li></ul></details><details class="sub-topic"><summary><h3>Highest Salinity Water Bodies</h3></summary><table><thead><tr><th>Water Body</th><th>Salinity ($^o/_{oo}$)</th></tr></thead><tbody><tr><td>Lake Van (Turkey)</td><td>330</td></tr><tr><td>Dead Sea</td><td>238</td></tr><tr><td>Great Salt Lake</td><td>220</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Horizontal and Vertical Distribution of Salinity</h3></summary><p>The normal salinity of open oceans ranges between $33^o/_{oo}$ and $37^o/_{oo}$. Land-locked seas like the Red Sea have salinity as high as $41^o/_{oo}$, while estuaries and the Arctic fluctuate between $0 - 35^o/_{oo}$.</p><p>Vertically, salinity changes with depth. The distinct zone where salinity increases sharply is called the <span class="keyword">Halocline</span>. High salinity water is denser and generally sinks below lower salinity water, leading to stratification.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 12</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-11-world-climate-and-climate-change.html";
+      } else {
+        window.location.href = "12-chapter-13-movements-of-ocean-water.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
