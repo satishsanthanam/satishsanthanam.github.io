@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 7: Index Numbers</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 7: Index Numbers</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1. Introduction to Index Numbers</summary>
+  <p>An <span class="keyword">index number</span> is a statistical device designed to measure changes in a group of related variables over time, geographical location, or other characteristics. It serves as a single summary measure to represent the general trend of diverging ratios.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Core Characteristics & Concepts</h3></summary>
+    <ul>
+      <li><strong>Base Period:</strong> The reference period with which comparisons are made. It is conventionally assigned an index value of <span class="keyword">100</span>.</li>
+      <li><strong>Current Period:</strong> The period for which the comparison or change is being calculated.</li>
+      <li><strong>Percentage Expression:</strong> Index numbers are conventionally expressed as percentages to facilitate easy comparison, though the percentage sign (%) is usually omitted.</li>
+      <li><strong>Types of Indices:</strong>
+        <ul>
+          <li><span class="keyword">Price Index:</span> Measures and compares the prices of certain goods over time.</li>
+          <li><span class="keyword">Quantity Index:</span> Measures changes in the physical volume of production, construction, or employment.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2. Methods of Constructing Index Numbers</summary>
+  <p>There are two primary methods used to construct index numbers: the <span class="keyword">Aggregative Method</span> and the <span class="keyword">Method of Averaging Relatives</span>.</p>
+
+  <details class="sub-topic">
+    <summary><h3>A. The Aggregative Method</h3></summary>
+    <p>This method aggregates the prices (or quantities) of various commodities in the current year and compares them with the aggregate in the base year.</p>
+    
+    <h4>1. Simple Aggregative Price Index</h4>
+    <p>Treats all items with equal importance, regardless of their actual economic weight.</p>
+    <div class="example-block">
+      $$P_{01} = \frac{\sum P_1}{\sum P_0} \times 100$$
+    </div>
+    <p>Where:</p>
+    <ul>
+      <li>$P_{01}$ = Price index of the current year (1) relative to the base year (0)</li>
+      <li>$\sum P_1$ = Sum of prices of all commodities in the current period</li>
+      <li>$\sum P_0$ = Sum of prices of all commodities in the base period</li>
+    </ul>
+
+    <h4>2. Weighted Aggregative Price Index</h4>
+    <p>Assigns weights to different commodities based on their relative importance (usually quantities consumed or produced).</p>
+    <ul>
+      <li><strong>Laspeyre's Price Index:</strong> Uses <span class="keyword">base period quantities</span> ($q_0$) as weights.
+        <div class="example-block">
+          $$P_{01} = \frac{\sum P_1 q_0}{\sum P_0 q_0} \times 100$$
+        </div>
+      </li>
+      <li><strong>Paasche's Price Index:</strong> Uses <span class="keyword">current period quantities</span> ($q_1$) as weights.
+        <div class="example-block">
+          $$P_{01} = \frac{\sum P_1 q_1}{\sum P_0 q_1} \times 100$$
+        </div>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>B. Method of Averaging Relatives</h3></summary>
+    <p>This method computes price relatives for each individual commodity first, and then averages those relatives.</p>
+    
+    <h4>1. Simple Average of Price Relatives</h4>
+    <div class="example-block">
+      $$P_{01} = \frac{1}{n} \sum \left( \frac{P_1}{P_0} \times 100 \right)$$
+    </div>
+    <p>Where $n$ is the number of commodities.</p>
+
+    <h4>2. Weighted Average of Price Relatives</h4>
+    <div class="example-block">
+      $$P_{01} = \frac{\sum W_i \left( \frac{P_{1i}}{P_{0i}} \times 100 \right)}{\sum W_i}$$
+    </div>
+    <p>Where $W_i$ represents the weight (percentage of expenditure or value share) assigned to commodity $i$.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3. Important Index Numbers in India</summary>
+  <p>Several specialized index numbers are regularly prepared by government agencies to monitor economic performance and guide policy decisions.</p>
+
+  <details class="sub-topic">
+    <summary><h3>A. Consumer Price Index (CPI)</h3></summary>
+    <p>Also known as the <span class="keyword">Cost of Living Index</span>, CPI measures the average change in retail prices paid by consumers for a specified basket of goods and services.</p>
+    <div class="example-block">
+      $$\text{CPI} = \frac{\sum WR}{\sum W}$$
+    </div>
+    <p>Where $W$ is the weight and $R = \frac{P_1}{P_0} \times 100$ is the price relative.</p>
+    
+    <h4>Major CPI Series in India:</h4>
+    <ul>
+      <li>CPI for Industrial Workers (CPI-IW)</li>
+      <li>CPI for Agricultural Labourers (CPI-AL)</li>
+      <li>CPI for Rural Labourers (CPI-RL)</li>
+      <li>All-India Rural, Urban, and Combined CPI (Base: 2012 = 100)</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>B. Wholesale Price Index (WPI)</h3></summary>
+    <p>The <span class="keyword">Wholesale Price Index</span> measures changes in the general price level of goods traded at the wholesale stage. Unlike CPI, it does not include services.</p>
+    <ul>
+      <li><strong>Base Year:</strong> 2011-12 = 100</li>
+      <li><strong>Major Groups & Weights:</strong>
+        <table>
+          <thead>
+            <tr>
+              <th>Major Groups</th>
+              <th>Weight (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primary Articles</td>
+              <td>22.62</td>
+            </tr>
+            <tr>
+              <td>Fuel and Power</td>
+              <td>13.15</td>
+            </tr>
+            <tr>
+              <td>Manufactured Products</td>
+              <td>64.23</td>
+            </tr>
+            <tr>
+              <td><strong>All Commodities (Headline Inflation)</strong></td>
+              <td><strong>100.00</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><span class="keyword">Core Inflation:</span> A measure of inflation that excludes volatile items like food and fuel (comprising about 55% of the WPI weight).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>C. Index of Industrial Production (IIP)</h3></summary>
+    <p>The <span class="keyword">IIP</span> is a quantity index that measures changes in the volume of industrial production in the economy.</p>
+    <ul>
+      <li><strong>Base Year:</strong> 2011-12 = 100</li>
+      <li><strong>Formula (Laspeyre's variant):</strong>
+        <div class="example-block">
+          $$\text{IIP}_{01} = \frac{\sum q_{i1} W_i}{\sum W_i} \times 100$$
+        </div>
+      </li>
+      <li><strong>Sectoral Classification:</strong> Mining (14.4%), Manufacturing (77.6%), and Electricity (8.0%).</li>
+      <li><strong>Eight Core Industries:</strong> Coal, crude oil, natural gas, refinery products, fertilizers, steel, cement, and electricity. These have a combined weight of <span class="keyword">40.27%</span> in the IIP.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>D. SENSEX</h3></summary>
+    <p>The <span class="keyword">SENSEX</span> (Bombay Stock Exchange Sensitive Index) is the benchmark stock market index of India. It consists of <span class="keyword">30 stocks</span> representing 13 key sectors of the economy, with 1978-79 as its base period.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">4. Issues in Constructing Index Numbers</summary>
+  <p>Constructing a reliable index number requires addressing several methodological challenges:</p>
+  <ol>
+    <li><strong>Purpose of the Index:</strong> The design, selection of items, and weights must align with the specific objective (e.g., measuring retail inflation vs. wholesale inflation).</li>
+    <li><strong>Selection of Items:</strong> It is impossible to include all items; hence, a representative sample of commodities must be selected based on the target population's consumption patterns.</li>
+    <li><strong>Choice of Base Year:</strong> The base year should be a normal year, free from extreme events like wars, natural disasters, or hyperinflation, and should not belong to the too-distant past.</li>
+    <li><strong>Choice of Formula:</strong> The selection of aggregative or relative formulas (and the choice of weights) depends on data availability and the desired precision.</li>
+    <li><strong>Reliability of Data:</strong> The accuracy of the index depends heavily on the quality and reliability of the primary or secondary price data collected.</li>
+  </ol>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5. Economic Applications of Index Numbers</summary>
+  <p>Index numbers are indispensable tools for macroeconomic analysis and policy formulation:</p>
+  <ul>
+    <li><strong>Measuring Inflation:</strong> Weekly or monthly inflation rates are calculated using WPI or CPI.
+      <div class="example-block">
+        $$\text{Weekly Inflation Rate} = \frac{X_t - X_{t-1}}{X_{t-1}} \times 100$$
+      </div>
+      Where $X_t$ and $X_{t-1}$ refer to the WPI for the $t^{\text{th}}$ and $(t-1)^{\text{th}}$ weeks respectively.
+    </li>
+    <li><strong>Purchasing Power of Money:</strong> Measures the value of a currency unit in terms of its buying capacity relative to the base period.
+      <div class="example-block">
+        $$\text{Purchasing Power of Money} = \frac{1}{\text{Cost of Living Index}}$$
+      </div>
+    </li>
+    <li><strong>Deflating Nominal Wages (Real Wage Calculation):</strong> Used to adjust nominal wages for inflation to determine actual purchasing power.
+      <div class="example-block">
+        $$\text{Real Wage} = \frac{\text{Money Wage}}{\text{Cost of Living Index}} \times 100$$
+      </div>
+    </li>
+    <li><strong>Policy Formulation:</strong> CPI guides dearness allowance (DA) adjustments for employees, while WPI and IIP guide monetary and fiscal interventions.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-06-correlation.html";
+      } else {
+        window.location.href = "12-chapter-08-use-of-statistical-tools.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
