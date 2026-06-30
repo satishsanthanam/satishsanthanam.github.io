@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 121 — Chapter 2: Principles of Management</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 121 — Chapter 2: Principles of Management</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Concept of Management Principles</summary><p>Managerial pursuits in modern organizations are driven by principles that serve as broad guidelines for stating vision and achieving goals. Unlike principles of pure science, management principles are flexible, dealing with dynamic human behavior and technology.</p><div class="example-block"><strong>Business Case Title:</strong> Guiding Principles of Toyota Motor Corporation<br><strong>Corporate Context/Problem:</strong> The need for a unified global vision and operational guidelines to sustain growth across diverse international markets.<br><strong>Strategic Action Taken:</strong> Toyota established seven core business principles, including honoring the law of every nation, respecting local cultures, providing clean and safe products, fostering a creative corporate culture, and pursuing global harmony.<br><strong>Managerial Inference:</strong> Clear, well-defined principles provide the necessary framework for long-term strategic planning and ethical global operations.</div><details class="sub-topic"><summary><h3>Distinction of Principles</h3></summary><ul><li><span class="keyword">Principles vs. Techniques:</span> Techniques are sequential procedures or methods to accomplish goals, whereas principles are guidelines for decision-making while practicing those techniques.</li><li><span class="keyword">Principles vs. Values:</span> Values are acceptable or desirable moral guidelines for behavior in society, while management principles are technical, research-backed guidelines formed specifically for work situations.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Nature of Principles of Management</summary><p>The nature of management principles refers to their essential qualities and characteristics. They are derived from deep observation, experimentation, and personal experiences of managers.</p><ul><li><strong>Universal Applicability:</strong> Applicable to all types of organizations (business, non-business, public, private, small, or large), though the extent of applicability varies.</li><li><strong>General Guidelines:</strong> They are guidelines to action but do not provide ready-made, straitjacket solutions to complex, dynamic real-world business problems.</li><li><strong>Formed by Practice and Experimentation:</strong> Developed through collective wisdom, experience, and systematic experimentation over time.</li><li><strong>Flexible:</strong> They are not rigid prescriptions and can be modified by managers to suit prevailing situations.</li><li><strong>Mainly Behavioural:</strong> Aimed at influencing and guiding human behavior, establishing better relationships between human and material resources.</li><li><strong>Cause and Effect Relationships:</strong> They establish a link between an action and its expected result, aiding predictive decision-making.</li><li><strong>Contingent:</strong> Their application is dependent upon the prevailing situation at a particular point in time.</li></ul></details><details class="topic-box"><summary class="topic-title">Significance of Principles of Management</summary><p>The significance of management principles lies in their utility and the insights they provide to managers to improve operational efficiency.</p><ul><li><strong>Providing Managers with Useful Insights into Reality:</strong> Increases managerial efficiency by enabling them to learn from past mistakes and solve recurring problems quickly.</li><li><strong>Optimum Utilisation of Resources and Effective Administration:</strong> Limits managerial discretion, ensuring decisions are free from personal prejudices and resources are put to optimum use with minimum cost.</li><li><strong>Scientific Decisions:</strong> Emphasizes logic over blind faith, ensuring decisions are thoughtful, realistic, and objective.</li><li><strong>Meeting Changing Environment Requirements:</strong> Being flexible, they help managers adapt to dynamic business environments (e.g., outsourcing non-core activities).</li><li><strong>Fulfilling Social Responsibility:</strong> Guides businesses in meeting ethical and social obligations (e.g., equity in treatment and fair wages).</li><li><strong>Management Training, Education, and Research:</strong> Form the core of management theory, used as the basis for professional courses like MBA and BBA.</li></ul></details><details class="topic-box"><summary class="topic-title">Taylor's Scientific Management</summary><p>Propounded by <span class="keyword">Fredrick Winslow Taylor</span>, Scientific Management involves analyzing work scientifically to find the "one best way" of doing it, replacing traditional rule-of-thumb methods.</p><details class="sub-topic"><summary><h3>Principles of Scientific Management</h3></summary><ol><li><strong>Science, Not Rule of Thumb:</strong> Developing a scientific method for each element of a job to replace old trial-and-error approaches.</li><li><strong>Harmony, Not Discord:</strong> Fostering complete harmony between management and workers, leading to a <span class="keyword">Mental Revolution</span> where both realize their mutual importance.</li><li><strong>Cooperation, Not Individualism:</strong> Replacing competition with cooperation. Management should involve workers in decision-making, and workers should desist from going on strike.</li><li><strong>Development of Each and Every Person to His or Her Greatest Efficiency and Prosperity:</strong> Scientific selection of employees and providing systematic training to build competencies.</li></ol></details><details class="sub-topic"><summary><h3>Techniques of Scientific Management</h3></summary><ul><li><span class="keyword">Functional Foremanship:</span> Separation of planning and execution. Taylor suggested eight specialists to guide workers:<ul><li><strong>Planning Incharge:</strong> Instruction Card Clerk, Route Clerk, Time and Cost Clerk, Disciplinarian.</li><li><strong>Production Incharge:</strong> Speed Boss, Gang Boss, Repair Boss, Inspector.</li></ul></li><li><span class="keyword">Standardisation and Simplification of Work:</span> Standardisation refers to setting benchmarks for every business activity. Simplification aims at eliminating superfluous sizes, varieties, and dimensions.</li><li><span class="keyword">Method Study:</span> Finding the one best way of performing a job to minimize cost and maximize quality.</li><li><span class="keyword">Motion Study:</span> Studying movements like lifting, putting objects, and sitting to eliminate unproductive movements.</li><li><span class="keyword">Time Study:</span> Determining the standard time taken to perform a well-defined job using time-measuring devices.</li><li><span class="keyword">Fatigue Study:</span> Determining the amount and frequency of rest intervals needed to regain stamina.</li><li><span class="keyword">Differential Piece Wage System:</span> Rewarding efficient workers by paying a higher wage rate for output produced at or above standard, and a lower rate for sub-standard output. For example, if standard is 10 units:<ul><li>Efficient worker (11 units) earns: $11 \times \text{Rs. } 50 = \text{Rs. } 550$</li><li>Inefficient worker (9 units) earns: $9 \times \text{Rs. } 40 = \text{Rs. } 360$</li></ul></li></ul></details></details><details class="topic-box"><summary class="topic-title">Fayol's Principles of Management</summary><p>Developed by <span class="keyword">Henri Fayol</span>, known as the "Father of General Management", these 14 principles focus on top-down administrative efficiency.</p><ol><li><strong>Division of Work:</strong> Dividing work into small tasks to promote specialization and efficiency.</li><li><strong>Authority and Responsibility:</strong> Ensuring a balance between authority (right to give orders) and responsibility (obligation to perform).</li><li><strong>Discipline:</strong> Obedience to organizational rules and employment agreements, supported by good superiors and fair agreements.</li><li><strong>Unity of Command:</strong> An employee should receive orders from, and be accountable to, only one superior to avoid confusion.</li><li><strong>Unity of Direction:</strong> All units of an organization should move towards the same objectives under one head and one plan.</li><li><strong>Subordination of Individual Interest to General Interest:</strong> The interests of the organization must supersede the interests of any individual employee.</li><li><strong>Remuneration of Employees:</strong> Overall pay and compensation should be fair, equitable, and within the paying capacity of the company.</li><li><strong>Centralisation and Decentralisation:</strong> Balancing the concentration of decision-making authority (centralisation) with its dispersal (decentralisation).</li><li><strong>Scalar Chain:</strong> The formal line of authority from highest to lowest ranks. In emergencies, a shortcut called <span class="keyword">Gang Plank</span> can be used for direct communication between equal levels.</li><li><strong>Order:</strong> A place for everything (everyone) and everything (everyone) in its place to ensure maximum efficiency.</li><li><strong>Equity:</strong> Kindliness and justice in the behavior of managers towards workers to secure loyalty.</li><li><strong>Stability of Personnel:</strong> Minimizing employee turnover by providing a stable tenure to show results.</li><li><strong>Initiative:</strong> Encouraging workers to conceive and execute plans for improvement.</li><li><strong>Esprit De Corps:</strong> Promoting team spirit, unity, and harmony, replacing 'I' with 'We' in managerial conversations.</li></ol></details><details class="topic-box"><summary class="topic-title">Comparative Analysis</summary><details class="sub-topic"><summary><h3>Unity of Command vs. Unity of Direction</h3></summary><table><thead><tr><th>Basis</th><th>Unity of Command</th><th>Unity of Direction</th></tr></thead><tbody><tr><td><strong>Meaning</strong></td><td>One subordinate should receive orders from and be responsible to only one superior.</td><td>Each group of activities having the same objective must have one head and one plan.</td></tr><tr><td><strong>Aim</strong></td><td>Prevents dual subordination.</td><td>Prevents overlapping of activities.</td></tr><tr><td><strong>Implications</strong></td><td>Affects an individual employee.</td><td>Affects the entire organisation.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Fayol vs. Taylor</h3></summary><table><thead><tr><th>Basis of Difference</th><th>Henri Fayol</th><th>F. W. Taylor</th></tr></thead><tbody><tr><td><strong>Perspective</strong></td><td>Top level of management.</td><td>Shop floor level of a factory.</td></tr><tr><td><strong>Unity of Command</strong></td><td>Staunch proponent.</td><td>Did not feel it was important (advocated Functional Foremanship).</td></tr><tr><td><strong>Applicability</strong></td><td>Applicable universally.</td><td>Applicable to specialised situations.</td></tr><tr><td><strong>Basis of Formation</strong></td><td>Personal experience.</td><td>Observations and experimentation.</td></tr><tr><td><strong>Focus</strong></td><td>Improving overall administration.</td><td>Increasing productivity.</td></tr><tr><td><strong>Personality</strong></td><td>Practitioner.</td><td>Scientist.</td></tr><tr><td><strong>Expression</strong></td><td>General Theory of Administration.</td><td>Scientific Management.</td></tr></tbody></table></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 121 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-01-nature-and-significance-of-managem.html";
+      } else {
+        window.location.href = "21-chapter-03-business-environment.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
