@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 111 — Chapter 2: Theory Base of Accounting</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 111 — Chapter 2: Theory Base of Accounting</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Need for Theory Base</summary><p>Accounting is concerned with recording, classifying, and summarising financial transactions and events, and interpreting their results. To make this financial information meaningful, reliable, and comparable for both internal and external users, a consistent <span class="keyword">theory base of accounting</span> is essential.</p><p>Comparability is required for:</p><ul><li><strong>Inter-firm comparisons:</strong> Comparing the performance of one firm against other firms in the same industry.</li><li><strong>Inter-period comparisons:</strong> Comparing a firm's current performance with its own performance in previous years.</li></ul></details><details class="topic-box"><summary class="topic-title">2.1 Generally Accepted Accounting Principles (GAAP)</summary><p><span class="keyword">Generally Accepted Accounting Principles (GAAP)</span> refer to the rules, guidelines, and conventions adopted for recording and reporting business transactions to bring uniformity and consistency in financial statements.</p><ul><li>These principles have evolved over time based on experiences, customs, and regulations by professional bodies like the <span class="keyword">Institute of Chartered Accountants of India (ICAI)</span>.</li><li>They are not static; they change with legal, social, and economic environments.</li></ul></details><details class="topic-box"><summary class="topic-title">2.2 Basic Accounting Concepts</summary><p>These are the fundamental ideas or basic assumptions underlying the theory and practice of financial accounting.</p><details class="sub-topic"><summary><h3>2.2.1 Business Entity Concept</h3></summary><p>This concept assumes that a business has a distinct and separate entity from its owners. For accounting purposes, the business and its owners are treated as two separate entities.</p><ul><li>Capital introduced by the owner is treated as a liability of the business to the owner.</li><li>Personal transactions of the owner are not recorded in the books of the business unless they involve inflow or outflow of business funds.</li><li>Personal expenses paid from business funds are treated as <span class="keyword">Drawings</span>.</li></ul></details><details class="sub-topic"><summary><h3>2.2.2 Money Measurement Concept</h3></summary><p>Only those transactions and events that can be expressed in terms of money are recorded in the books of accounts.</p><ul><li>Qualitative aspects like the capabilities of human resources, creativity, or management quality are not recorded.</li><li>Transactions are recorded in monetary units (e.g., Rupees) rather than physical units (e.g., acres, tons, numbers).</li><li><strong>Limitation:</strong> The value of money is assumed to remain stable, ignoring the effects of inflation and price level changes.</li></ul></details><details class="sub-topic"><summary><h3>2.2.3 Going Concern Concept</h3></summary><p>It is assumed that a business firm will continue its operations indefinitely and will not be liquidated or wound up in the foreseeable future. This provides the basis for showing the value of assets in the balance sheet rather than their current market realizable value.</p></details><details class="sub-topic"><summary><h3>2.2.4 Accounting Period Concept</h3></summary><p>The life of an enterprise is divided into smaller, regular intervals (usually one year) called the <span class="keyword">Accounting Period</span> to ascertain its financial performance and position at regular intervals.</p></details><details class="sub-topic"><summary><h3>2.2.5 Cost Concept</h3></summary><p>Assets are recorded in the books of accounts at their purchase price (historical cost), which includes cost of acquisition, transportation, installation, and making the asset ready for use.</p><ul><li>The recorded value does not change with changes in market value.</li><li><strong>Limitation:</strong> It may not show the true current worth of the business during periods of high inflation.</li></ul></details><details class="sub-topic"><summary><h3>2.2.6 Dual Aspect Concept</h3></summary><p>Every business transaction has a dual or two-fold effect and must be recorded in at least two accounts. This forms the foundation of the <span class="keyword">Double Entry System</span>.</p><p>The fundamental accounting equation is:</p><div class="example-block">$$\text{Assets} = \text{Liabilities} + \text{Capital}$$</div></details><details class="sub-topic"><summary><h3>2.2.7 Revenue Recognition (Realisation) Concept</h3></summary><p>Revenue is assumed to be realized when a legal right to receive it arises, i.e., when goods are sold or services are rendered, regardless of when the actual cash is received.</p></details><details class="sub-topic"><summary><h3>2.2.8 Matching Concept</h3></summary><p>Expenses incurred in an accounting period must be matched with the revenues earned during that same period to determine the true profit or loss.</p></details><details class="sub-topic"><summary><h3>2.2.9 Full Disclosure Concept</h3></summary><p>All material and relevant facts concerning the financial performance and position of an enterprise must be fully and completely disclosed in the financial statements and accompanying footnotes.</p></details><details class="sub-topic"><summary><h3>2.2.10 Consistency Concept</h3></summary><p>Accounting policies and practices should remain uniform and consistent from one period to another to ensure comparability of financial statements.</p></details><details class="sub-topic"><summary><h3>2.2.11 Conservatism (Prudence) Concept</h3></summary><p>This concept follows the policy of "playing safe". It states that all anticipated losses should be recorded, but all unrealized gains or profits should be ignored.</p><ul><li>Example: Valuing closing stock at cost or market value, whichever is lower.</li><li>Example: Creating a provision for doubtful debts.</li></ul></details><details class="sub-topic"><summary><h3>2.2.12 Materiality Concept</h3></summary><p>Accounting should focus on material facts. An item is considered material if its knowledge would influence the decision of an informed user of financial statements.</p></details><details class="sub-topic"><summary><h3>2.2.13 Objectivity Concept</h3></summary><p>Transactions should be recorded in an objective manner, free from the personal bias of accountants. This is achieved by supporting every transaction with verifiable documents or vouchers (e.g., cash receipts, invoices).</p></details></details><details class="topic-box"><summary class="topic-title">2.3 Systems of Accounting</summary><p>There are two primary systems of recording transactions:</p><ul><li><strong>Double Entry System:</strong> A complete system where both aspects (debit and credit) of every transaction are recorded. It is highly reliable, accurate, and minimizes fraud.</li><li><strong>Single Entry System:</strong> An incomplete and unsystematic system where only personal accounts and cash books are maintained. It is not reliable for large organizations.</li></ul></details><details class="topic-box"><summary class="topic-title">2.4 Basis of Accounting</summary><p>There are two main approaches to the timing of recognition of revenues and costs:</p><ul><li><strong>Cash Basis:</strong> Transactions are recorded only when cash is actually received or paid.</li><li><strong>Accrual Basis:</strong> Revenues and costs are recognized in the period in which they occur, rather than when cash is received or paid. This is the standard and more appropriate basis for matching revenues and expenses.</li></ul></details><details class="topic-box"><summary class="topic-title">2.5 Accounting Standards</summary><p><span class="keyword">Accounting Standards</span> are written policy documents covering the aspects of recognition, measurement, treatment, presentation, and disclosure of accounting transactions in financial statements, issued by an authoritative body like the <span class="keyword">ICAI</span>.</p><p><strong>Benefits:</strong></p><ul><li>Eliminate variations in accounting treatments.</li><li>Improve credibility and comparability of financial statements.</li></ul><p><strong>Limitations:</strong></p><ul><li>Reduce flexibility in applying alternative treatments.</li><li>Cannot override the prevailing laws and statutes of the country.</li></ul></details><details class="topic-box"><summary class="topic-title">Goods and Services Tax (GST)</summary><p><span class="keyword">Goods and Services Tax (GST)</span> is a destination-based tax on the consumption of goods and services, levied at all stages from manufacture to final consumption, with the benefit of input tax credit.</p><p><strong>Components of GST:</strong></p><table><thead><tr><th>Component</th><th>Full Form</th><th>Levied By</th><th>Applicability</th></tr></thead><tbody><tr><td><strong>CGST</strong></td><td>Central Goods and Services Tax</td><td>Central Government</td><td>Intra-State transactions (within the same state)</td></tr><tr><td><strong>SGST</strong></td><td>State Goods and Services Tax</td><td>State Government</td><td>Intra-State transactions (within the same state)</td></tr><tr><td><strong>IGST</strong></td><td>Integrated Goods and Services Tax</td><td>Central Government</td><td>Inter-State transactions (between different states)</td></tr></tbody></table><p><strong>Key Characteristics of GST:</strong></p><ul><li>Common law and procedure throughout the country under a single administration.</li><li>Abolishes multiple indirect taxes (e.g., excise duty, service tax, VAT, luxury tax).</li><li>Removes the cascading effect of taxation (tax on tax).</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 111 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-01-introduction-to-accounting.html";
+      } else {
+        window.location.href = "11-chapter-03-recording-of-transactions-i.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
