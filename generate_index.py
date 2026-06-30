@@ -35,11 +35,18 @@ def parse_class_display(folder_name):
     """
     Parses folder names to support multi-part volumes.
     e.g., "class-8-1" -> "Class 8 (Part 1)"
+          "class-121" -> "Class 12 (Part 1)"
           "class-9"   -> "Class 9"
     """
+    # Fix A1: Matches explicit hyphens like class-11-1
     part_match = re.match(r'^class-(\d+)-(\d+)$', folder_name, re.IGNORECASE)
     if part_match:
         return f"Class {part_match.group(1)} (Part {part_match.group(2)})"
+        
+    # Fix A2: Matches compressed folder names like class-121 or class-122
+    compact_match = re.match(r'^class-(\d{2})(\d+)$', folder_name, re.IGNORECASE)
+    if compact_match:
+        return f"Class {compact_match.group(1)} (Part {compact_match.group(2)})"
         
     single_match = re.match(r'^class-(\d+)$', folder_name, re.IGNORECASE)
     if single_match:
@@ -49,7 +56,9 @@ def parse_class_display(folder_name):
 
 def build_curriculum_tree():
     tree = {}
-    pattern = re.compile(r'^(\d{2})-chapter-(\d{2})-(.+)\.html$')
+    
+    # Fix B: Changed regex to optionally accept part designations natively e.g., '11-1-chapter-' or '11-chapter-'
+    pattern = re.compile(r'^(\d{2})(?:-\d+)?-chapter-(\d{2})-(.+)\.html$')
     
     for root, dirs, files in os.walk(TARGET_DIR):
         dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
@@ -92,7 +101,6 @@ def build_curriculum_tree():
     return tree
 
 def generate_html_file(tree):
-    # FIXED: Restored your clean, modern inline flex nav-bar structure with the right-aligned search box
     html_out = """<!DOCTYPE html>
 <html lang="en">
 <head>

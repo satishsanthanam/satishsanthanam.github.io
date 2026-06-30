@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 (Part 2) — Chapter 5: Geomorphic Processes</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 (Part 2) — Chapter 5: Geomorphic Processes</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Geomorphic Processes</summary><p>The earth's crust is dynamic, moving both vertically and horizontally. The variations in the outer surface of the crust are due to the interplay of internal and external forces.</p><details class="sub-topic"><summary><h3>Endogenic vs. Exogenic Forces</h3></summary><p>The earth's surface is continuously shaped by two opposing forces:</p><ul><li><span class="keyword">Endogenic Forces</span>: Internal forces originating from within the earth that continuously elevate or build up parts of the earth's surface (land-building forces).</li><li><span class="keyword">Exogenic Forces</span>: External forces originating within the earth's atmosphere, driven basically by solar energy, that wear down relief variations (land-wearing forces).</li></ul><p>The phenomenon of wearing down relief variations of the surface of the earth through erosion is known as <span class="keyword">gradation</span>. It consists of <span class="keyword">degradation</span> (wearing down of elevations) and <span class="keyword">aggradation</span> (filling up of basins/depressions).</p></details><details class="sub-topic"><summary><h3>Geomorphic Processes and Agents</h3></summary><p>The endogenic and exogenic forces causing physical stresses and chemical actions on earth materials and bringing about changes in the configuration of the surface of the earth are known as <span class="keyword">geomorphic processes</span>.</p><p>A <span class="keyword">geomorphic agent</span> is any mobile medium of nature (like running water, groundwater, glaciers, wind, waves, and currents) capable of acquiring and transporting earth materials.</p><p>Gravity is a directional force that activates all downslope movements of matter and causes stresses on earth materials, making it a fundamental force driving geomorphic processes.</p></details></details><details class="topic-box"><summary class="topic-title">Endogenic Processes</summary><p>The energy emanating from within the earth is the main force behind endogenic geomorphic processes. This energy is generated by radioactivity, rotational and tidal friction, and primordial heat.</p><details class="sub-topic"><summary><h3>Diastrophism</h3></summary><p>All processes that move, elevate, or build up portions of the earth's crust come under <span class="keyword">diastrophism</span>. They include:</p><ol><li><span class="keyword">Orogenic processes</span>: Mountain building through severe folding, affecting long and narrow belts of the crust.</li><li><span class="keyword">Epeirogenic processes</span>: Continental building involving uplift or warping of large parts of the earth's crust.</li><li><span class="keyword">Earthquakes</span>: Local, relatively minor crustal movements.</li><li><span class="keyword">Plate tectonics</span>: Horizontal movements of crustal plates.</li></ol></details><details class="sub-topic"><summary><h3>Volcanism</h3></summary><p><span class="keyword">Volcanism</span> includes the movement of molten rock (magma) onto or toward the earth's surface, forming intrusive and extrusive volcanic features.</p></details></details><details class="topic-box"><summary class="topic-title">Exogenic Processes</summary><p>Exogenic processes derive their energy from the atmosphere (determined by solar energy) and from gradients created by tectonic factors.</p><details class="sub-topic"><summary><h3>Stress and Denudation</h3></summary><p>Force applied per unit area is called <span class="keyword">stress</span>. In solids, stress is produced by pushing or pulling, inducing deformation. <span class="keyword">Shear stresses</span> are separating forces acting along the faces of earth materials that break rocks and cause slippage.</p><div class="example-block">$$\text{Stress} = \frac{\text{Force}}{\text{Area}}$$</div><p>All exogenic geomorphic processes are covered under the general term <span class="keyword">denudation</span>, which means to strip off or uncover. It includes:</p><ul><li>Weathering</li><li>Mass wasting/movements</li><li>Erosion</li><li>Transportation</li></ul></details></details><details class="topic-box"><summary class="topic-title">Weathering</summary><p><span class="keyword">Weathering</span> is the mechanical disintegration and chemical decomposition of rocks through the actions of various elements of weather and climate. It is an in-situ or on-site process with little to no motion of materials.</p><details class="sub-topic"><summary><h3>Types of Weathering</h3></summary><table><thead><tr><th>Weathering Type</th><th>Key Processes</th><th>Primary Agents / Forces</th></tr></thead><tbody><tr><td><strong>Chemical</strong></td><td>Solution, Carbonation, Hydration, Oxidation, Reduction</td><td>Water, oxygen, carbon dioxide, acids, heat</td></tr><tr><td><strong>Physical / Mechanical</strong></td><td>Unloading, Thermal Expansion, Frost Wedging, Salt Weathering</td><td>Gravity, temperature changes, crystal growth, water pressure</td></tr><tr><td><strong>Biological</strong></td><td>Burrowing, Wedging, Organic Acid Action</td><td>Plants, animals, humans, microorganisms</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Special Effects and Significance of Weathering</h3></summary><p><span class="keyword">Exfoliation</span> is a result of physical weathering (unloading and thermal expansion) where curved sheets of rock flake off, resulting in smooth, rounded surfaces like exfoliation domes.</p><p>Significance of Weathering:</p><ul><li>Breaks down rocks to form regolith and soils.</li><li>Aids mass wasting, erosion, and reduction of relief.</li><li>Leads to <span class="keyword">enrichment</span>, where valuable minerals (iron, manganese, aluminium, copper) are concentrated through the leaching of soluble materials.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Mass Movements</summary><p>These movements transfer mass of rock debris down slopes under the direct influence of gravity. Weathering is not a prerequisite but aids mass movements.</p><details class="sub-topic"><summary><h3>Types of Mass Movements</h3></summary><ul><li><strong>Heave</strong>: Heaving up of soils due to frost growth or other causes.</li><li><strong>Flow</strong>: Rapid downslope movement of water-saturated clay or silt.</li><li><strong>Slide</strong>: Rapid sliding of dry, detached masses along a plane.</li></ul></details><details class="sub-topic"><summary><h3>Landslides</h3></summary><p><span class="keyword">Landslides</span> are rapid and perceptible movements of relatively dry materials. Types include:</p><ul><li><span class="keyword">Slump</span>: Slipping of rock debris with a backward rotation.</li><li><span class="keyword">Debris slide</span>: Rapid rolling or sliding of earth debris without backward rotation.</li><li><span class="keyword">Debris fall</span>: Free fall of earth debris from a vertical face.</li><li><span class="keyword">Rockslide</span>: Sliding of individual rock masses down bedding, joint, or fault surfaces.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Erosion, Deposition, and Soil Formation</summary><details class="sub-topic"><summary><h3>Erosion and Deposition</h3></summary><p><span class="keyword">Erosion</span> involves the acquisition and transportation of rock debris by geomorphic agents like running water, groundwater, glaciers, wind, and waves.</p><p><span class="keyword">Deposition</span> is a consequence of erosion. When erosional agents lose their velocity and energy on gentler slopes, materials settle, filling up depressions.</p></details><details class="sub-topic"><summary><h3>Soil Formation (Pedogenesis)</h3></summary><p>Soil is a dynamic medium in which chemical, physical, and biological activities go on constantly. Soil formation depends first on weathering, which provides the basic input (weathering mantle).</p><table><thead><tr><th>Factor Type</th><th>Factors</th><th>Role / Description</th></tr></thead><tbody><tr><td><strong>Passive Factors</strong></td><td>Parent Material, Topography, Time</td><td>Provide the base structure, slope conditions, and duration for soil maturation.</td></tr><tr><td><strong>Active Factors</strong></td><td>Climate, Biological Activity</td><td>Drive the chemical, physical, and organic processes of soil development.</td></tr></tbody></table></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 11 (Part 2) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-2-chapter-04-distribution-of-oceans-and-contine.html";
+      } else {
+        window.location.href = "11-2-chapter-06-landforms-and-their-evolution.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
