@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 1) — Chapter 3: Money and Banking</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 1) — Chapter 3: Money and Banking</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Functions of Money</summary><p>In a modern economy, money acts as a universally accepted instrument to facilitate exchange. Without money, economic transactions rely on direct barter, which is highly inefficient.</p><details class="sub-topic"><summary><h3>The Barter System &amp; Its Deficiencies</h3></summary><p>Economic exchanges without the mediation of money are called <span class="keyword">barter exchanges</span>. This system has several major drawbacks:</p><ul><li><span class="keyword">Double Coincidence of Wants</span>: Transactions can only occur if both parties have a mutual and matching demand for each other's surplus goods. This requirement imposes high search costs.</li><li><span class="keyword">Perishability &amp; Storage Costs</span>: Many commodities (like agricultural produce) are perishable and expensive to store, making them poor vehicles for carrying wealth forward in time.</li><li><span class="keyword">Indivisibility of Goods</span>: Certain assets cannot be easily divided to match the exact value of smaller transactions.</li></ul></details><details class="sub-topic"><summary><h3>Core Functions of Money</h3></summary><p>Money overcomes the limitations of barter by performing three primary functions:</p><ol><li><span class="keyword">Medium of Exchange</span>: Money acts as an intermediary, allowing individuals to sell their produce for money and use it to buy whatever they need, eliminating the need for a double coincidence of wants.</li><li><span class="keyword">Unit of Account</span>: Money serves as a common measure of value. The value of all goods and services can be expressed in monetary units, allowing for the calculation of relative prices (e.g., if a pen is Rs 10 and a pencil is Rs 2, a pen is worth 5 pencils).</li><li><span class="keyword">Store of Value</span>: Money allows individuals to store wealth for future use. It is non-perishable, has low storage costs, and is universally acceptable at any point in time. However, its efficiency as a store of value depends on the stability of the general price level.</li></ol></details><details class="sub-topic"><summary><h3>The Digital Transition &amp; Cashless Economy</h3></summary><p>Modern economies are increasingly moving toward a <span class="keyword">cashless society</span>, where financial transactions are conducted digitally rather than through physical banknotes or coins. In India, key initiatives driving financial inclusion and digital payments include:</p><ul><li>Jan Dhan Accounts</li><li>Aadhaar Enabled Payment Systems (AEPS)</li><li>e-Wallets and mobile payment applications</li><li>National Financial Switch (NFS)</li></ul></details></details><details class="topic-box"><summary class="topic-title">Demand for Money</summary><p>The demand for money represents the desire of individuals and firms to hold liquid cash balances instead of interest-earning assets. This is driven by two primary motives.</p><details class="sub-topic"><summary><h3>The Transaction Motive</h3></summary><p>People hold cash to carry out day-to-day transactions because receipt of income and expenditure patterns do not perfectly align. The transaction demand for money ($M^d_T$) is positively related to the level of nominal income and real GDP:</p><div class="example-block">$$M^d_T = k 	imes T$$</div><p>Where $T$ is the total value of transactions and $k$ is a positive fraction. This can also be expressed in terms of the <span class="keyword">velocity of circulation of money</span> ($v$), which is the number of times a unit of money changes hands during a unit period:</p><div class="example-block">$$v 	imes M^d_T = T 	ext{ (where } v = rac{1}{k}	ext{)}$$</div><p>In terms of nominal GDP ($PY$), the transaction demand is written as:</p><div class="example-block">$$M^d_T = kPY$$</div></details><details class="sub-topic"><summary><h3>The Speculative Motive</h3></summary><p>An individual can hold wealth in the form of money or <span class="keyword">bonds</span>. Bonds yield interest but their market price fluctuates. The price of a bond is inversely related to the market rate of interest:</p><div class="example-block">$$PV = rac{	ext{Coupon}}{(1+r)} + rac{	ext{Coupon} + 	ext{Principal}}{(1+r)^2}$$</div><p>Where $PV$ is the present value (market price) of the bond and $r$ is the market interest rate. Speculative demand for money ($M^d_S$) arises because wealth holders speculate on future interest rate movements:</p><ul><li>When interest rates are high, bond prices are low. People expect interest rates to fall (and bond prices to rise), so they convert cash into bonds. Speculative demand for money is low.</li><li>When interest rates are low, bond prices are high. People expect interest rates to rise (and bond prices to fall), so they sell bonds and hold cash to avoid capital losses. Speculative demand for money is high.</li></ul><p>The speculative demand function is formulated as:</p><div class="example-block">$$M^d_S = rac{r_{	ext{max}} - r}{r - r_{	ext{min}}}$$</div></details><details class="sub-topic"><summary><h3>The Liquidity Trap</h3></summary><p>If the market rate of interest falls to an extremely low level ($r = r_{	ext{min}}$), everyone expects it to rise in the future. Nobody wants to hold bonds, and everyone prefers to hold cash. At this point, the speculative demand for money becomes infinitely elastic. This extreme state is called a <span class="keyword">liquidity trap</span>.</p></details><details class="sub-topic"><summary><h3>Aggregate Money Demand</h3></summary><p>Total demand for money ($M^d$) is the sum of transaction demand and speculative demand:</p><div class="example-block">$$M^d = M^d_T + M^d_S = kPY + rac{r_{	ext{max}} - r}{r - r_{	ext{min}}}$$</div></details></details><details class="topic-box"><summary class="topic-title">Money Supply &amp; Credit Creation</summary><p>Money supply is a stock variable representing the total stock of money in circulation among the public at a particular point in time. It is created by the joint action of the Central Bank and Commercial Banks.</p><details class="sub-topic"><summary><h3>The Banking Institutions</h3></summary><ul><li><span class="keyword">Central Bank</span>: The apex monetary authority (e.g., the Reserve Bank of India, established in 1935). It issues currency, acts as a banker to the government, controls the money supply, and serves as the custodian of foreign exchange reserves.</li><li><span class="keyword">Commercial Banks</span>: Financial institutions that accept deposits from the public and lend them to borrowers. The difference between the interest rate charged to borrowers and the interest rate paid to depositors is called the <span class="keyword">spread</span>, which constitutes the bank's profit.</li></ul></details><details class="sub-topic"><summary><h3>The Process of Credit Creation</h3></summary><p>Commercial banks can create credit (money) far in excess of their initial deposits because they operate on the assumption that not all depositors will withdraw their funds at the same time. When a bank grants a loan, it does not give cash; instead, it opens a demand deposit account in the borrower's name, thereby expanding the money supply.</p><p>The limits to credit creation are determined by the Central Bank through reserve requirements:</p><ul><li><span class="keyword">Cash Reserve Ratio (CRR)</span>: The percentage of deposits that commercial banks must keep as cash reserves with the Central Bank.</li><li><span class="keyword">Statutory Liquidity Ratio (SLR)</span>: The percentage of deposits that banks must maintain in liquid assets (cash, gold, or approved securities) with themselves.</li></ul></details><details class="sub-topic"><summary><h3>The Money Multiplier</h3></summary><p>The total amount of deposits that the banking system can create from an initial deposit is determined by the <span class="keyword">money multiplier</span>:</p><div class="example-block">$$	ext{Money Multiplier} = rac{1}{	ext{Cash Reserve Ratio (CRR)}}$$</div><p>For example, if the CRR is 20% ($0.2$), the money multiplier is $5$. An initial deposit of Rs 100 can support total deposits of Rs 500 ($5 	imes 100$), allowing the bank to extend loans up to Rs 400.</p><table><thead><tr><th>Round</th><th>Deposit in Bank (Rs)</th><th>Required Reserve (20%) (Rs)</th><th>Loan Made by Bank (Rs)</th></tr></thead><tbody><tr><td>1</td><td>100.00</td><td>20.00</td><td>80.00</td></tr><tr><td>2</td><td>180.00</td><td>36.00</td><td>64.00</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>Last</td><td>500.00</td><td>100.00</td><td>400.00</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Policy Tools to Control Money Supply</summary><p>The Reserve Bank of India (RBI) regulates the money supply and credit availability in the economy using quantitative and qualitative instruments.</p><details class="sub-topic"><summary><h3>Quantitative Tools</h3></summary><p>These tools control the overall volume of credit and money supply in the economy:</p><ul><li><span class="keyword">Bank Rate</span>: The rate at which the Central Bank lends long-term funds to commercial banks. Raising the Bank Rate makes borrowing expensive for commercial banks, leading to higher lending rates and a contraction in credit.</li><li><span class="keyword">Open Market Operations (OMO)</span>: The buying and selling of government securities by the Central Bank in the open market. Buying securities injects liquidity into the banking system, while selling securities absorbs liquidity.</li><li><span class="keyword">Liquidity Adjustment Facility (LAF)</span>: Includes short-term lending and borrowing rates:<ul><li><span class="keyword">Repo Rate</span>: The rate at which the RBI lends short-term money to commercial banks against government securities.</li><li><span class="keyword">Reverse Repo Rate</span>: The rate at which the RBI borrows short-term money from commercial banks.</li></ul></li><li><span class="keyword">Variable Reserve Ratios</span>: Adjusting the CRR and SLR. Raising these ratios reduces the credit-creation capacity of banks, while lowering them expands it.</li></ul></details><details class="sub-topic"><summary><h3>Qualitative Tools</h3></summary><p>These tools regulate the direction of credit to specific sectors of the economy:</p><ul><li><span class="keyword">Margin Requirements</span>: The difference between the market value of a security offered for a loan and the loan amount granted. Raising margin requirements discourages borrowing against that security.</li><li><span class="keyword">Moral Suasion</span>: Informal persuasion, advice, and directives issued by the Central Bank to commercial banks to align their lending policies with national economic goals.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Measures of Money Supply &amp; Demonetisation</summary><p>The RBI publishes four alternative measures of money supply, categorized by their degree of liquidity.</p><details class="sub-topic"><summary><h3>Alternative Measures of Money Supply</h3></summary><p>The measures are defined as follows:</p><ul><li><strong>$M_1$ (Narrow Money)</strong>: Most liquid, easiest for transactions. <div class="example-block">$$M_1 = 	ext{CU} + 	ext{DD}$$</div> Where $	ext{CU}$ is currency (notes + coins) held by the public, and $	ext{DD}$ is net demand deposits held by commercial banks.</li><li><strong>$M_2$ (Narrow Money)</strong>: <div class="example-block">$$M_2 = M_1 + 	ext{Savings deposits with Post Office savings banks}$$</div></li><li><strong>$M_3$ (Broad Money)</strong>: Most commonly used measure of money supply, also known as aggregate monetary resources. <div class="example-block">$$M_3 = M_1 + 	ext{Net time deposits of commercial banks}$$</div></li><li><strong>$M_4$ (Broad Money)</strong>: Least liquid. <div class="example-block">$$M_4 = M_3 + 	ext{Total deposits with Post Office savings organisations (excluding NSC)}$$</div></li></ul></details><details class="sub-topic"><summary><h3>Fiat Money vs. Legal Tender</h3></summary><ul><li><span class="keyword">Fiat Money</span>: Money that has no intrinsic value (unlike gold or silver coins) but is issued by a government decree (e.g., paper currency notes and coins).</li><li><span class="keyword">Legal Tender</span>: Fiat money that cannot be legally refused by any citizen of the country for the settlement of any transaction or debt. Demand deposits (cheques) are not legal tender.</li></ul></details><details class="sub-topic"><summary><h3>Demonetisation</h3></summary><p>In November 2016, the Government of India undertook <span class="keyword">demonetisation</span>, declaring high-denomination notes (Rs 500 and Rs 1000) invalid as legal tender. The primary objectives were:</p><ul><li>Curbing corruption and black money</li><li>Preventing the circulation of counterfeit currency</li><li>Choking funding for illegal activities and terrorism</li><li>Promoting formalization of the economy and digital payment technologies</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 12 (Part 1) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-02-national-income-accounting.html";
+      } else {
+        window.location.href = "21-chapter-04-determination-of-income-and-employ.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

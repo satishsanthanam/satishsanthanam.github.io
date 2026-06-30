@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 1) — Chapter 5: Government Budget and the Economy</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 1) — Chapter 5: Government Budget and the Economy</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">5.1 Government Budget — Meaning and Its Components</summary>
+  <p>In India, there is a constitutional requirement under <span class="keyword">Article 112</span> to present before the Parliament an <span class="keyword">Annual Financial Statement</span>. This statement represents the estimated receipts and expenditures of the government for every financial year, which runs from 1 April to 31 March.</p>
+  <p>The budget is divided into two main accounts:</p>
+  <ul>
+    <li><span class="keyword">Revenue Budget</span>: Relates to the current financial year's receipts and expenditures.</li>
+    <li><span class="keyword">Capital Budget</span>: Concerns the assets and liabilities of the government.</li>
+  </ul>
+
+  <details class="sub-topic">
+    <summary><h3>5.1.1 Objectives of Government Budget</h3></summary>
+    <p>The government intervenes in the economy to increase public welfare through three primary functions:</p>
+    <ol>
+      <li>
+        <strong>Allocation Function:</strong> Government provides <span class="keyword">public goods</span> (e.g., national defence, roads, public administration) which cannot be provided through market mechanisms. 
+        <ul>
+          <li><span class="keyword">Non-rivalrous</span>: One person's consumption does not reduce the amount available for others.</li>
+          <li><span class="keyword">Non-excludable</span>: There is no feasible way to exclude anyone from enjoying the benefits of the good, leading to the <span class="keyword">free-rider</span> problem.</li>
+          <li><span class="keyword">Public Provision</span>: Financed through the budget and used without direct payment (distinct from <span class="keyword">public production</span>, where goods are directly produced by the government).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Redistribution Function:</strong> The government alters the distribution of income to achieve a "fair" distribution by making transfers and collecting taxes, thereby affecting <span class="keyword">personal disposable income</span>.
+      </li>
+      <li>
+        <strong>Stabilisation Function:</strong> The government intervenes to expand or reduce aggregate demand to correct fluctuations in income and employment, preventing inflation or unemployment.
+      </li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>5.1.2 Classification of Receipts</h3></summary>
+    <p>Government receipts are broadly classified into:</p>
+    <ul>
+      <li>
+        <strong>Revenue Receipts:</strong> Receipts that do not lead to a claim on the government (non-redeemable). They are divided into:
+        <ul>
+          <li><span class="keyword">Tax Revenues</span>: Direct taxes (personal income tax, corporation tax) and indirect taxes (GST, customs duties).</li>
+          <li><span class="keyword">Non-tax Revenues</span>: Interest receipts, dividends and profits, fees, and cash grants-in-aid.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Capital Receipts:</strong> Receipts that create liabilities or reduce financial assets (e.g., market borrowings, recovery of loans, and PSU disinvestment).
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>5.1.3 Classification of Expenditure</h3></summary>
+    <ul>
+      <li>
+        <strong>Revenue Expenditure:</strong> Expenditure incurred for purposes other than the creation of physical or financial assets (e.g., interest payments, defence services, subsidies, salaries, and pensions).
+      </li>
+      <li>
+        <strong>Capital Expenditure:</strong> Expenditure that results in the creation of physical or financial assets or the reduction of financial liabilities (e.g., acquisition of land, machinery, shares, and loans to state governments).
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5.2 Balanced, Surplus and Deficit Budget</summary>
+  <p>The budget status is defined by the relationship between government spending and revenue:</p>
+  <ul>
+    <li><span class="keyword">Balanced Budget</span>: Government spending equals the revenue collected.</li>
+    <li><span class="keyword">Surplus Budget</span>: Tax collection exceeds required expenditure.</li>
+    <li><span class="keyword">Deficit Budget</span>: Expenditure exceeds revenue.</li>
+  </ul>
+
+  <details class="sub-topic">
+    <summary><h3>5.2.1 Measures of Government Deficit</h3></summary>
+    <p>There are three primary measures of government deficit:</p>
+    <ol>
+      <li>
+        <strong>Revenue Deficit:</strong> Refers to the excess of government's revenue expenditure over revenue receipts.
+        <div class="example-block">
+          $$\text{Revenue Deficit} = \text{Revenue Expenditure} - \text{Revenue Receipts}$$
+        </div>
+      </li>
+      <li>
+        <strong>Fiscal Deficit:</strong> The difference between the government's total expenditure and its total receipts excluding borrowing.
+        <div class="example-block">
+          $$\text{Gross Fiscal Deficit} = \text{Total Expenditure} - (\text{Revenue Receipts} + \text{Non-debt Creating Capital Receipts})$$
+        </div>
+        <p>From the financing side:</p>
+        <div class="example-block">
+          $$\text{Gross Fiscal Deficit} = \text{Net Borrowing at Home} + \text{Borrowing from RBI} + \text{Borrowing from Abroad}$$
+        </div>
+      </li>
+      <li>
+        <strong>Primary Deficit:</strong> Measures the borrowing requirement of the government excluding interest obligations on accumulated debt.
+        <div class="example-block">
+          $$\text{Gross Primary Deficit} = \text{Gross Fiscal Deficit} - \text{Net Interest Liabilities}$$
+        </div>
+      </li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Box 5.1: Fiscal Policy and Multipliers</summary>
+  <p>Based on Keynesian macroeconomic theory, fiscal policy uses changes in government expenditure and taxes to stabilise output and employment.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Mathematical Formulations of Multipliers</h3></summary>
+    <ul>
+      <li>
+        <strong>Consumption Function with Lump-sum Taxes ($T$):</strong>
+        <div class="example-block">
+          $$C = \bar{C} + c(Y - T + \bar{TR})$$
+        </div>
+      </li>
+      <li>
+        <strong>Government Expenditure Multiplier:</strong> Measures the change in equilibrium income due to a change in government purchases.
+        <div class="example-block">
+          $$\frac{\Delta Y}{\Delta G} = \frac{1}{1 - c}$$
+        </div>
+      </li>
+      <li>
+        <strong>Tax Multiplier:</strong> Measures the change in income due to a change in taxes. It is negative and smaller in absolute value than the expenditure multiplier.
+        <div class="example-block">
+          $$\frac{\Delta Y}{\Delta T} = \frac{-c}{1 - c}$$
+        </div>
+      </li>
+      <li>
+        <strong>Balanced Budget Multiplier:</strong> If an increase in government spending is matched by an equal increase in taxes, the balanced budget multiplier is unity ($1$).
+        <div class="example-block">
+          $$\frac{\Delta Y^*}{\Delta G} = \frac{1}{1 - c} + \frac{-c}{1 - c} = 1$$
+        </div>
+      </li>
+      <li>
+        <strong>Proportional Income Taxes ($T = tY$):</strong> Reduces the marginal propensity to consume out of income to $c(1-t)$, acting as an <span class="keyword">automatic stabiliser</span>.
+        <div class="example-block">
+          $$\text{Multiplier with Proportional Taxes} = \frac{1}{1 - c(1 - t)}$$
+        </div>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Government Debt and Deficit Reduction</summary>
+  <p>Budgetary deficits must be financed by taxation, borrowing, or printing money. Persistent borrowing leads to the accumulation of <span class="keyword">government debt</span>.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Perspectives on Debt</h3></summary>
+    <ul>
+      <li><strong>Intergenerational Burden:</strong> Borrowing transfers the burden of consumption today to future generations through higher future taxes.</li>
+      <li><span class="keyword">Ricardian Equivalence</span>: Consumers are forward-looking and increase savings today to pay for anticipated future taxes, offsetting the impact of government dissaving.</li>
+      <li><span class="keyword">Crowding Out</span>: Government borrowing competes with private investment for savings, raising interest rates and reducing private capital formation.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Deficit Reduction</h3></summary>
+    <p>Deficits can be reduced by increasing tax revenues (relying more on direct taxes) or reducing government expenditure through better planning and administration.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Key Legislative & Tax Reforms</summary>
+  <details class="sub-topic">
+    <summary><h3>Fiscal Responsibility and Budget Management Act, 2003 (FRBMA)</h3></summary>
+    <p>An institutional framework to bind the government to a prudent fiscal policy. Its main features include:</p>
+    <ul>
+      <li>Mandating the reduction of the fiscal deficit to not more than 3% of GDP.</li>
+      <li>Eliminating the revenue deficit to build up a revenue surplus.</li>
+      <li>Restricting the central government from borrowing directly from the Reserve Bank of India (RBI) except under temporary circumstances.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Goods and Services Tax (GST)</h3></summary>
+    <p>Implemented on 1 July 2017, <span class="keyword">GST</span> is a comprehensive, destination-based indirect tax that replaced multiple central and state taxes.</p>
+    <ul>
+      <li><strong>Key Feature:</strong> <span class="keyword">Input Tax Credit (ITC)</span> mitigates the cascading effect of taxation by allowing credit for taxes paid at previous stages of the supply chain.</li>
+      <li><strong>Standard Rates:</strong> 0%, 3%, 5%, 12%, 18%, and 28%.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 12 (Part 1) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-04-determination-of-income-and-employ.html";
+      } else {
+        window.location.href = "21-chapter-06-open-economy-macroeconomics.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
