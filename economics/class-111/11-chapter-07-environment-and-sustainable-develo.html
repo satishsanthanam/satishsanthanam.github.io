@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 111 — Chapter 7: Environment and Sustainable Development</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 111 — Chapter 7: Environment and Sustainable Development</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction &amp; Definition of Environment</summary>
+  <p>Economic development has historically come at a heavy cost to environmental quality. To understand the path of sustainable development, we must first analyze the significance and functions of the environment.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>What is Environment?</h3></summary>
+    <p><span class="keyword">Environment</span> is defined as the total planetary inheritance and the totality of all resources. It includes all the biotic and abiotic factors that influence each other.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Component Type</th>
+          <th>Definition</th>
+          <th>Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="keyword">Biotic Elements</span></td>
+          <td>All living elements of the environment</td>
+          <td>Birds, animals, plants, forests, fisheries</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Abiotic Elements</span></td>
+          <td>Non-living physical and chemical elements</td>
+          <td>Air, water, land, rocks, sunlight</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Four Vital Functions of the Environment</h3></summary>
+    <ol>
+      <li><strong>Supplies Resources:</strong> Provides both <span class="keyword">renewable resources</span> (e.g., trees, fish) and <span class="keyword">non-renewable resources</span> (e.g., fossil fuels).</li>
+      <li><strong>Assimilates Waste:</strong> Absorbs the by-products of production and consumption.</li>
+      <li><strong>Sustains Life:</strong> Provides genetic and biological diversity essential for life.</li>
+      <li><strong>Provides Aesthetic Services:</strong> Offers scenic beauty and recreational value.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Carrying Capacity &amp; Environmental Crisis</h3></summary>
+    <p>The environment performs its functions smoothly as long as the demands made on it are within its <span class="keyword">carrying capacity</span>. This requires two conditions to be met:</p>
+    <div class="example-block">
+      <p><strong>Resource Sustainability Condition:</strong></p>
+      $$\text{Rate of Resource Extraction} \le \text{Rate of Regeneration}$$
+      <p><strong>Waste Assimilation Condition:</strong></p>
+      $$\text{Waste Generation} \le \text{Absorptive Capacity}$$
+    </div>
+    <p>When these conditions are violated, the environment fails to sustain life, leading to an <span class="keyword">environmental crisis</span>. This has resulted in a reversal of the supply-demand relationship for environmental resources, turning free goods like clean water and air into economic goods with high <span class="keyword">opportunity costs</span>.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Global Environmental Challenges</summary>
+  <p>Modern industrialization and population growth have triggered global ecological crises that transcend national boundaries.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Global Warming</h3></summary>
+    <p><span class="keyword">Global warming</span> is the gradual increase in the average temperature of the Earth's lower atmosphere due to the accumulation of greenhouse gases.</p>
+    <ul>
+      <li><strong>Causes:</strong> Burning of fossil fuels, deforestation, methane release from animal waste, and industrial emissions.</li>
+      <li><strong>Consequences:</strong> Melting of polar ice caps, rising sea levels, coastal flooding, disruption of drinking water supplies, and increased frequency of tropical storms.</li>
+      <li><strong>International Action:</strong> The Kyoto Protocol (1997) and subsequent UN climate agreements aimed at reducing greenhouse gas emissions.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Ozone Depletion</h3></summary>
+    <p><span class="keyword">Ozone depletion</span> refers to the destruction of ozone in the stratosphere, which shields the Earth from harmful ultraviolet (UV) radiation.</p>
+    <ul>
+      <li><strong>Causes:</strong> High levels of chlorine and bromine compounds, primarily <span class="keyword">chlorofluorocarbons (CFCs)</span> used in refrigeration, air conditioning, and aerosol propellants.</li>
+      <li><strong>Consequences:</strong> Increased skin cancer in humans, lower phytoplankton production affecting marine life, and damage to terrestrial plants.</li>
+      <li><strong>International Action:</strong> The <span class="keyword">Montreal Protocol</span> banned the use of CFCs and other ozone-depleting substances.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">State of India's Environment</summary>
+  <p>India possesses rich natural resources, but faces a unique double threat: poverty-induced environmental degradation and pollution caused by rapid industrialization and affluence.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Resource Wealth vs. Degradation</h3></summary>
+    <ul>
+      <li><strong>Natural Assets:</strong> Fertile Indo-Gangetic plains, black soil of the Deccan Plateau (ideal for cotton), rich forest cover, and major mineral deposits (including 8% of the world's iron-ore reserves).</li>
+      <li><strong>Key Environmental Issues:</strong>
+        <ul>
+          <li>Land degradation and soil erosion (eroding at 5.3 billion tonnes annually).</li>
+          <li>Biodiversity loss.</li>
+          <li>Air pollution, particularly vehicular emissions in urban centers.</li>
+          <li>Management of fresh water and solid waste.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Institutional &amp; Grassroots Responses</h3></summary>
+    <ul>
+      <li><strong>Chipko and Appiko Movements:</strong> Grassroots forest conservation movements where local communities hugged trees to prevent commercial felling. Appiko began in Salkani forest, Karnataka, in 1983.</li>
+      <li><strong>Central Pollution Control Board (CPCB):</strong> Established in 1974 to investigate, collect, and disseminate information on water, air, and land pollution, and to set emission standards.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Sustainable Development</summary>
+  <p>Sustainable development is a paradigm shift in economic thinking that emphasizes intergenerational equity.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Definition and Core Philosophy</h3></summary>
+    <p>The <span class="keyword">Brundtland Commission</span> (formally the World Commission on Environment and Development) defined it as:</p>
+    <p class="example-block"><em>"Development that meets the need of the present generation without compromising the ability of the future generation to meet their own needs."</em></p>
+    <ul>
+      <li><strong>Key Concepts:</strong>
+        <ul>
+          <li><strong>Needs:</strong> Particularly the basic needs of the world's poor, which must receive overriding priority.</li>
+          <li><strong>Limitations:</strong> Imposed by the state of technology and social organization on the environment's ability to meet present and future needs.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Herman Daly's Conditions for Sustainability</h3></summary>
+    <p>To achieve sustainable development, leading environmental economist Herman Daly suggested the following rules:</p>
+    <ol>
+      <li>Limit the human population to a level within the carrying capacity of the environment.</li>
+      <li>Ensure technological progress is input-efficient rather than input-consuming.</li>
+      <li>Extract renewable resources on a sustainable basis (extraction rate must not exceed regeneration rate).</li>
+      <li>For non-renewable resources, the rate of depletion should not exceed the rate of creation of renewable substitutes.</li>
+      <li>Correct inefficiencies arising from pollution.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Strategies for Sustainable Development</summary>
+  <p>Transitioning to sustainable development requires shifting away from resource-intensive and polluting practices toward eco-friendly alternatives.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>1. Clean Energy Transitions</h3></summary>
+    <ul>
+      <li><strong>Non-conventional Sources:</strong> Shifting from thermal and hydro power to wind power and solar energy (using photovoltaic cells) to reduce carbon emissions and ecological disruption.</li>
+      <li><strong>LPG and Gobar Gas in Rural Areas:</strong> Replacing wood and dung cakes with subsidized Liquefied Petroleum Gas (LPG) and local bio-gas (gobar gas) plants to reduce indoor air pollution and prevent deforestation.</li>
+      <li><strong>CNG in Urban Areas:</strong> The mandatory transition to Compressed Natural Gas (CNG) for public transport (e.g., in Delhi) has significantly lowered urban air pollution.</li>
+      <li><strong>Mini-hydel Plants:</strong> Utilizing perennial mountain streams to run small turbines, generating localized power without large-scale transmission losses or ecological damage.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2. Traditional Knowledge &amp; Organic Inputs</h3></summary>
+    <ul>
+      <li><strong>Traditional Practices:</strong> Reviving environment-friendly systems of healthcare (Ayurveda, Unani, Tibetan, and folk medicine) and agriculture that rely on natural, non-chemical processes.</li>
+      <li><strong>Biocomposting:</strong> Reverting from chemical fertilizers to organic compost, utilizing earthworms to accelerate decomposition, which restores soil health and reduces chemical runoff into water bodies.</li>
+      <li><strong>Biopest Control:</strong> Replacing chemical pesticides with plant-based alternatives (such as neem-based pesticides) and encouraging natural predators (birds, snakes, lizards) to manage agricultural pests.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 111 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-06-employment-growth-informalisation.html";
+      } else {
+        window.location.href = "11-chapter-08-comparative-development-experience.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
