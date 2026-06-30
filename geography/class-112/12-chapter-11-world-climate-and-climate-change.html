@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 11: World Climate and Climate Change</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 11: World Climate and Climate Change</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Climate Classification</summary><p>The world climate can be studied by organising information and data into smaller units for systematic description and analysis. Three broad approaches are adopted for classifying climate:</p><ul><li><span class="keyword">Empirical Classification</span>: Based on observed data, particularly temperature and precipitation.</li><li><span class="keyword">Genetic Classification</span>: Attempts to organise climates according to their causes and atmospheric dynamics.</li><li><span class="keyword">Applied Classification</span>: Designed for specific purposes or environmental applications.</li></ul></details><details class="topic-box"><summary class="topic-title">Koeppen's Scheme of Climate Classification</summary><p>Developed by V. Koeppen in 1918 and subsequently modified, this widely used <span class="keyword">empirical classification</span> scheme establishes a close relationship between the distribution of vegetation and climate. It uses numerical values of temperature and precipitation (mean annual and mean monthly) designated by capital and small letters to define climatic groups and types.</p><details class="sub-topic"><summary><h3>Koeppen's Major Climatic Groups</h3></summary><p>Koeppen recognised five major climatic groups. Four are based on temperature characteristics, and one (Group B) is based on precipitation.</p><table><thead><tr><th>Group</th><th>Characteristics</th></tr></thead><tbody><tr><td><strong>A - Tropical</strong></td><td>Average temperature of the coldest month is 18°C or higher</td></tr><tr><td><strong>B - Dry Climates</strong></td><td>Potential evaporation exceeds precipitation</td></tr><tr><td><strong>C - Warm Temperate</strong></td><td>The average temperature of the coldest month of the (Mid-latitude) climates is higher than minus 3°C but below 18°C</td></tr><tr><td><strong>D - Cold Snow Forest Climates</strong></td><td>The average temperature of the coldest month is minus 3°C or below</td></tr><tr><td><strong>E - Cold Climates</strong></td><td>Average temperature for all months is below 10°C</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Koeppen's Climatic Types</h3></summary><p>Climatic groups are subdivided into types designated by small letters based on the seasonality of precipitation and temperature severity:</p><ul><li><strong>f</strong>: No dry season</li><li><strong>m</strong>: Monsoon climate</li><li><strong>w</strong>: Winter dry season</li><li><strong>s</strong>: Summer dry season</li><li><strong>a, b, c, d</strong>: Degree of temperature severity</li><li><strong>S</strong>: Steppe or semi-arid (used with Group B)</li><li><strong>W</strong>: Desert or arid (used with Group B)</li></ul><table><thead><tr><th>Group</th><th>Type</th><th>Letter Code</th><th>Characteristics</th></tr></thead><tbody><tr><td rowspan="3"><strong>A-Tropical Humid Climate</strong></td><td>Tropical wet</td><td>Af</td><td>No dry season</td></tr><tr><td>Tropical monsoon</td><td>Am</td><td>Monsoonal, short dry season</td></tr><tr><td>Tropical wet and dry</td><td>Aw</td><td>Winter dry season</td></tr><tr><td rowspan="4"><strong>B-Dry Climate</strong></td><td>Subtropical steppe</td><td>BSh</td><td>Low-latitude semi-arid or dry</td></tr><tr><td>Subtropical desert</td><td>BWh</td><td>Low-latitude arid or dry</td></tr><tr><td>Mid-latitude steppe</td><td>BSk</td><td>Mid-latitude semi-arid or dry</td></tr><tr><td>Mid-latitude desert</td><td>BWk</td><td>Mid-latitude arid or dry</td></tr><tr><td rowspan="3"><strong>C-Warm temperate (Mid-latitude) Climates</strong></td><td>Humid subtropical</td><td>Cfa</td><td>No dry season, warm summer</td></tr><tr><td>Mediterranean</td><td>Cs</td><td>Dry hot summer</td></tr><tr><td>Marine west coast</td><td>Cfb</td><td>No dry season, warm and cool summer</td></tr><tr><td rowspan="2"><strong>D-Cold Snow-forest Climates</strong></td><td>Humid continental</td><td>Df</td><td>No dry season, severe winter</td></tr><tr><td>Subarctic</td><td>Dw</td><td>Winter dry and very severe</td></tr><tr><td rowspan="2"><strong>E-Cold Climates</strong></td><td>Tundra</td><td>ET</td><td>No true summer</td></tr><tr><td>Polar ice cap</td><td>EF</td><td>Perennial ice</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Detailed Climatic Groups and Types</summary><details class="sub-topic"><summary><h3>Group A: Tropical Humid Climates</h3></summary><p>Located between the Tropic of Cancer and Tropic of Capricorn. Characterised by high solar insolation, the presence of the <span class="keyword">Inter Tropical Convergence Zone (ITCZ)</span>, low annual temperature range, and high rainfall.</p><ul><li><span class="keyword">Tropical Wet Climate (Af)</span>: Found near the equator (Amazon Basin, western equatorial Africa, East Indies). Features afternoon convective thundershowers, uniformly high temperatures (30°C max, 20°C min), and <span class="keyword">tropical evergreen forests</span>.</li><li><span class="keyword">Tropical Monsoon Climate (Am)</span>: Found over the Indian sub-continent, North Eastern South America, and Northern Australia. Heavy summer rainfall and dry winters.</li><li><span class="keyword">Tropical Wet and Dry Climate (Aw)</span>: Occurs north and south of Af regions. Features a shorter wet season, longer dry season, and deciduous forests or grasslands.</li></ul></details><details class="sub-topic"><summary><h3>Group B: Dry Climates</h3></summary><p>Characterised by very low rainfall where potential evaporation exceeds precipitation. Extends from 15° to 60° latitude north and south of the equator.</p><ul><li><span class="keyword">Subtropical Steppe (BSh) & Subtropical Desert (BWh)</span>: Located between 15° - 35° latitudes. BSh acts as a transition zone receiving slightly more rainfall than the desert BWh. High summer temperatures (e.g., 58°C recorded at Al Aziziyah, Libya in 1922).</li><li><span class="keyword">Mid-latitude Steppe (BSk) & Mid-latitude Desert (BWk)</span>: Located between 35° - 60° latitudes. Confined to deep continental interiors or rain-shadow zones.</li></ul></details><details class="sub-topic"><summary><h3>Group C: Warm Temperate (Mid-Latitude) Climates</h3></summary><p>Extend from 30° - 50° latitude, mainly on continental margins. Characterised by warm summers and mild winters.</p><ul><li><span class="keyword">Humid Subtropical Climate (Cwa)</span>: Poleward of the Tropics (e.g., North Indian plains, South China). Dry winters and warm summers.</li><li><span class="keyword">Mediterranean Climate (Cs)</span>: Occurs around the Mediterranean Sea, Central California, Central Chile, and southwestern Australia. Characterised by hot, dry summers and mild, rainy winters under the influence of westerlies.</li><li><span class="keyword">Humid Subtropical Climate (Cfa)</span>: Located on eastern continental margins (e.g., Eastern USA, Southern China, Japan). Rainfall occurs throughout the year.</li><li><span class="keyword">Marine West Coast Climate (Cfb)</span>: Located poleward of Cs climates (e.g., Northwestern Europe, Western North America). Moderated by marine influences with mild winters and cool summers.</li></ul></details><details class="sub-topic"><summary><h3>Group D: Cold Snow Forest Climates</h3></summary><p>Occur in large continental areas of the Northern Hemisphere between 40° - 70° north latitudes.</p><ul><li><span class="keyword">Cold Climate with Humid Winters (Df)</span>: Cold, snowy winters with short, frost-free summers. Abrupt weather changes.</li><li><span class="keyword">Cold Climate with Dry Winters (Dw)</span>: Occurs mainly over Northeastern Asia. Characterised by strong winter anticyclones and extremely low temperatures.</li></ul></details><details class="sub-topic"><summary><h3>Group E: Polar Climates</h3></summary><p>Exist poleward beyond 70° latitude.</p><ul><li><span class="keyword">Tundra Climate (ET)</span>: Named after low-growing vegetation (mosses, lichens). Characterised by <span class="keyword">permafrost</span> where the subsoil is permanently frozen.</li><li><span class="keyword">Ice Cap Climate (EF)</span>: Occurs over interior Greenland and Antarctica. Temperatures remain below freezing even in summer. Accumulates ice sheets that deform and break into icebergs.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Climate Change</summary><p>Climate change is a natural, continuous process. Geological, geomorphological, and historical records show that Earth's climate has experienced major variations since its formation, alternating between glacial and inter-glacial periods.</p><details class="sub-topic"><summary><h3>Evidence of Climate Change</h3></summary><ul><li>Glacial landforms showing advances and retreats of glaciers.</li><li>Sediment deposits in glacial lakes.</li><li><span class="keyword">Dendroclimatology</span> (tree ring analysis) indicating wet and dry periods.</li><li>Historical records of crop yields, floods, and human migrations.</li></ul></details><details class="sub-topic"><summary><h3>Causes of Climate Change</h3></summary><ul><li><strong>Astronomical Causes</strong>: <ul><li>Changes in solar output associated with <span class="keyword">sunspot activities</span> (cyclical dark/cool patches on the sun).</li><li><span class="keyword">Milankovitch oscillations</span>: Cycles in Earth's orbital characteristics, axial tilt, and wobbling.</li></ul></li><li><strong>Terrestrial Causes</strong>: <ul><li><span class="keyword">Volcanism</span>: Volcanic eruptions release aerosols that block solar radiation, lowering global temperatures temporarily.</li></ul></li><li><strong>Anthropogenic Causes</strong>: <ul><li>Increasing concentration of greenhouse gases due to industrialisation, deforestation, and fossil fuel combustion.</li></ul></li></ul></details></details><details class="topic-box"><summary class="topic-title">Global Warming and Greenhouse Effect</summary><p>The atmosphere transmits incoming shortwave solar radiation but absorbs longwave terrestrial radiation emitted by the Earth. This process is known as the <span class="keyword">Greenhouse Effect</span>.</p><details class="sub-topic"><summary><h3>Greenhouse Gases (GHGs)</h3></summary><p>The primary greenhouse gases of concern include:</p><ul><li><span class="keyword">Carbon Dioxide (CO2)</span>: Emitted mainly from fossil fuel combustion and deforestation.</li><li><span class="keyword">Chlorofluorocarbons (CFCs)</span>: Synthetic products of human activity that also destroy the stratospheric <span class="keyword">ozone layer</span>.</li><li><span class="keyword">Methane (CH4)</span>: Released from agricultural activities, wetlands, and livestock.</li><li><span class="keyword">Nitrous Oxide (N2O)</span> and <span class="keyword">Ozone (O3)</span>.</li></ul></details><details class="sub-topic"><summary><h3>International Initiatives</h3></summary><p>The <span class="keyword">Kyoto Protocol</span>, proclaimed in 1997 and effective in 2005, was a major international treaty that bound industrialised nations to reduce greenhouse gas emissions to mitigate global warming.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-10-water-in-the-atmosphere.html";
+      } else {
+        window.location.href = "12-chapter-12-water-oceans.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
