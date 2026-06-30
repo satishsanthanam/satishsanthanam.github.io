@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 13: Movements of Ocean Water</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 13: Movements of Ocean Water</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction to Ocean Movements</summary>
+  <p>Ocean water is dynamic, influenced by physical characteristics like temperature, salinity, and density, as well as external forces such as the sun, moon, and winds. The movements of ocean water can be broadly classified into horizontal and vertical motions.</p>
+  <ul>
+    <li><span class="keyword">Horizontal Motion</span>: Refers to <span class="keyword">ocean currents</span> and <span class="keyword">waves</span>. While ocean currents involve the continuous flow of huge volumes of water in a definite direction, waves represent the horizontal movement of energy across the water surface without actual mass transport of water.</li>
+    <li><span class="keyword">Vertical Motion</span>: Refers to <span class="keyword">tides</span> (the rise and fall of water due to gravitational attraction of the sun and moon) as well as the upwelling of cold subsurface water and the sinking of surface water.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Waves</summary>
+  <p>Waves are actually the energy, not the water itself, moving across the ocean surface. Water particles travel in small circular paths as a wave passes. Wind provides the initial energy to waves, causing them to travel across the ocean until they release their energy on shorelines. As a wave approaches the beach, friction with the sea floor slows it down, causing the wave to break when the water depth is less than half the wavelength.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Characteristics of Waves</h3></summary>
+    <p>The parameters that define the shape and behavior of waves are summarized below:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Wave Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="keyword">Wave Crest and Trough</span></td>
+          <td>The highest and lowest points of a wave, respectively.</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Wave Height</span></td>
+          <td>The vertical distance from the bottom of a trough to the top of a crest.</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Wave Amplitude</span></td>
+          <td>One-half of the wave height. <div class="example-block">$$\text{Wave Amplitude} = \frac{1}{2} \times \text{Wave Height}$$</div></td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Wave Period</span></td>
+          <td>The time interval between two successive wave crests or troughs passing a fixed point.</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Wavelength</span></td>
+          <td>The horizontal distance between two successive crests.</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Wave Speed</span></td>
+          <td>The rate at which the wave moves through the water, measured in knots.</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Wave Frequency</span></td>
+          <td>The number of waves passing a given point during a one-second time interval.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Tides</summary>
+  <p>A <span class="keyword">tide</span> is the periodical rise and fall of the sea level, occurring once or twice a day, primarily caused by the gravitational attraction of the sun and the moon. Unlike tides, <span class="keyword">surges</span> are irregular movements of water caused by meteorological effects like winds and atmospheric pressure changes.</p>
+  <p>Tides are generated by the balance between the gravitational pull of the moon (and to a lesser extent, the sun) and the <span class="keyword">centrifugal force</span> arising from the Earth's rotation. This interaction creates two major tidal bulges on Earth: one on the side facing the moon and another on the opposite side.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Types of Tides</h3></summary>
+    <p>Tides can be classified based on their frequency of occurrence or based on the positions of the Sun, Moon, and Earth.</p>
+    
+    <h4>Based on Frequency:</h4>
+    <ul>
+      <li><span class="keyword">Semi-diurnal tide</span>: Features two high tides and two low tides each day, with successive tides being of approximately the same height.</li>
+      <li><span class="keyword">Diurnal tide</span>: Features only one high tide and one low tide each day.</li>
+      <li><span class="keyword">Mixed tide</span>: Tides that vary in height, common along the west coast of North America and Pacific islands.</li>
+    </ul>
+
+    <h4>Based on Sun, Moon, and Earth Positions:</h4>
+    <ul>
+      <li><span class="keyword">Spring Tides</span>: Occur when the sun, moon, and earth are aligned in a straight line. The gravitational forces combine to produce the highest tidal ranges. These occur twice a month (during full moon and new moon periods).</li>
+      <li><span class="keyword">Neap Tides</span>: Occur when the sun and moon are at right angles to each other, counteracting each other's forces. This results in a lower tidal range, occurring roughly seven days after spring tides.</li>
+    </ul>
+
+    <h4>Astronomical Variations:</h4>
+    <ul>
+      <li><span class="keyword">Perigee</span>: When the moon's orbit is closest to the Earth, resulting in unusually high and low tides.</li>
+      <li><span class="keyword">Apogee</span>: When the moon is farthest from the Earth, resulting in below-average tidal ranges.</li>
+      <li><span class="keyword">Perihelion</span>: When the Earth is closest to the sun (around January 3rd), increasing tidal ranges.</li>
+      <li><span class="keyword">Aphelion</span>: When the Earth is farthest from the sun (around July 4th), decreasing tidal ranges.</li>
+    </ul>
+    
+    <p>The falling water level between high and low tide is called the <span class="keyword">ebb</span>, while the rising water level is called the <span class="keyword">flow</span> or <span class="keyword">flood</span>.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Importance of Tides</h3></summary>
+    <ul>
+      <li><strong>Navigation</strong>: High tides increase water depth in harbors, allowing large ships to enter shallow estuaries and river ports safely.</li>
+      <li><strong>Desilting</strong>: Tidal currents help clear sediments and remove polluted water from river estuaries.</li>
+      <li><strong>Power Generation</strong>: Tidal energy is harnessed to generate electricity in countries like Canada, France, Russia, China, and India (e.g., the 3 MW project at Durgaduani in Sunderbans, West Bengal).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Ocean Currents</summary>
+  <p><span class="keyword">Ocean currents</span> are cohesive, regular streams of water flowing through the oceans in definite paths and directions. They are influenced by two types of forces:</p>
+  <ol>
+    <li><strong>Primary Forces</strong> (initiate water movement): Solar heating (causes water expansion and slight gradients), wind (pushes surface water), gravity (pulls water down gradients), and the <span class="keyword">Coriolis force</span> (deflects currents to the right in the Northern Hemisphere and to the left in the Southern Hemisphere, forming circular systems called <span class="keyword">Gyres</span>).</li>
+    <li><strong>Secondary Forces</strong> (influence flow direction and speed): Differences in water density (salinity and temperature variations). Cold, dense water sinks at the poles and moves toward the equator, while warm, lighter water moves along the surface toward the poles.</li>
+  </ol>
+
+  <details class="sub-topic">
+    <summary><h3>Types of Ocean Currents</h3></summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Classification Criteria</th>
+          <th>Type</th>
+          <th>Characteristics</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2"><strong>By Depth</strong></td>
+          <td><span class="keyword">Surface Currents</span></td>
+          <td>Constitutes about 10% of ocean water; restricted to the upper 400 meters.</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Deep Water Currents</span></td>
+          <td>Constitutes 90% of ocean water; driven by density and gravity variations at high latitudes.</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><strong>By Temperature</strong></td>
+          <td><span class="keyword">Cold Currents</span></td>
+          <td>Bring cold water into warm water areas; typically found on the west coasts of continents in low/middle latitudes.</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Warm Currents</span></td>
+          <td>Bring warm water into cold water areas; typically found on the east coasts of continents in low/middle latitudes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Effects of Ocean Currents</h3></summary>
+    <ul>
+      <li><strong>Climatic Influence</strong>: Warm currents raise temperatures and bring rainfall to coastal areas (e.g., east coasts of continents), while cold currents lower temperatures and contribute to coastal aridity and fog (e.g., west coasts of subtropical continents).</li>
+      <li><strong>Marine Ecosystems</strong>: The mixing zones of warm and cold currents replenish oxygen and promote the growth of <span class="keyword">planktons</span>, which are the primary food source for fish. Consequently, these mixing zones form the world's best fishing grounds.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 13</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-12-water-oceans.html";
+      } else {
+        window.location.href = "12-chapter-14-biodiversity-and-conservation.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
