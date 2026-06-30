@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 121 — Chapter 3: Business Environment</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 121 — Chapter 3: Business Environment</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Introduction & Case Study</summary><div class='example-block'><p><strong>Business Case Title:</strong> Dharamveer Kamboj's Multipurpose Processing Machine</p><p><strong>Corporate Context/Problem:</strong> Manual grating of gooseberries by women self-help groups in Rajasthan was painful and inefficient. Existing processing machines were not cost-effective for small-scale, modest-means owners.</p><p><strong>Strategic Action Taken:</strong> Dharamveer, despite limited formal education, designed and developed a cost-effective, portable, multipurpose processing machine that could cut, grate, juice, and pulverize without damaging seeds.</p><p><strong>Managerial Inference:</strong> Understanding and responding to the needs of the external environment (social pain points, economic constraints of small industries) can lead to successful technological innovation and entrepreneurship.</p></div></details><details class='topic-box'><summary class='topic-title'>Meaning and Features of Business Environment</summary><p>The <span class='keyword'>Business Environment</span> refers to the sum total of all individuals, institutions, and other forces that are outside the control of a business enterprise but may affect its performance.</p><details class='sub-topic'><summary><h3>Key Features</h3></summary><ul><li><strong>Totality of external forces:</strong> It is aggregative in nature as it includes all external factors.</li><li><strong>Specific and general forces:</strong> Specific forces (investors, customers, competitors) affect enterprises directly, while general forces (social, political, legal, technological) affect them indirectly.</li><li><strong>Inter-relatedness:</strong> Different elements are closely co-dependent (e.g., health awareness increasing demand for organic food).</li><li><strong>Dynamic nature:</strong> It keeps changing constantly due to technological shifts or consumer preferences.</li><li><strong>Uncertainty:</strong> Highly unpredictable, especially in fast-moving sectors like IT and fashion.</li><li><strong>Complexity:</strong> Easier to understand in parts but difficult to grasp in its totality.</li><li><strong>Relativity:</strong> Differs from country to country and region to region.</li></ul></details><details class='sub-topic'><summary><h3>Specific vs. General Forces</h3></summary><table><thead><tr><th>Aspect</th><th>Specific Forces</th><th>General Forces</th></tr></thead><tbody><tr><td><strong>Definition</strong></td><td>Directly affect individual enterprises in their day-to-day working.</td><td>Have an impact on all business enterprises and affect individual firms indirectly.</td></tr><tr><td><strong>Examples</strong></td><td>Customers, competitors, suppliers, investors.</td><td>Social, political, legal, technological, and economic conditions.</td></tr></tbody></table></details></details><details class='topic-box'><summary class='topic-title'>Importance of Business Environment</summary><p>Understanding the environment enables managers to take proactive measures rather than reactive ones.</p><ul><li><strong>First-Mover Advantage:</strong> Identifying opportunities early to exploit them before competitors (e.g., Maruti Suzuki recognizing the demand for small cars).</li><li><strong>Early Warning Signals:</strong> Identifying threats to prepare defensive strategies (e.g., local firms preparing for multinational entry).</li><li><strong>Tapping Useful Resources:</strong> Assembling inputs (finance, raw materials, labor) that the environment provides and outputting what it desires.</li><li><strong>Coping with Rapid Changes:</strong> Navigating turbulent market conditions, intense global competition, and rapid technological shifts.</li><li><strong>Planning and Policy Formulation:</strong> Serving as a foundation for deciding future courses of action.</li><li><strong>Improving Performance:</strong> Continuous monitoring leads to sustained market success and growth.</li></ul></details><details class='topic-box'><summary class='topic-title'>Dimensions of Business Environment</summary><p>The general environment consists of five key dimensions:</p><details class='sub-topic'><summary><h3>1. Economic Environment</h3></summary><p>Includes factors like interest rates, inflation rates, changes in disposable income, stock market indices, and the value of the rupee.</p></details><details class='sub-topic'><summary><h3>2. Social Environment</h3></summary><p>Consists of social forces like customs, traditions, values, social trends, and societal expectations (e.g., health and fitness trends boosting organic food demand).</p></details><details class='sub-topic'><summary><h3>3. Technological Environment</h3></summary><p>Includes forces relating to scientific improvements and innovations that provide new ways of producing goods and services (e.g., online railway ticket booking).</p></details><details class='sub-topic'><summary><h3>4. Political Environment</h3></summary><p>Includes political conditions such as general stability, peace, and the specific attitudes of the elected government towards business.</p></details><details class='sub-topic'><summary><h3>5. Legal Environment</h3></summary><p>Consists of legislations passed by the government, administrative orders, court judgments, and decisions of various commissions at all levels of government.</p></details></details><details class='topic-box'><summary class='topic-title'>Economic Reforms in India & 1991 Policy</summary><p>In July 1991, India launched major economic reforms to address a severe balance of payments crisis, high inflation, and fiscal deficit.</p><details class='sub-topic'><summary><h3>The LPG Framework</h3></summary><ul><li><span class='keyword'>Liberalisation:</span> Liberating Indian industry from unnecessary controls, licensing requirements, and restrictions (ending the 'Licence Raj').</li><li><span class='keyword'>Privatisation:</span> Reducing the role of the public sector and giving a greater role to the private sector through disinvestment and transfer of ownership.</li><li><span class='keyword'>Globalisation:</span> Integrating the domestic economy with the global economy, allowing free flow of goods, services, capital, and technology across borders.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Demonetisation</summary><p>On November 8, 2016, the Government of India declared the two largest denomination notes (Rs. 500 and Rs. 1,000) invalid as legal tender.</p><details class='sub-topic'><summary><h3>Key Features & Impact</h3></summary><ul><li><strong>Tax Administration Measure:</strong> Forced declaration of unaccounted cash and payment of taxes/penalties.</li><li><strong>Channelizing Savings:</strong> Shifted cash into the formal financial system, increasing bank deposits.</li><li><strong>Less-Cash Economy:</strong> Promoted digital transactions and financial savings.</li></ul><table><thead><tr><th>Sector/Aspect</th><th>Impact of Demonetisation</th></tr></thead><tbody><tr><td><strong>Money/Interest Rates</strong></td><td>Decline in cash transactions; increase in bank deposits and financial savings.</td></tr><tr><td><strong>Private Wealth</strong></td><td>Declined for those holding unreturned high-value notes; real estate prices fell.</td></tr><tr><td><strong>Digitisation</strong></td><td>Digital transactions (RuPay, AEPS) increased significantly.</td></tr><tr><td><strong>Tax Collection</strong></td><td>Rise in income tax collection due to increased disclosure.</td></tr></tbody></table></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 121 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-02-principles-of-management.html";
+      } else {
+        window.location.href = "21-chapter-04-planning.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
