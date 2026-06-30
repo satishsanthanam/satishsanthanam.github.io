@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 1: Business, Trade and Commerce</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 1: Business, Trade and Commerce</h1>
+
+    <details class="topic-box"><summary class="topic-title">1.1 Introduction & Historical Background of Commerce</summary><p>Business is a major economic activity concerned with the production and sale of goods and services required by people. The roots of business activities in India trace back to ancient times, where maritime routes and the <span class="keyword">Silk Route</span> established the subcontinent as a global commercial hub, often referred to as 'Swaran Bharat' or 'Swaran Dweep'.</p><details class="sub-topic"><summary><h3>Indigenous Banking System & Hundi</h3></summary><p>As economic life progressed, metals began to be used as money, leading to the development of metallic currency and documents like <span class="keyword">Hundi</span> and <span class="keyword">Chitties</span> to facilitate credit transactions and safe transfer of money across long distances.</p><table><thead><tr><th>Name of Hundi</th><th>Type</th><th>Broader Classification / Details</th></tr></thead><tbody><tr><td><strong>Dhani-jog</strong></td><td>Darshani</td><td>Payable to any person—no liability over who received payment.</td></tr><tr><td><strong>Sah-jog</strong></td><td>Darshani</td><td>Payable to a specific person, someone 'respectable'. Liability over who received payment.</td></tr><tr><td><strong>Firman-jog</strong></td><td>Darshani</td><td>Hundi made payable to order.</td></tr><tr><td><strong>Dekhan-har</strong></td><td>Darshani</td><td>Payable to the presenter or bearer.</td></tr><tr><td><strong>Dhani-jog</strong></td><td>Muddati</td><td>Payable to any person—no liability over who received payment, but payment over a fixed term.</td></tr><tr><td><strong>Firman-jog</strong></td><td>Muddati</td><td>Hundi made payable to order following a fixed term.</td></tr><tr><td><strong>Jokhmi</strong></td><td>Muddati</td><td>Drawn against dispatched goods. If goods lost in transit, the drawer or holder bears the costs, and the Drawee carries no liability.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Major Trade Centres in Ancient India</h3></summary><ul><li><span class="keyword">Pataliputra</span>: Major centre for export of stones and commercial transactions.</li><li><span class="keyword">Peshawar</span>: Important exporting centre for wool and importing horses.</li><li><span class="keyword">Taxila</span>: Financial and commercial banking hub on the land route to Central Asia.</li><li><span class="keyword">Indraprastha</span>: Commercial junction where major royal highways converged.</li><li><span class="keyword">Varanasi</span>: Major centre of the textile industry, famous for gold silk cloth and sandalwood.</li><li><span class="keyword">Surat</span>: Emporium of western trade; Surat hundi was honoured in far-off markets like Egypt.</li><li><span class="keyword">Kaveripatta</span>: Scientific port city convenient for trade with Malaysia, Indonesia, and the Far East.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.2 Concept and Characteristics of Business</summary><p>Human activities are broadly classified into <span class="keyword">Economic Activities</span> (undertaken to earn a livelihood) and <span class="keyword">Non-Economic Activities</span> (performed out of love, sympathy, or sentiment).</p><details class="sub-topic"><summary><h3>Characteristics of Business Activities</h3></summary><ul><li><strong>An economic activity:</strong> Undertaken with the objective of earning money or livelihood.</li><li><strong>Production or procurement of goods and services:</strong> Goods must be produced or acquired before consumption.</li><li><strong>Sale or exchange of goods and services:</strong> Involves transfer of ownership for value (personal consumption is not business).</li><li><strong>Dealings on a regular basis:</strong> One single transaction of sale or purchase does not constitute business.</li><li><strong>Profit earning:</strong> The primary purpose of business is to earn income by way of profit.</li><li><strong>Uncertainty of return:</strong> Lack of knowledge relating to the amount of money the business will earn.</li><li><strong>Element of risk:</strong> Exposure to loss caused by unfavorable or undesirable events.</li></ul></details><details class="sub-topic"><summary><h3>Comparison of Business, Profession, and Employment</h3></summary><table><thead><tr><th>Basic of Distinction</th><th>Business</th><th>Profession</th><th>Employment</th></tr></thead><tbody><tr><td><strong>Mode of establishment</strong></td><td>Entrepreneur’s decision and other legal formalities, if necessary</td><td>Membership of a professional body and certificate of practice</td><td>Appointment letter and service agreement</td></tr><tr><td><strong>Nature of work</strong></td><td>Provision of goods and services to the public</td><td>Rendering of personalised, expert services</td><td>Performing work as per service contract or rules of service</td></tr><tr><td><strong>Qualification</strong></td><td>No minimum qualification is necessary</td><td>Qualifications, expertise and training in specific field as prescribed by the professional body is a must</td><td>Qualification and training as prescribed by the employer</td></tr><tr><td><strong>Reward or return</strong></td><td>Profit earned</td><td>Professional fee</td><td>Salary or wages</td></tr><tr><td><strong>Capital investment</strong></td><td>Capital investment required as per size and nature of business</td><td>Limited capital needed for establishment</td><td>No capital required</td></tr><tr><td><strong>Risk</strong></td><td>Profits are uncertain and irregular; risk is present</td><td>Fee is generally regular and certain; some risk</td><td>Fixed and regular pay; no or little risk</td></tr><tr><td><strong>Transfer of interest</strong></td><td>Transfer possible with some formalities</td><td>Not possible</td><td>Not possible</td></tr><tr><td><strong>Code of conduct</strong></td><td>No code of conduct is prescribed</td><td>Professional code of conduct is to be followed</td><td>Norms of behaviour laid down by the employer are to be followed</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">1.3 Classification of Business Activities</summary><p>Business activities are broadly classified into <span class="keyword">Industry</span> and <span class="keyword">Commerce</span>.</p><details class="sub-topic"><summary><h3>1.3.1 Industry</h3></summary><p>Industry refers to economic activities connected with the conversion of resources into useful goods.</p><ul><li><strong>Primary Industries:</strong> Extraction and production of natural resources and reproduction of living organisms.<ul><li><span class="keyword">Extractive Industries</span>: Farming, mining, lumbering, fishing.</li><li><span class="keyword">Genetic Industries</span>: Breeding plants and animals, poultry farms, nurseries.</li></ul></li><li><strong>Secondary Industries:</strong> Processing materials extracted at the primary stage to produce goods for final consumption.<ul><li><span class="keyword">Manufacturing Industries</span>: Analytical (oil refinery), Synthetical (cement), Processing (sugar/paper), Assembling (television/cars).</li><li><span class="keyword">Construction Industries</span>: Buildings, dams, bridges, roads.</li></ul></li><li><strong>Tertiary Industries:</strong> Support services to primary and secondary industries (transport, banking, insurance, warehousing, communication).</li></ul></details><details class="sub-topic"><summary><h3>1.3.2 Commerce & Auxiliaries to Trade</h3></summary><p>Commerce includes <span class="keyword">Trade</span> (buying and selling of goods) and <span class="keyword">Auxiliaries to Trade</span> (activities that facilitate trade by removing hindrances of person, place, time, risk, finance, and information).</p><ul><li><strong>Transport and Communication:</strong> Removes the hindrance of place by moving goods from production sites to markets.</li><li><strong>Banking and Finance:</strong> Removes the hindrance of finance by providing necessary capital and credit facilities.</li><li><strong>Insurance:</strong> Removes the hindrance of risk by providing protection against fire, theft, and damage.</li><li><strong>Warehousing:</strong> Removes the hindrance of time by storing goods until they are demanded.</li><li><strong>Advertising:</strong> Removes the hindrance of information by educating consumers about available products.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.4 Objectives of Business</summary><p>While earning profit is a leading objective, a business must pursue multiple objectives to survive and prosper in the long run.</p><ul><li><strong>Market standing:</strong> Securing a strong position in relation to competitors by offering quality products.</li><li><strong>Innovation:</strong> Developing new products, services, or operational skills to maintain a competitive edge.</li><li><strong>Productivity:</strong> Ensuring efficiency by comparing the value of output with the value of inputs.</li><li><strong>Physical and financial resources:</strong> Acquiring and efficiently utilizing plants, machines, and funds.</li><li><strong>Earning profits:</strong> Generating a reasonable return on capital employed to ensure survival and growth.</li><li><strong>Social responsibility:</strong> Contributing resources to solve social problems and operating in a socially desirable manner.</li></ul></details><details class="topic-box"><summary class="topic-title">1.5 Business Risk</summary><p><span class="keyword">Business Risk</span> refers to the possibility of inadequate profits or even losses due to uncertainties or unexpected events.</p><details class="sub-topic"><summary><h3>Nature of Business Risks</h3></summary><ul><li>Risk is an essential part of every business and cannot be completely eliminated.</li><li>Business risks arise due to uncertainties (e.g., natural calamities, policy changes).</li><li>The degree of risk depends mainly upon the nature and size of the business.</li><li>Profit is the reward for risk-taking ("No risk, no gain").</li></ul></details><details class="sub-topic"><summary><h3>Causes of Business Risks</h3></summary><ul><li><strong>Natural causes:</strong> Floods, earthquakes, lightning, heavy rains, famine.</li><li><strong>Human causes:</strong> Dishonesty, carelessness, strikes, power failures, management inefficiency.</li><li><strong>Economic causes:</strong> Fluctuations in demand and supply, competition, price changes, technological shifts.</li><li><strong>Other causes:</strong> Political disturbances, mechanical failures (e.g., boiler bursting), exchange rate fluctuations.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.6 Starting a Business — Basic Factors</summary><p>Setting up a business enterprise requires careful consideration of several fundamental factors:</p><ol><li><strong>Selection of line of business:</strong> Choosing the nature and type of business based on market demand and technical knowledge.</li><li><strong>Size of firm:</strong> Deciding whether to operate on a large scale or start as an MSME based on capital and demand.</li><li><strong>Choice of form of ownership:</strong> Selecting sole proprietorship, partnership, or a joint-stock company.</li><li><strong>Location of business enterprise:</strong> Choosing a site based on availability of raw materials, labor, power, and transport.</li><li><strong>Financing the proposition:</strong> Planning capital requirements for fixed assets (land, machinery) and working capital.</li><li><strong>Physical facilities:</strong> Arranging machines, equipment, and building infrastructure.</li><li><strong>Competent and committed workforce:</strong> Identifying and hiring skilled and unskilled workers and managerial staff.</li><li><strong>Tax planning:</strong> Analyzing tax liabilities under various laws and their impact on business decisions.</li><li><strong>Launching the enterprise:</strong> Mobilizing resources, fulfilling legal formalities, and starting the production process.</li></ol></details><details class="topic-box"><summary class="topic-title">1.7 Business Case Study</summary><div class="example-block"><p><strong>Business Case Title:</strong> Dipak Bharali and the 'Chaneki' Innovation</p><p><strong>Corporate Context/Problem:</strong> In Sualkuchi, Assam, the slow and mentally/physically exhausting process of manual weft insertion (buta weaving) limited the productivity of silk weavers, preventing them from taking on extra work or expanding their business without buying expensive additional looms.</p><p><strong>Strategic Action Taken:</strong> Dipak Bharali, a local weaver, designed and developed an eco-friendly, automated device called <span class="keyword">Chaneki</span> made of recyclable materials after 80 failed attempts, which automated the weft insertion process.</p><p><strong>Managerial Inference:</strong> Innovation and risk-taking are central to business growth. By introducing new methods, a business can dramatically increase productivity (Chaneki runs 40 times faster than manual weaving) and achieve sustainable development while satisfying multiple objectives.</p></div></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "11-chapter-02-forms-of-business-organisation.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
