@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 5: Measures of Central Tendency</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 5: Measures of Central Tendency</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1. Introduction to Central Tendency</summary>
+  <p>A <span class="keyword">measure of central tendency</span> is a single summary value that represents an entire set of data by identifying its central position. It provides a quick, numerical method to explain data in brief.</p>
+  <p>The three most commonly used statistical averages are:</p>
+  <ul>
+    <li><span class="keyword">Arithmetic Mean</span></li>
+    <li><span class="keyword">Median</span></li>
+    <li><span class="keyword">Mode</span></li>
+  </ul>
+  <p>Other less common averages include the <span class="keyword">Geometric Mean</span> and <span class="keyword">Harmonic Mean</span>, which are suitable in specific situations.</p>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2. Arithmetic Mean</summary>
+  <p>The <span class="keyword">Arithmetic Mean</span> (or simply mean) is defined as the sum of the values of all observations divided by the total number of observations. It is denoted by $\bar{X}$.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Arithmetic Mean for Ungrouped (Individual) Data</h3></summary>
+    <p>There are three methods to calculate the mean for ungrouped data:</p>
+    <ul>
+      <li>
+        <strong>Direct Method:</strong>
+        <div class="example-block">
+          $$\bar{X} = \frac{\sum X}{N}$$
+          Where $\sum X$ is the sum of all observations, and $N$ is the total number of observations.
+        </div>
+      </li>
+      <li>
+        <strong>Assumed Mean Method:</strong> Used when the number of observations is large to simplify calculations.
+        <div class="example-block">
+          $$\bar{X} = A + \frac{\sum d}{N}$$
+          Where $A$ is the <span class="keyword">assumed mean</span>, and $d = X - A$ represents the deviations of observations from the assumed mean.
+        </div>
+      </li>
+      <li>
+        <strong>Step Deviation Method:</strong> Further simplifies calculations by dividing deviations by a common factor $c$.
+        <div class="example-block">
+          $$\bar{X} = A + \frac{\sum d'}{N} \times c$$
+          Where $d' = \frac{X - A}{c}$ and $c$ is the common factor.
+        </div>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Arithmetic Mean for Grouped Data</h3></summary>
+    <h4>Discrete Series</h4>
+    <ul>
+      <li>
+        <strong>Direct Method:</strong>
+        <div class="example-block">
+          $$\bar{X} = \frac{\sum fX}{\sum f}$$
+          Where $f$ is the frequency of each observation $X$.
+        </div>
+      </li>
+      <li>
+        <strong>Assumed Mean Method:</strong>
+        <div class="example-block">
+          $$\bar{X} = A + \frac{\sum fd}{\sum f}$$
+          Where $d = X - A$.
+        </div>
+      </li>
+      <li>
+        <strong>Step Deviation Method:</strong>
+        <div class="example-block">
+          $$\bar{X} = A + \left(\frac{\sum fd'}{\sum f}\right) \times c$$
+          Where $d' = \frac{X - A}{c}$.
+        </div>
+      </li>
+    </ul>
+
+    <h4>Continuous Series</h4>
+    <p>In a continuous series, class intervals are given. The mid-points ($m$) of these class intervals are used as the representative values for calculation.</p>
+    <ul>
+      <li>
+        <strong>Direct Method:</strong>
+        <div class="example-block">
+          $$\bar{X} = \frac{\sum fm}{\sum f}$$
+        </div>
+      </li>
+      <li>
+        <strong>Step Deviation Method:</strong>
+        <div class="example-block">
+          $$\bar{X} = A + \left(\frac{\sum fd'}{\sum f}\right) \times c$$
+          Where $d' = \frac{m - A}{c}$ and $m$ is the mid-point of each class.
+        </div>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Properties of Arithmetic Mean</h3></summary>
+    <ol>
+      <li>The algebraic sum of deviations of items from their arithmetic mean is always zero: $\sum (X - \bar{X}) = 0$.</li>
+      <li>The arithmetic mean is highly affected by extreme values (outliers).</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Weighted Arithmetic Mean</h3></summary>
+    <p>When different items hold varying levels of importance, weights ($w$) are assigned to them. The <span class="keyword">weighted arithmetic mean</span> is calculated as:</p>
+    <div class="example-block">
+      $$\bar{X}_w = \frac{\sum wX}{\sum w}$$
+    </div>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3. Median</summary>
+  <p>The <span class="keyword">Median</span> is the positional value of the variable that divides an ordered distribution into two equal parts. One half of the values are greater than or equal to the median, and the other half are less than or equal to it.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Computation of Median</h3></summary>
+    <ul>
+      <li>
+        <strong>Individual Series:</strong> Arrange the data in ascending or descending order.
+        <ul>
+          <li>If $N$ is odd, the median is the value of the $\left(\frac{N+1}{2}\right)^{\text{th}}$ item.</li>
+          <li>If $N$ is even, the median is the arithmetic mean of the two middle values: $\frac{\text{Value of } (N/2)^{\text{th}} \text{ item} + \text{Value of } (N/2 + 1)^{\text{th}} \text{ item}}{2}$.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Discrete Series:</strong> Find the cumulative frequencies ($c.f.$). The median is the value of the variable corresponding to the cumulative frequency that contains the $\left(\frac{N+1}{2}\right)^{\text{th}}$ item.
+      </li>
+      <li>
+        <strong>Continuous Series:</strong> Locate the median class where the cumulative frequency contains the $\left(\frac{N}{2}\right)^{\text{th}}$ item. The median is calculated using:
+        <div class="example-block">
+          $$\text{Median} = L + \frac{\frac{N}{2} - c.f.}{f} \times h$$
+          Where:
+          <ul>
+            <li>$L$ = lower limit of the median class</li>
+            <li>$c.f.$ = cumulative frequency of the class preceding the median class</li>
+            <li>$f$ = frequency of the median class</li>
+            <li>$h$ = magnitude/width of the median class interval</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Quartiles and Percentiles</h3></summary>
+    <p>These partition values divide the distribution into more than two parts:</p>
+    <ul>
+      <li><span class="keyword">Quartiles</span> divide the data into four equal parts ($Q_1$, $Q_2$, $Q_3$).
+        <ul>
+          <li>First Quartile ($Q_1$): Size of $\frac{N+1}{4}^{\text{th}}$ item.</li>
+          <li>Third Quartile ($Q_3$): Size of $\frac{3(N+1)}{4}^{\text{th}}$ item.</li>
+        </ul>
+      </li>
+      <li><span class="keyword">Percentiles</span> divide the distribution into 100 equal parts ($P_1, P_2, \dots, P_{99}$). $P_{50}$ is equal to the median.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">4. Mode</summary>
+  <p>The <span class="keyword">Mode</span> ($M_o$) is the value that occurs most frequently in a distribution. It represents the point of maximum concentration of frequencies.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Computation of Mode</h3></summary>
+    <ul>
+      <li><strong>Discrete Series:</strong> Identified by inspection as the value with the highest frequency.</li>
+      <li><strong>Continuous Series:</strong> Locate the modal class (class with the highest frequency). The mode is calculated using:
+        <div class="example-block">
+          $$M_o = L + \frac{D_1}{D_1 + D_2} \times h$$
+          Where:
+          <ul>
+            <li>$L$ = lower limit of the modal class</li>
+            <li>$D_1 = f_1 - f_0$ (difference between frequency of modal class and preceding class)</li>
+            <li>$D_2 = f_1 - f_2$ (difference between frequency of modal class and succeeding class)</li>
+            <li>$h$ = class interval width</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5. Relative Position of Mean, Median, and Mode</summary>
+  <p>The relative magnitude of the three measures of central tendency generally follows a specific order depending on the symmetry of the distribution:</p>
+  <ul>
+    <li>In a symmetric distribution, Mean = Median = Mode.</li>
+    <li>In an asymmetric (skewed) distribution, the median always lies between the mean and the mode: 
+      $$M_e > M_i > M_o \quad \text{or} \quad M_e < M_i < M_o$$
+      (where $M_e$ is Mean, $M_i$ is Median, and $M_o$ is Mode).
+    </li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-04-presentation-of-data.html";
+      } else {
+        window.location.href = "12-chapter-06-correlation.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
