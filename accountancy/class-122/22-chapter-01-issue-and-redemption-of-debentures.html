@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 122 — Chapter 1: Issue and Redemption of Debentures</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 122 — Chapter 1: Issue and Redemption of Debentures</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1. Meaning and Features of Debentures</summary>
+  <p>A company raises long-term capital through various instruments. When share capital is insufficient, it often raises long-term debt by issuing <span class="keyword">debentures</span>. Debentures can be issued through private placement or offered to the general public.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Definition and Origin</h3></summary>
+    <p>The word "debenture" is derived from the Latin word <span class="keyword">debere</span>, which means "to borrow". A debenture is a written instrument issued by a company acknowledging a debt under its common seal.</p>
+    <ul>
+      <li>It contains a contract for the repayment of the principal amount after a specified period or at intervals.</li>
+      <li>It carries a fixed rate of interest payable half-yearly or yearly on specified dates.</li>
+      <li>According to <span class="keyword">Section 2(30) of the Companies Act, 2013</span>, "debenture" includes debenture stock, bonds, or any other instrument of a company evidencing a debt, whether constituting a charge on the assets of the company or not.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Distinction between Shares and Debentures</h3></summary>
+    <p>The fundamental differences between shares and debentures are summarized below:</p>
+    <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th>Basis of Distinction</th>
+          <th>Shares</th>
+          <th>Debentures</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ownership</strong></td>
+          <td>Represents ownership of the company. Shareholders are owners.</td>
+          <td>Represents an acknowledgment of debt. Debentureholders are creditors.</td>
+        </tr>
+        <tr>
+          <td><strong>Return</strong></td>
+          <td>Dividend, which is an appropriation of profits (paid only when there is profit).</td>
+          <td>Interest, which is a charge against profits (must be paid even if there is a loss).</td>
+        </tr>
+        <tr>
+          <td><strong>Repayment</strong></td>
+          <td>Capital is generally not returned during the lifetime of the company.</td>
+          <td>Repayable after a specified period as per the terms of issue.</td>
+        </tr>
+        <tr>
+          <td><strong>Voting Rights</strong></td>
+          <td>Shareholders enjoy full voting rights.</td>
+          <td>Debentureholders do not possess any voting rights.</td>
+        </tr>
+        <tr>
+          <td><strong>Security</strong></td>
+          <td>Not secured by any charge on assets.</td>
+          <td>Generally secured by a fixed or floating charge on the company's assets.</td>
+        </tr>
+        <tr>
+          <td><strong>Convertibility</strong></td>
+          <td>Shares cannot be converted into debentures.</td>
+          <td>Debentures can be converted into shares if terms of issue permit.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2. Types of Debentures</summary>
+  <p>Debentures can be classified into various categories based on security, tenure, convertibility, coupon rate, and registration:</p>
+  
+  <ul>
+    <li><strong>From the Point of View of Security:</strong>
+      <ul>
+        <li><span class="keyword">Secured Debentures:</span> Debentures secured by a fixed or floating charge on the assets of the company.</li>
+        <li><span class="keyword">Unsecured Debentures:</span> Debentures carrying no specific security or charge on assets.</li>
+      </ul>
+    </li>
+    <li><strong>From the Point of View of Tenure:</strong>
+      <ul>
+        <li><span class="keyword">Redeemable Debentures:</span> Payable at the expiry of a specific period in a lump sum or instalments.</li>
+        <li><span class="keyword">Irredeemable (Perpetual) Debentures:</span> Repayable only upon the winding up of the company or after an extremely long period.</li>
+      </ul>
+    </li>
+    <li><strong>From the Point of View of Convertibility:</strong>
+      <ul>
+        <li><span class="keyword">Convertible Debentures:</span> Can be converted into equity shares or other securities at the option of the company or holder.</li>
+        <li><span class="keyword">Non-Convertible Debentures:</span> Cannot be converted into shares or other securities.</li>
+      </ul>
+    </li>
+    <li><strong>From Coupon Rate Point of View:</strong>
+      <ul>
+        <li><span class="keyword">Specific Coupon Rate Debentures:</span> Issued with a specified, fixed, or floating interest rate.</li>
+        <li><span class="keyword">Zero Coupon Rate Debentures:</span> Do not carry a specific interest rate; issued at a heavy discount to compensate investors.</li>
+      </ul>
+    </li>
+    <li><strong>From the Point of View of Registration:</strong>
+      <ul>
+        <li><span class="keyword">Registered Debentures:</span> Details of holders are recorded in the company's register; transfer requires a formal deed.</li>
+        <li><span class="keyword">Bearer Debentures:</span> Transferable by mere delivery; interest is paid to the bearer of attached coupons.</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3. Accounting for Issue of Debentures</summary>
+  <p>The accounting procedure for issuing debentures is highly similar to that of shares. Debentures can be issued at par, at a premium, or at a discount.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Issue of Debentures for Cash</h3></summary>
+    <p>Debentures are issued at par when the issue price equals the face value. Below are the standard journal entries when the amount is received in instalments:</p>
+    
+    <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th>Transaction</th>
+          <th>Journal Entry</th>
+          <th>Debit</th>
+          <th>Credit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>On receipt of application money</td>
+          <td>Bank A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To Debenture Application A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>On allotment (transfer of application money)</td>
+          <td>Debenture Application A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To ...% Debentures A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>On allotment money becoming due</td>
+          <td>Debenture Allotment A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To ...% Debentures A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>On receipt of allotment money</td>
+          <td>Bank A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To Debenture Allotment A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Issue at a Discount and Premium</h3></summary>
+    <ul>
+      <li><span class="keyword">Issue at a Discount:</span> When debentures are issued below nominal value. The discount is a capital loss and is debited to <span class="keyword">Discount on Issue of Debentures A/c</span>.</li>
+      <li><span class="keyword">Issue at a Premium:</span> When debentures are issued above nominal value. The excess is credited to <span class="keyword">Securities Premium Reserve A/c</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Issue of Debentures for Consideration Other than Cash</h3></summary>
+    <p>When a company purchases assets or a business from vendors, it may issue debentures instead of paying cash. The number of debentures to be issued is calculated as:</p>
+    <div class="example-block">
+      $$\text{Number of Debentures} = \frac{\text{Purchase Consideration}}{\text{Issue Price of a Debenture}}$$
+    </div>
+    <p>If the purchase consideration exceeds the net assets acquired, the difference is debited to <span class="keyword">Goodwill A/c</span>. If the net assets acquired exceed the purchase consideration, the difference is credited to <span class="keyword">Capital Reserve A/c</span>.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Issue of Debentures as Collateral Security</h3></summary>
+    <p>Collateral security refers to secondary or additional security provided to a lender in addition to the primary security. There are two methods of accounting treatment:</p>
+    <ol>
+      <li><strong>First Method (No Entry):</strong> No journal entry is passed for the issue of debentures. A disclosure note is appended under the loan item in the Balance Sheet.</li>
+      <li><strong>Second Method (With Entry):</strong> A journal entry is passed debiting <span class="keyword">Debenture Suspense A/c</span> and crediting <span class="keyword">Debentures A/c</span>. In the Balance Sheet, the Debenture Suspense balance is deducted from the total debentures.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">4. Terms of Issue and Redemption</summary>
+  <p>The terms of issue dictate the conditions under which debentures will be redeemed at maturity. There are six common scenarios:</p>
+  
+  <ol>
+    <li>Issued at par and redeemable at par</li>
+    <li>Issued at a discount and redeemable at par</li>
+    <li>Issued at a premium and redeemable at par</li>
+    <li>Issued at par and redeemable at a premium</li>
+    <li>Issued at a discount and redeemable at a premium</li>
+    <li>Issued at a premium and redeemable at a premium</li>
+  </ol>
+
+  <p>When debentures are redeemable at a premium, the premium on redemption is a liability. The loss is recognized at the time of issue by debiting <span class="keyword">Loss on Issue of Debentures A/c</span> and crediting <span class="keyword">Premium on Redemption of Debentures A/c</span>.</p>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5. Interest on Debentures</summary>
+  <p>Interest on debentures is calculated on the nominal (face) value of the debentures and is paid periodically. It is a charge against profits.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Accounting Treatment and TDS</h3></summary>
+    <p>Under the Income Tax Act, companies must deduct tax at source (<span class="keyword">TDS</span>) from the interest payable to debentureholders and deposit it with the government.</p>
+    <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th>Step</th>
+          <th>Journal Entry</th>
+          <th>Debit</th>
+          <th>Credit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. When interest becomes due</td>
+          <td>Debenture Interest A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To Debentureholders A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To Income Tax Payable (TDS) A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2. On payment of interest</td>
+          <td>Debentureholders A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To Bank A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3. On payment of TDS to Government</td>
+          <td>Income Tax Payable A/c <br/>&nbsp;&nbsp;&nbsp;&nbsp;To Bank A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4. Transfer of interest to P&amp;L</td>
+          <td>Statement of Profit and Loss <br/>&nbsp;&nbsp;&nbsp;&nbsp;To Debenture Interest A/c</td>
+          <td>Dr.</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6. Redemption of Debentures</summary>
+  <p>Redemption of debentures refers to the discharge of liability by repaying the principal amount to the debentureholders.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Methods of Redemption</h3></summary>
+    <ul>
+      <li><strong>Payment in Lump Sum:</strong> The entire amount is paid to debentureholders at maturity.</li>
+      <li><strong>Payment in Instalments (Draw of Lots):</strong> Debentures are redeemed in parts annually or at specified intervals.</li>
+      <li><strong>Purchase in Open Market:</strong> The company buys its own debentures from the open market for immediate cancellation, often when they trade at a discount.</li>
+      <li><strong>Conversion:</strong> Debentures are redeemed by converting them into equity shares or new debentures.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Legal Provisions: DRR and DRI</h3></summary>
+    <p>To protect the interests of debentureholders, the law mandates specific reserves and investments:</p>
+    <ul>
+      <li><span class="keyword">Debenture Redemption Reserve (DRR):</span> Created out of profits available for dividend. Certain classes of companies (like unlisted companies) must maintain a DRR equal to 10% of the value of outstanding debentures.</li>
+      <li><span class="keyword">Debenture Redemption Investment (DRI):</span> Companies required to create DRR must invest or deposit a sum equal to at least 15% of the nominal value of debentures maturing during the year ending on March 31st of the next year. This investment must be made on or before April 30th of the current year.</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 122 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
