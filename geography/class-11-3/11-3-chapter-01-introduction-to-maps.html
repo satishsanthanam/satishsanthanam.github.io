@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 (Part 3) — Chapter 1: Introduction to Maps</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 (Part 3) — Chapter 1: Introduction to Maps</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Core Concepts</summary><p>A <span class="keyword">map</span> is a simplified, selective, and generalised representation of the whole or a part of the earth's surface on a plane surface at a reduced scale. Unlike a three-dimensional <span class="keyword">globe</span> which best represents the earth's <span class="keyword">geoid</span> shape, a map is a two-dimensional representation constructed using <span class="keyword">map projections</span>.</p><details class="sub-topic"><summary><h3>Glossary of Cartographic Terms</h3></summary><table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody><tr><td><span class="keyword">Cadastral Map</span></td><td>A large-scale map drawn at a scale of $1 : 500$ to $1 : 4000$ to show property boundaries and land parcels.</td></tr><tr><td><span class="keyword">Cartography</span></td><td>The art, science, and technology of making and studying maps, charts, plans, and other graphical expressions.</td></tr><tr><td><span class="keyword">Map Generalisation</span></td><td>A simplified representation of features on a map appropriate to its scale or purpose, without affecting their visual form.</td></tr><tr><td><span class="keyword">Map Projection</span></td><td>The system of transforming the spherical or geoidal surface of the earth onto a plane surface.</td></tr><tr><td><span class="keyword">Scale</span></td><td>The ratio between the distance of two points on the map and the actual distance between the same two points on the ground.</td></tr><tr><td><span class="keyword">Sketch Map</span></td><td>A simplified map drawn freehand that fails to preserve true scale or orientation.</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Essentials of Map Making</summary><p>Cartography involves several essential processes common to all maps:</p><ul><li><span class="keyword">Scale</span>: Determines the level of detail and reduction. All maps are reductions, and the choice of scale sets limits on information content.</li><li><span class="keyword">Map Projection</span>: The system used to transform the curved geoidal surface into a flat plane, which inevitably introduces minor distortions in direction, distance, area, or shape.</li><li><span class="keyword">Map Generalisation</span>: Selecting and simplifying relevant data to serve the map's specific objective (e.g., general purpose vs. thematic maps).</li><li><span class="keyword">Map Design</span>: Planning graphic characteristics, including symbols, size, form, lettering style, line width, colours, shades, and legend layout.</li><li><span class="keyword">Map Construction and Production</span>: The physical or digital drawing and reproduction of maps, heavily revolutionised by computer-assisted mapping and photo-printing.</li></ul></details><details class="topic-box"><summary class="topic-title">History of Map Making</summary><details class="sub-topic"><summary><h3>Global Evolution</h3></summary><p>The history of map-making is as old as mankind itself:</p><ul><li>The oldest known map was found in <span class="keyword">Mesopotamia</span>, drawn on a clay tablet dating back to 2,500 B.C.</li><li>Greek and Arab geographers laid the foundations of modern cartography, establishing coordinate systems and measuring the Earth's circumference. <span class="keyword">Ptolemy</span>'s Map of the World is a landmark historical work.</li><li>The 19th and 20th centuries introduced <span class="keyword">aerial photography</span>, which supplemented ground surveys and advanced modern mapping.</li></ul></details><details class="sub-topic"><summary><h3>Map Making in India</h3></summary><p>Indian cartographic traditions date back to the Vedic period:</p><ul><li>Astronomical and cosmological principles were recorded as <span class="keyword">Sidhantas</span> in classical treatises by scholars like <span class="keyword">Arya Bhatta</span>, <span class="keyword">Varahamihira</span>, and <span class="keyword">Bhaskara</span>.</li><li>Ancient Indian scholars divided the known world into seven <span class="keyword">dwipas</span>, and the Mahabharata conceptualised a round world surrounded by water.</li><li>During the medieval period, land surveying was pioneered by <span class="keyword">Todarmal</span> and enriched by <span class="keyword">Sher Shah Suri</span>'s revenue maps.</li><li>The <span class="keyword">Survey of India</span> was established in 1767, culminating in the publication of the Map of Hindustan in 1785.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Classification of Maps</summary><details class="sub-topic"><summary><h3>Based on Scale</h3></summary><p>Maps are classified into large-scale and small-scale categories:</p><table><thead><tr><th>Category</th><th>Scale Range / Examples</th><th>Characteristics</th></tr></thead><tbody><tr><td><span class="keyword">Large-scale Maps</span></td><td>$1 : 500$ to $1 : 250,000$ (e.g., Cadastral maps, Topographical maps)</td><td>Show small areas in great detail; represent property boundaries, local relief, and infrastructure.</td></tr><tr><td><span class="keyword">Small-scale Maps</span></td><td>Very small scales (e.g., Wall maps, Atlas maps)</td><td>Show large areas (countries, continents) with highly generalised physical or cultural features.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Based on Function</h3></summary><p>Maps are divided into physical and cultural categories based on their primary function:</p><ul><li><span class="keyword">Physical Maps</span>: Show natural features. Includes:<ul><li><span class="keyword">Relief Maps</span>: General topography, mountains, valleys, plains, and drainage.</li><li><span class="keyword">Geological Maps</span>: Geological structures and rock types.</li><li><span class="keyword">Climatic Maps</span>: Climatic regions, temperature, rainfall, and wind distribution.</li><li><span class="keyword">Soil Maps</span>: Distribution and properties of different soil types.</li></ul></li><li><span class="keyword">Cultural Maps</span>: Show man-made features. Includes:<ul><li><span class="keyword">Political Maps</span>: Administrative divisions (countries, states, districts).</li><li><span class="keyword">Population Maps</span>: Distribution, density, growth, and demographic composition.</li><li><span class="keyword">Economic Maps</span>: Crop production, mineral distribution, industries, markets, and trade routes.</li><li><span class="keyword">Transportation Maps</span>: Roads, railways, airports, and shipping routes.</li></ul></li></ul></details></details><details class="topic-box"><summary class="topic-title">Uses of Maps &amp; Spatial Measurements</summary><p>Maps are essential tools for geographers and planners to measure distance, direction, and area.</p><details class="sub-topic"><summary><h3>Measurement of Distance</h3></summary><p>Linear features are measured based on their geometry:</p><ul><li><strong>Straight Lines</strong>: Measured directly using a pair of dividers or a scale.</li><li><strong>Erratic/Zigzag Lines</strong> (e.g., rivers, coastlines): Measured using a thread aligned along the feature and then stretched against a scale, or by using a mechanical instrument called a <span class="keyword">Rotameter</span>.</li></ul></details><details class="sub-topic"><summary><h3>Measurement of Direction</h3></summary><p>Direction is defined as an imaginary straight line showing the angular position relative to a common base direction (usually North, which is $0^	ext{o}$):</p><ul><li>The four primary directions are <span class="keyword">Cardinal Points</span>: North (N), South (S), East (E), and West (W).</li><li>Intermediate directions (e.g., NE, NW, SE, SW) provide more precise orientation.</li></ul></details><details class="sub-topic"><summary><h3>Measurement of Area</h3></summary><p>Area of administrative or geographic units can be calculated using different methods:</p><ul><li><strong>Grid Square Method</strong>: A simple, manual method where a grid of squares is placed over the area. The area is calculated using the formula: <div class="example-block">$$	ext{Area} = 	ext{Sum of whole squares} + rac{	ext{Sum of partial squares}}{2} 	imes 	ext{Map Scale}$$</div></li><li><strong>Polar Planimeter Method</strong>: A highly precise mechanical method using an instrument called a <span class="keyword">Polar Planimeter</span> to trace the perimeter of an area.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 11 (Part 3) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "11-3-chapter-02-map-scale.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 1) — Chapter 3: Human Development</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 1) — Chapter 3: Human Development</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Growth and Development</summary>
+  <p>Both growth and development refer to changes over a period of time, but they differ significantly in their nature and value orientation.</p>
+  <details class="sub-topic">
+    <summary><h3>Key Differences</h3></summary>
+    <ul>
+      <li><span class="keyword">Growth</span> is quantitative and value neutral. It can be positive (indicating an increase) or negative (indicating a decrease).</li>
+      <li><span class="keyword">Development</span> means a qualitative change which is always value positive. It occurs when there is a positive change in quality and cannot take place without an increment to existing conditions.</li>
+      <li>Positive growth does not always lead to development. Development only occurs when positive growth is accompanied by qualitative improvements (e.g., a city's population growing alongside improvements in housing, basic services, and infrastructure).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Concept of Human Development</summary>
+  <p>The concept of human development was introduced by Dr. <span class="keyword">Mahbub-ul-Haq</span> and further expanded by Nobel Laureate Prof. <span class="keyword">Amartya Sen</span> in the late 1980s and early 1990s.</p>
+  <details class="sub-topic">
+    <summary><h3>Core Philosophy</h3></summary>
+    <ul>
+      <li>Human development is defined as development that enlarges people's choices and improves their lives.</li>
+      <li>People are central to all development under this concept.</li>
+      <li>The basic goal of development is to create conditions where people can live a <span class="keyword">meaningful life</span>.</li>
+      <li>A meaningful life is not just a long one; it must be a life with purpose where people are healthy, able to develop talents, participate in society, and are free to achieve their goals.</li>
+      <li>Prof. Amartya Sen saw an increase in freedom (or decrease in unfreedom) as the main objective of development.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">The Four Pillars of Human Development</summary>
+  <p>Human development is supported by four fundamental concepts, which act as its pillars:</p>
+  <details class="sub-topic">
+    <summary><h3>1. Equity</h3></summary>
+    <p>Refers to making equal access to opportunities available to everybody, irrespective of gender, race, income, and caste.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>2. Sustainability</h3></summary>
+    <p>Means continuity in the availability of opportunities. Each generation must have the same opportunities, requiring the responsible use of environmental, financial, and human resources to avoid limiting future generations.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>3. Productivity</h3></summary>
+    <p>Refers to human labour productivity or productivity in terms of human work. This must be constantly enriched by building capabilities in people through education and health facilities.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>4. Empowerment</h3></summary>
+    <p>Means to have the power to make choices. This power comes from increasing freedom, capability, good governance, and people-oriented policies.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Approaches to Human Development</summary>
+  <p>There are several historical and contemporary approaches to understanding and addressing human development:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Approach</th>
+        <th>Key Features</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Income Approach</strong></td>
+        <td>One of the oldest approaches. Links human development directly to income, assuming higher income reflects higher freedom and development.</td>
+      </tr>
+      <tr>
+        <td><strong>Welfare Approach</strong></td>
+        <td>Views human beings as beneficiaries or targets of development. Advocates for high government expenditure on education, health, and social amenities. People are passive recipients.</td>
+      </tr>
+      <tr>
+        <td><strong>Basic Needs Approach</strong></td>
+        <td>Proposed by the <span class="keyword">International Labour Organisation (ILO)</span>. Emphasizes the provision of six basic needs: health, education, food, water supply, sanitation, and housing. Ignores the question of human choices.</td>
+      </tr>
+      <tr>
+        <td><strong>Capability Approach</strong></td>
+        <td>Associated with Prof. <span class="keyword">Amartya Sen</span>. Focuses on building human capabilities in health, education, and resource access as the key to increasing human development.</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Measuring Human Development</summary>
+  <p>The United Nations Development Programme (UNDP) has published the <span class="keyword">Human Development Report</span> annually since 1990, utilizing key indices to measure progress.</p>
+  <details class="sub-topic">
+    <summary><h3>Human Development Index (HDI)</h3></summary>
+    <p>Ranks countries based on their performance across three key areas, with each dimension given an equal weightage:</p>
+    <div class="example-block">
+      $$\text{Dimension Weight} = \frac{1}{3}$$
+    </div>
+    <ul>
+      <li><strong>Health:</strong> Measured by life expectancy at birth.</li>
+      <li><strong>Education:</strong> Measured by adult literacy rate and gross enrolment ratio.</li>
+      <li><strong>Access to Resources:</strong> Measured in terms of purchasing power in U.S. dollars.</li>
+    </ul>
+    <p>The HDI score ranges between 0 and 1. The closer a score is to 1, the greater the level of human development.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Human Poverty Index (HPI)</h3></summary>
+    <p>A non-income measure that estimates the shortfall in human development. It considers factors such as the probability of not surviving till age 40, adult illiteracy rate, lack of access to clean water, and the number of underweight children.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">International Comparisons</summary>
+  <p>International comparisons show that the size of a territory and per capita income are not directly related to human development. Smaller or poorer nations often perform better than their larger or richer neighbors.</p>
+  <details class="sub-topic">
+    <summary><h3>Classification of Countries</h3></summary>
+    <p>Countries are classified into four groups based on their HDI scores:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Level of Human Development</th>
+          <th>Score in Development Index</th>
+          <th>Number of Countries</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Very High</strong></td>
+          <td>above 0.800</td>
+          <td>69</td>
+        </tr>
+        <tr>
+          <td><strong>High</strong></td>
+          <td>between 0.700 up to 0.799</td>
+          <td>49</td>
+        </tr>
+        <tr>
+          <td><strong>Medium</strong></td>
+          <td>between 0.550 up to 0.699</td>
+          <td>42</td>
+        </tr>
+        <tr>
+          <td><strong>Low</strong></td>
+          <td>below 0.550</td>
+          <td>33</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><em>Source: Human Development Report, 2023-24</em></p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Top Ten Ranked Countries</h3></summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Country</th>
+          <th>Rank</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Switzerland</td>
+          <td>7</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Norway</td>
+          <td>7</td>
+          <td>Ireland</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Iceland</td>
+          <td>9</td>
+          <td>Singapore</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Hongkong, China (SAR)</td>
+          <td>10</td>
+          <td>Australia</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Denmark</td>
+          <td>10</td>
+          <td>Netherlands</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Sweden</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Gross National Happiness (GNH)</h3></summary>
+    <p><span class="keyword">Bhutan</span> is the only country in the world to officially proclaim Gross National Happiness (GNH) as the measure of its progress, emphasizing spiritual, non-material, and qualitative aspects of development alongside environmental conservation.</p>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 12 (Part 1) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-1-chapter-02-the-world-population.html";
+      } else {
+        window.location.href = "12-1-chapter-04-primary-activities.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 3) — Chapter 3: Graphical Representation of Data</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 3) — Chapter 3: Graphical Representation of Data</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Representation of Data</summary><p>The transformation of data through visual methods like graphs, diagrams, maps, and charts is called <span class="keyword">representation of data</span>. This graphic method enhances our understanding, makes comparisons easy, and creates a long-lasting imprint on the mind. It simplifies complex geographical distributions such as population growth, sex ratio, age-sex composition, and occupational structure within a territory.</p></details><details class="topic-box"><summary class="topic-title">General Rules for Drawing Graphs, Diagrams and Maps</summary><details class="sub-topic"><summary><h3>1. Selection of a Suitable Method</h3></summary><p>Data characteristics must be matched with the appropriate graphical representation:</p><ul><li><span class="keyword">Line Graphs</span>: Best suited for representing temperature, population growth over time, or continuous time-series data.</li><li><span class="keyword">Bar Diagrams</span>: Ideal for representing rainfall, commodity production, or discrete category comparisons.</li><li><span class="keyword">Dot Maps</span>: Suited for showing absolute population distribution (human or livestock).</li><li><span class="keyword">Choropleth Maps</span>: Best for representing density of population, literacy rates, or ratios.</li></ul></details><details class="sub-topic"><summary><h3>2. Selection of Suitable Scale</h3></summary><p>The scale acts as a measure of the data. It must be carefully chosen to ensure the entire dataset is represented accurately, being neither too large nor too small.</p></details><details class="sub-topic"><summary><h3>3. Cartographic Design Components</h3></summary><ul><li><span class="keyword">Title</span>: Indicates the name of the area, reference year, and the caption of the diagram. Usually placed at the top center.</li><li><span class="keyword">Legend</span>: Explains the colors, shades, symbols, and signs used. Typically positioned at the lower left or lower right.</li><li><span class="keyword">Direction</span>: Maps must show orientation, usually indicated by a North arrow symbol.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Construction of Diagrams</summary><p>Diagrams are grouped based on their dimensions:</p><ol><li><span class="keyword">One-dimensional diagrams</span>: Line graphs, polygraphs, bar diagrams, histograms.</li><li><span class="keyword">Two-dimensional diagrams</span>: Pie diagrams, rectangular diagrams.</li><li><span class="keyword">Three-dimensional diagrams</span>: Cube and spherical diagrams.</li></ol><details class="sub-topic"><summary><h3>Line Graph & Polygraph</h3></summary><p>A <span class="keyword">Line Graph</span> represents time-series data. A <span class="keyword">Polygraph</span> is a line graph in which two or more variables are shown by an equal number of lines on the same axes for immediate comparison (e.g., comparing growth rates of different crops or sex ratios of different states).</p></details><details class="sub-topic"><summary><h3>Bar Diagrams</h3></summary><p>Also called columnar diagrams, drawn with columns of equal width. Types include:</p><ul><li><span class="keyword">Simple Bar Diagram</span>: Used for immediate comparison of single variables.</li><li><span class="keyword">Multiple Bar Diagram</span>: Represents two or more variables together for comparison (e.g., male vs. female literacy rates).</li><li><span class="keyword">Compound Bar Diagram</span>: Different components of a single variable are stacked together in a single bar (e.g., sources of electricity generation: thermal, hydro, nuclear).</li></ul></details><details class="sub-topic"><summary><h3>Pie Diagram</h3></summary><p>Also known as a <span class="keyword">Divided Circle Diagram</span>. It represents the total value of an attribute using a circle divided into corresponding degrees of angle.</p><div class="example-block">$$\text{Degree of Angle} = \frac{\text{Value of given State/Region}}{\text{Total Value}} \times 360$$</div><p>If data is in percentage form, the formula is:</p><div class="example-block">$$\text{Degree of Angle} = \frac{\text{Percentage of } x \times 360}{100}$$</div><p>Example of export data distribution:</p><table><thead><tr><th>Unit/Region</th><th>% of Indian Export</th><th>Calculation</th><th>Degree</th></tr></thead><tbody><tr><td>Europe</td><td>20.2</td><td>20.2 × 3.6</td><td>73°</td></tr><tr><td>Africa</td><td>6.5</td><td>6.5 × 3.6</td><td>23°</td></tr><tr><td>America</td><td>14.8</td><td>14.8 × 3.6</td><td>53°</td></tr><tr><td>Asia and ASEAN</td><td>56.2</td><td>56.2 × 3.6</td><td>203°</td></tr><tr><td>Others</td><td>2.3</td><td>2.3 × 3.6</td><td>8°</td></tr><tr><td><strong>Total</strong></td><td><strong>100.0</strong></td><td>-</td><td><strong>360°</strong></td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Flow Maps and Charts</summary><p>A <span class="keyword">Flow Chart</span> (or <span class="keyword">Dynamic Map</span>) is a combination of a graph and a map. It is drawn to show the flow of commodities, vehicles, or people between places of origin and destination using lines of proportional width.</p><ul><li>Requires a route map depicting transport routes and connecting stations.</li><li>Requires flow data (e.g., number of trains, passengers, or volume of goods).</li></ul></details><details class="topic-box"><summary class="topic-title">Thematic Maps</summary><p>Also known as <span class="keyword">distribution maps</span>, these represent spatial variations of specific themes. They are classified into:</p><ul><li><span class="keyword">Quantitative Maps</span>: Show measurable variations (e.g., rainfall, temperature, population density).</li><li><span class="keyword">Non-quantitative Maps</span>: Show non-measurable qualitative characteristics (e.g., soil types, vegetation zones).</li></ul><details class="sub-topic"><summary><h3>Dot Maps</h3></summary><p>Used to show the distribution of absolute values (e.g., population, cattle). Each dot represents a specific quantity. Precautions include keeping all dots the same size and placing them accurately based on physiographic features (avoiding water bodies, high mountains, etc.).</p></details><details class="sub-topic"><summary><h3>Choropleth Maps</h3></summary><p>Drawn to depict data characteristics related to administrative units (e.g., density of population, literacy rates). Data is grouped into categories (usually 5) from very low to very high using the range formula:</p><div class="example-block">$$\text{Range} = \text{Maximum Value} - \text{Minimum Value}$$</div><div class="example-block">$$\text{Class Interval} = \frac{\text{Range}}{5}$$</div></details><details class="sub-topic"><summary><h3>Isopleth Maps</h3></summary><p>Derived from <em>Iso</em> (equal) and <em>pleth</em> (lines). An <span class="keyword">Isopleth Map</span> joins places of equal values with imaginary lines. Common types include:</p><ul><li><span class="keyword">Isotherm</span>: Equal temperature</li><li><span class="keyword">Isobar</span>: Equal pressure</li><li><span class="keyword">Isohyet</span>: Equal rainfall</li><li><span class="keyword">Contour</span>: Equal elevation</li></ul><p>Drawing isopleths requires <span class="keyword">interpolation</span> to find intermediate values between control points using the formula:</p><div class="example-block">$$\text{Point of Isopleth} = \frac{\text{Distance between two points in cm}}{\text{Difference between the two values}} \times \text{Interval}$$</div></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 12 (Part 3) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-3-chapter-02-data-processing.html";
+      } else {
+        window.location.href = "12-3-chapter-04-spatial-information-technology.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 2) — Chapter 1: Population: Distribution, Density, Growth and Composition</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 2) — Chapter 1: Population: Distribution, Density, Growth and Composition</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction &amp; Sources of Population Data</summary>
+  <p>The people are the most important component of a country. India is the second most populous country in the world after China, with a total population of 1,210 million (2011 Census). Such a large population puts immense pressure on limited resources and lies at the center of many socio-economic challenges in the country.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Sources of Population Data</h3></summary>
+    <p>Population data in India are collected through the <span class="keyword">Census</span> operations, which are conducted every 10 years.</p>
+    <ul>
+      <li>The first population Census in India was conducted in <span class="keyword">1872</span>.</li>
+      <li>The first complete and synchronous Census was conducted in <span class="keyword">1881</span>.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Distribution of Population</summary>
+  <p>India has a highly uneven pattern of population distribution. A few states hold the vast majority of the population, while others have very sparse distributions.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Spatial Patterns of Distribution</h3></summary>
+    <ul>
+      <li><span class="keyword">Uttar Pradesh</span> has the highest population in the country, followed by Maharashtra, Bihar, and West Bengal.</li>
+      <li>Ten states (Uttar Pradesh, Maharashtra, Bihar, West Bengal, Andhra Pradesh, Tamil Nadu, Madhya Pradesh, Rajasthan, Karnataka, and Gujarat) together account for about <span class="keyword">76 percent</span> of the total population.</li>
+      <li>States with very small shares of population despite large geographical areas include Jammu &amp; Kashmir (1.04%), Arunachal Pradesh (0.11%), and Uttarakhand (0.84%).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Factors Influencing Population Distribution</h3></summary>
+    <p>The uneven spatial distribution of population is determined by a combination of physical, socio-economic, and historical factors:</p>
+    <ol>
+      <li><strong>Physical Factors:</strong> Climate, terrain, and availability of water. The North Indian Plains, deltas, and Coastal Plains have higher population concentrations than the interior districts of southern and central India, the Himalayas, or western desert regions.</li>
+      <li><strong>Socio-Economic and Historical Factors:</strong> Evolution of settled agriculture, agricultural development, pattern of human settlement, transport networks, industrialisation, and urbanisation. Urban regions like Delhi, Mumbai, Kolkata, and Bengaluru have high concentrations due to industrial development and rural-to-urban migration.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Density of Population</summary>
+  <p><span class="keyword">Density of Population</span> is expressed as the number of persons per unit area. It provides a better understanding of the spatial distribution of population in relation to land.</p>
+  <p>The average density of population in India in 2011 was <span class="keyword">382 persons per sq km</span>, up steadily from 117 persons per sq km in 1951.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Spatial Variation in Density</h3></summary>
+    <ul>
+      <li><strong>Lowest Density:</strong> <span class="keyword">Arunachal Pradesh</span> (17 persons per sq km).</li>
+      <li><strong>Highest Density (States):</strong> <span class="keyword">Bihar</span> (1,102 persons per sq km) and West Bengal (1,029 persons per sq km).</li>
+      <li><strong>Highest Density (UTs):</strong> <span class="keyword">NCT Delhi</span> (11,297 persons per sq km).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Physiological and Agricultural Densities</h3></summary>
+    <p>To get a better insight into the human-land ratio and pressure on cultivable land, geographers use physiological and agricultural densities:</p>
+    <div class="example-block">
+      <p><strong>Physiological Density:</strong></p>
+      $$\text{Physiological Density} = \frac{\text{Total Population}}{\text{Net Cultivated Area}}$$
+    </div>
+    <div class="example-block">
+      <p><strong>Agricultural Density:</strong></p>
+      $$\text{Agricultural Density} = \frac{\text{Total Agricultural Population}}{\text{Net Cultivable Area}}$$
+    </div>
+    <p><em>Note:</em> Agricultural population includes cultivators, agricultural labourers, and their family members.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Growth of Population</summary>
+  <p><span class="keyword">Growth of Population</span> is the change in the number of people living in a particular area between two points of time. Its rate is expressed in percentage. It has two components: natural (births and deaths) and induced (migration).</p>
+  <p>The annual growth rate of India's population is <span class="keyword">1.64 percent</span> (2011).</p>
+
+  <details class="sub-topic">
+    <summary><h3>Phases of Population Growth (1901-2011)</h3></summary>
+    <p>The growth rate of population in India over the last century shows four distinct phases:</p>
+    <ul>
+      <li><strong>Phase I (1901-1921) - Period of Stagnant/Stationary Growth:</strong> Growth rate was extremely low, even recording a negative growth rate during 1911-1921. Both birth and death rates were high due to poor health services, illiteracy, and food distribution inefficiencies.</li>
+      <li><strong>Phase II (1921-1951) - Period of Steady Growth:</strong> An overall improvement in health and sanitation brought down the mortality rate, while the crude birth rate remained high, leading to a steady population increase.</li>
+      <li><strong>Phase III (1951-1981) - Period of Population Explosion:</strong> Caused by a rapid fall in the mortality rate alongside high fertility rates. The average annual growth rate was as high as 2.2%. Centralised planning and developmental activities improved living conditions. High international migration (from Tibet, Bangladesh, Nepal, Pakistan) also contributed.</li>
+      <li><strong>Phase IV (Post-1981 to Present) - Period of High Growth with Signs of Slowing Down:</strong> The growth rate, though still high, has started declining gradually due to a downward trend in the crude birth rate, influenced by increased age at marriage and improved female education.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Adolescent Population &amp; Policies</h3></summary>
+    <p>An important aspect of India's population growth is its youth and adolescent share.</p>
+    <ul>
+      <li>Adolescents (aged 10-19 years) constitute about <span class="keyword">20.9 percent</span> of the population (2011).</li>
+      <li><strong>National Youth Policy (NYP-2014):</strong> Launched in February 2014 to empower youth (defined as persons in the age group of 15-29 years) to achieve their full potential.</li>
+      <li><strong>National Policy for Skill Development and Entrepreneurship (2015):</strong> Formulated to align skilling activities across the country to common standards.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Population Composition</summary>
+  <p><span class="keyword">Population Composition</span> is a field of study within population geography analyzing age, sex, place of residence, language, religion, and occupational characteristics.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Rural-Urban Composition</h3></summary>
+    <ul>
+      <li><strong>Rural Population:</strong> About <span class="keyword">68.8 percent</span> of India's total population lives in villages (2011). States like Himachal Pradesh and Bihar have very high proportions of rural population.</li>
+      <li><strong>Urban Population:</strong> Stands at <span class="keyword">31.16 percent</span> (2011) but is growing rapidly due to economic development and rural-to-urban migration.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Linguistic Composition</h3></summary>
+    <p>India is a highly diverse linguistic nation. According to the Grierson's Linguistic Survey of India (1903-1928), there were 179 languages and 544 dialects. Today, there are <span class="keyword">22 Scheduled Languages</span> under the Constitution of India.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Language Family</th>
+          <th>Sub-Family / Branch</th>
+          <th>Percentage Share</th>
+          <th>Primary Speech Areas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Austric (Nishada)</strong></td>
+          <td>Austro-Asiatic, Austro-Nesian</td>
+          <td>1.38%</td>
+          <td>Meghalaya, Nicobar Islands, West Bengal, Bihar, Odisha, Assam, Madhya Pradesh</td>
+        </tr>
+        <tr>
+          <td><strong>Dravidian (Dravida)</strong></td>
+          <td>South, Central, and North Dravidian</td>
+          <td>20.00%</td>
+          <td>Tamil Nadu, Karnataka, Kerala, Andhra Pradesh, Madhya Pradesh, Odisha, Maharashtra</td>
+        </tr>
+        <tr>
+          <td><strong>Sino-Tibetan (Kirata)</strong></td>
+          <td>Tibeto-Himalayan, North Assam, Assam-Myanmari</td>
+          <td>0.85%</td>
+          <td>Jammu &amp; Kashmir, Himachal Pradesh, Sikkim, Arunachal Pradesh, Assam, Nagaland, Manipur, Mizoram</td>
+        </tr>
+        <tr>
+          <td><strong>Indo-European (Aryan)</strong></td>
+          <td>Indo-Aryan, Iranian, Dardic</td>
+          <td>73.00%</td>
+          <td>North and Central India (UP, Bihar, Punjab, Rajasthan, Gujarat, Maharashtra, West Bengal, etc.)</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Religious Composition</h3></summary>
+    <p>Religion is a major cultural force in India. The spatial distribution of major religious groups is detailed below:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Religious Group</th>
+          <th>Population (in Millions)</th>
+          <th>% of Total (2011)</th>
+          <th>Primary Concentrations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hindus</strong></td>
+          <td>966.3</td>
+          <td>79.8%</td>
+          <td>Major group in most states (70-90% and above), except border areas and parts of the Northeast.</td>
+        </tr>
+        <tr>
+          <td><strong>Muslims</strong></td>
+          <td>172.2</td>
+          <td>14.2%</td>
+          <td>Jammu &amp; Kashmir, West Bengal, Kerala, Uttar Pradesh, Delhi, Lakshadweep.</td>
+        </tr>
+        <tr>
+          <td><strong>Christians</strong></td>
+          <td>27.8</td>
+          <td>2.3%</td>
+          <td>Western coast (Goa, Kerala), hill states of Northeast (Meghalaya, Mizoram, Nagaland).</td>
+        </tr>
+        <tr>
+          <td><strong>Sikhs</strong></td>
+          <td>20.8</td>
+          <td>1.7%</td>
+          <td>Concentrated in Punjab, Haryana, and Delhi.</td>
+        </tr>
+        <tr>
+          <td><strong>Buddhists</strong></td>
+          <td>8.4</td>
+          <td>0.7%</td>
+          <td>Maharashtra, Sikkim, Arunachal Pradesh, Ladakh, Himachal Pradesh (Lahul and Spiti).</td>
+        </tr>
+        <tr>
+          <td><strong>Jains</strong></td>
+          <td>4.5</td>
+          <td>0.4%</td>
+          <td>Urban areas of Rajasthan, Gujarat, and Maharashtra.</td>
+        </tr>
+        <tr>
+          <td><strong>Others / Unstated</strong></td>
+          <td>10.8</td>
+          <td>0.9%</td>
+          <td>Tribal and indigenous faiths scattered across the country.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Occupational Composition</h3></summary>
+    <p>The population of India is divided into three economic groups based on work status:</p>
+    <ul>
+      <li><strong>Main Worker:</strong> A person who works for at least <span class="keyword">183 days</span> (or 6 months) in a year.</li>
+      <li><strong>Marginal Worker:</strong> A person who works for less than <span class="keyword">183 days</span> in a year.</li>
+      <li><strong>Non-Worker:</strong> A person who does not work.</li>
+    </ul>
+    <p>In India, the proportion of workers (both main and marginal) is <span class="keyword">39.8 percent</span> (2011), leaving a large dependent non-working population of about 60 percent.</p>
+    
+    <h4>Occupational Categories (2011 Census):</h4>
+    <ol>
+      <li>Cultivators</li>
+      <li>Agricultural Labourers</li>
+      <li>Household Industrial Workers</li>
+      <li>Other Workers</li>
+    </ol>
+
+    <h4>Sectoral Composition of Workforce (2011):</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Sector</th>
+          <th>Percentage of Total Workers</th>
+          <th>Male Workers</th>
+          <th>Female Workers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Primary (Agriculture &amp; Allied)</strong></td>
+          <td>54.6%</td>
+          <td>16,54,47,075</td>
+          <td>9,75,75,398</td>
+        </tr>
+        <tr>
+          <td><strong>Secondary (Household &amp; Manufacturing)</strong></td>
+          <td>3.8%</td>
+          <td>97,75,635</td>
+          <td>85,60,672</td>
+        </tr>
+        <tr>
+          <td><strong>Tertiary (Services &amp; Others)</strong></td>
+          <td>41.6%</td>
+          <td>15,66,432,220</td>
+          <td>4,37,41,311</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 12 (Part 2) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "12-2-chapter-02-human-settlements.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
