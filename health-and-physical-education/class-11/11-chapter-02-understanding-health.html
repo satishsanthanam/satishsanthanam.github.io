@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 2: Understanding Health</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 2: Understanding Health</h1>
+
+    <h1>Physical and Health Education: Class 11 (Part 02) — Chapter 02: Understanding Health</h1><details class="topic-box"><summary class="topic-title">Introduction to Health and its Dimensions</summary><p>Health has evolved from being understood merely as the absence of disease to a comprehensive state of complete well-being. In 1948, the <span class="keyword">World Health Organization (WHO)</span> defined health as: <em>"a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity."</em> Modern health is multidimensional and dynamic, representing the ability to adapt and manage life's challenges.</p><details class="sub-topic"><summary><h3>The Six Dimensions of Health</h3></summary><ul><li><span class="keyword">Physical Dimension</span>: The ability of the human body to function properly. It involves regular exercise, healthy habits, a balanced diet, bone health, and maintaining an optimal <span class="keyword">Body Mass Index (BMI)</span>. <div class="example-block">$$\text{BMI} = \frac{\text{Weight in kg}}{(\text{Height in meters})^2}$$</div></li><li><span class="keyword">Mental Dimension</span>: Refers to cognitive aspects of health including thinking, reasoning, remembering, imagining, and learning. It is the capacity to process information, master new skills, and maintain self-esteem.</li><li><span class="keyword">Social Dimension</span>: The ability to interact effectively with others in a socio-cultural environment, maintain healthy relationships, and communicate effectively.</li><li><span class="keyword">Emotional Dimension</span>: The ability to cope, adjust, and adapt to the environment, manage stress, and maintain a positive mindset.</li><li><span class="keyword">Spiritual Dimension</span>: Finding meaning, value, belief, and a sense of overall purpose in life, which strongly influences mental and emotional resilience.</li><li><span class="keyword">Environmental Dimension</span>: Living in harmony with nature, protecting the environment, and understanding how external surroundings (habitat, pollution, occupation) affect personal wellness.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Health Needs of Children, Adolescents, and Differently Abled</summary><p>Different demographic groups require targeted health interventions based on their developmental stages and unique challenges.</p><details class="sub-topic"><summary><h3>Health Needs of Children</h3></summary><p>Childhood lays the foundation for a healthy life. Key needs include:</p><ul><li>Adequate food, nutrition, and immunity.</li><li>Protection against vaccine-preventable diseases (e.g., measles).</li><li>Prevention and immediate treatment of common childhood illnesses like diarrhoea, pneumonia, and fevers.</li></ul></details><details class="sub-topic"><summary><h3>Health Needs of Adolescents</h3></summary><p>Adolescence (ages 10–19) is a critical transition period marked by rapid physical, physiological, and emotional changes.</p><ul><li><strong>Key Challenges:</strong> Nutritional disorders (malnutrition and obesity), substance abuse, stress, mental disorders, injuries, and internet/social media addiction.</li><li><strong>Support Systems:</strong> Access to counseling, healthcare advice, and peer-led support systems.</li></ul></details><details class="sub-topic"><summary><h3>Health Needs of the Differently Abled</h3></summary><p>According to the WHO, disability covers impairments, activity limitations, and participation restrictions. Key frameworks include:</p><ul><li><span class="keyword">National Policy for Persons with Disabilities (2006)</span>: Promotes equal opportunities, protection of rights, and full participation in society.</li><li><span class="keyword">2030 Agenda for Sustainable Development</span>: Emphasizes inclusive development and welfare schemes to support physical, social, and emotional well-being.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Health Status of Children in India</summary><p>Key statistical indicators highlighting the health status of children in India based on national surveys:</p><table><thead><tr><th>Health Indicator</th><th>Statistical Value / Findings</th></tr></thead><tbody><tr><td>Sex Ratio (0–6 years)</td><td>918 females per 1000 males</td></tr><tr><td>Infant Mortality Rate (IMR)</td><td>Reduced from 46 (2011) to 34 (2016) per 1000 live births</td></tr><tr><td>Under-five Mortality Rate (U5MR)</td><td>39 per 1000 live births (2016)</td></tr><tr><td>Stunting (Under 5 years)</td><td>38% of children are stunted (NFHS-4, 2015–16)</td></tr><tr><td>Wasting (Under 5 years)</td><td>21% of children are wasted</td></tr><tr><td>Anaemia (6–59 months)</td><td>Highest in Haryana (72%), lowest in Mizoram (19%)</td></tr><tr><td>Basic Vaccination (12–23 months)</td><td>62% received all basic vaccinations</td></tr></tbody></table></details><details class="topic-box"><summary class="topic-title">Addressing Health Needs: Roles of Stakeholders</summary><p>Improving community and individual health requires active participation from multiple institutions:</p><details class="sub-topic"><summary><h3>Role of Schools and Teachers</h3></summary><ul><li>Schools promote healthy behaviors, physical education, and structured sports.</li><li>Teachers identify diverse student needs, offer counseling, and implement health promotion programs.</li></ul></details><details class="sub-topic"><summary><h3>Role of Adolescent-friendly Health Services</h3></summary><p>Providing accessible, confidential, and non-judgmental healthcare services specifically tailored to adolescent concerns.</p></details><details class="sub-topic"><summary><h3>Role of Peer Educators / Facilitators</h3></summary><p>Trained senior students act as peer facilitators to help adolescents overcome shyness and discuss sensitive health issues.</p></details></details><details class="topic-box"><summary class="topic-title">Lifestyle, Wellness, and Health Goals</summary><p>Maintaining wellness requires setting positive, realistic, and structured goals using the <span class="keyword">SMART</span> framework.</p><table><thead><tr><th>Letter</th><th>SMART Element</th><th>Example Application</th></tr></thead><tbody><tr><td><strong>S</strong></td><td><span class="keyword">Specific</span></td><td>"I will do jogging."</td></tr><tr><td><strong>M</strong></td><td><span class="keyword">Measurable</span></td><td>"For at least 30 minutes daily."</td></tr><tr><td><strong>A</strong></td><td><span class="keyword">Achievable</span></td><td>"For five days in a week."</td></tr><tr><td><strong>R</strong></td><td><span class="keyword">Relevant</span></td><td>"To reduce my body weight and improve stamina."</td></tr><tr><td><strong>T</strong></td><td><span class="keyword">Time-bound</span></td><td>"I will follow this schedule throughout the year."</td></tr></tbody></table></details><details class="topic-box"><summary class="topic-title">International Efforts: MDGs and SDGs</summary><p>Global frameworks established to address health and development challenges:</p><ul><li><span class="keyword">Millennium Development Goals (MDGs)</span>: Eight target-based, time-bound goals, three of which were directly related to health.</li><li><span class="keyword">Sustainable Development Goals (SDGs)</span>: Also known as 'Transforming our world: the 2030 Agenda'. Consists of 17 Global Goals with 169 targets.</li><li><strong>SDG 3:</strong> Focuses on "ensuring healthy lives and promoting well-being for all at all ages" through universal health coverage.</li></ul></details><details class="topic-box"><summary class="topic-title">WHO Physical Activity Recommendations</summary><p>Physical activity is a key determinant of energy balance, weight control, and prevention of non-communicable diseases.</p><table><thead><tr><th>Age Group</th><th>Recommended Physical Activity Level</th></tr></thead><tbody><tr><td><strong>Children & Adolescents (5–17 years)</strong></td><td>At least 60 minutes of moderate-to-vigorous intensity physical activity daily. Should include bone and muscle-strengthening activities at least thrice a week.</td></tr><tr><td><strong>Adults (18–64 years)</strong></td><td>At least 150 minutes of moderate-intensity or 75 minutes of vigorous-intensity physical activity throughout the week, along with muscle-strengthening activities on 2 or more days.</td></tr></tbody></table></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-01-physical-education.html";
+      } else {
+        window.location.href = "11-chapter-03-physical-and-physiological-aspects.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
