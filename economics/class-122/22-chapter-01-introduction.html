@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 122 — Chapter 1: Introduction</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 122 — Chapter 1: Introduction</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1.1 A Simple Economy</summary>
+  <p>Every society consists of individuals who require a vast array of <span class="keyword">goods</span> and <span class="keyword">services</span> to satisfy their daily needs. However, no single individual possesses all the resources required to satisfy all of their wants. This fundamental imbalance leads to the core economic activities of production, exchange, and consumption.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Resources and Scarcity</h3></summary>
+    <p>An individual's or society's allocation of resources is inherently constrained. Resources include tangible assets and capabilities used to produce goods and services:</p>
+    <ul>
+      <li><span class="keyword">Land</span> and natural resources.</li>
+      <li><span class="keyword">Labour</span> services (both physical and mental skills).</li>
+      <li><span class="keyword">Capital</span> tools, machinery, and implements.</li>
+    </ul>
+    <p>Because resources are limited relative to unlimited human wants, every agent faces <span class="keyword">scarcity</span>, forcing choices regarding how to allocate these limited means to satisfy competing ends.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.2 Central Problems of an Economy</summary>
+  <p>Due to scarcity, every economy must resolve three fundamental questions regarding resource allocation and distribution.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>The Three Fundamental Questions</h3></summary>
+    <ol>
+      <li><strong>What is produced and in what quantities?</strong> Deciding the allocation of resources between consumer goods (e.g., food, clothing) and investment goods (e.g., machinery), or basic services (e.g., education, health) versus luxury items.</li>
+      <li><strong>How are these goods produced?</strong> Choosing the optimal combination of inputs and technologies, such as <span class="keyword">labour-intensive</span> versus <span class="keyword">capital-intensive</span> production methods.</li>
+      <li><strong>For whom are these goods produced?</strong> Determining the distribution of the final national product among the members of society.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Production Possibility Frontier (PPF)</h3></summary>
+    <p>The <span class="keyword">Production Possibility Set</span> represents all possible combinations of two goods that an economy can produce given its available resources and technological state. The boundary of this set is the <span class="keyword">Production Possibility Frontier (PPF)</span>.</p>
+    
+    <div class="example-block">
+      <p>Consider an economy producing only Corn and Cotton with fixed resources:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Possibilities</th>
+            <th>Corn (Units)</th>
+            <th>Cotton (Units)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td>0</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>1</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>2</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td>4</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The trade-off along the frontier illustrates the concept of <span class="keyword">opportunity cost</span>, which is the cost of choosing one alternative in terms of the next best alternative foregone:</p>
+    <p>$$\text{Opportunity Cost of Corn} = \frac{-\Delta \text{Cotton}}{\Delta \text{Corn}}$$</p>
+    <ul>
+      <li>Points <strong>on</strong> the frontier represent efficient, full utilization of resources.</li>
+      <li>Points <strong>below</strong> the frontier represent underemployment or wasteful utilization of resources.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.3 Organisation of Economic Activities</summary>
+  <p>Societies organize their economic activities through different institutional frameworks to solve the central economic problems.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Centrally Planned Economy</h3></summary>
+    <p>In a <span class="keyword">centrally planned economy</span>, a central authority or government plans and coordinates all major economic activities. Decisions regarding production, resource allocation, and distribution are made to maximize social welfare rather than individual profit.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Market Economy</h3></summary>
+    <p>In a <span class="keyword">market economy</span>, economic activities are coordinated through the free interaction of buyers and sellers. Key features include:</p>
+    <ul>
+      <li>Coordination is achieved via the <span class="keyword">price mechanism</span>, where prices act as signals of societal valuation and scarcity.</li>
+      <li>Economic agents act out of self-interest, and market forces of demand and supply determine equilibrium prices and quantities.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Mixed Economy</h3></summary>
+    <p>In reality, most economies are <span class="keyword">mixed economies</span>, where both the market mechanism and government intervention coexist. The government regulates key sectors and provides public goods, while other goods and services are left to the free market.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.4 Positive and Normative Economics</summary>
+  <p>Economic analysis is broadly categorized into two approaches based on objective facts versus value judgments.</p>
+  <ul>
+    <li><span class="keyword">Positive Economic Analysis</span>: Studies how economic mechanisms actually function. It deals with objective explanations and cause-and-effect relationships (e.g., "What is the effect of a rise in interest rates on inflation?").</li>
+    <li><span class="keyword">Normative Economic Analysis</span>: Evaluates whether the outcomes of economic mechanisms are desirable or not. It involves value judgments and prescriptive statements (e.g., "Should the government provide free healthcare to all citizens?").</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">1.5 Microeconomics and Macroeconomics</summary>
+  <p>The study of economics is traditionally divided into two major branches:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Criteria</th>
+        <th>Microeconomics</th>
+        <th>Macroeconomics</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Focus</strong></td>
+        <td>Individual economic agents (consumers, firms, industries).</td>
+        <td>The economy as a whole (aggregates).</td>
+      </tr>
+      <tr>
+        <td><strong>Key Variables</strong></td>
+        <td>Individual prices, demand, supply, consumer utility, firm output.</td>
+        <td>Aggregate output, national income, employment, inflation, economic growth.</td>
+      </tr>
+      <tr>
+        <td><strong>Objective</strong></td>
+        <td>To determine price and resource allocation in specific markets.</td>
+        <td>To understand and stabilize aggregate economic performance.</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 122 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "22-chapter-02-theory-of-consumer-behaviour.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
