@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 4: Sensory, Attentional and Perceptual Processes</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 4: Sensory, Attentional and Perceptual Processes</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Sensation, Attention, and Perception</summary><p>Our knowledge of the world around us is constructed through three highly interrelated cognitive processes: <span class="keyword">sensation</span>, <span class="keyword">attention</span>, and <span class="keyword">perception</span>. Together, these processes form the basis of <span class="keyword">cognition</span>, allowing us to gather information from both external and internal environments and interpret it meaningfully.</p><details class="sub-topic"><summary><h3>Nature and Varieties of Stimuli</h3></summary><p>The environment contains a wide variety of stimuli that activate our specialized sense organs. Human beings possess seven sensory systems, categorized into five external senses and two deep internal senses:</p><ul><li><strong>External Senses:</strong> Eyes (vision), Ears (hearing), Nose (smell), Tongue (taste), and Skin (touch, warmth, cold, pain).</li><li><strong>Deep Senses:</strong> The <span class="keyword">kinesthetic system</span> (provides information about body position and movement of body parts relative to each other) and the <span class="keyword">vestibular system</span> (provides information about body balance and orientation in space).</li></ul></details><details class="sub-topic"><summary><h3>Functional Limitations of Senses</h3></summary><p>Our sense organs function within biological limits. The scientific study of the relationship between physical stimuli and the sensations they evoke is called <span class="keyword">psychophysics</span>.</p><ul><li><span class="keyword">Absolute Threshold</span> (Absolute Limen - AL): The minimum value or intensity of a physical stimulus required to activate a given sensory system on 50 percent of trials.</li><li><span class="keyword">Difference Threshold</span> (Difference Limen - DL): The smallest difference between the values of two stimuli that is necessary to distinguish them as different on 50 percent of trials.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Attentional Processes</summary><p><span class="keyword">Attention</span> is the cognitive process of selecting a limited number of stimuli from a larger pool of environmental inputs. It involves properties such as alertness, concentration, and active search.</p><details class="sub-topic"><summary><h3>Types of Attention</h3></summary><ul><li><span class="keyword">Selective Attention</span>: Focusing on a specific stimulus while ignoring others. It is influenced by external factors (e.g., size, intensity, motion, novelty) and internal factors (e.g., motivational states, cognitive interests, preparatory sets).</li><li><span class="keyword">Sustained Attention</span> (Vigilance): The ability to maintain concentration on an object or event for an extended duration. It is influenced by sensory modality, clarity of stimuli, and temporal/spatial predictability.</li><li><span class="keyword">Divided Attention</span>: Allocating attentional resources to perform multiple tasks simultaneously. This is highly dependent on the automaticity of the practiced activities.</li></ul></details><details class="sub-topic"><summary><h3>Theories of Selective Attention</h3></summary><table><thead><tr><th>Theory</th><th>Developer</th><th>Core Mechanism</th></tr></thead><tbody><tr><td><span class="keyword">Filter Theory</span></td><td>Broadbent (1956)</td><td>Stimuli enter a bottleneck where a selective filter allows only one input to pass for higher-level processing, screening out the rest.</td></tr><tr><td><span class="keyword">Filter-Attenuation Theory</span></td><td>Treisman (1962)</td><td>Unselected stimuli are not completely blocked but are weakened (attenuated), allowing personally relevant cues (e.g., one's name) to slip through.</td></tr><tr><td><span class="keyword">Multimode Theory</span></td><td>Johnston &amp; Heinz (1978)</td><td>Attention is a flexible system operating across three stages (sensory, semantic, and conscious representation), with later stages requiring more mental effort.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Span of Attention and ADHD</h3></summary><p>The <span class="keyword">span of attention</span> refers to the amount of information an observer can grasp in a single brief exposure. Using a tachistoscope, researchers established that the human attentional span is limited to the "magic number" $7 \pm 2$ items.</p><p>When attentional mechanisms are disrupted, individuals may exhibit <span class="keyword">Attention Deficit Hyperactivity Disorder (ADHD)</span>, a behavioral disorder characterized by impulsivity, excessive motor activity, and an inability to sustain attention.</p></details></details><details class="topic-box"><summary class="topic-title">Perceptual Processes</summary><p><span class="keyword">Perception</span> is the process by which we recognize, interpret, and give meaning to sensory information. It is an active construction of reality influenced by our past experiences, motivations, and cultural backgrounds.</p><details class="sub-topic"><summary><h3>Processing Approaches</h3></summary><ul><li><span class="keyword">Bottom-Up Processing</span>: Recognition starts from the individual parts and features of a stimulus, which are integrated to form a perception of the whole.</li><li><span class="keyword">Top-Down Processing</span>: Recognition starts from the whole concept or expectation, which guides the identification of individual components.</li></ul></details><details class="sub-topic"><summary><h3>The Perceiver's Influence</h3></summary><p>Perception is highly subjective and shaped by several internal factors:</p><ul><li><strong>Motivation:</strong> Needs and desires bias perception (e.g., hungry individuals perceive ambiguous pictures as food).</li><li><strong>Expectations (<span class="keyword">Perceptual Sets</span>):</strong> A mental predisposition to perceive what we expect to see.</li><li><strong>Cognitive Styles:</strong> <span class="keyword">Field Dependent</span> individuals perceive the environment holistically, whereas <span class="keyword">Field Independent</span> individuals analyze the environment by breaking it down into smaller, distinct units.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Principles of Perceptual Organisation</summary><p>Developed by <span class="keyword">Gestalt Psychology</span> (Köhler, Koffka, and Wertheimer), these principles state that we perceive stimuli as organized, meaningful wholes rather than discrete sensory elements. The brain naturally seeks a "good figure" or <span class="keyword">pragnanz</span>.</p><details class="sub-topic"><summary><h3>Figure-Ground Segregation</h3></summary><p>The most basic form of organization where we distinguish a prominent object (the figure) from its background (the ground). Figures have clear contours and appear closer, while the ground is relatively formless and recedes behind the figure.</p></details><details class="sub-topic"><summary><h3>Gestalt Laws of Grouping</h3></summary><ul><li><strong>Principle of Proximity:</strong> Objects close together in space or time are perceived as belonging together.</li><li><strong>Principle of Similarity:</strong> Objects with similar physical characteristics are grouped together.</li><li><strong>Principle of Continuity:</strong> We perceive objects as belonging together if they form a continuous, smooth pattern.</li><li><strong>Principle of Smallness:</strong> Smaller areas tend to be seen as figures against larger backgrounds.</li><li><strong>Principle of Symmetry:</strong> Symmetrical areas are more readily perceived as figures.</li><li><strong>Principle of Surroundedness:</strong> Areas surrounded by others tend to be perceived as figures.</li><li><strong>Principle of Closure:</strong> We tend to fill in gaps in sensory input to perceive complete, whole objects.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Perception of Space, Depth, and Distance</summary><p>Although retinal images are flat and two-dimensional, we perceive the world in three dimensions using <span class="keyword">depth perception</span>, which relies on two types of cues.</p><details class="sub-topic"><summary><h3>Monocular Cues (Pictorial Cues)</h3></summary><p>Cues that require only one eye to perceive depth and distance:</p><ul><li><strong>Relative Size:</strong> Smaller retinal images are perceived as farther away.</li><li><strong>Interposition (Overlapping):</strong> An object that partially blocks another is perceived as closer.</li><li><strong>Linear Perspective:</strong> Parallel lines appear to converge as they recede into the distance.</li><li><strong>Aerial Perspective:</strong> Distant objects look hazy or blurry due to atmospheric dust and moisture.</li><li><strong>Light and Shade:</strong> Highlights and shadows indicate depth and three-dimensional form.</li><li><strong>Relative Height:</strong> Larger or higher-placed objects in the visual field are perceived as farther or closer depending on expectations.</li><li><strong>Texture Gradient:</strong> Density of details increases as distance increases.</li><li><strong>Motion Parallax:</strong> A kinetic cue where closer objects appear to move faster and in the opposite direction of our motion, while distant objects move slower and in the same direction.</li></ul></details><details class="sub-topic"><summary><h3>Binocular Cues (Physiological Cues)</h3></summary><p>Cues that require the coordinated use of both eyes:</p><ul><li><span class="keyword">Retinal Disparity</span>: The slight difference between the images projected onto the left and right retinas due to the horizontal distance between our eyes.</li><li><span class="keyword">Convergence</span>: The inward rotation of the eyes to focus on nearby objects, sending muscular feedback to the brain.</li><li><span class="keyword">Accommodation</span>: The physiological process where the ciliary muscles alter the thickness of the eye lens to focus on objects at varying distances.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Perceptual Constancies, Illusions, and Socio-Cultural Factors</summary><details class="sub-topic"><summary><h3>Perceptual Constancies</h3></summary><p>The tendency to perceive objects as stable and unchanging despite variations in the sensory patterns projected onto our retinas:</p><ul><li><strong>Size Constancy:</strong> Perceiving an object's physical size as constant despite changes in its distance and retinal image size.</li><li><strong>Shape Constancy:</strong> Perceiving an object's shape as constant despite changes in its orientation and retinal projection.</li><li><strong>Brightness Constancy:</strong> Perceiving the lightness or darkness of an object as constant despite changes in illumination.</li></ul></details><details class="sub-topic"><summary><h3>Illusions</h3></summary><p>Misperceptions resulting from the misinterpretation of sensory information. They are often called "primitive organizations" because they are experienced similarly by most people.</p><ul><li><strong>Geometrical Illusions:</strong> Examples include the Muller-Lyer illusion (where lines of equal length appear unequal due to arrowheads) and the Vertical-Horizontal illusion.</li><li><strong>Apparent Movement Illusion (<span class="keyword">Phi-phenomenon</span>):</strong> The perception of movement generated by projecting a rapid succession of stationary, flickering lights or pictures.</li></ul></details><details class="sub-topic"><summary><h3>Socio-Cultural Influences</h3></summary><div class="example-block"><p><strong>Experiment Title:</strong> Cross-Cultural Susceptibility to Illusions</p><p><strong>Background/Subject:</strong> Comparative study by Segall, Campbell, and Herskovits involving subjects from remote African villages and Western urban settings.</p><p><strong>Method/Procedure:</strong> Subjects from different environments were tested on their susceptibility to the Muller-Lyer and Vertical-Horizontal illusions.</p><p><strong>Observations/Results:</strong> African subjects living in dense forests showed greater susceptibility to the vertical-horizontal illusion due to their regular experience with verticality (e.g., tall trees). Western subjects living in "carpentered" environments characterized by right angles showed greater susceptibility to the Muller-Lyer illusion.</p><p><strong>Psychological Inference:</strong> Perceptual habits and susceptibility to illusions are learned and shaped by the physical and cultural environments in which individuals live.</p></div></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-03-human-development.html";
+      } else {
+        window.location.href = "11-chapter-05-learning.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
