@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 1: Introduction</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 1: Introduction</h1>
+
+    <details class="topic-box"><summary class="topic-title">Why Economics?</summary><p>Economics is fundamentally the study of mankind in the ordinary business of life, a concept famously articulated by <span class="keyword">Alfred Marshall</span>.</p><details class="sub-topic"><summary><h3>Basic Economic Roles</h3></summary><ul><li><span class="keyword">Consumer</span>: An individual who buys goods and services to satisfy personal or family needs.</li><li><span class="keyword">Seller</span>: An individual who sells goods to make a profit.</li><li><span class="keyword">Producer</span>: An individual or business entity that produces goods or provides services to create value.</li><li><span class="keyword">Employee</span>: A person who works for another and receives wages or a salary in return.</li><li><span class="keyword">Employer</span>: A person or institution that employs others and pays them wages or salaries.</li></ul></details><details class="sub-topic"><summary><h3>Economic Activity and Scarcity</h3></summary><p>An <span class="keyword">economic activity</span> is any activity undertaken for monetary gain. The fundamental driver of all economic activities is the existence of scarcity.</p><ul><li><strong>The Problem of Scarcity:</strong> Our wants are unlimited, but the resources to satisfy them are limited. <span class="keyword">Scarcity</span> is the root of all economic problems.</li><li><strong>Alternative Uses:</strong> Resources are not only scarce but also have <span class="keyword">alternative uses</span> (e.g., land can be used to grow food crops or non-food crops), giving rise to the problem of choice.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Core Divisions of Economics</summary><p>The study of Economics is conventionally divided into three main parts:</p><details class="sub-topic"><summary><h3>Consumption, Production, and Distribution</h3></summary><ul><li><span class="keyword">Consumption</span>: The study of how consumers decide, given their limited income and market prices, what goods and services to buy.</li><li><span class="keyword">Production</span>: The study of how producers choose what to produce, how to produce it, and at what cost for the market.</li><li><span class="keyword">Distribution</span>: The study of how the national income or <span class="keyword">Gross Domestic Product (GDP)</span> is distributed among the factors of production in the form of wages, profits, rents, and interest.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Statistics in Economics</summary><p>To understand and address economic problems, economists rely on factual information represented in numerical terms, known as <span class="keyword">economic data</span>.</p><details class="sub-topic"><summary><h3>What is Statistics?</h3></summary><p><span class="keyword">Statistics</span> deals with the collection, analysis, interpretation, and presentation of numerical data. It utilizes two types of data:</p><ul><li><span class="keyword">Quantitative Data</span>: Information that can be measured and expressed numerically (e.g., production of rice in tonnes).</li><li><span class="keyword">Qualitative Data</span>: Information describing attributes that cannot be measured quantitatively but can be ranked or classified (e.g., gender, skill levels, intelligence).</li></ul></details><details class="sub-topic"><summary><h3>What Statistics Does</h3></summary><p>Statistics serves as an indispensable tool for economists by performing the following functions:</p><ol><li><strong>Presents Facts Precisely:</strong> Expresses economic facts in definite, exact numerical terms rather than vague statements.</li><li><strong>Condenses Mass Data:</strong> Summarizes large volumes of data into simple, understandable numerical measures like mean, variance, and standard deviation.</li><li><strong>Finds Relationships:</strong> Helps identify and verify relationships between different economic factors (e.g., price and demand).</li><li><strong>Predicts Future Trends:</strong> Enables forecasting and predicting changes in economic variables to facilitate planning.</li><li><strong>Formulates Policies:</strong> Assists in designing and evaluating plans and <span class="keyword">policies</span> to solve economic problems like poverty and unemployment.</li></ol></details><details class="sub-topic"><summary><h3>Limitations of Statistics</h3></summary><div class="example-block"><p><strong>Statistical methods are no substitute for common sense!</strong> Statistics deals with averages, which can be misleading if applied blindly without contextual understanding. For example, crossing a river based solely on its average depth can lead to disaster if the actual depth varies significantly.</p></div></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "12-chapter-02-collection-of-data.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
