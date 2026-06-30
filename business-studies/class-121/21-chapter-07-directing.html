@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 121 — Chapter 7: Directing</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 121 — Chapter 7: Directing</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Meaning of Directing</summary><div class="example-block"><p><strong>Business Case Title:</strong> Grassroot Leadership - Ford Motor Co.</p><p><strong>Corporate Context/Problem:</strong> Ford Motor Company needed a cultural overhaul to strengthen its automotive business, improve operational fitness, and accelerate a strategic shift to capitalize on emerging opportunities. While it excelled at nurturing capable managers, it struggled to develop change agents and leaders.</p><p><strong>Strategic Action Taken:</strong> Ford embarked on a sweeping attempt to mass-manufacture leaders, building an army of "warrior-entrepreneurs" with the courage to challenge old ideas. CEO Jim Hackett restructured the senior management team to lead the business toward becoming a trusted mobility company.</p><p><strong>Managerial Inference:</strong> Grassroot leadership is the best vehicle for creating a successful, adaptable, and profitable business enterprise.</p></div><details class="sub-topic"><summary><h3>Meaning of Directing</h3></summary><p><span class="keyword">Directing</span> refers to the process of instructing, guiding, counselling, motivating and leading people in the organisation to achieve its objectives. It is not a mere issue of communication but encompasses key elements like supervision, motivation, and leadership.</p></details><details class="sub-topic"><summary><h3>Characteristics of Directing</h3></summary><ul><li><strong>Directing initiates action:</strong> While other functions prepare a setting for action, directing initiates action in the organisation.</li><li><strong>Directing takes place at every level of management:</strong> Every manager, from top executive to supervisor, performs the function of directing wherever superior-subordinate relations exist.</li><li><strong>Directing is a continuous process:</strong> It takes place throughout the life of the organisation, irrespective of changes in managers.</li><li><strong>Directing flows from top to bottom:</strong> It is initiated at the top level and flows to the bottom through the organisational hierarchy.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Importance & Principles of Directing</summary><details class="sub-topic"><summary><h3>Importance of Directing</h3></summary><ul><li><strong>Initiates Action:</strong> Helps individuals start working towards desired objectives when guided by superiors.</li><li><strong>Integrates Employees' Efforts:</strong> Ensures that individual efforts contribute to collective organisational performance.</li><li><strong>Guides Employees:</strong> Helps employees fully realise their potential and capabilities through motivation and leadership.</li><li><strong>Facilitates Introduction of Changes:</strong> Reduces resistance to change by convincing employees of the benefits of transitions.</li><li><strong>Brings Stability and Balance:</strong> Fosters cooperation and commitment, helping to balance various groups and departments.</li></ul></details><details class="sub-topic"><summary><h3>Principles of Directing</h3></summary><ul><li><strong>Maximum individual contribution:</strong> Directing techniques should help employees contribute to their maximum potential.</li><li><strong>Harmony of objectives:</strong> Directing must resolve conflicts between individual goals and organisational objectives.</li><li><strong>Unity of Command:</strong> A subordinate should receive instructions from only one superior to avoid confusion and conflict.</li><li><strong>Appropriateness of direction technique:</strong> Appropriate motivational and leadership techniques should be used based on situational variables.</li><li><strong>Managerial communication:</strong> Clear instructions and effective feedback systems ensure total understanding.</li><li><strong>Use of informal organisation:</strong> Managers should spot and utilize informal groups for effective directing.</li><li><strong>Leadership:</strong> Managers must exercise good leadership to influence subordinates positively.</li><li><strong>Follow through:</strong> Managers must continuously review whether orders are being implemented properly.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Elements of Directing & Supervision</summary><p>The process of directing involves four key elements: <span class="keyword">Supervision</span>, <span class="keyword">Motivation</span>, <span class="keyword">Leadership</span>, and <span class="keyword">Communication</span>.</p><details class="sub-topic"><summary><h3>Supervision</h3></summary><p><span class="keyword">Supervision</span> can be understood as an element of directing (overseeing subordinates' work) and as a managerial position at the operative level (immediately above the workers).</p><h4>Importance of Supervision:</h4><ul><li>Maintains day-to-day contact and friendly relations with workers, acting as a guide, friend, and philosopher.</li><li>Acts as a link between workers and management, conveying ideas upward and decisions downward.</li><li>Maintains group unity and resolves internal differences among workers.</li><li>Ensures performance of work according to set targets.</li><li>Provides on-the-job training to workers.</li><li>Builds high morale among workers through supervisory leadership.</li><li>Analyses work performed and provides constructive feedback.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Motivation</summary><p><span class="keyword">Motivation</span> means the process of making subordinates act in a desired manner to achieve certain organisational goals. It relies on three terms: <span class="keyword">Motive</span> (inner state that energises behaviour), <span class="keyword">Motivation</span> (the process of stimulating action), and <span class="keyword">Motivators</span> (techniques used to influence people, like pay or praise).</p><div class="example-block"><p><strong>Business Case Title:</strong> Directing a Dissatisfied Manager (Rashmi Joshi)</p><p><strong>Corporate Context/Problem:</strong> Rashmi Joshi, an ambitious district sales manager at Fine Productions, was bypassed for a promotion to marketing manager due to concerns about her teamwork and tendency to take sole credit. Consequently, she became despondent, her work deteriorated, and she delayed sales reports.</p><p><strong>Strategic Action Taken:</strong> The newly appointed marketing manager faced the challenge of identifying how to motivate and inspire Rashmi to restore her former high level of performance without relying solely on formal authority.</p><p><strong>Managerial Inference:</strong> Formal authority alone cannot extract the best work; managers must understand human needs and apply appropriate motivational strategies to handle dissatisfied employees.</p></div><details class="sub-topic"><summary><h3>Features of Motivation</h3></summary><ul><li>It is an <strong>internal feeling</strong> arising from individual needs and desires.</li><li>It produces <strong>goal-directed behaviour</strong>.</li><li>It can be either <strong>positive</strong> (rewards, promotion) or <strong>negative</strong> (punishment, threats).</li><li>It is a <strong>complex process</strong> because individuals are heterogeneous with varied expectations.</li></ul></details><details class="sub-topic"><summary><h3>The Motivation Process</h3></summary><ol><li><span class="keyword">Unsatisfied Need</span>: An individual experiences a deficiency or desire.</li><li><span class="keyword">Tension</span>: The unsatisfied need creates restlessness.</li><li><span class="keyword">Drives</span>: Restlessness stimulates action-oriented urges.</li><li><span class="keyword">Search Behaviour</span>: The individual looks for ways to satisfy the need.</li><li><span class="keyword">Satisfied Need</span>: The need is met.</li><li><span class="keyword">Reduction of Tension</span>: The individual is relieved of restlessness.</li></ol></details><div class="example-block"><p><strong>Business Case Title:</strong> Motivating Employees in Tata Steel</p><p><strong>Corporate Context/Problem:</strong> Tata Steel needed to maintain high motivation levels, foster innovation, and build a robust leadership pipeline to remain a low-cost, world-class steel producer.</p><p><strong>Strategic Action Taken:</strong> The company introduced personal development programmes, performance-linked compensation, quality circles, and transparent multi-path communication channels (like 'MD Online'). It actively promoted the freedom to work, innovate, and fail.</p><p><strong>Managerial Inference:</strong> Comprehensive motivational systems and participatory management build a highly focused team, leading to industry leadership and organizational excellence.</p></div><details class="sub-topic"><summary><h3>Maslow's Need Hierarchy Theory</h3></summary><p>Abraham Maslow's theory is based on a hierarchy of five human needs:</p><ol><li><strong>Basic Physiological Needs:</strong> Primary needs like hunger, thirst, and shelter. In organisations, basic salary satisfies these.</li><li><strong>Safety/Security Needs:</strong> Protection from physical and emotional harm (e.g., job security, pension plans).</li><li><strong>Affiliation/Belonging Needs:</strong> Affection, acceptance, and friendship.</li><li><strong>Esteem Needs:</strong> Self-respect, autonomy, status, and recognition.</li><li><strong>Self-Actualisation Needs:</strong> The drive to become what one is capable of becoming (growth, self-fulfillment).</li></ol></details><details class="sub-topic"><summary><h3>Financial and Non-Financial Incentives</h3></summary><p>Incentives are measures used to motivate employees to improve performance.</p><h4>Financial Incentives (Direct monetary benefits):</h4><ul><li><strong>Pay and allowances:</strong> Basic salary, dearness allowance, and increments.</li><li><strong>Productivity linked wage incentives:</strong> Linking payment of wages to increase in productivity.</li><li><strong>Bonus:</strong> Incentive offered over and above the regular salary.</li><li><strong>Profit Sharing:</strong> Providing a share to employees in the profits of the organisation.</li><li><strong>Co-partnership/Stock option:</strong> Offering company shares at a price lower than the market price.</li><li><strong>Retirement Benefits:</strong> Provident fund, pension, and gratuity.</li><li><strong>Perquisites:</strong> Fringe benefits like car allowance, housing, and medical aid.</li></ul><h4>Non-Financial Incentives (Psychological and social satisfaction):</h4><ul><li><strong>Status:</strong> Ranking of positions, authority, and prestige of the job.</li><li><strong>Organisational Climate:</strong> Characteristics like individual autonomy and reward orientation.</li><li><strong>Career Advancement Opportunity:</strong> Skill development and promotion policies.</li><li><strong>Job Enrichment:</strong> Designing jobs with greater variety, autonomy, and responsibility.</li><li><strong>Employee Recognition programmes:</strong> Congratulating, displaying achievements, or giving mementos.</li><li><strong>Job security:</strong> Stability of future income and employment.</li><li><strong>Employee participation:</strong> Involving employees in decision-making.</li><li><strong>Employee Empowerment:</strong> Giving more autonomy and powers to subordinates.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Leadership</summary><p><span class="keyword">Leadership</span> is the process of influencing the behaviour of people by making them strive voluntarily towards the achievement of organisational goals.</p><details class="sub-topic"><summary><h3>Features & Importance of Leadership</h3></summary><ul><li>Indicates the ability of an individual to influence others.</li><li>Tries to bring change in the behaviour of others.</li><li>Reflects interpersonal relations between leaders and followers.</li><li>Exercised to achieve common organisational goals.</li><li>It is a continuous process.</li></ul></details><details class="sub-topic"><summary><h3>Leadership Styles</h3></summary><ul><li><strong>Autocratic or Authoritarian Leader:</strong> Gives orders and expects strict obedience. Communication is only one-way. Dogmatic and relies on reward/punishment.</li><li><strong>Democratic or Participative Leader:</strong> Develops action plans and makes decisions in consultation with subordinates, encouraging participation.</li><li><strong>Laissez-faire or Free-rein Leader:</strong> Gives followers a high degree of independence to formulate objectives and resolve issues, acting only as a support system.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Communication</summary><p><span class="keyword">Communication</span> is the process of exchange of ideas, views, facts, and feelings between or among people to create a common understanding.</p><details class="sub-topic"><summary><h3>Elements of the Communication Process</h3></summary><ol><li><strong>Sender:</strong> The source who conveys thoughts or ideas.</li><li><strong>Message:</strong> The content of ideas, feelings, or suggestions.</li><li><strong>Encoding:</strong> Converting the message into communication symbols (words, gestures).</li><li><strong>Media:</strong> The path through which the encoded message is transmitted (written, phone, internet).</li><li><strong>Decoding:</strong> Converting encoded symbols back into understandable terms.</li><li><strong>Receiver:</strong> The person who receives the communication.</li><li><strong>Feedback:</strong> Actions of the receiver indicating understanding of the message.</li><li><strong>Noise:</strong> Obstructions or hindrances that distort communication (e.g., poor connection, inattentive receiver).</li></ol></details><details class="sub-topic"><summary><h3>Formal and Informal Communication</h3></summary><table><thead><tr><th>Basis</th><th>Formal Communication</th><th>Informal Communication</th></tr></thead><tbody><tr><td><strong>Meaning</strong></td><td>Flows through official channels designed in the organisation chart.</td><td>Flows without following formal lines of communication (Grapevine).</td></tr><tr><td><strong>Classification</strong></td><td>Vertical (Upward/Downward) and Horizontal.</td><td>Single strand, Gossip, Probability, and Cluster networks.</td></tr><tr><td><strong>Record</strong></td><td>Generally recorded and filed for future reference.</td><td>No official records are kept.</td></tr><tr><td><strong>Source</strong></td><td>Easy to trace the source of communication.</td><td>Very difficult to detect the source.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Barriers to Communication</h3></summary><ul><li><strong>Semantic Barriers (Meaning of words):</strong> Badly expressed messages, symbols with different meanings, faulty translations, unclarified assumptions, technical jargon, and body language mismatch.</li><li><strong>Psychological Barriers (Emotional state):</strong> Premature evaluation, lack of attention, loss by transmission and poor retention, and distrust.</li><li><strong>Organisational Barriers (Structure & Policy):</strong> Rigid rules, restrictive policies, status distance, complexity in managerial levels, and lack of communication facilities.</li><li><strong>Personal Barriers (Individual factors):</strong> Fear of challenge to authority, lack of confidence in subordinates, unwillingness to communicate, and lack of proper incentives.</li></ul></details><details class="sub-topic"><summary><h3>Improving Communication Effectiveness</h3></summary><ul><li>Clarify the ideas before communication.</li><li>Communicate according to the needs of the receiver.</li><li>Consult others before communicating.</li><li>Be aware of languages, tone, and content of the message.</li><li>Convey things of help and value to listeners.</li><li>Ensure proper feedback.</li><li>Communicate for the present as well as the future.</li><li>Follow up communications.</li><li>Be a good listener.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 121 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-06-staffing.html";
+      } else {
+        window.location.href = "21-chapter-08-controlling.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
