@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 1: Geography as a Discipline</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 1: Geography as a Discipline</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction to Geography</summary>
+  <details class="sub-topic">
+    <summary><h3>Why Study Geography?</h3></summary>
+    <p>Human lives are deeply affected by their surroundings. Early societies relied on natural means of subsistence, but over time, technology allowed humans to modify their environment, adapt to weather conditions, and utilize resources like land, soil, and water. Studying <span class="keyword">Geography</span> helps us appreciate spatial diversity, understand the changes that occur over time, and develop skills to analyze the globe using maps and modern scientific techniques like <span class="keyword">GIS</span> (Geographic Information Systems) and computer cartography.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>What is Geography?</h3></summary>
+    <p>In simple terms, <span class="keyword">Geography</span> is the description of the Earth. The term was first coined by <span class="keyword">Eratosthenes</span>, a Greek scholar (276-194 BC), derived from the Greek roots <em>geo</em> (earth) and <em>graphos</em> (description).</p>
+    <p>Scholars define geography as "the description of the earth as the abode of human beings." It is an interdisciplinary field that synthesizes data from natural sciences (geology, meteorology, hydrology) and social sciences (history, economics, sociology).</p>
+    <p>Geography is also defined as the study of <span class="keyword">areal differentiation</span>—understanding how and why phenomena vary across different areas of the earth's surface, and analyzing the causal relationships between these variations.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Geography as an Integrating Discipline</summary>
+  <details class="sub-topic">
+    <summary><h3>Spatial and Temporal Synthesis</h3></summary>
+    <p>Geography is a discipline of synthesis. It attempts <span class="keyword">spatial synthesis</span>, while history attempts <span class="keyword">temporal synthesis</span>. It recognizes that the world is a system of interdependencies, where spatial distance and physical barriers (like the Himalayas or oceans) have historically influenced migration, defense, and cultural integration.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>The Three Core Questions of Geography</h3></summary>
+    <p>Geography as a discipline is concerned with three sets of questions:</p>
+    <ul>
+      <li><strong>What?</strong>: Questions related to the identification of patterns of natural and cultural features found over the surface of the earth.</li>
+      <li><strong>Where?</strong>: Questions related to the distribution of natural and human/cultural features.</li>
+      <li><strong>Why?</strong>: Questions related to the explanation or causal relationships between features, processes, and phenomena. This third question elevates geography to a scientific discipline.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Branches of Geography</summary>
+  <details class="sub-topic">
+    <summary><h3>Approaches to Geographical Study</h3></summary>
+    <p>There are two major approaches to studying geography: the <span class="keyword">Systematic Approach</span> and the <span class="keyword">Regional Approach</span>.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Systematic Approach</th>
+          <th>Regional Approach</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Introduced by</strong></td>
+          <td><span class="keyword">Alexander Von Humboldt</span> (1769-1859)</td>
+          <td><span class="keyword">Karl Ritter</span> (1779-1859)</td>
+        </tr>
+        <tr>
+          <td><strong>Methodology</strong></td>
+          <td>Studies a phenomenon world over as a whole, and then identifies typologies or spatial patterns.</td>
+          <td>Divides the world into regions at different hierarchical levels and studies all phenomena within a specific region.</td>
+        </tr>
+        <tr>
+          <td><strong>Focus</strong></td>
+          <td>Thematic and global.</td>
+          <td>Regional, searching for unity in diversity.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Branches Based on Systematic Approach</h3></summary>
+    <ol>
+      <li><strong>Physical Geography</strong>:
+        <ul>
+          <li><span class="keyword">Geomorphology</span>: Study of landforms, their evolution, and related processes.</li>
+          <li><span class="keyword">Climatology</span>: Study of the structure of the atmosphere, weather, and climate.</li>
+          <li><span class="keyword">Hydrology</span>: Study of water realms (oceans, lakes, rivers) and their effects on life.</li>
+          <li><span class="keyword">Soil Geography</span>: Study of soil formation (<span class="keyword">pedogenesis</span>), soil types, and distribution.</li>
+        </ul>
+      </li>
+      <li><strong>Human Geography</strong>:
+        <ul>
+          <li><span class="keyword">Social/Cultural Geography</span>: Study of society and its spatial dynamics.</li>
+          <li><span class="keyword">Population and Settlement Geography</span>: Study of population growth, distribution, density, migration, and rural/urban settlement characteristics.</li>
+          <li><span class="keyword">Economic Geography</span>: Study of economic activities (agriculture, industry, tourism, trade, transport).</li>
+          <li><span class="keyword">Historical Geography</span>: Study of historical processes through which space gets organized.</li>
+          <li><span class="keyword">Political Geography</span>: Study of political boundaries, constituencies, and political behavior of populations.</li>
+        </ul>
+      </li>
+      <li><strong>Biogeography</strong>:
+        <ul>
+          <li><span class="keyword">Plant Geography</span>: Spatial patterns of natural vegetation.</li>
+          <li><span class="keyword">Zoo Geography</span>: Spatial patterns and geographic characteristics of animals.</li>
+          <li><span class="keyword">Ecology/Ecosystem</span>: Scientific study of habitats of species.</li>
+          <li><span class="keyword">Environmental Geography</span>: Study of environmental problems, conservation, and land degradation.</li>
+        </ul>
+      </li>
+    </ol>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Branches Based on Regional Approach</h3></summary>
+    <ul>
+      <li><strong>Regional Studies/Area Studies</strong>: Comprising Macro, Meso, and Micro regional studies.</li>
+      <li><strong>Regional Planning</strong>: Country/Rural and Town/Urban planning.</li>
+      <li><strong>Regional Development</strong></li>
+      <li><strong>Regional Analysis</strong></li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Physical Geography and its Importance</summary>
+  <details class="sub-topic">
+    <summary><h3>Core Spheres of Physical Geography</h3></summary>
+    <p>Physical geography includes the study of four major spheres:</p>
+    <ul>
+      <li><span class="keyword">Lithosphere</span>: Landforms, drainage, relief, and physiography.</li>
+      <li><span class="keyword">Atmosphere</span>: Composition, structure, elements of weather, and climate.</li>
+      <li><span class="keyword">Hydrosphere</span>: Oceans, seas, lakes, and water realms.</li>
+      <li><span class="keyword">Biosphere</span>: Life forms (including humans) and sustaining mechanisms like food chains and ecological balance.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Significance for Sustainable Development</h3></summary>
+    <p>Physical environment provides the resources that human societies utilize for economic and cultural development. Landforms provide bases for agriculture (plains), forestry (plateaus), and tourism/water sources (mountains). Soils are renewable resources that support the biosphere. Understanding the intricate relationship between the physical environment and human activities is essential for managing natural resources and achieving <span class="keyword">sustainable development</span>.</p>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "12-chapter-02-the-origin-and-evolution-of-the-ea.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
