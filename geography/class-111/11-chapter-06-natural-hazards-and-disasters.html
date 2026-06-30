@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 111 — Chapter 6: Natural Hazards and Disasters</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 111 — Chapter 6: Natural Hazards and Disasters</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Hazards and Disasters</summary><p>Change is a continuous, universal law of nature, varying in magnitude, intensity, and scale. While natural changes are value-neutral, human perspectives classify them as desirable or undesirable. Undesirable, rapid changes outside human control are classified as hazards or disasters.</p><details class="sub-topic"><summary><h3>Defining Hazards vs. Disasters</h3></summary><p>Though often used interchangeably, <span class="keyword">Natural Hazards</span> and <span class="keyword">Natural Disasters</span> are distinct concepts:</p><ul><li><span class="keyword">Natural Hazards</span>: Elements of circumstances in the natural environment that have the potential to cause harm to people or property (e.g., steep slopes, ocean currents, extreme climates).</li><li><span class="keyword">Natural Disasters</span>: Relatively sudden, large-scale events causing widespread death, loss of property, and social disruption over which people have little or no control. An event becomes a disaster only when the magnitude of destruction is very high.</li></ul></details><details class="sub-topic"><summary><h3>Classification of Natural Disasters</h3></summary><p>Natural disasters are broadly classified into four major categories as shown below:</p><table><thead><tr><th>Atmospheric</th><th>Terrestrial</th><th>Aquatic</th><th>Biological</th></tr></thead><tbody><tr><td>Blizzards, Thunderstorms, Lightening, Tornadoes, Tropical Cyclones, Droughts, Hailstorms, Frost, Heat/Cold Waves (Loo)</td><td>Earthquakes, Volcanic Eruptions, Landslides, Avalanches, Subsidence, Soil Erosion</td><td>Floods, Tidal Waves, Storm Surges, Tsunamis</td><td>Plants and Animals as colonisers (e.g., Locusts), Insect infestations, Fungal, Bacterial, and Viral diseases (e.g., Bird Flu, Dengue)</td></tr></tbody></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Earthquakes</summary><p><span class="keyword">Earthquakes</span> are highly destructive and unpredictable tectonic disasters resulting from a sudden release of energy in the Earth's crust. In India, tectonic earthquakes are highly devastating due to the constant northward movement of the Indian plate at a rate of $1\text{ cm/year}$, colliding with the Eurasian plate.</p><details class="sub-topic"><summary><h3>Earthquake Vulnerability Zones in India</h3></summary><p>The National Institute of Disaster Management and other bodies classify India into five earthquake zones:</p><ol><li><span class="keyword">Very High Damage Risk Zone</span>: Includes North-east states, areas north of Darbhanga and Araria (Bihar), Uttarakhand, Western Himachal Pradesh, Kashmir Valley, and Kuchchh (Gujarat).</li><li><span class="keyword">High Damage Risk Zone</span>: Remaining parts of Jammu and Kashmir, Ladakh, Himachal Pradesh, Northern Punjab, Eastern Haryana, Delhi, Western Uttar Pradesh, and Northern Bihar.</li><li><span class="keyword">Moderate to Low Damage Risk Zones</span>: Most remaining parts of the country, with the stable Deccan Plateau being the safest.</li></ol></details><details class="sub-topic"><summary><h3>Effects of Earthquakes</h3></summary><p>The multi-dimensional impacts of earthquakes are categorized below:</p><table><thead><tr><th>On Ground</th><th>On Manmade Structures</th><th>On Water</th></tr></thead><tbody><tr><td>Fissures, Settlements, Landslides, Liquefaction, Earth Pressure, Chain-effects</td><td>Cracking, Slidings, Overturning, Buckling, Collapse, Chain-effects</td><td>Waves, Hydro-Dynamic Pressure, Tsunamis, Chain-effects</td></tr></tbody></tbody></table></details><details class="sub-topic"><summary><h3>Mitigation Strategies</h3></summary><ul><li>Establishing seismological monitoring centres for real-time data dissemination using GPS.</li><li>Preparing vulnerability maps and educating communities.</li><li>Modifying house designs and discouraging high-rise constructions in high-risk zones.</li><li>Enforcing earthquake-resistant building codes.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Tsunamis</summary><p>A <span class="keyword">Tsunami</span> (harbour wave) is a series of extremely long-wavelength ocean waves generated by the rapid displacement of water, usually caused by submarine earthquakes or volcanic eruptions.</p><details class="sub-topic"><summary><h3>Wave Dynamics and Impact</h3></summary><p>In deep water, tsunamis have long wavelengths and low wave heights, making them difficult to detect. As they enter shallow coastal waters, their speed decreases, causing the wave energy to compress and the wave height to rise dramatically (up to $15\text{ m}$ or more), resulting in catastrophic coastal destruction.</p></details><details class="sub-topic"><summary><h3>Mitigation</h3></summary><p>Due to the scale of damage, individual state mitigation is difficult. India has joined the <span class="keyword">International Tsunami Warning System</span> following the devastating Indian Ocean Tsunami of December 26, 2004.</p></details></details><details class="topic-box"><summary class="topic-title">Tropical Cyclones</summary><p><span class="keyword">Tropical Cyclones</span> are intense low-pressure areas confined to latitudes between $30^\circ\text{ N}$ and $30^\circ\text{ S}$. They act as thermal engines powered by the release of latent heat of condensation.</p><details class="sub-topic"><summary><h3>Conditions for Formation</h3></summary><ul><li>Large and continuous supply of warm, moist air (sea surface temperature $> 27^\circ\text{ C}$).</li><li>Strong <span class="keyword">Coriolis Force</span> to create a rotary system (absent near the equator, $0^\circ\text{ to }5^\circ$).</li><li>Unstable conditions in the troposphere.</li><li>Absence of strong vertical wind shear.</li></ul></details><details class="sub-topic"><summary><h3>Spatio-temporal Distribution and Consequences</h3></summary><p>In India, cyclones originate in both the Bay of Bengal and the Arabian Sea. Bay of Bengal cyclones are more frequent and intense, particularly during October and November. The primary hazard is the <span class="keyword">Storm Surge</span>—an abnormal rise in sea level that inundates low-lying coastal settlements and agricultural fields.</p></details></details><details class="topic-box"><summary class="topic-title">Floods</summary><p><span class="keyword">Floods</span> occur when water in a channel exceeds its carrying capacity, overflowing into adjacent floodplains. Unlike other disasters, floods are relatively slow to rise and occur in well-identified regions.</p><details class="sub-topic"><summary><h3>Causes and Distribution</h3></summary><p>Floods are caused by heavy rainfall, storm surges, melting snow, or human activities like deforestation and unscientific land use. The Rashtriya Barh Ayog has identified $40\text{ million hectares}$ of land as flood-prone in India, with Assam, Bihar, and West Bengal being the worst affected.</p></details><details class="sub-topic"><summary><h3>Consequences and Control</h3></summary><p>Floods destroy crops, damage infrastructure, and spread waterborne diseases like cholera and hepatitis. However, they also deposit fertile silt. Control measures include constructing embankments, dams, afforestation, and removing human encroachments from river channels.</p></details></details><details class="topic-box"><summary class="topic-title">Droughts</summary><p>A <span class="keyword">Drought</span> is an extended period of water shortage caused by inadequate precipitation, high evaporation, and over-utilization of water resources.</p><details class="sub-topic"><summary><h3>Types of Droughts</h3></summary><ul><li><span class="keyword">Meteorological Drought</span>: Prolonged period of inadequate and poorly distributed rainfall.</li><li><span class="keyword">Agricultural Drought</span>: Low soil moisture that fails to support crop growth, leading to crop failure.</li><li><span class="keyword">Hydrological Drought</span>: Depletion of water levels in storage reservoirs, aquifers, and lakes below replenishment levels.</li><li><span class="keyword">Ecological Drought</span>: Productivity collapse of a natural ecosystem due to water scarcity.</li></ul></details><details class="sub-topic"><summary><h3>Drought Prone Areas in India</h3></summary><ul><li><span class="keyword">Extreme Drought Affected Areas</span>: Marusthali (Rajasthan) and Kuchchh (Gujarat), receiving less than $90\text{ mm}$ annual rainfall.</li><li><span class="keyword">Severe Drought Prone Areas</span>: Eastern Rajasthan, parts of Madhya Pradesh, Maharashtra, interior Karnataka, southern Jharkhand, and interior Odisha.</li><li><span class="keyword">Moderate Drought Prone Areas</span>: Northern Rajasthan, Haryana, southern Uttar Pradesh, and remaining parts of Gujarat and Maharashtra.</li></ul></details><details class="sub-topic"><summary><h3>Mitigation</h3></summary><p>Mitigation involves distributing safe drinking water and fodder, inter-linking rivers, constructing reservoirs, rainwater harvesting, and promoting drought-resistant crops.</p></details></details><details class="topic-box"><summary class="topic-title">Landslides</summary><p>A <span class="keyword">Landslide</span> is the rapid downward movement of a large mass of rock, debris, or earth under the influence of gravity. They are highly localized and influenced by geology, slope, and human activities.</p><details class="sub-topic"><summary><h3>Vulnerability Zones</h3></summary><ul><li><span class="keyword">Very High Vulnerability Zone</span>: Unstable, young mountainous areas of the Himalayas, Andaman and Nicobar, steep slopes of the Western Ghats, and Nilgiris.</li><li><span class="keyword">High Vulnerability Zone</span>: All Himalayan states and the North-eastern region (excluding the plains of Assam).</li><li><span class="keyword">Moderate to Low Vulnerability Zone</span>: Trans-Himalayan areas (Ladakh, Spiti), Aravalis, and rain-shadow areas of the Deccan Plateau.</li></ul></details><details class="sub-topic"><summary><h3>Mitigation</h3></summary><p>Mitigation includes restricting construction on fragile slopes, promoting terrace farming, and implementing large-scale afforestation programmes.</p></details></details><details class="topic-box"><summary class="topic-title">Disaster Management</summary><p>Disaster management involves structured planning across three distinct stages:</p><ol><li><span class="keyword">Pre-Disaster Management</span>: Generating data, preparing vulnerability maps, planning, and spreading community awareness.</li><li><span class="keyword">During Disaster Management</span>: Rescue and relief operations, evacuation, setting up relief camps, and providing medical aid.</li><li><span class="keyword">Post-Disaster Management</span>: Rehabilitation, recovery, and capacity building for future resilience.</li></ol><p>The Government of India formalized these steps through the <span class="keyword">Disaster Management Bill, 2005</span> and the establishment of the National Institute of Disaster Management.</p></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 111 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-05-natural-vegetation.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
