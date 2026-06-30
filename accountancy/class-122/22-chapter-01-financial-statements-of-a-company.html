@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 122 — Chapter 1: Financial Statements of a Company</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 122 — Chapter 1: Financial Statements of a Company</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">3.1 Meaning of Financial Statements</summary>
+  <p><span class="keyword">Financial Statements</span> are the basic and formal annual reports through which corporate management communicates financial information to its owners (shareholders) and various external parties (investors, tax authorities, government, employees, etc.).</p>
+  <p>These statements are the end products of the accounting process and typically refer to:</p>
+  <ul>
+    <li>The <span class="keyword">Balance Sheet</span> (Position Statement) as at the end of the accounting period.</li>
+    <li>The <span class="keyword">Statement of Profit and Loss</span> of a company.</li>
+    <li>The <span class="keyword">Cash Flow Statement</span>.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.2 Nature of Financial Statements</summary>
+  <p>Financial statements reflect a combination of recorded facts, accounting principles, and personal judgements. The key points explaining their nature are:</p>
+  <details class="sub-topic">
+    <summary><h3>1. Recorded Facts</h3></summary>
+    <p>Prepared on the basis of facts in the form of cost data recorded in accounting books. Original or <span class="keyword">historical cost</span> is the basis of recording transactions. Because they are not based on current market prices, they do not show the current financial condition of the concern.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>2. Accounting Conventions</h3></summary>
+    <p>Certain accounting conventions are followed, such as valuing inventory at cost or market price (whichever is lower), and valuing assets at cost less depreciation. The convention of <span class="keyword">materiality</span> is followed for small items (e.g., stationery is treated as expenditure in the year of purchase).</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>3. Postulates</h3></summary>
+    <p>Prepared on basic assumptions (pre-requisites) known as postulates, including:</p>
+    <ul>
+      <li><span class="keyword">Going Concern Postulate</span>: Assumes the enterprise will exist for a long period, so assets are shown on a historical cost basis.</li>
+      <li><span class="keyword">Money Measurement Postulate</span>: Assumes the value of money remains constant across periods.</li>
+      <li><span class="keyword">Realisation Postulate</span>: Revenue is included in the sales of the year in which the sale was undertaken, regardless of when payment is received.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>4. Personal Judgements</h3></summary>
+    <p>Many figures are based on personal opinions, estimates, and judgements, such as estimating the useful life of fixed assets for depreciation, making provisions for doubtful debts, and choosing inventory valuation methods under the convention of <span class="keyword">conservatism</span>.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.3 Objectives of Financial Statements</summary>
+  <p>The primary objective of financial statements is to assist users in decision-making. Specific objectives include:</p>
+  <ol>
+    <li>To provide information about economic resources and obligations of a business.</li>
+    <li>To provide information about the earning capacity of the business.</li>
+    <li>To provide information about cash flows.</li>
+    <li>To judge the effectiveness of management in utilising resources.</li>
+    <li>To report on activities affecting society.</li>
+    <li>To disclose significant accounting policies and concepts followed.</li>
+  </ol>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.4 Types of Financial Statements &amp; Form of Balance Sheet</summary>
+  <p>Every company registered under <span class="keyword">The Companies Act, 2013</span> must prepare its Balance Sheet and Statement of Profit and Loss in accordance with the revised <span class="keyword">Schedule III</span>.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Part I: Form of Balance Sheet (Schedule III)</h3></summary>
+    <table class="financial-table">
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Note No.</th>
+          <th>Figure as at the end of Current reporting period</th>
+          <th>Figure as at the end of Previous reporting period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4"><strong>I. EQUITY AND LIABILITIES</strong></td>
+        </tr>
+        <tr>
+          <td><strong>1) Shareholders' Funds</strong><br/>(a) Share Capital<br/>(b) Reserves and Surplus<br/>(c) Money received against share warrants</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>2) Share application money pending allotment</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>3) Non-current Liabilities</strong><br/>(a) Long-term borrowings<br/>(b) Deferred tax liabilities (net)<br/>(c) Other long-term liabilities<br/>(d) Long-term provisions</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>4) Current Liabilities</strong><br/>(a) Short-term borrowings<br/>(b) Trade payables<br/>(c) Other current liabilities<br/>(d) Short-term provisions</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>TOTAL</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="4"><strong>II. ASSETS</strong></td>
+        </tr>
+        <tr>
+          <td><strong>1) Non-Current Assets</strong><br/>(a) Fixed assets:<br/>&nbsp;&nbsp;&nbsp;&nbsp;(i) Tangible assets<br/>&nbsp;&nbsp;&nbsp;&nbsp;(ii) Intangible assets<br/>&nbsp;&nbsp;&nbsp;&nbsp;(iii) Capital work-in-progress<br/>&nbsp;&nbsp;&nbsp;&nbsp;(iv) Intangible assets under development<br/>(b) Non-current investments<br/>(c) Deferred tax assets (net)<br/>(d) Long-term loans and advances<br/>(e) Other non-current assets</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>2) Current Assets</strong><br/>(a) Current investments<br/>(b) Inventories<br/>(c) Trade receivables<br/>(d) Cash and cash equivalents<br/>(e) Short-term loans and advances<br/>(f) Other current assets</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>TOTAL</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Important Features of Presentation</h3></summary>
+    <ul>
+      <li>Applies to all Indian companies preparing financial statements as per Schedule III (except Insurance, Banking, or other specified companies).</li>
+      <li>Accounting Standards prevail over Schedule III.</li>
+      <li>Current and non-current bifurcation of assets and liabilities is mandatory.</li>
+      <li><strong>Rounding-off Rules:</strong><br/>
+        - Turnover &lt; Rs. 100 crore: Nearest hundreds, thousands, lakhs, or millions.<br/>
+        - Turnover &ge; Rs. 100 crore: Nearest lakhs, millions, or decimals thereof.
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Current vs. Non-Current Distinction</h3></summary>
+    <p>An item is classified as <span class="keyword">current</span> if it meets any of the following criteria:</p>
+    <ul>
+      <li>It is expected to be realised or settled within the entity's normal operating cycle.</li>
+      <li>It is held primarily for trading.</li>
+      <li>It is expected to be realised/settled within twelve months after the reporting period.</li>
+      <li>It is cash or cash equivalent.</li>
+    </ul>
+    <p>All other assets and liabilities are classified as <span class="keyword">non-current</span>.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.4.2 Form and Content of Statement of Profit and Loss</summary>
+  <p>The Statement of Profit and Loss is prepared to determine the operational results of an undertaking over a specific period.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Part II: Form of Statement of Profit and Loss</h3></summary>
+    <table class="financial-table">
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Note No.</th>
+          <th>Current Period (Rs.)</th>
+          <th>Previous Period (Rs.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>I. Revenue from operations</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>II. Other income</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>III. Total Revenue (I + II)</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>IV. Expenses:</strong><br/>
+            - Cost of materials consumed<br/>
+            - Purchases of stock-in-trade<br/>
+            - Changes in inventories of finished goods, WIP, and stock-in-trade<br/>
+            - Employee benefits expense<br/>
+            - Finance costs<br/>
+            - Depreciation and amortisation expense<br/>
+            - Other expenses
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>Total expenses</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>V. Profit before exceptional and extraordinary items and tax (III - IV)</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>VI. Exceptional items</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>VII. Profit before extraordinary items and tax (V - VI)</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>VIII. Extraordinary items</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>IX. Profit before tax (VII - VIII)</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>X. Tax expense:</strong> (1) Current tax, (2) Deferred tax</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>XI. Profit/(Loss) for the period from continuing operations (IX - X)</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.5 Uses and Importance of Financial Statements</summary>
+  <p>Financial statements provide critical information to various stakeholders for economic decision-making:</p>
+  <ul>
+    <li><strong>Report on stewardship function:</strong> Reports management's performance to shareholders.</li>
+    <li><strong>Basis for fiscal policies:</strong> Provides inputs for taxation and industrial policies of the government.</li>
+    <li><strong>Basis for granting credit:</strong> Used by banks and financial institutions to assess creditworthiness.</li>
+    <li><strong>Basis for prospective investors:</strong> Helps assess security, liquidity, and profitability of investments.</li>
+    <li><strong>Guide to the value of investment:</strong> Helps shareholders decide whether to continue or discontinue investments.</li>
+    <li><strong>Helps stock exchanges:</strong> Enhances transparency and protects investor interests.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3.6 Limitations of Financial Statements</summary>
+  <p>Despite their utility, financial statements suffer from several limitations:</p>
+  <ol>
+    <li><strong>Do not reflect current situation:</strong> Prepared on historical cost; values do not reflect inflation or current market conditions.</li>
+    <li><strong>Assets may not realise:</strong> Stated values of assets may not be realised if forced liquidation occurs.</li>
+    <li><strong>Bias:</strong> Influenced by personal judgements and choice of accounting conventions.</li>
+    <li><strong>Aggregate information:</strong> Shows consolidated figures rather than detailed transaction-level data.</li>
+    <li><strong>Vital information missing:</strong> Non-monetary factors (e.g., loss of market share, quality of management) are omitted.</li>
+    <li><strong>No qualitative information:</strong> Excludes qualitative aspects like industrial relations and employee satisfaction.</li>
+    <li><strong>Interim reports:</strong> They represent performance over a specific period and position at a single point in time, failing to depict future changes.</li>
+  </ol>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 122 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
