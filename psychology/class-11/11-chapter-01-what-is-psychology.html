@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 1: What is Psychology?</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 1: What is Psychology?</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Definition of Psychology</summary><details class="sub-topic"><summary><h3>Defining Psychology</h3></summary><p>Psychology is formally defined as a science which studies <span class="keyword">mental processes</span>, <span class="keyword">experiences</span>, and <span class="keyword">behaviour</span> in different contexts. It utilizes methods of both biological and social sciences to systematically gather and organize data into knowledge.</p><ul><li><strong><span class="keyword">Mental Processes</span>:</strong> Internal states of consciousness or awareness. While brain activities (neural processes) provide observable clues to how the mind functions, mental activities and neural activities are mutually overlapping but not identical. The mind, unlike the brain, does not have a physical structure or location.</li><li><strong><span class="keyword">Experiences</span>:</strong> Subjective and internal to the experiencing person. They are embedded in individual awareness or consciousness and can only be understood by analyzing a complex set of internal and external conditions (e.g., esoteric experiences of a meditating Yogi or drug-induced states).</li><li><strong><span class="keyword">Behaviour</span>:</strong> Responses, reactions, or activities that organisms engage in. Behaviours can be simple or complex, short or enduring, and either overt (outwardly observable) or covert (internal/hidden, such as muscle twitches during chess planning). All behaviours are triggered by internal or external stimuli.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Psychology as a Discipline</summary><details class="sub-topic"><summary><h3>The Two Streams of Psychology</h3></summary><p>Psychology functions as a discipline with two parallel streams of inquiry:</p><ul><li><strong>Natural Science Stream:</strong> Focuses on physical and biological sciences, applying the <span class="keyword">hypothetico-deductive model</span> to establish cause-and-effect relationships under controlled conditions.</li><li><strong>Social Science Stream:</strong> Focuses on how human behaviour is shaped by, and shapes, the socio-cultural context in which it occurs.</li></ul></details><details class="sub-topic"><summary><h3>Psychology as a Natural Science</h3></summary><p>Modern psychology has developed largely through the application of the scientific method. It emphasizes objectivity and follows a <span class="keyword">hypothetico-deductive model</span>, where researchers deduce hypotheses from existing theories, test them empirically, and revise theories accordingly. It is heavily influenced by evolutionary and biological approaches.</p></details><details class="sub-topic"><summary><h3>Psychology as a Social Science</h3></summary><p>As a social science, psychology studies human beings as social actors within their socio-cultural environments. It recognizes that human behaviour cannot be predicted solely by universal physical laws, as individuals exhibit significant variations based on their unique social contexts, experiences, and communities.</p></details></details><details class="topic-box"><summary class="topic-title">Understanding Mind and Behaviour</summary><details class="sub-topic"><summary><h3>The Mind-Body Relationship</h3></summary><p>Historically, the mind and body were considered parallel, independent entities. Modern research in neuroscience has demonstrated a deep, bidirectional relationship between the two:</p><ul><li>Patients with surgical removal of occipital lobes (blindness) can still respond correctly to visual cues (blind sight).</li><li>Amateur athletes can experience sensations in a "phantom limb" after amputation.</li><li>The field of <span class="keyword">Psychoneuroimmunology</span> highlights how mental states, positive visualization, and emotional well-being directly strengthen the immune system and alter bodily processes.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Popular Notions vs. Scientific Psychology</summary><details class="sub-topic"><summary><h3>Common Sense vs. Empirical Science</h3></summary><p>Popular notions of psychology often rely on common sense or hindsight, which frequently yield contradictory explanations (e.g., "out of sight, out of mind" vs. "distance makes the heart grow fonder"). Scientific psychology systematically examines propositions using empirical data to establish predictable patterns of behaviour.</p></details><details class="sub-topic"><summary><h3>Landmark Experiment on Attribution</h3></summary><div class="example-block"><p><strong>Case/Experiment Title:</strong> Dweck's Study on Learned Helplessness and Attribution (1975)</p><p><strong>Background/Subject:</strong> Children who gave up too easily when faced with difficult math problems.</p><p><strong>Method/Procedure:</strong> Two groups of students were trained for 25 days. Group 1 was given only easy problems (always succeeded). Group 2 was given a mix of easy and difficult problems; when they failed, they were told it was because they did not try hard enough (attribution retraining).</p><p><strong>Observations/Results:</strong> Following training, both groups were given new, difficult problems. Group 1 gave up much faster when they faced failure. Group 2 persisted significantly longer because they had learned to attribute failure to a lack of effort rather than a lack of ability.</p><p><strong>Psychological Inference:</strong> Common sense suggests giving only easy tasks to build confidence, but scientific evidence shows that teaching children to attribute failure to a lack of effort builds greater resilience and persistence.</p></div></details></details><details class="topic-box"><summary class="topic-title">Evolution of Psychology</summary><details class="sub-topic"><summary><h3>Major Schools of Psychological Thought</h3></summary><p>The formal history of modern psychology began in 1879 with the establishment of the first experimental laboratory in Leipzig, Germany, by Wilhelm Wundt. Since then, several schools of thought have emerged:</p><table><thead><tr><th>School of Thought</th><th>Key Proponents</th><th>Core Focus</th></tr></thead><tbody><tr><td><span class="keyword">Structuralism</span></td><td>Wilhelm Wundt</td><td>Analyzing the structure of the mind and conscious experience through <span class="keyword">introspection</span>.</td></tr><tr><td><span class="keyword">Functionalism</span></td><td>William James, John Dewey</td><td>Studying what the mind does and how behaviour functions to help humans adapt to their environment.</td></tr><tr><td><span class="keyword">Gestalt Psychology</span></td><td>Max Wertheimer, Wolfgang Köhler</td><td>Focusing on the holistic organization of perceptual experiences ("the whole is greater than the sum of its parts").</td></tr><tr><td><span class="keyword">Behaviourism</span></td><td>John Watson, B.F. Skinner</td><td>Focusing on observable, verifiable behaviour and defining psychology as the study of stimulus-response ($S-R$) associations.</td></tr><tr><td><span class="keyword">Psychoanalysis</span></td><td>Sigmund Freud</td><td>Viewing human behaviour as a dynamic manifestation of unconscious desires, conflicts, and early childhood experiences.</td></tr><tr><td><span class="keyword">Humanistic Perspective</span></td><td>Carl Rogers, Abraham Maslow</td><td>Emphasizing free will, personal growth, and the natural striving to fulfill human potential.</td></tr><tr><td><span class="keyword">Cognitive Perspective</span></td><td>Jean Piaget, Lev Vygotsky</td><td>Focusing on mental processes like thinking, memory, and problem-solving, viewing the mind as an information-processing system. Includes <span class="keyword">constructivism</span>.</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Development of Psychology in India</summary><details class="sub-topic"><summary><h3>Historical Phases</h3></summary><p>The modern era of Indian psychology began at Calcutta University in the Department of Philosophy, where the first syllabus of experimental psychology was introduced and a laboratory was established in 1915. Dr. N.N. Sengupta and Prof. G. Bose were key pioneers.</p><p>Durganand Sinha (1986) traced the history of modern psychology in India through four distinct phases:</p><ol><li><strong>Phase I (Till Independence):</strong> Emphasis on experimental, psychoanalytic, and psychological testing research, heavily reflecting Western traditions.</li><li><strong>Phase II (Till 1960s):</strong> Expansion of psychology into different branches and academic departments across Indian universities.</li><li><strong>Phase III (Post-1960s):</strong> Shift toward problem-oriented research to address social and national issues in Indian society.</li><li><strong>Phase IV (Late 1970s onwards):</strong> Phase of indigenisation, rejecting purely Western frameworks to develop culturally and socially relevant psychological approaches rooted in traditional Indian knowledge systems.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Branches of Psychology</summary><details class="sub-topic"><summary><h3>Core Fields of Specialisation</h3></summary><ul><li><strong><span class="keyword">Cognitive Psychology</span>:</strong> Investigates mental processes involved in acquisition, storage, manipulation, and transformation of information (e.g., memory, perception, problem-solving).</li><li><strong><span class="keyword">Biological Psychology</span>:</strong> Focuses on the relationship between behaviour and physical systems, including the brain, nervous system, immune system, and genetics.</li><li><strong><span class="keyword">Neuropsychology</span>:</strong> Studies the role of neurotransmitters and brain structures in mental functions, working with both healthy and brain-damaged individuals.</li><li><strong><span class="keyword">Developmental Psychology</span>:</strong> Studies physical, social, and psychological changes across the life-span, from conception to old age.</li><li><strong><span class="keyword">Social Psychology</span>:</strong> Explores how people are affected by their social environments, examining topics like attitudes, conformity, obedience, and prejudice.</li><li><strong><span class="keyword">Cross-cultural and Cultural Psychology</span>:</strong> Examines the role of culture in understanding human behaviour, thought, and emotion.</li><li><strong><span class="keyword">Environmental Psychology</span>:</strong> Studies the interaction between physical factors (temperature, pollution, natural disasters) and human behaviour.</li><li><strong><span class="keyword">Health Psychology</span>:</strong> Focuses on the role of psychological factors in the development, prevention, and treatment of illness.</li><li><strong><span class="keyword">Clinical and Counselling Psychology</span>:</strong> Deals with the causes, treatment, and prevention of psychological disorders and everyday life challenges.</li><li><strong><span class="keyword">Industrial/Organisational Psychology</span>:</strong> Focuses on workplace behaviour, employee training, work conditions, and organizational structures.</li><li><strong><span class="keyword">Educational Psychology</span>:</strong> Studies how people of all ages learn, developing instructional methods and school-based intervention programs.</li><li><strong><span class="keyword">Sports Psychology</span>:</strong> Applies psychological principles to improve sports performance and motivation.</li></ul></details><details class="sub-topic"><summary><h3>Clinical Psychologist vs. Psychiatrist</h3></summary><table><thead><tr><th>Feature</th><th>Clinical Psychologist</th><th>Psychiatrist</th></tr></thead><tbody><tr><td><strong>Degree</strong></td><td>Degree in Psychology (Ph.D./M.Phil) with intensive clinical training.</td><td>Medical Degree (M.D.) with specialized training in psychological disorders.</td></tr><tr><td><strong>Treatment Method</strong></td><td>Focuses on psychological therapies, counselling, and behavioral interventions.</td><td>Can prescribe medications and administer somatic treatments like electroshock therapy.</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Psychology and Other Disciplines</summary><details class="sub-topic"><summary><h3>Interdisciplinary Connections</h3></summary><p>Psychology shares a rich relationship with various fields of study:</p><ul><li><strong>Philosophy:</strong> Source of psychology's foundational questions regarding the nature of the mind, consciousness, and human motivation.</li><li><strong>Medicine:</strong> Collaboration in treating physical illnesses, managing post-operative care, and understanding the mind-body connection in health.</li><li><strong>Economics, Political Science, and Sociology:</strong> Insights into consumer behaviour, decision-making, exercise of power, voting patterns, and socialization processes.</li><li><strong>Computer Science:</strong> Mimicking human cognitive processes to develop artificial intelligence and improve human-computer interaction.</li><li><strong>Law and Criminology:</strong> Understanding witness memory, jury decision-making, and the psychological factors behind criminal acts.</li><li><strong>Mass Communication:</strong> Analyzing the impact of media on attitudes, child development, and effective communication strategies.</li><li><strong>Music and Fine Arts:</strong> Utilizing music therapy and exploring the relationship between artistic expression and emotional states.</li><li><strong>Architecture and Engineering:</strong> Designing physical spaces and mechanical devices that align with human habits, safety, and cognitive limits.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Psychology in Everyday Life</summary><details class="sub-topic"><summary><h3>Practical Applications</h3></summary><p>Psychology is not just an academic subject; it is highly relevant to daily life. It helps individuals:</p><ul><li>Understand themselves and their relationships with others.</li><li>Develop effective study habits, improve learning, and enhance memory.</li><li>Solve personal and interpersonal problems using systematic decision-making strategies.</li><li>Manage and alleviate daily stress, particularly during examinations.</li><li>Design social interventions to address community issues like poverty, violence, and environmental degradation.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "11-chapter-02-methods-of-enquiry-in-psychology.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
