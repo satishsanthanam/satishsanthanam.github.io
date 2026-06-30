@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 11: Adventure Sports</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+
+    <h1>Physical and Health Education: Class 11 (Part 11) — Chapter 11: Adventure Sports</h1><details class="topic-box"><summary class="topic-title">Introduction to Adventure Sports</summary><p><span class="keyword">Adventure Sports</span> are extraordinary activities performed by individuals in search of excitement, extra enthusiasm, and a desire to explore nature. These sports satisfy robust human behavior and are broadly classified into three categories:</p><ul><li><span class="keyword">Adventure Water Sports</span> (e.g., rafting, surfing)</li><li><span class="keyword">Adventure Land Sports</span> (e.g., mountaineering, trekking)</li><li><span class="keyword">Adventure Air Sports</span> (e.g., paragliding, jumping)</li></ul><p>This chapter focuses on two exciting and classical adventure sports: <span class="keyword">Paragliding</span> and <span class="keyword">Surfing</span>.</p></details><details class="topic-box"><summary class="topic-title">Paragliding</summary><p><span class="keyword">Paragliding</span> is a recreational and competitive adventure sport for flying paragliders. It is an engine-less, motor-free sport that requires courage and quick decision-making.</p><details class="sub-topic"><summary><h3>Historical Development of Paragliding</h3></summary><ul><li><strong>1954:</strong> <span class="keyword">Domina C. Jalbert</span> invented advanced governable gliding parachutes with multi-cells and controls for lateral glide (patented the parafoil in 1963).</li><li><strong>Flight Magazine Article:</strong> <span class="keyword">Walter Neumark</span> predicted that a glider pilot would launch by running over a cliff edge or down a slope.</li><li><strong>Pierre Lemoigne:</strong> French engineer who produced improved parachute designs leading to the Para-commander.</li><li><strong>1965:</strong> <span class="keyword">David Barish</span> developed the "sail wing" for slope-soaring as a summer activity for ski resorts.</li><li><strong>1985:</strong> Canadian authors <span class="keyword">Patrick Gilligan</span> and <span class="keyword">Bertrand Dubois</span> wrote "The Paragliding Manual", officially coining the term "Paragliding".</li><li><strong>1989:</strong> The first official <span class="keyword">Paragliding World Championship</span> was held in Austria.</li></ul></details><details class="sub-topic"><summary><h3>Classification of Paragliding</h3></summary><ol><li><span class="keyword">Light-weight gliding</span></li><li><span class="keyword">Free flying glider</span></li><li><span class="keyword">Foot-launched glider</span>: An aircraft with no rigid primary structure, launched by the pilot running.</li></ol></details><details class="sub-topic"><summary><h3>Sitting Position & Flight Dynamics</h3></summary><p>The pilot sits in a <span class="keyword">harness</span> suspended below a fabric wing comprising interconnected baffled cells. The wing shape is maintained by suspension lines. Despite having no engine, flights can last many hours and cover hundreds of kilometers by exploiting sources of lift to climb to altitudes of a few thousand meters.</p></details><details class="sub-topic"><summary><h3>Technical Specifications</h3></summary><table><thead><tr><th>Component / Parameter</th><th>Specification Details</th></tr></thead><tbody><tr><td>Line Material</td><td><span class="keyword">Spectra</span> (immensely strong; 0.66 mm line has a breaking strength of 56 kg)</td></tr><tr><td>Wing Area</td><td>20–35 square meters (220–380 sq ft)</td></tr><tr><td>Wing Span</td><td>8–12 meters (26–39 ft)</td></tr><tr><td>Wing Weight</td><td>3–7 kilograms (6.6–15.4 lb)</td></tr><tr><td>Combined Equipment Weight</td><td>12–22 kilograms (26–49 lb) (includes wing, harness, reserve, instruments, helmet)</td></tr><tr><td>Speed Range</td><td>20–75 km/h (12–47 mph)</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Instruments Used in Paragliding</h3></summary><ul><li><span class="keyword">Variometer</span>: Helps the pilot find and stay in the "core" of a thermal to maximize height gain, or indicates sinking air. It uses audio signals (beeps) and visual displays to show climb/sink rates and altitude.</li><li><span class="keyword">Radio</span>: Used in training to communicate with other pilots, report landing intentions, or occasionally talk to air traffic control.</li><li><span class="keyword">GPS (Global Positioning System)</span>: Essential for competitions to track flight paths, analyze flying techniques, determine wind drift, avoid restricted airspace, and aid retrieval teams.</li></ul></details><details class="sub-topic"><summary><h3>Flying Techniques & Controls</h3></summary><p>Launching and landing are always done into the wind. Paragliders do not "jump" to launch.</p><h4>Launching Techniques:</h4><ol><li><span class="keyword">Forward launch</span>: Used in low winds; the pilot runs forward with the wing behind so air pressure inflates it.</li><li><span class="keyword">Reverse launch</span>: Used in higher winds; the pilot faces the wing to bring it up into a flying position, then turns around to run and complete the launch.</li></ol><h4>Landing:</h4><p>Pilots lose height by flying a figure-of-8 pattern over the landing zone, line up into the wind at full speed, and "stall" (pause) the glider about a meter above the ground to land.</p><h4>Control Mechanism:</h4><p>Controlled via brakes and an accelerator attached to the paraglider, known as the <span class="keyword">speed bar mechanism</span>. Brakes are held in the pilot's hands to adjust speed.</p></details><details class="sub-topic"><summary><h3>Types of Competitions</h3></summary><ol><li><span class="keyword">Cross-country flying</span>: The classical form of paragliding competition.</li><li><span class="keyword">Aerobatic competitions</span>: Pilots perform maneuvers individually or in synchronous pairs.</li><li><span class="keyword">Bivouac flying</span>: Competitors fly or hike along a certain route over several days.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Surfing</summary><p><span class="keyword">Surfing</span> is a surface water sport in which a wave rider (surfer) rides on the forward or deep face of a moving wave that carries them towards the shore. It was inducted into the Olympic Games starting in the year 2020.</p><details class="sub-topic"><summary><h3>Historical Development of Surfing</h3></summary><ul><li>Surfing was central to ancient Polynesian culture and was first observed by British explorers in Tahiti in 1767.</li><li><span class="keyword">George Freeth</span> (1883–1919) is credited as the "Father of Modern Surfing" and is thought to be the first modern surfer.</li><li>The <span class="keyword">International Surfing Association (ISA)</span> is the highest governing body. Professional contests began in 1975, with <span class="keyword">Margo Oberg</span> becoming the first female professional surfer.</li></ul></details><details class="sub-topic"><summary><h3>Types of Surfing</h3></summary><ol><li><span class="keyword">Stand-up Surfing</span>: The surfer rides a wave standing up on a surfboard. Includes long surf-boarding and short surf-boarding.</li><li><span class="keyword">Body Surfing or Body Boarding</span>: Riding a wave on a body board (lying on the belly or drop knee), or using only the surfer's body without a board (considered the purest form of surfing).</li><li><span class="keyword">Surf Matting</span>: Surfing on inflatable mats using foils.</li><li><span class="keyword">Tow-surfing</span>: Associated with big waves where a motorized watercraft (like a jet ski) tows the surfer into a large, fast-moving wave front.</li></ol></details><details class="sub-topic"><summary><h3>Surfboard Types</h3></summary><table><thead><tr><th>Surfboard Type</th><th>Length</th><th>Characteristics & Suitability</th></tr></thead><tbody><tr><td>Long board</td><td>~10 feet</td><td>Causes more friction, slower, excellent for beginners to help with balancing.</td></tr><tr><td>Smaller board</td><td>~6 feet</td><td>Lighter, faster, ideal for experienced surfers seeking control and maneuverability.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Dangers during Surfing</h3></summary><ul><li><span class="keyword">Seabed</span>: Falling can cause the wave to toss the surfer downward, leading to violent collisions with shallow reefs or sandbeds.</li><li><span class="keyword">Rip currents</span>: Strong water channels flowing away from the shore. Swimmers or surfers can be carried out beyond breaking waves. Escaping requires paddling parallel to the shore.</li></ul></details><details class="sub-topic"><summary><h3>Surfing-related Sports</h3></summary><ul><li>Non-wave dependent: <span class="keyword">Paddle boarding</span>, <span class="keyword">Sea kayaking</span></li><li>Wind-powered: <span class="keyword">Kite surfing</span>, <span class="keyword">Wind-surfing</span></li><li>Boat-powered: <span class="keyword">V-drive boat wave surfing</span> (surfing on the wake of a boat)</li></ul></details></details><details class="topic-box"><summary class="topic-title">Safety and Security in Paragliding and Surfing</summary><p>Due to the high risks involved in adventure sports, the following safety measures must be strictly observed:</p><ol><li>A paraglider must be certified and highly skillful.</li><li>Carry essential safety instruments: <span class="keyword">Variometer</span>, <span class="keyword">GPS</span>, and <span class="keyword">Radio</span>.</li><li>Wear proper protective equipment: helmet, knee guards, chest guards, etc.</li><li>Gliding must only be done under the assistance of licensed personnel.</li><li>Surfers must recognize sea wave currents to stay in safe zones.</li><li>Surfers must identify the dangerous deep face of moving waves.</li><li>Surfers should practice skills in artificial wave pools before entering the deep sea.</li><li>Regularly inspect paraglider brakes and lining.</li><li>Ensure sufficient practice before attempting long-route paragliding.</li><li>Maintain high physical and mental fitness standards for quick decision-making.</li></ol></details><details class="topic-box"><summary class="topic-title">Assessment</summary><details class="sub-topic"><summary><h3>Long Answer Questions</h3></summary><ol><li>Write down the use of Variometer in paragliding.</li><li>Explain ‘tow- surfing’.</li><li>Discuss the safety measures to keep in mind during paragliding.</li><li>Briefly explain Sea beds and Rip Currents.</li><li>How does Global Positioning System work?</li></ol></details><details class="sub-topic"><summary><h3>Short Answer Questions</h3></summary><ol><li>Name the person who invented paragliding.</li><li>Name the two flying techniques in paragliding.</li><li>Classify the categories of adventure sports.</li><li>In which year, the first world championship for surfing was held?</li><li>What are the different types of surfing?</li></ol></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-10-tournaments-and-competitions.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

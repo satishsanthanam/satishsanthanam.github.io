@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Physical and Health Education: Class 11 — Chapter 5: Team Games</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Physical and Health Education: Class 11 — Chapter 5: Team Games</h1>
+
+    <details class="topic-box">
+      <summary class="topic-title">Introduction to Team Games</summary>
+      <p>Any sports activity that provides structurally organized opportunities to two or more athletes working collaboratively toward a common competitive baseline objective is defined as a <span class="keyword">team game</span>[cite: 663]. These games establish systematic environments where groups of individuals operate under clear regulatory laws to outscore the opposition[cite: 664]. Classic examples include major international disciplines such as Basketball, Cricket, Football, Handball, Hockey, and Volleyball, alongside deeply rooted traditional games like Kabaddi and Kho-Kho[cite: 665, 670]. Beyond the development of vital core motor mechanics and endurance matrices, modern team games exert significant global social influence, transforming elite athletes into youth role models, framing community life skills, and driving local and national sports economies[cite: 667, 669].</p>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Basketball</summary>
+      <p>Basketball is a high-intensity team game played between two squads of five active players each on a hard court layout[cite: 672]. It demands exceptional high-energy expenditure ($calories$), enhances muscle and bone mineral density frameworks, and develops cognitive discipline and field concentration[cite: 673, 674, 675].</p>
+      
+      <details class="sub-topic">
+        <summary><h3>Historical Milestones</h3></summary>
+        <ul>
+          <li><strong>Invention</strong>: Created by <span class="keyword">Dr. James Naismith</span> in December 1891 at the YMCA Training School (now Springfield College) in Massachusetts, USA, using a soccer ball and two peach baskets hung 10 ft high[cite: 677, 686, 687].</li>
+          <li><strong>Codification</strong>: The first rule book was published on January 15, 1892, in the college magazine <em>Triangle</em> under the headline "A New Game"[cite: 682].</li>
+          <li><strong>International Growth</strong>: The International Basketball Federation (<span class="keyword">FIBA</span>) was founded in Geneva in 1932[cite: 690]. The sport debuted at the Olympic Games in 1904 (St. Louis) as a demonstration and achieved official medal recognition at Berlin in 1936[cite: 690].</li>
+          <li><strong>Indian Expansion</strong>: Introduced by American missionaries around 1905 at YMCA Calcutta[cite: 693, 694]. The <span class="keyword">Basketball Federation of India (BFI)</span> was established in 1950, organizing the signature inaugural BFI Nationals at Ludhiana in 1951[cite: 699, 716].</li>
+        </ul>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Court Layout &amp; Gear Specifications</h3></summary>
+        <p>The standard playing court must present a completely flat, obstruction-free hard surface bounded by precise court parameters[cite: 702]. Back support poles are positioned exactly 2 m behind the boundary lines[cite: 745]. All lines are drawn 5 cm wide in visible white paint and do not form part of the active playing court area[cite: 704, 707].</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Dimension Parameter</th>
+              <th>Official Measurement Metric</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Court Length &amp; Width</strong></td>
+              <td>28 m long $\times$ 15 m wide (measured from inner line edges) [cite: 702, 744]</td>
+            </tr>
+            <tr>
+              <td><strong>Surrounding Free Safety Zone</strong></td>
+              <td>Minimum of 2 m on all external sides [cite: 702]</td>
+            </tr>
+            <tr>
+              <td><strong>Centre Circle Circumference</strong></td>
+              <td>Radius of 1.80 m (measured to outer edge) [cite: 708]</td>
+            </tr>
+            <tr>
+              <td><strong>Free-Throw Line Position</strong></td>
+              <td>Farthest edge is exactly 5.80 m from the inner edge of the endline; length is 3.60 m [cite: 749]</td>
+            </tr>
+            <tr>
+              <td><strong>Restricted Rectangular Area</strong></td>
+              <td>4.90 m wide base on the endline [cite: 751, 772]</td>
+            </tr>
+            <tr>
+              <td><strong>No-Charge Semi-Circle Area</strong></td>
+              <td>Radius of 1.25 m from beneath the basket center [cite: 724, 767]</td>
+            </tr>
+            <tr>
+              <td><strong>Ring Height from Ground</strong></td>
+              <td>3.05 m (10 ft) [cite: 687, 746, 793]</td>
+            </tr>
+            <tr>
+              <td><strong>Backboard Core Dimensions</strong></td>
+              <td>1.80 m horizontally $\times$ 1.05 m vertically (made of transparent, solid material) [cite: 779]</td>
+            </tr>
+            <tr>
+              <td><strong>Steel Ring Inside Diameter</strong></td>
+              <td>Minimum 450 mm to a maximum of 459 mm (fitted with a 12-loop white cord net) [cite: 781, 782]</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Basketball ball dimensions are structurally segregated by athletic category:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Category Tier</th>
+              <th>Official Size</th>
+              <th>Circumference Span</th>
+              <th>Weight Matrix Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Men's Competitions</strong></td>
+              <td>Size 7 [cite: 809]</td>
+              <td>749 mm – 780 mm [cite: 809]</td>
+              <td>567 g – 650 g [cite: 809]</td>
+            </tr>
+            <tr>
+              <td><strong>Women's Competitions</strong></td>
+              <td>Size 6 [cite: 809]</td>
+              <td>724 mm – 737 mm [cite: 809]</td>
+              <td>510 g – 567 g [cite: 809]</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Functional Rules &amp; Score Systems</h3></summary>
+        <p>A standard match consists of 4 periods of 10 minutes each[cite: 845]. Intervals of 2 minutes are taken between the 1st and 2nd quarters, and the 3rd and 4th quarters, with a 15-minute half-time interval[cite: 846, 847]. Tie scores trigger consecutive 5-minute extra periods until the deadlock breaks[cite: 848]. Sidelined squads contain up to 12 total members, with 5 active on court[cite: 816, 817]. Teams are granted two time-outs in the first half and three in the second half (maximum two in the final 2 minutes)[cite: 863]. Positions comprise the <span class="keyword">Point guard</span>, <span class="keyword">Shooting guard</span>, <span class="keyword">Small forward</span>, <span class="keyword">Power forward</span>, and <span class="keyword">Centre</span>[cite: 820, 821, 822, 823, 824]. Ball values vary by zone:</p>
+        <ul>
+          <li><strong>3 Points</strong>: Awarded for successful shots taken entirely from outside the 3-point line arc[cite: 756, 860].</li>
+          <li><strong>2 Points</strong>: Awarded for field goals shot from inside the 3-point field goal boundary[cite: 757, 859].</li>
+          <li><strong>1 Point</strong>: Awarded per successful single free-throw attempt[cite: 758, 861].</li>
+        </ul>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Violations, Fouls &amp; Core Tactics</h3></summary>
+        <p>A <span class="keyword">violation</span> is an infraction of structural rules (e.g., player or ball out-of-bounds, or double dribbling)[cite: 874, 875, 878]. It includes strict time rules: the 3-second rule (holding ball in opponents' restricted zone), the 5-second rule (closely guarded player), the 8-second rule (transitioning ball to frontcourt), and the 24-second shot clock rule[cite: 879, 881, 882, 883].</p>
+        <p>A <span class="keyword">foul</span> denotes illegal personal contact or unsportsmanlike behavior[cite: 886]. Team limits allow 4 fouls per period; subsequent infractions award the opposition two free throws[cite: 888]. Personal fouls include charging (offensive player running over defender) and blocking (illegal contact impeding opponent)[cite: 898, 904]. Accumulating 5 personal fouls results in immediate player exclusion[cite: 897]. Tactical skills include stationary, low, or crossover dribbling [cite: 918, 919, 923]; chest, overhead, or bounce passing [cite: 932, 933, 935]; jump, dunk, or layup shots [cite: 950, 951, 953]; and offensive or defensive rebounding[cite: 964]. Defensive formations are categorized into man-to-man, zone, and combined systems[cite: 973, 975, 988].</p>
+      </details>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Cricket</summary>
+      <p>Cricket is a highly strategic bat-and-ball discipline played on an expansive field outline[cite: 1034]. Through steady distance sprinting, cricket builds high aerobic stamina, physical balance, hand-eye coordination, and swift ball-handling reflexes[cite: 1002, 1003].</p>
+
+      <details class="sub-topic">
+        <summary><h3>Evolution &amp; Governance Timeline</h3></summary>
+        <ul>
+          <li><strong>Early Roots</strong>: Traceable to references under King Edward I in 1300 within Kent, evolving into a widespread pastime by 16th century England[cite: 1005, 1006, 1007]. The first recorded match occurred in 1646[cite: 1008]. Modern over-arm bowling actions replaced underarm actions after 1760[cite: 1009].</li>
+          <li><strong>The Custodian Body</strong>: Formed on May 31, 1787, the <span class="keyword">Marylebone Cricket Club (MCC)</span> laid down the foundational code of cricket laws and remains the ultimate global arbiter of the game's regulations[cite: 1010, 1011].</li>
+          <li><strong>International Structure</strong>: The first international match took place between the USA and Canada in New York in 1844[cite: 1014]. In 1877, England and Australia played the inaugural Test matches[cite: 1015]. The Imperial Cricket Conference (now <span class="keyword">International Cricket Council - ICC</span>) was formed on November 30, 1907[cite: 1024].</li>
+          <li><strong>Indian Context</strong>: The Parsee Oriental Cricket Club was established in 1848[cite: 1018]. The <span class="keyword">Board of Control for Cricket in India (BCCI)</span> was founded in 1928, leading to India's first official Test appearance against England in 1932[cite: 1025]. Milestone World Cup victories include the 1983 60-over tournament, the 2007 T20 tournament, and the 2011 50-over tournament[cite: 1028].</li>
+        </ul>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Field &amp; Equipment Specifications Matrix</h3></summary>
+        <p>While the sport features no rigid boundary dimensions for the outer field, the central pitch layout adheres to strict geometric constraints[cite: 1054, 1079]. All key dimensions are detailed below:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Equipment / Pitch Feature</th>
+              <th>Official Regulatory Dimension Metric</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Length of the Pitch</strong></td>
+              <td>22 yards (20.12 m or 66 feet) [cite: 1096, 1105]</td>
+            </tr>
+            <tr>
+              <td><strong>Width of the Pitch</strong></td>
+              <td>3.05 m (10 feet) [cite: 1097]</td>
+            </tr>
+            <tr>
+              <td><strong>Active Playing Team</strong></td>
+              <td>11 players on field + 1 reserved 12th man (substitute fielder only) [cite: 1035, 1036, 1038]</td>
+            </tr>
+            <tr>
+              <td><strong>Length of the Cricket Bat</strong></td>
+              <td>Maximum 38 inches (965 mm) [cite: 1090]</td>
+            </tr>
+            <tr>
+              <td><strong>Width of the Cricket Bat</strong></td>
+              <td>Maximum 4.25 inches (108 mm) [cite: 1091]</td>
+            </tr>
+            <tr>
+              <td><strong>Weight of a Cricket Ball</strong></td>
+              <td>155.9 grams to 163 grams [cite: 1092]</td>
+            </tr>
+            <tr>
+              <td><strong>Circumference of a Ball</strong></td>
+              <td>22.4 cm to 22.9 cm [cite: 1093]</td>
+            </tr>
+            <tr>
+              <td><strong>Ball Color Selection</strong></td>
+              <td>Red (Day &amp; Test matches); White (Day-Night matches) [cite: 1094, 1095]</td>
+            </tr>
+            <tr>
+              <td><strong>Height of the Wickets</strong></td>
+              <td>28 inches above ground level (28.5 inches with bails fitted) [cite: 1098]</td>
+            </tr>
+            <tr>
+              <td><strong>Width of the Stumps Set</strong></td>
+              <td>9 inches (22.9 cm) total width across three stumps [cite: 1099]</td>
+            </tr>
+            <tr>
+              <td><strong>Popping Crease Distance</strong></td>
+              <td>Minimum 122 cm (4 feet) drawn in front of the bowling crease [cite: 1084, 1104]</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>The 11 Methods of Dismissal &amp; Scoring Extras</h3></summary>
+        <p>The game is managed by two ground umpires and a video-assisted third umpire[cite: 1107, 1108]. Batting teams accumulate extra scores through structural delivery errors or fielding misdirections:</p>
+        <ul>
+          <li><span class="keyword">No Ball</span>: Triggered by illegal bowler stride positioning, dangerous high deliveries, or field placement infractions; adds 1 run and shields the batsman from most dismissals[cite: 1115, 1120, 1121].</li>
+          <li><span class="keyword">Wide Ball</span>: Called when a delivery passes beyond the reach of the batsman; adds 1 run to the total[cite: 1122, 1124].</li>
+          <li><span class="keyword">Bye &amp; Leg Bye</span>: Bye runs are scored when a delivery misses the bat and the wicketkeeper; Leg Byes are scored when the ball deflects off the striker's body or protective equipment[cite: 1125, 1126].</li>
+        </ul>
+        <p>A batsman can be given <span class="keyword">out</span> through exactly 11 distinct regulatory scenarios[cite: 1142]:</p>
+        <ol>
+          <li><strong>Bowled</strong>: The delivery strikes and dislodges bails from the stumps directly, regardless of contact with the bat or body[cite: 1143, 1145].</li>
+          <li><strong>Caught</strong>: A fielder, bowler, or wicketkeeper catches a batted ball cleanly before it touches the outfield floor[cite: 1146].</li>
+          <li><strong>Stumped</strong>: The wicketkeeper dislodges bails while the striker is out of the crease line without attempting a run[cite: 1147].</li>
+          <li><strong>Leg Before Wicket (LBW)</strong>: The ball strikes the batsman's gear inline with stumps, and the umpire determines it would have hit the wickets[cite: 1160].</li>
+          <li><strong>Run Out</strong>: The fielding side puts down the wickets while no part of the running batsman's bat or body is grounded behind the popping crease[cite: 1162].</li>
+          <li><strong>Hit Wicket</strong>: The batsman accidentally strikes down their own wickets with the bat or body during active play[cite: 1163].</li>
+          <li><strong>Handled the Ball</strong>: The batsman intentionally handles a live ball with a hand not touching the bat without opposition consent[cite: 1164].</li>
+          <li><strong>Obstructing the Field</strong>: The batsman willfully uses words or actions to obstruct the fielding team[cite: 1172].</li>
+          <li><strong>Timed Out</strong>: An incoming batsman fails to face a delivery or reach the non-striker's end within 3 minutes of a dismissal[cite: 1175].</li>
+          <li><strong>Hit the Ball Twice</strong>: The batsman hits the ball a second time for reasons other than protecting their wickets[cite: 1177].</li>
+          <li><strong>Retired</strong>: The batsman leaves the field without the umpire's consent or opposition captain's clearance[cite: 1178].</li>
+        </ol>
+      </details>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Football (Soccer)</summary>
+      <p>Football is the world's most widely played and viewed team sport, requiring exceptional foot coordination, aerobic tracking, and precise skill execution under pressure[cite: 1188, 1195, 1201].</p>
+
+      <details class="sub-topic">
+        <summary><h3>Historical Development</h3></summary>
+        <ul>
+          <li><strong>Origins</strong>: Ancient ancestral variations date back over 1,000 years, notably the early version played across villages during the Chinese dynasties[cite: 1187, 1190]. Modern association football split from rugby in England in 1863 over handling and tripping rules[cite: 1205, 1206].</li>
+          <li><strong>Governance</strong>: The <em>Football Association</em> in England formed the first code[cite: 1207]. The <span class="keyword">Federation Internationale de Football Association (FIFA)</span> was founded in Paris in 1904 to govern the international sport, now universally called "Soccer"[cite: 1208, 1209].</li>
+          <li><strong>Indian History</strong>: Introduced in the 19th century by the British Army in Calcutta[cite: 1232]. The historic <span class="keyword">Durand Cup</span>, founded in 1988 by Mortimer Durand at Shimla, is the world's third oldest football championship[cite: 1229, 1233, 1234]. The <em>All India Football Federation (AIFF)</em> was established in 1937 and affiliated with FIFA in 1948[cite: 1237, 1241].</li>
+        </ul>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Field of Play &amp; Equipment Blueprint</h3></summary>
+        <p>The field of play must be rectangular, with boundary touchlines longer than the baseline goal lines[cite: 1275, 1276]. All marking lines must share a uniform width not exceeding 12 cm[cite: 1493].</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field / Equipment Parameter</th>
+              <th>Standard Game Limits</th>
+              <th>International Match Limits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Field Length (Touchline)</strong></td>
+              <td>Minimum 90 m – Maximum 120 m [cite: 1279, 1290]</td>
+              <td>Minimum 100 m – Maximum 110 m [cite: 1284, 1291]</td>
+            </tr>
+            <tr>
+              <td><strong>Field Width (Goal Line)</strong></td>
+              <td>Minimum 45 m – Maximum 90 m [cite: 1279, 1290]</td>
+              <td>Minimum 64 m – Maximum 75 m [cite: 1284, 1291]</td>
+            </tr>
+            <tr>
+              <td><strong>Active Match Squad Size</strong></td>
+              <td>Max 11 players per side (minimum 7 to play) [cite: 1301, 1302]</td>
+              <td>Max 11 players per side (maximum 3 official substitutions) [cite: 1301, 1303]</td>
+            </tr>
+            <tr>
+              <td><strong>Goal Dimension Layout</strong></td>
+              <td colspan="2">7.32 m wide between upright posts $\times$ 2.44 m high from crossbar to floor [cite: 1517]</td>
+            </tr>
+            <tr>
+              <td><strong>Goal Area Dimensions</strong></td>
+              <td colspan="2">Extends 5.5 m into the pitch from the inside of each goalpost [cite: 1494, 1495]</td>
+            </tr>
+            <tr>
+              <td><strong>Penalty Area Dimensions</strong></td>
+              <td colspan="2">Extends 16.5 m into the pitch from the inside of each goalpost [cite: 1500, 1501]</td>
+            </tr>
+            <tr>
+              <td><strong>Penalty Spot Placement</strong></td>
+              <td colspan="2">Exactly 11 m from the midpoint between the goalposts [cite: 1504]</td>
+            </tr>
+            <tr>
+              <td><strong>Ball Circumference Range</strong></td>
+              <td colspan="2">68 cm to 70 cm (27 to 28 inches) spherical leather case [cite: 1294, 1296]</td>
+            </tr>
+            <tr>
+              <td><strong>Ball Weight Matrix</strong></td>
+              <td colspan="2">410 grams to 450 grams at the start of play [cite: 1297]</td>
+            </tr>
+            <tr>
+              <td><strong>Internal Inflation Pressure</strong></td>
+              <td colspan="2">0.6 to 1.1 atmospheres ($600\text{–}1,100\text{ g/cm}^2$) at sea level [cite: 1298]</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>17 Laws &amp; Disciplinary Codification</h3></summary>
+        <p>The game consists of two equal 45-minute halves overseen by a referee and two assistant line referees[cite: 1315, 1333, 1348]. Play is governed by the codified <span class="keyword">17 Laws of Football</span>[cite: 1270, 1273]. Key rules include:</p>
+        <ul>
+          <li><strong>Law 11 (Offside)</strong>: A player is caught in an offside position if they are nearer to the opponents' goal line than both the ball and the second-last opponent when the ball is played[cite: 1375, 1376]. No offside offence occurs directly from a goal kick, throw-in, or corner kick[cite: 1382, 1383].</li>
+          <li><strong>Law 12 (Fouls &amp; Misconduct)</strong>: Direct free kicks or penalties are awarded for 10 structural offences (e.g., kicking, tripping, striking, charging, or handling the ball)[cite: 1398, 1413]. Indirect free kicks are called for goalkeeper violations (holding ball over 6 seconds, recycling backpasses) or dangerous play[cite: 1414, 1415, 1417, 1420].</li>
+          <li><strong>Discipline Cards</strong>: A <span class="keyword">Yellow Card</span> is shown for cautionable offences (unsporting behavior, dissent, delaying restarts)[cite: 1396, 1426]. A <span class="keyword">Red Card</span> indicates a sending-off offence (serious foul play, violent conduct, receiving a second yellow card), requiring the player to leave the pitch vicinity immediately[cite: 1443, 1450, 1451].</li>
+        </ul>
+      </details>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Handball</summary>
+      <p>Handball is a dynamic, high-velocity indoor sport. It requires rapid passing maneuvers, calculated court positioning, and explosive shooting skills to breach the opponent's defensive line[cite: 1539, 1552, 1558].</p>
+
+      <details class="sub-topic">
+        <summary><h3>Historical Consolidation</h3></summary>
+        <p>Rules were unified by Karl Schelenz in Berlin in 1917[cite: 1532, 1534]. The modern <span class="keyword">International Handball Federation (IHF)</span> was established in Copenhagen in 1946[cite: 1535]. Field handball debuted at the 1936 Berlin Olympics, and the indoor version was integrated at the 1972 Munich Games for men and 1976 Montreal Games for women[cite: 1537, 1538]. In India, the sport was pioneered by Jagat Singh Chauhan from Haryana, who co-founded the <em>Handball Federation of India</em> in 1972[cite: 1542, 1550].</p>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Playing Court &amp; Ball Dimensions</h3></summary>
+        <p>The standard handball field is a $40\text{ m} \times 20\text{ m}$ rectangle divided by a centerline[cite: 1555, 1701]. Upright goals measure 2 m high $\times$ 3 m wide, with an 8 cm square cross-section painted in contrasting colored bands[cite: 1727, 1729, 1730].</p>
+        <ul>
+          <li><strong>6-Meter Line (Goal Area Line)</strong>: A continuous boundary defining the exclusive goalkeeper zone. No court player is permitted to step on or enter this zone with the ball[cite: 1556, 1557, 1709].</li>
+          <li><strong>9-Meter Line (Free Throw Line)</strong>: A broken arc segment drawn 3 m outside the goal area line, with 15 cm segments and spaces[cite: 1713, 1714].</li>
+          <li><strong>7-Meter Line</strong>: A 1 m long penalty line marked directly in front of the goal face[cite: 1717].</li>
+          <li><strong>4-Meter Line</strong>: The goalkeeper's restraining mark for penalty throws[cite: 1719].</li>
+        </ul>
+        <p>Ball sizes are strictly regulated by IHF age-group tiers[cite: 1765]:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>IHF Specification Standard</th>
+              <th>Circumference Span</th>
+              <th>Weight Matrix Range</th>
+              <th>Target Playing Demographics</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Size 3</strong></td>
+              <td>58 cm – 60 cm [cite: 1767]</td>
+              <td>425 g – 475 g [cite: 1767]</td>
+              <td>Adult Men and Male Youth (Age 16+) [cite: 1767]</td>
+            </tr>
+            <tr>
+              <td><strong>Size 2</strong></td>
+              <td>54 cm – 56 cm [cite: 1767]</td>
+              <td>325 g – 375 g [cite: 1767]</td>
+              <td>Women, Female Youth (14+), Male Youth (12-16) [cite: 1767]</td>
+            </tr>
+            <tr>
+              <td><strong>Size 1</strong></td>
+              <td>50 cm – 52 cm [cite: 1767]</td>
+              <td>290 g – 330 g [cite: 1767]</td>
+              <td>Female Youth (8-14) and Male Kids (8-12) [cite: 1767]</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Match Timing &amp; Progressive Punishment Rules</h3></summary>
+        <p>A team consists of 16 members, with 7 active court players (6 fielders + 1 goalkeeper)[cite: 1597, 1598]. Substitutes can enter the match repeatedly without restriction[cite: 1599]. Match duration is split by age category[cite: 1611]:</p>
+        <div class="example-block">$$\text{Playing Time (Adults)} = 2 \times 30 \text{ minutes} \implies 10\text{-minute half-time interval } \text{[cite: 1615]}$$</div>
+        <p>Youth tiers play $2 \times 25$ minutes (ages 12-16) or $2 \times 20$ minutes (ages 8-12)[cite: 1615]. Overtime features two halves of 5 minutes each[cite: 1618]. Each team is granted one 1-minute time-out per half[cite: 1621].</p>
+        <p>Court restrictions enforce the **3-step and 3-second rule**: a player may only hold the ball for 3 seconds maximum or run for 3 steps before passing, dribbling, or shooting[cite: 1640, 1641]. Double dribbling is prohibited[cite: 1645].</p>
+        <p>Infractions trigger a strict system of **Progressive Punishments** administered by two active referees[cite: 1608, 1686]:</p>
+        <ul>
+          <li><span class="keyword">Yellow Card (Warning)</span>: Limited to a maximum of 1 warning per individual player and 3 total warnings per team[cite: 1691].</li>
+          <td><span class="keyword">2-Minute Suspension</span>: Issued for serious fouls or exceeding the team warning limit; the team must play one player short on the court[cite: 1692, 1693].</td>
+          <li><span class="keyword">Red Card (Disqualification)</span>: Automatically triggered upon a single player receiving a third 2-minute suspension. The player is excluded from the arena, and the squad finishes short-handed[cite: 1694, 1695, 1696].</li>
+        </ul>
+      </details>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Hockey</summary>
+      <p>Field Hockey is a high-speed, precision team discipline requiring masterful stick handling, tactical positioning, and rapid transition movements[cite: 1912, 1938, 1960].</p>
+
+      <details class="sub-topic">
+        <summary><h3>International Governance &amp; Indian Legacy</h3></summary>
+        <p>Modern field hockey rules evolved in England during the mid-18th century[cite: 1783]. The sport debuted at the London Olympics in 1908[cite: 1784]. The world governing authority, the <span class="keyword">Federation Internationale de Hockey (FIH)</span>, was established in Paris in 1924 under founder Paul Leautey[cite: 1790]. The Indian Men's Hockey team holds an unmatched legacy, remaining entirely unbeaten across six consecutive Olympic Games to win 6 straight gold medals, securing 8 total golds to date[cite: 2040, 2041]. The premier Indian national championship tournament is competed for the prestigious <span class="keyword">Rangaswamy Cup</span>[cite: 2020].</p>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Pitch Layout &amp; Gear Blueprint</h3></summary>
+        <p>The playing arena is a rectangular pitch measuring $91.40\text{ m}$ long sidelines $\times$ $55\text{ m}$ wide backlines[cite: 1805]. All marking lines are colored white and measure 75 mm wide[cite: 1807, 1808]. Upright goal faces measure 3.66 m wide $\times$ 2.14 m high, backed by 460 mm dark sideboards and backboards enclosed in a 45 mm loose mesh net[cite: 1845, 1846, 1849, 1856, 1864].</p>
+        <ul>
+          <li><strong>The Shooting Circle ("D")</strong>: A critical semi-circular area extending 14.63 m out from the goal line center. Legal field goals can only be scored if the shot is struck from inside this active zone[cite: 1818, 1977, 1978].</li>
+          <li><strong>Penalty Stroke Mark</strong>: A distinct spot located exactly 6.40 m (7 yards) directly in front of the goal center[cite: 2008].</li>
+          <li><strong>23-Meter Line</strong>: Parallel lines marked across the pitch exactly 22.90 m from each backline[cite: 1816].</li>
+          <li><strong>The Hockey Stick</strong>: Features a traditional curved "J" or "U" shaped head configuration that must be perfectly flat on its left-hand playing side and rounded on the right-hand side[cite: 1880, 1881, 1948]. Left-handed sticks are banned[cite: 1953]. Curvature bows must not exceed a 25 mm depth limit[cite: 1894].</li>
+          <li><strong>The Hockey Ball</strong>: A hard, smooth spherical ball weighing between 156 g and 163 g, with a circumference of 224 mm to 235 mm[cite: 1897, 1898, 1900].</li>
+        </ul>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Quarter Time-System &amp; Set-Piece Tactics</h3></summary>
+        <p>Matches feature 16-player team sheets, with 11 active on the pitch (10 fielders + 1 differentiated goalkeeper)[cite: 1930, 1943]. Under FIH rules, the match spans 60 minutes divided into four 15-minute quarters[cite: 2033, 2048]. It features a rolling substitution system[cite: 1920]. General rules prohibit using feet or hands to control the ball (foot foul)[cite: 1966]. Lifting the ball above knee-level within 5 m of an opponent is penalized as dangerous play[cite: 1972].</p>
+        <p>Umpires utilize three progressive disciplinary cards to maintain match flow[cite: 2066, 2069]:</p>
+        <div class="example-block">
+          * **Green Card**: Serves as an official warning and temporarily suspends the player for 2 minutes of playing time[cite: 2071].<br>
+          * **Yellow Card**: Suspends the offending player for a minimum of 5 minutes of playing time[cite: 2072].<br>
+          * **Red Card**: Results in a permanent match suspension; the team plays short-handed for the remainder of the game[cite: 2073, 2074].
+        </div>
+        <p>Set-piece goal configurations are executed via two distinct methods:</p>
+        <ul>
+          <li><span class="keyword">Penalty Corner (Short Corner)</span>: Awarded for intentional infractions inside the "D" or within the 23 m area[cite: 1984]. An attacker ("pusher") hits the ball from the endline 10 m away to a "stopper" waiting at the top of the shooting circle[cite: 1990, 1991]. Five defenders stand on the endline, while the rest must remain behind the centerline until the ball is pushed[cite: 1988, 1989]. Struck shots must cross outside the circle line before scoring, and the initial hit must not rise above the backboard[cite: 1993, 1997]. Advanced players frequently deploy the specialized <span class="keyword">drag flick</span> scoop to raise the ball safely[cite: 2000].</li>
+          <li><span class="keyword">Penalty Stroke</span>: A single one-on-one shot taken from the 6.40 m mark against the goalkeeper, awarded when a foul directly prevents a certain goal[cite: 2001, 2002, 2004]. The striker must push, flick, or scoop the ball without making any audible hitting noise[cite: 2010, 2011].</li>
+        </ul>
+      </details>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Kabaddi</summary>
+      <p>Kabaddi is a traditional combative sport native to India, dating back to the epic era of the Mahabharata[cite: 2097]. Derived from the term <em>Kaunbada</em> ("to challenge an opponent"), it is known across regional sub-cultures as Hu-Tu-Tu (Western India), Ha-Do-Do (Eastern India), and Chedugudu (Southern India)[cite: 2098, 2099].</p>
+
+      <details class="sub-topic">
+        <summary><h3>Organizational History</h3></summary>
+        <p>Formulated into structured national formats in 1918 by Maharashtra, printed rules debuted at a Baroda tournament in 1923[cite: 2100, 2101]. It achieved international exposure at the 1936 Berlin Olympics via a specialized demonstration by the Hanuman Vyayam Prasarak Mandal[cite: 2104, 2122]. The <span class="keyword">Amateur Kabaddi Federation of India (AKFI)</span> was established in 1973 to govern modern regulations[cite: 2129, 2130]. India pioneered the modern indoor environment, transitioning play onto synthetic mats with specialized shoes[cite: 2149, 2178].</p>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Court Dimensions Matrix</h3></summary>
+        <p>The court rectangle features a midline dividing it into symmetrical halves, flanked by 1 m wide lateral boundaries called lobbies[cite: 2116, 2125]. Lobbies activate only during active struggle[cite: 2237].</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Court Marking Parameter</th>
+              <th>Men's Senior Standard</th>
+              <th>Women's / Junior Standard</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Full Court Area</strong></td>
+              <td>13 m long $\times$ 10 m wide [cite: 2111, 2125, 2134]</td>
+              <td>11 m long $\times$ 8 m wide [cite: 2125]</td>
+            </tr>
+            <tr>
+              <td><strong>Side Lobbies width</strong></td>
+              <td colspan="2">1 m wide tracks running along both sidelines [cite: 2113, 2125]</td>
+            </tr>
+            <tr>
+              <td><strong>Baulk Line Placement</strong></td>
+              <td>3.75 m parallel distance from midline [cite: 2109, 2125]</td>
+              <td>3.00 m parallel distance from midline</td>
+            </tr>
+            <tr>
+              <td><strong>Bonus Line Placement</strong></td>
+              <td>4.75 m distance from midline (1 m past Baulk Line) [cite: 2107, 2108, 2125]</td>
+              <td>3.75 m distance from midline</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Match Rules, Scoring &amp; Essential Skills</h3></summary>
+        <p>Teams feature 10-12 players, with 7 active on court[cite: 2137, 2138]. Men's games run for two 20-minute halves, while women's matches feature two 15-minute halves, with a 5-minute interval[cite: 2140, 2141, 2142]. An active <span class="keyword">raider</span> must cross the opponents' baulk line while chanting the "Kabaddi" tag continuously in a single breath[cite: 2146, 2151]. Squads score 1 point for every opponent eliminated or revived[cite: 2182, 2184]. Eliminating an entire opposing squad awards two extra points, a feat known as a <span class="keyword">Lona</span>[cite: 2167, 2171]. Knockout deadlocks are resolved via a 5-5 raid system [cite: 2202], followed by a sudden-death <span class="keyword">Golden Raid</span> if necessary[cite: 2205, 2206]. A raider scores a bonus point by cleanly crossing the bonus line with one trailing foot in the air, provided at least 6 defenders are active on court[cite: 2194]. Disciplinary warnings use Green (warning), Yellow (2-minute suspension), and Red cards (match expulsion)[cite: 2209].</p>
+        <p>Tactical proficiency is divided into defensive and offensive matrices:</p>
+        <ul>
+          <li><strong>Defensive Catcher Skills</strong>: The <span class="keyword">Ankle hold</span> (trapping the raider's ankle with both hands) [cite: 2222, 2223], <span class="keyword">Thigh hold</span> (wrapping arms around both thighs) [cite: 2225, 2226], <span class="keyword">Knee hold</span> [cite: 2232], and <span class="keyword">Waist hold</span> during an active retreat[cite: 2236, 2237].</li>
+          <li><strong>Offensive Raider Skills</strong>: The sudden <span class="keyword">Toe touch</span> extension [cite: 2257, 2258], deceptive <span class="keyword">Side kick</span> [cite: 2260], explosive <span class="keyword">Front kick</span> [cite: 2265], and the blind <span class="keyword">Mule or Back kick</span> performed while facing away from the defender[cite: 2268, 2269].</li>
+        </ul>
+      </details>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Kho-Kho</summary>
+      <p>Kho-Kho is a high-speed, traditional Indian pursuit game built on the core natural concepts of 'Run and Chase'[cite: 2288, 2298]. It develops exceptional physical agility, aerobic capacity, core endurance, and lightning-fast dodging reflexes[cite: 2297, 2553].</p>
+
+      <details class="sub-topic">
+        <summary><h3>Origins &amp; Modern Framework</h3></summary>
+        <p>Evolved within the historic physical training Akharas and Vyayamshalas of Maharashtra, the game originally centered around Pune[cite: 2299, 2300]. Formally codified in 1914, early versions placed standing players at perimeter boundaries before the introduction of fixed wooden posts[cite: 2301, 2302]. The <span class="keyword">Kho-Kho Federation of India (KKFI)</span> was established in 1956, launching the first official National Championship at Vijayawada in 1959[cite: 2303]. The sport achieved modern structure through development by the Hanuman Vyayam Prasarak Mandal of Amravati[cite: 2304].</p>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Playfield Specifications Blueprint</h3></summary>
+        <p>Matches can be played on leveled outdoor clay fields or specialized indoor wooden/synthetic mat layouts[cite: 2310, 2311]. A central lane connects two vertical wooden poles at opposite ends of the field[cite: 2374, 2412].</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field Marking Parameter</th>
+              <th>Senior Men / Women Limits</th>
+              <th>Sub-Junior Tier Limits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Total Boundary Area</strong></td>
+              <td>32 m long $\times$ 21 m wide (including lobbies) [cite: 2313]</td>
+              <td>32 m long $\times$ 21 m wide</td>
+            </tr>
+            <tr>
+              <td><strong>Active Playfield Dimensions</strong></td>
+              <td>27 m long $\times$ 16 m wide [cite: 2314]</td>
+              <td>23 m long $\times$ 14 m wide [cite: 2314]</td>
+            </tr>
+            <tr>
+              <td><strong>Free Zone Boxes (behind posts)</strong></td>
+              <td>1.50 m long $\times$ 16 m wide [cite: 2313]</td>
+              <td>1.50 m long $\times$ 14 m wide [cite: 2313]</td>
+            </tr>
+            <tr>
+              <td><strong>Central Lane Length</strong></td>
+              <td>24 m between poles [cite: 2313]</td>
+              <td>20 m between poles [cite: 2313]</td>
+            </tr>
+            <tr>
+              <td><strong>Cross Lane Dimensions</strong></td>
+              <td>35 cm $\times$ 16 m (forming 8 sitting blocks) [cite: 2320, 2358]</td>
+              <td>30 cm $\times$ 14 m [cite: 2321, 2358]</td>
+            </tr>
+            <tr>
+              <td><strong>Distance: Pole to 1st Cross Lane</strong></td>
+              <td>2.55 m [cite: 2323, 2385]</td>
+              <td>2.15 m [cite: 2324, 2386]</td>
+            </tr>
+            <tr>
+              <td><strong>Distance between Chaser Blocks</strong></td>
+              <td>2.30 m [cite: 2326, 2389]</td>
+              <td>1.90 m [cite: 2329, 2391]</td>
+            </tr>
+            <tr>
+              <td><strong>Wooden Pole Dimensions</strong></td>
+              <td colspan="2">Height: 1.20 m to 1.25 m; Diameter: 9 cm to 10 cm [cite: 2337, 2338, 2341, 2342]</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Match Progression &amp; Tactical Skills</h3></summary>
+        <p>A full squad features 12 total members, with 9 active playing options on the field managed by two umpires, a referee, a timekeeper, and a scorer[cite: 2343, 2344, 2421, 2442]. A match consists of 2 innings, divided into four 9-minute chasing or running spells[cite: 2330, 2331, 2430]. The running team is split into 3 groups of 3 players each[cite: 2431]. The first group enters the field at the whistle, and the second group enters immediately once all three initial runners are tagged out[cite: 2432]. Eight members of the chasing team sit in alternating directions within the central boxes[cite: 2423, 2424].</p>
+        <p>An active chaser passes the attack to a seated teammate by cleanly tapping their back with the palm while vocalizing the word **"Kho"**[cite: 2425]. Moving from a box before the "Kho" is completed is penalized as an <span class="keyword">early kho</span> violation[cite: 2426, 2427]. Active chasers cannot change direction along the central lane; they can only turn freely within the outer Free Zones[cite: 2428]. Core skills include simple, beginners, or late Kho execution [cite: 2452, 2453, 2454]; bullet/bunch or parallel sitting methods [cite: 2459, 2460]; monkey or standing-up get-up styles [cite: 2463, 2464]; and tactical single-chain, double-chain, or ring running patterns[cite: 2467, 2468, 2469]. High-speed tags are often executed via spectacular straight or sideward diving extensions[cite: 2471, 2472, 2473].</p>
+      </details>
+    </details>
+
+    <details class="topic-box">
+      <summary class="topic-title">Volleyball</summary>
+      <p>Volleyball is an elite, fast-paced Olympic sport played by two squads separated by a high net layout. It demands precise ball control, vertical jumping power, and explosive striking setups[cite: 2498, 2499, 2576].</p>
+
+      <details class="sub-topic">
+        <summary><h3>Chronology &amp; Base Infrastructure</h3></summary>
+        <ul>
+          <li><strong>Origins</strong>: Originally named <em>Mintonette</em>, the game was invented in 1895 by William G. Morgan in the United States[cite: 2500]. The global governing body, the <span class="keyword">FIVB</span>, was established in 1947[cite: 2501]. The sport made its official Olympic debut at the 1964 Tokyo Games[cite: 2502, 2504]. The <em>Volleyball Federation of India (VFI)</em> was formed in 1951[cite: 2501].</li>
+          <li><strong>Court Dimensions</strong>: A pristine rectangular grid measuring $18\text{ m}$ long sidelines $\times$ $9\text{ m}$ wide endlines[cite: 2546, 2567]. The full court diagonal measures exactly 20.125 m, and the half-court diagonal is 12.728 m[cite: 2554, 2555]. All lines are drawn 5 cm wide in white paint[cite: 2553].</li>
+          <li><strong>Zonal Markings</strong>: The centerline divides the court into two $9\times9$ m halves beneath the net[cite: 2538, 2546]. An <span class="keyword">attack line</span> is drawn 3 m behind the centerline axis on each side, separating the front zone from the back zone[cite: 2549]. The 9 m wide service zone sits behind each endline[cite: 2550].</li>
+          <li><strong>The Net Structure</strong>: Upright posts stand 2.55 m high, placed 1 m outside the sidelines[cite: 2581]. The net measures 1 m wide $\times$ 9.50 to 10 m long, constructed from a 10 cm square black mesh layout[cite: 2580]. Net height varies by gender:</li>
+        </ul>
+        <div class="example-block">$$\text{Net Height Metrics} \longrightarrow \text{Men's Tournaments} = 2.43\text{ m} \quad \vert \quad \text{Women's Tournaments} = 2.24\text{ m } \text{[cite: 2576, 2577]}$$</div>
+        <ul>
+          <li><strong>Antenna &amp; Side Bands</strong>: Two 5 cm white vertical bands are fastened directly above each sideline[cite: 2588]. A flexible 1.80 m long, 10 mm diameter fiberglass <span class="keyword">antenna</span> is fitted to each band[cite: 2586]. The top 80 cm of the antenna extends above the net, marked with 10 cm red and white stripes to define the legal crossing space[cite: 2562, 2587].</li>
+          <li><strong>Ball Specifications</strong>: A flexible leather or synthetic spherical ball with a circumference of 65–67 cm, weighing 260–280 g, and inflated to an internal pressure of 0.30 to $0.325\text{ kg/cm}^2$[cite: 2573, 2575, 2576].</li>
+        </ul>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>Rotation Orders, Set System &amp; Strategic Positions</h3></summary>
+        <p>A team features 12 total members, including a designated team captain and up to two specialized defensive options called <span class="keyword">liberos</span>[cite: 2590, 2630]. Six active players take the court in a fixed rotation order submitted on a line-up sheet before each set[cite: 2595, 2596]. Positions are numbered 1 to 6[cite: 2605, 2606]:</p>
+        <div class="example-block">
+          * **Front-Row Zone**: Position 4 (front-left), Position 3 (front-centre), and Position 2 (front-right)[cite: 2608].<br>
+          * **Back-Row Zone**: Position 5 (back-left), Position 6 (back-centre), and Position 1 (back-right)[cite: 2609].
+        </div>
+        <p>When the receiving squad wins a rally, they score a point and earn the right to serve[cite: 2612, 2619]. Before serving, all players must execute a single **clockwise rotation**: the player in position 2 rotates to position 1 to serve, position 1 moves to position 6, and so on[cite: 2612]. A team is entitled to a maximum of 3 hits to return the ball across the net[cite: 2614]. No player may touch the ball twice consecutively[cite: 2615]. Sets are won by the first team to reach 25 points with a minimum 2-point lead[cite: 2626]. Matches follow a best-of-five format; a deciding 5th set is played to 15 points[cite: 2628, 2629].</p>
+      </details>
+
+      <details class="sub-topic">
+        <summary><h3>The Libero &amp; Core Technical Skills</h3></summary>
+        <p>The <span class="keyword">libero</span> is a dedicated defensive specialist who wears a contrasting uniform color and occupies back-row positions only[cite: 2633, 2634]. Liberos are restricted from serving, blocking, attempting to block, or completing an attack hit from anywhere if the ball is entirely above net height at contact[cite: 2635, 2636]. Libero replacements do not count against the standard limit of 6 substitutions per set, allowing unlimited changes provided a full rally occurs between swaps[cite: 2620, 2637, 2638].</p>
+        <p>Foundational technical skills are divided into distinct execution phases[cite: 2642]:</p>
+        <ol>
+          <li><strong>The Service</strong>: Used by the player in position 1 to put the ball into play via a tennis, jump, or floating service technique[cite: 2612, 2647, 2648, 2650, 2697].</li>
+          <li><strong>The Pass</strong>: Handled via an under-arm pass (bump) when the ball falls below forehead level, or an overhead pass (volley) for high-trajectory balls[cite: 2690, 2691].</li>
+          <li><strong>The Set-Up</strong>: Typically the team's second contact, utilizing a precise overhead volley pass to position the ball for an attacking strike[cite: 2692].</li>
+          <li><strong>The Attack</strong>: An explosive leap and downward smash (spike) executed from the front or back zone to score a point[cite: 2708, 2709].</li>
+          <li><strong>The Block</strong>: A defensive jump at the net by single or double blockers to intercept and stop an opponent's attack hit[cite: 2662, 2663, 2710].</li>
+        </ol>
+      </details>
+    </details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Physical and Health Education curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); 
+      if (direction === -1) {
+        window.location.href = "11-chapter-04-individual-sports.html";
+      } else {
+        window.location.href = "11-chapter-06-health-and-nutrition.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
