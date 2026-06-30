@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 111 — Chapter 7: Depreciation, Provisions and Reserves</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 111 — Chapter 7: Depreciation, Provisions and Reserves</h1>
+
+    <details class="topic-box"><summary class="topic-title">Section I: Depreciation</summary><details class="sub-topic"><summary><h3>7.1 Introduction & Meaning of Depreciation</h3></summary><p>Matching principle requires that the revenue of a given period is matched against the expenses for the same period. <span class="keyword">Depreciation</span> represents the decline in the value of a fixed asset due to use, passage of time, or obsolescence.</p><p>According to AS-6 (Revised): "Depreciation is a measure of the wearing out, consumption or other loss of value of a depreciable asset arising from use, effluxion of time or obsolescence through technology and market-change."</p></details><details class="sub-topic"><summary><h3>7.1.2 Features of Depreciation</h3></summary><ul><li>It is a decline in the book value of fixed assets.</li><li>It includes loss of value due to effluxion of time, usage, or obsolescence.</li><li>It is a continuing process.</li><li>It is an expired cost and must be deducted before calculating taxable profits.</li><li>It is a <span class="keyword">non-cash expense</span>; it does not involve any cash outflow.</li></ul></details><details class="sub-topic"><summary><h3>7.2 Depreciation and Other Similar Terms</h3></summary><ul><li><span class="keyword">Depletion</span>: Used in the context of extraction of natural resources (e.g., mines, quarries) which reduces the availability of the quantity of the material.</li><li><span class="keyword">Amortisation</span>: Refers to writing-off the cost of intangible assets (e.g., patents, copyrights, trademarks, goodwill).</li></ul></details><details class="sub-topic"><summary><h3>7.3 Causes of Depreciation</h3></summary><ol><li>Wear and tear due to use or passage of time.</li><li>Expiration of legal rights (e.g., leaseholds, patents).</li><li>Obsolescence (due to technological changes or market demand shifts).</li><li>Abnormal factors (e.g., accidents, fire, natural calamities).</li></ol></details><details class="sub-topic"><summary><h3>7.4 Need for Depreciation</h3></summary><ul><li><strong>Matching of Costs and Revenue:</strong> To charge the cost of asset consumption against the revenue earned.</li><li><strong>Consideration of Tax:</strong> Depreciation is a deductible expense for tax purposes.</li><li><strong>True and Fair Financial Position:</strong> To prevent overvaluation of assets on the Balance Sheet.</li><li><strong>Compliance with Law:</strong> Specific legislations compel corporate enterprises to provide depreciation.</li></ul></details><details class="sub-topic"><summary><h3>7.5 Factors Affecting Depreciation</h3></summary><ul><li><span class="keyword">Cost of Asset</span>: Includes invoice price, freight, transit insurance, installation cost, and commissioning expenses.</li><li><span class="keyword">Estimated Net Residual Value</span>: Also known as scrap value or salvage value, the estimated net realizable value at the end of its useful life.</li><li><span class="keyword">Estimated Useful Life</span>: The period over which the asset is expected to be used by the enterprise.</li></ul></details><details class="sub-topic"><summary><h3>7.6 Methods of Calculating Depreciation</h3></summary><h4>1. Straight Line Method (SLM)</h4><p>Also known as the <span class="keyword">Fixed Installment Method</span>. Depreciation remains constant from year to year.</p><div class="example-block">$$\text{Depreciation} = \frac{\text{Cost of Asset} - \text{Estimated Net Residual Value}}{\text{Estimated Useful Life of the Asset}}$$</div><div class="example-block">$$\text{Rate of Depreciation} = \frac{\text{Annual Depreciation Amount}}{\text{Acquisition Cost}} \times 100$$</div><h4>2. Written Down Value Method (WDV)</h4><p>Also known as the <span class="keyword">Reducing Balance Method</span>. Depreciation is calculated as a fixed percentage of the book value at the beginning of each year.</p><div class="example-block">$$R = \left[1 - \sqrt[n]{\frac{s}{c}}\right] \times 100$$</div><p>Where $R$ = Rate of depreciation, $n$ = Expected useful life, $s$ = Scrap value, $c$ = Cost of asset.</p></details><details class="sub-topic"><summary><h3>7.7 Comparison of SLM and WDV</h3></summary><table border="1"><thead><tr><th>Basis of Difference</th><th>Straight Line Method</th><th>Written Down Value Method</th></tr></thead><tbody><tr><td>Basis of charging</td><td>Original cost</td><td>Book value (cost less depreciation till date)</td></tr><tr><td>Annual depreciation charge</td><td>Fixed (Constant) every year</td><td>Declines year after year</td></tr><tr><td>Total charge (Depreciation + Repairs)</td><td>Unequal (increases in later years)</td><td>Almost equal every year</td></tr><tr><td>Income Tax recognition</td><td>Not recognised</td><td>Recognised</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>7.8 Methods of Recording Depreciation</h3></summary><h4>Method 1: Charging Depreciation to Asset Account</h4><table border="1"><thead><tr><th>Transaction</th><th>Journal Entry</th></tr></thead><tbody><tr><td>For purchase of asset</td><td>Asset A/c Dr.<br>&nbsp;&nbsp;To Bank/Vendor A/c</td></tr><tr><td>For providing depreciation</td><td>Depreciation A/c Dr.<br>&nbsp;&nbsp;To Asset A/c</td></tr><tr><td>For transferring to P&L</td><td>Profit & Loss A/c Dr.<br>&nbsp;&nbsp;To Depreciation A/c</td></tr></tbody></table><h4>Method 2: Creating Provision for Depreciation Account</h4><table border="1"><thead><tr><th>Transaction</th><th>Journal Entry</th></tr></thead><tbody><tr><td>For providing depreciation</td><td>Depreciation A/c Dr.<br>&nbsp;&nbsp;To Provision for Depreciation A/c</td></tr><tr><td>For transferring to P&L</td><td>Profit & Loss A/c Dr.<br>&nbsp;&nbsp;To Depreciation A/c</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Section II: Provisions and Reserves</summary><details class="sub-topic"><summary><h3>7.11 Provisions</h3></summary><p>A <span class="keyword">Provision</span> is an amount set aside by debiting the Profit and Loss Account to meet a known liability or loss, the amount of which cannot be determined with accuracy.</p><ul><li>Provision for Depreciation</li><li>Provision for Bad and Doubtful Debts</li><li>Provision for Taxation</li></ul></details><details class="sub-topic"><summary><h3>7.12 Reserves</h3></summary><p>A <span class="keyword">Reserve</span> is an appropriation of profit retained in the business to strengthen its financial position or meet future contingencies.</p><ul><li><strong>General Reserve:</strong> Created for general purposes, freely usable.</li><li><strong>Specific Reserve:</strong> Created for a specific purpose (e.g., Dividend Equalisation Reserve, Debenture Redemption Reserve).</li><li><strong>Revenue Reserve:</strong> Created out of normal operating profits.</li><li><strong>Capital Reserve:</strong> Created out of capital profits (e.g., premium on issue of shares, profit on sale of fixed assets).</li></ul></details><details class="sub-topic"><summary><h3>7.13 Secret Reserve</h3></summary><p>A <span class="keyword">Secret Reserve</span> is a reserve that does not appear in the Balance Sheet. It is created by showing profits at a lower figure than actuals (e.g., by excessive depreciation or undervaluation of stock).</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 111 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-06-trial-balance-and-rectification-of.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
