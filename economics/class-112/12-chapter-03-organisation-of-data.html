@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 3: Organisation of Data</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 3: Organisation of Data</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1. Introduction & Raw Data</summary>
+  <p>After collecting data, the next step is to organize and present it in a classified form. Unclassified or <span class="keyword">raw data</span> are highly disorganized, large, and cumbersome to handle. To draw meaningful conclusions, raw data must be summarized and grouped into classes based on similar characteristics.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Concept of Classification</h3></summary>
+    <p><span class="keyword">Classification</span> is the process of arranging or organizing things into groups or classes based on some criteria. It helps to:</p>
+    <ul>
+      <li>Bring order to raw data.</li>
+      <li>Facilitate easy comparison and statistical analysis.</li>
+      <li>Locate information quickly without searching through the entire dataset.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2. Classification of Data</summary>
+  <p>Data can be classified in various ways depending on the purpose of the study. There are four primary methods of classification:</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Chronological Classification</h3></summary>
+    <p>In <span class="keyword">Chronological Classification</span>, data are grouped with reference to time, such as years, quarters, months, or weeks. The values are arranged in ascending or descending order of time.</p>
+    <div class="example-block">
+      <p><strong>Example:</strong> Population of India (in crores) over different census years represents a <span class="keyword">Time Series</span>.</p>
+    </div>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Spatial Classification</h3></summary>
+    <p>In <span class="keyword">Spatial Classification</span>, data are classified with reference to geographical locations, such as countries, states, cities, or districts.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Qualitative Classification</h3></summary>
+    <p>When data are classified on the basis of attributes or non-measurable characteristics (qualities), it is called <span class="keyword">Qualitative Classification</span>. Examples include nationality, literacy, religion, gender, and marital status.</p>
+    <p>Qualitative classification can be simple (presence or absence of one attribute) or manifold (sub-classified into multiple nested attributes, e.g., Population divided into Male/Female, and further into Married/Unmarried).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Quantitative Classification</h3></summary>
+    <p>When data are grouped into classes based on characteristics that can be measured quantitatively (such as height, weight, age, income, or marks), it is called <span class="keyword">Quantitative Classification</span>.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3. Variables: Continuous and Discrete</summary>
+  <p>A <span class="keyword">variable</span> is a characteristic that can take different values. Variables are broadly classified into two types:</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Continuous Variable</h3></summary>
+    <p>A <span class="keyword">continuous variable</span> can take any numerical value (including fractional and decimal values) within a given range. Its values can be broken down into infinite gradations.</p>
+    <ul>
+      <li><strong>Examples:</strong> Height, weight, time, distance, and temperature.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Discrete Variable</h3></summary>
+    <p>A <span class="keyword">discrete variable</span> can take only certain specific values and changes by finite "jumps". It cannot take fractional values between two adjacent integral values.</p>
+    <ul>
+      <li><strong>Examples:</strong> Number of students in a class, size of a household, or number of cars on the road.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">4. Frequency Distribution</summary>
+  <p>A <span class="keyword">Frequency Distribution</span> is a comprehensive way to classify raw data of a quantitative variable. It shows how different values of a variable are distributed across different classes along with their corresponding class frequencies.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Key Terminologies</h3></summary>
+    <ul>
+      <li><span class="keyword">Class Limits</span>: The two ends of a class. The lowest value is the <span class="keyword">Lower Class Limit</span>, and the highest value is the <span class="keyword">Upper Class Limit</span>.</li>
+      <li><span class="keyword">Class Interval</span> (or Class Width): The difference between the upper class limit and the lower class limit.
+        $$\text{Class Interval} = \text{Upper Class Limit} - \text{Lower Class Limit}$$
+      </li>
+      <li><span class="keyword">Class Mid-Point</span> (or Class Mark): The middle value of a class, calculated as:
+        $$\text{Class Mid-Point} = \frac{\text{Upper Class Limit} + \text{Lower Class Limit}}{2}$$
+      </li>
+      <li><span class="keyword">Class Frequency</span>: The number of observations falling within a particular class.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Inclusive vs. Exclusive Class Intervals</h3></summary>
+    <p>There are two methods of forming class intervals:</p>
+    <ol>
+      <li><strong>Exclusive Method:</strong> Under this method, the upper class limit of one class is excluded from that class and included as the lower limit of the next class (e.g., in class 10–20, the value 20 is excluded and placed in 20–30).</li>
+      <li><strong>Inclusive Method:</strong> Under this method, values equal to both the lower and upper limits are included in the same class (e.g., 800–899, where both 800 and 899 are included).</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Adjustment in Class Interval</h3></summary>
+    <p>To maintain continuity when using the inclusive method for continuous variables, class limits must be adjusted:</p>
+    <ol>
+      <li>Find the difference ($D$) between the lower limit of the second class and the upper limit of the first class.</li>
+      <li>Divide the difference by 2 ($D/2$, usually $0.5$).</li>
+      <li>Subtract this value from all lower class limits ($\text{Lower Limit} - 0.5$).</li>
+      <li>Add this value to all upper class limits ($\text{Upper Limit} + 0.5$).</li>
+    </ol>
+    <p>The adjusted class mark is calculated as:</p>
+    $$\text{Adjusted Class Mark} = \frac{\text{Adjusted Upper Class Limit} + \text{Adjusted Lower Class Limit}}{2}$$
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5. Methods of Presenting Frequency Distributions</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Tally Marking</h3></summary>
+    <p>The counting of class frequency is done using <span class="keyword">tally marks</span>. A vertical bar ($/$) is put against a class for each observation. The fifth tally is placed diagonally across the first four ($////$ with a slash) to form groups of five, making counting easier.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Loss of Information</h3></summary>
+    <p>An inherent shortcoming of grouping data into a frequency distribution is the <span class="keyword">loss of information</span>. Once raw data are grouped into classes, individual observations lose their unique identity. For further statistical calculations, all values in a class are assumed to be equal to the class mark.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Frequency Array</h3></summary>
+    <p>For a discrete variable, the classification of data is known as a <span class="keyword">Frequency Array</span>. Since discrete variables do not take fractional values, frequencies correspond directly to individual integral values rather than class intervals.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Bivariate Frequency Distribution</h3></summary>
+    <p>A <span class="keyword">Bivariate Frequency Distribution</span> is the frequency distribution of two variables simultaneously (e.g., a table showing the relation between Sales and Advertisement Expenditure of various firms).</p>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-02-collection-of-data.html";
+      } else {
+        window.location.href = "12-chapter-04-presentation-of-data.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
