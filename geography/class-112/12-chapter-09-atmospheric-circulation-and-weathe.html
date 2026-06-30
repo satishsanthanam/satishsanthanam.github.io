@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 9: Atmospheric Circulation and Weather Systems</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 9: Atmospheric Circulation and Weather Systems</h1>
+
+    <details class="topic-box"><summary class="topic-title">Atmospheric Pressure and Wind Forces</summary><details class="sub-topic"><summary><h3>Atmospheric Pressure</h3></summary><p>The weight of a column of air contained in a unit area from the mean sea level to the top of the atmosphere is called the <span class="keyword">atmospheric pressure</span>. It is expressed in units of millibar (mb). At sea level, the average atmospheric pressure is 1,013.25 mb.</p><p>Air pressure is measured using a <span class="keyword">mercury barometer</span> or an <span class="keyword">aneroid barometer</span>. Pressure decreases with height, which is the primary cause of air motion (wind) from high-pressure areas to low-pressure areas.</p></details><details class="sub-topic"><summary><h3>Vertical and Horizontal Variation of Pressure</h3></summary><p>In the lower atmosphere, pressure decreases rapidly with height at a rate of about 1 mb for every 10 m increase in elevation. However, the vertical pressure gradient force is balanced by the gravitational force, preventing strong upward winds.</p><table><caption>Table 9.1: Standard Pressure and Temperature at Selected Levels</caption><thead><tr><th>Level</th><th>Pressure (mb)</th><th>Temperature (°C)</th></tr></thead><tbody><tr><td>Sea Level</td><td>1,013.25</td><td>15.2</td></tr><tr><td>1 km</td><td>898.76</td><td>8.7</td></tr><tr><td>5 km</td><td>540.48</td><td>-17.3</td></tr><tr><td>10 km</td><td>265.00</td><td>-49.7</td></tr></tbody></table><p>Horizontal distribution of pressure is studied using <span class="keyword">isobars</span>, which are lines connecting places of equal pressure reduced to sea level.</p></details><details class="sub-topic"><summary><h3>Forces Affecting Wind Velocity and Direction</h3></summary><p>Wind is air in horizontal motion, blowing from high to low pressure. Its velocity and direction are determined by the combined effect of three forces:</p><ul><li><span class="keyword">Pressure Gradient Force</span>: The rate of change of pressure with respect to distance. It is strong where isobars are close and weak where they are far apart.</li><li><span class="keyword">Frictional Force</span>: Affects wind speed near the surface, extending up to 1–3 km. It is minimal over sea surfaces.</li><li><span class="keyword">Coriolis Force</span>: Caused by the Earth's rotation, deflecting winds to the right in the Northern Hemisphere and to the left in the Southern Hemisphere. It is maximum at the poles and zero at the equator.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Wind Systems and Atmospheric Circulation</summary><details class="sub-topic"><summary><h3>Pressure and Wind Relations</h3></summary><p>In the upper atmosphere (2–3 km above the surface), winds are free from friction and controlled by the pressure gradient and Coriolis forces. When these forces balance, the wind blows parallel to the isobars, known as the <span class="keyword">geostrophic wind</span>.</p><p>Wind circulation around a low-pressure system is called <span class="keyword">cyclonic circulation</span>, while circulation around a high-pressure system is called <span class="keyword">anticyclonic circulation</span>.</p><table><caption>Table 9.2: Pattern of Wind Direction in Cyclones and Anticyclones</caption><thead><tr><th>Pressure System</th><th>Pressure Condition at Centre</th><th>Northern Hemisphere</th><th>Southern Hemisphere</th></tr></thead><tbody><tr><td>Cyclone</td><td>Low</td><td>Anticlockwise</td><td>Clockwise</td></tr><tr><td>Anticyclone</td><td>High</td><td>Clockwise</td><td>Anticlockwise</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>General Circulation of the Atmosphere</h3></summary><p>The global pattern of planetary winds is driven by latitudinal heating, pressure belts, the sun's migration, and Earth's rotation. This circulation is structured into three major cells:</p><ul><li><span class="keyword">Hadley Cell</span>: Formed by rising warm air at the Inter Tropical Convergence Zone (ITCZ) that sinks at subtropical high-pressure belts (30° N and S) and flows back to the equator as easterlies.</li><li><span class="keyword">Ferrel Cell</span>: Characterized by sinking air from the poles rising at subpolar lows, producing prevailing westerlies at mid-latitudes.</li><li><span class="keyword">Polar Cell</span>: Formed by cold air subsiding at the poles and flowing towards mid-latitudes as polar easterlies.</li></ul></details><details class="sub-topic"><summary><h3>Atmosphere-Ocean Interactions</h3></summary><p>The general circulation of the atmosphere drives ocean currents. A key interaction is the <span class="keyword">El Niño Southern Oscillation (ENSO)</span>, where the warming of the central Pacific Ocean (<span class="keyword">El Niño</span>) alters pressure systems (<span class="keyword">Southern Oscillation</span>), causing global weather anomalies like droughts in Australia/India and heavy rains in South America.</p></details></details><details class="topic-box"><summary class="topic-title">Local Winds, Air Masses, and Fronts</summary><details class="sub-topic"><summary><h3>Local Winds</h3></summary><p>Diurnal heating and cooling cycles generate localized wind patterns:</p><ul><li><span class="keyword">Land and Sea Breezes</span>: During the day, land heats faster, creating low pressure and drawing in a <span class="keyword">sea breeze</span>. At night, the land cools faster, reversing the gradient to create a <span class="keyword">land breeze</span>.</li><li><span class="keyword">Mountain and Valley Winds</span>: Daytime heating causes air to move upslope (<span class="keyword">valley breeze</span>). At night, cold dense air flows downslope into the valley (<span class="keyword">mountain wind</span> or <span class="keyword">katabatic wind</span>).</li></ul></details><details class="sub-topic"><summary><h3>Air Masses</h3></summary><p>An <span class="keyword">air mass</span> is a large body of air with relatively uniform temperature and humidity. They form over vast homogenous surfaces called source regions, classified into:</p><ul><li>Maritime tropical (mT) - Warm and humid</li><li>Continental tropical (cT) - Warm and dry</li><li>Maritime polar (mP) - Cold and humid</li><li>Continental polar (cP) - Cold and dry</li><li>Continental arctic (cA) - Extremely cold and dry</li></ul></details><details class="sub-topic"><summary><h3>Fronts</h3></summary><p>The boundary zone where two different air masses meet is called a <span class="keyword">front</span>. The process of front formation is <span class="keyword">frontogenesis</span>. Fronts are classified into four types:</p><ol><li><span class="keyword">Cold Front</span>: Formed when cold air moves towards warm air, forcing the warm air upward.</li><li><span class="keyword">Warm Front</span>: Formed when warm air moves actively over cold air.</li><li><span class="keyword">Stationary Front</span>: When the boundary between air masses remains immobile.</li><li><span class="keyword">Occluded Front</span>: Formed when an active cold front overtakes a warm front, lifting the warm air completely off the ground.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Cyclones and Severe Local Storms</summary><details class="sub-topic"><summary><h3>Extra Tropical Cyclones</h3></summary><p>These systems develop in mid and high latitudes along the polar front. They feature distinct warm and cold fronts, cover large areas, can originate over both land and sea, and generally move from west to east.</p></details><details class="sub-topic"><summary><h3>Tropical Cyclones</h3></summary><p>Violent, destructive storms that originate over warm tropical oceans (sea surface temperature > 27°C) and dissipate upon reaching land (<span class="keyword">landfall</span>). They are known by different regional names:</p><ul><li><span class="keyword">Cyclones</span> in the Indian Ocean</li><li><span class="keyword">Hurricanes</span> in the Atlantic Ocean</li><li><span class="keyword">Typhoons</span> in the Western Pacific and South China Sea</li><li><span class="keyword">Willy-willies</span> in Western Australia</li></ul><p>A mature tropical cyclone features a calm, low-pressure center called the <span class="keyword">eye</span>, surrounded by a highly turbulent <span class="keyword">eye wall</span> with torrential rains and winds reaching up to 250 km/h.</p></details><details class="sub-topic"><summary><h3>Thunderstorms and Tornadoes</h3></summary><p>Severe, short-duration local storms driven by intense convection:</p><ul><li><span class="keyword">Thunderstorms</span>: Characterized by strong updrafts of moist air forming cumulonimbus clouds, producing thunder, lightning, and sometimes hail.</li><li><span class="keyword">Tornadoes</span>: Violent, spiralling wind columns descending from severe thunderstorms with extreme low pressure at the center. Over water bodies, they are called <span class="keyword">water spouts</span>.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-08-solar-radiation-heat-balance-and-t.html";
+      } else {
+        window.location.href = "12-chapter-10-water-in-the-atmosphere.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
