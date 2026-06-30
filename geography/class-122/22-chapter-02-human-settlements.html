@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 122 — Chapter 2: HUMAN SETTLEMENTS</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 122 — Chapter 2: HUMAN SETTLEMENTS</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Human Settlements</summary><p><span class="keyword">Human Settlement</span> means a cluster of dwellings of any type or size where human beings live. The process of settlement inherently involves the grouping of people and apportioning of territory as their resource base.</p><details class="sub-topic"><summary><h3>Rural vs. Urban Settlements</h3></summary><ul><li>The rural settlements derive their life support or basic economic needs from land-based primary economic activities, whereas urban settlements depend on processing of raw materials, manufacturing of finished goods, and a variety of services.</li><li>Cities act as nodes of economic growth, providing goods and services to their rural hinterlands in return for food and raw materials. This functional relationship is facilitated by transport and communication networks.</li><li>Rural and urban settlements differ in social relationships. Rural social relations are intimate and less mobile, whereas urban life is complex, fast, and social relations are formal.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Types of Rural Settlement</summary><p>Types of rural settlements are determined by the extent of the built-up area and inter-house distance. Various factors responsible for different types of rural settlements in India include physical features (terrain, altitude, climate, water availability), cultural/ethnic factors (social structure, caste, religion), and security factors (defense against thefts and robberies).</p><details class="sub-topic"><summary><h3>Clustered Settlements</h3></summary><p><span class="keyword">Clustered, agglomerated or nucleated settlements</span> are compact or closely built-up areas of houses. The living area is distinct and separated from surrounding farms, barns, and pastures. They present recognizable geometric shapes like rectangular, radial, or linear. Commonly found in fertile alluvial plains and northeastern states. Examples include Bundelkhand and Nagaland (for security) and Rajasthan (due to water scarcity).</p></details><details class="sub-topic"><summary><h3>Semi-Clustered Settlements</h3></summary><p><span class="keyword">Semi-clustered or fragmented settlements</span> result from segregation or fragmentation of a large compact village. One or more sections of society are forced or choose to live away from the main cluster. Generally, the land-owning dominant community occupies the central part, while lower strata and menial workers settle on the outer flanks. Widespread in Gujarat plains and parts of Rajasthan.</p></details><details class="sub-topic"><summary><h3>Hamleted Settlements</h3></summary><p><span class="keyword">Hamleted settlements</span> are fragmented into several units physically separated from each other but bearing a common name. Locally called <span class="keyword">panna</span>, <span class="keyword">para</span>, <span class="keyword">palli</span>, <span class="keyword">nagla</span>, or <span class="keyword">dhani</span>. Frequently found in the middle and lower Ganga plain, Chhattisgarh, and lower valleys of the Himalayas.</p></details><details class="sub-topic"><summary><h3>Dispersed Settlements</h3></summary><p><span class="keyword">Dispersed or isolated settlements</span> appear as isolated huts or hamlets in remote jungles or on small hills with farms or pastures on slopes. Caused by fragmented terrain and land resource bases. Found in Meghalaya, Uttarakhand, Himachal Pradesh, and Kerala.</p></details></details><details class="topic-box"><summary class="topic-title">Urban Settlements and Evolution of Towns</summary><details class="sub-topic"><summary><h3>Definition of Urban Settlements</h3></summary><p>According to the Census of India, 1991, urban settlements must meet the following criteria:</p><ul><li>Presence of a municipality, corporation, cantonment board, or notified town area committee.</li><li>A minimum population of 5,000 persons: $$\text{Population} \ge 5000$$</li><li>At least 75% of male main workers engaged in non-agricultural pursuits.</li><li>A density of population of at least 400 persons per square kilometer: $$\text{Density} \ge 400 \text{ persons/km}^2$$</li></ul></details><details class="sub-topic"><summary><h3>Evolution of Towns in India</h3></summary><p>Indian towns can be classified based on their evolution period:</p><ul><li><span class="keyword">Ancient Towns</span>: Developed as religious and cultural centers with histories spanning over 2000 years. Examples: Varanasi, Prayagraj (Prayag), Patna (Pataliputra), Madurai.</li><li><span class="keyword">Medieval Towns</span>: Developed as headquarters of principalities and kingdoms, often as fort towns. Examples: Delhi, Hyderabad, Jaipur, Lucknow, Agra, Nagpur.</li><li><span class="keyword">Modern Towns</span>: Developed by the British and other Europeans, starting as trading ports (Surat, Daman, Goa, Pondicherry) and consolidating around nodes (Mumbai, Chennai, Kolkata). Post-independence, administrative headquarters (Chandigarh, Bhubaneswar, Gandhinagar) and industrial centers (Durgapur, Bhilai, Sindri) were established.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Urbanisation in India</summary><p>The level of urbanisation is measured as the percentage of urban population to total population. In India, the level of urbanisation in 2011 was 31.16%, which is low compared to developed countries. Total urban population increased eleven-fold during the twentieth century.</p><details class="sub-topic"><summary><h3>Trends of Urbanisation (1901-2011)</h3></summary><div class="example-block"><table><thead><tr><th>Year</th><th>Number of Towns/UAs</th><th>Urban Population (in Thousands)</th><th>% of Total Population</th><th>Decennial Growth (%)</th></tr></thead><tbody><tr><td>1901</td><td>1,827</td><td>25,851.9</td><td>10.84</td><td>—</td></tr><tr><td>1911</td><td>1,815</td><td>25,941.6</td><td>10.29</td><td>0.35</td></tr><tr><td>1921</td><td>1,949</td><td>28,086.2</td><td>11.18</td><td>8.27</td></tr><tr><td>1931</td><td>2,072</td><td>33,456.0</td><td>11.99</td><td>19.12</td></tr><tr><td>1941</td><td>2,250</td><td>44,153.3</td><td>13.86</td><td>31.97</td></tr><tr><td>1951</td><td>2,843</td><td>62,443.7</td><td>17.29</td><td>41.42</td></tr><tr><td>1961</td><td>2,365</td><td>78,936.6</td><td>17.97</td><td>26.41</td></tr><tr><td>1971</td><td>2,590</td><td>1,09,114</td><td>19.91</td><td>38.23</td></tr><tr><td>1981</td><td>3,378</td><td>1,59,463</td><td>23.34</td><td>46.14</td></tr><tr><td>1991</td><td>4,689</td><td>2,17,611</td><td>25.71</td><td>36.47</td></tr><tr><td>2001</td><td>5,161</td><td>2,85,355</td><td>27.78</td><td>31.13</td></tr><tr><td>2011*</td><td>6,171</td><td>3,77,000</td><td>31.16</td><td>31.08</td></tr></tbody></table></div></details></details><details class="topic-box"><summary class="topic-title">Functional Classification of Towns</summary><p>Indian cities and towns can be broadly classified based on their dominant or specialized functions:</p><ul><li><span class="keyword">Administrative towns and cities</span>: Support administrative headquarters of higher order. Examples: Chandigarh, New Delhi, Bhopal, Shillong, Guwahati, Imphal, Srinagar, Gandhinagar, Jaipur, Chennai.</li><li><span class="keyword">Industrial towns</span>: Driven by industries. Examples: Mumbai, Salem, Coimbatore, Modinagar, Jamshedpur, Hugli, Bhilai.</li><li><span class="keyword">Transport Cities</span>: Ports engaged in export/import (Kandla, Cochin, Kozhikode, Vishakhapatnam) or hubs of inland transport (Agra, Dhulia, Pandit Deendayal Upadhyay Nagar, Itarsi, Katni).</li><li><span class="keyword">Commercial towns</span>: Specialise in trade and commerce. Examples: Kolkata, Saharanpur, Satna.</li><li><span class="keyword">Mining towns</span>: Developed in mineral-rich areas. Examples: Raniganj, Jharia, Digboi, Ankaleshwar, Singrauli.</li><li><span class="keyword">Garrison Cantonment towns</span>: Emerged as military/garrison towns. Examples: Ambala, Jalandhar, Mhow, Babina, Udhampur.</li><li><span class="keyword">Educational towns</span>: Major campus towns and centers of education. Examples: Roorkee, Varanasi, Aligarh, Pilani, Prayagraj.</li><li><span class="keyword">Religious and cultural towns</span>: Prominent due to religious or cultural significance. Examples: Varanasi, Mathura, Amritsar, Madurai, Puri, Ajmer, Pushkar, Tirupati, Kurukshetra, Haridwar, Ujjain.</li><li><span class="keyword">Tourist towns</span>: Popular tourist destinations. Examples: Nainital, Mussoorie, Shimla, Pachmarhi, Jodhpur, Jaisalmer, Udagamandalam (Ooty), Mount Abu.</li></ul><details class="sub-topic"><summary><h3>Smart Cities Mission</h3></summary><p>The objective of the <span class="keyword">Smart Cities Mission</span> is to promote cities that provide core infrastructure, a clean and sustainable environment, and give a decent quality of life to their citizens through smart solutions.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 122 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "22-chapter-01-population-distribution-density-gr.html";
+      } else {
+        window.location.href = "22-chapter-03-land-resources-and-agriculture.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
