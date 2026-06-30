@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 — Chapter 2: Self and Personality</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 — Chapter 2: Self and Personality</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Concept of Self</summary><p>The study of <span class="keyword">self</span> and <span class="keyword">personality</span> helps us understand who we are, our uniqueness, and our similarities with others. Self and personality refer to the characteristic ways in which we define our existence and organize our experiences to guide our behavior.</p><details class="sub-topic"><summary><h3>Identity and the Dual Status of Self</h3></summary><p>An individual's identity is composed of two primary aspects:</p><ul><li><strong><span class="keyword">Personal Identity</span>:</strong> Attributes that make a person different from others (e.g., name, personal qualities, capabilities, beliefs).</li><li><strong><span class="keyword">Social Identity</span>:</strong> Aspects that link a person to a social or cultural group (e.g., religion, caste, regional identity).</li></ul><p>The self has a dual status, functioning as both subject and object:</p><ul><li><strong>Self as Subject (Knower):</strong> The self actively engages as an actor in the process of knowing itself.</li><li><strong>Self as Object (Known):</strong> The self is observed, consequence-driven, and comes to be known.</li></ul></details><details class="sub-topic"><summary><h3>Kinds of Self</h3></summary><p>The self is formed through interactions with physical and socio-cultural environments:</p><ul><li><strong><span class="keyword">Personal Self</span>:</strong> Leads to an orientation primarily concerned with oneself, focusing on personal freedom, personal responsibility, achievement, and comfort.</li><li><strong><span class="keyword">Social Self</span> (Familial or Relational Self):</strong> Emerges in relation to others, emphasizing cooperation, unity, affiliation, sacrifice, and sharing.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Cognitive and Behavioural Aspects of Self</summary><details class="sub-topic"><summary><h3>Self-Concept and Self-Esteem</h3></summary><p><strong><span class="keyword">Self-concept</span>:</strong> The way we perceive ourselves and the ideas we hold about our competencies and attributes. It can be positive or negative, both generally and in specific domains (e.g., academic vs. athletic).</p><p><strong><span class="keyword">Self-esteem</span>:</strong> The value judgment of a person about herself/himself. By age 6 to 7, children form self-esteem in four key areas:</p><ol><li>Academic competence</li><li>Social competence</li><li>Physical/athletic competence</li><li>Physical appearance</li></ol></details><details class="sub-topic"><summary><h3>Self-Efficacy and Self-Regulation</h3></summary><p><strong><span class="keyword">Self-efficacy</span>:</strong> Based on Albert Bandura's social learning theory, it is the extent to which people believe they control their life outcomes rather than relying on luck or fate. A strong sense of self-efficacy reduces fear and allows people to select and influence their circumstances.</p><p><strong><span class="keyword">Self-regulation</span>:</strong> The ability to organize and monitor our own behavior. This includes <strong><span class="keyword">self-control</span></strong> (delaying gratification of needs for long-term goals). Psychological techniques of self-control include:</p><ul><li>Observation of own behavior</li><li>Self-instruction</li><li>Self-reinforcement</li></ul></details></details><details class="topic-box"><summary class="topic-title">Culture and Self</summary><p>The boundary between the self and others varies significantly across cultures, as summarized below:</p><table><thead><tr><th>Dimension</th><th>Western Perspective</th><th>Indian Perspective</th></tr></thead><tbody><tr><td><strong>Boundary</strong></td><td>Relatively fixed and clearly defined.</td><td>Shifting and dynamic; expands to fuse with the cosmos or others.</td></tr><tr><td><strong>Relationship with Group</strong></td><td>Self and group exist as distinct entities; maintains individuality.</td><td>Self is not separated from the group; characterized by harmonious co-existence.</td></tr><tr><td><strong>Cultural Orientation</strong></td><td><span class="keyword">Individualistic</span></td><td><span class="keyword">Collectivistic</span></td></tr></tbody></table></details><details class="topic-box"><summary class="topic-title">Concept of Personality</summary><p>The term personality is derived from the Latin word <strong><span class="keyword">persona</span></strong>, meaning the mask used by actors in Roman theatre. In psychological terms, personality refers to unique and relatively stable qualities that characterize an individual's behavior across different situations over time.</p><details class="sub-topic"><summary><h3>Personality-Related Terms</h3></summary><table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody><tr><td><strong><span class="keyword">Temperament</span></strong></td><td>Biologically based characteristic way of reacting.</td></tr><tr><td><strong><span class="keyword">Trait</span></strong></td><td>Stable, persistent, and specific way of behaving.</td></tr><tr><td><strong><span class="keyword">Disposition</span></strong></td><td>Tendency of a person to react to a given situation in a particular way.</td></tr><tr><td><strong><span class="keyword">Character</span></strong></td><td>The overall pattern of regularly occurring behavior.</td></tr><tr><td><strong><span class="keyword">Habit</span></strong></td><td>Over-learned modes of behaving.</td></tr><tr><td><strong><span class="keyword">Values</span></strong></td><td>Goals and ideals considered important and worthwhile to achieve.</td></tr></tbody></table></details></details><details class="topic-box"><summary class="topic-title">Major Approaches to the Study of Personality</summary><details class="sub-topic"><summary><h3>Type Approaches</h3></summary><p>Type approaches categorize human personality into broad, distinct patterns based on shared behavioral characteristics:</p><ul><li><strong>Hippocrates:</strong> Classified people into four fluid/humour types: Sanguine, Phlegmatic, Melancholic, and Choleric.</li><li><strong>Charak Samhita (Ayurveda):</strong> Classifies people into three humours (<span class="keyword">Tridosha</span>): Vata, Pitta, and Kapha. Also classifies personality based on three gunas (<span class="keyword">Trigunas</span>): Sattva, Rajas, and Tamas.</li><li><strong>Sheldon:</strong> Proposed body-build typologies: Endomorphic (fat, soft, relaxed), Mesomorphic (muscular, energetic, courageous), and Ectomorphic (thin, fragile, artistic, introverted).</li><li><strong>Carl Jung:</strong> Grouped people into <strong><span class="keyword">Introverts</span></strong> (prefer solitude, shy, withdraw from conflict) and <strong><span class="keyword">Extraverts</span></strong> (sociable, outgoing, active).</li><li><strong>Friedman and Rosenman:</strong> Classified individuals into:<ul><li><strong>Type-A:</strong> Highly motivated, impatient, feel short of time, prone to hypertension and coronary heart disease (CHD).</li><li><strong>Type-B:</strong> Characterized by the absence of Type-A traits; relaxed and patient.</li><li><strong>Type-C (Morris):</strong> Cooperative, unassertive, patient, suppress negative emotions; prone to cancer.</li><li><strong>Type-D:</strong> Characterized by a proneness to depression.</li></ul></li></ul></details><details class="sub-topic"><summary><h3>Trait Approaches</h3></summary><p>Trait approaches focus on specific, enduring psychological attributes along which individuals differ in consistent ways:</p><ul><li><strong>Allport's Trait Theory:</strong> Categorized traits into:<ul><li><strong><span class="keyword">Cardinal Traits</span>:</strong> Highly generalized dispositions around which an entire life revolves (e.g., Gandhian non-violence).</li><li><strong><span class="keyword">Central Traits</span>:</strong> Less pervasive but still highly generalized (e.g., warm, sincere, diligent).</li><li><strong><span class="keyword">Secondary Traits</span>:</strong> Least generalized, situation-specific preferences (e.g., likes mangoes).</li></ul></li><li><strong>Cattell's Personality Factors:</strong> Identified 16 primary or <strong><span class="keyword">source traits</span></strong> (stable building blocks) and <strong><span class="keyword">surface traits</span></strong> (resulting from interactions of source traits). Developed the <strong><span class="keyword">Sixteen Personality Factor Questionnaire (16PF)</span></strong>.</li><li><strong>Eysenck's Theory:</strong> Reduced personality to three broad dimensions:<ul><li>Neuroticism vs. Emotional Stability</li><li>Extraversion vs. Introversion</li><li>Psychoticism vs. Sociability</li></ul></li></ul><p><strong>The Five-Factor Model of Personality (Big Five Factors):</strong></p><table><thead><tr><th>Factor</th><th>High Score Characteristics</th><th>Low Score Characteristics</th></tr></thead><tbody><tr><td><strong>Openness to Experience</strong></td><td>Imaginative, curious, open to new ideas, interested in cultural pursuits.</td><td>Rigid, conventional.</td></tr><tr><td><strong>Extraversion</strong></td><td>Socially active, assertive, outgoing, talkative, fun-loving.</td><td>Shy, quiet, reserved.</td></tr><tr><td><strong>Agreeableness</strong></td><td>Helpful, co-operative, friendly, caring, nurturing.</td><td>Hostile, self-centered.</td></tr><tr><td><strong>Neuroticism</strong></td><td>Emotionally unstable, anxious, worried, fearful, distressed, irritable.</td><td>Well-adjusted, calm, stable.</td></tr><tr><td><strong>Conscientiousness</strong></td><td>Achievement-oriented, dependable, responsible, prudent, hardworking, self-controlled.</td><td>Impulsive, disorganized.</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Psychodynamic Approach (Sigmund Freud)</h3></summary><p>Developed by Sigmund Freud, this approach visualizes the mind in terms of levels of consciousness and structural elements of personality.</p><p><strong>Levels of Consciousness:</strong></p><ul><li><strong>Conscious:</strong> Thoughts, feelings, and actions of which people are currently aware.</li><li><strong>Preconscious:</strong> Mental activity of which people can become aware if they attend to it closely.</li><li><strong>Unconscious:</strong> A reservoir of instinctive drives, repressed desires, and concealed conflicts of which people are unaware.</li></ul><p><strong>Structure of Personality:</strong></p><ul><li><strong><span class="keyword">Id</span>:</strong> Source of instinctual energy; works on the <strong>pleasure principle</strong> seeking immediate gratification.</li><li><strong><span class="keyword">Ego</span>:</strong> Grows out of the Id; works on the <strong>reality principle</strong>, directing behavior in socially acceptable ways.</li><li><strong><span class="keyword">Superego</span>:</strong> The moral branch of mental functioning; internalizes parental and societal values.</li></ul><p><strong>Ego Defence Mechanisms:</strong> Ways of reducing anxiety by distorting reality:</p><ul><li><strong><span class="keyword">Repression</span>:</strong> Anxiety-provoking thoughts are totally dismissed by the unconscious.</li><li><strong><span class="keyword">Projection</span>:</strong> Attributing one's own unacceptable traits to others.</li><li><strong><span class="keyword">Denial</span>:</strong> Refusing to accept reality (e.g., denying a terminal illness).</li><li><strong><span class="keyword">Reaction Formation</span>:</strong> Adopting behaviors opposite to true feelings.</li><li><strong><span class="keyword">Rationalisation</span>:</strong> Making unreasonable feelings or behaviors seem reasonable.</li></ul><p><strong>Stages of Psychosexual Development:</strong></p><ol><li><strong>Oral Stage (0-1 year):</strong> Primary pleasure center is the mouth (feeding, biting).</li><li><strong>Anal Stage (2-3 years):</strong> Focus on control of bodily functions (urination, defecation).</li><li><strong>Phallic Stage (4-5 years):</strong> Focus on genitals; experience of <strong><span class="keyword">Oedipus Complex</span></strong> (boys) or <strong><span class="keyword">Electra Complex</span></strong> (girls).</li><li><strong>Latency Stage (7 years to puberty):</strong> Sexual urges are inactive; energy channeled into social/achievement activities.</li><li><strong>Genital Stage (puberty onwards):</strong> Attainment of mature sexual and social relationships.</li></ol><p>Failure to navigate a stage successfully leads to <strong><span class="keyword">fixation</span></strong> (arrested development) or <strong><span class="keyword">regression</span></strong> (returning to an earlier stage under stress).</p></details><details class="sub-topic"><summary><h3>Post-Freudian Approaches</h3></summary><ul><li><strong>Carl Jung (<span class="keyword">Analytical Psychology</span>):</strong> Viewed human beings as guided by aims and aspirations. Proposed the <strong><span class="keyword">collective unconscious</span></strong> containing inherited <strong><span class="keyword">archetypes</span></strong> (primordial images).</li><li><strong>Karen Horney:</strong> Emphasized human growth and optimism. Challenged Freud's view of women. Argued that disturbed interpersonal relationships in childhood cause <strong><span class="keyword">basic anxiety</span></strong>.</li><li><strong>Alfred Adler (<span class="keyword">Individual Psychology</span>):</strong> Assumed human behavior is purposeful and goal-directed. Proposed that everyone suffers from an <strong><span class="keyword">inferiority complex</span></strong> in childhood, and overcoming it is essential for development.</li><li><strong>Erich Fromm:</strong> Social orientation; viewed humans as social beings who strive for freedom, justice, and truth.</li><li><strong>Erik Erikson:</strong> Stressed rational, conscious ego processes. Proposed development as a lifelong process centered around resolving an <strong><span class="keyword">identity crisis</span></strong>.</li></ul></details><details class="sub-topic"><summary><h3>Behavioural, Cultural, and Humanistic Approaches</h3></summary><p><strong>Behavioural Approach:</strong> Focuses on observable, measurable data. Personality is understood as the response of an individual to the environment, shaped by learning principles (classical conditioning, instrumental conditioning, and observational learning).</p><p><strong>Cultural Approach:</strong> Understands personality as an adaptation to the ecological and cultural environment. For example, nomadic hunting-gathering societies (like the Birhor) foster independence and autonomy, whereas agricultural societies socialize children to be obedient and cooperative.</p><p><strong>Humanistic Approach:</strong> Developed in response to Freud's deterministic view. Key theorists include:</p><ul><li><strong>Carl Rogers:</strong> Proposed the concept of a <strong><span class="keyword">fully functioning person</span></strong>. Emphasized the alignment between the <strong>real self</strong> and the <strong>ideal self</strong>. Advocated for <strong><span class="keyword">unconditional positive regard</span></strong> in <strong><span class="keyword">client-centred therapy</span></strong>.</li><li><strong>Abraham Maslow:</strong> Outlined a hierarchy of needs leading to <strong><span class="keyword">self-actualisation</span></strong> (reaching one's fullest potential).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Assessment of Personality</summary><p>Personality assessment refers to formal procedures used to evaluate or differentiate people on the basis of psychological characteristics.</p><details class="sub-topic"><summary><h3>Self-Report Measures</h3></summary><p>Structured measures requiring subjects to objectively report their own feelings using rating scales:</p><ul><li><strong>Minnesota Multiphasic Personality Inventory (MMPI):</strong> Contains 567 statements judged as 'true' or 'false' across 10 subscales to diagnose psychopathology.</li><li><strong>Eysenck Personality Questionnaire (EPQ):</strong> Assesses dimensions of Introversion-Extraversion, Emotional Stability-Instability, and Psychoticism.</li><li><strong>Sixteen Personality Factor Questionnaire (16PF):</strong> Developed by Cattell; widely used for career guidance and vocational exploration.</li><li><strong>Limitations:</strong> Prone to <strong><span class="keyword">social desirability</span></strong> (answering in a socially approved way) and <strong><span class="keyword">acquiescence</span></strong> (tendency to agree with items regardless of content).</li></ul></details><details class="sub-topic"><summary><h3>Projective Techniques</h3></summary><p>Indirect methods developed to assess unconscious motives and feelings using unstructured stimuli:</p><ul><li><strong>Rorschach Inkblot Test:</strong> Consists of 10 symmetrical inkblots (5 black and white, 2 with red, 3 pastel). Administered in two phases: performance proper and inquiry.</li><li><strong>Thematic Apperception Test (TAT):</strong> Developed by Morgan and Murray. Consists of 30 picture cards depicting people in various situations. Subjects are asked to tell a story about each picture.</li><li><strong>Rosenzweig's Picture-Frustration Study (P-F Study):</strong> Assesses how people express aggression in frustrating situations using cartoon-like pictures.</li><li><strong>Sentence Completion Test:</strong> Uses incomplete sentence stems (e.g., "My greatest fear is...") to reveal underlying motivations.</li><li><strong>Draw-a-Person Test:</strong> Subject draws a person, then a person of the opposite sex, and creates a story about them. Interpretations look at omissions or disproportionate features (e.g., large head).</li></ul></details><details class="sub-topic"><summary><h3>Behavioural Analysis</h3></summary><p>Observing and analyzing behavior in real or simulated situations:</p><ul><li><strong>Interview:</strong> Can be structured (specific questions, set procedure) or unstructured (flexible, open-ended).</li><li><strong>Observation:</strong> Systematic recording of behavior by trained observers. Limitations include observer bias and the reactive effect of the observer's presence.</li><li><strong>Behavioural Ratings:</strong> Ratings provided by people who know the assessee intimately. Limitations include:<ul><li><strong><span class="keyword">Halo Effect</span>:</strong> A single favorable or unfavorable trait colors the overall judgment.</li><li><strong>Middle Category Bias:</strong> Raters avoid extreme positions on the scale.</li><li><strong>Extreme Response Bias:</strong> Raters consistently choose extreme ends of the scale.</li></ul></li><li><strong>Nomination:</strong> Peer assessment where group members choose individuals they would prefer to work or interact with.</li><li><strong>Situational Tests:</strong> Placing individuals in realistic, stressful situations (e.g., situational stress test) to observe their coping behaviors.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 12 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-01-variations-in-psychological-attrib.html";
+      } else {
+        window.location.href = "12-chapter-03-meeting-life-challenges.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
