@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 6: Correlation</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 6: Correlation</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1. Introduction to Correlation</summary>
+  <p>In statistics, <span class="keyword">Correlation Analysis</span> is a systematic method used to examine and measure the strength and direction of the relationship between two variables.</p>
+  <details class="sub-topic">
+    <summary><h3>Covariation vs. Causation</h3></summary>
+    <p>It is critical to distinguish between association and cause-and-effect:</p>
+    <ul>
+      <li><span class="keyword">Covariation</span>: Measures how variables change together.</li>
+      <li><span class="keyword">Causation</span>: Implies that change in one variable directly causes the change in the other. Correlation does not imply causation.</li>
+      <li>Relationships can sometimes be mere coincidences or driven by a common third variable (e.g., temperature influencing both ice-cream sales and swimming pool usage).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2. Types of Correlation</summary>
+  <p>Correlation can be classified based on the direction of movement and the nature of the relationship:</p>
+  <details class="sub-topic">
+    <summary><h3>Direction of Movement</h3></summary>
+    <ul>
+      <li><span class="keyword">Positive Correlation</span>: Both variables move in the same direction. For example, when income rises, consumption also rises.</li>
+      <li><span class="keyword">Negative Correlation</span>: Variables move in opposite directions. For example, when the price of a commodity rises, its demand decreases.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Linear vs. Non-Linear Relationships</h3></summary>
+    <ul>
+      <li><span class="keyword">Linear Correlation</span>: The relationship can be represented by a straight line on a graph, meaning the relative change between variables is constant.</li>
+      <li><span class="keyword">Non-Linear Correlation</span>: The relationship changes rate and cannot be represented by a straight line.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3. Techniques for Measuring Correlation</summary>
+  <p>Three primary tools are used to study correlation: Scatter Diagrams, Karl Pearson's Coefficient, and Spearman's Rank Correlation.</p>
+
+  <details class="sub-topic">
+    <summary><h3>A. Scatter Diagram</h3></summary>
+    <p>A visual method of plotting data points on a graph to observe the pattern of relationship without calculating numerical values.</p>
+    <ul>
+      <li><strong>Perfect Positive Correlation</strong>: All points lie exactly on an upward-sloping straight line ($r = 1$).</li>
+      <li><strong>Perfect Negative Correlation</strong>: All points lie exactly on a downward-sloping straight line ($r = -1$).</li>
+      <li><strong>Positive Correlation</strong>: Points are scattered around an upward-rising band ($0 < r < 1$).</li>
+      <li><strong>Negative Correlation</strong>: Points are scattered around a downward-sloping band ($-1 < r < 0$).</li>
+      <li><strong>No Correlation</strong>: Points are scattered in a chaotic, circular pattern with no discernible trend ($r = 0$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>B. Karl Pearson's Coefficient of Correlation</h3></summary>
+    <p>Also known as the <span class="keyword">Product Moment Correlation Coefficient</span> ($r$), this index provides a precise numerical value of the degree of linear relationship between two variables $X$ and $Y$.</p>
+    
+    <div class="example-block">
+      <h4>Mathematical Formulas:</h4>
+      <p>Standard Covariance and Standard Deviation method:</p>
+      $$r = \frac{\sum xy}{N \sigma_x \sigma_y}$$
+      <p>Where deviations from arithmetic means are $x = X - \bar{X}$ and $y = Y - \bar{Y}$:</p>
+      $$r = \frac{\sum (X - \bar{X})(Y - \bar{Y})}{\sqrt{\sum (X - \bar{X})^2} \sqrt{\sum (Y - \bar{Y})^2}}$$
+      <p>Direct Method (using raw data):</p>
+      $$r = \frac{N \sum XY - (\sum X)(\sum Y)}{\sqrt{N \sum X^2 - (\sum X)^2} \sqrt{N \sum Y^2 - (\sum Y)^2}}$$
+    </div>
+
+    <h4>Properties of $r$:</h4>
+    <ul>
+      <li>It is a pure number with no units of measurement.</li>
+      <li>Its value always lies between minus one and plus one: $-1 \le r \le 1$.</li>
+      <li>The magnitude of $r$ is unaffected by the change of origin and change of scale.</li>
+      <li>If $r = 0$, the variables are uncorrelated (no linear relationship).</li>
+    </ul>
+
+    <details class="sub-topic">
+      <summary><h4>Step Deviation Method</h4></summary>
+      <p>When values are large, calculations are simplified by transforming variables:</p>
+      $$U = \frac{X - A}{B} \quad \text{and} \quad V = \frac{Y - C}{D}$$
+      <p>Where $A$ and $C$ are assumed means, and $B$ and $D$ are common factors. Under this transformation:</p>
+      $$r_{xy} = r_{uv}$$
+    </details>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>C. Spearman's Rank Correlation Coefficient</h3></summary>
+    <p>Developed by C.E. Spearman, this method (<span class="keyword">Rank Correlation</span>) measures the linear association between ranks assigned to individual items. It is ideal for qualitative attributes (e.g., beauty, intelligence) or when precise measurements are unavailable.</p>
+    
+    <div class="example-block">
+      <h4>Formula for Non-Repeated Ranks:</h4>
+      $$r_s = 1 - \frac{6 \sum D^2}{n^3 - n}$$
+      <p>Where $D$ is the difference between the ranks of the two variables for each observation, and $n$ is the number of observations.</p>
+    </div>
+
+    <div class="example-block">
+      <h4>Formula for Repeated Ranks:</h4>
+      <p>When ranks are tied, a correction factor is added for each repetition:</p>
+      $$r_s = 1 - \frac{6 \left[ \sum D^2 + \frac{(m_1^3 - m_1)}{12} + \frac{(m_2^3 - m_2)}{12} + \dots \right]}{n(n^2 - 1)}$$
+      <p>Where $m_1, m_2, \dots$ represent the number of times a rank is repeated.</p>
+    </div>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-05-measures-of-central-tendency.html";
+      } else {
+        window.location.href = "12-chapter-07-index-numbers.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
