@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 14: Biodiversity and Conservation</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 14: Biodiversity and Conservation</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Biodiversity</summary><p>The term <span class="keyword">Biodiversity</span> is a combination of two words: <em>Bio</em> (life) and <em>diversity</em> (variety). It refers to the number and variety of organisms found within a specified geographic region, encompassing plants, animals, micro-organisms, their genes, and the ecosystems they form.</p><p>Biodiversity is the result of 2.5 to 3.5 billion years of evolution. It is not distributed evenly on Earth; it is consistently richer in the tropics and decreases progressively towards the polar regions.</p></details><details class="topic-box"><summary class="topic-title">Levels of Biodiversity</summary><p>Biodiversity can be classified and discussed at three distinct levels:</p><details class="sub-topic"><summary><h3>1. Genetic Diversity</h3></summary><p><span class="keyword">Genetic Diversity</span> refers to the variation of genes within species. Genes are the basic building blocks of life. This diversity is essential for the healthy breeding of populations. For example, human beings belong to the single species <span class="keyword">Homo sapiens</span> but show vast physical variations due to genetic diversity.</p></details><details class="sub-topic"><summary><h3>2. Species Diversity</h3></summary><p><span class="keyword">Species Diversity</span> refers to the variety of species within a defined area. It is measured through species richness, abundance, and types. Areas with exceptionally high species diversity are known as <span class="keyword">hotspots of diversity</span>.</p></details><details class="sub-topic"><summary><h3>3. Ecosystem Diversity</h3></summary><p><span class="keyword">Ecosystem Diversity</span> refers to the variety of habitats, biotic communities, and ecological processes occurring within different ecosystem types. Demarcating ecosystem boundaries is highly complex as their boundaries are not rigidly defined.</p></details></details><details class="topic-box"><summary class="topic-title">Importance of Biodiversity</summary><p>Biodiversity plays critical roles across ecological, economic, and scientific dimensions:</p><details class="sub-topic"><summary><h3>Ecological Role</h3></summary><p>Every organism in an ecosystem performs specific functions that contribute to systemic stability:</p><ul><li>Capture and storage of energy.</li><li>Production and decomposition of organic material.</li><li>Cycling of water and nutrients throughout the ecosystem.</li><li>Fixation of atmospheric gases and climate regulation.</li></ul><p>A highly diverse ecosystem has a greater capacity to adapt to environmental changes and maintain stability.</p></details><details class="sub-topic"><summary><h3>Economic Role</h3></summary><p>Biodiversity serves as a reservoir of resources for daily human life, often referred to as <span class="keyword">agro-biodiversity</span> or crop diversity. Key economic commodities include:</p><ul><li>Food crops and livestock.</li><li>Forestry products and timber.</li><li>Fish and marine resources.</li><li>Medicinal resources and pharmaceutical ingredients.</li></ul></details><details class="sub-topic"><summary><h3>Scientific Role</h3></summary><p>Biodiversity provides critical clues about the evolution of life. Each species helps scientists understand how life functions and how ecosystems are sustained.</p></details></details><details class="topic-box"><summary class="topic-title">Loss of Biodiversity</summary><p>In recent decades, rapid human population growth and increased resource consumption have accelerated the loss of species and habitats globally.</p><details class="sub-topic"><summary><h3>Major Causes of Depletion</h3></summary><ul><li><strong>Habitat Destruction:</strong> Deforestation in species-rich tropical rainforests (which contain 50% of Earth's species) to meet human demands.</li><li><strong>Natural Calamities:</strong> Earthquakes, floods, volcanic eruptions, forest fires, and droughts.</li><li><strong>Pollution:</strong> Pesticides, hydrocarbons, and toxic heavy metals that destroy sensitive species.</li><li><strong>Exotic Species:</strong> Introduction of non-native <span class="keyword">exotic species</span> that disrupt local biotic communities.</li><li><strong>Poaching:</strong> Merciless hunting of animals (e.g., tigers, elephants, rhinoceros) for commercial trade of horns, tusks, and hides.</li></ul></details></details><details class="topic-box"><summary class="topic-title">IUCN Classification of Threatened Species</summary><p>The <span class="keyword">International Union for Conservation of Nature and Natural Resources (IUCN)</span> classifies threatened species into three major categories:</p><table><thead><tr><th>Category</th><th>Description</th></tr></thead><tbody><tr><td><strong>Endangered Species</strong></td><td>Species in immediate danger of extinction. Information is published globally in the <span class="keyword">Red List</span>.</td></tr><tr><td><strong>Vulnerable Species</strong></td><td>Species likely to enter the endangered category in the near future if threatening factors continue.</td></tr><tr><td><strong>Rare Species</strong></td><td>Species with very small global populations, confined to limited areas or thinly scattered.</td></tr></tbody></table></details><details class="topic-box"><summary class="topic-title">Conservation of Biodiversity</summary><p>Biodiversity conservation is vital for human survival. The Government of India and 155 other nations signed the <span class="keyword">Convention of Biodiversity</span> at the Earth Summit in Rio de Janeiro, Brazil, in June 1992.</p><details class="sub-topic"><summary><h3>World Conservation Strategy Steps</h3></summary><ol><li>Preserve endangered species.</li><li>Prevent extinction through proper planning and management.</li><li>Preserve varieties of food crops, forage plants, timber trees, livestock, and wild relatives.</li><li>Protect habitats where species feed, breed, rest, and nurse their young.</li><li>Regulate international trade in wild plants and animals.</li></ol></details><details class="sub-topic"><summary><h3>Conservation Initiatives in India</h3></summary><p>To protect and propagate species, India passed the <span class="keyword">Wild Life (Protection) Act, 1972</span>, establishing national parks, sanctuaries, and biosphere reserves.</p></details><details class="sub-topic"><summary><h3>Mega Diversity Centres & Hotspots</h3></summary><p>There are 12 <span class="keyword">mega diversity centres</span> located in tropical regions, including Mexico, Colombia, Ecuador, Peru, Brazil, Democratic Republic of Congo, Madagascar, China, India, Malaysia, Indonesia, and Australia.</p><p><span class="keyword">Biodiversity Hotspots</span> are identified by the IUCN based on their vegetation and primary productivity, focusing resources on highly vulnerable, species-rich ecosystems.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 14</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-13-movements-of-ocean-water.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
