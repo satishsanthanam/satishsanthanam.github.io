@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 — Chapter 4: Individual Games</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 — Chapter 4: Individual Games</h1>
+
+    <h1>Physical and Health Education: Class 11 (Part 04) — Chapter 04: Individual Games</h1>
+
+<details class="topic-box">
+  <summary class="topic-title">Athletics</summary>
+  <p><span class="keyword">Athletics</span> consists of track and field events, representing the oldest and most natural forms of human physical expression: running, jumping, and throwing.</p>
+
+  <details class="sub-topic">
+    <summary><h3>History of Athletics</h3></summary>
+    <p>The first recorded organized track and field events occurred at the Ancient Olympic Games in 776 B.C. in Olympia, Greece, featuring a single event called the <span class="keyword">stadion footrace</span>. Later, the <span class="keyword">pentathlon</span> was introduced, consisting of five events: discus throw, long jump, javelin throw, stadion footrace, and wrestling.</p>
+    <p>In modern history, the <span class="keyword">Amateur Athletic Association (AAA)</span> was established in England in 1880, and the <span class="keyword">International Amateur Athletic Federation (IAAF)</span> was founded in 1912. In India, the <span class="keyword">Amateur Athletics Federation of India (AAFI)</span> was established in 1946 to manage and promote the sport nationally.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Classification of Athletics Events</h3></summary>
+    <p>Athletics events are classified into four primary categories:</p>
+    <ul>
+      <li><strong>Track Events:</strong> All running events.</li>
+      <li><strong>Field Events:</strong> Jumping and throwing events.</li>
+      <li><strong>Combined Events:</strong> Multi-discipline events such as the <span class="keyword">Decathlon</span> (men, 10 events over 2 days) and <span class="keyword">Heptathlon</span> (women, 7 events over 2 days).</li>
+      <li><strong>Events Conducted Outside the Stadium:</strong> Road races and walks, such as the <span class="keyword">Marathon</span> (42.195 km) and 20 km/50 km race walks.</li>
+    </ul>
+
+    <h4>Table 1: Classification of Track Events</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Short Distance Races</th>
+          <th>Middle Distance Races</th>
+          <th>Long Distance Races</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>100 m, 200 m, 400 m</td>
+          <td>800 m, 1500 m</td>
+          <td>3000 m steeplechase, 5000 m, 10,000 m</td>
+        </tr>
+        <tr>
+          <td>Hurdles (100 m, 110 m, 400 m)</td>
+          <td>-</td>
+          <td>20 km &amp; 50 km walking, Marathon</td>
+        </tr>
+        <tr>
+          <td>Relays (4&times;100 m, 4&times;400 m)</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Table 2: Classification of Field Events</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Jumping Events</th>
+          <th>Throwing Events</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Long Jump</td>
+          <td>Shot Put</td>
+        </tr>
+        <tr>
+          <td>High Jump</td>
+          <td>Discus Throw</td>
+        </tr>
+        <tr>
+          <td>Triple Jump</td>
+          <td>Javelin Throw</td>
+        </tr>
+        <tr>
+          <td>Pole Vault</td>
+          <td>Hammer Throw</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Rules, Techniques, and Specifications</h3></summary>
+    <p><strong>Starting the Race:</strong> Races are started with a starting gun. The two main types of starts are:</p>
+    <ul>
+      <li><strong>Crouch Start:</strong> Essential for sprint races. Divided into <span class="keyword">Bunch/Bullet Start</span>, <span class="keyword">Medium Start</span>, and <span class="keyword">Elongated Start</span>.</li>
+      <li><strong>Standing Start:</strong> Used for middle and long-distance races.</li>
+    </ul>
+    <p><strong>Finishing Techniques:</strong> The three primary methods to finish a race are <span class="keyword">Lunging forward</span>, <span class="keyword">Shoulder shrug</span>, and <span class="keyword">Run through</span>.</p>
+    <p><strong>Relay Races:</strong> Team events consisting of four runners. The baton must be exchanged within a designated 20 m exchange zone. Methods of baton exchange include <span class="keyword">Downward pass</span>, <span class="keyword">Upward pass</span>, and <span class="keyword">Push pass</span>.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">National Sports Awards</summary>
+  <p>The Government of India honors outstanding coaches and sportspersons with prestigious national awards:</p>
+  <ul>
+    <li><strong>Dronacharya Award:</strong> Instituted in 1985 to recognize outstanding coaches. It carries a cash prize of ₹5 lakhs, a bronze statue of Guru Dronacharya, a scroll, and ceremonial attire.</li>
+    <li><strong>Arjuna Award:</strong> Instituted in 1961 to recognize outstanding sports achievements at the international level. It carries a cash prize of ₹5 lakhs, a bronze statuette of Arjuna, and a scroll.</li>
+    <li><strong>Rajiv Gandhi Khel Ratna Award:</strong> India's highest sporting honor, instituted in 1991–92. It carries a medal, a scroll of honor, and a cash prize of ₹7.5 lakhs. The first recipient was Chess Grandmaster Viswanathan Anand.</li>
+    <li><strong>Dhyan Chand Award:</strong> Awarded for lifetime contribution and achievement in sports.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Badminton</summary>
+  <p><span class="keyword">Badminton</span> is a fast-paced racket sport played indoors. It was historically known as <em>Poona</em> or <em>Poonah</em> in India during the 1860s.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Court Measurements and Equipment</h3></summary>
+    <ul>
+      <li><strong>Court Dimensions:</strong> Rectangular, 13.40 m &times; 6.10 m (for doubles) and 13.40 m &times; 5.18 m (for singles).</li>
+      <li><strong>Net Height:</strong> 1.55 m at the posts and 1.524 m at the center.</li>
+      <li><strong>Shuttlecock:</strong> Must have 16 feathers fixed in the base, weighing between 4.74 g and 5.50 g.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Scoring System and Strokes</h3></summary>
+    <p>A match consists of the best of three games of 21 points. Points are scored on every serve (rally scoring). If the score reaches 20-all, the side gaining a 2-point lead first wins. If it reaches 29-all, the side scoring the 30th point wins.</p>
+    <p><strong>Fundamental Strokes:</strong></p>
+    <ul>
+      <li><strong>Services:</strong> High Serve, Backhand Low Serve, Backhand Flick Serve, Forehand Low Serve, Forehand Flick Serve.</li>
+      <li><strong>Net/Forecourt Strokes:</strong> Net Shot, Net Lift, Net Kill.</li>
+      <li><strong>Midcourt Strokes:</strong> Block, Drive.</li>
+      <li><strong>Rear Court Strokes:</strong> Clear, Smash, Drop Shot.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Gymnastics</summary>
+  <p><span class="keyword">Gymnastics</span> originated in ancient Greece and is regulated globally by the <span class="keyword">Federation of International Gymnastics (FIG)</span>, founded in 1881. The <span class="keyword">Gymnastics Federation of India (GFI)</span> was formed in 1951.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Apparatus Specifications</h3></summary>
+    <p>Gymnastics routines are performed on specific apparatuses categorized by gender:</p>
+    <ul>
+      <li><strong>Women's Apparatus:</strong> Vaulting Table, Balancing Beam, Floor Exercise, Uneven Bars.</li>
+      <li><strong>Men's Apparatus:</strong> Vaulting Table, Horizontal Bar, Floor Exercise, Parallel Bars, Roman Rings, Pommel Horse.</li>
+    </ul>
+    <h4>Table 3: Key Apparatus Dimensions</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Apparatus</th>
+          <th>Key Specifications</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Uneven Bars</td>
+          <td>Upper bar height: 2.50 m; Lower bar height: 1.70 m; Length: 2.10 m</td>
+        </tr>
+        <tr>
+          <td>Horizontal Bar</td>
+          <td>Height: 2.80 m; Length: 2.40 m; Bar diameter: 2.8 cm</td>
+        </tr>
+        <tr>
+          <td>Pommel Horse</td>
+          <td>Height from floor: 1.15 m; Length: 1.60 m; Pommel height: 12 cm</td>
+        </tr>
+        <tr>
+          <td>Roman Rings</td>
+          <td>Inner ring diameter: 18 cm; Distance from attachment: 3 m</td>
+        </tr>
+        <tr>
+          <td>Balancing Beam</td>
+          <td>Height: 1.25 m; Length: 5 m; Width: 10 cm</td>
+        </tr>
+        <tr>
+          <td>Floor Performance Area</td>
+          <td>12 m &times; 12 m</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Judo</summary>
+  <p><span class="keyword">Judo</span> is a modern martial art and self-defense system created in Japan by Jigoro Kano in 1882. The <span class="keyword">Judo Federation of India (JFI)</span> was established in 1965.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Basic Rules and Scoring</h3></summary>
+    <p>An international match lasts four minutes. The primary objective is to score an <span class="keyword">Ippon</span> (immediate victory), which can be achieved by throwing an opponent flat on their back, or by holding them in an armlock/stranglehold or pinning them for 20 seconds. The next best score is <span class="keyword">Waza-ari</span>.</p>
+    <p>Penalties are awarded as <span class="keyword">Shido</span> (minor infractions). Accumulating three Shidos results in a <span class="keyword">Hansoku-make</span> (disqualification and loss of match).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Contest Area and Uniform</h3></summary>
+    <p>The contest area is covered with <span class="keyword">Tatamis</span> (pressed foam mats) measuring 14 m &times; 14 m or 16 m &times; 16 m, with a central combat zone of 9 m &times; 9 m or 10 m &times; 10 m. Players wear a traditional uniform called a <span class="keyword">Judogi</span> secured by an <span class="keyword">Obi</span> (belt) indicating their rank.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Swimming</summary>
+  <p><span class="keyword">Swimming</span> emerged as a competitive sport in England in the early 1800s. The world governing body, <span class="keyword">FINA</span>, was formed in 1908, and the <span class="keyword">Swimming Federation of India (SFI)</span> was established in 1948.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Pool Dimensions</h3></summary>
+    <ul>
+      <li><strong>Length:</strong> 50 m</li>
+      <li><strong>Width:</strong> 25 m</li>
+      <li><strong>Depth:</strong> Minimum 2.0 m (recommended 3.0 m)</li>
+      <li><strong>Number of Lanes:</strong> 10 lanes, each 2.5 m wide</li>
+      <li><strong>Water Temperature:</strong> 25&deg;C to 28&deg;C</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Strokes and Techniques</h3></summary>
+    <p>Competitive swimming features four primary strokes:</p>
+    <ol>
+      <li><strong>Front Crawl (Freestyle):</strong> The fastest stroke, utilizing alternating arm pulls and a continuous flutter kick.</li>
+      <li><strong>Back Crawl (Backstroke):</strong> Swum on the back, utilizing alternating arm actions and a flutter kick.</li>
+      <li><strong>Breaststroke:</strong> A highly technical stroke requiring simultaneous arm recovery and a whip kick.</li>
+      <li><strong>Butterfly:</strong> A powerful stroke utilizing a simultaneous over-water arm recovery and a dolphin kick.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Table Tennis</summary>
+  <p><span class="keyword">Table Tennis</span> (historically known as <em>Ping-Pong</em>) is a popular indoor racket sport. The <span class="keyword">International Table Tennis Federation (ITTF)</span> was founded in 1926.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Equipment Specifications</h3></summary>
+    <ul>
+      <li><strong>Table Dimensions:</strong> Rectangular, 2.74 m long, 1.525 m wide, and 76 cm above the floor.</li>
+      <li><strong>Net Height:</strong> 15.25 cm above the playing surface.</li>
+      <li><strong>Ball:</strong> Spherical, 40 mm diameter, weighing 2.7 g, made of celluloid or similar plastic.</li>
+      <li><strong>Racket Grips:</strong> The two primary grips are the <span class="keyword">Penhold grip</span> and the <span class="keyword">Shakehand grip</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Scoring and Rules</h3></summary>
+    <p>A game is won by the player or pair first scoring 11 points. If both sides reach 10 points, the game is won by the first side to gain a 2-point lead. Service alternates every 2 points. The <span class="keyword">expedite system</span> is introduced if a game is not completed after 10 minutes of play (unless 18 or more points have been scored).</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Wrestling</summary>
+  <p><span class="keyword">Wrestling</span> is one of the oldest combat sports. Globally, it is governed by <span class="keyword">United World Wrestling (UWW)</span>, and nationally by the <span class="keyword">Wrestling Federation of India (WFI)</span>.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Types of Wrestling</h3></summary>
+    <ul>
+      <li><strong>Freestyle:</strong> Allows holds on any part of the opponent's body, including the legs.</li>
+      <li><strong>Greco-Roman:</strong> Strictly forbids holds below the waist; active leg-tripping or holding the legs is prohibited.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Wrestling Arena and Scoring</h3></summary>
+    <p>The wrestling mat is a 12 m &times; 12 m square containing:</p>
+    <ul>
+      <li>A <strong>Central Wrestling Area</strong> of 7 m diameter.</li>
+      <li>A 1 m wide orange <strong>Passivity Zone</strong>.</li>
+      <li>A 1.5 m wide outer <strong>Protection Area</strong>.</li>
+    </ul>
+    <p><strong>Points Classification:</strong></p>
+    <ul>
+      <li><strong>Takedown:</strong> Up to 2 points.</li>
+      <li><strong>Escape:</strong> 1 point.</li>
+      <li><strong>Reversal:</strong> 2 points.</li>
+      <li><strong>Near Fall:</strong> 2 points (if the fall lasts 2 seconds) or 3 points (if it lasts 5 seconds).</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 11 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-03-physical-and-physiological-aspects.html";
+      } else {
+        window.location.href = "11-chapter-05-team-games.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
