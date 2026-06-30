@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 4: Distribution of Oceans and Continents</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 4: Distribution of Oceans and Continents</h1>
+
+    <details class="topic-box"><summary class="topic-title">Continental Drift Theory</summary><details class="sub-topic"><summary><h3>Wegener's Hypothesis</h3></summary><p>The <span class="keyword">Continental Drift Theory</span> was comprehensively put forward by German meteorologist <span class="keyword">Alfred Wegener</span> in 1912. He proposed that all continents once existed as a single supercontinent called <span class="keyword">Pangaea</span> (meaning "all earth"), surrounded by a massive mega-ocean called <span class="keyword">Panthalassa</span> (meaning "all water").</p><p>About 200 million years ago, Pangaea began to split into two large landmasses:</p><ul><li><span class="keyword">Laurasia</span>: The northern continental mass.</li><li><span class="keyword">Gondwanaland</span>: The southern continental mass.</li></ul><p>These two masses subsequently broke down into the smaller, distinct continents we recognize today.</p></details><details class="sub-topic"><summary><h3>Evidence Supporting Continental Drift</h3></summary><p>Several lines of scientific evidence support the historical connection of the continents:</p><ul><li><strong>The Jig-Saw-Fit of Continents:</strong> The shorelines of Africa and South America facing each other show a remarkable, unmistakable match. In 1964, Bullard used a computer program to map this fit at the 1,000-fathom line, proving a near-perfect match.</li><li><strong>Rocks of Same Age Across Oceans:</strong> Radiometric dating correlates ancient rock belts. For example, a 2,000-million-year-old belt of ancient rocks from the Brazilian coast matches rocks found in Western Africa.</li><li><strong>Tillite:</strong> Glacial sedimentary rocks known as <span class="keyword">Tillite</span> found in the Gondwana system of India have matching counterparts in Africa, the Falkland Islands, Madagascar, Antarctica, and Australia, indicating a shared paleoclimate and glacial history.</li><li><strong>Placer Deposits:</strong> Rich gold placer deposits occur along the Ghana coast without any local source rock. The source veins lie directly across the ocean in Brazil, proving the landmasses were once joined.</li><li><strong>Distribution of Fossils:</strong> Identical species of plants and animals are found on widely separated landmasses. For example, fossils of the small freshwater reptile <span class="keyword">Mesosaurus</span> are found only in Southern Africa and Eastern Brazil, which are currently separated by $4,800\text{ km}$ of ocean.</li></ul></details><details class="sub-topic"><summary><h3>Forces Proposed for Drift</h3></summary><p>Wegener suggested two primary forces to explain the movement of continents, though both were later deemed inadequate by contemporary physicists:</p><ol><li><span class="keyword">Pole-fleeing force</span>: Related to the rotation of the Earth and its equatorial bulge.</li><li><span class="keyword">Tidal force</span>: Driven by the gravitational attraction of the Sun and Moon, creating tidal friction over millions of years.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Post-Drift Studies & Ocean Floor Configuration</summary><details class="sub-topic"><summary><h3>Convectional Current Theory</h3></summary><p>In the 1930s, <span class="keyword">Arthur Holmes</span> proposed the <span class="keyword">Convectional Current Theory</span>. He argued that thermal differences generated by radioactive decay within the Earth's mantle create convective cells. This system of currents provided the physical mechanism for crustal movement that Wegener's theory lacked.</p></details><details class="sub-topic"><summary><h3>Ocean Floor Configuration</h3></summary><p>Post-WWII ocean mapping revealed that the ocean floor is not a flat plain but contains complex relief features. It is divided into three major provinces:</p><ul><li><span class="keyword">Continental Margins</span>: The transition zone between continental shores and deep-sea basins, including the continental shelf, slope, rise, and deep-oceanic trenches.</li><li><span class="keyword">Abyssal Plains</span>: Extensive, flat plains where continental sediments settling beyond the margins are deposited.</li><li><span class="keyword">Mid-Oceanic Ridges</span>: An interconnected chain of volcanic mountain systems running through the world's oceans, characterized by a central rift system at the crest and intense volcanic activity.</li></ul></details><details class="sub-topic"><summary><h3>Distribution of Earthquakes and Volcanoes</h3></summary><p>Seismic and volcanic activities are highly concentrated along specific zones. Earthquakes along the mid-oceanic ridges occur at shallow depths, whereas those along the Alpine-Himalayan belt and the rim of the Pacific Ocean are deep-seated. The rim of the Pacific Ocean is known as the <span class="keyword">Ring of Fire</span> due to its high concentration of active volcanoes.</p></details></details><details class="topic-box"><summary class="topic-title">Sea Floor Spreading</summary><details class="sub-topic"><summary><h3>The Hypothesis of Harry Hess</h3></summary><p>In 1961, <span class="keyword">Harry Hess</span> proposed the concept of <span class="keyword">Sea Floor Spreading</span>. He argued that constant volcanic eruptions along the crests of mid-oceanic ridges release lava that cools to form new oceanic crust, pushing the older crust symmetrically away on either side.</p><p>Key evidence supporting this hypothesis includes:</p><ul><li>Rocks equidistant from the ridge crest show identical age, chemical composition, and magnetic polarity.</li><li>Oceanic crust rocks are significantly younger than continental rocks; none are older than 200 million years, whereas continental rocks can be up to 3,200 million years old.</li><li>Ocean floor sediments are unexpectedly thin, indicating the ocean basins are geologically young.</li><li>Oceanic crust pushed away from the ridges eventually sinks and is consumed at deep-oceanic trenches (<span class="keyword">subduction zones</span>).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Plate Tectonics</summary><details class="sub-topic"><summary><h3>Theory of Lithospheric Plates</h3></summary><p>In 1967, McKenzie, Parker, and Morgan formulated the theory of <span class="keyword">Plate Tectonics</span>. A tectonic plate is a massive, rigid slab of solid rock composing both continental and oceanic lithosphere. The lithosphere varies in thickness from $5\text{ to }100\text{ km}$ in oceanic areas to about $200\text{ km}$ in continental regions.</p><p>The Earth's surface is divided into seven major plates and several minor plates:</p><table><thead><tr><th>Major Plates</th><th>Minor Plates</th></tr></thead><tbody><tr><td>Antarctic Plate</td><td>Cocos Plate (Central America & Pacific)</td></tr><tr><td>North American Plate</td><td>Nazca Plate (South America & Pacific)</td></tr><tr><td>South American Plate</td><td>Arabian Plate (Saudi Arabian landmass)</td></tr><tr><td>Pacific Plate</td><td>Philippine Plate (Asiatic & Pacific)</td></tr><tr><td>India-Australia-New Zealand Plate</td><td>Caroline Plate (Philippine & Indian plate)</td></tr><tr><td>African Plate</td><td>Fuji Plate</td></tr><tr><td>Eurasian Plate</td><td>-</td></tr></tbody></table></details><details class="sub-topic"><summary><h3>Types of Plate Boundaries</h3></summary><p>Tectonic plates interact along three distinct types of boundaries:</p><ul><li><span class="keyword">Divergent Boundaries</span>: Where new crust is generated as plates pull apart (e.g., the Mid-Atlantic Ridge).</li><li><span class="keyword">Convergent Boundaries</span>: Where crust is destroyed as one plate subducts beneath another (e.g., subduction zones). This can occur between oceanic-continental, oceanic-oceanic, or continental-continental plates.</li><li><span class="keyword">Transform Boundaries</span>: Where crust is neither created nor destroyed as plates slide horizontally past each other along transform faults.</li></ul></details><details class="sub-topic"><summary><h3>Rates and Forces of Plate Movement</h3></summary><p>Magnetic striping parallel to mid-oceanic ridges allows scientists to calculate plate velocities:</p><ul><li><strong>Slowest Rate:</strong> The Arctic Ridge moves at less than $2.5\text{ cm/yr}$.</li><li><strong>Fastest Rate:</strong> The East Pacific Rise near Easter Island moves at more than $15\text{ cm/yr}$.</li></ul><p>The primary driving force behind this movement is the slow, circular convective flow of hot, softened mantle material beneath the rigid lithospheric plates.</p></details></details><details class="topic-box"><summary class="topic-title">Movement of the Indian Plate</summary><details class="sub-topic"><summary><h3>Tectonic Journey and Himalayan Orogeny</h3></summary><p>The Indian plate includes both Peninsular India and the Australian continental landmass. Its northern boundary is defined by the continent-continent convergence zone along the Himalayas.</p><p>The historical movement of the Indian plate is characterized by several key phases:</p><ol><li><strong>Separation:</strong> Around 200 million years ago, when Pangaea broke, India began its northward journey from the southern hemisphere, separated from Asia by the ancient <span class="keyword">Tethys Sea</span>.</li><li><strong>Deccan Traps Formation:</strong> About 60 million years ago, as India passed over a volcanic hotspot, massive outpourings of lava occurred, forming the Deccan Traps.</li><li><strong>Collision:</strong> Around 40 to 50 million years ago, India collided with the Eurasian plate, causing the rapid uplift of the <span class="keyword">Himalayas</span>. This tectonic collision and mountain-building process continue to this day.</li></ol></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-03-interior-of-the-earth.html";
+      } else {
+        window.location.href = "12-chapter-05-geomorphic-processes.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
