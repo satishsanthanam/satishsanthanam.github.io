@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 9: Financial Statements - II</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 9: Financial Statements - II</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Need for Adjustments</summary><p>In business operations, determining the true income and financial position at the end of an accounting year requires following the <span class="keyword">accrual basis of accounting</span>. This means revenues are recognized when earned (not when received) and expenses are recognized when incurred (not when paid).</p><details class="sub-topic"><summary><h3>Why Adjustments are Needed</h3></summary><ul><li>To ensure that the financial statements reflect a true and fair view of the business's state of affairs.</li><li>To account for expenses and incomes that relate to the current year but have not yet been paid or received.</li><li>To exclude transactions that relate to the previous or next accounting periods.</li><li>To record non-cash items such as <span class="keyword">depreciation</span>, <span class="keyword">bad debts</span>, and provisions.</li></ul></details><details class="sub-topic"><summary><h3>Common Items Requiring Adjustments</h3></summary><ol><li>Closing Stock</li><li>Outstanding Expenses</li><li>Prepaid/Unexpired Expenses</li><li>Accrued Income</li><li>Income Received in Advance</li><li>Depreciation</li><li>Bad Debts</li><li>Provision for Doubtful Debts</li><li>Provision for Discount on Debtors</li><li>Manager's Commission</li><li>Interest on Capital</li></ol></details></details><details class="topic-box"><summary class="topic-title">Adjustments for Expenses and Incomes</summary><details class="sub-topic"><summary><h3>1. Closing Stock</h3></summary><p><span class="keyword">Closing Stock</span> represents the value of unsold goods remaining at the end of the accounting period.</p><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Closing Stock A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Trading A/c</td><td></td><td>[Value]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Value]</td></tr></tbody></table></div><ul><li><strong>Trading Account:</strong> Shown on the credit side.</li><li><strong>Balance Sheet:</strong> Shown on the assets side under Current Assets.</li></ul></details><details class="sub-topic"><summary><h3>2. Outstanding Expenses</h3></summary><p><span class="keyword">Outstanding Expenses</span> are those expenses which have been incurred during the current accounting year but remain unpaid at the end of the year.</p><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Concerned Expense A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Outstanding Expense A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div><ul><li><strong>Trading/P&amp;L Account:</strong> Added to the respective expense on the debit side.</li><li><strong>Balance Sheet:</strong> Shown on the liabilities side under Current Liabilities.</li></ul></details><details class="sub-topic"><summary><h3>3. Prepaid Expenses</h3></summary><p><span class="keyword">Prepaid Expenses</span> (or Unexpired Expenses) are expenses paid in advance for which the benefit will be received in the next accounting year.</p><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Prepaid Expense A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Concerned Expense A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div><ul><li><strong>Trading/P&amp;L Account:</strong> Deducted from the respective expense on the debit side.</li><li><strong>Balance Sheet:</strong> Shown on the assets side under Current Assets.</li></ul></details><details class="sub-topic"><summary><h3>4. Accrued Income</h3></summary><p><span class="keyword">Accrued Income</span> (or Income Earned but not Received) is income that has been earned during the current accounting year but has not been received by the end of the year.</p><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Accrued Income A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Concerned Income A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div><ul><li><strong>Profit &amp; Loss Account:</strong> Added to the respective income on the credit side.</li><li><strong>Balance Sheet:</strong> Shown on the assets side under Current Assets.</li></ul></details><details class="sub-topic"><summary><h3>5. Income Received in Advance</h3></summary><p><span class="keyword">Income Received in Advance</span> (or Unearned Income) is income received during the current year that relates to the next accounting period.</p><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Concerned Income A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Income Received in Advance A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div><ul><li><strong>Profit &amp; Loss Account:</strong> Deducted from the respective income on the credit side.</li><li><strong>Balance Sheet:</strong> Shown on the liabilities side under Current Liabilities.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Asset Valuation &amp; Debtors Adjustments</summary><details class="sub-topic"><summary><h3>1. Depreciation</h3></summary><p><span class="keyword">Depreciation</span> is the decline in the value of a fixed asset due to wear and tear, passage of time, or obsolescence.</p><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Depreciation A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Concerned Asset A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div><ul><li><strong>Profit &amp; Loss Account:</strong> Debited as an expense.</li><li><strong>Balance Sheet:</strong> Deducted from the cost of the respective asset on the assets side.</li></ul></details><details class="sub-topic"><summary><h3>2. Bad Debts &amp; Further Bad Debts</h3></summary><p><span class="keyword">Bad Debts</span> represent the amount that cannot be recovered from debtors. If discovered after preparing the trial balance, they are termed as further bad debts.</p><div class="example-block"><p><strong>Adjustment Entry for Further Bad Debts:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Bad Debts A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Sundry Debtors A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div><ul><li><strong>Profit &amp; Loss Account:</strong> Debited (added to existing bad debts).</li><li><strong>Balance Sheet:</strong> Deducted from Sundry Debtors on the assets side.</li></ul></details><details class="sub-topic"><summary><h3>3. Provision for Doubtful Debts</h3></summary><p>A provision created at a certain percentage on debtors to cover expected future losses from non-recovery of debts.</p><p>The provision is calculated on "good debtors" after deducting further bad debts:</p><div class="example-block">$$	ext{New Provision} = (	ext{Sundry Debtors} - 	ext{Further Bad Debts}) 	imes 	ext{Rate of Provision}$$</div><ul><li><strong>Profit &amp; Loss Account:</strong> Debited with $(	ext{Bad Debts} + 	ext{Further Bad Debts} + 	ext{New Provision} - 	ext{Old Provision})$.</li><li><strong>Balance Sheet:</strong> Deducted from Sundry Debtors on the assets side.</li></ul></details><details class="sub-topic"><summary><h3>4. Provision for Discount on Debtors</h3></summary><p>Created to account for discounts likely to be allowed to debtors for prompt payment. It is calculated only on good debtors after deducting further bad debts and the new provision for doubtful debts:</p><div class="example-block">$$	ext{Provision for Discount} = (	ext{Debtors} - 	ext{Further Bad Debts} - 	ext{New Provision for Doubtful Debts}) 	imes 	ext{Rate of Discount}$$</div></details></details><details class="topic-box"><summary class="topic-title">Capital &amp; Management Adjustments</summary><details class="sub-topic"><summary><h3>1. Manager's Commission</h3></summary><p>Managers are sometimes entitled to a commission calculated as a percentage of net profits.</p><ul><li><strong>Case A: On profits before charging such commission:</strong>$$	ext{Commission} = 	ext{Net Profit before Commission} 	imes rac{	ext{Rate}}{100}$$</li><li><strong>Case B: On profits after charging such commission:</strong>$$	ext{Commission} = 	ext{Net Profit before Commission} 	imes rac{	ext{Rate}}{100 + 	ext{Rate}}$$</li></ul><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Profit &amp; Loss A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Outstanding Manager's Commission A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div></details><details class="sub-topic"><summary><h3>2. Interest on Capital</h3></summary><p>To find the true profit of the business, interest is sometimes allowed on the proprietor's capital at a given rate.</p><div class="example-block"><p><strong>Adjustment Entry:</strong></p><table><thead><tr><th>Particulars</th><th>L.F.</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td>Interest on Capital A/c<br/>&nbsp;&nbsp;&nbsp;&nbsp;To Capital A/c</td><td></td><td>[Amount]</td><td></td></tr><tr><td></td><td></td><td></td><td>[Amount]</td></tr></tbody></table></div><ul><li><strong>Profit &amp; Loss Account:</strong> Debited as an expense.</li><li><strong>Balance Sheet:</strong> Added to the Capital account on the liabilities side.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Summary of Adjustments</summary><table><thead><tr><th>Adjustment</th><th>Adjustment Entry</th><th>Treatment in Trading / P&amp;L Account</th><th>Treatment in Balance Sheet</th></tr></thead><tbody><tr><td><strong>Closing Stock</strong></td><td>Closing Stock A/c Dr.<br/>To Trading A/c</td><td>Credited to Trading Account</td><td>Shown on Assets side</td></tr><tr><td><strong>Outstanding Expenses</strong></td><td>Expense A/c Dr.<br/>To Outstanding Expense A/c</td><td>Added to respective expense (Debit side)</td><td>Shown on Liabilities side</td></tr><tr><td><strong>Prepaid Expenses</strong></td><td>Prepaid Expense A/c Dr.<br/>To Expense A/c</td><td>Deducted from respective expense (Debit side)</td><td>Shown on Assets side</td></tr><tr><td><strong>Accrued Income</strong></td><td>Accrued Income A/c Dr.<br/>To Income A/c</td><td>Added to respective income (Credit side)</td><td>Shown on Assets side</td></tr><tr><td><strong>Income in Advance</strong></td><td>Income A/c Dr.<br/>To Income Received in Advance A/c</td><td>Deducted from respective income (Credit side)</td><td>Shown on Liabilities side</td></tr><tr><td><strong>Depreciation</strong></td><td>Depreciation A/c Dr.<br/>To Asset A/c</td><td>Debited to Profit &amp; Loss Account</td><td>Deducted from Asset (Assets side)</td></tr><tr><td><strong>Further Bad Debts</strong></td><td>Bad Debts A/c Dr.<br/>To Sundry Debtors A/c</td><td>Debited to Profit &amp; Loss Account</td><td>Deducted from Debtors (Assets side)</td></tr><tr><td><strong>Provision for Doubtful Debts</strong></td><td>Profit &amp; Loss A/c Dr.<br/>To Provision for Doubtful Debts A/c</td><td>Debited to Profit &amp; Loss Account</td><td>Deducted from Debtors (Assets side)</td></tr><tr><td><strong>Interest on Capital</strong></td><td>Interest on Capital A/c Dr.<br/>To Capital A/c</td><td>Debited to Profit &amp; Loss Account</td><td>Added to Capital (Liabilities side)</td></tr></tbody></table></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-08-financial-statements-i.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
