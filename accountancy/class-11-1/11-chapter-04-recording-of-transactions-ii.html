@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 11 (Part 1) — Chapter 4: Recording of Transactions-II</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 11 (Part 1) — Chapter 4: Recording of Transactions-II</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction to Special Purpose Books</summary>
+  <p>As a business expands, the volume of transactions grows, making it cumbersome to record all entries in a single journal. To ensure quick, efficient, and accurate recording, the journal is sub-divided into <span class="keyword">special journals</span> (also known as <span class="keyword">subsidiary books</span> or <span class="keyword">daybooks</span>).</p>
+  <p>These books are designed to record transactions of a repetitive and similar nature. The primary special purpose books discussed in this chapter are:</p>
+  <ul>
+    <li><span class="keyword">Cash Book</span>: For recording all cash receipts and payments.</li>
+    <li><span class="keyword">Purchases Book</span>: For recording credit purchases of goods.</li>
+    <li><span class="keyword">Purchases Return Book</span>: For recording goods returned to suppliers.</li>
+    <li><span class="keyword">Sales Book</span>: For recording credit sales of goods.</li>
+    <li><span class="keyword">Sales Return Book</span>: For recording goods returned by customers.</li>
+    <li><span class="keyword">Journal Proper</span>: For recording transactions that do not fit into any other special journal.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">The Cash Book</summary>
+  <p>The <span class="keyword">Cash Book</span> is a book of original entry that records all transactions relating to cash receipts and payments. It serves the purpose of both a journal and a ledger account, meaning no separate cash account is required in the ledger.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Single Column Cash Book</h3></summary>
+    <p>The <span class="keyword">Single Column Cash Book</span> records only cash receipts (on the debit side) and cash payments (on the credit side) in chronological order. It contains only one amount column on each side.</p>
+    <div class="example-block">
+      <h4>Format of Single Column Cash Book</h4>
+      <table border="1">
+        <thead>
+          <tr>
+            <th colspan="4">Dr. (Debit Side)</th>
+            <th colspan="4">Cr. (Credit Side)</th>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <th>Receipts</th>
+            <th>L.F.</th>
+            <th>Amount (Rs.)</th>
+            <th>Date</th>
+            <th>Payments</th>
+            <th>L.F.</th>
+            <th>Amount (Rs.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Double Column Cash Book</h3></summary>
+    <p>A <span class="keyword">Double Column Cash Book</span> contains two columns of amount on each side: one for cash transactions and one for bank transactions. This is highly useful as modern businesses conduct most transactions through banks.</p>
+    <ul>
+      <li><span class="keyword">Contra Entry</span>: When a transaction affects both cash and bank accounts simultaneously (e.g., depositing cash into the bank or withdrawing cash from the bank for office use), it is recorded on both sides of the cash book. The letter <strong>C</strong> is written in the L.F. column to indicate a contra entry, and these entries are not posted to the ledger.</li>
+      <li><span class="keyword">Bank Overdraft</span>: Occurs when withdrawals from the bank exceed deposits, resulting in a credit balance in the bank column.</li>
+    </ul>
+    <div class="example-block">
+      <h4>Format of Double Column Cash Book</h4>
+      <table border="1">
+        <thead>
+          <tr>
+            <th colspan="5">Dr.</th>
+            <th colspan="5">Cr.</th>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <th>Receipts</th>
+            <th>L.F.</th>
+            <th>Cash (Rs.)</th>
+            <th>Bank (Rs.)</th>
+            <th>Date</th>
+            <th>Payments</th>
+            <th>L.F.</th>
+            <th>Cash (Rs.)</th>
+            <th>Bank (Rs.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Petty Cash Book</h3></summary>
+    <p>To prevent the main cash book from becoming bulky with numerous small payments (like postage, cartage, stationery, and conveyance), businesses maintain a <span class="keyword">Petty Cash Book</span> managed by a petty cashier.</p>
+    <p>The petty cashier operates on the <span class="keyword">Imprest System</span>. Under this system, a fixed sum (imprest amount) is given to the petty cashier at the start of a period. At the end of the period, the main cashier reimburses the exact amount spent, restoring the original balance.</p>
+    <div class="example-block">
+      <p>The relationship between the imprest amount, amount spent, and balance is represented as:</p>
+      $$\text{Imprest Amount} = \text{Amount Spent} + \text{Balance Cash in Hand}$$
+    </div>
+    <ul>
+      <li><strong>Advantages:</strong> Saves time and effort of the chief cashier, provides effective control over small disbursements, and simplifies recording.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Other Subsidiary Books</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Purchases (Journal) Book</h3></summary>
+    <p>The <span class="keyword">Purchases Book</span> is used to record only credit purchases of goods. Cash purchases are recorded in the Cash Book, and credit purchases of assets are recorded in the Journal Proper.</p>
+    <ul>
+      <li><strong>Source Document:</strong> Invoices or bills received from suppliers.</li>
+      <li><strong>Posting:</strong> The monthly total of the Purchases Book is posted to the debit side of the Purchases Account in the ledger, while individual supplier accounts are credited daily.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Purchases Return (Journal) Book</h3></summary>
+    <p>This book records the return of goods purchased on credit to suppliers due to defects or poor quality.</p>
+    <ul>
+      <li><strong>Source Document:</strong> <span class="keyword">Debit Note</span>, which informs the supplier that their account has been debited with the value of the returned goods.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Sales (Journal) Book</h3></summary>
+    <p>The <span class="keyword">Sales Book</span> is used to record all credit sales of merchandise. Cash sales are recorded in the Cash Book, and credit sales of assets are recorded in the Journal Proper.</p>
+    <ul>
+      <li><strong>Source Document:</strong> Sales invoice or bill issued to customers.</li>
+      <li><strong>Posting:</strong> The monthly total is credited to the Sales Account, and individual customer accounts are debited daily.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Sales Return (Journal) Book</h3></summary>
+    <p>This book records the return of goods by customers who purchased them on credit.</p>
+    <ul>
+      <li><strong>Source Document:</strong> <span class="keyword">Credit Note</span>, which is sent to the customer to confirm that their account has been credited for the returned goods.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Journal Proper</summary>
+  <p>The <span class="keyword">Journal Proper</span> (or Journal Residual) is used to record transactions that cannot be entered into any other subsidiary book. It typically includes:</p>
+  <ol>
+    <li><strong>Opening Entries:</strong> To record opening balances of assets, liabilities, and capital at the start of a new financial year.</li>
+    <li><strong>Adjustment Entries:</strong> To update accounts on an accrual basis (e.g., outstanding rent, depreciation, prepaid insurance).</li>
+    <li><strong>Rectification Entries:</strong> To correct errors made in recording or posting transactions.</li>
+    <li><strong>Transfer Entries:</strong> To transfer balances from one account to another (e.g., transferring drawings to the capital account).</li>
+    <li><strong>Other Entries:</strong> Dishonour of bills, credit purchase/sale of assets, goods distributed as free samples, or loss of goods by fire/theft.</li>
+  </ol>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Balancing the Accounts</summary>
+  <p><span class="keyword">Balancing</span> an account means totaling both sides of a ledger account and finding the difference between them to ascertain the net position.</p>
+  <ul>
+    <li>If the debit side exceeds the credit side, the difference is written on the credit side as <strong>"Balance c/d"</strong> (carried down) and brought down on the debit side in the next period as a <strong>debit balance</strong>.</li>
+    <li>If the credit side exceeds the debit side, the difference is written on the debit side as <strong>"Balance c/d"</strong> and brought down on the credit side as a <strong>credit balance</strong>.</li>
+    <li>Accounts of expenses, losses, gains, and revenues are not balanced but are closed by transferring their totals to the Trading and Profit and Loss Account at the end of the year.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 11 (Part 1) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-03-recording-of-transactions-i.html";
+      } else {
+        window.location.href = "11-chapter-05-bank-reconciliation-statement.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 12 (Part 1) — Chapter 4: Graphs and Charts for Business Data</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 12 (Part 1) — Chapter 4: Graphs and Charts for Business Data</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Introduction to Graphs and Charts</summary>
+  <p>In accounting, presenting a mass of raw data can make it difficult to understand. Visual representations help communicate accounting information effectively, following the adage, <q>A picture is worth more than a thousand words</q>. This chapter explains how to prepare graphs, charts, and diagrams using spreadsheet software like <span class="keyword">MS Excel</span>.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>What are Graphs and Charts?</h3></summary>
+    <p>A <span class="keyword">graph</span> is a pictorial representation of data showing at least a two-dimensional relationship using axes:</p>
+    <ul>
+      <li><span class="keyword">X-axis</span>: The horizontal axis, usually representing independent categories.</li>
+      <li><span class="keyword">Y-axis</span>: The vertical axis, usually representing dependent values.</li>
+    </ul>
+    <p>Common types of visual representations include:</p>
+    <ul>
+      <li><span class="keyword">Line Graph</span>: Can be single-line or multiple-line (using different colors/shades for clarity).</li>
+      <li><span class="keyword">Pie Chart</span>: Represents multiple sub-groups of a single variable.</li>
+      <li><span class="keyword">Bar Diagram</span>: Depicts and compares two or more variables.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Basic Steps for Creating Charts in Excel</summary>
+  <p>Creating a chart in <span class="keyword">MS Excel</span> involves entering data and selecting the appropriate chart type from the Ribbon interface.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Step-by-Step Chart Creation</h3></summary>
+    <ol>
+      <li><strong>Step 1 (Data Entry):</strong> Enter the accounting or sales data into a worksheet with proper row and column headers.</li>
+      <li><strong>Step 2a (Selection):</strong> Select the specific data range to be plotted (e.g., product-wise totals).</li>
+      <li><strong>Step 2b (Insertion):</strong> Go to the <span class="keyword">Insert</span> tab on the Ribbon, navigate to the <span class="keyword">Charts</span> group, and select the desired chart type (e.g., Bar, Line, Pie).</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Key Elements of a Chart</h3></summary>
+    <p>Understanding chart elements is essential for effective formatting and customization:</p>
+    <ol>
+      <li><span class="keyword">Chart Area</span>: The entire chart window including all of its elements.</li>
+      <li><span class="keyword">Plot Area</span>: The area bounded by the axes (X and Y for 2D charts; X, Y, and Z for 3D charts).</li>
+      <li><span class="keyword">Data Points</span>: Individual values plotted in the chart, represented by <span class="keyword">data markers</span> (bars, lines, columns, or pie slices). A collection of related data points forms a <span class="keyword">data series</span>.</li>
+      <li><span class="keyword">Axes</span>: The horizontal category axis (X-axis) and vertical value axis (Y-axis).</li>
+      <li><span class="keyword">Legend</span>: An index or key that identifies the data series or categories.</li>
+      <li><span class="keyword">Chart and Axes Titles</span>: Descriptive text labels for the chart and its individual axes.</li>
+      <li><span class="keyword">Data Labels</span>: Labels that provide additional details about individual data markers.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Formatting and Customizing Charts</summary>
+  <p>Once a chart is created, Excel provides <span class="keyword">Chart Tools</span> containing three main tabs: <strong>Design</strong>, <strong>Layout</strong>, and <strong>Format</strong>.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Using the Design Option</h3></summary>
+    <p>The <span class="keyword">Design</span> tab allows users to change the overall look of the chart:</p>
+    <ul>
+      <li>Change the chart type, layout, or style.</li>
+      <li>Swap data axes using the <span class="keyword">Switch Row/Column</span> command (e.g., changing the X-axis from products to quarters).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Changing the Format of Chart Elements</h3></summary>
+    <p>The <span class="keyword">Format</span> tab provides options to customize individual elements:</p>
+    <ul>
+      <li><strong>Shape Styles:</strong> Modify <span class="keyword">Shape Fill</span> (solid colors, gradients, textures, or pictures), <span class="keyword">Shape Outline</span> (color, weight, dashed lines), and <span class="keyword">Shape Effects</span> (bevel, shadow, reflection).</li>
+      <li><strong>Text Formatting:</strong> Apply standard font formatting or <span class="keyword">WordArt Styles</span> (text fill, outline, shadow, 3D effects).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Changing the Layout</h3></summary>
+    <p>The <span class="keyword">Layout</span> tab allows users to insert additional elements such as clip art, pictures, shapes, text boxes, data labels, and gridlines.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Chart Types and Dimensionality</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Pie Charts</h3></summary>
+    <p>A <span class="keyword">Pie Chart</span> represents the relative size of parts to a whole. It has specific constraints:</p>
+    <ul>
+      <li>Only plots a <span class="keyword">single data series</span>.</li>
+      <li>All data values must be positive and non-zero.</li>
+      <li>Ideally limited to a maximum of seven categories for readability.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>2D vs. 3D Charts</h3></summary>
+    <ul>
+      <li><strong>2D Charts:</strong> Plotted on two axes (X and Y). Examples include line, bar, area, column, scatter (XY), and bubble charts. Negative values are plotted on the opposite side of the origin ($O$).</li>
+      <li><strong>3D Charts:</strong> Feature a third axis, the depth axis (<span class="keyword">Z-axis</span> or series axis), allowing data to be plotted along the depth of the chart.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Specialized Charts</h3></summary>
+    <ul>
+      <li><span class="keyword">Radar Chart</span>: Compares aggregate values of multiple data series. It does not have standard horizontal category axes.</li>
+      <li><span class="keyword">Doughnut Chart</span>: Similar to a pie chart but can contain multiple data series represented as concentric rings.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Advantages of Using Graphs and Charts</summary>
+  <p>Visualizing business and accounting data offers several key benefits:</p>
+  <ul>
+    <li><strong>Help to Explore:</strong> Allows quick identification of relationships, trends, and correlations between variables (e.g., GNP and infant mortality, or sales trends over time) without parsing raw tables.</li>
+    <li><strong>Help to Present:</strong> Delivers complex information rapidly and clearly, which is highly useful in media, reports, and executive summaries.</li>
+    <li><strong>Help to Convince:</strong> Simplifies large volumes of data into persuasive visual evidence to support business decisions.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 12 (Part 1) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "21-chapter-03-use-of-spreadsheet-in-business-app.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
