@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 122 — Chapter 2: Theory of Consumer Behaviour</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 122 — Chapter 2: Theory of Consumer Behaviour</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Preliminary Notations</summary><p>In this chapter, we study the behaviour of an individual consumer who faces the <span class="keyword">problem of choice</span>—deciding how to spend her income on different goods to get maximum satisfaction. This depends on consumer preferences ("likes") and budget constraints ("affordability").</p><details class="sub-topic"><summary><h3>Preliminary Notations and Assumptions</h3></summary><p>For simplicity, we assume a two-good world consisting of bananas ($x_1$) and mangoes ($x_2$).</p><ul><li>A <span class="keyword">consumption bundle</span> is represented as $(x_1, x_2)$, where $x_1 ≥ 0$ and $x_2 ≥ 0$.</li><li>Example: Bundle $(5, 10)$ consists of 5 bananas and 10 mangoes.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.1 Utility Analysis</summary><p><span class="keyword">Utility</span> is the want-satisfying capacity of a commodity. It is subjective and varies from person to person, place to place, and time to time.</p><details class="sub-topic"><summary><h3>2.1.1 Cardinal Utility Analysis</h3></summary><p>Cardinal utility analysis assumes that utility can be measured and expressed in numbers (utils).</p><ul><li><strong>Total Utility ($TU$):</strong> The total satisfaction derived from consuming a given quantity of a commodity $x$. $$TU_n = MU_1 + MU_2 + ⋯ + MU_n$$</li><li><strong>Marginal Utility ($MU$):</strong> The change in total utility due to the consumption of one additional unit of a commodity. $$MU_n = TU_n - TU_{n-1}$$</li></ul><div class="example-block"><h4>Table 2.1: Values of Marginal and Total Utility</h4><table><thead><tr><th>Units</th><th>Total Utility (TU)</th><th>Marginal Utility (MU)</th></tr></thead><tbody><tr><td>1</td><td>12</td><td>12</td></tr><tr><td>2</td><td>18</td><td>6</td></tr><tr><td>3</td><td>22</td><td>4</td></tr><tr><td>4</td><td>24</td><td>2</td></tr><tr><td>5</td><td>24</td><td>0</td></tr><tr><td>6</td><td>22</td><td>-2</td></tr></tbody></table></div></details><details class="sub-topic"><summary><h3>Law of Diminishing Marginal Utility</h3></summary><p>The <span class="keyword">Law of Diminishing Marginal Utility</span> states that as a consumer consumes more units of a commodity, the marginal utility derived from each successive unit declines, while keeping consumption of other commodities constant.</p></details><details class="sub-topic"><summary><h3>2.1.2 Ordinal Utility Analysis</h3></summary><p>Ordinal utility analysis assumes that utility cannot be measured in numbers, but consumers can rank different consumption bundles based on preference.</p><ul><li><strong>Indifference Curve (IC):</strong> A curve joining all points representing bundles among which the consumer is indifferent, as they provide the same level of satisfaction.</li><li><strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer is willing to substitute one good for another while keeping total utility constant. $$MRS = rac{|Δ y|}{|Δ x|}$$</li><li><strong>Law of Diminishing MRS:</strong> As the consumer gets more of good 1 (bananas), the quantity of good 2 (mangoes) she is willing to sacrifice for an additional unit of good 1 declines. This makes the indifference curve convex to the origin.</li></ul><div class="example-block"><h4>Table 2.2: Diminishing Marginal Rate of Substitution</h4><table><thead><tr><th>Combination</th><th>Bananas ($Q_x$)</th><th>Mangoes ($Q_y$)</th><th>MRS</th></tr></thead><tbody><tr><td>A</td><td>1</td><td>15</td><td>-</td></tr><tr><td>B</td><td>2</td><td>12</td><td>3:1</td></tr><tr><td>C</td><td>3</td><td>10</td><td>2:1</td></tr><tr><td>D</td><td>4</td><td>9</td><td>1:1</td></tr></tbody></table></div></details><details class="sub-topic"><summary><h3>Monotonic Preferences &amp; Indifference Map</h3></summary><ul><li><strong>Monotonic Preferences:</strong> A consumer always prefers a bundle that has more of at least one good and no less of the other good.</li><li><strong>Indifference Map:</strong> A family of indifference curves. Higher indifference curves represent higher levels of utility.</li><li><strong>Features of Indifference Curves:</strong><ol><li>Indifference curves slope downwards from left to right.</li><li>Higher indifference curves give greater levels of utility.</li><li>Two indifference curves never intersect each other.</li></ol></li></ul></details></details><details class="topic-box"><summary class="topic-title">2.2 The Consumer's Budget</summary><p>The consumer has a fixed income ($M$) to spend on two goods with market prices $p_1$ and $p_2$.</p><details class="sub-topic"><summary><h3>2.2.1 Budget Set and Budget Line</h3></summary><p>The <span class="keyword">budget set</span> is the collection of all bundles that the consumer can buy with her income at prevailing market prices: $$p_1 x_1 + p_2 x_2 ≤ M$$</p><p>The <span class="keyword">budget line</span> represents all bundles that cost exactly equal to $M$: $$p_1 x_1 + p_2 x_2 = M$$ This can be rewritten as: $$x_2 = rac{M}{p_2} - rac{p_1}{p_2} x_1$$</p><ul><li><strong>Horizontal Intercept:</strong> $rac{M}{p_1}$ (entire income spent on bananas)</li><li><strong>Vertical Intercept:</strong> $rac{M}{p_2}$ (entire income spent on mangoes)</li><li><strong>Slope of the Budget Line:</strong> $-rac{p_1}{p_2}$ (the price ratio)</li></ul></details><details class="sub-topic"><summary><h3>2.2.2 Changes in the Budget Set</h3></summary><ul><li><strong>Income Changes:</strong> An increase in income ($M' &gt; M$) causes a parallel outward shift of the budget line. A decrease in income causes a parallel inward shift.</li><li><strong>Price Changes:</strong> An increase in the price of bananas ($p_1$) pivots the budget line inwards around the vertical intercept, making it steeper. A decrease in $p_1$ pivots it outwards, making it flatter.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.3 Optimal Choice of the Consumer</summary><p>The consumer's objective is to reach the highest possible indifference curve given her budget set. The <span class="keyword">optimum bundle</span> is located at the point where the budget line is tangent to an indifference curve.</p><p>At this point of tangency, the slope of the indifference curve ($MRS$) equals the slope of the budget line (price ratio): $$MRS = rac{p_1}{p_2}$$</p></details><details class="topic-box"><summary class="topic-title">2.4 Demand</summary><p>The quantity of a commodity that a consumer is willing to buy and is able to afford, given prices and income, is called the <span class="keyword">demand</span> for that commodity.</p><details class="sub-topic"><summary><h3>2.4.1 Demand Curve and the Law of Demand</h3></summary><p>The relation between the consumer's optimal choice of quantity and its price is the <span class="keyword">demand function</span>: $$X = f(P)$$</p><ul><li><strong>Law of Demand:</strong> Other things being equal, there is a negative relationship between the demand for a commodity and its price. When price increases, demand falls; when price decreases, demand rises.</li><li><strong>Linear Demand Curve:</strong> $$d(p) = a - bp 	ext{ (where } 0 ≤ p ≤ rac{a}{b}	ext{)}$$</li></ul></details><details class="sub-topic"><summary><h3>2.4.3 Normal, Inferior, and Giffen Goods</h3></summary><ul><li><strong>Normal Goods:</strong> Demand increases as consumer income increases (e.g., high-quality food).</li><li><strong>Inferior Goods:</strong> Demand decreases as consumer income increases (e.g., coarse cereals).</li><li><strong>Giffen Goods:</strong> A special category of inferior goods for which the demand is positively related to its price because the income effect dominates the substitution effect.</li></ul></details><details class="sub-topic"><summary><h3>2.4.4 Substitutes and Complements</h3></summary><ul><li><strong>Substitutes:</strong> Goods used in place of each other (e.g., tea and coffee). An increase in the price of a substitute increases the demand for the good.</li><li><strong>Complements:</strong> Goods consumed together (e.g., tea and sugar). An increase in the price of a complementary good decreases the demand for the good.</li></ul></details><details class="sub-topic"><summary><h3>2.4.5 Shifts vs. Movements along the Demand Curve</h3></summary><ul><li><strong>Movement along the Demand Curve:</strong> Caused by a change in the price of the good itself (expansion or contraction of demand).</li><li><strong>Shift in the Demand Curve:</strong> Caused by changes in other factors like income, prices of related goods, or tastes and preferences.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.5 Market Demand</summary><p>The <span class="keyword">market demand</span> for a good at a particular price is the total demand of all consumers in the market combined. It is derived by the horizontal summation of individual demand curves.</p></details><details class="topic-box"><summary class="topic-title">2.6 Elasticity of Demand</summary><p>The <span class="keyword">price elasticity of demand</span> ($e_D$) measures the responsiveness of demand to changes in the price of the good.</p><p>$$e_D = rac{	ext{percentage change in demand for the good}}{	ext{percentage change in the price of the good}} = rac{Δ Q}{Δ P} 	imes rac{P}{Q}$$</p><details class="sub-topic"><summary><h3>Types of Elasticity</h3></summary><ul><li><strong>Inelastic Demand ($|e_D| &lt; 1$):</strong> Percentage change in demand is less than percentage change in price.</li><li><strong>Elastic Demand ($|e_D| &gt; 1$):</strong> Percentage change in demand is greater than percentage change in price.</li><li><strong>Unitary Elastic Demand ($|e_D| = 1$):</strong> Percentage change in demand equals percentage change in price.</li><li><strong>Perfected Inelastic ($e_D = 0$):</strong> Demand does not change at all with price (vertical demand curve).</li><li><strong>Perfected Elastic ($e_D = ∞$):</strong> Demand drops to zero with any price increase (horizontal demand curve).</li></ul></details><details class="sub-topic"><summary><h3>Elasticity along a Linear Demand Curve</h3></summary><p>For a linear demand curve $q = a - bp$, elasticity varies at different points: $$e_D = -rac{bp}{a - bp}$$</p><ul><li>At $p = 0$, $e_D = 0$.</li><li>At $q = 0$, $e_D = ∞$.</li><li>At the midpoint $p = rac{a}{2b}$, $e_D = -1$.</li></ul></details><details class="sub-topic"><summary><h3>Elasticity and Expenditure</h3></summary><p>The relationship between price changes, elasticity, and total expenditure ($E = P 	imes Q$) is summarized below:</p><div class="example-block"><h4>Table 2.5: Elasticity and Expenditure Dynamics</h4><table><thead><tr><th>Price Change</th><th>Elasticity Type</th><th>Impact on Expenditure</th></tr></thead><tbody><tr><td>&uarr;</td><td>Inelastic ($|e_D| &lt; 1$)</td><td>&uarr;</td></tr><tr><td>&uarr;</td><td>Elastic ($|e_D| &gt; 1$)</td><td>&darr;</td></tr><tr><td>&uarr;</td><td>Unit Elastic ($|e_D| = 1$)</td><td>No Change</td></tr><tr><td>&darr;</td><td>Elastic ($|e_D| &gt; 1$)</td><td>&uarr;</td></tr><tr><td>&darr;</td><td>Inelastic ($|e_D| &lt; 1$)</td><td>&darr;</td></tr><tr><td>&darr;</td><td>Unit Elastic ($|e_D| = 1$)</td><td>No Change</td></tr></tbody></table></div></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 122 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "22-chapter-01-introduction.html";
+      } else {
+        window.location.href = "22-chapter-03-production-and-costs.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
