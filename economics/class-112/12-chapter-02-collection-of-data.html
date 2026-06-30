@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 112 — Chapter 2: Collection of Data</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 112 — Chapter 2: Collection of Data</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">1. Introduction &amp; Sources of Data</summary>
+  <p>In statistics, <span class="keyword">Data</span> is a vital tool that provides information to understand and solve economic problems. Economic variables change over time and across observations.</p>
+  <details class="sub-topic">
+    <summary><h3>Variables and Observations</h3></summary>
+    <p>A <span class="keyword">Variable</span> is a characteristic that can take different values (e.g., food grain production, income). It is typically represented by letters like $X$, $Y$, or $Z$. Each specific value of a variable is called an <span class="keyword">Observation</span>.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Primary vs. Secondary Data</h3></summary>
+    <ul>
+      <li><span class="keyword">Primary Data</span>: Data collected by an investigator first-hand through direct enquiry or survey. It is original in character.</li>
+      <li><span class="keyword">Secondary Data</span>: Data that has already been collected, processed, and tabulated by some other agency (e.g., government reports, websites, books).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2. Instrument Preparation &amp; Questionnaires</summary>
+  <p>The most common instrument used in surveys is a <span class="keyword">Questionnaire</span> or interview schedule.</p>
+  <details class="sub-topic">
+    <summary><h3>Principles of a Good Questionnaire</h3></summary>
+    <ul>
+      <li>Should not be too long; questions should be kept to a minimum.</li>
+      <li>Should be easy to understand, avoiding ambiguous or difficult words.</li>
+      <li>Questions should move from general to specific.</li>
+      <li>Questions should be precise and clear, avoiding double negatives (e.g., "Don't you think...").</li>
+      <li>Should not be leading questions that bias the respondent.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Types of Questions</h3></summary>
+    <ul>
+      <li><span class="keyword">Closed-ended (Structured) Questions</span>: These can be two-way (Yes/No) or multiple-choice. They are easy to use, score, and analyze, but can restrict respondents' choices.</li>
+      <li><span class="keyword">Open-ended (Unstructured) Questions</span>: These allow for individualized, detailed responses but are difficult to interpret and score.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">3. Modes of Data Collection &amp; Pilot Surveys</summary>
+  <p>There are three primary modes of collecting survey data, each with distinct trade-offs.</p>
+  <details class="sub-topic">
+    <summary><h3>Comparison of Data Collection Modes</h3></summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Mode</th>
+          <th>Advantages</th>
+          <th>Disadvantages</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Personal Interviews</strong></td>
+          <td>Highest response rate; allows clarification of ambiguous questions; permits open-ended questions.</td>
+          <td>Most expensive; possibility of interviewer influencing respondents; time-taking.</td>
+        </tr>
+        <tr>
+          <td><strong>Mailed Questionnaires</strong></td>
+          <td>Least expensive; reaches remote areas; maintains anonymity; no interviewer bias.</td>
+          <td>Cannot be used by illiterates; long response time; high rate of non-response; cannot watch reactions.</td>
+        </tr>
+        <tr>
+          <td><strong>Telephone Interviews</strong></td>
+          <td>Relatively low cost; high response rate; less interviewer influence than personal.</td>
+          <td>Limited access (only to telephone owners); reactions cannot be watched.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Pilot Survey</h3></summary>
+    <p>A <span class="keyword">Pilot Survey</span> (or pre-testing) is a try-out of the questionnaire with a small group before the actual survey. It helps identify shortcomings, assess question suitability, and estimate the time and cost of the main survey.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">4. Census and Sample Surveys</summary>
+  <details class="sub-topic">
+    <summary><h3>Census (Complete Enumeration)</h3></summary>
+    <p>A <span class="keyword">Census</span> is a survey that includes every element of the population. In India, the Census is carried out every ten years to collect demographic data (birth/death rates, literacy, employment, etc.).</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Sampling Concepts</h3></summary>
+    <ul>
+      <li><span class="keyword">Population (Universe)</span>: The totality of items under study possessing certain characteristics.</li>
+      <li><span class="keyword">Sample</span>: A smaller, representative group or section selected from the population to provide information.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Sampling Methods</h3></summary>
+    <ul>
+      <li><span class="keyword">Random Sampling</span>: Every individual unit in the population has an equal chance of being selected (e.g., Lottery Method, Random Number Tables). It is unbiased.</li>
+      <li><span class="keyword">Non-Random Sampling</span>: Units are selected based on judgment, convenience, or quota. Not every unit has an equal chance of selection, introducing potential bias.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">5. Sampling and Non-Sampling Errors</summary>
+  <details class="sub-topic">
+    <summary><h3>Sampling Errors</h3></summary>
+    <p>A <span class="keyword">Sampling Error</span> is the difference between the sample estimate and the actual population parameter.</p>
+    <div class="example-block">
+      $$\text{Sampling Error} = \text{True Value} - \text{Estimated Value}$$
+    </div>
+    <p>Sampling errors can be minimized by increasing the sample size.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Non-Sampling Errors</h3></summary>
+    <p>These are more serious than sampling errors and cannot be easily minimized by increasing sample size. They include:</p>
+    <ul>
+      <li><span class="keyword">Sampling Bias</span>: Occurs when the sampling plan excludes certain parts of the target population.</li>
+      <li><span class="keyword">Non-Response Errors</span>: Occurs when selected respondents cannot be contacted or refuse to respond.</li>
+      <li><span class="keyword">Errors in Data Acquisition</span>: Arise from recording incorrect responses, measurement differences, or transcription mistakes.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6. Statistical Agencies in India</summary>
+  <p>Several national and state-level agencies collect, process, and tabulate statistical data in India:</p>
+  <ul>
+    <li><span class="keyword">Census of India</span>: Provides a complete demographic record of the population, conducted every ten years since 1881.</li>
+    <li><span class="keyword">National Sample Survey Office (NSSO)</span>: Conducts nationwide socio-economic surveys in successive rounds (e.g., on consumer expenditure, employment, health).</li>
+    <li>Other agencies include the <span class="keyword">Central Statistics Office (CSO)</span>, <span class="keyword">Registrar General of India (RGI)</span>, and <span class="keyword">Labour Bureau</span>.</li>
+  </ul>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 112 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "12-chapter-01-introduction.html";
+      } else {
+        window.location.href = "12-chapter-03-organisation-of-data.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
