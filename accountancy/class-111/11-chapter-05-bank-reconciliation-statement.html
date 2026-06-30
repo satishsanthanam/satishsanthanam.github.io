@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 111 — Chapter 5: Bank Reconciliation Statement</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 111 — Chapter 5: Bank Reconciliation Statement</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Bank Reconciliation Statement</summary>
+  <p>A <span class="keyword">Bank Reconciliation Statement</span> is prepared to reconcile the difference between the bank balance shown by the <span class="keyword">Cash Book</span> and the balance shown by the bank <span class="keyword">Passbook</span> (or Bank Statement) on a particular date.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>5.1 Need for Reconciliation</h3></summary>
+    <p>The balance of the bank column in the cash book must tally with the balance shown in the bank passbook. However, in practice, these balances often differ. Reconciling them is necessary to:</p>
+    <ul>
+      <li>Ascertain the accuracy of entries in both books.</li>
+      <li>Identify any errors or omissions in the Cash Book or Passbook.</li>
+      <li>Prevent fraud and embezzlement.</li>
+      <li>Keep track of cheques sent for collection and cheques issued but not presented.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>5.1.1 Timing Differences</h3></summary>
+    <p>Differences often arise due to the time gap in recording transactions. Key factors include:</p>
+    <ul>
+      <li><strong>Cheques issued but not yet presented for payment:</strong> Entered immediately in the Cash Book (credit side), but debited by the bank only when presented.</li>
+      <li><strong>Cheques paid into the bank but not yet collected:</strong> Debited immediately in the Cash Book, but credited by the bank only after realization.</li>
+      <li><strong>Direct debits made by the bank:</strong> Bank charges, interest on overdraft, or unpaid/dishonoured cheques debited by the bank without immediate entry in the Cash Book.</li>
+      <li><strong>Amounts directly deposited in the bank account:</strong> Deposited directly by customers, credited in the Passbook but not recorded in the Cash Book until the statement is received.</li>
+      <li><strong>Interest and dividends collected by the bank:</strong> Credited in the Passbook but not recorded in the Cash Book.</li>
+      <li><strong>Direct payments made by the bank:</strong> Standing instructions (e.g., insurance premium, rent) debited by the bank but not recorded in the Cash Book.</li>
+      <li><strong>Cheques deposited/bills discounted dishonoured:</strong> Debited by the bank upon dishonour, but no immediate entry in the Cash Book.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>5.1.2 Differences Caused by Errors</h3></summary>
+    <p>Errors can be committed by either the business firm or the bank:</p>
+    <ul>
+      <li><strong>Errors by the firm:</strong> Omission or wrong recording of cheques issued/deposited, or wrong totaling in the Cash Book.</li>
+      <li><strong>Errors by the bank:</strong> Omission or wrong recording of transactions, or wrong posting in the Passbook.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>5.2 Proforma of Bank Reconciliation Statement</h3></summary>
+    <p>A Bank Reconciliation Statement can be prepared using two main formats:</p>
+    
+    <h4>Format 1: Add/Less Presentation</h4>
+    <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Amount (Rs.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Balance as per Cash Book</strong></td>
+          <td>.......</td>
+        </tr>
+        <tr>
+          <td><em>Add:</em> Cheques issued but not presented</td>
+          <td>.......</td>
+        </tr>
+        <tr>
+          <td><em>Add:</em> Interest credited by the bank</td>
+          <td>.......</td>
+        </tr>
+        <tr>
+          <td><em>Less:</em> Cheques deposited but not credited by the bank</td>
+          <td>(.......)</td>
+        </tr>
+        <tr>
+          <td><em>Less:</em> Bank charges not recorded in the cash book</td>
+          <td>(.......)</td>
+        </tr>
+        <tr>
+          <td><strong>Balance as per Passbook</strong></td>
+          <td><strong>xxxx</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Format 2: Plus (+) and Minus (-) Columns</h4>
+    <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; margin-top: 15px;">
+      <thead>
+        <tr>
+          <th>Particulars</th>
+          <th>Amount (+) (Rs.)</th>
+          <th>Amount (-) (Rs.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Balance as per Cash Book</td>
+          <td>......</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cheques issued but not presented</td>
+          <td>......</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Interest credited by the bank</td>
+          <td>......</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cheque deposited but not credited by the bank</td>
+          <td></td>
+          <td>......</td>
+        </tr>
+        <tr>
+          <td>Bank charges not recorded in the cash book</td>
+          <td></td>
+          <td>......</td>
+        </tr>
+        <tr>
+          <td>Balance as per Passbook</td>
+          <td></td>
+          <td><strong>xxxx</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>5.2.1 Preparation of Statement under Different Situations</h3></summary>
+    <p>There are four distinct starting points for preparing a Bank Reconciliation Statement:</p>
+    <ol>
+      <li><strong>Debit balance (favourable) as per Cash Book:</strong> Starting with a positive cash book balance to find the passbook balance.</li>
+      <li><strong>Credit balance (favourable) as per Passbook:</strong> Starting with a positive passbook balance to find the cash book balance.</li>
+      <li><strong>Credit balance (unfavourable/overdraft) as per Cash Book:</strong> Starting with a negative cash book balance.</li>
+      <li><strong>Debit balance (unfavourable/overdraft) as per Passbook:</strong> Starting with a negative passbook balance.</li>
+    </ol>
+    <div class="example-block">
+      <p><strong>Note on Overdrafts:</strong> An <span class="keyword">Overdraft</span> represents a negative bank balance where the business has borrowed funds from the bank. It is treated as a negative figure in the reconciliation statement.</p>
+    </div>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 111 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "11-chapter-04-recording-of-transactions-ii.html";
+      } else {
+        window.location.href = "11-chapter-06-trial-balance-and-rectification-of.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
