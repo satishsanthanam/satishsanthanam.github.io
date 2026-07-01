@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Creative Writing And Translation: Class 12 — Chapter 3: अनुवाद की प्रक्रिया (The Process of Translation)</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Creative Writing And Translation: Class 12 — Chapter 3: अनुवाद की प्रक्रिया (The Process of Translation)</h1>
+    <details class="topic-box">
+  <summary class="topic-title">अनुवाद का परिचय (An Introduction)</summary>
+  <p>अनुवाद मूल रूप से एक भाषा की सामग्री को दूसरी भाषा में स्थानांतरित करने की प्रक्रिया है। यह केवल शब्दों का प्रतिस्थापन नहीं है, बल्कि मूल अर्थ, संस्कृति और संदर्भ को बनाए रखते हुए लक्ष्य भाषा में उसका पुनर्सृजन है।</p>
+  
+  <details class="sub-topic">
+    <summary><h3>मूल शब्दावली और अवधारणाएँ</h3></summary>
+    <ul>
+      <li><span class="keyword">स्रोत पाठ (Source Text - ST)</span>: वह मूल पाठ जिसका अनुवाद किया जाना है।</li>
+      <li><span class="keyword">लक्ष्य पाठ (Target Text - TT)</span>: अनुवाद के बाद तैयार हुआ नया पाठ।</li>
+      <li><span class="keyword">स्रोत भाषा (Source Language - SL)</span>: वह भाषा जिसमें मूल पाठ लिखा गया है।</li>
+      <li><span class="keyword">लक्ष्य भाषा (Target Language - TL)</span>: वह भाषा जिसमें अनुवाद किया जा रहा है।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>अनुवाद के बुनियादी प्रकार (Basic Types of Translation)</h3></summary>
+    <p>भाषाविदों के अनुसार अनुवाद को तीन मुख्य श्रेणियों में विभाजित किया जा सकता है:</p>
+    <ol>
+      <li><span class="keyword">अंतःभाषिक अनुवाद (Intra-lingual Translation)</span>: एक ही भाषा के भीतर अनुवाद। इसमें भाषा के ऐतिहासिक बदलावों या क्षेत्रीय रूपों को समकालीन रूप में बदला जाता है (जैसे शेक्सपियर की मध्यकालीन अंग्रेजी को आधुनिक अंग्रेजी में बदलना)।</li>
+      <li><span class="keyword">अंतर-भाषिक अनुवाद (Inter-lingual Translation)</span>: एक भाषा के पाठ को दूसरी भाषा में अनुवादित करना (जैसे हिंदी कहानी का अंग्रेजी में अनुवाद)।</li>
+      <li><span class="keyword">अंतर-प्रतीकात्मक अनुवाद (Inter-semiotic Translation)</span>: एक प्रतीकात्मक प्रणाली (जैसे लिखित पाठ) से दूसरी प्रणाली (जैसे मूक अभिनय, नृत्य, फिल्म, चित्र या ग्राफ) में रूपांतरण।</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>बहुभाषिक राष्ट्र में अनुवाद</h3></summary>
+    <p>भारत जैसे बहुभाषी देश में अनुवाद एक स्वाभाविक और दैनिक गतिविधि है। हम अक्सर बिना सचेत प्रयास के एक भाषा से दूसरी भाषा में स्विच करते हैं। मुद्रा नोट (रुपये) पर विभिन्न भाषाओं और लिपियों का होना इसका सबसे बड़ा व्यावहारिक उदाहरण है, जहाँ सभी भाषाएँ एक ही जानकारी संप्रेषित करती हैं।</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">अनुवाद की प्रक्रिया और दृष्टिकोण (Approaches to Translation)</summary>
+  <p>अनुवाद को लेकर विद्वानों और अनुवादकों के बीच दो मुख्य दृष्टिकोण पाए जाते हैं:</p>
+  
+  <details class="sub-topic">
+    <summary><h3>दो मुख्य दृष्टिकोण</h3></summary>
+    <ul>
+      <li><span class="keyword">पाठपरक दृष्टि (Product Approach)</span>: इस दृष्टिकोण में अनूदित रचना को एक अंतिम उत्पाद के रूप में देखा जाता है। इसमें मूल पाठ के प्रति पूर्ण निष्ठा, शाब्दिक निकटता और संरचनात्मक समानता पर बल दिया जाता है। यह दृष्टिकोण अनुवाद में किसी भी प्रकार के बदलाव को स्वीकार नहीं करता।</li>
+      <li><span class="keyword">प्रक्रियापरक दृष्टि (Process Approach)</span>: यह दृष्टिकोण अनुवाद की सृजनात्मकता को केंद्र में रखता है। यह अनुवादक को लक्ष्य भाषा की प्रकृति और सांस्कृतिक संदर्भ के अनुसार मूल पाठ में आवश्यक फेरबदल और पुनर्रचना करने की स्वतंत्रता देता है।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>यूजीन नाइडा (Eugene Nida) का अनुवाद मॉडल</h3></summary>
+    <p>प्रसिद्ध अनुवाद सिद्धांतकार यूजीन नाइडा के अनुसार, अनुवाद की प्रक्रिया तीन मुख्य सोपानों से होकर गुजरती है:</p>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>सोपान (Stage)</th>
+          <th>प्रक्रिया का विवरण (Description)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. विश्लेषण (Analysis)</strong></td>
+          <td>स्रोत भाषा के पाठ को गहराई से पढ़ना, उसके व्याकरण, अर्थ और सामाजिक-सांस्कृतिक संदर्भ को डिकोड करना।</td>
+        </tr>
+        <tr>
+          <td><strong>2. अंतरण (Transference)</strong></td>
+          <td>डिकोड किए गए संदेश और अर्थ को अपने मस्तिष्क में लक्ष्य भाषा के अनुकूल स्थानांतरित करना।</td>
+        </tr>
+        <tr>
+          <td><strong>3. पुनर्गठन (Restructuring)</strong></td>
+          <td>स्थानांतरित अर्थ को लक्ष्य भाषा के व्याकरणिक नियमों, मुहावरों और शैली के अनुसार नया रूप (रिकोड) देना।</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>अनुवादक की तीन भूमिकाएँ</h3></summary>
+    <p>एक कुशल अनुवादक को अनुवाद प्रक्रिया के दौरान एक साथ तीन भूमिकाओं का निर्वाह करना पड़ता है:</p>
+    <ul>
+      <li><strong>मूल पाठ के पाठक की भूमिका:</strong> पाठ को पूरी तरह समझना और आत्मसात करना।</li>
+      <li><strong>द्विभाषिक मध्यस्थ की भूमिका:</strong> संदेश को एक भाषा से दूसरी भाषा में स्थानांतरित करना।</li>
+      <li><strong>अनूदित पाठ के रचयिता की भूमिका:</strong> लक्ष्य भाषा में एक नई और स्वाभाविक रचना का निर्माण करना।</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">विश्लेषण (Analysis) और गद्य अनुवाद</summary>
+  <p>गद्य के अनुवाद में केवल शब्दों के अर्थ का अनुवाद पर्याप्त नहीं होता, बल्कि वाक्य संरचना, तार्किक प्रवाह और लेखक के मूल मंतव्य का विश्लेषण आवश्यक है।</p>
+
+  <details class="sub-topic">
+    <summary><h3>तथ्यात्मक बनाम सृजनात्मक अनुवाद</h3></summary>
+    <ul>
+      <li><span class="keyword">तथ्यात्मक अनुवाद</span>: समाचारों, वैज्ञानिक लेखों, विज्ञापनों और अकादमिक पाठों का अनुवाद। इसमें सूचना की सटीकता और स्पष्टता सर्वोपरि होती है। यहाँ तथ्यात्मक पद्धति अपनाई जाती है।</li>
+      <li><span class="keyword">सृजनात्मक अनुवाद</span>: कविता, कहानी और नाटक का अनुवाद। इसमें केवल भाषा ज्ञान पर्याप्त नहीं है, बल्कि लक्ष्य भाषा के मुहावरों, लहजे, व्यंग्य और संवेदना को पकड़ना आवश्यक है।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>ई.एच. कार (E.H. Carr) के पाठ का विश्लेषण</h3></summary>
+    <p>पाठ्यपुस्तक में ई.एच. कार की पुस्तक 'इतिहास क्या है?' के एक अंश के दो अलग-अलग हिंदी अनुवादों की तुलना करके विश्लेषण किया गया है:</p>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>मूल अंग्रेजी शब्द/वाक्यांश</th>
+          <th>अनुवाद विकल्प 1</th>
+          <th>अनुवाद विकल्प 2</th>
+          <th>आलोचनात्मक विश्लेषण</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="keyword">Suitably impressed</span></td>
+          <td>खासा प्रभावित</td>
+          <td>उचित ही प्रभावित</td>
+          <td>दोनों ही अनुवाद अर्थ को स्पष्ट करने में सक्षम हैं।</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Move me less</span></td>
+          <td>मुझे कम प्रभावित करते हैं</td>
+          <td>मुझे कम ही विचलित करते हैं</td>
+          <td>दूसरा विकल्प अधिक उपयुक्त है क्योंकि यह लेखक की परिपक्वता और समझ के बदलाव को बेहतर दर्शाता है।</td>
+        </tr>
+        <tr>
+          <td><span class="keyword">Eccentricity</span></td>
+          <td>सनक</td>
+          <td>वहम</td>
+          <td>अंग्रेजी भाषा के संदर्भ में 'वहम' शब्द का प्रयोग अधिक संतुलित है, जबकि 'सनक' अत्यधिक कठोर और नकारात्मक ध्वनि देता है।</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">भाषांतरण (Transference) और काव्यानुवाद</summary>
+  <p>कविता का अनुवाद सबसे कठिन माना जाता है क्योंकि इसमें लय, ताल, बिंब और ध्वनि-प्रभावों को दूसरी भाषा में स्थानांतरित करना होता है।</p>
+
+  <details class="sub-topic">
+    <summary><h3>जापानी हाईकू (Haiku) का उदाहरण</h3></summary>
+    <p>जापानी कवि <span class="keyword">बाशो (Basho)</span> के प्रसिद्ध हाईकू (17 वर्णों की तीन पंक्तियों वाली कविता: 5-7-5 संरचना) के विभिन्न अनुवादों का विश्लेषण:</p>
+    <blockquote class="example-block">
+      <p><em>मूल जापानी: फुरुइके या / कावाजु तोबी-कोमु / मिजु नो ओता</em></p>
+      <hr>
+      <p><strong>शाब्दिक अनुवाद:</strong> एक पुराना तालाब उसमें / मेंढक कूदा / मेंढक के कूदने की पानी से निकली आवाज़।</p>
+      <p><strong>काव्यानुवाद (विकल्प 1):</strong> ताल पुराना / कूदा दादुर / गुड़ुप्</p>
+      <p><strong>काव्यानुवाद (विकल्प 2 - छंदबद्ध):</strong> ताल पुराना (5) / थिरक उठा, जब (7) / कूदा दादुर (5)</p>
+    </blockquote>
+    <p><strong>विश्लेषण:</strong> विकल्प 1 में प्रयुक्त 'गुड़ुप्' ध्वनि निर्जीव वस्तु के गिरने जैसी लगती है। मेंढक के कूदने से 'छपाक' या 'छप' की सजीव ध्वनि उत्पन्न होती है। रवींद्रनाथ टैगोर ने इसका अनुवाद 'जलेर ध्वनि' (पानी की आवाज) के रूप में किया, जो पाठक की कल्पना पर छोड़ देता है। विकल्प 2 हाईकू के मूल 5-7-5 छंद-विधान की रक्षा करता है।</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>सांस्कृतिक और मुहावरेदार त्रुटियों के उदाहरण</h3></summary>
+    <p>अनुवाद में सांस्कृतिक और भाषाई अज्ञानता के कारण होने वाली गंभीर भूलों के दो ऐतिहासिक उदाहरण:</p>
+    <ol>
+      <li>
+        <strong>नर्तकियों के पैर भारी होना:</strong>
+        <p>अफ्रीकी कवि लियोपोल्ड सेंगोर की पंक्ति <span class="keyword">"Now the feet of the dancers grow heavy"</span> का हिंदी अनुवाद किया गया: <em>"अब नर्तकियों के पैर भारी हो उठे हैं"</em>।</p>
+        <p><strong>त्रुटि विश्लेषण:</strong> हिंदी मुहावरे में 'पैर भारी होना' का अर्थ 'गर्भवती होना' है। यहाँ मूल अर्थ था कि नाचते-नाचते नर्तक थक गए हैं। साथ ही, लोक नृत्यों में पुरुष और महिला दोनों नाचते हैं, इसलिए केवल 'नर्तकियों' लिखना भी सांस्कृतिक रूप से संकीर्ण है।</p>
+      </li>
+      <li>
+        <strong>रेल-भंजक (Rail-splitters):</strong>
+        <p>पाब्लो नेरुदा की पंक्ति <span class="keyword">"Let the rail-splitters awake"</span> का अनुवाद किया गया: <em>"रेल-भंजकों को जगने दो"</em>।</p>
+        <p><strong>त्रुटि विश्लेषण:</strong> अमेरिका/चिली के संदर्भ में 'rail-splitters' का अर्थ लकड़ी के लट्ठों को चीरने वाले मजदूर (लकड़हारे) हैं। हिंदी अनुवादक ने इसे रेलवे की पटरियां उखाड़ने वाले 'रेल-भंजक' (आंदोलनकारियों) से जोड़ दिया, जो पूरी तरह गलत है।</p>
+      </li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">पुनर्रचना (Restructuring) और व्यावहारिक उदाहरण</summary>
+  <p>पुनर्रचना के दौरान अनुवादक को लक्ष्य भाषा की प्रकृति के अनुसार मूल पाठ में कुछ जोड़ना या घटाना पड़ता है ताकि अनूदित पाठ मौलिक रचना जैसा प्रतीत हो।</p>
+
+  <details class="sub-topic">
+    <summary><h3>प्रेमचंद की 'ईदगाह' का अंग्रेजी अनुवाद विश्लेषण</h3></summary>
+    <p>नंदिनी नोपानी और पी. लाल द्वारा किए गए अनुवाद का सूक्ष्म विश्लेषण:</p>
+    <ul>
+      <li><span class="keyword">चूल्हा</span> का अनुवाद 'stove' के बजाय <span class="keyword">'hearth'</span> किया गया, जो ग्रामीण परिवेश के चूल्हे के सबसे निकट है।</li>
+      <li><span class="keyword">चूल्हे से आग</span> का अनुवाद 'fire' और बाद में केवल 'आग' के लिए <span class="keyword">'hot coals'</span> का प्रयोग किया गया।</li>
+      <li><span class="keyword">रोटी</span> का अनुवाद 'Indian bread' करने के बजाय मूल सांस्कृतिक पहचान बनाए रखने के लिए अंग्रेजी लिपि में <span class="keyword">'roti'</span> या <span class="keyword">'chapatti'</span> ही रहने दिया गया।</li>
+      <li><span class="keyword">तवा</span> को 'pan' या 'girdle' लिखने के बजाय <span class="keyword">'tawa'</span> लिखा गया क्योंकि तवे का आकार और उपयोग पश्चिमी पैन से भिन्न होता है।</li>
+      <li><span class="keyword">शर्बत</span> को 'juice' न लिखकर <span class="keyword">'sherbet'</span> ही रखा गया ताकि कहानी का स्थानीय रंग बना रहे।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>सृजनात्मक पुनर्रचना: सेसर वायेखो की कविता</h3></summary>
+    <p>पेरू के कवि सेसर वायेखो की स्पेनिश कविता के अंग्रेजी अनुवाद में एक वाक्यांश था: <span class="keyword">"and organ into thought eights"</span>।</p>
+    <p><strong>अनुवाद की चुनौती:</strong> 'thought eights' का शाब्दिक अनुवाद असंभव था। अनुवादक ने हिंदी की काव्य-परंपरा को खंगाला और सूरदास की प्रसिद्ध पंक्ति <em>"आठ पहर बंसीवट भटक्यों, साँझ पहर घर आयो"</em> से प्रेरणा ली। यहाँ 'आठ पहर' का अर्थ चौबीसों घंटे की निरंतरता से है।</p>
+    <p><strong>अंतिम सफल अनुवाद:</strong> <em>"और अवयवों को आठों पहर की चिंताओं में..."</em></p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">अनुवाद के उपकरण और व्यावहारिक नियम</summary>
+  <p>एक सफल अनुवादक बनने के लिए केवल दो भाषाओं का ज्ञान होना पर्याप्त नहीं है, बल्कि विशिष्ट उपकरणों और भाषाई नियमों की समझ आवश्यक है।</p>
+
+  <details class="sub-topic">
+    <summary><h3>अनुवादक के आवश्यक उपकरण (Tools for Translation)</h3></summary>
+    <ul>
+      <li>दोनों भाषाओं के अच्छे एकभाषी शब्दकोश (Monolingual Dictionaries)</li>
+      <li>दोनों भाषाओं के थिसॉरस (Thesaurus) और व्याकरण पुस्तकें</li>
+      <li>एक प्रामाणिक द्विभाषी शब्दकोश (Bilingual Dictionary)</li>
+      <li>विश्वकोश (Encyclopaedias) तक पहुँच</li>
+      <li>कंप्यूटर सहायक अनुवाद उपकरण (Computer Assisted Translation - CAT)</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>भाषाई संरचना का अंतर (SVO बनाम SOV)</h3></summary>
+    <p>अंग्रेजी और हिंदी की वाक्य संरचना में बुनियादी अंतर होता है, जिसका ध्यान रखना अनिवार्य है:</p>
+    <ul>
+      <li><strong>अंग्रेजी संरचना:</strong> <span class="keyword">SVO</span> (Subject + Verb + Object) - जैसे: <em>"You eat your food."</em></li>
+      <li><strong>हिंदी संरचना:</strong> <span class="keyword">SOV</span> (Subject + Object + Verb) - जैसे: <em>"आप अपना खाना खाते हैं।"</em></li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>सांस्कृतिक और संदर्भगत शब्द</h3></summary>
+    <ul>
+      <li><strong>रिश्ते-नाते (Kinship Terms):</strong> अंग्रेजी में 'uncle' शब्द का प्रयोग चाचा, मामा, फूफा, मौसा सभी के लिए होता है, जबकि हिंदी में इन सभी के लिए अलग-अलग शब्द और सामाजिक पदानुक्रम हैं।</li>
+      <li><strong>सांस्कृतिक प्रतीक:</strong> 'कुमकुम', 'सिंदूर', 'धोती', 'कुर्ता' जैसे शब्दों का अंग्रेजी में कोई सीधा विकल्प नहीं है, इन्हें सीधे उधार (Loan Words) लिया जाता है।</li>
+      <li><strong>उधार लिए गए शब्द (Loan Words):</strong> 'साइकिल', 'स्कूटर', 'ट्रैक्टर', 'एटम बम' जैसे शब्द अब हिंदी में पूरी तरह स्वीकार्य हैं और इनके अनुवाद की आवश्यकता नहीं होती।</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 12 curriculum modules.</p>
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-02-media-writing.html"; } else { window.location.href = "12-chapter-04-editing.html"; } }
+    let currentScale = 1.0;
+    function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+  </script>
+</body>
+</html>
