@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Sangeet: Class 11 (Book 2) — Chapter 7: स्वर-ताल लिपि पद्धतियाँ</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Sangeet: Class 11 (Book 2) — Chapter 7: स्वर-ताल लिपि पद्धतियाँ</h1>
+    <details class="topic-box">
+  <summary class="topic-title">प्रस्तावना एवं स्वरलिपि का महत्व</summary>
+  <p>संगीत के क्रियात्मक पक्ष को स्वर और ताल सहित लिखने की विधि को <span class="keyword">स्वरलिपि</span> कहा जाता है। इसका मूल उद्देश्य संगीत के क्रियात्मक पक्ष का प्रलेखन एवं संरक्षण करना है।</p>
+  <ul>
+    <li><span class="keyword">ऐतिहासिक पृष्ठभूमि</span>: प्राचीन काल तथा मध्य काल में भी स्वरलिपि पद्धतियाँ विद्यमान थीं, किंतु वर्तमान संदर्भ में वे अपूर्ण प्रतीत होती हैं।</li>
+    <li><span class="keyword">आधुनिक युग के प्रणेता</span>: वर्तमान समय में <span class="keyword">पं. विष्णु नारायण भातखण्डे</span> एवं <span class="keyword">पं. विष्णु दिगम्बर पलुस्कर</span> ने अथक प्रयास करके वैज्ञानिक व प्रामाणिक स्वरलिपि पद्धतियों का निर्माण किया।</li>
+    <li><span class="keyword">गायन-वादन की सीमा</span>: यद्यपि स्वरलिपि के माध्यम से संगीत को लिखित रूप देने का प्रयास किया गया है, तथापि संगीत की सूक्ष्म बारीकियों को केवल <span class="keyword">गुरुमुख</span> से ही सीखा जा सकता है।</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">भातखण्डे स्वरलिपि पद्धति</summary>
+  <p>उत्तर भारत में वर्तमान समय में पं. भातखण्डे द्वारा निर्मित स्वरलिपि पद्धति सर्वाधिक प्रचलित है। इसके प्रमुख नियम और चिह्न निम्नलिखित हैं:</p>
+
+  <details class="sub-topic">
+    <summary><h3>स्वर चिह्न (Note Symbols)</h3></summary>
+    <ul>
+      <li><span class="keyword">शुद्ध स्वर</span>: शुद्ध स्वरों को दर्शाने के लिए किसी भी चिह्न का प्रयोग नहीं किया जाता है (जैसे— स रे ग म प ध नि)।</li>
+      <li><span class="keyword">कोमल स्वर</span>: कोमल स्वरों को दर्शाने के लिए स्वरों के नीचे एक आड़ी रेखा (underline) खींची जाती है (जैसे— <span class="keyword">रे॒ ग॒ ध॒ नि॒</span>)।</li>
+      <li><span class="keyword">तीव्र स्वर</span>: तीव्र मध्यम को दर्शाने के लिए स्वर के ऊपर एक खड़ी रेखा खींची जाती है (जैसे— <span class="keyword">म॑</span>)।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>सप्तक चिह्न (Octave Symbols)</h3></summary>
+    <ul>
+      <li><span class="keyword">मंद्र सप्तक</span>: स्वरों के नीचे बिंदु लगाकर दर्शाया जाता है (जैसे— <span class="keyword">स़ नि़ ध़ प़</span>)।</li>
+      <li><span class="keyword">मध्य सप्तक</span>: इसके लिए किसी भी चिह्न का प्रयोग नहीं होता (जैसे— स रे ग म)।</li>
+      <li><span class="keyword">तार सप्तक</span>: स्वरों के ऊपर बिंदु लगाकर दर्शाया जाता है (जैसे— <span class="keyword">सं रें गं</span>)।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>स्वर अलंकरण (Note Ornaments)</h3></summary>
+    <ul>
+      <li><span class="keyword">मींड</span>: जिन स्वरों के ऊपर अर्धचंद्राकार रेखा होती है, उन्हें मींड में गाया जाता है (जैसे— <span class="keyword">ग͡ स</span>)।</li>
+      <li><span class="keyword">कण स्वर</span>: मूल स्वर के ऊपर बाईं या दाईं ओर छोटा स्वर लिखा जाता है (जैसे— <span class="keyword"><sup>नि</sup>स</span>)।</li>
+      <li><span class="keyword">खटका</span>: कोष्ठक में दिए गए स्वर को खटके से गाते हैं, जिसमें आगे व पीछे के स्वर शामिल होते हैं (जैसे— <span class="keyword">(स)</span> का अर्थ हुआ <span class="keyword">रेसानि़सा</span> या <span class="keyword">नि़ स रे स</span>)।</li>
+      <li><span class="keyword">उच्चारण काल बढ़ाना</span>: स्वरों का उच्चारण काल बढ़ाने के लिए आड़ी रेखाओं का प्रयोग होता है (जैसे— स – –)। शब्दों का उच्चारण बढ़ाने के लिए <span class="keyword">अवग्रह (ऽ)</span> का प्रयोग होता है (जैसे— रा ऽ म)।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>स्वर मान (Note Duration)</h3></summary>
+    <ul>
+      <li><span class="keyword">एक मात्रा</span>: सामान्य रूप से लिखे स्वर एक मात्रा के होते हैं (जैसे— ग रे स रे)।</li>
+      <li><span class="keyword">अर्ध मात्रा (आधी मात्रा)</span>: दो स्वरों के नीचे अर्धचंद्र लगाकर दर्शाया जाता है (जैसे— <span class="keyword">ग़रे़</span>)।</li>
+      <li><span class="keyword">चौथाई मात्रा (1/4 मात्रा)</span>: चार स्वरों को एक साथ अर्धचंद्र के भीतर लिखा जाता है (जैसे— <span class="keyword">ग़रे़स़रे़</span>)।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>ताल चिह्न (Tala Symbols)</h3></summary>
+    <ul>
+      <li><span class="keyword">सम (×)</span>: ताल की पहली मात्रा (सम) को दर्शाने के लिए गुणा (×) का चिह्न लगाया जाता है।</li>
+      <li><span class="keyword">खाली (0)</span>: खाली के स्थान को दर्शाने के लिए शून्य (0) का प्रयोग होता है।</li>
+      <li><span class="keyword">ताली (संख्या)</span>: अन्य तालियों के स्थान पर उनकी संख्या (2, 3, 4 आदि) लिखी जाती है।</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">विष्णु दिगम्बर पलुस्कर स्वरलिपि पद्धति</summary>
+  <p>पं. विष्णु दिगम्बर पलुस्कर द्वारा निर्मित स्वरलिपि पद्धति अधिक सूक्ष्म और विस्तृत है। इसके प्रमुख नियम निम्नलिखित हैं:</p>
+
+  <details class="sub-topic">
+    <summary><h3>स्वर एवं सप्तक चिह्न</h3></summary>
+    <ul>
+      <li><span class="keyword">शुद्ध स्वर</span>: शुद्ध स्वरों के लिए कोई चिह्न नहीं होता (जैसे— स रे ग म)।</li>
+      <li><span class="keyword">कोमल स्वर</span>: स्वरों के नीचे हलन्त लगाकर दर्शाया जाता है (जैसे— <span class="keyword">ग् म् ध्</span>)।</li>
+      <li><span class="keyword">तीव्र स्वर</span>: तीव्र मध्यम को उल्टे हलन्त चिह्न से लिखते हैं (जैसे— <span class="keyword">मृ</span>)।</li>
+      <li><span class="keyword">मंद्र सप्तक</span>: स्वरों के ऊपर बिंदु लगाकर दर्शाया जाता है (जैसे— <span class="keyword">नीं धं पं</span>)।</li>
+      <li><span class="keyword">तार सप्तक</span>: स्वरों के ऊपर खड़ी लकीर लगाकर दर्शाया जाता है (जैसे— <span class="keyword">स॑ ग॑ रे॑</span>)।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>स्वर मान एवं मात्रा चिह्न</h3></summary>
+    <ul>
+      <li><span class="keyword">एक मात्रा (लघु)</span>: स्वर के नीचे आड़ी रेखा लगाई जाती है (जैसे— <span class="keyword">स॒ रे॒</span>)।</li>
+      <li><span class="keyword">आधी मात्रा (द्रुत)</span>: स्वर के नीचे छोटा शून्य/वृत्त लगाया जाता है (जैसे— <span class="keyword">स̥ रे̥</span>)।</li>
+      <li><span class="keyword">1/4 मात्रा (अणुद्रुत)</span>: स्वर के नीचे अर्धचंद्र लगाया जाता है।</li>
+      <li><span class="keyword">1/8 मात्रा (अणु-अणुद्रुत)</span>: स्वर के नीचे दोहरा अर्धचंद्र लगाया जाता है।</li>
+      <li><span class="keyword">दो मात्रा</span>: इसके लिए अवग्रह चिह्न <span class="keyword">ऽ</span> का प्रयोग होता है।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>ताल एवं विभाग चिह्न</h3></summary>
+    <ul>
+      <li><span class="keyword">सम</span>: सम के लिए <span class="keyword">1</span> अंक लिखा जाता है।</li>
+      <li><span class="keyword">खाली</span>: खाली के लिए धन <span class="keyword">(+)</span> चिह्न का प्रयोग होता है।</li>
+      <li><span class="keyword">विभाग</span>: इस पद्धति में ताल को विभागों में न बांटकर प्रत्येक आवर्तन के बाद एक विराम <span class="keyword">(।)</span>, स्थायी के अंत में दो विराम <span class="keyword">(।।)</span> और पूरे गीत के अंत में तीन विराम <span class="keyword">(।।।)</span> लगाए जाते हैं।</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">स्वर-ताल लिपि तुलनात्मक तालिका</summary>
+  <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>विशेषता / चिह्न</th>
+        <th>भातखण्डे पद्धति</th>
+        <th>विष्णु दिगम्बर पद्धति</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>कोमल स्वर</strong></td>
+        <td>स्वर के नीचे आड़ी रेखा (जैसे— ध॒)</td>
+        <td>स्वर के नीचे हलन्त (जैसे— ध्)</td>
+      </tr>
+      <tr>
+        <td><strong>तीव्र स्वर</strong></td>
+        <td>स्वर के ऊपर खड़ी रेखा (जैसे— म॑)</td>
+        <td>स्वर के नीचे उल्टा हलन्त (जैसे— मृ)</td>
+      </tr>
+      <tr>
+        <td><strong>मंद्र सप्तक</strong></td>
+        <td>स्वर के नीचे बिंदु (जैसे— प़)</td>
+        <td>स्वर के ऊपर बिंदु (जैसे— पं)</td>
+      </tr>
+      <tr>
+        <td><strong>तार सप्तक</strong></td>
+        <td>स्वर के ऊपर बिंदु (जैसे— सं)</td>
+        <td>स्वर के ऊपर खड़ी लकीर (जैसे— स॑)</td>
+      </tr>
+      <tr>
+        <td><strong>सम</strong></td>
+        <td>× (गुणा चिह्न)</td>
+        <td>1 (अंक)</td>
+      </tr>
+      <tr>
+        <td><strong>खाली</strong></td>
+        <td>० (शून्य)</td>
+        <td>+ (धन चिह्न)</td>
+      </tr>
+      <tr>
+        <td><strong>उच्चारण बढ़ाना</strong></td>
+        <td>प - - या रा ऽ म</td>
+        <td>प ऽ ऽ या रा • • • म</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">ताल लिपि उदाहरण: एकताल (Ektaal)</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>भातखण्डे ताल-लिपि पद्धति में एकताल</h3></summary>
+    <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; text-align: center;">
+      <tr>
+        <th>मात्रा</th>
+        <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+      </tr>
+      <tr>
+        <th>बोल</th>
+        <td>धिं</td><td>धिं</td><td>धागे</td><td>तिरकिट</td><td>तू</td><td>ना</td><td>क</td><td>त्ता</td><td>धागे</td><td>तिरकिट</td><td>धी</td><td>ना</td>
+      </tr>
+      <tr>
+        <th>चिह्न</th>
+        <td>×</td><td>०</td><td>2</td><td>०</td><td>3</td><td>4</td>
+      </tr>
+    </table>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>विष्णु दिगम्बर ताल-लिपि पद्धति में एकताल</h3></summary>
+    <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; text-align: center;">
+      <tr>
+        <th>बोल</th>
+        <td>धिं</td><td>धिं</td><td>धागे</td><td>तिरकिट</td><td>तू</td><td>ना</td><td>क</td><td>त्ता</td><td>धागे</td><td>तिरकिट</td><td>धी</td><td>ना</td>
+      </tr>
+      <tr>
+        <th>चिह्न</th>
+        <td>9</td><td>+</td><td>5</td><td>+</td><td>9</td><td>11</td>
+      </tr>
+    </table>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">महान संगीतज्ञों का जीवन परिचय</summary>
+
+  <details class="sub-topic">
+    <summary><h3>पंडित विष्णु नारायण भातखण्डे (1860 – 1936)</h3></summary>
+    <ul>
+      <li><span class="keyword">जन्म</span>: 10 अगस्त 1860 को वालकेश्वर, मुंबई में हुआ।</li>
+      <li><span class="keyword">शिक्षा</span>: गायन, बाँसरी और सितार वादन सीखा। बी.ए. तथा एल.एल.बी. की परीक्षा उत्तीर्ण कर कराची में वकालत प्रारंभ की।</li>
+      <li><span class="keyword">योगदान</span>: संपूर्ण भारत का भ्रमण कर प्राचीन संगीत ग्रंथों की खोज की और संगीतज्ञों से मिलकर रागों का संकलन किया। उन्होंने अत्यंत सरल और सुबोध <span class="keyword">भातखण्डे स्वरलिपि पद्धति</span> का निर्माण किया।</li>
+      <li><span class="keyword">राग वर्गीकरण</span>: उन्होंने वैज्ञानिक ढंग से समस्त रागों को <span class="keyword">10 थाटों</span> में विभाजित किया (बिलावल, कल्याण, खमाज, भैरव, भैरवी, काफ़ी, आसावरी, तोड़ी, पूर्वी और मारवा)।</li>
+      <li><span class="keyword">ग्रंथ रचना</span>: 'हिन्दुस्तानी संगीत पद्धति', 'भातखण्डे संगीत शास्त्र' (4 भाग), 'अभिनव राग मंजरी', 'श्रीमल्लक्ष्य संगीतम्' तथा 'स्वरमालिका'।</li>
+      <li><span class="keyword">संस्थानों की स्थापना</span>: बड़ौदा, ग्वालियर (माधव संगीत विद्यालय, 1918) तथा लखनऊ (मैरिस कॉलेज ऑफ़ हिन्दुस्तानी म्यूज़िक, 1926 - वर्तमान में भातखण्डे संगीत संस्थान समविश्वविद्यालय) में संगीत विद्यालयों की स्थापना कराई।</li>
+      <li><span class="keyword">मृत्यु</span>: सन् 1936 में मुंबई में उनका देहावसान हुआ।</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>पंडित विष्णु दिगम्बर पलुस्कर (1872 – 1931)</h3></summary>
+    <ul>
+      <li><span class="keyword">जन्म</span>: 15 अगस्त 1872 को बेलगाँव (करून्दवाड़) में हुआ।</li>
+      <li><span class="keyword">पारिवारिक पृष्ठभूमि</span>: पिता दिगम्बर गोपाल एक अच्छे कीर्तनकार थे।</li>
+      <li><span class="keyword">दुर्घटना एवं संगीत शिक्षा</span>: बचपन में दीपावली पर आतिशबाजी की दुर्घटना में आँखों की ज्योति खो दी। इसके बाद मिरज के प्रसिद्ध गायक <span class="keyword">पं. बालकृष्ण बुआ इचलकरंजीकर</span> से संगीत की शिक्षा प्राप्त की।</li>
+      <li><span class="keyword">मिशन</span>: शास्त्रीय संगीत को जन-जन तक पहुँचाना और संगीतकारों को समाज में सम्मानजनक स्थान दिलाना। उन्होंने गीतों के शब्दों को बदलकर भक्ति रस के शब्दों में ढाला।</li>
+      <li><span class="keyword">गांधर्व महाविद्यालय</span>: 5 मई 1901 को लाहौर में प्रथम <span class="keyword">गांधर्व महाविद्यालय</span> की स्थापना की। इसके बाद 1908 में मुंबई में इसकी शाखा स्थापित की।</li>
+      <li><span class="keyword">ग्रंथ एवं पत्रिका</span>: लगभग 50 पुस्तकें लिखीं (जैसे— संगीत बाल प्रकाश, बालबोध, राग प्रवेश, भजनामृत लहरी आदि) तथा 'संगीतामृत प्रवाह' नामक पत्रिका निकाली।</li>
+      <li><span class="keyword">प्रमुख शिष्य</span>: पं. विनायक राव पटवर्धन, स्व. वी. ए. कशालकर, स्व. पं. ओंकारनाथ ठाकुर, बी. आर. देवधर, पं. शंकर व्यास और पं. नारायण राव व्यास।</li>
+      <li><span class="keyword">मृत्यु</span>: 21 अगस्त 1931 को मिरज में उनका निधन हुआ।</li>
+    </ul>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 11 curriculum modules.</p>
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-2-chapter-06-raga-introduction-and-bandishes.html"; } else { window.location.href = "11-2-chapter-08-instrumental-classification-in-ind.html"; } }
+    let currentScale = 1.0;
+    function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+  </script>
+</body>
+</html>
