@@ -74,7 +74,7 @@
 
     <h1>Fine Arts: Class 11 — Chapter 5: Later Mural Traditions</h1>
 
-    <details class="topic-box"><summary class="topic-title">1. Introduction to Post-Ajanta Lineages</summary>
+    <details class="topic-box" open><summary class="topic-title">1. Introduction to Post-Ajanta Lineages</summary>
       <p>Even after the golden era of Ajanta, the custom of mural decoration remained a powerful medium of creative expression across the Indian subcontinent. Dynastic workshops continued to advance rock-cut and structural architecture where sculpting and painting were executed simultaneously. Notably, historical stone and bronze sculptures from this era were regularly plastered and brilliantly painted, though few complete sites survived environmental decay.</p>
     </details>
 
@@ -276,7 +276,7 @@
   
   <script>
     function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
-    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-04-post-mauryan-art.html"; } else { window.location.href = "11-chapter-06-temple-architecture-and-sculpture.html"; } }
+    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-04-post-mauryan-trends-in-indian-art.html"; } else { window.location.href = "11-chapter-06-temple-architecture-and-sculpture.html"; } }
     let currentScale = 1.0;
     function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
