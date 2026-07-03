@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Biotechnology: Class 12 — Chapter 10: Bioprocessing and Biomanufacturing</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Biotechnology: Class 12 — Chapter 10: Bioprocessing and Biomanufacturing</h1>
+    <details class="topic-box">
+  <summary class="topic-title">10.1 Historical Perspective & Introduction</summary>
+  <p>Bioprocessing involves the integration of biological systems (living organisms, cells, or molecular components like enzymes and organelles) with chemical engineering principles to manufacture valuable products at an industrial scale.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Metabolite Classification</h3></summary>
+    <ul>
+      <li><span class="keyword">Primary Metabolites</span>: Compounds directly produced during primary metabolic pathways essential for basic cellular functions, growth, and development (e.g., ethanol, amino acids).</li>
+      <li><span class="keyword">Secondary Metabolites</span>: Intermediates or indirect products synthesized via specialized secondary metabolic pathways. They are not essential for basic survival but serve ecological functions such as defense against pathogens/herbivores, abiotic stress tolerance, or acting as pollinator attractants (e.g., antibiotics, pigments, alkaloids).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>The Discovery of Penicillin</h3></summary>
+    <blockquote class="example-block">
+      <p><em>In 1928, Alexander Fleming at St. Mary's Hospital inadvertently discovered penicillin when he observed that a contaminating green mold on a Petri dish of Staphylococcus aureus inhibited bacterial growth.</em></p>
+      <hr>
+      <p><strong>Development & Scale-up:</strong> The active antibacterial agent was identified as a metabolite secreted by the mold <span class="keyword">Penicillium notatum</span>. Its therapeutic potential as an antibiotic was established by <span class="keyword">Ernest Chain</span> and <span class="keyword">Howard Florey</span>, enabling mass production to treat wounded soldiers in World War II. Fleming, Chain, and Florey were jointly awarded the Nobel Prize in 1945.</p>
+    </blockquote>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.2 Instrumentation in Bioprocessing: Bioreactor and Fermenter Design</summary>
+  <p>A <span class="keyword">bioreactor</span> (or fermenter) is an engineered vessel made of glass or stainless steel designed to support a biologically active environment for cultivating microbial, plant, or animal cells under highly controlled, aseptic conditions.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Core Operational Requirements</h3></summary>
+    <ol>
+      <li>Maintenance of a strictly <span class="keyword">sterile environment</span> to prevent foreign microbial contamination.</li>
+      <li>Adequate and continuous supply of sterile air/oxygen for cellular respiration.</li>
+      <li>Uniform mixing of nutrients, cells, and dissolved gases without inducing lethal <span class="keyword">shear stress</span>.</li>
+      <li>Precise control and maintenance of optimum temperature.</li>
+      <li>Real-time monitoring and adjustment of environmental parameters such as pH and dissolved oxygen (DO).</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Key Structural Components of a Bioreactor</h3></summary>
+    <ul>
+      <li><span class="keyword">Agitator Shaft & Impeller</span>: Driven by a motor to mix the vessel contents, ensuring a homogeneous suspension of cells and nutrients.</li>
+      <li><span class="keyword">Sparger</span>: A system (often a ring with micro-holes) located at the bottom of the vessel to introduce pressurized, sterile air or oxygen bubbles into the liquid medium.</li>
+      <li><span class="keyword">Baffles</span>: Metal strips attached to the inner wall of the vessel to break vortex formation, improving mixing efficiency and reducing power consumption.</li>
+      <li><span class="keyword">Jacket</span>: An outer annular space surrounding the vessel through which cold or hot water is circulated to regulate internal temperature.</li>
+      <li><span class="keyword">Sensitivity Probes</span>: Sensors inserted directly into the broth to continuously measure temperature and pH.</li>
+      <li><span class="keyword">Digital Controller</span>: An automated system that processes probe signals and dynamically adjusts parameters (e.g., triggering pumps to add $1\text{ M } \text{NaOH}$ or $1\text{ N } \text{HCl}$ to maintain pH, or adjusting water bath circulation).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Types of Bioreactors</h3></summary>
+    <ul>
+      <li><span class="keyword">Stirred Tank Bioreactor</span>: The most conventional design; utilizes a mechanical agitator shaft and impellers to facilitate mixing and gas dispersion.</li>
+      <li><span class="keyword">Air-lift Bioreactor</span>: Lacks mechanical moving parts; utilizes a draft tube to create air currents that circulate the fluid broth up and down in an inside-out loop.</li>
+      <li><span class="keyword">Bubble Column Bioreactor</span>: Mixing is achieved solely by the upward movement of air bubbles introduced through a high-pressure sparger jet, providing a low-shear environment ideal for shear-sensitive cells.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.3 Operational Stages of Bioprocess</summary>
+  <p>Industrial bioprocessing is divided into two main phases: <span class="keyword">Upstream Processing</span> (preparation and fermentation) and <span class="keyword">Downstream Processing</span> (recovery and purification).</p>
+
+  <details class="sub-topic">
+    <summary><h3>10.3.1 Upstream Processing</h3></summary>
+    <p>Upstream processing encompasses all steps prior to the harvest of the bioreactor, focusing on media formulation, sterilization, and inoculation.</p>
+    <ul>
+      <li><strong>Nutrient Media Formulation</strong>: Formulated based on stoichiometric requirements for cell growth and product synthesis. The general growth equation is:
+        $$\text{Carbon and energy source} + \text{Nitrogen source} + \text{other requirements} \rightarrow \text{Cell biomass} + \text{products} + \text{CO}_2 + \text{H}_2\text{O} + \text{heat}$$
+      </li>
+      <li><strong>Cellular Yield Coefficient ($Y$)</strong>: Quantifies the efficiency of substrate conversion into biomass:
+        $$Y = \frac{\text{Quantity of cell dry weight produced by the culture}}{\text{Quantity of carbon substrate utilised}}$$
+      </li>
+      <li><strong>Inoculum Development Criteria</strong>: The starter culture must be:
+        <ol>
+          <li>Healthy and in the active log/exponential growth phase.</li>
+          <li>Capable of minimizing the lag phase upon transfer.</li>
+          <li>Available in sufficient volume (typically 5-10% of the production volume).</li>
+          <li>In a suitable morphological state and completely free of contamination.</li>
+          <li>Stable in retaining its high-yielding product-forming genetic traits.</li>
+        </ol>
+      </li>
+      <li><strong>Sterilization Protocols</strong>: Essential to eliminate contaminating microbes. Includes thermal sterilization of nutrient media, in-situ steam sterilization of the bioreactor vessel, and microfiltration of incoming air.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Modes of Bioreactor Operation</h3></summary>
+    <ul>
+      <li><span class="keyword">Batch Mode</span>: A closed culture system where a fixed initial charge of nutrient medium is inoculated. Growth proceeds through distinct phases until nutrients are exhausted. Substrate concentration $[S]$ decreases, while biomass $[X]$ increases until stationary phase.</li>
+      <li><span class="keyword">Fed-batch Mode</span>: An semi-open system where growth-limiting substrates are fed intermittently or continuously to the bioreactor without removing any liquid culture. This maintains low residual substrate levels, avoiding substrate toxicity and extending the production phase.</li>
+      <li><span class="keyword">Continuous Mode</span>: An open system where fresh sterile medium is continuously pumped into the bioreactor at the same rate that spent culture broth containing cells and products is withdrawn, establishing a steady-state dynamic equilibrium.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>10.3.2 Downstream Processing</h3></summary>
+    <p>Downstream processing involves the physical and chemical unit operations required to isolate, concentrate, and purify the target product from the complex fermentation broth.</p>
+    
+    <h4>1. Solid-Liquid Separation</h4>
+    <ul>
+      <li><span class="keyword">Filtration</span>: Used for separating large particles and biomass. Conventional filtration handles particles with pore diameter $d_p > 10\text{ }\mu\text{m}$ using canvas or glass fiber. Rotary vacuum filters are widely used in industry.</li>
+      <li><span class="keyword">Centrifugation</span>: Separates cells and particles in the size range of $0.1\text{ }\mu\text{m}$ to $100\text{ }\mu\text{m}$ from the liquid phase using centrifugal force.</li>
+    </ul>
+
+    <h4>2. Cell Disruption (For Intracellular Products)</h4>
+    <ul>
+      <li><strong>Physical Methods</strong>: Mechanical milling in high-speed bead mills, high-pressure homogenization, or ultrasonic vibration (ultrasonication).</li>
+      <li><strong>Non-Mechanical Methods</strong>: Chemical lysis using surfactants, alkalis, organic solvents, osmotic shock, or enzymatic degradation of the cell wall (e.g., lysozyme).</li>
+    </ul>
+
+    <h4>3. Product Recovery & Extraction</h4>
+    <ul>
+      <li><span class="keyword">Liquid-Liquid Extraction</span>: Separation of a target solute from a liquid mixture by contacting it with an immiscible solvent in which the product is preferentially soluble. The solute-rich phase is the *extract*, and the residual depleted liquid is the *raffinate*.</li>
+    </ul>
+
+    <h4>4. Purification Techniques</h4>
+    <ul>
+      <li><span class="keyword">Precipitation</span>: Inducing target proteins or antibiotics to precipitate out of solution by adding neutral salts (e.g., ammonium sulfate), organic solvents, or polymers.</li>
+      <li><span class="keyword">Membrane Separation</span>: Pressure-driven processes categorized by pore size cut-offs:</li>
+    </ul>
+
+    <table class="clear-table">
+      <thead>
+        <tr>
+          <th>Process</th>
+          <th>Size Cutoff</th>
+          <th>Molecular Wt. Cutoff</th>
+          <th>Pressure Drop (psi)</th>
+          <th>Material Retained</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Microfiltration</strong></td>
+          <td>$0.1\text{--}10\text{ }\mu\text{m}$</td>
+          <td>$< 1,000,000\text{ Da}$</td>
+          <td>$10$</td>
+          <td>Suspended material, bacteria, intact cells</td>
+        </tr>
+        <tr>
+          <td><strong>Ultrafiltration</strong></td>
+          <td>$0.01\text{--}0.1\text{ }\mu\text{m}$</td>
+          <td>$300\text{--}300,000\text{ Da}$</td>
+          <td>$10\text{--}100$</td>
+          <td>Biological macromolecules, colloids, proteins</td>
+        </tr>
+        <tr>
+          <td><strong>Reverse Osmosis</strong></td>
+          <td>$< 0.001\text{ }\mu\text{m}$</td>
+          <td>$< 300\text{ Da}$</td>
+          <td>$100\text{--}800$</td>
+          <td>All suspended and dissolved salts/solutes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li><span class="keyword">Dialysis</span>: A membrane separation process used to remove low-molecular-weight solutes ($10\text{--}500\text{ Da}$) like organic acids and inorganic salts from a solution across a selectively permeable membrane driven by concentration gradients.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.4 Bioprocessing and Biomanufacturing of Desired Products</summary>
+  <p>Modern biotechnology utilizes specialized microbial, plant, and animal cell platforms to manufacture a diverse array of commercial products.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Classification of Bioprocess Products</h3></summary>
+    <table class="clear-table">
+      <thead>
+        <tr>
+          <th>Product Category</th>
+          <th>Commercial Examples</th>
+          <th>Production Organism / Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Alcohols</strong></td>
+          <td>Ethanol</td>
+          <td><span class="keyword">Saccharomyces cerevisiae</span></td>
+        </tr>
+        <tr>
+          <td><strong>Amino Acids</strong></td>
+          <td>L-Glutamic acid, Lysine</td>
+          <td><span class="keyword">Corynebacterium glutamicum</span> mutants</td>
+        </tr>
+        <tr>
+          <td><strong>Organic Acids</strong></td>
+          <td>Citric acid<br>Acetic acid<br>Butyric acid<br>Lactic acid</td>
+          <td><span class="keyword">Aspergillus niger</span> (fungus)<br><span class="keyword">Acetobacter aceti</span> (bacterium)<br><span class="keyword">Clostridium butylicum</span> (bacterium)<br><span class="keyword">Lactobacillus delbrueckii</span> (bacterium)</td>
+        </tr>
+        <tr>
+          <td><strong>Enzymes</strong></td>
+          <td>Proteases, Pectinases<br>Lipases<br>Streptokinase</td>
+          <td><span class="keyword">Aspergillus spp.</span>, <span class="keyword">Bacillus spp.</span><br>Used in detergent formulations<br><span class="keyword">Streptococcus spp.</span> (clot buster)</td>
+        </tr>
+        <tr>
+          <td><strong>Antibiotics</strong></td>
+          <td>Penicillin</td>
+          <td><span class="keyword">Penicillium chrysogenum</span></td>
+        </tr>
+        <tr>
+          <td><strong>Vitamins</strong></td>
+          <td>Vitamin $B_{12}$<br>Riboflavin</td>
+          <td><span class="keyword">Propionibacterium freudenreichii</span>, <span class="keyword">Pseudomonas denitrificans</span><br><span class="keyword">Ashbya gossypii</span>, <span class="keyword">Bacillus pumilus</span></td>
+        </tr>
+        <tr>
+          <td><strong>Vaccines</strong></td>
+          <td>Diphtheria vaccine</td>
+          <td>Toxin from <span class="keyword">Corynebacterium diphtheriae</span> converted to toxoid</td>
+        </tr>
+        <tr>
+          <td><strong>Recombinant Proteins</strong></td>
+          <td>Human Insulin</td>
+          <td>Recombinant <span class="keyword">Escherichia coli</span> (glycerol batch + methanol fed-batch)</td>
+        </tr>
+        <tr>
+          <td><strong>Bioactive Molecules</strong></td>
+          <td>Cyclosporin A<br>Statins</td>
+          <td><span class="keyword">Trichoderma polysporum</span> (immunosuppressant)<br><span class="keyword">Monascus purpureus</span> (cholesterol-lowering yeast)</td>
+        </tr>
+        <tr>
+          <td><strong>Plant Secondary Metabolites</strong></td>
+          <td>Shikonin (pigment)<br>Taxol (alkaloid)<br>Berberine, Ginseng</td>
+          <td><span class="keyword">Lithospermum erythrorhizon</span> cell culture<br><span class="keyword">Taxus brevifolia</span> tissue culture<br><span class="keyword">Coptis japonica</span>, <span class="keyword">Panax ginseng</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 12 curriculum modules.</p>
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-09-stem-cell-culture-and-organ-cultur.html"; } else { window.location.href = "12-chapter-11-bioremediation.html"; } }
+    let currentScale = 1.0;
+    function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+  </script>
+</body>
+</html>
