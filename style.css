@@ -233,3 +233,50 @@ mjx-container:not([display="true"]) {
   margin-left: 20px !important;
   margin-top: 6px;
 }
+
+/* 🔮 BUILD CALIBRE RESPONSIVE TABLE COMPONENT (V3.0) */
+table { 
+  width: 100% !important; 
+  border-collapse: collapse !important; 
+  margin: 24px 0 !important; 
+  box-sizing: border-box !important;
+  background-color: #ffffff !important;
+
+  /* 🔄 UNLOCKS NATIVE SCROLL: Safely encapsulates wide columns inside a scroll frame */
+  display: block !important;  
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS devices */
+}
+
+th, td { 
+  padding: 12px 14px !important; 
+  text-align: left !important; 
+  /* Deep slate-gray ensures distinct, clean border lines */
+  border: 1px solid #94a3b8 !important; 
+  vertical-align: top !important;
+
+  /* 🛡️ ANTI-SQUISH GUARD: Enforces elegant internal sentence wrapping */
+  white-space: normal !important;
+  word-break: break-word !important;
+  word-wrap: break-word !important;
+  min-width: 140px !important; /* Prevents text from crowding into vertical strips */
+}
+
+th { 
+  background-color: #f1f5f9 !important; 
+  font-weight: 600 !important; 
+  border-bottom: 2px solid #475569 !important;
+}
+
+tr:nth-child(even) {
+  background-color: #f8fafc !important; /* Alternating rows for heavy datasets */
+}
+
+blockquote.example-block { 
+  width: 100% !important; 
+  box-sizing: border-box !important; 
+  margin: 16px 0 !important; 
+  padding: 16px !important; 
+  background: #f8fafc !important; 
+  border-left: 4px solid #3182ce !important; 
+}
