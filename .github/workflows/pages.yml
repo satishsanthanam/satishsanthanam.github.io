@@ -2,10 +2,10 @@ name: Deploy NCERT Calibre Notes to Pages
 
 on:
   push:
-    branches: ["main"] # Adjust based on your staging branch
+    branches: ["main"] # 🎯 Only triggers execution when staging merges directly into main
   workflow_dispatch:
 
-# 💡 FIX 1: Cancel any in-progress runs of the same workflow to prevent duplicate artifacts
+# Automatically cancels any older overlapping builds if you execute back-to-back commits
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -22,14 +22,20 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # (Your compilation/Pagefind search indexing steps here)
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24' # 🚀 Forces the stable Node 24 runtime to clear the deprecation warning
 
-      # 💡 FIX 2: Ensure this step has a unique path and only triggers once
+      - name: Install Dependencies & Build Search Index
+        run: |
+          npm install pagefind
+          npx pagefind --site "."
+
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Point this to the root directory where your HTML/style.css lives
-          path: '.' 
+          path: '.' # Safely packages the root layout directory along with the 'pagefind/' database
 
   deploy:
     needs: build
@@ -38,7 +44,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # 💡 FIX 3: Keep using v4, but now it will only find 1 clean artifact
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
