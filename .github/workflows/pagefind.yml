@@ -2,7 +2,7 @@ name: Deploy NCERT Calibre Notes to Pages
 
 on:
   push:
-    branches: ["develop", "main"] # Adjust based on your staging branch
+    branches: ["main"] # Adjust based on your staging branch
   workflow_dispatch:
 
 # 💡 FIX 1: Cancel any in-progress runs of the same workflow to prevent duplicate artifacts
