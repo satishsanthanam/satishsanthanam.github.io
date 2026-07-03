@@ -253,7 +253,7 @@
   
   <script>
     function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
-    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-03-arts-of-the-mauryan-period.html.html"; } else { window.location.href = "11-chapter-05-later-mural-traditions.html"; } }
+    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-03-arts-of-the-mauryan-period.html"; } else { window.location.href = "11-chapter-05-later-mural-traditions.html"; } }
     let currentScale = 1.0;
     function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
