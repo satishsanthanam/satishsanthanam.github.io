@@ -1,34 +1,44 @@
-name: Deploy Pagefind to GitHub Pages
+name: Deploy NCERT Calibre Notes to Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["develop", "main"] # Adjust based on your staging branch
+  workflow_dispatch:
+
+# 💡 FIX 1: Cancel any in-progress runs of the same workflow to prevent duplicate artifacts
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Instructs GitHub to safely execute on the updated Node 24 engine
-
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Source Code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install and Run Pagefind Search Compiler
-        run: |
-          pip install 'pagefind[extended]'
-          python3 -m pagefind --site .
+      # (Your compilation/Pagefind search indexing steps here)
 
-      - name: Upload Static Assets to Pages
+      # 💡 FIX 2: Ensure this step has a unique path and only triggers once
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          # Point this to the root directory where your HTML/style.css lives
+          path: '.' 
 
-      - name: Deploy to GitHub Pages Live
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # 💡 FIX 3: Keep using v4, but now it will only find 1 clean artifact
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
