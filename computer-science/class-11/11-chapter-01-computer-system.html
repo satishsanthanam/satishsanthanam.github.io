@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 1: Computer System
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 1: Computer System
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.1 Introduction to Computer System
+</summary>
+<p>
+  A
+  <span class="keyword">
+  computer system
+</span>
+is an electronic device programmed to accept data (input), process it, and generate results (output). It comprises both hardware and software components functioning together as a single unit to deliver the desired output.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  "A computer would deserve to be called intelligent if it could deceive a human into believing that it was human."
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Literary Interpretation & Contextual Significance:
+</strong>
+This famous quote by
+<span class="keyword">
+Alan Turing
+</span>
+highlights the foundational philosophy of Artificial Intelligence (AI) and the Turing Test, emphasizing the benchmark of human-like cognitive deception as the ultimate measure of machine intelligence.
+</p>
+</blockquote>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Literary Profile: Alan Turing
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Traits & Temperament:
+  </strong>
+  Visionary mathematician, logician, and pioneer of theoretical computer science.
+</li>
+<li>
+  <strong>
+  Socio-Economic & Contextual Background:
+</strong>
+Worked during the mid-20th century, notably breaking wartime codes at Bletchley Park and establishing the theoretical framework for modern digital computers.
+</li>
+<li>
+  <strong>
+  Thematic & Symbolic Motifs:
+</strong>
+Computation limits, machine intelligence, algorithmic decidability, and the mechanization of thought.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.1.1 Central Processing Unit (CPU)
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Central Processing Unit (CPU)
+</span>
+is the electronic circuitry of a computer that carries out the actual processing and is commonly referred to as the brain of the computer. It is physically fabricated on one or more microchips called integrated circuits (ICs) made of semiconductor materials.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Arithmetic Logic Unit (ALU)
+  </span>
+  : Performs all arithmetic operations (addition, subtraction, multiplication, division) and logical decisions (comparisons).
+</li>
+<li>
+  <span class="keyword">
+  Control Unit (CU)
+</span>
+: Controls sequential instruction execution, interprets instructions, and guides the flow of data through the computer's memory, ALU, and input/output devices.
+</li>
+<li>
+  <span class="keyword">
+  Registers
+</span>
+: High-speed, extremely limited local memory locations inside the CPU chip used to store temporary data, instructions, or intermediate results during processing.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.1.2 Input Devices
+</summary>
+<p>
+Devices through which control signals and raw data are sent to a computer. They convert physical input into digital signals acceptable by the computer system.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Keyboard
+  </span>
+  : Standard \text entry device, including specialized braille keyboards for the visually impaired.
+</li>
+<li>
+  <span class="keyword">
+  Mouse
+</span>
+: Point-and-click graphical navigation device.
+</li>
+<li>
+  <span class="keyword">
+  Scanner
+</span>
+: Converts physical documents and images into digital formats.
+</li>
+<li>
+  <span class="keyword">
+  Touch Screen
+</span>
+: Dual-purpose input/output interface common in smartphones and tablets.
+</li>
+<li>
+  <span class="keyword">
+  Voice Input
+</span>
+: Captures spoken audio to process search queries or commands (e.g., Google voice search).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.1.3 Output Devices
+</summary>
+<p>
+Devices that receive processed digital data from a computer system and convert it into human-understandable or physical forms.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Display Monitor
+  </span>
+  : Visual screen interface showing \text, graphics, and video.
+</li>
+<li>
+  <span class="keyword">
+  Printer
+</span>
+: Produces hardcopy output. Common types include inkjet, laserjet, and dot matrix.
+</li>
+<li>
+  <span class="keyword">
+  3D Printer
+</span>
+: Builds physical replicas of digital 3D designs, widely used in manufacturing and medical organ prototyping.
+</li>
+<li>
+  <span class="keyword">
+  Speaker & Headphones
+</span>
+: Convert digital audio signals into audible sound waves.
+</li>
+<li>
+  <span class="keyword">
+  Braille Display Monitor
+</span>
+: Assists visually challenged users in reading textual output dynamically.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.2 Evolution of Computer
+</summary>
+<p>
+Computing devices have evolved rapidly from simple mechanical calculators to modern, high-performance multi-core processors.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Milestones in Computing History
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Era / Year
+    </th>
+    <th>
+    Invention
+  </th>
+  <th>
+  Key Features & Significance
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    500 BC
+  </td>
+  <td>
+    <span class="keyword">
+    Abacus
+  </span>
+</td>
+<td>
+Mechanical device capable of simple arithmetic calculations using beads on rods.
+</td>
+</tr>
+<tr>
+  <td>
+  1642
+</td>
+<td>
+  <span class="keyword">
+  Pascaline
+</span>
+</td>
+<td>
+Invented by Blaise Pascal; mechanical calculator performing direct addition/subtraction and repeated multiplication/division.
+</td>
+</tr>
+<tr>
+  <td>
+  1834
+</td>
+<td>
+  <span class="keyword">
+  Analytical Engine
+</span>
+</td>
+<td>
+Designed by Charles Babbage; mechanical computing device featuring input, processing, storage, and output, forming the basis of modern computers.
+</td>
+</tr>
+<tr>
+  <td>
+  1890
+</td>
+<td>
+  <span class="keyword">
+  Tabulating Machine
+</span>
+</td>
+<td>
+Designed by Herman Hollerith; used punched cards to summarize data, marking a major step toward programming.
+</td>
+</tr>
+<tr>
+  <td>
+  1937
+</td>
+<td>
+  <span class="keyword">
+  Turing Machine
+</span>
+</td>
+<td>
+Theoretical general-purpose programmable machine capable of solving any problem by executing instructions stored on punched cards.
+</td>
+</tr>
+<tr>
+  <td>
+  1945
+</td>
+<td>
+  <span class="keyword">
+  EDVAC / ENIAC
+</span>
+</td>
+<td>
+Based on John von Neumann's stored-program concept, allowing both data and programs to be stored in memory.
+</td>
+</tr>
+<tr>
+  <td>
+  1947
+</td>
+<td>
+  <span class="keyword">
+  Transistor
+</span>
+</td>
+<td>
+Developed at Bell Labs; replaced bulky vacuum tubes, drastically reducing computer size and power consumption.
+</td>
+</tr>
+<tr>
+  <td>
+  1970
+</td>
+<td>
+  <span class="keyword">
+  Integrated Circuit (IC)
+</span>
+</td>
+<td>
+Silicon chip containing an entire electronic circuit on a tiny area, leading to massive miniaturization.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Von Neumann Architecture & Moore's Law
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Von Neumann Architecture
+</span>
+consists of a CPU (containing an ALU and CU), memory, input/output devices, and communication channels. The Electronic Numerical Integrator and Computer (ENIAC) was the first binary programmable computer based on this architecture.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Scientific Profile: Gordon Moore & Moore's Law
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    The Law (1965):
+  </strong>
+  Predicted that the number of transistors on a microchip would double approximately every two years, while the cost of computers would be halved.
+</li>
+<li>
+  <strong>
+  Technological Eras:
+</strong>
+Transitioned from Large Scale Integration (LSI) in the 1970s to Very Large Scale Integration (VLSI) in the 1980s (integrating ~3 million components), and later to Super Large Scale Integration (SLSI) fabricating over 100 million components on a single IC.
+</li>
+</ul>
+</div>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.3 Computer Memory
+</summary>
+<p>
+Memory is required to store data and instructions for processing. It is broadly categorized into primary memory, cache memory, and secondary memory.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.3.1 Units of Memory
+</summary>
+<p>
+Computers use binary numbers (0 and 1) to store and process data. The basic units of memory are:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Bit
+  </span>
+  : Binary digit (0 or 1).
+</li>
+<li>
+  <span class="keyword">
+  Nibble
+</span>
+: A group of 4 bits (e.g., 1001).
+</li>
+<li>
+  <span class="keyword">
+  Byte
+</span>
+: A group of 8 bits (e.g., 01000110).
+</li>
+</ul>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Unit
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Unit
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    KB (Kilobyte)
+  </td>
+  <td>
+  1 KB = 1024 Bytes
+</td>
+<td>
+PB (Petabyte)
+</td>
+<td>
+1 PB = 1024 TB
+</td>
+</tr>
+<tr>
+  <td>
+  MB (Megabyte)
+</td>
+<td>
+1 MB = 1024 KB
+</td>
+<td>
+EB (Exabyte)
+</td>
+<td>
+1 EB = 1024 PB
+</td>
+</tr>
+<tr>
+  <td>
+  GB (Gigabyte)
+</td>
+<td>
+1 GB = 1024 MB
+</td>
+<td>
+ZB (Zettabyte)
+</td>
+<td>
+1 ZB = 1024 EB
+</td>
+</tr>
+<tr>
+  <td>
+  TB (Terabyte)
+</td>
+<td>
+1 TB = 1024 GB
+</td>
+<td>
+YB (Yottabyte)
+</td>
+<td>
+1 YB = 1024 ZB
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.3.2 Types of Memory
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Primary Memory
+  </span>
+  : Directly accessed by the CPU. It includes:
+  <ul>
+    <li>
+      <span class="keyword">
+      RAM (Random Access Memory)
+    </span>
+    : Volatile memory that temporarily stores active programs and data. Contents are lost when power is turned off.
+  </li>
+  <li>
+    <span class="keyword">
+    ROM (Read Only Memory)
+  </span>
+  : Non-volatile memory used for permanent storage of critical startup programs (e.g., the boot loader).
+</li>
+</ul>
+</li>
+<li>
+  <span class="keyword">
+  Cache Memory
+</span>
+: Extremely high-speed memory placed between the CPU and primary memory to store copies of frequently accessed data, reducing average access time.
+</li>
+<li>
+  <span class="keyword">
+  Secondary Memory
+</span>
+: Non-volatile, high-capacity, and cheaper storage used for permanent data retention. Examples include Hard Disk Drives (HDD), Solid State Drives (SSD), CDs, DVDs, and Pen Drives.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.4 Data Transfer between Memory and CPU
+</summary>
+<p>
+  Data must be transferred continuously between the CPU, primary memory, and secondary storage. This transfer is achieved using physical wires called
+  <span class="keyword">
+  buses
+</span>
+.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Data Bus
+  </span>
+  : Bidirectional bus used to transfer actual data between different components.
+</li>
+<li>
+  <span class="keyword">
+  Address Bus
+</span>
+: Unidirectional bus used by the CPU to specify the physical memory address it wants to read from or write to.
+</li>
+<li>
+  <span class="keyword">
+  Control Bus
+</span>
+: Unidirectional bus used to transmit control signals (such as read/write commands) between components.
+</li>
+<li>
+  <span class="keyword">
+  System Bus
+</span>
+: The collective term for the Data, Address, and Control buses.
+</li>
+<li>
+  <span class="keyword">
+  Memory Controller
+</span>
+: Dedicated hardware that manages the flow of data into and out of the computer's main memory.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.5 Microprocessors & Microcontrollers
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.5.1 Microprocessor Specifications
+</summary>
+<p>
+  A
+  <span class="keyword">
+  microprocessor
+</span>
+is a CPU fabricated on a single integrated circuit chip. Its performance is determined by:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Word Size
+  </span>
+  : The maximum number of bits a processor can process at a single time (ranging historically from 4/8 bits to modern 64-bit architectures).
+</li>
+<li>
+  <span class="keyword">
+  Memory Size
+</span>
+: The maximum RAM capacity supported, which depends directly on the processor's word size (up to 16 Exabytes for 64-bit systems).
+</li>
+<li>
+  <span class="keyword">
+  Clock Speed
+</span>
+: The frequency of internal pulses generated by the computer's clock, measured in Gigahertz (GHz), indicating how many billions of instructions can be executed per second.
+</li>
+<li>
+  <span class="keyword">
+  Cores
+</span>
+: Individual, independent execution units within a single CPU chip (e.g., dual-core, quad-core, octa-core).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.5.2 Microcontrollers
+</summary>
+<p>
+  A
+  <span class="keyword">
+  microcontroller
+</span>
+is a small, low-cost computing device that integrates a CPU, a fixed amount of RAM, ROM, and input/output ports all onto a single chip. Unlike general-purpose microprocessors, microcontrollers are designed for specific, dedicated tasks in embedded systems (e.g., washing machines, digital cameras, microwaves, and remote controllers).
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.6 Data and Information
+</summary>
+<p>
+Data represents raw, unorganized, and unprocessed facts, whereas information is processed, structured, and meaningful data.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.6.1 Data Types
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Structured Data
+  </span>
+  : Follows a strict, pre-defined tabular format organized in rows and columns (e.g., database tables, student attendance records).
+</li>
+<li>
+  <span class="keyword">
+  Unstructured Data
+</span>
+: Lacks a pre-defined record format or structure, consisting of mixed \text, graphics, and media (e.g., audio/video files, social media posts, satellite images).
+</li>
+<li>
+  <span class="keyword">
+  Semi-structured Data
+</span>
+: Lacks a rigid tabular structure but contains internal tags, markers, or organizational elements to separate data fields (e.g., XML files, HTML pages, CSV files).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.6.2 Data Lifecycle & Security
+</summary>
+<ol>
+  <li>
+    <span class="keyword">
+    Data Capturing
+  </span>
+  : Gathering raw data from digital sources (e.g., keyboards, barcode scanners, remote sensors).
+</li>
+<li>
+  <span class="keyword">
+  Data Storage
+</span>
+: Retaining captured data on digital storage devices or high-capacity data servers.
+</li>
+<li>
+  <span class="keyword">
+  Data Retrieval
+</span>
+: Fetching stored data from databases for active processing.
+</li>
+<li>
+  <span class="keyword">
+  Data Deletion and Recovery
+</span>
+: Deleting data typically marks its address space as free without immediately erasing the bits. Data recovery is the process of retrieving deleted or corrupted data before it is overwritten by new data.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.7 Software
+</summary>
+<p>
+Software is a set of instructions (programs) that operates the physical hardware components of a computer system.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.7.2 System Software
+</summary>
+<p>
+Provides the core functionality required to operate and maintain the computer hardware directly.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Operating System (OS)
+  </span>
+  : The fundamental system software that manages hardware resources and provides a platform for application software.
+</li>
+<li>
+  <span class="keyword">
+  System Utilities
+</span>
+: Software used for system maintenance and configuration (e.g., disk defragmenters, anti-virus tools, disk compressors).
+</li>
+<li>
+  <span class="keyword">
+  Device Drivers
+</span>
+: Specialized programs that act as translators between the operating system and specific hardware peripherals (e.g., printers, scanners).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.7.3 Programming Tools
+</summary>
+<p>
+Tools used by developers to write, translate, and test computer programs.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Low-level Languages
+  </span>
+  : Machine-dependent languages, including machine language (binary 1s and 0s) and assembly language (using mnemonics).
+</li>
+<li>
+  <span class="keyword">
+  High-level Languages
+</span>
+: Machine-independent, human-readable languages (e.g., Python, Java, C++).
+</li>
+<li>
+  <span class="keyword">
+  Language Translators
+</span>
+:
+<ul>
+  <li>
+    <span class="keyword">
+    Assembler
+  </span>
+  : Converts assembly language into machine code.
+</li>
+<li>
+  <span class="keyword">
+  Compiler
+</span>
+: Translates the entire high-level source code into machine code at once, producing an executable file.
+</li>
+<li>
+  <span class="keyword">
+  Interpreter
+</span>
+: Translates and executes high-level source code line-by-line in real-time.
+</li>
+</ul>
+</li>
+<li>
+  <span class="keyword">
+  Integrated Development Environment (IDE)
+</span>
+: A comprehensive software suite combining a \text editor, build tools, and a debugger (e.g., Python IDLE, Eclipse, NetBeans).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.7.4 Application Software & Licensing
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    General Purpose Software
+  </span>
+  : Developed for generic, widespread applications (e.g., word processors, web browsers, spreadsheets).
+</li>
+<li>
+  <span class="keyword">
+  Customised Software
+</span>
+: Tailor-made to meet the specific requirements of an individual or organization (e.g., school management systems, accounting software).
+</li>
+<li>
+  <span class="keyword">
+  Proprietary Software
+</span>
+: Software owned by a vendor who restricts access to the source code and requires purchase (e.g., Microsoft Windows, Tally).
+</li>
+<li>
+  <span class="keyword">
+  Free and Open Source Software (FOSS)
+</span>
+: Software whose source code is freely accessible, modifiable, and distributable (e.g., Ubuntu, Python, LibreOffice).
+</li>
+<li>
+  <span class="keyword">
+  Freeware
+</span>
+: Software available free of charge, though its source code remains closed and proprietary (e.g., Skype, Adobe Reader).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.8 Operating System
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Operating System (OS)
+</span>
+acts as a resource manager that controls and coordinates hardware, system security, and application software execution.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.8.1 OS User Interfaces
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Command-based Interface (CLI)
+  </span>
+  : Requires users to type \text commands to perform tasks; less interactive and runs one program at a time (e.g., MS-DOS, Unix).
+</li>
+<li>
+  <span class="keyword">
+  Graphical User Interface (GUI)
+</span>
+: Allows users to interact using visual icons, menus, and windows via a mouse and keyboard (e.g., Windows, macOS).
+</li>
+<li>
+  <span class="keyword">
+  Touch-based Interface
+</span>
+: Responds to physical touch inputs on screens (e.g., Android, iOS).
+</li>
+<li>
+  <span class="keyword">
+  Voice-based Interface
+</span>
+: Operates using spoken voice commands (e.g., Siri, Cortana, Google Assistant).
+</li>
+<li>
+  <span class="keyword">
+  Gesture-based Interface
+</span>
+: Detects physical movements such as waving, tilting, or eye motion (used in gaming and medical applications).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.8.2 Functions of the Operating System
+</summary>
+<ol>
+  <li>
+    <span class="keyword">
+    Process Management
+  </span>
+  : Allocates CPU time among multiple active processes, ensuring efficient execution and scheduling.
+</li>
+<li>
+  <span class="keyword">
+  Memory Management
+</span>
+: Dynamically allocates and deallocates primary memory (RAM) to running processes.
+</li>
+<li>
+  <span class="keyword">
+  File Management
+</span>
+: Manages the creation, deletion, organization, and access control of files in secondary storage.
+</li>
+<li>
+  <span class="keyword">
+  Device Management
+</span>
+: Coordinates and controls peripheral devices through their respective device drivers.
+</li>
+</ol>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "11-chapter-02-encoding-schemes-and-number-system.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
