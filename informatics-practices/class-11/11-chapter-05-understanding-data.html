@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 11 — Chapter 5: Understanding Data
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 11 — Chapter 5: Understanding Data
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.1 Introduction to Data
+</summary>
+<p>
+In modern society, decisions are heavily based on data and information. Whether choosing a college based on placement records, fees, and faculty qualifications, or governments conducting a census to systematically record population details, data serves as the foundation for analysis and policy formulation.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  "Data is not information, Information is not knowledge, Knowledge is not understanding, Understanding is not wisdom."
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This quote by Gary Schubert highlights the cognitive hierarchy in data science. Raw data must undergo structured processing to become meaningful information, which is then contextualized into knowledge, synthesized into understanding, and ultimately applied as wisdom for decision-making.
+</p>
+</blockquote>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Data vs. Datum
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Conceptual Data Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+<span class="keyword">
+Data
+</span>
+is a plural term representing a collection of characters, numbers, and other symbols representing values of situations or variables. The singular form of the word is
+<span class="keyword">
+datum
+</span>
+.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Storing data electronically using computers enables faster, automated processing compared to manual, error-prone human methods.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Common Examples of Data
+</summary>
+<ul>
+  <li>
+    Personal details:
+    <span class="keyword">
+    Name
+  </span>
+  ,
+  <span class="keyword">
+  age
+</span>
+,
+<span class="keyword">
+gender
+</span>
+,
+<span class="keyword">
+contact details
+</span>
+.
+</li>
+<li>
+Transaction logs: Banking, ticketing, and shopping transactions (online or offline).
+</li>
+<li>
+Multimedia: Images, graphics, animations, audio, and video files.
+</li>
+<li>
+Web content: Documents, web pages, online posts, comments, and messages.
+</li>
+<li>
+Sensor outputs: Signals generated by IoT devices and physical sensors.
+</li>
+<li>
+Satellite feeds: Meteorological data, communication signals, and earth observation data.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.1.1 Importance of Data
+</summary>
+<p>
+Data processing reveals hidden patterns and possibilities that are otherwise invisible to humans. Key real-world applications include:
+</p>
+<ul>
+  <li>
+    <strong>
+    Banking:
+  </strong>
+  Real-time updates of account balances during ATM withdrawals.
+</li>
+<li>
+  <strong>
+  Meteorology:
+</strong>
+Continuous satellite monitoring to predict cyclones, heavy rainfall, and natural disasters.
+</li>
+<li>
+  <strong>
+  Business Analytics:
+</strong>
+Monitoring market behavior, customer feedback, and demand-supply relationships.
+</li>
+<li>
+  <strong>
+  Dynamic Pricing:
+</strong>
+Algorithms used by airlines, railways, and cab-booking apps to adjust prices dynamically based on real-time demand.
+</li>
+<li>
+  <strong>
+  Elections:
+</strong>
+Electronic Voting Machines (EVMs) recording and accumulating votes for rapid, secure counting.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.1.2 Types of Data
+</summary>
+<p>
+Data can be broadly classified into two categories based on its format and organization:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (A) Structured Data
+</summary>
+<p>
+  Data that is organized and recorded in a well-defined format is called
+  <span class="keyword">
+  structured data
+</span>
+. It is typically stored in a tabular format consisting of rows and columns, where each column represents an
+<span class="keyword">
+attribute
+</span>
+(parameter/characteristic) and each row represents an individual observation.
+</p>
+<p>
+  <strong>
+  Table 5.1: Structured data about kitchen items in a shop
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      ModelNo
+    </th>
+    <th>
+    ProductName
+  </th>
+  <th>
+  Unit Price
+</th>
+<th>
+Discount(%)
+</th>
+<th>
+Items_in_Inventory
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    ABC1
+  </td>
+  <td>
+  Water bottle
+</td>
+<td>
+126
+</td>
+<td>
+8
+</td>
+<td>
+13
+</td>
+</tr>
+<tr>
+  <td>
+  ABC2
+</td>
+<td>
+Melamine Plates
+</td>
+<td>
+320
+</td>
+<td>
+5
+</td>
+<td>
+45
+</td>
+</tr>
+<tr>
+  <td>
+  ABC3
+</td>
+<td>
+Dinner Set
+</td>
+<td>
+4200
+</td>
+<td>
+10
+</td>
+<td>
+8
+</td>
+</tr>
+<tr>
+  <td>
+  GH67
+</td>
+<td>
+Jug
+</td>
+<td>
+80
+</td>
+<td>
+0
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+  <td>
+  GH78
+</td>
+<td>
+Table Spoon
+</td>
+<td>
+120
+</td>
+<td>
+5
+</td>
+<td>
+14
+</td>
+</tr>
+<tr>
+  <td>
+  GH81
+</td>
+<td>
+Bucket
+</td>
+<td>
+190
+</td>
+<td>
+12
+</td>
+<td>
+6
+</td>
+</tr>
+<tr>
+  <td>
+  NK2
+</td>
+<td>
+Kitchen Towel
+</td>
+<td>
+25
+</td>
+<td>
+0
+</td>
+<td>
+32
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Table 5.2: Attributes maintained for different activities
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Entity/Activities
+    </th>
+    <th>
+    Data Fields/Parameters/Attributes
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Books at a shop
+  </td>
+  <td>
+    <span class="keyword">
+    BookTitle
+  </span>
+  ,
+  <span class="keyword">
+  Author
+</span>
+,
+<span class="keyword">
+Price
+</span>
+,
+<span class="keyword">
+YearofPublication
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+  Depositing fees in a school
+</td>
+<td>
+  <span class="keyword">
+  StudentName
+</span>
+,
+<span class="keyword">
+Class
+</span>
+,
+<span class="keyword">
+RollNo
+</span>
+,
+<span class="keyword">
+FeesAmount
+</span>
+,
+<span class="keyword">
+DepositDate
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+  Amount withdrawal from ATM
+</td>
+<td>
+  <span class="keyword">
+  AccHolderName
+</span>
+,
+<span class="keyword">
+AccountNo
+</span>
+,
+<span class="keyword">
+TypeofAcc
+</span>
+,
+<span class="keyword">
+DateofWithdrawal
+</span>
+,
+<span class="keyword">
+AmountWithdrawn
+</span>
+,
+<span class="keyword">
+ATMid
+</span>
+,
+<span class="keyword">
+TimeOfWithdrawal
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (B) Unstructured Data
+</summary>
+<p>
+  Data that does not conform to a traditional row-and-column structure is called
+  <span class="keyword">
+  unstructured data
+</span>
+. Examples include newspapers (variable layouts, mixed \text and images), emails, web pages, audio/video files, and social media posts.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Metadata
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Data Description Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+<span class="keyword">
+Metadata
+</span>
+is defined as "data about data". It provides structural context to unstructured or semi-structured files.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+For an email, metadata includes fields like
+<span class="keyword">
+subject
+</span>
+,
+<span class="keyword">
+recipient
+</span>
+, and
+<span class="keyword">
+attachment details
+</span>
+. For an image file, metadata includes
+<span class="keyword">
+image size
+</span>
+(in KB/MB),
+<span class="keyword">
+image type
+</span>
+(JPEG, PNG), and
+<span class="keyword">
+resolution
+</span>
+.
+</li>
+</ul>
+</div>
+</details>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.2 Data Collection
+</summary>
+<p>
+Data collection involves identifying existing data or gathering new data from appropriate sources to prepare it for processing and storage.
+</p>
+<p>
+Consider three common scenarios for collecting sales data in a grocery store:
+</p>
+<ol>
+  <li>
+    <strong>
+    Manual Records:
+  </strong>
+  Data is recorded in a physical diary or register. This must be manually digitized into a spreadsheet or database.
+</li>
+<li>
+  <strong>
+  Semi-Structured Files:
+</strong>
+Data is already available in a digital format, such as a
+<span class="keyword">
+CSV
+</span>
+(Comma Separated Values) file.
+</li>
+<li>
+  <strong>
+  No Prior Records:
+</strong>
+No data has been recorded. A custom software application (e.g., built using
+<span class="keyword">
+Python
+</span>
+and
+<span class="keyword">
+MySQL
+</span>
+) must be developed to capture and store transactions in real-time.
+</li>
+</ol>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.3 Data Storage
+</summary>
+<p>
+Data storage is the process of saving processed or raw data on physical or digital storage devices for future retrieval and reuse. With the exponential growth of data, storage has become a critical challenge, mitigated by the falling cost of digital storage media.
+</p>
+<ul>
+  <li>
+    <strong>
+    Common Storage Devices:
+  </strong>
+  Hard Disk Drive (HDD), Solid State Drive (SSD), CD/DVD, Tape Drive, Pen Drive, and Memory Cards.
+</li>
+<li>
+  <strong>
+  File-Based Storage:
+</strong>
+Storing data as flat files (documents, images, spreadsheets) on a computer. While simple, file processing has limitations in terms of redundancy, security, and concurrent access.
+</li>
+<li>
+  <strong>
+  Database Management Systems (DBMS):
+</strong>
+Advanced software systems designed to overcome the limitations of file-based storage by providing structured, secure, and highly queryable data environments.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.4 Data Processing
+</summary>
+<p>
+Raw data (numbers, \text, images) cannot be directly used for decision-making. It must undergo a systematic transformation process to become meaningful information.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: The Data Process Cycle
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Input Phase:
+  </strong>
+  Data Collection, Data Preparation, and Data Entry.
+</li>
+<li>
+  <strong>
+  Processing Phase:
+</strong>
+Storage, Retrieval, Classification, and Updating.
+</li>
+<li>
+  <strong>
+  Output Phase:
+</strong>
+Generation of Reports, Results, and actionable Information.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Real-World Data Processing Workflows
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Problem Statement
+    </th>
+    <th>
+    Inputs Collected
+  </th>
+  <th>
+  Processing Steps
+</th>
+<th>
+Generated Output
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Online Student Registration &amp; Admit Card Generation
+    </strong>
+  </td>
+  <td>
+  Student details (name, address, qualification, marks, photo, signature, online fee payment details).
+</td>
+<td>
+Verify correctness of data, check eligibility criteria, validate fee payment, verify photo/signature uploads, generate roll number, and append to the eligible applicant database.
+</td>
+<td>
+Examination Admit Card specifying roll number, center address, date, and time of test.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    ATM Cash Withdrawal
+  </strong>
+</td>
+<td>
+ATM PIN, account type, account number, card number, ATM location, date/time, and withdrawal amount.
+</td>
+<td>
+Validate PIN, check account balance, deduct requested amount from the account, count physical currency notes, and initiate receipt printing.
+</td>
+<td>
+Dispensed currency notes and a printed transaction slip.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Train Ticket Booking
+  </strong>
+</td>
+<td>
+Journey start/end stations, date, number of tickets, class of travel, berth preference, passenger names/ages, contact details, and payment details.
+</td>
+<td>
+Verify login credentials, check berth availability, process payment, deduct booked seats from inventory, allocate PNR and berth numbers (or generate a waiting list number).
+</td>
+<td>
+Confirmed train ticket with berth/coach details or a waitlisted ticket.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.5 Statistical Techniques for Data Processing
+</summary>
+<p>
+Statistical techniques help summarize tabular data to reveal its underlying characteristics. These are broadly divided into measures of central tendency and measures of variability.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.5.1 Measures of Central Tendency
+</summary>
+<p>
+A measure of central tendency provides a single representative value that summarizes a dataset.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (A) Mean
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Mean
+</span>
+(or average) is the sum of all numeric values in an attribute divided by the total number of values.
+</p>
+<p>
+  <strong>
+  Mathematical Definition:
+</strong>
+</p>
+<p>
+Given $n$ values $x_1, x_2, x_3, \dots, x_n$, the mean $\bar{x}$ is computed as:
+</p>
+<p>
+$$\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}$$
+</p>
+<p>
+  <strong>
+  Example 5.1:
+</strong>
+</p>
+<p>
+  Height (in cm) of 9 students:
+  <span class="keyword">
+  [90, 102, 110, 115, 85, 90, 100, 110, 110]
+</span>
+</p>
+<p>
+$$\bar{x} = \frac{90 + 102 + 110 + 115 + 85 + 90 + 100 + 110 + 110}{9} = \frac{912}{9} = 101.33\text{ cm}$$
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Outlier Warning:
+</strong>
+An outlier is an exceptionally large or small value compared to the rest of the dataset. The mean is highly sensitive to outliers, which can distort the average. Outliers should be identified and handled before calculating the mean.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (B) Median
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Median
+</span>
+is the middle value of a dataset when the values are sorted in ascending or descending order. It divides the dataset into two equal halves.
+</p>
+<ul>
+  <li>
+    If $n$ is
+    <strong>
+    odd
+  </strong>
+  , the median is the value at the middle position: $\frac{n+1}{2}$.
+</li>
+<li>
+  If $n$ is
+  <strong>
+  even
+</strong>
+, the median is the average of the two middle values.
+</li>
+</ul>
+<p>
+  <strong>
+  Example 5.2:
+</strong>
+</p>
+<p>
+  Sorting the student heights from Example 5.1:
+  <span class="keyword">
+  [85, 90, 90, 100, 102, 110, 110, 110, 115]
+</span>
+</p>
+<p>
+  Since $n = 9$ (odd), the median is the value at position 5, which is
+  <strong>
+  102 cm
+</strong>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (C) Mode
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Mode
+</span>
+is the value that appears most frequently in a dataset. It can be calculated for both numeric and non-numeric data.
+</p>
+<ul>
+  <li>
+    A dataset has
+    <strong>
+    no mode
+  </strong>
+  if all values occur only once.
+</li>
+<li>
+  A dataset can have
+  <strong>
+  multiple modes
+</strong>
+(multimodal) if multiple values share the highest frequency.
+</li>
+</ul>
+<p>
+  <strong>
+  Example 5.3:
+</strong>
+</p>
+<p>
+  In the student heights dataset, the value
+  <strong>
+  110
+</strong>
+occurs 3 \times (more than any other value). Thus, the mode is
+<strong>
+110 cm
+</strong>
+.
+</p>
+</details>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.5.2 Measures of Variability
+</summary>
+<p>
+Measures of variability (or dispersion) describe how spread out or diverse the data values are around the mean.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (A) Range
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Range
+</span>
+is the difference between the maximum and minimum values in a dataset. It is highly sensitive to outliers.
+</p>
+<p>
+$$\text{Range} = \text{Maximum} - \text{Minimum}$$
+</p>
+<p>
+  <strong>
+  Example 5.4:
+</strong>
+</p>
+<p>
+For the student heights dataset, the maximum height is 115 cm and the minimum is 85 cm.
+</p>
+<p>
+$$\text{Range} = 115 - 85 = 30\text{ cm}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (B) Standard Deviation
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Standard Deviation
+</span>
+($\sigma$) measures the spread of data by calculating the positive square root of the average of the squared differences of each value from the mean. Unlike range, it considers all data points.
+</p>
+<p>
+  <strong>
+  Mathematical Formula:
+</strong>
+</p>
+<p>
+$$\sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}$$
+</p>
+<p>
+  <strong>
+  Example 5.5 &amp; Table 5.3: Standard deviation calculation for 9 students ($\bar{x} = 101.33$)
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Height ($x$) in cm
+    </th>
+    <th>
+    $x - \bar{x}$
+  </th>
+  <th>
+  $(x - \bar{x})^2$
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    90
+  </td>
+  <td>
+  -11.33
+</td>
+<td>
+128.37
+</td>
+</tr>
+<tr>
+  <td>
+  102
+</td>
+<td>
+0.67
+</td>
+<td>
+0.36
+</td>
+</tr>
+<tr>
+  <td>
+  110
+</td>
+<td>
+8.67
+</td>
+<td>
+75.17
+</td>
+</tr>
+<tr>
+  <td>
+  115
+</td>
+<td>
+13.67
+</td>
+<td>
+186.87
+</td>
+</tr>
+<tr>
+  <td>
+  85
+</td>
+<td>
+-16.33
+</td>
+<td>
+266.67
+</td>
+</tr>
+<tr>
+  <td>
+  90
+</td>
+<td>
+-11.33
+</td>
+<td>
+128.37
+</td>
+</tr>
+<tr>
+  <td>
+  100
+</td>
+<td>
+-1.33
+</td>
+<td>
+1.77
+</td>
+</tr>
+<tr>
+  <td>
+  110
+</td>
+<td>
+8.67
+</td>
+<td>
+75.17
+</td>
+</tr>
+<tr>
+  <td>
+  110
+</td>
+<td>
+8.67
+</td>
+<td>
+75.17
+</td>
+</tr>
+<tr style="font-weight: bold; background-color: #fafafa;">
+  <td>
+    $n = 9$
+    <br>
+    $\bar{x} = 101.33$
+  </td>
+  <td>
+  $\sum(x - \bar{x}) = 0.03$
+</td>
+<td>
+$\sum(x - \bar{x})^2 = 938.00$
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Calculation Steps:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the variance: $$\text{Variance} = \frac{\sum(x - \bar{x})^2}{n} = \frac{938.00}{9} = 104.22$$
+</li>
+<li>
+Calculate the standard deviation: $$\sigma = \sqrt{104.22} \approx 10.2\text{ cm}$$
+</li>
+</ol>
+</details>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Selecting Suitable Statistical Techniques
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Problem Statement
+    </th>
+    <th>
+    Suitable Statistical Method
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    The management of a company wants to know about disparity in salaries of all employees.
+  </td>
+  <td>
+    <span class="keyword">
+    Standard Deviation
+  </span>
+  /
+  <span class="keyword">
+  Range
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+  Teacher wants to know about the average performance of the whole class in a test.
+</td>
+<td>
+  <span class="keyword">
+  Mean
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+  Compare height of residents of two cities.
+</td>
+<td>
+  <span class="keyword">
+  Mean
+</span>
+(for average height) and
+<span class="keyword">
+Standard Deviation
+</span>
+(for variation)
+</td>
+</tr>
+<tr>
+  <td>
+  Find the dominant value from a set of values.
+</td>
+<td>
+  <span class="keyword">
+  Mode
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+  Compare income of residents of two cities.
+</td>
+<td>
+  <span class="keyword">
+  Median
+</span>
+(less sensitive to extreme income outliers)
+</td>
+</tr>
+<tr>
+  <td>
+  Find the popular color for car after surveying the car owners of a small city.
+</td>
+<td>
+  <span class="keyword">
+  Mode
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-04-working-with-lists-and-dictionarie.html"; } else { window.location.href = "11-chapter-06-introduction-to-numpy.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

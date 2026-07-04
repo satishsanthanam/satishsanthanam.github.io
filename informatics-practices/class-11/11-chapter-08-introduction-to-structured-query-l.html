@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 11 — Chapter 8: Introduction to Structured Query Language (SQL)
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 11 — Chapter 8: Introduction to Structured Query Language (SQL)
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.1 &amp; 8.2 Introduction to SQL
+</summary>
+<p>
+  Relational Database Management Systems (RDBMS) like
+  <span class="keyword">
+  MySQL
+</span>
+,
+<span class="keyword">
+Microsoft SQL Server
+</span>
+,
+<span class="keyword">
+PostgreSQL
+</span>
+, and
+<span class="keyword">
+Oracle
+</span>
+allow the creation, linkage, and manipulation of relational databases.
+<span class="keyword">
+Structured Query Language (SQL)
+</span>
+is the standard language used to interact with these databases.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: MySQL Database Engine
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Relational Database Management System (RDBMS) Client-Server Architecture.
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+SQL statements are sent from the client (e.g., Command Line Client) to the server, executed, and results are returned in tabular format.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Case-insensitive execution of standard SQL commands, mandatory semicolon (
+<span class="keyword">
+;
+</span>
+) termination, and multiline statement buffering indicated by the
+<span class="keyword">
+-&gt;
+</span>
+prompt.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Rules for Writing SQL Statements
+</summary>
+<ul>
+  <li>
+    SQL is case-insensitive (e.g.,
+    <span class="keyword">
+    SELECT
+  </span>
+  and
+  <span class="keyword">
+  select
+</span>
+are identical).
+</li>
+<li>
+  Statements must end with a semicolon (
+  <span class="keyword">
+  ;
+</span>
+).
+</li>
+<li>
+  Multiline statements are supported; pressing Enter without a semicolon transitions the prompt from
+  <span class="keyword">
+  mysql&gt;
+</span>
+to
+<span class="keyword">
+-&gt;
+</span>
+.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.3 Data Types and Constraints in MySQL
+</summary>
+<p>
+Every attribute in a relation must have a defined data type and can optionally have constraints to enforce data integrity.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Commonly Used Data Types
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Data Type
+    </th>
+    <th>
+    Description
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      CHAR(n)
+    </span>
+  </td>
+  <td>
+    Fixed-length character string of size
+    <span class="keyword">
+    n
+  </span>
+  (0 to 255). Right-padded with spaces if the input is shorter than
+  <span class="keyword">
+  n
+</span>
+.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    VARCHAR(n)
+  </span>
+</td>
+<td>
+  Variable-length character string of maximum size
+  <span class="keyword">
+  n
+</span>
+(0 to 65535). Allocates bytes dynamically based on actual string length.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    INT
+  </span>
+</td>
+<td>
+  Integer value occupying 4 bytes. Range: -2,147,483,648 to 2,147,483,647. For larger values,
+  <span class="keyword">
+  BIGINT
+</span>
+(8 bytes) is used.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    FLOAT
+  </span>
+</td>
+<td>
+Floating-point numbers with decimal points. Occupies 4 bytes.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    DATE
+  </span>
+</td>
+<td>
+  Date values in
+  <span class="keyword">
+  'YYYY-MM-DD'
+</span>
+format. Supported range: '1000-01-01' to '9999-12-31'.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Commonly Used SQL Constraints
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Constraint
+    </th>
+    <th>
+    Description
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      NOT NULL
+    </span>
+  </td>
+  <td>
+    Ensures that a column cannot store
+    <span class="keyword">
+    NULL
+  </span>
+  values.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    UNIQUE
+  </span>
+</td>
+<td>
+Ensures all values in a column are distinct.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    DEFAULT
+  </span>
+</td>
+<td>
+Provides a default value for a column when none is specified.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    PRIMARY KEY
+  </span>
+</td>
+<td>
+  Uniquely identifies each row in a table. Implicitly
+  <span class="keyword">
+  NOT NULL
+</span>
+and
+<span class="keyword">
+UNIQUE
+</span>
+.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    FOREIGN KEY
+  </span>
+</td>
+<td>
+Referential constraint linking a column to the primary key of another table.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.4 SQL for Data Definition (DDL)
+</summary>
+<p>
+Data Definition Language (DDL) commands are used to define, modify, and delete database structures such as databases and tables.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Database Operations
+</summary>
+<p>
+To create, select, and view databases:
+</p>
+<pre>
+  <code>
+    mysql&gt; CREATE DATABASE StudentAttendance;
+    Query OK, 1 row affected (0.02 sec)
+    mysql&gt; USE StudentAttendance;
+    Database changed
+    mysql&gt; SHOW TABLES;
+    Empty set (0.06 sec)
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Table Creation and Schema Inspection
+</summary>
+<p>
+To create a table and view its structure:
+</p>
+<pre>
+  <code>
+    mysql&gt; CREATE TABLE STUDENT(
+    -&gt; RollNumber INT,
+    -&gt; SName VARCHAR(20),
+    -&gt; SDateofBirth DATE,
+    -&gt; GUID CHAR(12),
+    -&gt; PRIMARY KEY (RollNumber));
+    Query OK, 0 rows affected (0.91 sec)
+    mysql&gt; DESCRIBE STUDENT;
+    +--------------+-------------+------+-----+---------+-------+
+    | Field        | Type        | Null | Key | Default | Extra |
+    +--------------+-------------+------+-----+---------+-------+
+    | RollNumber   | int         | NO   | PRI | NULL    |       |
+    | SName        | varchar(20) | YES  |     | NULL    |       |
+    | SDateofBirth | date        | YES  |     | NULL    |       |
+    | GUID         | char(12)    | YES  |     | NULL    |       |
+    +--------------+-------------+------+-----+---------+-------+
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Modifying Table Structure (ALTER TABLE)
+</summary>
+<ul>
+  <li>
+    <strong>
+    Add Primary Key:
+  </strong>
+  <pre>
+    <code>
+    mysql&gt; ALTER TABLE GUARDIAN ADD PRIMARY KEY (GUID);
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add Composite Primary Key:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE ATTENDANCE ADD PRIMARY KEY(AttendanceDate, RollNumber);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add Foreign Key:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE STUDENT ADD FOREIGN KEY(GUID) REFERENCES GUARDIAN(GUID);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add UNIQUE Constraint:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE GUARDIAN ADD UNIQUE(GPhone);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add Attribute:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE GUARDIAN ADD income INT;
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Modify Datatype:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE GUARDIAN MODIFY GAddress VARCHAR(40);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Modify Constraint (NOT NULL):
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE STUDENT MODIFY SName VARCHAR(20) NOT NULL;
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add Default Value:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE STUDENT MODIFY SDateofBirth DATE DEFAULT '2000-05-15';
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Remove Attribute:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE GUARDIAN DROP income;
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Remove Primary Key:
+</strong>
+<pre>
+  <code>
+  mysql&gt; ALTER TABLE GUARDIAN DROP PRIMARY KEY;
+</code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Removing Tables and Databases (DROP)
+</summary>
+<pre>
+  <code>
+    mysql&gt; DROP TABLE table_name;
+    mysql&gt; DROP DATABASE database_name;
+  </code>
+</pre>
+<p style="color: #b91c1c;">
+  <strong>
+  Caution:
+</strong>
+The
+<span class="keyword">
+DROP
+</span>
+statement permanently deletes the structure and all associated data. It cannot be undone.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.5 SQL for Data Manipulation (DML)
+</summary>
+<p>
+Data Manipulation Language (DML) commands are used to insert, modify, and delete records within tables.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Inserting Records (INSERT INTO)
+</summary>
+<p>
+To insert complete records matching the table schema order:
+</p>
+<pre>
+  <code>
+    mysql&gt; INSERT INTO GUARDIAN
+    -&gt; VALUES (444444444444, 'Amit Ahuja', 5711492685, 'G-35, Ashok vihar, Delhi');
+  </code>
+</pre>
+<p>
+To insert partial records or specify custom column ordering:
+</p>
+<pre>
+  <code>
+    mysql&gt; INSERT INTO GUARDIAN(GUID, GName, GAddress)
+    -&gt; VALUES (333333333333, 'Danny Dsouza', 'S -13, Ashok Village, Daman');
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.6 SQL for Data Query (DQL)
+</summary>
+<p>
+  The
+  <span class="keyword">
+  SELECT
+</span>
+statement is used to retrieve data from one or more tables.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Basic Selection and Column Aliasing
+</summary>
+<p>
+  Retrieve specific columns and rename them in the output using
+  <span class="keyword">
+  AS
+</span>
+:
+</p>
+<pre>
+  <code>
+    mysql&gt; SELECT EName AS Name, Salary*12 AS 'Annual Salary'
+    -&gt; FROM EMPLOYEE;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Eliminating Duplicates (DISTINCT)
+</summary>
+<pre>
+  <code>
+  mysql&gt; SELECT DISTINCT DeptId FROM EMPLOYEE;
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Filtering Records (WHERE Clause)
+</summary>
+<p>
+  Supports relational operators (
+  <span class="keyword">
+  =
+</span>
+,
+<span class="keyword">
+&lt;
+</span>
+,
+<span class="keyword">
+&gt;
+</span>
+,
+<span class="keyword">
+&lt;=
+</span>
+,
+<span class="keyword">
+&gt;=
+</span>
+,
+<span class="keyword">
+!=
+</span>
+) and logical operators (
+<span class="keyword">
+AND
+</span>
+,
+<span class="keyword">
+OR
+</span>
+,
+<span class="keyword">
+NOT
+</span>
+).
+</p>
+<pre>
+  <code>
+    mysql&gt; SELECT * FROM EMPLOYEE
+    -&gt; WHERE Salary &gt; 5000 AND DeptId = 'D04';
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Range and Set Operators (BETWEEN, IN)
+</summary>
+<ul>
+  <li>
+    <strong>
+    BETWEEN (Inclusive Range):
+  </strong>
+  <pre>
+    <code>
+      mysql&gt; SELECT Ename, DeptId FROM EMPLOYEE
+      -&gt; WHERE Salary BETWEEN 20000 AND 50000;
+    </code>
+  </pre>
+</li>
+<li>
+  <strong>
+  IN (Set Membership):
+</strong>
+<pre>
+  <code>
+    mysql&gt; SELECT * FROM EMPLOYEE
+    -&gt; WHERE DeptId IN ('D01', 'D02', 'D04');
+  </code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Sorting Results (ORDER BY)
+</summary>
+<p>
+  Sorts records in ascending (
+  <span class="keyword">
+  ASC
+</span>
+, default) or descending (
+<span class="keyword">
+DESC
+</span>
+) order:
+</p>
+<pre>
+  <code>
+    mysql&gt; SELECT * FROM EMPLOYEE
+    -&gt; ORDER BY Salary DESC;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Handling NULL Values
+</summary>
+<p>
+  Use
+  <span class="keyword">
+  IS NULL
+</span>
+or
+<span class="keyword">
+IS NOT NULL
+</span>
+to check for missing values:
+</p>
+<pre>
+  <code>
+    mysql&gt; SELECT * FROM EMPLOYEE
+    -&gt; WHERE Bonus IS NULL;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Pattern Matching (LIKE Operator)
+</summary>
+<p>
+Uses wildcards for substring matching:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    %
+  </span>
+  : Represents zero, one, or multiple characters.
+</li>
+<li>
+  <span class="keyword">
+  _
+</span>
+: Represents exactly one character.
+</li>
+</ul>
+<pre>
+  <code>
+    -- Starts with 'K'
+    mysql&gt; SELECT * FROM EMPLOYEE WHERE Ename LIKE 'K%';
+    -- Exactly 5 letters ending with 'ANYA'
+    mysql&gt; SELECT * FROM EMPLOYEE WHERE Ename LIKE '_ANYA';
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.7 Data Updation and Deletion
+</summary>
+<p>
+DML operations to modify or remove existing records in a table.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Updating Records (UPDATE)
+</summary>
+<pre>
+  <code>
+    mysql&gt; UPDATE STUDENT
+    -&gt; SET GUID = 101010101010
+    -&gt; WHERE RollNumber = 3;
+  </code>
+</pre>
+<p style="color: #b91c1c;">
+  <strong>
+  Caution:
+</strong>
+Omitting the
+<span class="keyword">
+WHERE
+</span>
+clause will update all records in the table.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Deleting Records (DELETE)
+</summary>
+<pre>
+  <code>
+    mysql&gt; DELETE FROM STUDENT
+    -&gt; WHERE RollNumber = 2;
+  </code>
+</pre>
+<p style="color: #b91c1c;">
+  <strong>
+  Caution:
+</strong>
+Omitting the
+<span class="keyword">
+WHERE
+</span>
+clause will delete all records from the table, leaving an empty table structure.
+</p>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 8
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-07-database-concepts.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 11 — Chapter 7: Database Concepts
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 11 — Chapter 7: Database Concepts
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction &amp; File System Concepts
+</summary>
+<p>
+Modern data management requires moving from manual record-keeping systems to electronic databases to store, organize, and retrieve information efficiently.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Limitations of Manual Record Keeping
+</summary>
+<p>
+Using manual registers (e.g., a school attendance register) presents several operational challenges:
+</p>
+<ul>
+  <li>
+    <strong>
+    Redundant Data Entry:
+  </strong>
+  Student details (Roll number and name) must be re-entered when promoted to a new class or register.
+</li>
+<li>
+  <strong>
+  Inconsistency:
+</strong>
+Writing student details repeatedly on monthly pages can lead to spelling errors, skipped records, or mismatched names.
+</li>
+<li>
+  <strong>
+  Data Loss Vulnerability:
+</strong>
+Physical registers are susceptible to being lost, stolen, or damaged.
+</li>
+<li>
+  <strong>
+  Consolidation Errors:
+</strong>
+Manual calculations of attendance percentages or academic performance are prone to human error.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The File System Approach
+</summary>
+<p>
+  A
+  <span class="keyword">
+  file
+</span>
+is a logical container on a computer storage device used to store data. File contents can include plain \text, program code, comma-separated values (
+<span class="keyword">
+CSV
+</span>
+), images, audio, video, or web pages.
+</p>
+<p>
+While files allow electronic storage, accessing and manipulating data within them requires custom application programs to parse and process the file contents.
+</p>
+<p>
+  <strong>
+  Example: School Student and Attendance Files
+</strong>
+</p>
+<p>
+Consider two separate files maintained on a computer system:
+</p>
+<p>
+  <em>
+  Table 7.1: STUDENT File (Maintained by Office Staff)
+</em>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin-bottom: 15px;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      RollNumber
+    </th>
+    <th>
+    SName
+  </th>
+  <th>
+  SDateofBirth
+</th>
+<th>
+GName
+</th>
+<th>
+GPhone
+</th>
+<th>
+GAddress
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    1
+  </td>
+  <td>
+  Atharv Ahuja
+</td>
+<td>
+2003-05-15
+</td>
+<td>
+Amit Ahuja
+</td>
+<td>
+5711492685
+</td>
+<td>
+G-35, Ashok Vihar, Delhi
+</td>
+</tr>
+<tr>
+  <td>
+  2
+</td>
+<td>
+Daizy Bhutia
+</td>
+<td>
+2002-02-28
+</td>
+<td>
+Baichung Bhutia
+</td>
+<td>
+3612967082
+</td>
+<td>
+Flat no. 5, Darjeeling Appt., Shimla
+</td>
+</tr>
+<tr>
+  <td>
+  3
+</td>
+<td>
+Taleem Shah
+</td>
+<td>
+2002-02-28
+</td>
+<td>
+Himanshu Shah
+</td>
+<td>
+4726309212
+</td>
+<td>
+26/77, West Patel Nagar, Ahmedabad
+</td>
+</tr>
+<tr>
+  <td>
+  4
+</td>
+<td>
+John Dsouza
+</td>
+<td>
+2003-08-18
+</td>
+<td>
+Danny Dsouza
+</td>
+<td>
+NULL
+</td>
+<td>
+S -13, Ashok Village, Daman
+</td>
+</tr>
+<tr>
+  <td>
+  5
+</td>
+<td>
+Ali Shah
+</td>
+<td>
+2003-07-05
+</td>
+<td>
+Himanshu Shah
+</td>
+<td>
+4726309212
+</td>
+<td>
+26/77, West Patel Nagar, Ahmedabad
+</td>
+</tr>
+<tr>
+  <td>
+  6
+</td>
+<td>
+Manika P.
+</td>
+<td>
+2002-03-10
+</td>
+<td>
+Sujata P.
+</td>
+<td>
+3801923168
+</td>
+<td>
+HNO-13, B- block, Preet Vihar, Madurai
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <em>
+  Table 7.2: ATTENDANCE File (Maintained by Class Teacher)
+</em>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      AttendanceDate
+    </th>
+    <th>
+    RollNumber
+  </th>
+  <th>
+  SName
+</th>
+<th>
+AttendanceStatus
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    2018-09-01
+  </td>
+  <td>
+  1
+</td>
+<td>
+Atharv Ahuja
+</td>
+<td>
+P
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-01
+</td>
+<td>
+2
+</td>
+<td>
+Daizy Bhutia
+</td>
+<td>
+P
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-01
+</td>
+<td>
+3
+</td>
+<td>
+Taleem Shah
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-01
+</td>
+<td>
+4
+</td>
+<td>
+John Dsouza
+</td>
+<td>
+P
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-01
+</td>
+<td>
+5
+</td>
+<td>
+Ali Shah
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-01
+</td>
+<td>
+6
+</td>
+<td>
+Manika P.
+</td>
+<td>
+P
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-02
+</td>
+<td>
+1
+</td>
+<td>
+Atharv Ahuja
+</td>
+<td>
+P
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-02
+</td>
+<td>
+2
+</td>
+<td>
+Daizy Bhutia
+</td>
+<td>
+P
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-02
+</td>
+<td>
+3
+</td>
+<td>
+Taleem Shah
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-02
+</td>
+<td>
+4
+</td>
+<td>
+John Dsouza
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-02
+</td>
+<td>
+5
+</td>
+<td>
+Ali Shah
+</td>
+<td>
+P
+</td>
+</tr>
+<tr>
+  <td>
+  2018-09-02
+</td>
+<td>
+6
+</td>
+<td>
+Manika P.
+</td>
+<td>
+P
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Limitations of a File System
+</summary>
+<p>
+As the volume of data and the number of files grow, a traditional file system exhibits several critical limitations:
+</p>
+<ul>
+  <li>
+    <strong>
+    (A) Difficulty in Access:
+  </strong>
+  Files do not have built-in query mechanisms. To retrieve data in a specific format, developers must write custom application programs. If a new query requirement arises, a new program must be written.
+</li>
+<li>
+  <strong>
+  (B) Data Redundancy:
+</strong>
+Redundancy refers to the duplication of the same data across multiple files. For example, student names (
+<span class="keyword">
+SName
+</span>
+) are stored in both the
+<span class="keyword">
+STUDENT
+</span>
+and
+<span class="keyword">
+ATTENDANCE
+</span>
+files. Similarly, guardian details are duplicated for siblings (e.g., Roll numbers 3 and 5). This wastes storage space and complicates updates.
+</li>
+<li>
+  <strong>
+  (C) Data Inconsistency:
+</strong>
+When redundant data is updated in one location but not in another, the database becomes inconsistent. For example, correcting a spelling mistake in the
+<span class="keyword">
+STUDENT
+</span>
+file but failing to update it in the
+<span class="keyword">
+ATTENDANCE
+</span>
+file leads to conflicting records.
+</li>
+<li>
+  <strong>
+  (D) Data Isolation:
+</strong>
+Files are stored in isolation with no logical links or mappings between them. Retrieving combined information (e.g., finding the attendance of a student along with their guardian's phone number) requires writing complex programs to manually map records across files.
+</li>
+<li>
+  <strong>
+  (E) Data Dependence:
+</strong>
+The structure of data inside a file is tightly coupled with the application programs that access it. If the file format or schema changes (e.g., adding a new field), all associated application programs must be modified.
+</li>
+<li>
+  <strong>
+  (F) Controlled Data Sharing:
+</strong>
+It is difficult to enforce fine-grained access control in a file system. For instance, a teacher should have write access to the attendance file, while office staff and parents should only have read access. File systems lack robust mechanisms to enforce such user-specific permissions.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Database Management System (DBMS)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Database Management System (DBMS)
+</span>
+is a software suite designed to create, manage, store, modify, and retrieve data from a database. It acts as an interface between the database and end-users or application programs, providing an abstract view of the data by hiding physical storage details.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Database Management System (DBMS)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Middleware / Data Access Layer interfacing between physical storage and application programs.
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Uses structured query languages (e.g., SQL) to execute queries, manage transactions, and enforce data integrity constraints.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Eliminates data redundancy, ensures data consistency, provides data independence, and enforces robust security and access controls.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Real-Life Applications of DBMS
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Application Domain
+    </th>
+    <th>
+    Database Contents &amp; Managed Entities
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Banking
+    </strong>
+  </td>
+  <td>
+  Customer information, account details, loan details, transaction histories, etc.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Crop Loan
+  </strong>
+</td>
+<td>
+Kisan credit card data, farmer's personal data, land area, cultivation details, loan history, repayment schedules.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Inventory Management
+  </strong>
+</td>
+<td>
+Product details, supplier information, stock levels, customer orders, delivery tracking.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Organisation Resource Management
+  </strong>
+</td>
+<td>
+Employee records, salary details, department structures, branch locations, performance metrics.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Online Shopping
+  </strong>
+</td>
+<td>
+Item descriptions, user login credentials, shopping carts, user preferences, transaction logs.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Transitioning from File System to DBMS
+</summary>
+<p>
+To convert the school file system into a relational database, we apply normalization principles to eliminate redundancy:
+</p>
+<ol>
+  <li>
+    <strong>
+    Remove Redundant Attributes:
+  </strong>
+  Remove
+  <span class="keyword">
+  SName
+</span>
+from the
+<span class="keyword">
+ATTENDANCE
+</span>
+table, as it can be retrieved dynamically by joining with the
+<span class="keyword">
+STUDENT
+</span>
+table using
+<span class="keyword">
+RollNumber
+</span>
+.
+</li>
+<li>
+  <strong>
+  Split Tables to Avoid Redundancy:
+</strong>
+Split the
+<span class="keyword">
+STUDENT
+</span>
+file into two tables:
+<span class="keyword">
+STUDENT
+</span>
+and
+<span class="keyword">
+GUARDIAN
+</span>
+. This ensures guardian details for siblings are stored only once.
+</li>
+<li>
+  <strong>
+  Introduce Unique Identifiers:
+</strong>
+Create a unique Guardian ID (
+<span class="keyword">
+GUID
+</span>
+) to uniquely identify each guardian, and use it as a linking attribute (foreign key) in the
+<span class="keyword">
+STUDENT
+</span>
+table.
+</li>
+</ol>
+<blockquote class="example-block">
+<p>
+  <em>
+  "Shifting from a file system to a DBMS involves a trade-off between operational efficiency and initial setup costs."
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Shifting to a DBMS incurs high initial costs, including purchasing sophisticated hardware and software licenses, training users to write queries, and ongoing recurrent costs for database administrators, regular backups, and disaster recovery operations. However, it guarantees data integrity, security, and concurrent access control.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Key Concepts in DBMS
+</summary>
+<p>
+To manage data efficiently, a DBMS relies on several foundational concepts and structural definitions:
+</p>
+<ul>
+  <li>
+    <strong>
+    (A) Database Schema:
+  </strong>
+  The logical design or skeleton of the database. It defines the structure of tables, their columns, data types, constraints, and the relationships among different tables. The schema is static and rarely changes.
+</li>
+<li>
+  <strong>
+  (B) Data Constraint:
+</strong>
+Restrictions or rules imposed on database columns to ensure data accuracy and reliability. Examples include:
+<ul>
+  <li>
+    <span class="keyword">
+    NOT NULL
+  </span>
+  : Ensures a column cannot have empty values.
+</li>
+<li>
+  <span class="keyword">
+  UNIQUE
+</span>
+: Ensures all values in a column are distinct.
+</li>
+<li>
+Value range constraints (e.g., a mobile number must be exactly 10 digits).
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  (C) Meta-data or Data Dictionary:
+</strong>
+Data about data. The DBMS stores the database schema, table definitions, and constraints in a centralized repository called the
+<span class="keyword">
+Database Catalog
+</span>
+or
+<span class="keyword">
+Data Dictionary
+</span>
+.
+</li>
+<li>
+  <strong>
+  (D) Database Instance:
+</strong>
+The actual state or snapshot of a database at a specific point in time, containing the populated data. While the schema is static, the instance changes constantly as data is inserted, updated, or deleted.
+</li>
+<li>
+  <strong>
+  (E) Query:
+</strong>
+A formal request made to a database to retrieve specific information. Queries are written in a query language such as Structured Query Language (
+<span class="keyword">
+SQL
+</span>
+).
+</li>
+<li>
+  <strong>
+  (F) Data Manipulation:
+</strong>
+The process of modifying database state through three core operations:
+<ul>
+  <li>
+    <strong>
+    Insertion:
+  </strong>
+  Adding new records (e.g., registering a new student).
+</li>
+<li>
+  <strong>
+  Deletion:
+</strong>
+Removing records (e.g., removing a student who left the school).
+</li>
+<li>
+  <strong>
+  Update:
+</strong>
+Modifying existing records (e.g., updating a guardian's phone number).
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  (G) Database Engine:
+</strong>
+The core software component of a DBMS responsible for storing, retrieving, processing, and securing data.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Relational Data Model
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Relational Data Model
+</span>
+represents data in the form of inter-related tables called
+<span class="keyword">
+relations
+</span>
+. It is the most widely used data model in modern commercial databases.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Relational Model Terminology
+</summary>
+<ul>
+  <li>
+    <strong>
+    Relation:
+  </strong>
+  A table containing rows and columns.
+</li>
+<li>
+  <strong>
+  Attribute:
+</strong>
+A named column in a relation representing a characteristic or property of the entity (also called a
+<em>
+field
+</em>
+).
+</li>
+<li>
+  <strong>
+  Tuple:
+</strong>
+A row in a relation representing a single, complete record of an entity.
+</li>
+<li>
+  <strong>
+  Domain:
+</strong>
+The set of all permissible values that an attribute can hold. Domains are typically defined using data types (e.g., integer, character string, date).
+</li>
+<li>
+  <strong>
+  Degree:
+</strong>
+The total number of attributes (columns) in a relation.
+</li>
+<li>
+  <strong>
+  Cardinality:
+</strong>
+The total number of tuples (rows) in a relation.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Example: GUARDIAN Relation Analysis
+</summary>
+<p>
+  Let us analyze the
+  <span class="keyword">
+  GUARDIAN
+</span>
+relation schema and its properties:
+</p>
+<p>
+  <code>
+  GUARDIAN(GUID, GName, GPhone, GAddress)
+</code>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin-bottom: 15px;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      GUID
+    </th>
+    <th>
+    GName
+  </th>
+  <th>
+  GPhone
+</th>
+<th>
+GAddress
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    444444444444
+  </td>
+  <td>
+  Amit Ahuja
+</td>
+<td>
+5711492685
+</td>
+<td>
+G-35, Ashok Vihar, Delhi
+</td>
+</tr>
+<tr>
+  <td>
+  111111111111
+</td>
+<td>
+Baichung Bhutia
+</td>
+<td>
+3612967082
+</td>
+<td>
+Flat no. 5, Darjeeling Appt., Shimla
+</td>
+</tr>
+<tr>
+  <td>
+  101010101010
+</td>
+<td>
+Himanshu Shah
+</td>
+<td>
+4726309212
+</td>
+<td>
+26/77, West Patel Nagar, Ahmedabad
+</td>
+</tr>
+<tr>
+  <td>
+  333333333333
+</td>
+<td>
+Danny Dsouza
+</td>
+<td>
+NULL
+</td>
+<td>
+S -13, Ashok Village, Daman
+</td>
+</tr>
+<tr>
+  <td>
+  466444444666
+</td>
+<td>
+Sujata P.
+</td>
+<td>
+3801923168
+</td>
+<td>
+HNO-13, B- block, Preet Vihar, Madurai
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+  <li>
+    <strong>
+    Degree of GUARDIAN:
+  </strong>
+  4 (Attributes: GUID, GName, GPhone, GAddress)
+</li>
+<li>
+  <strong>
+  Cardinality of GUARDIAN:
+</strong>
+5 (5 distinct rows/tuples)
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Three Important Properties of a Relation
+</summary>
+<ol>
+  <li>
+    <strong>
+    Properties of Attributes:
+  </strong>
+  <ul>
+    <li>
+    Each attribute in a relation must have a unique name.
+  </li>
+  <li>
+  The sequence/order of attributes in a relation is completely immaterial.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Properties of Tuples:
+</strong>
+<ul>
+  <li>
+  Each tuple in a relation must be distinct (no duplicate rows are allowed).
+</li>
+<li>
+The sequence/order of tuples in a relation is immaterial.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Properties of State/Values:
+</strong>
+<ul>
+  <li>
+  All values in a given attribute column must belong to the same domain (same data type).
+</li>
+<li>
+  Each data value must be
+  <strong>
+  atomic
+</strong>
+(indivisible into smaller meaningful subparts). For example, a phone number column should contain a single, complete number, not multiple numbers or comma-separated lists.
+</li>
+<li>
+No attribute can have multiple values in a single tuple.
+</li>
+<li>
+  A special value
+  <span class="keyword">
+  NULL
+</span>
+is used to represent values that are unknown, missing, or non-applicable.
+</li>
+</ul>
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Keys in a Relational Database
+</summary>
+<p>
+Keys are attributes or sets of attributes used to uniquely identify tuples within a relation and establish relationships between tables.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Candidate Key
+</summary>
+<p>
+  A relation can have one or more attributes that take unique values across all tuples. Any such attribute (or minimal set of attributes) that can uniquely identify a row is called a
+  <span class="keyword">
+  Candidate Key
+</span>
+.
+</p>
+<p>
+  <em>
+  Example:
+</em>
+In the
+<span class="keyword">
+GUARDIAN
+</span>
+table, both
+<span class="keyword">
+GUID
+</span>
+and
+<span class="keyword">
+GPhone
+</span>
+are candidate keys because no two guardians will share the same ID or phone number.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Primary Key
+</summary>
+<p>
+  The specific candidate key chosen by the database designer to uniquely identify the tuples in a relation is called the
+  <span class="keyword">
+  Primary Key
+</span>
+. It must be unique and cannot contain
+<span class="keyword">
+NULL
+</span>
+values.
+</p>
+<p>
+  Any candidate keys that are not chosen as the primary key are called
+  <span class="keyword">
+  Alternate Keys
+</span>
+.
+</p>
+<p>
+  <em>
+  Example:
+</em>
+If
+<span class="keyword">
+GUID
+</span>
+is selected as the primary key for
+<span class="keyword">
+GUARDIAN
+</span>
+, then
+<span class="keyword">
+GPhone
+</span>
+becomes the alternate key.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Composite Primary Key
+</summary>
+<p>
+  If no single attribute in a relation can uniquely identify a tuple, a combination of two or more attributes is selected to act as the primary key. This is called a
+  <span class="keyword">
+  Composite Primary Key
+</span>
+.
+</p>
+<p>
+  <em>
+  Example:
+</em>
+In the
+<span class="keyword">
+ATTENDANCE
+</span>
+table,
+<span class="keyword">
+RollNumber
+</span>
+is repeated on different dates, and
+<span class="keyword">
+AttendanceDate
+</span>
+is repeated for different students. However, the combination of
+<span class="keyword">
+{RollNumber, AttendanceDate}
+</span>
+is unique for every record and serves as the composite primary key.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4. Foreign Key
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Foreign Key
+</span>
+is an attribute in a relation whose values are derived from the primary key of another relation. It is used to establish a link or relationship between the two tables.
+</p>
+<ul>
+  <li>
+    <strong>
+    Referencing Relation (Foreign Relation):
+  </strong>
+  The table containing the foreign key.
+</li>
+<li>
+  <strong>
+  Referenced Relation (Primary/Master Relation):
+</strong>
+The table containing the primary key being referenced.
+</li>
+</ul>
+<p>
+  <em>
+  Example:
+</em>
+In the
+<span class="keyword">
+STUDENT
+</span>
+table, the attribute
+<span class="keyword">
+GUID
+</span>
+is a foreign key referencing the
+<span class="keyword">
+GUID
+</span>
+primary key in the
+<span class="keyword">
+GUARDIAN
+</span>
+table. This links each student to their respective guardian.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Database Schema Diagram
+</summary>
+<p>
+The relationships between tables are represented visually using schema diagrams, where arrows originate from the foreign key and point to the referenced primary key:
+</p>
+<pre>
+  <code>
+    STUDENT (
+    <u>
+    RollNumber
+  </u>
+  , SName, SDateofBirth, GUID)
+  |                                   |
+  |                                   +---&gt; GUARDIAN (
+  <u>
+  GUID
+</u>
+, GName, GPhone, GAddress)
+v
+ATTENDANCE (
+<u>
+AttendanceDate
+</u>
+,
+<u>
+RollNumber
+</u>
+, AttendanceStatus)
+</code>
+</pre>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 7
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-06-introduction-to-numpy.html"; } else { window.location.href = "11-chapter-08-introduction-to-structured-query-l.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

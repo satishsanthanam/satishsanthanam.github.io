@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 11 — Chapter 6: Introduction to NumPy
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 11 — Chapter 6: Introduction to NumPy
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.1 Introduction to NumPy
+</summary>
+<p>
+  NumPy stands for
+  <span class="keyword">
+  Numerical Python
+</span>
+. It is a core Python package designed for high-performance data analysis and scientific computing. It introduces a powerful multidimensional array object called
+<span class="keyword">
+ndarray
+</span>
+, along with an extensive collection of functions and tools to operate on these arrays efficiently.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: NumPy Library Environment
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  High-performance scientific computing library with a compiled C/C++ backend engine.
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Utilizes homogeneous, contiguous memory blocks to perform vectorized mathematical operations, eliminating Python loop overhead.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Drastically speeds up data processing pipelines and serves as the foundational data structure for pandas, scikit-learn, and other data science libraries.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Installing NumPy
+</summary>
+<p>
+  NumPy can be installed in the system environment using the Python package installer (
+  <span class="keyword">
+  pip
+</span>
+) via the command line interface:
+</p>
+<pre>
+  <code>
+  pip install NumPy
+</code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.2 Array Concepts &amp; Memory Allocation
+</summary>
+<p>
+  An
+  <span class="keyword">
+  array
+</span>
+is a data type used to store multiple values of the same type using a single identifier (variable name). It represents an ordered collection of data elements where each element can be referenced by its unique index (position).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Important Characteristics of an Array
+</summary>
+<ul>
+  <li>
+    <strong>
+    Homogeneity:
+  </strong>
+  Each element of the array must be of the exact same data type, though the actual values stored may differ.
+</li>
+<li>
+  <strong>
+  Contiguous Memory Allocation:
+</strong>
+The entire array is stored in adjacent, unbroken memory locations. This allows the system to calculate element addresses instantly, making operations extremely fast.
+</li>
+<li>
+  <strong>
+  Indexed Referencing:
+</strong>
+Elements are identified using the array name combined with a unique integer index. Indexing is zero-based (starts at
+<span class="keyword">
+0
+</span>
+and ends at
+<span class="keyword">
+n-1
+</span>
+for an array of size
+<span class="keyword">
+n
+</span>
+).
+</li>
+</ul>
+<p>
+  For example, consider an array containing 5 numbers:
+  <code>
+  [ 10, 9, 99, 71, 90 ]
+</code>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; \text-align: center; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Element Value
+    </th>
+    <td>
+    10
+  </td>
+  <td>
+  9
+</td>
+<td>
+99
+</td>
+<td>
+71
+</td>
+<td>
+90
+</td>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <th>
+    Index (Positive)
+  </th>
+  <td>
+  [0]
+</td>
+<td>
+[1]
+</td>
+<td>
+[2]
+</td>
+<td>
+[3]
+</td>
+<td>
+[4]
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Contiguous vs. Non-Contiguous Memory Allocation
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #0284c7; background-color: #f0f9ff;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Memory Allocation Mechanics:
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Contiguous Memory Allocation:
+  </strong>
+  The memory manager divides space into fixed-size, adjacent positions. Each position is allocated to a single data element sequentially. This allows direct offset calculations.
+</li>
+<li>
+  <strong>
+  Non-Contiguous Memory Allocation:
+</strong>
+Data is divided into several blocks and placed in different scattered parts of the memory based on availability. Elements are linked via pointers, which introduces access overhead.
+</li>
+</ul>
+</div>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.3 NumPy Array (ndarray) vs. Python List
+</summary>
+<p>
+  While Python has a built-in list structure, it is not optimized for vector mathematics or large-scale numerical processing. NumPy's
+  <span class="keyword">
+  ndarray
+</span>
+provides a highly efficient alternative.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.3.1 Key Differences Between List and Array
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Feature
+    </th>
+    <th>
+    Python List
+  </th>
+  <th>
+  NumPy Array (ndarray)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Data Homogeneity
+    </strong>
+  </td>
+  <td>
+    Can store elements of different data types. Example:
+    <code>
+    [1, 3.4, 'hello', 'a@']
+  </code>
+</td>
+<td>
+  All elements must be of the same data type. Example:
+  <code>
+  [1.2, 5.4, 2.7]
+</code>
+(all floats)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Memory Storage
+  </strong>
+</td>
+<td>
+Elements are not stored contiguously in memory; stores pointers to objects.
+</td>
+<td>
+Elements are stored in contiguous memory locations, enabling fast cache access.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Element-wise Operations
+  </strong>
+</td>
+<td>
+Does not support element-wise operations directly (e.g., multiplying a list by 3 replicates the list).
+</td>
+<td>
+  Supports direct element-wise operations (e.g.,
+  <code>
+  A1 / 3
+</code>
+divides each element by 3).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Memory Efficiency
+  </strong>
+</td>
+<td>
+Consumes more space because it must store type information and pointers for every individual element.
+</td>
+<td>
+Highly memory-efficient; stores type information once for the entire array.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Library Origin
+  </strong>
+</td>
+<td>
+Part of core Python.
+</td>
+<td>
+Part of the external NumPy library.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.3.2 Creation of NumPy Arrays from Lists
+</summary>
+<p>
+  To create and use NumPy arrays, the NumPy library must first be imported. By convention, it is imported under the alias
+  <span class="keyword">
+  np
+</span>
+:
+</p>
+<pre>
+  <code>
+  &gt;&gt;&gt; import numpy as np
+</code>
+</pre>
+<p>
+  The
+  <span class="keyword">
+  np.array()
+</span>
+function converts a Python list into a NumPy array:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array1 = np.array([10, 20, 30])
+    &gt;&gt;&gt; array1
+    array([10, 20, 30])
+  </code>
+</pre>
+<h4>
+Creating a 1-D Array &amp; Type Promotion
+</h4>
+<p>
+An array with a single row of elements is a 1-D array. If a list contains mixed data types, NumPy automatically promotes (coerces) all elements to a common compatible data type (e.g., integers and floats are promoted to strings if a string is present):
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array2 = np.array([5, -7.4, 'a', 7.2])
+    &gt;&gt;&gt; array2
+    array(['5', '-7.4', 'a', '7.2'], dtype='&lt;U32')
+  </code>
+</pre>
+<p>
+  <em>
+  Note:
+  <code>
+  &lt;U32
+</code>
+indicates a Unicode-32 data type.
+</em>
+</p>
+<h4>
+Creating a 2-D Array
+</h4>
+<p>
+  A two-dimensional (2-D) array is created by passing a nested list (a list of lists) to the
+  <span class="keyword">
+  np.array()
+</span>
+function:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array3 = np.array([[2.4, 3], [4.91, 7], [0, -1]])
+    &gt;&gt;&gt; array3
+    array([[ 2.4 ,  3.  ],
+    [ 4.91,  7.  ],
+    [ 0.  , -1.  ]])
+  </code>
+</pre>
+<p>
+  <em>
+  Note: The integers 3, 7, 0, and -1 have been automatically promoted to floats to maintain homogeneity.
+</em>
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #e11d48; background-color: #fff1f2;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Common Syntax Mistake:
+  </strong>
+</p>
+<p style="margin: 0;">
+  When passing elements to
+  <span class="keyword">
+  np.array()
+</span>
+, you must enclose them in square brackets to pass them as a single list argument. Forgetting the brackets results in a TypeError.
+</p>
+<pre style="margin: 8px 0 0 0;">
+  <code>
+    # INCORRECT:
+    &gt;&gt;&gt; a = np.array(1, 2, 3, 4)
+    # CORRECT:
+    &gt;&gt;&gt; a = np.array([1, 2, 3, 4])
+  </code>
+</pre>
+</div>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.3.3 Attributes of a NumPy Array
+</summary>
+<p>
+NumPy arrays have several built-in attributes that describe their structural properties:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Attribute
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Example Code &amp; Output
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      ndim
+    </span>
+  </td>
+  <td>
+  Returns the number of dimensions (axes/rank) of the array.
+</td>
+<td>
+  <pre style="margin:0;">
+    <code>
+      &gt;&gt;&gt; array3.ndim
+      2
+    </code>
+  </pre>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    shape
+  </span>
+</td>
+<td>
+Returns a tuple of integers indicating the size of the array along each dimension (rows, columns).
+</td>
+<td>
+  <pre style="margin:0;">
+    <code>
+      &gt;&gt;&gt; array3.shape
+      (3, 2)
+    </code>
+  </pre>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    size
+  </span>
+</td>
+<td>
+Returns the total number of elements in the array (equal to the product of the elements of its shape).
+</td>
+<td>
+  <pre style="margin:0;">
+    <code>
+      &gt;&gt;&gt; array3.size
+      6
+    </code>
+  </pre>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    dtype
+  </span>
+</td>
+<td>
+Returns the data type of the elements stored in the array.
+</td>
+<td>
+  <pre style="margin:0;">
+    <code>
+      &gt;&gt;&gt; array3.dtype
+      dtype('float64')
+    </code>
+  </pre>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    itemsize
+  </span>
+</td>
+<td>
+Returns the size in bytes of each individual element in the array.
+</td>
+<td>
+  <pre style="margin:0;">
+    <code>
+      &gt;&gt;&gt; array3.itemsize
+      8
+    </code>
+  </pre>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.3.4 Alternative Methods of Creating Arrays
+</summary>
+<ol>
+  <li>
+    <strong>
+    Specifying explicit data types:
+  </strong>
+  Use the
+  <span class="keyword">
+  dtype
+</span>
+parameter during creation.
+<pre>
+  <code>
+    &gt;&gt;&gt; array4 = np.array([[1, 2], [3, 4]], dtype=float)
+    &gt;&gt;&gt; array4
+    array([[1., 2.],
+    [3., 4.]])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Initializing with zeros:
+</strong>
+Use
+<span class="keyword">
+np.zeros(shape)
+</span>
+to create an array filled with 0s (default type is float).
+<pre>
+  <code>
+    &gt;&gt;&gt; array5 = np.zeros((3, 4))
+    &gt;&gt;&gt; array5
+    array([[0., 0., 0., 0.],
+    [0., 0., 0., 0.],
+    [0., 0., 0., 0.]])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Initializing with ones:
+</strong>
+Use
+<span class="keyword">
+np.ones(shape)
+</span>
+to create an array filled with 1s.
+<pre>
+  <code>
+    &gt;&gt;&gt; array6 = np.ones((3, 2))
+    &gt;&gt;&gt; array6
+    array([[1., 1.],
+    [1., 1.],
+    [1., 1.]])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Creating numerical ranges:
+</strong>
+Use
+<span class="keyword">
+np.arange([start,] stop[, step])
+</span>
+to generate sequences.
+<pre>
+  <code>
+    &gt;&gt;&gt; np.arange(6)
+    array([0, 1, 2, 3, 4, 5])
+    &gt;&gt;&gt; np.arange(-2, 24, 4)
+    array([-2,  2,  6, 10, 14, 18, 22])
+  </code>
+</pre>
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.4 Indexing and Slicing
+</summary>
+<p>
+NumPy arrays support precise indexing and slicing operations to access and extract subsets of data.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.4.1 Indexing 2-D Arrays
+</summary>
+<p>
+  For 2-D arrays, elements are referenced using two indices:
+  <code>
+  [row_index, column_index]
+</code>
+. Both indices start at 0.
+</p>
+<p>
+  Consider a 2-D array representing student marks:
+</p<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0; \text-align: center;">
+<thead>
+  <tr style="background-color: #f2f2f2;">
+    <th>
+    Student (Row Index)
+  </th>
+  <th>
+  Maths (Col 0)
+</th>
+<th>
+English (Col 1)
+</th>
+<th>
+Science (Col 2)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Ramesh (0)
+  </td>
+  <td>
+  78
+</td>
+<td>
+67
+</td>
+<td>
+56
+</td>
+</tr>
+<tr>
+  <td>
+  Vedika (1)
+</td>
+<td>
+76
+</td>
+<td>
+75
+</td>
+<td>
+47
+</td>
+</tr>
+<tr>
+  <td>
+  Harun (2)
+</td>
+<td>
+84
+</td>
+<td>
+59
+</td>
+<td>
+60
+</td>
+</tr>
+<tr>
+  <td>
+  Prasad (3)
+</td>
+<td>
+67
+</td>
+<td>
+72
+</td>
+<td>
+54
+</td>
+</tr>
+</tbody>
+</table>
+<pre>
+  <code>
+    &gt;&gt;&gt; marks[0, 2]  # Row 0, Column 2 (Ramesh's Science mark)
+    56
+    &gt;&gt;&gt; marks[0, 4]  # Out of bounds index
+    IndexError: index 4 is out of bounds for axis 1 with size 3
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.4.2 Slicing Arrays
+</summary>
+<p>
+  Slicing extracts a portion of an array using the syntax
+  <code>
+  [start:end:step]
+</code>
+. The end index is exclusive.
+</p>
+<h4>
+1-D Slicing Examples:
+</h4>
+<pre>
+  <code>
+    &gt;&gt;&gt; array8 = np.array([-2, 2, 6, 10, 14, 18, 22])
+    &gt;&gt;&gt; array8[3:5]
+    array([10, 14])
+    &gt;&gt;&gt; array8[::-1]  # Reversing the array
+    array([22, 18, 14, 10,  6,  2, -2])
+  </code>
+</pre>
+<h4>
+2-D Slicing Examples:
+</h4>
+<p>
+  Using a 3x4 array named
+  <code>
+  array9
+</code>
+:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array9 = np.array([[-7, 0, 10, 20], [-5, 1, 40, 200], [-1, 1, 4, 30]])
+    # Access all elements in the 3rd column (index 2) across rows 0 to 2
+    &gt;&gt;&gt; array9[0:3, 2]
+    array([10, 40, 4])
+    # Access elements of the 2nd and 3rd rows, from the 1st and 2nd columns
+    &gt;&gt;&gt; array9[1:3, 0:2]
+    array([[-5,  1],
+    [-1,  1]])
+    # If row/column indices are omitted, all rows/columns are selected
+    &gt;&gt;&gt; array9[:, 2]
+    array([10, 40, 4])
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.5 Operations on Arrays
+</summary>
+<p>
+NumPy supports fast element-wise arithmetic, matrix operations, transposing, and sorting.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.5.1 Arithmetic Operations
+</summary>
+<p>
+Arithmetic operations on two arrays are performed element-by-element. The arrays must have the exact same shape.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array1 = np.array([[3, 6], [4, 2]])
+    &gt;&gt;&gt; array2 = np.array([[10, 20], [15, 12]])
+    # Element-wise Addition
+    &gt;&gt;&gt; array1 + array2
+    array([[13, 26],
+    [19, 14]])
+    # Element-wise Subtraction
+    &gt;&gt;&gt; array1 - array2
+    array([[ -7, -14],
+    [-11, -10]])
+    # Element-wise Multiplication
+    &gt;&gt;&gt; array1 * array2
+    array([[30, 120],
+    [60, 24]])
+    # Matrix Multiplication (Dot Product)
+    &gt;&gt;&gt; array1 @ array2
+    array([[120, 132],
+    [ 70, 104]])
+    # Element-wise Exponentiation
+    &gt;&gt;&gt; array1 ** 3
+    array([[ 27, 216],
+    [ 64,   8]], dtype=int32)
+    # Element-wise Division
+    &gt;&gt;&gt; array2 / array1
+    array([[3.33333333, 3.33333333],
+    [3.75      , 6.        ]])
+    # Element-wise Modulo (Remainder)
+    &gt;&gt;&gt; array2 % array1
+    array([[1, 2],
+    [3, 0]], dtype=int32)
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.5.2 Transpose
+</summary>
+<p>
+Transposing an array swaps its rows and columns. The original array remains unchanged unless reassigned.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array3 = np.array([[10, -7, 0, 20], [-5, 1, 200, 40], [30, 1, -1, 4]])
+    &gt;&gt;&gt; array3.transpose()
+    array([[ 10,  -5,  30],
+    [ -7,   1,   1],
+    [  0, 200,  -1],
+    [ 20,  40,   4]])
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.5.3 Sorting Arrays
+</summary>
+<p>
+  The
+  <span class="keyword">
+  sort()
+</span>
+method sorts array elements in ascending order. For 2-D arrays, sorting can be performed along specific axes:
+</p>
+<ul>
+  <li>
+    <strong>
+    1-D Sorting:
+  </strong>
+  <pre>
+    <code>
+      &gt;&gt;&gt; array4 = np.array([1, 0, 2, -3, 6, 8, 4, 7])
+      &gt;&gt;&gt; array4.sort()
+      &gt;&gt;&gt; array4
+      array([-3,  0,  1,  2,  4,  6,  7,  8])
+    </code>
+  </pre>
+</li>
+<li>
+  <strong>
+  2-D Sorting (Row-wise, axis=1):
+</strong>
+Sorts elements within each row independently.
+<pre>
+  <code>
+    &gt;&gt;&gt; array4 = np.array([[10, -7, 0, 20], [-5, 1, 200, 40], [30, 1, -1, 4]])
+    &gt;&gt;&gt; array4.sort()  # axis=1 is default
+    &gt;&gt;&gt; array4
+    array([[ -7,   0,  10,  20],
+    [ -5,   1,  40, 200],
+    [ -1,   1,   4,  30]])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  2-D Sorting (Column-wise, axis=0):
+</strong>
+Sorts elements within each column independently.
+<pre>
+  <code>
+    &gt;&gt;&gt; array5 = np.array([[10, -7, 0, 20], [-5, 1, 200, 40], [30, 1, -1, 4]])
+    &gt;&gt;&gt; array5.sort(axis=0)
+    &gt;&gt;&gt; array5
+    array([[ -5,  -7,  -1,   4],
+    [ 10,   1,   0,  20],
+    [ 30,   1, 200,  40]])
+  </code>
+</pre>
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.6 Concatenating, Reshaping, and Splitting Arrays
+</summary>
+<p>
+These structural operations allow you to combine, reshape, or divide arrays.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.6 Concatenating Arrays
+</summary>
+<p>
+  Concatenation joins multiple arrays along a specified axis using
+  <span class="keyword">
+  np.concatenate()
+</span>
+. All dimensions except the concatenation axis must match exactly.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array1 = np.array([[10, 20], [-30, 40]])
+    &gt;&gt;&gt; array2 = np.zeros((2, 3), dtype=array1.dtype)
+    # Concatenate along columns (axis=1)
+    &gt;&gt;&gt; np.concatenate((array1, array2), axis=1)
+    array([[ 10,  20,   0,   0,   0],
+    [-30,  40,   0,   0,   0]])
+    # Attempting to concatenate along rows (axis=0) when column dimensions mismatch:
+    &gt;&gt;&gt; np.concatenate((array1, array2), axis=0)
+    ValueError: all the input array dimensions except for the concatenation axis must match exactly
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.7 Reshaping Arrays
+</summary>
+<p>
+  The
+  <span class="keyword">
+  reshape()
+</span>
+function changes the dimensions of an array without changing its data. The total number of elements must remain constant.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array3 = np.arange(10, 22)  # 12 elements
+    &gt;&gt;&gt; array3.reshape(3, 4)
+    array([[10, 11, 12, 13],
+    [14, 15, 16, 17],
+    [18, 19, 20, 21]])
+    &gt;&gt;&gt; array3.reshape(2, 6)
+    array([[10, 11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20, 21]])
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.8 Splitting Arrays
+</summary>
+<p>
+  The
+  <span class="keyword">
+  np.split()
+</span>
+function divides an array into multiple sub-arrays along a specified axis. You can split by specifying split indices or an integer for equal divisions.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; array4 = np.array([[10, -7, 0, 20], [-5, 1, 200, 40], [30, 1, -1, 4], [1, 2, 0, 4], [0, 1, 0, 2]])
+    # Split row-wise (axis=0) at row indices 1 and 3
+    &gt;&gt;&gt; first, second, third = np.split(array4, [1, 3])
+    &gt;&gt;&gt; first
+    array([[10, -7,  0, 20]])
+    &gt;&gt;&gt; second
+    array([[-5,   1, 200,  40],
+    [30,   1,  -1,   4]])
+    &gt;&gt;&gt; third
+    array([[1, 2, 0, 4],
+    [0, 1, 0, 2]])
+    # Split column-wise (axis=1) into 2 equal parts
+    &gt;&gt;&gt; firsthalf, secondhalf = np.split(array4, 2, axis=1)
+    &gt;&gt;&gt; firsthalf
+    array([[10, -7],
+    [-5,  1],
+    [30,  1],
+    [ 1,  2],
+    [ 0,  1]])
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.9 Statistical Operations on Arrays
+</summary>
+<p>
+NumPy provides built-in statistical functions to compute descriptive metrics across an entire array or along specific axes.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Statistical Functions
+</summary>
+<p>
+Let's use these two sample arrays:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; arrayA = np.array([1, 0, 2, -3, 6, 8, 4, 7])
+    &gt;&gt;&gt; arrayB = np.array([[3, 6], [4, 2]])
+  </code>
+</pre>
+<ol>
+  <li>
+    <strong>
+    Maximum Value (
+    <span class="keyword">
+    max()
+  </span>
+  ):
+</strong>
+Finds the largest element.
+<pre>
+  <code>
+    &gt;&gt;&gt; arrayA.max()
+    8
+    &gt;&gt;&gt; arrayB.max(axis=1)  # Row-wise maximums
+    array([6, 4])
+    &gt;&gt;&gt; arrayB.max(axis=0)  # Column-wise maximums
+    array([4, 6])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Minimum Value (
+  <span class="keyword">
+  min()
+</span>
+):
+</strong>
+Finds the smallest element.
+<pre>
+  <code>
+    &gt;&gt;&gt; arrayA.min()
+    -3
+    &gt;&gt;&gt; arrayB.min(axis=0)
+    array([3, 2])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Summation (
+  <span class="keyword">
+  sum()
+</span>
+):
+</strong>
+Computes the sum of elements.
+<pre>
+  <code>
+    &gt;&gt;&gt; arrayA.sum()
+    25
+    &gt;&gt;&gt; arrayB.sum(axis=1)
+    array([9, 6])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Arithmetic Mean (
+  <span class="keyword">
+  mean()
+</span>
+):
+</strong>
+Computes the average value.
+<pre>
+  <code>
+    &gt;&gt;&gt; arrayA.mean()
+    3.125
+    &gt;&gt;&gt; arrayB.mean(axis=0)
+    array([3.5, 4. ])
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Standard Deviation (
+  <span class="keyword">
+  std()
+</span>
+):
+</strong>
+Measures the dispersion of elements from the mean.
+<pre>
+  <code>
+    &gt;&gt;&gt; arrayA.std()
+    3.550968177835448
+    &gt;&gt;&gt; arrayB.std(axis=0)
+    array([0.5, 2. ])
+  </code>
+</pre>
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.10 Loading and Saving Arrays from Files
+</summary>
+<p>
+NumPy provides robust functions to read data from external \text files (like CSVs) and write arrays back to disk.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.10.1 Loading Data with loadtxt()
+</summary>
+<p>
+  The
+  <span class="keyword">
+  np.loadtxt()
+</span>
+function is used to load homogeneous data from \text files. It requires each row to have the same number of values.
+</p>
+<p>
+  Suppose we have a file named
+  <code>
+  data.txt
+</code>
+:
+</p>
+<pre>
+  <code>
+    RollNo, Marks1, Marks2, Marks3
+    1, 36, 18, 57
+    2, 22, 23, 45
+    3, 43, 51, 37
+    4, 41, 40, 60
+    5, 13, 18, 37
+  </code>
+</pre>
+<p>
+We can load this file into a NumPy array using:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; studentdata = np.loadtxt('C:/NCERT/data.txt', skiprows=1, delimiter=',', dtype=int)
+    &gt;&gt;&gt; studentdata
+    array([[ 1, 36, 18, 57],
+    [ 2, 22, 23, 45],
+    [ 3, 43, 51, 37],
+    [ 4, 41, 40, 60],
+    [ 5, 13, 18, 27]])
+  </code>
+</pre>
+<h4>
+Key Parameters of loadtxt():
+</h4>
+<ul>
+  <li>
+    <strong>
+    skiprows=1:
+  </strong>
+  Skips the first row (header row containing column names).
+</li>
+<li>
+  <strong>
+  delimiter=',':
+</strong>
+Specifies the character separating values in the file (e.g., comma for CSV).
+</li>
+<li>
+  <strong>
+  dtype=int:
+</strong>
+Specifies the data type of the resulting array (defaults to float).
+</li>
+<li>
+  <strong>
+  unpack=True:
+</strong>
+Transposes the returned array, allowing you to extract columns directly into separate variables.
+<pre>
+  <code>
+  &gt;&gt;&gt; rollno, mks1, mks2, mks3 = np.loadtxt('C:/NCERT/data.txt', skiprows=1, delimiter=',', unpack=True, dtype=int)
+</code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.10.2 Loading Data with genfromtxt()
+</summary>
+<p>
+  The
+  <span class="keyword">
+  np.genfromtxt()
+</span>
+function is more robust than
+<span class="keyword">
+loadtxt()
+</span>
+because it can handle missing values and non-numeric data, converting them to
+<span class="keyword">
+nan
+</span>
+(Not a Number).
+</p>
+<p>
+  Suppose we have a file named
+  <code>
+  dataMissing.txt
+</code>
+:
+</p>
+<pre>
+  <code>
+    RollNo, Marks1, Marks2, Marks3
+    1, 36, 18, 57
+    2, ab, 23, 45
+    3, 43, 51,
+    4, 41, 40, 60
+    5, 13, 18, 27
+  </code>
+</pre>
+<p>
+Loading this file with default settings:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; dataarray = np.genfromtxt('C:/NCERT/dataMissing.txt', skip_header=1, delimiter=',')
+    &gt;&gt;&gt; dataarray
+    array([[ 1., 36., 18., 57.],
+    [ 2., nan, 23., 45.],
+    [ 3., 43., 51., nan],
+    [ 4., 41., 40., 60.],
+    [ 5., 13., 18., 27.]])
+  </code>
+</pre>
+<h4>
+Handling Missing Values with filling_values:
+</h4>
+<p>
+  You can replace missing or non-numeric values with a specific placeholder value using the
+  <span class="keyword">
+  filling_values
+</span>
+parameter:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; dataarray = np.genfromtxt('C:/NCERT/dataMissing.txt', skip_header=1, delimiter=',', filling_values=-999, dtype=int)
+    &gt;&gt;&gt; dataarray
+    array([[   1,   36,   18,   57],
+    [   2, -999,   23,   45],
+    [   3,   43,   51, -999],
+    [   4,   41,   40,   60],
+    [   5,   13,   18,   27]])
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6.11 Saving Arrays to Disk
+</summary>
+<p>
+  The
+  <span class="keyword">
+  np.savetxt()
+</span>
+function writes a NumPy array to a \text file on disk.
+</p>
+<pre>
+  <code>
+  &gt;&gt;&gt; np.savetxt('C:/NCERT/testout.txt', studentdata, delimiter=',', fmt='%i')
+</code>
+</pre>
+<ul>
+  <li>
+    <strong>
+    fmt='%i':
+  </strong>
+  Saves the data as integers. The default format is float.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  File I/O Method Reference Matrix
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Computing Method
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters &amp; Arguments
+</th>
+<th>
+Algorithmic Purpose &amp; Output Representation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      loadtxt
+    </span>
+  </td>
+  <td>
+    <code>
+    numpy.loadtxt(fname, dtype=&lt;class 'float'&gt;, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0, encoding='bytes', max_rows=None)
+  </code>
+</td>
+<td>
+  <code>
+  fname
+</code>
+,
+<code>
+dtype
+</code>
+,
+<code>
+delimiter
+</code>
+,
+<code>
+skiprows
+</code>
+,
+<code>
+unpack
+</code>
+</td>
+<td>
+Loads homogeneous data from a \text file into a NumPy array. Fast but fails on missing values.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    genfromtxt
+  </span>
+</td>
+<td>
+  <code>
+  numpy.genfromtxt(fname, dtype=&lt;class 'float'&gt;, comments='#', delimiter=None, skip_header=0, skip_footer=0, converters=None, missing_values=None, filling_values=None, usecols=None, names=None, unpack=None, usemask=False)
+</code>
+</td>
+<td>
+  <code>
+  fname
+</code>
+,
+<code>
+dtype
+</code>
+,
+<code>
+delimiter
+</code>
+,
+<code>
+skip_header
+</code>
+,
+<code>
+filling_values
+</code>
+,
+<code>
+unpack
+</code>
+</td>
+<td>
+  Loads data from a \text file, automatically handling missing or invalid values by converting them to
+  <code>
+  nan
+</code>
+or a specified placeholder.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    savetxt
+  </span>
+</td>
+<td>
+  <code>
+    numpy.savetxt(fname, X, fmt='%.18e', delimiter=' ', newline='
+    ', header='', footer='', comments='# ', encoding=None)
+  </code>
+</td>
+<td>
+  <code>
+  fname
+</code>
+,
+<code>
+X
+</code>
+,
+<code>
+fmt
+</code>
+,
+<code>
+delimiter
+</code>
+</td>
+<td>
+Saves a NumPy array to a \text file using a specified delimiter and format.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6.12 Case Study: Iris Flower Dataset Analysis
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  The Iris flower dataset is a classic multivariate dataset introduced by the British statistician and biologist Ronald Fisher in 1936. It consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica, and Iris versicolor). Four features are measured from each sample: the length and the width of the sepals and petals, in centimeters.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This dataset serves as a foundational benchmark for pattern recognition and classification algorithms. In modern data pipelines, handling such multi-class biological data requires robust preprocessing protocols, including dropping non-numeric categorical columns (like the species name string) to perform matrix operations, splitting arrays cleanly by class indices, and computing descriptive statistics (mean, standard deviation, variance) to establish classification boundaries without algorithmic bias.
+</p>
+</blockquote>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Case Study Implementation Code
+</summary>
+<pre>
+  <code>
+    &gt;&gt;&gt; import numpy as np
+    # 1. Load the data from Iris.txt (ignoring the header and string column)
+    &gt;&gt;&gt; iris = np.genfromtxt('C:/NCERT/Iris.txt', skip_header=1, delimiter=',', dtype=float)
+    # 2. Drop column index 4 (the species name string column) to keep only numeric data
+    &gt;&gt;&gt; iris = iris[0:30, [0, 1, 2, 3, 5]]
+    # 3. Display shape, dimensions, and size
+    &gt;&gt;&gt; iris.shape
+    (30, 5)
+    &gt;&gt;&gt; iris.ndim
+    2
+    &gt;&gt;&gt; iris.size
+    150
+    # 4. Split the dataset into three arrays (10 rows each for the three species)
+    &gt;&gt;&gt; iris1, iris2, iris3 = np.split(iris, [10, 20], axis=0)
+    # 5. Find column-wise statistics for the entire dataset
+    &gt;&gt;&gt; iris_max = iris.max(axis=0)
+    &gt;&gt;&gt; iris_min = iris.min(axis=0)
+    &gt;&gt;&gt; iris_avg = iris.mean(axis=0).round(2)
+    &gt;&gt;&gt; iris_std = iris.std(axis=0).round(2)
+    &gt;&gt;&gt; iris_avg
+    array([5.68, 3.03, 3.61, 1.22, 2.  ])
+    # 6. Compare species statistics (e.g., check if Iris setosa's min sepal length is greater than the dataset's overall min)
+    &gt;&gt;&gt; iris1_min = iris1.min(axis=0)
+    &gt;&gt;&gt; iris1_min[0] &gt; iris_min[0]
+    False
+    # 7. Save the computed average values to disk
+    &gt;&gt;&gt; np.savetxt('C:/NCERT/IrisMeanValues.txt', iris_avg, delimiter=',')
+  </code>
+</pre>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 6
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-05-understanding-data.html"; } else { window.location.href = "11-chapter-07-database-concepts.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
