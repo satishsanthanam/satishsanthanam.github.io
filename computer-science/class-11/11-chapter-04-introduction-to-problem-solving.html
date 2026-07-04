@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 4: Introduction to Problem Solving
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 4: Introduction to Problem Solving
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Problem Solving
+</summary>
+<p>
+Today, computers are ubiquitous and essential for executing tasks with high speed and accuracy. From booking train tickets online to managing complex railway networks, computerisation has transformed routine human tasks. However, computers themselves cannot solve problems; they require precise, step-by-step instructions designed by humans. Problem solving is the systematic process of identifying a problem, developing an algorithm, and implementing it as a computer program.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Problem Solving Process
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Conceptual &amp; Design Phase
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Involves three core phases: defining the problem precisely, designing a logical solution (
+<span class="keyword">
+algorithm
+</span>
+), and implementing the solution (
+<span class="keyword">
+program
+</span>
+) using a programming language.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Incorrect problem definition leads to the development of software that does not meet user requirements, wasting computational and human resources.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Steps for Problem Solving
+</summary>
+<p>
+Solving complex problems using a computer requires a methodical, multi-step approach. This structured engineering cycle ensures that the final software is reliable, efficient, and correct.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Analysing the Problem
+</summary>
+<p>
+Before designing a solution, it is critical to clearly understand the problem statement. This involves identifying the principal components of the problem, deciding on core functionalities, and determining the required inputs and expected outputs.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: GIGO (Garbage In Garbage Out)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Data Input &amp; Validation Tier
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+The correctness of a computer's output is directly dependent on the accuracy and validity of the input provided.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+If invalid data is accepted without validation, the system will produce incorrect results, potentially causing downstream system failures.
+</li>
+</ul>
+</div>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Developing an Algorithm
+</summary>
+<p>
+  An
+  <span class="keyword">
+  algorithm
+</span>
+is a tentative solution plan represented in natural language. It acts as a roadmap or recipe, detailing the exact steps required to accomplish a task. Programmers refine the algorithm iteratively until it captures all aspects of the desired solution.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Coding
+</summary>
+<p>
+Once finalized, the algorithm is translated into a format understood by computers using a high-level programming language. It is crucial to document the coding procedures and maintain clean code for future readability and maintenance.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4. Testing and Debugging
+</summary>
+<p>
+The program must be tested against various parameters to ensure it meets user requirements, responds within expected timeframes, and handles all possible inputs correctly. Testing helps identify syntactical errors (which prevent execution) and logical errors (which produce incorrect outputs).
+</p>
+<p>
+The software industry follows standardized testing methodologies:
+</p>
+<ul>
+  <li>
+    <strong>
+    Unit / Component Testing:
+  </strong>
+  Testing individual modules or functions independently.
+</li>
+<li>
+  <strong>
+  Integration Testing:
+</strong>
+Verifying that combined units function correctly together.
+</li>
+<li>
+  <strong>
+  System Testing:
+</strong>
+Testing the complete, integrated software system.
+</li>
+<li>
+  <strong>
+  Acceptance Testing:
+</strong>
+Ensuring the software meets business requirements and is ready for delivery.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Algorithms &amp; Representation
+</summary>
+<p>
+  An
+  <span class="keyword">
+  algorithm
+</span>
+is a finite sequence of steps that leads to a desired result in a finite amount of time. It must have a definite beginning, a definite end, and consist of precise steps.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Characteristics of a Good Algorithm
+</summary>
+<ul>
+  <li>
+    <strong>
+    Precision:
+  </strong>
+  Steps are clearly and precisely stated.
+</li>
+<li>
+  <strong>
+  Uniqueness:
+</strong>
+The result of each step is uniquely defined and depends only on the input and the results of preceding steps.
+</li>
+<li>
+  <strong>
+  Finiteness:
+</strong>
+The algorithm always terminates after a finite number of steps.
+</li>
+<li>
+  <strong>
+  Input:
+</strong>
+The algorithm receives zero or more well-defined inputs.
+</li>
+<li>
+  <strong>
+  Output:
+</strong>
+The algorithm produces at least one well-defined output.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Flowcharts (Visual Representation)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  flowchart
+</span>
+is a diagrammatic representation of an algorithm using standardized geometric shapes connected by arrows to show the flow of execution.
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Flowchart Symbol
+    </th>
+    <th>
+    Function Name
+  </th>
+  <th>
+  Description
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Oval / Capsule
+  </td>
+  <td>
+  Start/End (Terminator)
+</td>
+<td>
+Indicates where the program flow starts and terminates.
+</td>
+</tr>
+<tr>
+  <td>
+  Rectangle
+</td>
+<td>
+Process
+</td>
+<td>
+Represents an action, calculation, or processing step.
+</td>
+</tr>
+<tr>
+  <td>
+  Diamond
+</td>
+<td>
+Decision
+</td>
+<td>
+A branching point asking a Yes/No or True/False question to split the path.
+</td>
+</tr>
+<tr>
+  <td>
+  Parallelogram
+</td>
+<td>
+Input/Output
+</td>
+<td>
+Used for inputting data or outputting results.
+</td>
+</tr>
+<tr>
+  <td>
+  Arrow
+</td>
+<td>
+Line / Connector
+</td>
+<td>
+Shows the direction of the flow of control between shapes.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Pseudocode (Textual Representation)
+</summary>
+<p>
+  <span class="keyword">
+  Pseudocode
+</span>
+is an informal, non-executable language that helps programmers design algorithms in a human-readable format. It uses standard programming keywords but lacks strict syntax rules.
+</p>
+<p>
+Commonly used pseudocode keywords include:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    INPUT
+  </span>
+  : To receive data from the user.
+</li>
+<li>
+  <span class="keyword">
+  COMPUTE
+</span>
+: To perform calculations.
+</li>
+<li>
+  <span class="keyword">
+  PRINT
+</span>
+: To display outputs.
+</li>
+<li>
+  <span class="keyword">
+  INCREMENT
+</span>
+/
+<span class="keyword">
+DECREMENT
+</span>
+: To adjust counter values.
+</li>
+<li>
+  <span class="keyword">
+  IF/ELSE
+</span>
+: For conditional branching.
+</li>
+<li>
+  <span class="keyword">
+  WHILE
+</span>
+: For iterative loops.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Flow of Control
+</summary>
+<p>
+The flow of control defines the order in which individual statements, instructions, or function calls are executed or evaluated within an algorithm or program.
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Sequence
+    </strong>
+  </td>
+  <td>
+  Linear execution of statements.
+</td>
+<td>
+Statements run one after another in a direct, top-to-bottom order.
+</td>
+<td>
+Executes basic, non-branching procedural steps.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Selection
+  </strong>
+</td>
+<td>
+Conditional branching of execution.
+</td>
+<td>
+  Uses decision blocks (
+  <span class="keyword">
+  IF/ELSE
+</span>
+) based on binary (True/False) values.
+</td>
+<td>
+Enables decision-making capabilities within programs.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Repetition
+  </strong>
+</td>
+<td>
+Iterative execution of a block of code.
+</td>
+<td>
+Loops run repeatedly until a specified condition becomes false.
+</td>
+<td>
+Automates repetitive tasks and processes dynamic datasets.
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Selection (Conditionals)
+</summary>
+<p>
+Conditionals allow programs to choose different execution paths based on dynamic conditions. For example, checking voting eligibility:
+</p>
+<pre>
+  <code>
+    INPUT Age
+    IF Age &gt;= 18 THEN
+    PRINT "Eligible to Vote"
+    ELSE
+    PRINT "Not Eligible to Vote"
+    END IF
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Repetition (Loops)
+</summary>
+<p>
+Loops are used when a set of instructions needs to be executed multiple \times. A counter variable typically tracks the iterations.
+</p>
+<pre>
+  <code>
+    Set count = 0, sum = 0
+    WHILE count &lt; 5
+    INPUT num
+    sum = sum + num
+    count = count + 1
+    END WHILE
+    average = sum / 5
+    PRINT average
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Verifying Algorithms
+</summary>
+<p>
+  Algorithm verification ensures that the logic is correct and works as expected across all possible input scenarios. A common method of verification is a
+  <span class="keyword">
+  dry run
+</span>
+, where the programmer manually traces the execution steps of the algorithm using sample input values.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Time Addition Algorithm Verification
+</em>
+</p>
+<p>
+Consider an algorithm designed to add two time durations, $T1$ and $T2$, given in hours and minutes.
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+A naive algorithm simply adds hours and minutes independently ($hh\_total = hh1 + hh2$ and $mm\_total = mm1 + mm2$). If we dry run this with $T1 = 4\text{ hrs } 50\text{ mins}$ and $T2 = 2\text{ hrs } 20\text{ mins}$, the output is $6\text{ hrs } 70\text{ mins}$, which is mathematically incorrect for time measurement. The verified and corrected algorithm must include a conditional check:
+<code>
+IF (mm_total &gt;= 60) THEN hh_total = hh_total + 1, mm_total = mm_total - 60
+</code>
+. This demonstrates how dry running prevents logical errors from propagating into the final code.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Comparison of Algorithms
+</summary>
+<p>
+A single problem can have multiple algorithmic solutions. Programmers compare algorithms to select the most efficient one based on resource utilization.
+</p>
+<ul>
+  <li>
+    <strong>
+    Time Complexity:
+  </strong>
+  The amount of processing time an algorithm needs to execute to completion.
+</li>
+<li>
+  <strong>
+  Space Complexity:
+</strong>
+The amount of computer memory required by the algorithm during execution.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Prime Number Verification Efficiency
+</em>
+</p>
+<p>
+To determine if a number $N$ is prime, we can design several algorithms:
+</p>
+<ol>
+  <li>
+    <strong>
+    Method 1:
+  </strong>
+  Test divisibility by every number from $2$ to $N-1$. (High time complexity, inefficient for large numbers).
+</li>
+<li>
+  <strong>
+  Method 2:
+</strong>
+Test divisibility only up to $N/2$. (Reduces calculations by half).
+</li>
+<li>
+  <strong>
+  Method 3:
+</strong>
+Test divisibility only up to $\sqrt{N}$. (Highly efficient, mathematically optimal).
+</li>
+<li>
+  <strong>
+  Method 4:
+</strong>
+Divide by a pre-stored list of prime numbers up to 100. (Extremely fast, but has high space complexity and is limited to smaller ranges).
+</li>
+</ol>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This comparison highlights the classic trade-off between time and space complexity. While Method 3 optimizes processing time without extra memory, Method 4 sacrifices memory space to achieve faster execution speeds. Selecting the right algorithm depends on the target system's hardware constraints.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Coding &amp; Decomposition
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Coding
+</summary>
+<p>
+  Coding is the process of translating a finalized algorithm into a high-level programming language (like Python, C++, or Java). High-level languages are portable and human-readable, but they must be translated into low-level machine language ($0$s and $1$s) using a
+  <span class="keyword">
+  compiler
+</span>
+or
+<span class="keyword">
+interpreter
+</span>
+before execution.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Decomposition
+</summary>
+<p>
+  <span class="keyword">
+  Decomposition
+</span>
+is the process of breaking down a complex, large-scale problem into smaller, more manageable sub-problems. This "divide and conquer" strategy simplifies design, allows independent teams to work on different modules, and makes testing and debugging highly efficient.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Railway Reservation System Decomposition
+</em>
+</p>
+<p>
+A complete railway reservation system is highly complex. Through decomposition, it is broken down into distinct, manageable subsystems:
+</p>
+<ul>
+  <li>
+    <strong>
+    Trains' Information Module:
+  </strong>
+  Manages schedules, routes, stations, and classes.
+</li>
+<li>
+  <strong>
+  Reservation Module:
+</strong>
+Handles booking, cancellations, seat availability, and waiting lists.
+</li>
+<li>
+  <strong>
+  Billing Service:
+</strong>
+Manages payment processing and transaction security.
+</li>
+<li>
+  <strong>
+  Food &amp; Catering Service:
+</strong>
+Handles onboard meal bookings.
+</li>
+</ul>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Decomposing the system allows specialized engineering teams to develop and test individual modules independently. Once verified, these modules are integrated using clean APIs to form a robust, scalable, and fault-tolerant enterprise application.
+</p>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 4
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-03-emerging-trends.html"; } else { window.location.href = "11-chapter-05-getting-started-with-python.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 5: Getting Started with Python
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 5: Getting Started with Python
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.1 Introduction to Python
+</summary>
+<p>
+Python is a high-level, interpreted programming language. Before diving into Python, it is essential to understand the fundamental concepts of programming languages and how they bridge the gap between human logic and machine execution.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Programming Concepts
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Program
+  </span>
+  : An ordered set of instructions executed by a computer to carry out a specific task.
+</li>
+<li>
+  <span class="keyword">
+  Programming Language
+</span>
+: The formal language used to specify instructions to a computer.
+</li>
+<li>
+  <span class="keyword">
+  Machine Language
+</span>
+: Low-level language consisting of 0s and 1s that computers understand natively.
+</li>
+<li>
+  <span class="keyword">
+  High-Level Language
+</span>
+: Human-readable languages (e.g., Python, C++, Java) that are easier to manage but require translation.
+</li>
+<li>
+  <span class="keyword">
+  Source Code
+</span>
+: The program written in a high-level language.
+</li>
+<li>
+  <span class="keyword">
+  Interpreter
+</span>
+: Translates and executes source code line-by-line. Python uses an interpreter.
+</li>
+<li>
+  <span class="keyword">
+  Compiler
+</span>
+: Translates the entire source code at once into object code before execution.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.1.1 Features of Python
+</summary>
+<ul>
+  <li>
+    <strong>
+    High-Level &amp; Free/Open Source
+  </strong>
+  : Accessible to everyone and easy to distribute.
+</li>
+<li>
+  <strong>
+  Interpreted Language
+</strong>
+: Executed line-by-line by the Python interpreter.
+</li>
+<li>
+  <strong>
+  Easy to Understand
+</strong>
+: Features a clearly defined syntax and simple structure.
+</li>
+<li>
+  <strong>
+  Case-Sensitive
+</strong>
+: For example,
+<span class="keyword">
+NUMBER
+</span>
+and
+<span class="keyword">
+number
+</span>
+are treated as different identifiers.
+</li>
+<li>
+  <strong>
+  Portable &amp; Platform Independent
+</strong>
+: Can run on various operating systems (Windows, macOS, Linux).
+</li>
+<li>
+  <strong>
+  Rich Standard Library
+</strong>
+: Offers a vast collection of predefined functions.
+</li>
+<li>
+  <strong>
+  Indentation-Based
+</strong>
+: Uses indentation instead of curly braces to define code blocks.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.1.2 Working with Python &amp; Execution Modes
+</summary>
+<p>
+  To write and run Python programs, we use a Python interpreter (also called the
+  <span class="keyword">
+  Python shell
+</span>
+), indicated by the prompt
+<code>
+&gt;&gt;&gt;
+</code>
+.
+</p>
+<ol>
+  <li>
+    <strong>
+    Interactive Mode
+  </strong>
+  : Allows execution of individual statements instantaneously. Ideal for testing single lines of code. Statements cannot be saved.
+  <pre>
+    <code>
+      &gt;&gt;&gt; 1 + 2
+      3
+      &gt;&gt;&gt; "Hello " + "World"
+      'HelloWorld'
+    </code>
+  </pre>
+</li>
+<li>
+  <strong>
+  Script Mode
+</strong>
+: Allows writing multiple instructions in a file, saving it with a
+<code>
+.py
+</code>
+extension, and executing it as a whole.
+<pre>
+  <code>
+    # Save as prog5-1.py
+    print("Save Earth")
+    print("Preserve Future")
+  </code>
+</pre>
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.2 Python Keywords &amp; 5.3 Identifiers
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2 Python Keywords
+</summary>
+<p>
+Keywords are reserved words with specific meanings for the interpreter. They must be written exactly as defined (case-sensitive).
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>
+      Keyword
+    </th>
+    <th>
+    Keyword
+  </th>
+  <th>
+  Keyword
+</th>
+<th>
+Keyword
+</th>
+<th>
+Keyword
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    False
+  </td>
+  <td>
+  class
+</td>
+<td>
+finally
+</td>
+<td>
+is
+</td>
+<td>
+return
+</td>
+</tr>
+<tr>
+  <td>
+  None
+</td>
+<td>
+continue
+</td>
+<td>
+for
+</td>
+<td>
+lambda
+</td>
+<td>
+try
+</td>
+</tr>
+<tr>
+  <td>
+  True
+</td>
+<td>
+def
+</td>
+<td>
+from
+</td>
+<td>
+nonlocal
+</td>
+<td>
+while
+</td>
+</tr>
+<tr>
+  <td>
+  and
+</td>
+<td>
+del
+</td>
+<td>
+global
+</td>
+<td>
+not
+</td>
+<td>
+with
+</td>
+</tr>
+<tr>
+  <td>
+  as
+</td>
+<td>
+elif
+</td>
+<td>
+if
+</td>
+<td>
+or
+</td>
+<td>
+yield
+</td>
+</tr>
+<tr>
+  <td>
+  assert
+</td>
+<td>
+else
+</td>
+<td>
+import
+</td>
+<td>
+pass
+</td>
+<td>
+</td>
+</tr>
+<tr>
+  <td>
+  break
+</td>
+<td>
+except
+</td>
+<td>
+in
+</td>
+<td>
+raise
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3 Identifiers
+</summary>
+<p>
+Identifiers are user-defined names used to identify variables, functions, or other entities in a program.
+</p>
+<ul>
+  <li>
+    <strong>
+    Naming Rules:
+  </strong>
+  <ul>
+    <li>
+      Must begin with an uppercase/lowercase letter or an underscore (
+      <code>
+      _
+    </code>
+    ).
+  </li>
+  <li>
+  Cannot start with a digit.
+</li>
+<li>
+  Can contain letters, digits, and underscores (
+  <code>
+  a-z, A-Z, 0-9, _
+</code>
+).
+</li>
+<li>
+Cannot be a keyword.
+</li>
+<li>
+  Cannot contain special symbols like
+  <code>
+  !, @, #, $, %, etc.
+</code>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.4 Variables &amp; 5.5 Comments
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.4 Variables
+</summary>
+<p>
+A variable is a named reference to an object stored in memory. In Python, variable declaration is implicit (created automatically upon first assignment).
+</p>
+<pre>
+  <code>
+    gender = 'M'
+    message = "Keep Smiling"
+    price = 987.9
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.5 Comments
+</summary>
+<p>
+  Comments are non-executable notes added to source code to improve readability. In Python, comments begin with a hash sign (
+  <code>
+  #
+</code>
+).
+</p>
+<pre>
+  <code>
+    # This is a single-line comment
+    amount = 3400  # Inline comment
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.6 Everything is an Object &amp; 5.7 Data Types
+</summary>
+<p>
+  Python treats every value or data item as an object. Each object is assigned a unique identity (ID) representing its memory address, which can be retrieved using the
+  <span class="keyword">
+  id()
+</span>
+function.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.7 Data Types Classification
+</summary>
+<p>
+Data types identify the type of values a variable can hold and the operations that can be performed on them.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Numbers
+    </strong>
+  </td>
+  <td>
+  Stores numerical values.
+</td>
+<td>
+  Classified into
+  <span class="keyword">
+  int
+</span>
+,
+<span class="keyword">
+float
+</span>
+, and
+<span class="keyword">
+complex
+</span>
+. Includes
+<span class="keyword">
+bool
+</span>
+as a subtype of integer.
+</td>
+<td>
+Performs mathematical computations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Sequence
+  </strong>
+</td>
+<td>
+An ordered collection of items indexed by integers.
+</td>
+<td>
+  Includes
+  <span class="keyword">
+  String
+</span>
+(immutable),
+<span class="keyword">
+List
+</span>
+(mutable), and
+<span class="keyword">
+Tuple
+</span>
+(immutable).
+</td>
+<td>
+Manages ordered datasets.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Sets
+  </strong>
+</td>
+<td>
+An unordered collection of unique items.
+</td>
+<td>
+  Enclosed in curly brackets
+  <code>
+  { }
+</code>
+. Mutable but cannot contain duplicate elements.
+</td>
+<td>
+Performs mathematical set operations and eliminates duplicates.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    None
+  </strong>
+</td>
+<td>
+A special data type representing the absence of a value.
+</td>
+<td>
+  Has only one value:
+  <code>
+  None
+</code>
+. Supports no special operations.
+</td>
+<td>
+Acts as a placeholder or default return value.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Mapping
+  </strong>
+</td>
+<td>
+An unordered collection of key-value pairs.
+</td>
+<td>
+  Represented by
+  <span class="keyword">
+  Dictionary
+</span>
+(enclosed in
+<code>
+{ }
+</code>
+with
+<code>
+key:value
+</code>
+syntax).
+</td>
+<td>
+Provides fast, key-based lookups.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mutable vs Immutable Data Types
+</summary>
+<ul>
+  <li>
+    <strong>
+    Mutable Types:
+  </strong>
+  Values can be changed in-place after creation. Examples:
+  <span class="keyword">
+  List
+</span>
+,
+<span class="keyword">
+Set
+</span>
+,
+<span class="keyword">
+Dictionary
+</span>
+.
+</li>
+<li>
+  <strong>
+  Immutable Types:
+</strong>
+Values cannot be changed in-place. Any modification creates a new object in memory. Examples:
+<span class="keyword">
+int
+</span>
+,
+<span class="keyword">
+float
+</span>
+,
+<span class="keyword">
+complex
+</span>
+,
+<span class="keyword">
+bool
+</span>
+,
+<span class="keyword">
+string
+</span>
+,
+<span class="keyword">
+tuple
+</span>
+.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.8 Operators &amp; 5.9 Expressions
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.8 Operators in Python
+</summary>
+<ul>
+  <li>
+    <strong>
+    Arithmetic Operators:
+  </strong>
+  <code>
+  +
+</code>
+(Addition/Concatenation),
+<code>
+-
+</code>
+(Subtraction),
+<code>
+*
+</code>
+(Multiplication/Replication),
+<code>
+/
+</code>
+(Division),
+<code>
+%
+</code>
+(Modulus),
+<code>
+//
+</code>
+(Floor Division),
+<code>
+**
+</code>
+(Exponentiation).
+</li>
+<li>
+  <strong>
+  Relational Operators:
+</strong>
+<code>
+==
+</code>
+,
+<code>
+!=
+</code>
+,
+<code>
+&gt;
+</code>
+,
+<code>
+&lt;
+</code>
+,
+<code>
+&gt;=
+</code>
+,
+<code>
+&lt;=
+</code>
+. Evaluate to
+<code>
+True
+</code>
+or
+<code>
+False
+</code>
+.
+</li>
+<li>
+  <strong>
+  Assignment Operators:
+</strong>
+<code>
+=
+</code>
+,
+<code>
++=
+</code>
+,
+<code>
+-=
+</code>
+,
+<code>
+*=
+</code>
+,
+<code>
+/=
+</code>
+,
+<code>
+%=
+</code>
+,
+<code>
+//=
+</code>
+,
+<code>
+**=
+</code>
+.
+</li>
+<li>
+  <strong>
+  Logical Operators:
+</strong>
+<code>
+and
+</code>
+,
+<code>
+or
+</code>
+,
+<code>
+not
+</code>
+.
+</li>
+<li>
+  <strong>
+  Identity Operators:
+</strong>
+<code>
+is
+</code>
+,
+<code>
+is not
+</code>
+(checks if two variables point to the same memory location).
+</li>
+<li>
+  <strong>
+  Membership Operators:
+</strong>
+<code>
+in
+</code>
+,
+<code>
+not in
+</code>
+(checks if a value exists within a sequence).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.9.1 Precedence of Operators
+</summary>
+<p>
+When an expression contains multiple operators, precedence determines the evaluation order (from highest to lowest):
+</p>
+<ol>
+  <li>
+    <code>
+    **
+  </code>
+  (Exponentiation)
+</li>
+<li>
+  <code>
+  ~, +, -
+</code>
+(Complement, unary plus, unary minus)
+</li>
+<li>
+  <code>
+  *, /, %, //
+</code>
+(Multiply, divide, modulo, floor division)
+</li>
+<li>
+  <code>
+  +, -
+</code>
+(Addition, subtraction)
+</li>
+<li>
+  <code>
+  &lt;=, &lt;, &gt;, &gt;=, ==, !=
+</code>
+(Relational/Comparison)
+</li>
+<li>
+  <code>
+  =, %=, /=, //=, -=, +=, *=, **=
+</code>
+(Assignment)
+</li>
+<li>
+  <code>
+  is, is not
+</code>
+(Identity)
+</li>
+<li>
+  <code>
+  in, not in
+</code>
+(Membership)
+</li>
+<li>
+  <code>
+  not
+</code>
+,
+<code>
+and
+</code>
+,
+<code>
+or
+</code>
+(Logical)
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.11 Input, Output &amp; 5.12 Type Conversion
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Built-in I/O Functions
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    input([prompt]):
+  </strong>
+  Prompts the user for input. Always returns the input as a
+  <span class="keyword">
+  string
+</span>
+.
+</li>
+<li>
+  <strong>
+  print(value, ..., sep=' ', end='
+  '):
+</strong>
+Outputs data to the screen.
+<code>
+sep
+</code>
+defines the separator between values, and
+<code>
+end
+</code>
+defines the character appended at the end of the output.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.12 Type Conversion
+</summary>
+<ul>
+  <li>
+    <strong>
+    Explicit Conversion (Type Casting):
+  </strong>
+  Forced by the programmer using functions like
+  <code>
+  int()
+</code>
+,
+<code>
+float()
+</code>
+,
+<code>
+str()
+</code>
+,
+<code>
+chr()
+</code>
+, and
+<code>
+ord()
+</code>
+.
+<pre>
+  <code>
+    # Explicitly converting string input to integer
+    age = int(input("Enter your age: "))
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Implicit Conversion (Coercion):
+</strong>
+Handled automatically by the Python interpreter to avoid data loss (type promotion).
+<pre>
+  <code>
+    num1 = 10      # int
+    num2 = 20.0    # float
+    sum1 = num1 + num2  # Result is 30.0 (float)
+  </code>
+</pre>
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.13 Debugging &amp; Error Types
+</summary>
+<p>
+Debugging is the process of identifying and removing bugs (errors) from a program.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Categories of Errors
+</summary>
+<ul>
+  <li>
+    <strong>
+    Syntax Errors:
+  </strong>
+  Violations of the grammatical rules of the programming language. The interpreter will not execute the program if syntax errors exist.
+</li>
+<li>
+  <strong>
+  Logical Errors:
+</strong>
+Occur when the program runs without crashing but produces incorrect results due to flawed logic (e.g., writing
+<code>
+10 + 12/2
+</code>
+instead of
+<code>
+(10 + 12)/2
+</code>
+).
+</li>
+<li>
+  <strong>
+  Runtime Errors:
+</strong>
+Occur during execution when an invalid operation is attempted (e.g., division by zero, or trying to convert an invalid string to an integer).
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Student Management Information System (SMIS)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Implementing an automated SMIS requires robust input validation and explicit type casting to prevent runtime crashes. For instance, capturing numeric fields like "Roll No" or "Phone Number" requires converting raw string inputs from
+<code>
+input()
+</code>
+into integers using
+<code>
+int()
+</code>
+, while ensuring proper exception handling is in place to catch non-numeric inputs that trigger runtime
+<code>
+ValueError
+</code>
+exceptions. Proper documentation and consistent naming conventions (e.g.,
+<code>
+first_num
+</code>
+or
+<code>
+firstNum
+</code>
+) are critical for collaborative software maintenance.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-04-introduction-to-problem-solving.html"; } else { window.location.href = "11-chapter-06-flow-of-control.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

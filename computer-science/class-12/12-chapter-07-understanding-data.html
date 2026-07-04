@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 7: Understanding Data
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 7: Understanding Data
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.1 Introduction to Data
+</summary>
+<p>
+  In modern society, decisions are heavily reliant on
+  <span class="keyword">
+  data
+</span>
+and its systematic analysis. From choosing a college based on placement records, fees, and faculty qualifications, to governments formulating national policies using
+<span class="keyword">
+census
+</span>
+data, data serves as the foundational bedrock for decision-making across all domains.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Data vs. Information
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Conceptual Data Hierarchy
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Raw data consists of unorganized characters, numbers, and symbols representing values of variables. Once processed, structured, or analyzed, it transforms into meaningful
+<span class="keyword">
+information
+</span>
+.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Raw data alone cannot be used directly for decision-making; failure to process and summarize data leads to cognitive overload and incorrect conclusions.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.1.1 Importance of Data
+</summary>
+<p>
+Human beings and automated systems rely on data to uncover hidden traits, optimize operations, and make informed choices. Key examples include:
+</p>
+<ul>
+  <li>
+    <strong>
+    Banking:
+  </strong>
+  Real-time debiting and updating of account balances during ATM transactions.
+</li>
+<li>
+  <strong>
+  Meteorology:
+</strong>
+Continuous monitoring of satellite data to predict cyclones and heavy rainfall.
+</li>
+<li>
+  <strong>
+  Business:
+</strong>
+Implementing
+<span class="keyword">
+dynamic pricing
+</span>
+models (e.g., airlines, ride-hailing apps, and happy hours in restaurants) based on real-time demand and supply data.
+</li>
+<li>
+  <strong>
+  Governance:
+</strong>
+Electronic voting machines (
+<span class="keyword">
+EVMs
+</span>
+) recording and accumulating voting data for rapid election results.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.1.2 Types of Data
+</summary>
+<p>
+Data originates from diverse sources and can be broadly classified into two formats:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (A) Structured Data
+</summary>
+<p>
+  <span class="keyword">
+  Structured data
+</span>
+is organized and recorded in a well-defined format, typically stored in a tabular structure of rows and columns. Each column represents an
+<span class="keyword">
+attribute
+</span>
+(or variable), and each row represents a single observation.
+</p>
+<p>
+  <strong>
+  Table 7.1: Structured data about kitchen items in a shop
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      ModelNo
+    </th>
+    <th>
+    ProductName
+  </th>
+  <th>
+  Unit Price
+</th>
+<th>
+Discount(%)
+</th>
+<th>
+Items_in_Inventory
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    ABC1
+  </td>
+  <td>
+  Water bottle
+</td>
+<td>
+126
+</td>
+<td>
+8
+</td>
+<td>
+13
+</td>
+</tr>
+<tr>
+  <td>
+  ABC2
+</td>
+<td>
+Melamine Plates
+</td>
+<td>
+320
+</td>
+<td>
+5
+</td>
+<td>
+45
+</td>
+</tr>
+<tr>
+  <td>
+  ABC3
+</td>
+<td>
+Dinner Set
+</td>
+<td>
+4200
+</td>
+<td>
+10
+</td>
+<td>
+8
+</td>
+</tr>
+<tr>
+  <td>
+  GH67
+</td>
+<td>
+Jug
+</td>
+<td>
+80
+</td>
+<td>
+0
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+  <td>
+  GH78
+</td>
+<td>
+Table Spoon
+</td>
+<td>
+120
+</td>
+<td>
+5
+</td>
+<td>
+14
+</td>
+</tr>
+<tr>
+  <td>
+  GH81
+</td>
+<td>
+Bucket
+</td>
+<td>
+190
+</td>
+<td>
+12
+</td>
+<td>
+6
+</td>
+</tr>
+<tr>
+  <td>
+  NK2
+</td>
+<td>
+Kitchen Towel
+</td>
+<td>
+25
+</td>
+<td>
+0
+</td>
+<td>
+32
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Table 7.2: Attributes maintained for different activities
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Entity/Activities
+    </th>
+    <th>
+    Data Fields/Parameters/Attributes
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Books at a shop
+  </td>
+  <td>
+  BookTitle, Author, Price, YearofPublication
+</td>
+</tr>
+<tr>
+  <td>
+  Depositing fees in a school
+</td>
+<td>
+StudentName, Class, RollNo, FeesAmount, DepositDate
+</td>
+</tr>
+<tr>
+  <td>
+  Amount withdrawal from ATM
+</td>
+<td>
+AccHolderName, AccountNo, TypeofAcc, DateofWithdrawal, AmountWithdrawn, ATMid, TimeOfWithdrawal
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (B) Unstructured Data
+</summary>
+<p>
+  <span class="keyword">
+  Unstructured data
+</span>
+refers to data that does not conform to a traditional row-and-column structure. Examples include emails, web pages, audio/video files, and social media posts.
+</p>
+<p>
+  Unstructured data is often described using
+  <span class="keyword">
+  metadata
+</span>
+(data about data). For instance, an image file's metadata includes its size, resolution, and format (JPEG, PNG).
+</p>
+</details>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.2 Data Collection
+</summary>
+<p>
+  <span class="keyword">
+  Data collection
+</span>
+involves identifying and gathering data from appropriate sources to be stored for subsequent processing. Common scenarios for collecting sales data in a grocery store include:
+</p>
+<ul>
+  <li>
+    <strong>
+    Manual Registers:
+  </strong>
+  Entering physical diary records into a digital format like a spreadsheet.
+</li>
+<li>
+  <strong>
+  Digital Files:
+</strong>
+Utilizing pre-existing digital formats such as
+<span class="keyword">
+CSV
+</span>
+(Comma Separated Values) files.
+</li>
+<li>
+  <strong>
+  Custom Software:
+</strong>
+Developing applications using programming languages like
+<span class="keyword">
+Python
+</span>
+to store and retrieve data from database management systems like
+<span class="keyword">
+MySQL
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.3 Data Storage
+</summary>
+<p>
+  <span class="keyword">
+  Data storage
+</span>
+is the process of saving data on physical or digital storage devices for future retrieval and use. With the exponential growth of data generation, storage has become a critical challenge, mitigated by the declining cost of digital storage media.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Storage Media &amp; Systems
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical &amp; Logical Storage Tier
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Data is stored as files (images, documents, audio/video) on hardware devices like Hard Disk Drives (HDD), Solid State Drives (SSD), Pen Drives, and Memory Cards.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Traditional file-based processing has limitations such as redundancy and inconsistency, which are resolved by transitioning to a
+<span class="keyword">
+Database Management System (DBMS)
+</span>
+.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.4 Data Processing
+</summary>
+<p>
+  <span class="keyword">
+  Data processing
+</span>
+is the sequence of operations performed on raw data to convert it into meaningful information. The standard workflow is represented by the
+<span class="keyword">
+Data Process Cycle
+</span>
+:
+</p>
+<ol>
+  <li>
+    <strong>
+    Input:
+  </strong>
+  Data Collection, Data Preparation, and Data Entry.
+</li>
+<li>
+  <strong>
+  Processing:
+</strong>
+Storing, Retrieving, Classifying, and Updating data.
+</li>
+<li>
+  <strong>
+  Output:
+</strong>
+Generating Reports, Results, and feeding into downstream Processing Systems.
+</li>
+</ol>
+<p>
+  <strong>
+  Table 7.3: Examples of Data-Based Problem Statements
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Problem Statement
+    </th>
+    <th>
+    Inputs Collected
+  </th>
+  <th>
+  Processing Steps
+</th>
+<th>
+Output Generated
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Online Student Registration
+    </strong>
+  </td>
+  <td>
+  Student details (name, address, marks, photo, signature, fee payment details)
+</td>
+<td>
+Verify correctness, check eligibility, confirm fee payment, generate roll number
+</td>
+<td>
+Examination Admit Card with roll number, center, and test schedule
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    ATM Cash Withdrawal
+  </strong>
+</td>
+<td>
+PIN, account number, card details, withdrawal amount
+</td>
+<td>
+Validate PIN, check account balance, debit amount, count currency notes, initiate receipt printing
+</td>
+<td>
+Currency notes and printed transaction slip
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Train Ticket Booking
+  </strong>
+</td>
+<td>
+Journey details, class of travel, passenger details, payment details
+</td>
+<td>
+Verify login, check berth availability, process payment, allocate PNR and berth/waiting list number
+</td>
+<td>
+Train ticket with PNR, coach, and berth details
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.5 Statistical Techniques for Data Processing
+</summary>
+<p>
+Statistical techniques are applied to tabular data to summarize, comprehend, and reveal its underlying characteristics.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.5.1 Measures of Central Tendency
+</summary>
+<p>
+A single value that represents the center or typical value of a dataset. The three primary measures are:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (A) Mean
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Mean
+</span>
+(or average) is the sum of all numeric values divided by the total number of values.
+</p>
+<p>
+  <strong>
+  Mathematical Definition:
+</strong>
+</p>
+$$\text{Mean} = \frac{\sum_{i=1}^{n} x_i}{n}$$
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 7.1: Calculate the mean height of students with heights (in cm): [90, 102, 110, 115, 85, 90, 100, 110, 110]
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+$$\text{Mean} = \frac{90 + 102 + 110 + 115 + 85 + 90 + 100 + 110 + 110}{9} = \frac{912}{9} = 101.33\text{ cm}$$
+<p>
+  <em>
+  Note on Outliers:
+</em>
+Mean is highly sensitive to
+<span class="keyword">
+outliers
+</span>
+(extreme values), which can distort the average. Outliers should be identified and handled before calculating the mean.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (B) Median
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Median
+</span>
+is the middle value of a dataset when the values are sorted in ascending or descending order. If the dataset has an odd number of values, the median is the middle value. If even, it is the average of the two middle values.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 7.2: Find the median of the height dataset: [90, 102, 110, 115, 85, 90, 100, 110, 110]
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+<ol>
+  <li>
+  Sort the data in ascending order: [85, 90, 90, 100, 102, 110, 110, 110, 115]
+</li>
+<li>
+Since $n = 9$ (odd), the median is the value at position 5.
+</li>
+<li>
+  Therefore, the Median is
+  <strong>
+  102 cm
+</strong>
+.
+</li>
+</ol>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (C) Mode
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Mode
+</span>
+is the value that appears most frequently in a dataset. A dataset can have no mode, a single mode, or multiple modes.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 7.3: Find the mode of the height dataset: [85, 90, 90, 100, 102, 110, 110, 110, 115]
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+The value
+<strong>
+110
+</strong>
+appears 3 \times, which is the highest frequency. Thus, the Mode is 110.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.5.2 Measures of Variability
+</summary>
+<p>
+Measures of variability (or dispersion) describe the spread or variation of data values around the mean.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (A) Range
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Range
+</span>
+is the difference between the maximum and minimum values in a dataset.
+</p>
+$$\text{Range} = \text{Maximum} - \text{Minimum}$$
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 7.4: Calculate the range of the height dataset.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+<ul>
+  <li>
+  Maximum value = 115 cm
+</li>
+<li>
+Minimum value = 85 cm
+</li>
+<li>
+$\text{Range} = 115 - 85 = 30\text{ cm}$
+</li>
+</ul>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  (B) Standard Deviation
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Standard Deviation
+</span>
+($\sigma$) measures the spread of data by calculating the positive square root of the average of squared differences of each value from the mean.
+</p>
+<p>
+  <strong>
+  Mathematical Formula:
+</strong>
+</p>
+$$\sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n}}$$
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 7.5: Compute the standard deviation for the height of 9 students (Mean $\bar{x} = 101.33$ cm).
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Height ($x$) in cm
+    </th>
+    <th>
+    $x - \bar{x}$
+  </th>
+  <th>
+  $(x - \bar{x})^2$
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    90
+  </td>
+  <td>
+  -11.33
+</td>
+<td>
+128.37
+</td>
+</tr>
+<tr>
+  <td>
+  102
+</td>
+<td>
+0.67
+</td>
+<td>
+0.36
+</td>
+</tr>
+<tr>
+  <td>
+  110
+</td>
+<td>
+8.67
+</td>
+<td>
+75.17
+</td>
+</tr>
+<tr>
+  <td>
+  115
+</td>
+<td>
+13.67
+</td>
+<td>
+186.87
+</td>
+</tr>
+<tr>
+  <td>
+  85
+</td>
+<td>
+-16.33
+</td>
+<td>
+266.67
+</td>
+</tr>
+<tr>
+  <td>
+  90
+</td>
+<td>
+-11.33
+</td>
+<td>
+128.37
+</td>
+</tr>
+<tr>
+  <td>
+  100
+</td>
+<td>
+-1.33
+</td>
+<td>
+1.77
+</td>
+</tr>
+<tr>
+  <td>
+  110
+</td>
+<td>
+8.67
+</td>
+<td>
+75.17
+</td>
+</tr>
+<tr>
+  <td>
+  110
+</td>
+<td>
+8.67
+</td>
+<td>
+75.17
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+Sum of squared differences: $\sum (x_i - \bar{x})^2 = 938.00$
+</p>
+<p>
+Variance: $\frac{938.00}{9} = 104.22$
+</p>
+<p>
+Standard Deviation: $\sigma = \sqrt{104.22} \approx 10.2\text{ cm}$
+</p>
+</blockquote>
+</details>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Summary &amp; Exercises
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Chapter Summary
+</summary>
+<ul>
+  <li>
+    <strong>
+    Data:
+  </strong>
+  Unorganized facts that can be processed to generate meaningful information.
+</li>
+<li>
+  <strong>
+  Formats:
+</strong>
+Classified into structured (tabular) and unstructured (non-tabular, described by metadata).
+</li>
+<li>
+  <strong>
+  Data Processing Cycle:
+</strong>
+Comprises input, storage, processing, and output.
+</li>
+<li>
+  <strong>
+  Statistical Summarization:
+</strong>
+Techniques like Mean, Median, Mode, Range, and Standard Deviation help reveal data characteristics.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Review Exercises
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  Exercise 1: Identify data required to be maintained to perform the following services: (a) Declare exam results and print e-certificates, (b) Register participants in an exhibition and issue biometric ID cards.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+<ul>
+  <li>
+    <strong>
+    (a) Exam Results:
+  </strong>
+  Student ID, Student Name, Subject Codes, Marks Obtained, Maximum Marks, Grade, Date of Declaration.
+</li>
+<li>
+  <strong>
+  (b) Exhibition Registration:
+</strong>
+Participant Name, Organization, Contact Number, Email, Biometric Template (fingerprint/iris scan), Registration ID, Date of Issue.
+</li>
+</ul>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 7
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-06-searching.html"; } else { window.location.href = "12-chapter-08-database-concepts.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

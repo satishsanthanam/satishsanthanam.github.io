@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 3: Stack
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 3: Stack
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.1 &amp; 3.2 Introduction to Data Structures and Stacks
+</summary>
+<p>
+  A
+  <span class="keyword">
+  data structure
+</span>
+defines a mechanism to store, organise, and access data along with operations (processing) that can be efficiently performed on the data. Grouping multiple data elements in a particular way allows for faster accessibility and efficient storage.
+</p>
+<p>
+  A
+  <span class="keyword">
+  linear data structure
+</span>
+is one in which elements are organised in a sequential order. Examples include arrays, linked lists, stacks, and queues.
+</p>
+<p>
+  A
+  <span class="keyword">
+  Stack
+</span>
+is a linear data structure that follows the
+<span class="keyword">
+Last-In-First-Out (LIFO)
+</span>
+principle. In a stack, addition of new elements and removal of existing elements occur at the same end, commonly referred to as the
+<span class="keyword">
+TOP
+</span>
+of the stack. The element inserted last is always the first one to be retrieved.
+</p>
+<table class="matrix-table" border="1" style="border-collapse: collapse; width: 100%; margin: 14px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      Data Structure
+    </span>
+  </td>
+  <td>
+  A systematic way of organizing and storing data in a computer so that it can be used efficiently.
+</td>
+<td>
+Can be linear (sequential) or non-linear (hierarchical/graphical). Examples: String, List, Tuple, Set, Stack, Queue.
+</td>
+<td>
+Optimizes memory utilization and reduces computational complexity of data access and manipulation.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Stack
+  </span>
+</td>
+<td>
+A sequential linear data structure operating under the Last-In-First-Out (LIFO) discipline.
+</td>
+<td>
+  Single-ended access point called
+  <span class="keyword">
+  TOP
+</span>
+. Supports PUSH and POP operations.
+</td>
+<td>
+Manages temporary state storage, function call execution contexts, and expression evaluation.
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2.1 Applications of Stack
+</summary>
+<p>
+Stacks are widely used in both real-life scenarios and computer science applications:
+</p>
+<ul>
+  <li>
+    <strong>
+    Real-Life Examples:
+  </strong>
+  A pile of clothes in an almirah, a vertical pile of chairs, bangles worn on a wrist, or a pile of boxes on a kitchen shelf.
+</li>
+<li>
+  <strong>
+  String Reversal:
+</strong>
+Reversing a string by traversing it from start to end, pushing each character onto a stack, and then popping them off sequentially.
+</li>
+<li>
+  <strong>
+  Undo/Redo Operations:
+</strong>
+Text and image editors use a stack to track changes, allowing users to revert to the most recent state.
+</li>
+<li>
+  <strong>
+  Web Browser History:
+</strong>
+Browsers maintain a history of visited pages in a stack. Clicking the "BACK" button pops the current page to reveal the previously visited page.
+</li>
+<li>
+  <strong>
+  Parenthesis Matching:
+</strong>
+Compilers use stacks to verify that every opening parenthesis has a corresponding closing parenthesis in nested arithmetic expressions.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.3 Operations on Stack
+</summary>
+<p>
+A stack supports two fundamental operations that modify its state:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    PUSH
+  </span>
+  : An insertion operation that adds a new element to the TOP of the stack. Attempting to push an element onto a stack that has reached its maximum capacity results in an exception called
+  <span class="keyword">
+  overflow
+</span>
+.
+</li>
+<li>
+  <span class="keyword">
+  POP
+</span>
+: A deletion operation that removes and returns the topmost element of the stack. Attempting to pop an element from an empty stack results in an exception called
+<span class="keyword">
+underflow
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.4 Implementation of Stack in Python
+</summary>
+<p>
+  In Python, a stack can be easily implemented using the built-in
+  <span class="keyword">
+  list
+</span>
+data type. The list methods
+<span class="keyword">
+append()
+</span>
+and
+<span class="keyword">
+pop()
+</span>
+naturally insert and delete elements at the rightmost end (the end of the list), which serves as the TOP of the stack. This eliminates the need for an explicit TOP pointer variable.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Python List-Based Stack
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  High-level dynamic array implementation within the Python standard runtime.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Uses
+<code>
+list.append(item)
+</code>
+for PUSH and
+<code>
+list.pop()
+</code>
+for POP. Custom helper functions check for empty states and size.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Python lists dynamically resize, meaning
+<span class="keyword">
+overflow
+</span>
+is rarely encountered unless system memory is completely exhausted. However, calling
+<code>
+pop()
+</code>
+on an empty list raises an
+<code>
+IndexError
+</code>
+(
+<span class="keyword">
+underflow
+</span>
+).
+</li>
+</ul>
+</div>
+<p>
+Below is a complete Python program implementing a stack of glasses:
+</p>
+<pre>
+  <code>
+  def isEmpty(glassStack):&#10;    if len(glassStack) == 0:&#10;        return True&#10;    else:&#10;        return False&#10;&#10;def opPush(glassStack, element):&#10;    glassStack.append(element)&#10;&#10;def size(glassStack):&#10;    return len(glassStack)&#10;&#10;def top(glassStack):&#10;    if isEmpty(glassStack):&#10;        print('Stack is empty')&#10;        return None&#10;    else:&#10;        x = len(glassStack)&#10;        element = glassStack[x-1]&#10;        return element&#10;&#10;def opPop(glassStack):&#10;    if isEmpty(glassStack):&#10;        print('underflow')&#10;        return None&#10;    else:&#10;        return glassStack.pop()&#10;&#10;def display(glassStack):&#10;    x = len(glassStack)&#10;    print("Current elements in the stack are: ")&#10;    for i in range(x-1, -1, -1):&#10;        print(glassStack[i])
+</code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.5 Notations for Arithmetic Expressions
+</summary>
+<p>
+Arithmetic expressions can be represented in three distinct notations depending on the placement of operators relative to their operands:
+</p>
+<table class="matrix-table" border="1" style="border-collapse: collapse; width: 100%; margin: 14px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Type of Expression
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Example
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      Infix Notation
+    </span>
+  </td>
+  <td>
+  Operators are placed in between the operands. Requires parentheses and operator precedence rules (BODMAS).
+</td>
+<td>
+  $x \\times y + z$
+  <br>
+  $3 \\times (4 + 5)$
+  <br>
+  $(x + y) / (z \\times 5)$
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Prefix Notation
+  </span>
+  (Polish Notation)
+</td>
+<td>
+Operators are placed before their corresponding operands. Parentheses are unnecessary.
+</td>
+<td>
+  $+ \\times x y z$
+  <br>
+  $\\times 3 + 4 5$
+  <br>
+  $/ + x y \\times z 5$
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Postfix Notation
+  </span>
+  (Reverse Polish Notation)
+</td>
+<td>
+Operators are placed after their corresponding operands. Parentheses are unnecessary.
+</td>
+<td>
+  $x y \\times z +$
+  <br>
+  $3 4 5 + \\times$
+  <br>
+  $x y + z 5 \\times /$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.6 Conversion from Infix to Postfix Notation
+</summary>
+<p>
+Compilers convert human-readable infix expressions to postfix expressions to eliminate ambiguity and evaluate expressions in a single linear scan without needing parentheses.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algorithm 3.1: Infix to Postfix Conversion
+</summary>
+<ol>
+  <li>
+    Create an empty string named
+    <code>
+    postExp
+  </code>
+  to store the converted postfix expression.
+</li>
+<li>
+  Input the infix expression into a variable, say
+  <code>
+  inExp
+</code>
+.
+</li>
+<li>
+  For each character in
+  <code>
+  inExp
+</code>
+, repeat Step 4:
+</li>
+<li>
+  <strong>
+  Step 4:
+</strong>
+<ul>
+  <li>
+    IF character is a left parenthesis
+    <code>
+    (
+  </code>
+  , THEN PUSH it onto the Stack.
+</li>
+<li>
+  ELSE IF character is a right parenthesis
+  <code>
+  )
+</code>
+, THEN POP elements from the Stack and append them to
+<code>
+postExp
+</code>
+until the corresponding left parenthesis is popped. Discard both parentheses.
+</li>
+<li>
+  ELSE IF character is an operator:
+  <ul>
+    <li>
+      IF its precedence is lower than or equal to the operator at the top of the Stack, POP elements from the Stack and append them to
+      <code>
+      postExp
+    </code>
+    until an operator with lower precedence is encountered, then PUSH the current operator onto the Stack.
+  </li>
+  <li>
+  ELSE, PUSH the operator onto the Stack.
+</li>
+</ul>
+</li>
+<li>
+  ELSE, append the character (operand) directly to
+  <code>
+  postExp
+</code>
+.
+</li>
+</ul>
+</li>
+<li>
+  Pop any remaining elements from the Stack and append them to
+  <code>
+  postExp
+</code>
+until the Stack is empty.
+</li>
+<li>
+  Output
+  <code>
+  postExp
+</code>
+.
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example Trace: Convert the infix expression $(x + y) / (z \\times 8)$ to postfix notation.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This conversion process ensures that operators with higher precedence are positioned after their operands in the exact order they must be executed. The stack acts as a temporary holding area for operators, deferring their placement until their operands have been processed. The resulting postfix expression is $x y + z 8 \\times /$, which can be evaluated linearly without backtracking.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.7 Evaluation of Postfix Expression
+</summary>
+<p>
+Postfix expressions are evaluated using a stack by processing the expression from left to right. Operands are pushed onto the stack, and operators trigger the retrieval and processing of these operands.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algorithm 3.2: Evaluation of Postfix Expression
+</summary>
+<ol>
+  <li>
+    Input the postfix expression in a variable, say
+    <code>
+    postExp
+  </code>
+  .
+</li>
+<li>
+  For each character in
+  <code>
+  postExp
+</code>
+, repeat Step 3:
+</li>
+<li>
+  <strong>
+  Step 3:
+</strong>
+<ul>
+  <li>
+  IF the character is an operand, PUSH it onto the Stack.
+</li>
+<li>
+ELSE (the character is an operator), POP the top two elements from the Stack, apply the operator to these elements (the first popped element is the right operand, the second is the left operand), and PUSH the computed result back onto the Stack.
+</li>
+</ul>
+</li>
+<li>
+IF the Stack has a single element, POP it and output it as the net result. ELSE, output "Invalid Postfix expression".
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example Trace: Evaluate the postfix expression $7\ 8\ 2\ \times\ 4\ /\ +$.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+<br>
+1. Push $7$, $8$, and $2$ onto the stack. [Stack: $7, 8, 2$]
+<br>
+2. Encounter operator $\\times$. Pop $2$ and $8$. Compute $8 \\times 2 = 16$. Push $16$. [Stack: $7, 16$]
+<br>
+3. Push $4$ onto the stack. [Stack: $7, 16, 4$]
+<br>
+4. Encounter operator $/$. Pop $4$ and $16$. Compute $16 / 4 = 4$. Push $4$. [Stack: $7, 4$]
+<br>
+5. Encounter operator $+$. Pop $4$ and $7$. Compute $7 + 4 = 11$. Push $11$. [Stack: $11$]
+<br>
+6. End of expression. Pop the final result: $11$.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-02-file-handling-in-python.html"; } else { window.location.href = "12-chapter-04-queue.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

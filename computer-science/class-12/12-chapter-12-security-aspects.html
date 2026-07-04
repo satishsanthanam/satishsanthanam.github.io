@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 12: Security Aspects
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 12: Security Aspects
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.1 Threats and Prevention
+</summary>
+<p>
+Network security is concerned with the protection of our devices as well as data from illegitimate access or misuse. A computer with no link to an external device or network is free from security threats, but in a fully connected world, staying aloof is not a practical solution. Threats include all the ways in which an attacker can exploit any vulnerability or weakness in a network or communication system to cause harm or damage reputation.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      Network Security
+    </span>
+  </td>
+  <td>
+  Protection of devices and data from unauthorized access, modification, or destruction.
+</td>
+<td>
+Encompasses confidentiality, integrity, and availability (CIA triad) across network nodes.
+</td>
+<td>
+To mitigate vulnerabilities and prevent unauthorized exploitation of communication systems.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.2 Malware
+</summary>
+<p>
+  <span class="keyword">
+  Malware
+</span>
+(Malicious Software) is any software developed with the intention to damage hardware devices, steal data, or cause disruption to the user. Common types include viruses, worms, ransomware, trojans, spyware, adware, and keyloggers.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.1 Virus
+</summary>
+<p>
+  A
+  <span class="keyword">
+  computer virus
+</span>
+is a piece of software code created to perform malicious activities and hamper system resources (CPU time, memory, files). Coined by Fred Cohen in 1985, it mimics biological viruses by spreading on contact (copying its code into other executable files). It remains dormant until the infected file is executed by a user.
+</p>
+<p>
+  Examples:
+  <span class="keyword">
+  CryptoLocker
+</span>
+,
+<span class="keyword">
+ILOVEYOU
+</span>
+,
+<span class="keyword">
+MyDoom
+</span>
+,
+<span class="keyword">
+Sasser
+</span>
+,
+<span class="keyword">
+Netsky
+</span>
+,
+<span class="keyword">
+Slammer
+</span>
+,
+<span class="keyword">
+Stuxnet
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.2 Worms
+</summary>
+<p>
+  A
+  <span class="keyword">
+  worm
+</span>
+is a standalone malware program that replicates on its own and spreads to other computers through the network without needing a host program or human triggering.
+</p>
+<p>
+  Examples:
+  <span class="keyword">
+  Storm Worm
+</span>
+,
+<span class="keyword">
+Sobig
+</span>
+,
+<span class="keyword">
+MSBlast
+</span>
+,
+<span class="keyword">
+Code Red
+</span>
+,
+<span class="keyword">
+Nimda
+</span>
+,
+<span class="keyword">
+Morris Worm
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.3 Ransomware
+</summary>
+<p>
+A type of malware that targets user data by blocking access or encrypting files, demanding a ransom payment (often in cryptocurrency like Bitcoin) to restore access.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  In May 2017, the WannaCry ransomware infected almost 200,000 computers across 150 countries, demanding ransom payments in Bitcoin.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+WannaCry exploited a vulnerability in the Windows SMB protocol. It demonstrated how critical infrastructure (including hospitals and transport networks) can be paralyzed globally by automated, self-propagating ransomware payloads combined with cryptographic locking mechanisms.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.4 Trojan
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Trojan
+</span>
+is a malware that masquerades as legitimate software. Once installed, it performs malicious actions (like creating backdoors for unauthorized access) but does not self-replicate.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.5 Spyware
+</summary>
+<p>
+A type of malware that spies on users or organizations by gathering information (internet usage, credit card details, login credentials) without their knowledge or consent and sending it to external entities.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.6 Adware
+</summary>
+<p>
+Malware designed to generate revenue for its developer by displaying unwanted online advertisements (pop-ups, web pages) or using "pay per click" mechanisms.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.7 Keyloggers
+</summary>
+<p>
+  A
+  <span class="keyword">
+  keylogger
+</span>
+(software or hardware) records keystrokes pressed by a user to steal sensitive information like passwords and private conversations.
+</p>
+<p>
+  <strong>
+  Online Virtual Keyboard vs. On-Screen Keyboard:
+</strong>
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    On-Screen Keyboard
+  </span>
+  : Uses a fixed QWERTY layout which can be exploited by sophisticated keyloggers.
+</li>
+<li>
+  <span class="keyword">
+  Online Virtual Keyboard
+</span>
+: Randomizes the key layout every time it is used, making it highly secure against keyloggers.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.8 Modes of Malware Distribution
+</summary>
+<ul>
+  <li>
+    <strong>
+    Downloaded from the Internet:
+  </strong>
+  Unintentional downloads disguised as free software.
+</li>
+<li>
+  <strong>
+  Spam Email:
+</strong>
+Unsolicited emails containing malicious links or attachments.
+</li>
+<li>
+  <strong>
+  Removable Storage Devices:
+</strong>
+Infected pen drives, SSD cards, or mobile phones.
+</li>
+<li>
+  <strong>
+  Network Propagation:
+</strong>
+Self-propagating malware (like worms) moving across network connections.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.2.9 Combating Malware
+</summary>
+<p>
+Common signs of infection include frequent pop-ups, changes to browser homepage, mass emails sent without consent, unusually slow performance, and files disappearing.
+</p>
+<p>
+Preventive measures: regular antivirus updates, configuring browser security, checking for HTTPS lock icons, using FOSS, backing up data, and avoiding suspicious links.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.3 Antivirus
+</summary>
+<p>
+  An
+  <span class="keyword">
+  antivirus
+</span>
+(or anti-malware) is software designed to prevent, detect, and remove a wide range of malicious software.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Antivirus Software
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  System Application / Security Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Scans files and memory using signature databases, sandboxing, heuristics, and real-time monitoring.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+High CPU/memory overhead during deep scans; potential for false positives; fails to detect zero-day exploits if signature databases (VDF) are outdated.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.3.1 Methods of Malware Identification
+</summary>
+<ul>
+  <li>
+    <strong>
+    Signature-based detection:
+  </strong>
+  Compares files against a database of known virus signatures (Virus Definition File - VDF). Fails against polymorphic or encrypted malware.
+</li>
+<li>
+  <strong>
+  Sandbox detection:
+</strong>
+Executes files in a secure, isolated virtual environment to observe behavioral fingerprints.
+</li>
+<li>
+  <strong>
+  Data mining techniques:
+</strong>
+Uses machine learning to classify file behavior as benign or malicious.
+</li>
+<li>
+  <strong>
+  Heuristics:
+</strong>
+Compares source code patterns of suspected programs against known virus structures in a heuristic database.
+</li>
+<li>
+  <strong>
+  Real-time protection:
+</strong>
+Continuously monitors active memory and background processes for suspicious activities.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.4 Spam
+</summary>
+<p>
+  <span class="keyword">
+  Spam
+</span>
+refers to unsolicited, unwanted digital messages (primarily email spam) sent in bulk to advertise, phish, or distribute malware. Modern email services use automatic spam filtering algorithms to detect and isolate these messages.
+</p>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.5 HTTP vs HTTPS
+</summary>
+<p>
+Both are protocols governing data transmission over the World Wide Web:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    HTTP
+  </span>
+  (Hyper Text Transfer Protocol): Sends data in plain \text, making it vulnerable to interception. Suitable only for public information sharing.
+</li>
+<li>
+  <span class="keyword">
+  HTTPS
+</span>
+(Hyper Text Transfer Protocol Secure): Encrypts data before transmission and decrypts it at the receiver end. Requires an SSL Digital Certificate. Essential for secure transactions, banking, and personal data.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.6 Firewall
+</summary>
+<p>
+  A
+  <span class="keyword">
+  firewall
+</span>
+is a network security system that monitors and controls incoming and outgoing network traffic based on predefined security rules, acting as a barrier between a trusted internal network and untrusted external networks.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Firewall
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Network / Transport Layer (Hardware or Software)
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Packet filtering, stateful inspection, and rule-based access control lists (ACLs).
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Can cause network latency; misconfigured rules can block legitimate traffic or leave security gaps.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.6.1 Types of Firewall
+</summary>
+<ul>
+  <li>
+    <strong>
+    Network Firewall:
+  </strong>
+  Placed between two or more networks to monitor traffic between them.
+</li>
+<li>
+  <strong>
+  Host-based Firewall:
+</strong>
+Installed on an individual computer to monitor traffic to and from that specific device.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.7 Cookies
+</summary>
+<p>
+  A
+  <span class="keyword">
+  cookie
+</span>
+is a small \text file or data packet stored by a website on the client's computer to track browsing information, maintain sessions, and store user preferences (like shopping carts or login states).
+</p>
+<ul>
+  <li>
+    <strong>
+    Session cookies:
+  </strong>
+  Keep track of active sessions and terminate automatically upon timeout.
+</li>
+<li>
+  <strong>
+  Authentication cookies:
+</strong>
+Verify if a user is logged in to prevent repeated login prompts.
+</li>
+</ul>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.7.1 Threats due to Cookies
+</summary>
+<p>
+While generally harmless, cookies can be exploited:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Supercookies
+  </span>
+  : Track users persistently across different sites.
+</li>
+<li>
+  <span class="keyword">
+  Zombie cookies
+</span>
+: Recreate themselves automatically after deletion.
+</li>
+<li>
+  <strong>
+  Third-party cookies:
+</strong>
+Used by advertisers to track user behavior across multiple websites without explicit consent.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.8 Hackers and Crackers
+</summary>
+<p>
+Individuals with deep technical knowledge of computer systems, networks, and programming who find loopholes and vulnerabilities.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.8.1 White Hats: Ethical Hacker
+</summary>
+<p>
+Security experts who use their skills ethically to find and fix security flaws, helping organizations secure their systems.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.8.2 Black Hats: Crackers
+</summary>
+<p>
+Individuals who maliciously and unethically exploit system vulnerabilities to break laws, steal data, or disrupt services.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.8.3 Grey Hats
+</summary>
+<p>
+Neutral hackers who exploit vulnerabilities for fun or challenge without malicious intent or financial gain, often disclosing flaws to owners without authorization.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.9 Network Security Threats
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.9.1 Denial of Service (DoS) &amp; DDoS
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Denial of Service (DoS)
+</span>
+attack overloads a target resource (like a web server) with illegitimate requests, making it unavailable to legitimate users.
+</p>
+<p>
+  A
+  <span class="keyword">
+  Distributed Denial of Service (DDoS)
+</span>
+attack is a variant where the flooding requests originate from multiple compromised systems (
+<span class="keyword">
+Zombies
+</span>
+) distributed globally, controlled collectively as a
+<span class="keyword">
+Bot-Net
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.9.2 Intrusion Problems
+</summary>
+<p>
+Unauthorized activities on a network that threaten security and data integrity:
+</p>
+<ul>
+  <li>
+    <strong>
+    Asymmetric Routing:
+  </strong>
+  Sending intrusion packets through multiple network paths to bypass intrusion detection sensors.
+</li>
+<li>
+  <strong>
+  Buffer Overflow Attacks:
+</strong>
+Overwriting memory areas with malicious code to execute unauthorized commands or crash systems.
+</li>
+<li>
+  <strong>
+  Traffic Flooding:
+</strong>
+Overwhelming intrusion detection systems with massive packet volumes to slip through undetected.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.9.3 Snooping
+</summary>
+<p>
+  <span class="keyword">
+  Snooping
+</span>
+(or Sniffing) is the secret capture and analysis of network traffic. Network administrators use it for troubleshooting, but attackers use it to intercept unencrypted data.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  12.9.4 Eavesdropping
+</summary>
+<p>
+  <span class="keyword">
+  Eavesdropping
+</span>
+is the unauthorized, real-time interception of private communications (like VoIP calls, video conferences, or instant messages) over a network.
+</p>
+<p>
+  <strong>
+  Difference:
+</strong>
+Eavesdropping occurs in real-time, whereas snooping involves capturing and storing traffic for later analysis.
+</p>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 12
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-11-data-communication.html"; } else { window.location.href = "12-chapter-13-project-based-learning.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

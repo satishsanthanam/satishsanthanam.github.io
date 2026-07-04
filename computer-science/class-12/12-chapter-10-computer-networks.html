@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 10: Computer Networks
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 10: Computer Networks
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.1 Introduction to Computer Networks
+</summary>
+<p>
+  We live in an interconnected world where information is produced, exchanged, and traced globally in real time. A
+  <span class="keyword">
+  network
+</span>
+is defined as a group of two or more similar things or people interconnected with each other.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Everyday Examples of Networks
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Social network
+  </span>
+  : Interconnections among people for social interaction.
+</li>
+<li>
+  <span class="keyword">
+  Mobile network
+</span>
+: Infrastructure connecting cellular devices.
+</li>
+<li>
+  <span class="keyword">
+  Network of computers
+</span>
+: Interconnected computing devices.
+</li>
+<li>
+  <span class="keyword">
+  Utility networks
+</span>
+: Airlines, railways, banks, and hospital networks.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Computer Network &amp; Nodes
+</summary>
+<p>
+  A
+  <span class="keyword">
+  computer network
+</span>
+is an interconnection among two or more computers or computing devices, allowing them to share data and resources. Any device connected to a network that can receive, create, store, or send data is called a
+<span class="keyword">
+node
+</span>
+(or host), such as a server, desktop, laptop, smartphone, printer, or modem.
+</p>
+<p>
+  For communication, data is divided into smaller chunks called
+  <span class="keyword">
+  packets
+</span>
+, which are carried over wired media (cables) or wireless media (air).
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.2 Evolution of Networking
+</summary>
+<p>
+  The journey of modern computer networks began in the 1960s with a research project commissioned by the Advanced Research Projects Agency Network (
+  <span class="keyword">
+  ARPANET
+</span>
+) in the U.S. Department of Defence to connect academic and research institutions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Milestones Timeline
+</summary>
+<ol>
+  <li>
+    <strong>
+    1961:
+  </strong>
+  The idea of ARPANET is conceptualized.
+</li>
+<li>
+  <strong>
+  1969:
+</strong>
+ARPANET becomes functional by connecting UCLA and SRI.
+</li>
+<li>
+  <strong>
+  1971:
+</strong>
+Roy Tomlinson develops network messaging (E-mail), introducing the
+<span class="keyword">
+@
+</span>
+symbol to mean "at".
+</li>
+<li>
+  <strong>
+  1974:
+</strong>
+The term
+<span class="keyword">
+Internet
+</span>
+is coined, and Telenet (first commercial use of ARPANET) is started.
+</li>
+<li>
+  <strong>
+  1982:
+</strong>
+<span class="keyword">
+TCP/IP
+</span>
+is introduced as the standard protocol on ARPANET.
+</li>
+<li>
+  <strong>
+  1983:
+</strong>
+The
+<span class="keyword">
+Domain Name System (DNS)
+</span>
+is introduced.
+</li>
+<li>
+  <strong>
+  1986:
+</strong>
+National Science Foundation brings connectivity to more people with its
+<span class="keyword">
+NSFNET
+</span>
+program.
+</li>
+<li>
+  <strong>
+  1990:
+</strong>
+Tim Berners-Lee at CERN develops
+<span class="keyword">
+HTML
+</span>
+and
+<span class="keyword">
+URL
+</span>
+, giving birth to the
+<span class="keyword">
+World Wide Web (WWW)
+</span>
+.
+</li>
+<li>
+  <strong>
+  1997:
+</strong>
+The first version of the
+<span class="keyword">
+Wi-Fi (802.11)
+</span>
+standard is introduced.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.3 Types of Networks
+</summary>
+<p>
+Computer networks are broadly categorized based on the geographical area covered and data transfer rates.
+</p>
+<div style="margin: 20px 0; overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; \text-align: left;">
+    <thead>
+      <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+        <th style="padding: 8px; border: 1px solid #cbd5e1;">
+        Core Computer Science Concept
+      </th>
+      <th style="padding: 8px; border: 1px solid #cbd5e1;">
+      Technical Definition / Operational State
+    </th>
+    <th style="padding: 8px; border: 1px solid #cbd5e1;">
+    Structural Parameters &amp; Specifications
+  </th>
+  <th style="padding: 8px; border: 1px solid #cbd5e1;">
+  Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #cbd5e1;">
+      <strong>
+      Personal Area Network (PAN)
+    </strong>
+  </td>
+  <td style="padding: 8px; border: 1px solid #cbd5e1;">
+  A network formed by connecting personal devices within a very close range.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Approximate range of 10 meters; can be wired (USB) or wireless (Bluetooth / WPAN).
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Connects personal devices like laptops, smartphones, and printers for individual use.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px; border: 1px solid #cbd5e1;">
+    <strong>
+    Local Area Network (LAN)
+  </strong>
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+A network connecting devices placed at a limited distance in a localized area.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Range up to 1 km; speeds from 10 Mbps (Ethernet) to 1000 Mbps (Gigabit Ethernet); uses Ethernet cables, fiber optics, or Wi-Fi.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Enables secure resource sharing (printers, local servers) within a room, office, school, or campus.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px; border: 1px solid #cbd5e1;">
+    <strong>
+    Metropolitan Area Network (MAN)
+  </strong>
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+An extended form of LAN covering a larger geographical area like a city or town.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Range up to 30-40 km; connects multiple LANs together; data rates in Mbps (less than LAN).
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Serves municipal or corporate networks across a city, such as cable TV networks or city-wide broadband.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px; border: 1px solid #cbd5e1;">
+    <strong>
+    Wide Area Network (WAN)
+  </strong>
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+A network connecting computers, LANs, and MANs across vast geographical distances.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Spans countries or continents; uses public or private transmission systems (wired/wireless).
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Connects branches of large businesses, educational institutions, or governments globally. The Internet is the largest WAN.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.4 Network Devices
+</summary>
+<p>
+To communicate data through transmission media and configure networks, various specialized hardware devices are required.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Modem
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical Layer Interface / Signal Conversion Tier
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Performs modulation (converting digital bits from a computer into analog signals for transmission) and demodulation (converting incoming analog signals back into digital bits).
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Limited by the bandwidth of the transmission line; failure of the modem completely disconnects the local node from external networks.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Ethernet Card (NIC)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Network Interface Tier / Hardware Controller
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+A circuit board mounted on the motherboard that acts as an interface between the computer and the network cable. Supports data transfer rates between 10 Mbps and 1 Gbps. Each NIC has a unique, permanent physical
+<span class="keyword">
+MAC address
+</span>
+.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Physical damage to the card or port prevents any wired network connectivity; speed is capped by the card's hardware specifications.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: RJ45 Connector
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical Connection Interface
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+An eight-pin plastic connector plug used exclusively with Ethernet cables to fit into RJ45 jacks on NICs.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Plastic retention clips are fragile and break easily, leading to loose connections and intermittent signal loss.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Repeater
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical Layer Signal Regenerator
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+An analog device that receives weakened signals on a cable (which typically lose strength after ~100 meters), regenerates them to their original strength, and retransmits them.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Regenerates noise along with the signal; does not perform any packet filtering or routing.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Hub
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical Layer Multi-port Repeater
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Connects multiple devices through wires. Data arriving on any input port is broadcasted (sent out) to all other ports.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+High collision rates if multiple devices transmit simultaneously; inefficient bandwidth utilization due to broadcasting; lacks security as all connected devices receive all packets.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Switch
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Data Link Layer / Central LAN Controller
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Connects multiple devices in a LAN. Extracts the destination MAC address from incoming data packets, looks it up in an internal table, and forwards the packet only to the specific target device. Drops noisy or corrupted signals.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+More expensive than hubs; table size limits the number of MAC addresses it can store; central point of failure for the local segment.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Router
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Network Layer Routing Hardware
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Receives, analyzes, and transmits data packets between different networks (e.g., connecting a LAN to the Internet). Can repackage packets to fit the requirements of different network types.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Complex configuration; introduces processing latency due to packet analysis; high hardware cost.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Gateway
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Application/Network Edge Security &amp; Protocol Converter
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Acts as an entry and exit point ("gate") between an organization's internal network and the outside world (Internet). Can be implemented in software, hardware, or both. Often integrated with a firewall.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Single point of failure for all external traffic; can become a performance bottleneck if security inspection overhead is high.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.5 Networking Topologies
+</summary>
+<p>
+  The physical or logical arrangement of computers and other peripheral devices in a network is called its
+  <span class="keyword">
+  topology
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mesh Topology
+</summary>
+<p>
+Each communicating device is connected directly to every other device in the network.
+</p>
+<ul>
+  <li>
+    <strong>
+    Reliability:
+  </strong>
+  Extremely high; if one node or cable fails, traffic is rerouted through alternative paths.
+</li>
+<li>
+  <strong>
+  Security:
+</strong>
+High, as dedicated links carry data only between the two connected nodes.
+</li>
+<li>
+  <strong>
+  Complexity &amp; Cost:
+</strong>
+Very high; requires complex wiring. For n nodes, the number of required wires is:
+<div style="\text-align: center; margin: 10px 0; font-weight: bold;">
+Total Wires = n(n - 1) / 2
+</div>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Ring Topology
+</summary>
+<p>
+Each node is connected to exactly two other devices, one on each side, forming a closed loop.
+</p>
+<ul>
+  <li>
+    <strong>
+    Data Flow:
+  </strong>
+  Unidirectional (clockwise or counterclockwise).
+</li>
+<li>
+  <strong>
+  Vulnerability:
+</strong>
+High; a break in the ring or a single node failure can disable the entire network.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Bus Topology
+</summary>
+<p>
+  All devices connect to a single central backbone cable called the
+  <span class="keyword">
+  bus
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Data Flow:
+  </strong>
+  Transmitted along the length of the bus in both directions; received by all nodes.
+</li>
+<li>
+  <strong>
+  Advantages:
+</strong>
+Cheap, simple, and easy to install and maintain.
+</li>
+<li>
+  <strong>
+  Disadvantages:
+</strong>
+Less secure; a break in the main backbone cable disables the entire network.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Star Topology
+</summary>
+<p>
+Each device is connected directly to a central node (such as a hub or switch).
+</p>
+<ul>
+  <li>
+    <strong>
+    Efficiency:
+  </strong>
+  Very fast and effective; disturbance in one node does not affect the rest of the network.
+</li>
+<li>
+  <strong>
+  Vulnerability:
+</strong>
+The central node is a single point of failure; if the hub/switch fails, the entire network goes down.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Tree or Hybrid Topology
+</summary>
+<p>
+A hierarchical topology containing multiple branches, where each branch can have one or more basic topologies (star, ring, bus). Commonly used in WANs to connect multiple LANs.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.6 Identifying Nodes in a Networked Communication
+</summary>
+<p>
+To ensure accurate routing and delivery of data, every node in a network must be uniquely identified using physical and logical addressing schemes.
+</p>
+<div style="margin: 20px 0; overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; \text-align: left;">
+    <thead>
+      <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+        <th style="padding: 8px; border: 1px solid #cbd5e1;">
+        Core Computer Science Concept
+      </th>
+      <th style="padding: 8px; border: 1px solid #cbd5e1;">
+      Technical Definition / Operational State
+    </th>
+    <th style="padding: 8px; border: 1px solid #cbd5e1;">
+    Structural Parameters &amp; Specifications
+  </th>
+  <th style="padding: 8px; border: 1px solid #cbd5e1;">
+  Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #cbd5e1;">
+      <strong>
+      MAC Address (Media Access Control)
+    </strong>
+  </td>
+  <td style="padding: 8px; border: 1px solid #cbd5e1;">
+  The physical or hardware address permanently engraved on the NIC during manufacturing.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+  12-digit hexadecimal number (48 bits in length). First 6 digits (24 bits) represent the manufacturer's ID (OUI); last 6 digits (24 bits) represent the serial number. E.g.,
+  <code>
+  FC:F8:AE:CE:7B:16
+</code>
+.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Uniquely identifies a physical machine on a local network segment; cannot be changed.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px; border: 1px solid #cbd5e1;">
+    <strong>
+    IPv4 Address (Internet Protocol v4)
+  </strong>
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+A logical numeric address assigned to each node in an IP-based network.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+  32-bit numeric address written as four decimal numbers (0-255) separated by periods. E.g.,
+  <code>
+  192.168.0.178
+</code>
+. Offers ~4.3 billion unique addresses.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Uniquely identifies a node globally; can change dynamically if the node moves to a different network.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px; border: 1px solid #cbd5e1;">
+    <strong>
+    IPv6 Address (Internet Protocol v6)
+  </strong>
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+The next-generation logical addressing scheme developed to replace IPv4 due to address exhaustion.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+  128-bit address represented by eight groups of hexadecimal numbers separated by colons. E.g.,
+  <code>
+  2001:CDBA:0000:0000:0000:0000:3257:9652
+</code>
+.
+</td>
+<td style="padding: 8px; border: 1px solid #cbd5e1;">
+Provides a virtually inexhaustible pool of unique IP addresses for global routing of billions of IoT and computing devices.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.7 Internet, Web and the Internet of Things
+</summary>
+<p>
+While often used interchangeably, the Internet and the World Wide Web are distinct technological systems.
+</p>
+<ul>
+  <li>
+    <strong>
+    The Internet:
+  </strong>
+  The global physical network of interconnected computing devices (servers, PCs, routers, smart appliances, IoT devices).
+</li>
+<li>
+  <strong>
+  The World Wide Web (WWW):
+</strong>
+An information system of interlinked web pages and resources stored on servers and accessed via the Internet.
+</li>
+</ul>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Three Core Technologies of the Web
+</summary>
+<p>
+Sir Tim Berners-Lee invented the WWW in 1990 by defining three fundamental technologies:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    HTML (HyperText Markup Language)
+  </span>
+  : The standard language used to design and structure web pages so they can be read by any browser.
+</li>
+<li>
+  <span class="keyword">
+  URI / URL (Uniform Resource Identifier / Locator)
+</span>
+: A unique address or path for each resource on the web (e.g.,
+<code>
+http://www.ncert.nic.in/textbook/textbook.htm
+</code>
+).
+</li>
+<li>
+  <span class="keyword">
+  HTTP / HTTPS (HyperText Transfer Protocol / Secure)
+</span>
+: The set of rules used to retrieve and transmit linked web pages across the web.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.8 Domain Name System (DNS)
+</summary>
+<p>
+  Because remembering numeric IP addresses (like
+  <code>
+  164.100.60.233
+</code>
+) is difficult for humans, the
+<span class="keyword">
+Domain Name System (DNS)
+</span>
+maps human-readable domain names (like
+<code>
+ncert.nic.in
+</code>
+) to their corresponding IP addresses.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: DNS Server
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Application Layer Directory Service
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Performs
+<span class="keyword">
+domain name resolution
+</span>
+. When a user enters a URL, the browser queries a DNS server to obtain the mapped IP address. Once retrieved, the HTTP protocol uses that IP address to fetch the web page.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+DNS queries introduce initial connection latency; if the DNS server goes down, websites cannot be accessed using their domain names (though they remain accessible via direct IP addresses).
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  DNS Hierarchical Structure
+</summary>
+<p>
+  DNS servers are organized hierarchically. At the top level are 13
+  <span class="keyword">
+  root servers
+</span>
+(named A through M). Below them are Top-Level Domain (TLD) servers (like .com, .in, .org) and authoritative name servers that hold the actual IP mappings.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Technical Analysis &amp; Infrastructure Case Studies
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Two universities located in different states (e.g., Delhi and Shimla) need to establish a secure, high-speed data transfer network to share research databases and administrative files.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+<ul>
+  <li>
+    <strong>
+    Network Type Selection:
+  </strong>
+  Since the universities are in different states, a
+  <span class="keyword">
+  Wide Area Network (WAN)
+</span>
+must be deployed. This WAN will connect the local campus networks (LANs) of both universities via high-speed telecommunication lines or satellite links.
+</li>
+<li>
+  <strong>
+  Hardware Infrastructure:
+</strong>
+Each campus will utilize a
+<span class="keyword">
+Gateway
+</span>
+at its network edge to manage incoming and outgoing traffic, translate protocols, and enforce security policies via integrated firewalls. Within each campus, high-speed
+<span class="keyword">
+Switches
+</span>
+will manage local traffic, and
+<span class="keyword">
+Routers
+</span>
+will direct packets across the WAN.
+</li>
+<li>
+  <strong>
+  Addressing &amp; Resolution:
+</strong>
+Nodes on both campuses will be assigned unique
+<span class="keyword">
+IP addresses
+</span>
+(IPv4 or IPv6) for routing. Internal DNS servers can be configured to resolve local server names, while public DNS servers will handle external web traffic.
+</li>
+</ul>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 10
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-09-structured-query-language-sql.html"; } else { window.location.href = "12-chapter-11-data-communication.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

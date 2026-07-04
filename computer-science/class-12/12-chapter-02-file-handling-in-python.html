@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 2: File Handling in Python
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 2: File Handling in Python
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Files &amp; File Types
+</summary>
+<p>
+  In Python, variables have a lifetime limited to the execution of the program. To store data permanently for future reusability, data must be written to secondary storage devices in the form of files. A
+  <span class="keyword">
+  file
+</span>
+is a named location on a secondary storage medium where data is permanently stored.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Text Files vs. Binary Files
+</summary>
+<p>
+Computers store all files as sequences of bytes (0s and 1s). However, files are classified based on how these bytes are interpreted:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Text File
+  </span>
+  : Consists of human-readable characters. Each character is translated from its binary representation using encoding schemes like
+  <span class="keyword">
+  ASCII
+</span>
+or
+<span class="keyword">
+UNICODE
+</span>
+. Lines are terminated by a special character called
+<span class="keyword">
+End of Line (EOL)
+</span>
+, which is typically the newline character (
+<code>
+\n
+</code>
+) or carriage return (
+<code>
+\r\n
+</code>
+). Common extensions include
+<code>
+.txt
+</code>
+,
+<code>
+.py
+</code>
+, and
+<code>
+.csv
+</code>
+.
+</li>
+<li>
+  <span class="keyword">
+  Binary File
+</span>
+: Consists of raw byte streams that do not represent ASCII characters directly. Instead, they represent complex data structures, images, audio, video, or executable code. They are not human-readable and require specific software to interpret. A single-bit corruption can render the entire file unreadable. Common extensions include
+<code>
+.dat
+</code>
+,
+<code>
+.png
+</code>
+, and
+<code>
+.exe
+</code>
+.
+</li>
+</ul>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Data File Formats
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Operating System File System &amp; Application Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Text files undergo character-to-byte translation during read/write operations. Binary files bypass translation, writing raw memory buffers directly to disk.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Text files have higher storage overhead due to character encoding (e.g., a
+<code>
+.docx
+</code>
+file contains extensive metadata compared to a raw
+<code>
+.txt
+</code>
+file). Binary files are highly compact and fast but lack interoperability and are highly susceptible to corruption.
+</li>
+</ul>
+</div>
+<table border="1" style="width:100%; border-collapse:collapse; margin:14px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Text File
+    </strong>
+  </td>
+  <td>
+  A sequence of characters stored as encoded bytes.
+</td>
+<td>
+  Uses EOL (
+  <code>
+  \n
+</code>
+) to demarcate lines; translated via ASCII/UNICODE.
+</td>
+<td>
+Human-readable configuration, scripting, and structured data exchange.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Binary File
+  </strong>
+</td>
+<td>
+A raw stream of bytes representing direct memory states.
+</td>
+<td>
+No line terminators; requires specific application-level parsers.
+</td>
+<td>
+High-performance storage of multimedia, compiled code, and serialized objects.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Opening and Closing a Text File
+</summary>
+<p>
+To perform any operation on a file, it must first be opened to establish a link between the program and the file on secondary storage. Once operations are complete, the file must be closed to free system resources.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The open() Function &amp; File Objects
+</summary>
+<p>
+  The built-in
+  <span class="keyword">
+  open()
+</span>
+function creates a
+<span class="keyword">
+file object
+</span>
+(also known as a file handle) that acts as a pipeline for data transfer.
+</p>
+<pre>
+  <code>
+  file_object = open(file_name, access_mode)
+</code>
+</pre>
+<p>
+The file object exposes several key attributes:
+</p>
+<ul>
+  <li>
+    <code>
+    file_object.closed
+  </code>
+  : Returns
+  <code>
+  True
+</code>
+if the file is closed,
+<code>
+False
+</code>
+otherwise.
+</li>
+<li>
+  <code>
+  file_object.mode
+</code>
+: Returns the access mode in which the file was opened.
+</li>
+<li>
+  <code>
+  file_object.name
+</code>
+: Returns the name of the file.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  File Access Modes
+</summary>
+<p>
+The access mode determines the permitted operations (reading, writing, appending) and the initial position of the file pointer (offset).
+</p>
+<table border="1" style="width:100%; border-collapse:collapse; margin:14px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      File Mode
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  File Offset Position
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>
+      &lt;r&gt;
+    </code>
+  </td>
+  <td>
+    Opens the file in read-only mode (default). Raises
+    <code>
+    FileNotFoundError
+  </code>
+  if the file does not exist.
+</td>
+<td>
+Beginning of the file
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    &lt;rb&gt;
+  </code>
+</td>
+<td>
+Opens the file in binary and read-only mode.
+</td>
+<td>
+Beginning of the file
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    &lt;r+&gt;
+  </code>
+  or
+  <code>
+  &lt;+r&gt;
+</code>
+</td>
+<td>
+Opens the file in both read and write mode.
+</td>
+<td>
+Beginning of the file
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    &lt;w&gt;
+  </code>
+</td>
+<td>
+Opens the file in write-only mode. Overwrites existing contents. Creates a new file if it does not exist.
+</td>
+<td>
+Beginning of the file
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    &lt;wb+&gt;
+  </code>
+  or
+  <code>
+  &lt;+wb&gt;
+</code>
+</td>
+<td>
+Opens the file in read, write, and binary mode. Overwrites existing contents.
+</td>
+<td>
+Beginning of the file
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    &lt;a&gt;
+  </code>
+</td>
+<td>
+Opens the file in append mode. Appends data to the end of the file. Creates a new file if it does not exist.
+</td>
+<td>
+End of the file
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    &lt;a+&gt;
+  </code>
+  or
+  <code>
+  &lt;+a&gt;
+</code>
+</td>
+<td>
+Opens the file in append and read mode.
+</td>
+<td>
+End of the file
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Closing Files &amp; The with Clause
+</summary>
+<p>
+  Closing a file is critical to flush unwritten data from the buffer to the disk and release system locks. This can be done explicitly using the
+  <span class="keyword">
+  close()
+</span>
+method, or implicitly using the
+<span class="keyword">
+with
+</span>
+statement (context manager).
+</p>
+<pre>
+  <code>
+    # Explicit closing
+    file_object = open("myfile.txt", "r")
+    content = file_object.read()
+    file_object.close()
+    # Implicit closing using &#39;with&#39; (Recommended)
+    with open("myfile.txt", "r") as file_object:
+    content = file_object.read()
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Reading and Writing Operations
+</summary>
+<p>
+Python provides distinct methods to read from and write to \text files, handling data either as single strings or sequences of strings.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Writing Methods
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    write(string)
+  </span>
+  : Writes a single string to the file. It returns the number of characters written. Note that numeric data must be explicitly converted to a string using
+  <code>
+  str()
+</code>
+before writing.
+</li>
+<li>
+  <span class="keyword">
+  writelines(iterable)
+</span>
+: Writes a sequence of strings (such as a list or tuple) to the file. It does not automatically append newlines; they must be explicitly included in the strings.
+</li>
+<li>
+  <span class="keyword">
+  flush()
+</span>
+: Forcefully writes any buffered data to the file on disk without closing the file.
+</li>
+</ul>
+<pre>
+  <code>
+    # Example of writing to a file
+    with open("myfile.txt", "w") as f:
+    f.write("Hey I have started using files in Python\n")
+    lines = ["Hello everyone\n", "Writing multiline strings\n"]
+    f.writelines(lines)
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Reading Methods
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    read(n)
+  </span>
+  : Reads up to
+  <code>
+  n
+</code>
+characters from the file. If
+<code>
+n
+</code>
+is omitted or negative, it reads the entire file.
+</li>
+<li>
+  <span class="keyword">
+  readline(n)
+</span>
+: Reads a single line from the file, up to the newline character. If
+<code>
+n
+</code>
+is specified, it reads at most
+<code>
+n
+</code>
+characters from the current line.
+</li>
+<li>
+  <span class="keyword">
+  readlines()
+</span>
+: Reads all lines from the file and returns them as a list of strings, with each string ending in a newline character (
+<code>
+\n
+</code>
+).
+</li>
+</ul>
+<pre>
+  <code>
+    # Example of reading from a file
+    with open("myfile.txt", "r") as f:
+    # Read first 10 characters
+    print(f.read(10))
+    # Reset pointer and read line-by-line
+    f.seek(0)
+    for line in f:
+    print(line.strip())
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  File Offsets &amp; Random Access
+</summary>
+<p>
+By default, file access is sequential. To access data in a random fashion, Python provides methods to query and manipulate the file pointer&#39;s position.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The tell() and seek() Methods
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    tell()
+  </span>
+  : Returns an integer representing the current byte position of the file pointer from the beginning of the file.
+</li>
+<li>
+  <span class="keyword">
+  seek(offset, reference_point)
+</span>
+: Moves the file pointer by
+<code>
+offset
+</code>
+bytes relative to the position specified by
+<code>
+reference_point
+</code>
+.
+</li>
+</ul>
+<p>
+  The
+  <code>
+  reference_point
+</code>
+parameter can take one of three values:
+</p>
+<ul>
+  <li>
+    <code>
+    0
+  </code>
+  : Beginning of the file (default). Supported in both \text and binary modes.
+</li>
+<li>
+  <code>
+  1
+</code>
+: Current position of the file pointer. In \text mode, only an offset of
+<code>
+0
+</code>
+is allowed.
+</li>
+<li>
+  <code>
+  2
+</code>
+: End of the file. In \text mode, only an offset of
+<code>
+0
+</code>
+is allowed.
+</li>
+</ul>
+<pre>
+  <code>
+    # Example of seek and tell
+    with open("testfile.txt", "r+") as f:
+    print("Initial position:", f.tell())
+    content = f.read(10)
+    print("Position after reading 10 bytes:", f.tell())
+    f.seek(0)
+    print("Position after seek(0):", f.tell())
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Pickle Module (Binary Serialization)
+</summary>
+<p>
+  Python objects (lists, dictionaries, custom class instances) exist only in memory during execution. To save these complex structures to a file and reconstruct them later, Python provides the
+  <span class="keyword">
+  pickle
+</span>
+module.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Serialization vs. Deserialization
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Serialization (Pickling)
+  </span>
+  : The process of converting a Python object structure into a byte stream to be written to a binary file.
+</li>
+<li>
+  <span class="keyword">
+  Deserialization (Unpickling)
+</span>
+: The inverse process, where a byte stream from a binary file is converted back into a live Python object.
+</li>
+</ul>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: pickle Module
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Python Standard Library Serialization Engine
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+<ul>
+  <li>
+    <code>
+    pickle.dump(obj, file_obj)
+  </code>
+  : Serializes
+  <code>
+  obj
+</code>
+and writes it to the binary file
+<code>
+file_obj
+</code>
+(must be opened in
+<code>
+wb
+</code>
+or
+<code>
+ab
+</code>
+mode).
+</li>
+<li>
+  <code>
+  pickle.load(file_obj)
+</code>
+: Reads a serialized byte stream from
+<code>
+file_obj
+</code>
+(must be opened in
+<code>
+rb
+</code>
+mode) and reconstructs the original Python object.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Pickling is Python-specific; pickled files cannot be easily read by other languages (like Java or C++). Loading untrusted pickled data is a major security risk as it can execute arbitrary code.
+</li>
+</ul>
+</div>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Implementation Case Study: Employee Record System
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  A system is required to accept employee records (ID, Name, Salary, Allowances) from a user, calculate total salary, write them to a binary file, and subsequently read and display all records.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+<p>
+  The implementation uses a binary file (
+  <code>
+  empfile.dat
+</code>
+) opened in append-binary (
+<code>
+ab
+</code>
+) mode to store records as serialized lists. Reading is performed in a
+<code>
+while True
+</code>
+loop inside a
+<code>
+try...except EOFError
+</code>
+block, which gracefully handles the end-of-file condition when
+<code>
+pickle.load()
+</code>
+attempts to read past the last record.
+</p>
+<pre>
+  <code>
+    import pickle
+    # Writing records
+    with open("empfile.dat", "wb") as bfile:
+    record = [101, "D N Ravi", 32600, 4400, 37000]
+    pickle.dump(record, bfile)
+    # Reading records
+    try:
+    with open("empfile.dat", "rb") as bfile:
+    while True:
+    data = pickle.load(bfile)
+    print("Record:", data)
+    except EOFError:
+    print("End of file reached successfully.")
+  </code>
+</pre>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 2
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-01-exception-handling-in-python.html"; } else { window.location.href = "12-chapter-03-stack.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

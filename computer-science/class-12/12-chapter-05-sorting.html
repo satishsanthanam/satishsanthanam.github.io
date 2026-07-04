@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 5: Sorting
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 5: Sorting
+</h1>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  5.1 Introduction to Sorting
+</summary>
+<p>
+Sorting is the fundamental computational process of ordering or arranging a given collection of elements in a specific, predictable sequence. Sorting is a cornerstone of computer science, optimizing search operations and data retrieval pipelines.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Real-World and Computational Examples
+</summary>
+<ul>
+  <li>
+    <span class='keyword'>
+    Numerical Sorting
+  </span>
+  : Arranging a list of numbers in ascending (increasing) or descending (decreasing) order.
+</li>
+<li>
+  <span class='keyword'>
+  Lexicographical Sorting
+</span>
+: Arranging strings in alphabetical order (a-z or z-a) or according to string length (e.g., words in a dictionary).
+</li>
+<li>
+  <span class='keyword'>
+  Physical/Logistical Sorting
+</span>
+: Assigning examination hall seats based on candidate roll numbers, or sorting students by height or weight.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  The Search Efficiency Trade-off
+</summary>
+<p>
+Searching through an unsorted collection requires a linear scan, which is highly inefficient ($O(n)$ complexity). Sorting the collection beforehand introduces an initial computational overhead but drastically reduces subsequent search \times (e.g., enabling Binary Search with $O(\log n)$ complexity).
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Technical Concept Characterization Matrix
+</summary>
+<table border='1' style='border-collapse: collapse; width: 100%; margin: 10px 0;'>
+  <thead>
+    <tr style='background-color: #f1f5f9;'>
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class='keyword'>
+      Sorting
+    </span>
+  </td>
+  <td>
+  The systematic rearrangement of data elements into a specified logical order.
+</td>
+<td>
+  Input: Unsorted list of size $n$.
+  <br>
+  Output: Permuted list where $a_i \le a_{i+1}$ (for ascending order).
+</td>
+<td>
+To facilitate rapid data retrieval, optimize search algorithms, and present structured information.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    In-Place Sorting
+  </span>
+</td>
+<td>
+An algorithm that sorts the input sequence without requiring auxiliary memory proportional to the input size.
+</td>
+<td>
+Auxiliary Space Complexity: $O(1)$.
+</td>
+<td>
+Minimizes memory footprint during execution, critical for resource-constrained environments.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  5.2 Bubble Sort
+</summary>
+<p>
+Bubble Sort is a simple, comparison-based sorting algorithm. It operates by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they are in the incorrect order. This process is repeated until the list is fully sorted.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Operational Mechanics
+</summary>
+<ul>
+  <li>
+    <span class='keyword'>
+    Pass
+  </span>
+  : A single complete iteration through the unsorted portion of the list.
+</li>
+<li>
+For a list of size $n$, Bubble Sort requires a maximum of $n - 1$ passes to guarantee a sorted state.
+</li>
+<li>
+In each pass, the largest unsorted element "bubbles up" to its correct terminal position. Consequently, the unsorted sublist size decreases by 1 in each successive pass.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Algorithm 5.1: Bubble Sort
+</summary>
+<pre>
+  <code>
+    BUBBLESORT(numList, n)
+    Step 1: SET i = 0
+    Step 2: WHILE i &lt; n REPEAT STEPS 3 to 8
+    Step 3:   SET j = 0
+    Step 4:   WHILE j &lt; n - i - 1 REPEAT STEPS 5 to 7
+    Step 5:     IF numList[j] &gt; numList[j+1] THEN
+    Step 6:       swap(numList[j], numList[j+1])
+    Step 7:     SET j = j + 1
+    Step 8:   SET i = i + 1
+  </code>
+</pre>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Program 5-1: Python Implementation of Bubble Sort
+</summary>
+<pre>
+  <code>
+    def bubble_Sort(list1):
+    n = len(list1)
+    for i in range(n):
+    # Last i elements are already sorted, so we skip them
+    for j in range(0, n - i - 1):
+    if list1[j] &gt; list1[j+1]:
+    # Swap adjacent elements
+    list1[j], list1[j+1] = list1[j+1], list1[j]
+    numList = [8, 7, 13, 1, -9, 4]
+    bubble_Sort(numList)
+    print("The sorted list is :", numList)
+  </code>
+</pre>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Optimization: Early Termination
+</summary>
+<p>
+In standard Bubble Sort, even if the list becomes sorted before completing $n-1$ passes, the algorithm continues executing redundant passes. We can optimize this by introducing a boolean flag to track whether any swaps occurred during a pass. If no swaps occur, the list is already sorted, and we can break early.
+</p>
+<pre>
+  <code>
+    def optimized_bubble_sort(list1):
+    n = len(list1)
+    for i in range(n):
+    swapped = False
+    for j in range(0, n - i - 1):
+    if list1[j] &gt; list1[j+1]:
+    list1[j], list1[j+1] = list1[j+1], list1[j]
+    swapped = True
+    if not swapped:
+    break # Exit early if no elements were swapped
+  </code>
+</pre>
+</details>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Technical Profile: Bubble Sort
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Comparison-based, in-place, stable sorting algorithm.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Iterative adjacent comparisons with immediate swapping. Uses nested loops where the inner loop boundary shrinks dynamically ($n - i - 1$).
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly inefficient for large datasets ($O(n^2)$ worst and average-case time complexity). Performs excessive write/swap operations compared to Selection Sort.
+</li>
+</ul>
+</div>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  5.3 Selection Sort
+</summary>
+<p>
+Selection Sort improves upon Bubble Sort by minimizing the total number of swaps. It divides the input list into two parts: a sorted sublist at the left and an unsorted sublist at the right.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Operational Mechanics
+</summary>
+<ol>
+  <li>
+  Initially, the sorted sublist is empty, and the unsorted sublist contains all elements.
+</li>
+<li>
+In each pass, the algorithm scans the unsorted sublist to find the minimum element.
+</li>
+<li>
+The found minimum element is then swapped with the leftmost element of the unsorted sublist, making it part of the sorted sublist.
+</li>
+<li>
+This process repeats for $n - 1$ passes, reducing the unsorted sublist size by 1 in each pass.
+</li>
+</ol>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Algorithm 5.2: Selection Sort
+</summary>
+<pre>
+  <code>
+    SELECTIONSORT(numList, n)
+    Step 1: SET i = 0
+    Step 2: WHILE i &lt; n REPEAT STEPS 3 to 11
+    Step 3:   SET min = i, flag = 0
+    Step 4:   SET j = i + 1
+    Step 5:   WHILE j &lt; n REPEAT STEPS 6 to 10
+    Step 6:     IF numList[j] &lt; numList[min] THEN
+    Step 7:       min = j
+    Step 8:       flag = 1
+    Step 9:     IF flag = 1 THEN
+    Step 10:      swap(numList[i], numList[min])
+    Step 11:  SET i = i + 1
+  </code>
+</pre>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Program 5-2: Python Implementation of Selection Sort
+</summary>
+<pre>
+  <code>
+    def selection_Sort(list2):
+    n = len(list2)
+    for i in range(n):
+    min_idx = i
+    flag = 0
+    for j in range(i + 1, n):
+    if list2[j] &lt; list2[min_idx]:
+    min_idx = j
+    flag = 1
+    if flag == 1:
+    # Swap the found minimum element with the first element of unsorted part
+    list2[i], list2[min_idx] = list2[min_idx], list2[i]
+    numList = [8, 7, 13, 1, -9, 4]
+    selection_Sort(numList)
+    print("The sorted list is :", numList)
+  </code>
+</pre>
+</details>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Technical Profile: Selection Sort
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Comparison-based, in-place, unstable sorting algorithm.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Scans the unsorted partition to locate the absolute minimum element, then performs a single swap per pass to place it in the sorted partition.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Guarantees a maximum of $O(n)$ swaps, making it highly efficient when write operations are expensive. However, it still requires $O(n^2)$ comparisons regardless of whether the input is already sorted.
+</li>
+</ul>
+</div>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  5.4 Insertion Sort
+</summary>
+<p>
+Insertion Sort is an intuitive sorting algorithm that builds the final sorted array one element at a time. It is highly analogous to the way a human sorts a hand of playing cards.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Operational Mechanics
+</summary>
+<ul>
+  <li>
+  The list is conceptually split into a sorted and an unsorted region.
+</li>
+<li>
+In each pass, the first element of the unsorted region (the key/temp) is selected.
+</li>
+<li>
+The algorithm traverses the sorted region backward, shifting all elements larger than the key one position to the right to make space.
+</li>
+<li>
+The key is then inserted into its correct relative position.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Algorithm 5.3: Insertion Sort
+</summary>
+<pre>
+  <code>
+    INSERTIONSORT(numList, n)
+    Step 1: SET i = 1
+    Step 2: WHILE i &lt; n REPEAT STEPS 3 to 9
+    Step 3:   temp = numList[i]
+    Step 4:   SET j = i - 1
+    Step 5:   WHILE j &gt;= 0 and numList[j] &gt; temp REPEAT STEPS 6 to 7
+    Step 6:     numList[j+1] = numList[j]
+    Step 7:     SET j = j - 1
+    Step 8:   numList[j+1] = temp
+    Step 9:   SET i = i + 1
+  </code>
+</pre>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Program 5-3: Python Implementation of Insertion Sort
+</summary>
+<pre>
+  <code>
+    def insertion_Sort(list3):
+    n = len(list3)
+    for i in range(1, n):
+    temp = list3[i]
+    j = i - 1
+    # Shift elements of list3[0..i-1] that are greater than temp
+    while j &gt;= 0 and temp &lt; list3[j]:
+    list3[j+1] = list3[j]
+    j = j - 1
+    list3[j+1] = temp
+    numList = [8, 7, 13, 1, -9, 4]
+    insertion_Sort(numList)
+    print("The sorted list is :", numList)
+  </code>
+</pre>
+</details>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Technical Profile: Insertion Sort
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Comparison-based, in-place, stable, adaptive sorting algorithm.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Incremental insertion via backward shifting. Employs a nested loop structure where the inner loop terminates early if the correct insertion point is found.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly efficient for small or nearly-sorted datasets ($O(n)$ best-case time complexity). However, worst-case performance is $O(n^2)$ due to the high cost of shifting elements.
+</li>
+</ul>
+</div>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  5.5 Time Complexity of Algorithms
+</summary>
+<p>
+Time complexity is a computational metric that quantifies the amount of time an algorithm takes to run as a function of the length of the input data ($n$).
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Estimating Time Complexity
+</summary>
+<ul>
+  <li>
+    <span class='keyword'>
+    Constant Time ($O(1)$)
+  </span>
+  : Algorithms without loops. The number of execution steps remains constant regardless of data size.
+</li>
+<li>
+  <span class='keyword'>
+  Linear Time ($O(n)$)
+</span>
+: Algorithms containing a single loop running from $1$ to $n$. Execution steps grow proportionally with input size.
+</li>
+<li>
+  <span class='keyword'>
+  Quadratic Time ($O(n^2)$)
+</span>
+: Algorithms containing nested loops (a loop within a loop). Execution steps grow quadratically with input size.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Complexity Analysis of Sorting Algorithms
+</summary>
+<p>
+All three sorting algorithms discussed in this chapter (Bubble Sort, Selection Sort, and Insertion Sort) utilize nested loops to perform comparisons and swaps. Consequently, they all exhibit a worst-case time complexity of $O(n^2)$.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Technical Concept Characterization Matrix
+</summary>
+<table border='1' style='border-collapse: collapse; width: 100%; margin: 10px 0;'>
+  <thead>
+    <tr style='background-color: #f1f5f9;'>
+      <th>
+      Algorithm
+    </th>
+    <th>
+    Best-Case Complexity
+  </th>
+  <th>
+  Worst-Case Complexity
+</th>
+<th>
+Auxiliary Space Complexity
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Bubble Sort
+    </strong>
+  </td>
+  <td>
+  $O(n)$ (Optimized)
+</td>
+<td>
+$O(n^2)$
+</td>
+<td>
+$O(1)$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Selection Sort
+  </strong>
+</td>
+<td>
+$O(n^2)$
+</td>
+<td>
+$O(n^2)$
+</td>
+<td>
+$O(1)$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Insertion Sort
+  </strong>
+</td>
+<td>
+$O(n)$
+</td>
+<td>
+$O(n^2)$
+</td>
+<td>
+$O(1)$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  Exercises &amp; Case Studies
+</summary>
+<blockquote class='example-block'>
+<p>
+  <em>
+  Exercise 1: Consider a list of 10 elements: randList = [7, 11, 3, 10, 17, 23, 1, 4, 21, 5]. Determine the partially sorted list after three complete passes of Bubble Sort.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+<br>
+Let us trace the first three passes of Bubble Sort on the given list:
+<br>
+Initial: [7, 11, 3, 10, 17, 23, 1, 4, 21, 5]
+<br>
+<strong>
+Pass 1:
+</strong>
+The largest element (23) bubbles up to the end.
+<br>
+Trace: [7, 3, 10, 11, 17, 1, 4, 21, 5, 23]
+<br>
+<strong>
+Pass 2:
+</strong>
+The second largest element (21) bubbles up to the second-to-last position.
+<br>
+Trace: [3, 7, 10, 11, 1, 4, 17, 5, 21, 23]
+<br>
+<strong>
+Pass 3:
+</strong>
+The third largest element (17) bubbles up to its correct position.
+<br>
+Trace: [3, 7, 10, 1, 4, 11, 5, 17, 21, 23]
+<br>
+The partially sorted list after three passes is
+<strong>
+[3, 7, 10, 1, 4, 11, 5, 17, 21, 23]
+</strong>
+.
+</p>
+</blockquote>
+<blockquote class='example-block'>
+<p>
+  <em>
+  Exercise 2: Write a program using user-defined functions that accepts a list of numbers as an argument and finds its median. Use Bubble Sort to sort the list.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+<br>
+Finding the median requires sorting the dataset first. If the number of elements is odd, the median is the middle element. If even, it is the average of the two middle elements.
+</p>
+<pre>
+  <code>
+    def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+    for j in range(0, n - i - 1):
+    if arr[j] &gt; arr[j+1]:
+    arr[j], arr[j+1] = arr[j+1], arr[j]
+    def find_median(arr):
+    bubble_sort(arr)
+    n = len(arr)
+    if n % 2 != 0:
+    return arr[n // 2]
+    else:
+    mid1 = arr[(n // 2) - 1]
+    mid2 = arr[n // 2]
+    return (mid1 + mid2) / 2.0
+    # Test execution
+    data = [7, 11, 3, 10, 17, 23, 1, 4, 21, 5]
+    print("Median:", find_median(data))
+  </code>
+</pre>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-04-queue.html"; } else { window.location.href = "12-chapter-06-searching.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
