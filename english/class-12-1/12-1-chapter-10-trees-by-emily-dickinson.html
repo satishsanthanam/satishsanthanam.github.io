@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    English: Class 12 (Book 1) — Chapter 10: Trees
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+English: Class 12 (Book 1) — Chapter 10: Trees
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Author Profile &amp; Literary Context
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Literary Profile: Emily Dickinson
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Traits &amp; Temperament:
+  </strong>
+  Introverted, hermetic, and deeply observant of the natural world. She lived a quiet life in Amherst, Massachusetts, choosing isolation while producing a massive body of highly original poetry.
+</li>
+<li>
+  <strong>
+  Socio-Economic &amp; Contextual Background:
+</strong>
+Lived in the nineteenth century (1830-1886) in America. Published very few poems during her lifetime; her vast collection of 1,789 poems was discovered and published posthumously.
+</li>
+<li>
+  <strong>
+  Thematic &amp; Symbolic Motifs:
+</strong>
+Characterized by unconventional capitalization, extensive use of dashes, unusual imagery, and a unique lyric style that explores nature, mortality, and spirituality.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Poem Text &amp; Stanza Analysis
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  "The Trees like Tassels hit – and – swung – / There seemed to rise a Tune / From Miniature Creatures / Accompanying the Sun –"
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Literary Interpretation:
+</strong>
+The poem opens with a dynamic visual of trees swaying like tassels in the wind. This movement is accompanied by an auditory sensation—a "Tune" produced by "Miniature Creatures" (insects and birds) that heralds the arrival of the sun, establishing a harmonious connection between light, movement, and sound.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  "Far Psalteries of Summer – / Enamoring the Ear / They never yet did satisfy – / Remotest – when most fair"
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Literary Interpretation:
+</strong>
+The music of summer is compared to ancient stringed instruments ("Psalteries"). This natural symphony is incredibly beautiful ("Enamoring the Ear") yet elusive; it leaves the listener longing for more, feeling most beautiful and divine when it is distant or fleeting ("Remotest – when most fair").
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  "The Sun shone whole at intervals – / Then Half – then utter hid – / As if Himself were optional / And had Estates of Cloud / Sufficient to enfold Him / Eternally from view – / Except it were a whim of His / To let the Orchards grow –"
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Literary Interpretation:
+</strong>
+The sun is personified as a sovereign monarch who controls his own visibility. He retreats into his vast "Estates of Cloud," making his presence seem optional. The only reason he deigns to shine is a benevolent "whim" to allow the orchards to grow, emphasizing nature's absolute power over life.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  "A Bird sat careless on the fence – / One gossiped in the Lane / On silver matters charmed a Snake / Just winding round a Stone –"
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Literary Interpretation:
+</strong>
+Dickinson shifts focus to the minute, everyday details of nature. A bird sits indifferently on a fence, another "gossips" in the lane, and their silver songs charm a snake winding around a stone. This highlights the peaceful coexistence and lively interactions within the natural world.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  "Bright Flowers slit a Calyx / And soared upon a Stem / Like Hindered Flags – Sweet hoisted – / With Spices – in the Hem –"
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Literary Interpretation:
+</strong>
+The blooming of flowers is described with scientific precision ("slit a Calyx") combined with vivid metaphor. The buds are compared to "Hindered Flags" that are finally hoisted, releasing their sweet fragrance ("Spices") into the air.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  "’Twas more – I cannot mention – / How mean – to those that see / Vandyke’s Delineation / Of Nature’s – Summer Day!"
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Literary Interpretation:
+</strong>
+The poet concludes by asserting that the lived experience of a summer day is far too grand to be fully captured in words or art. Even the masterfully detailed paintings of Anthony van Dyck ("Vandyke's Delineation") seem "mean" (poor or inadequate) when compared to the breathtaking reality of nature itself.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Literary Devices &amp; Stylistic Analysis
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 14px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Literary Device / Colloquial Phrase
+    </th>
+    <th>
+    Exact Textual Example / Quote
+  </th>
+  <th>
+  Contextual Meaning &amp; Subtext
+</th>
+<th>
+Pedagogical / Stylistic Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      Simile
+    </span>
+  </td>
+  <td>
+  "The Trees like Tassels hit – and – swung –"
+</td>
+<td>
+Compares the movement of tree branches in the wind to the light, swinging motion of tassels.
+</td>
+<td>
+Establishes a visual and tactile image of nature's playful, effortless movement.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Personification
+  </span>
+</td>
+<td>
+"A Bird sat careless on the fence – / One gossiped in the Lane"
+</td>
+<td>
+Attributes human social behaviors ("careless", "gossiped") to birds.
+</td>
+<td>
+Brings the natural landscape to life, portraying it as an active, vibrant community.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Metaphor
+  </span>
+</td>
+<td>
+"Psalteries of Summer"
+</td>
+<td>
+Compares the collective sounds of summer (insects, birds, wind) to the music of ancient stringed instruments.
+</td>
+<td>
+Elevates the natural sounds of summer to a sacred, harmonious symphony.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Metaphor
+  </span>
+</td>
+<td>
+"Hindered Flags"
+</td>
+<td>
+Compares unopened flower buds on their stems to tightly wrapped, unhoisted flags.
+</td>
+<td>
+Captures the tension and potential energy of nature just before blooming.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Responding to the Poem
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Imagery of Summer's Day
+</summary>
+<p>
+  The poet uses vivid, multi-sensory imagery to delineate a summer day more picturesquely than a painter. Visual images include
+  <span class="keyword">
+  Trees like Tassels
+</span>
+swinging, the sun hiding behind
+<span class="keyword">
+Estates of Cloud
+</span>
+, a bird sitting on a fence, a snake winding around a stone, and flowers opening like
+<span class="keyword">
+Hindered Flags
+</span>
+. Auditory imagery is evoked through the
+<span class="keyword">
+Tune
+</span>
+of
+<span class="keyword">
+Miniature Creatures
+</span>
+and the
+<span class="keyword">
+Psalteries of Summer
+</span>
+, creating a living, breathing canvas that transcends static paint.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Psalteries of Summer
+</summary>
+<p>
+  The phrase
+  <span class="keyword">
+  Psalteries of Summer
+</span>
+refers to the collective, harmonious sounds of nature during the summer season. A psaltery is an ancient stringed musical instrument. By using this metaphor, Dickinson suggests that the buzzing of insects, the rustling of leaves, and the singing of birds form a divine, sacred orchestra that enchants the listener's ear.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Personification of Nature
+</summary>
+<p>
+Creatures and natural elements are attributed with human qualities in several lines:
+</p>
+<ul>
+  <li>
+  "As if Himself were optional" (referring to the Sun)
+</li>
+<li>
+"A Bird sat careless on the fence – / One gossiped in the Lane"
+</li>
+<li>
+"charmed a Snake"
+</li>
+</ul>
+<p>
+This personification adds a sense of intimacy, joy, and community to the summer day, making nature feel familiar, active, and deeply connected to the human experience.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4. The Image of Hindered Flags
+</summary>
+<p>
+  The image of
+  <span class="keyword">
+  Hindered Flags
+</span>
+describes flower buds that are tightly closed and wrapped around their stems. As they begin to bloom, they look like sweet, colorful flags being slowly hoisted and unfurled in the breeze, releasing their "Spices" (fragrance) from their hems.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5. Capitalization of Pronouns for the Sun
+</summary>
+<p>
+  The pronouns referring to the Sun (
+  <span class="keyword">
+  Himself
+</span>
+,
+<span class="keyword">
+Him
+</span>
+,
+<span class="keyword">
+His
+</span>
+) are capitalized to elevate the Sun to a sovereign, deity-like status. It portrays the Sun as a majestic ruler who possesses "Estates of Cloud" and has the supreme authority to decide whether to reveal himself or remain hidden, highlighting the grand, independent power of nature.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  6. Close Observation of Natural Phenomena
+</summary>
+<p>
+Great poetry is born from meticulous observation, as demonstrated by Dickinson's precise details:
+</p>
+<ul>
+  <li>
+  The specific physical structure of a flower opening ("Bright Flowers slit a Calyx").
+</li>
+<li>
+The casual, indifferent posture of a bird ("sat careless on the fence").
+</li>
+<li>
+The winding motion of a snake around a stone.
+</li>
+<li>
+The shifting play of light and shadow as clouds pass over the sun ("shone whole at intervals – Then Half – then utter hid").
+</li>
+</ul>
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Language Study &amp; Suggested Reading
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Psaltery vs. Dulcimer
+</summary>
+<p>
+  Both the
+  <span class="keyword">
+  Psaltery
+</span>
+and the
+<span class="keyword">
+Dulcimer
+</span>
+are ancient stringed instruments, but they differ in how they are played:
+</p>
+<ul>
+  <li>
+    <strong>
+    Psaltery:
+  </strong>
+  The strings are plucked with fingers or a plectrum. It has a flat soundboard and is often held in the lap or against the chest.
+</li>
+<li>
+  <strong>
+  Dulcimer:
+</strong>
+The strings are struck with small, light hammers (mallets). It produces a sustained, resonant tone and is typically placed on a table or stand.
+</li>
+</ul>
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Suggested Reading
+</summary>
+<p>
+  To explore more of Emily Dickinson's unique style and thematic depth, read
+  <span class="keyword">
+  The Complete Poems of Emily Dickinson
+</span>
+.
+</p>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 10
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-09-kubla-khan-by-s-t-coleridge.html"; } else { window.location.href = "12-1-chapter-11-the-wild-swans-at-coole-by-w-b-yea.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
