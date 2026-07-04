@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 12 — Chapter 3: Data Handling using Pandas - II
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 12 — Chapter 3: Data Handling using Pandas - II
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.1 Introduction &amp; Case Study Setup
+</summary>
+<p>
+  Pandas is an established Python library used for data manipulation, processing, and analysis. This chapter covers advanced features of
+  <span class="keyword">
+  DataFrame
+</span>
+such as sorting, descriptive statistics, grouping, reshaping, handling missing values, and database integration.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Case Study Dataset (marksUT)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  In-memory Pandas DataFrame representation of student unit test marks.
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Dictionary containing student names, unit test numbers, and marks across five subjects (Maths, Science, S.St, Hindi, Eng).
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Serves as the baseline dataset for all statistical, sorting, grouping, and reshaping operations in this chapter.
+</li>
+</ul>
+</div>
+<p>
+The baseline dataset contains marks scored by 4 students (Raman, Zuhaire, Aashravy, Mishti) in Unit Tests 1, 2, and 3. Maximum marks are 25 per subject.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0; \text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Name
+    </th>
+    <th>
+    UT
+  </th>
+  <th>
+  Maths
+</th>
+<th>
+Science
+</th>
+<th>
+S.St
+</th>
+<th>
+Hindi
+</th>
+<th>
+Eng
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Raman
+  </td>
+  <td>
+  1
+</td>
+<td>
+22
+</td>
+<td>
+21
+</td>
+<td>
+18
+</td>
+<td>
+20
+</td>
+<td>
+21
+</td>
+</tr>
+<tr>
+  <td>
+  Raman
+</td>
+<td>
+2
+</td>
+<td>
+21
+</td>
+<td>
+20
+</td>
+<td>
+17
+</td>
+<td>
+22
+</td>
+<td>
+24
+</td>
+</tr>
+<tr>
+  <td>
+  Raman
+</td>
+<td>
+3
+</td>
+<td>
+14
+</td>
+<td>
+19
+</td>
+<td>
+15
+</td>
+<td>
+24
+</td>
+<td>
+23
+</td>
+</tr>
+<tr>
+  <td>
+  Zuhaire
+</td>
+<td>
+1
+</td>
+<td>
+20
+</td>
+<td>
+17
+</td>
+<td>
+22
+</td>
+<td>
+24
+</td>
+<td>
+19
+</td>
+</tr>
+<tr>
+  <td>
+  Zuhaire
+</td>
+<td>
+2
+</td>
+<td>
+23
+</td>
+<td>
+15
+</td>
+<td>
+21
+</td>
+<td>
+25
+</td>
+<td>
+15
+</td>
+</tr>
+<tr>
+  <td>
+  Zuhaire
+</td>
+<td>
+3
+</td>
+<td>
+22
+</td>
+<td>
+18
+</td>
+<td>
+19
+</td>
+<td>
+23
+</td>
+<td>
+13
+</td>
+</tr>
+<tr>
+  <td>
+  Aashravy
+</td>
+<td>
+1
+</td>
+<td>
+23
+</td>
+<td>
+19
+</td>
+<td>
+20
+</td>
+<td>
+15
+</td>
+<td>
+22
+</td>
+</tr>
+<tr>
+  <td>
+  Aashravy
+</td>
+<td>
+2
+</td>
+<td>
+24
+</td>
+<td>
+22
+</td>
+<td>
+24
+</td>
+<td>
+17
+</td>
+<td>
+21
+</td>
+</tr>
+<tr>
+  <td>
+  Aashravy
+</td>
+<td>
+3
+</td>
+<td>
+12
+</td>
+<td>
+25
+</td>
+<td>
+19
+</td>
+<td>
+21
+</td>
+<td>
+23
+</td>
+</tr>
+<tr>
+  <td>
+  Mishti
+</td>
+<td>
+1
+</td>
+<td>
+15
+</td>
+<td>
+22
+</td>
+<td>
+25
+</td>
+<td>
+22
+</td>
+<td>
+22
+</td>
+</tr>
+<tr>
+  <td>
+  Mishti
+</td>
+<td>
+2
+</td>
+<td>
+18
+</td>
+<td>
+21
+</td>
+<td>
+25
+</td>
+<td>
+24
+</td>
+<td>
+23
+</td>
+</tr>
+<tr>
+  <td>
+  Mishti
+</td>
+<td>
+3
+</td>
+<td>
+17
+</td>
+<td>
+18
+</td>
+<td>
+20
+</td>
+<td>
+25
+</td>
+<td>
+20
+</td>
+</tr>
+</tbody>
+</table>
+<pre>
+  <code>
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; marksUT = {
+    'Name': ['Raman','Raman','Raman','Zuhaire','Zuhaire','Zuhaire','Ashravy','Ashravy','Ashravy','Mishti','Mishti','Mishti'],
+    'UT': [1,2,3,1,2,3,1,2,3,1,2,3],
+    'Maths': [22,21,14,20,23,22,23,24,12,15,18,17],
+    'Science': [21,20,19,17,15,18,19,22,25,22,21,18],
+    'S.St': [18,17,15,22,21,19,20,24,19,25,25,20],
+    'Hindi': [20,22,24,24,25,23,15,17,21,22,24,25],
+    'Eng': [21,24,23,19,15,13,22,21,23,22,23,20]
+    }
+    &gt;&gt;&gt; df = pd.DataFrame(marksUT)
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.2 Descriptive Statistics
+</summary>
+<p>
+Descriptive statistics summarize the given data to provide a basic understanding of its distribution and characteristics.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0; \text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Computing Method
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters &amp; Arguments
+</th>
+<th>
+Algorithmic Purpose &amp; Output Representation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      max()
+    </span>
+  </td>
+  <td>
+    <code>
+    DataFrame.max(axis=0, numeric_only=False)
+  </code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+(0 for column, 1 for row),
+<code>
+numeric_only
+</code>
+(bool)
+</td>
+<td>
+Returns the maximum value across the specified axis. For non-numeric, evaluates alphabetically.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    min()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.min(axis=0, numeric_only=False)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns the minimum value across the specified axis.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    sum()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.sum(axis=0, numeric_only=False)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns the sum of values across the specified axis. Concatenates strings if non-numeric.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    count()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.count(axis=0, numeric_only=False)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns the count of non-NA/null observations across the specified axis.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    mean()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.mean(axis=0, numeric_only=True)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns the mathematical mean (average) of values. Only applicable to numeric columns.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    median()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.median(axis=0, numeric_only=True)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns the median (middle value) of the data. If even count, averages the two middle values.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    mode()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.mode(axis=0, numeric_only=False)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns the mode (most frequent value) of the dataset. Can return multiple modes.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    quantile()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.quantile(q=0.5, axis=0, numeric_only=True)
+</code>
+</td>
+<td>
+  <code>
+  q
+</code>
+(float or array-like, default 0.5),
+<code>
+axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns values at the given quantile. 0.25 is 1st quartile, 0.50 is median, 0.75 is 3rd quartile.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    var()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.var(axis=0, numeric_only=True)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns unbiased variance (average of squared differences from the mean) of numeric columns.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    std()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.std(axis=0, numeric_only=True)
+</code>
+</td>
+<td>
+  <code>
+  axis
+</code>
+,
+<code>
+numeric_only
+</code>
+</td>
+<td>
+Returns sample standard deviation (square root of variance) of numeric columns.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    describe()
+  </span>
+</td>
+<td>
+  <code>
+  DataFrame.describe(percentiles=None, include=None, exclude=None)
+</code>
+</td>
+<td>
+  <code>
+  percentiles
+</code>
+,
+<code>
+include
+</code>
+,
+<code>
+exclude
+</code>
+</td>
+<td>
+Generates descriptive statistics summarizing central tendency, dispersion, and shape of dataset.
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2.1 - 3.2.4 Max, Min, Sum, and Count Operations
+</summary>
+<p>
+Demonstration of basic aggregation methods on the DataFrame:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Calculate maximum values (including alphabetical for Name)
+    &gt;&gt;&gt; print(df.max())
+    Name       Zuhaire
+    UT               3
+    Maths           24
+    Science         25
+    S.St            25
+    Hindi           25
+    Eng             24
+    dtype: object
+    &gt;&gt;&gt; # Restrict to numeric columns only
+    &gt;&gt;&gt; print(df.max(numeric_only=True))
+    UT          3
+    Maths      24
+    Science    25
+    S.St       25
+    Hindi      25
+    Eng        24
+    dtype: int64
+    &gt;&gt;&gt; # Row-wise maximum calculation (axis=1)
+    &gt;&gt;&gt; print(df.max(axis=1).head(3))
+    0    22
+    1    24
+    2    24
+    dtype: int64
+    &gt;&gt;&gt; # Minimum values
+    &gt;&gt;&gt; print(df.min())
+    Name       Ashravy
+    UT               1
+    Maths           12
+    Science         15
+    S.St            15
+    Hindi           15
+    Eng             13
+    dtype: object
+    &gt;&gt;&gt; # Sum of values (concatenates strings in 'Name')
+    &gt;&gt;&gt; print(df['Maths'].sum())
+    231
+    &gt;&gt;&gt; # Count of non-null values
+    &gt;&gt;&gt; print(df.count())
+    Name       12
+    UT         12
+    Maths      12
+    Science    12
+    S.St       12
+    Hindi      12
+    Eng        12
+    dtype: object
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2.5 - 3.2.11 Mean, Median, Mode, Quartile, Variance, and Std Dev
+</summary>
+<p>
+Advanced statistical metrics applied to the dataset:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Mean calculation
+    &gt;&gt;&gt; print(df.mean(numeric_only=True))
+    UT          2.5000
+    Maths      18.6000
+    Science    19.8000
+    S.St       20.0000
+    Hindi      21.3125
+    Eng        19.8000
+    dtype: float64
+    &gt;&gt;&gt; # Median calculation
+    &gt;&gt;&gt; print(df.median(numeric_only=True))
+    UT          2.5
+    Maths      19.0
+    Science    20.0
+    S.St       19.5
+    Hindi      21.5
+    Eng        21.0
+    dtype: float64
+    &gt;&gt;&gt; # Mode calculation for Hindi marks
+    &gt;&gt;&gt; print(df['Hindi'].mode())
+    0    24
+    dtype: int64
+    &gt;&gt;&gt; # Quartile calculation (25%, 50%, 75%)
+    &gt;&gt;&gt; print(df.quantile(q=[0.25, 0.75], numeric_only=True))
+    UT  Maths  Science   S.St  Hindi    Eng
+    0.25 1.0  16.50    18.00  18.75  20.75  19.75
+    0.75 3.0  22.25    21.25  22.50  24.00  23.00
+    &gt;&gt;&gt; # Variance and Standard Deviation
+    &gt;&gt;&gt; print(df[['Maths', 'Science']].var())
+    Maths      15.840909
+    Science     7.113636
+    dtype: float64
+    &gt;&gt;&gt; print(df[['Maths', 'Science']].std())
+    Maths      3.980064
+    Science    2.667140
+    dtype: float64
+    &gt;&gt;&gt; # Comprehensive summary using describe()
+    &gt;&gt;&gt; print(df.describe())
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.3 Data Aggregations
+</summary>
+<p>
+Aggregation transforms a dataset by applying mathematical operations to produce single or multiple summarized numeric values from arrays of data.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Apply a single aggregation function to the entire DataFrame
+    &gt;&gt;&gt; print(df.aggregate('max'))
+    Name       Zuhaire
+    UT               3
+    Maths           24
+    dtype: object
+    &gt;&gt;&gt; # Apply multiple aggregation functions simultaneously
+    &gt;&gt;&gt; print(df.aggregate(['max', 'count']))
+    Name  UT  Maths  Science  S.St  Hindi  Eng
+    max   Zuhaire   3     24       25    25     25   24
+    count      12  12     12       12    12     12   12
+    &gt;&gt;&gt; # Apply specific aggregations to specific columns with row-wise summation
+    &gt;&gt;&gt; print(df[['Maths', 'Science']].aggregate('sum', axis=1).head(3))
+    0    43
+    1    41
+    2    33
+    dtype: int64
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.4 Sorting a DataFrame
+</summary>
+<p>
+Sorting arranges data elements in a specified order (ascending or descending) based on one or more columns.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: sort_values() Function
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Core Pandas DataFrame manipulation method.
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+<code>
+DataFrame.sort_values(by, axis=0, ascending=True, inplace=False)
+</code>
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Returns a new sorted DataFrame (or modifies in-place). Row indices are preserved but reordered.
+</li>
+</ul>
+</div>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Sort by student Name in ascending order
+    &gt;&gt;&gt; print(df.sort_values(by=['Name']).head(4))
+    Name  UT  Maths  Science  S.St  Hindi  Eng
+    6   Ashravy   1     23       19    20     15   22
+    7   Ashravy   2     24       22    24     17   21
+    8   Ashravy   3     12       25    19     21   23
+    9    Mishti   1     15       22    25     22   22
+    &gt;&gt;&gt; # Sort by English marks in descending order for Unit Test 3
+    &gt;&gt;&gt; dfUT3 = df[df.UT == 3]
+    &gt;&gt;&gt; print(dfUT3.sort_values(by=['Eng'], ascending=False))
+    Name  UT  Maths  Science  S.St  Hindi  Eng
+    2      Raman   3     14       19    15     24   23
+    8    Ashravy   3     12       25    19     21   23
+    11    Mishti   3     17       18    20     25   20
+    5    Zuhaire   3     22       18    19     23   13
+    &gt;&gt;&gt; # Sorting by multiple columns (Science ascending, then Hindi ascending)
+    &gt;&gt;&gt; print(dfUT3.sort_values(by=['Science', 'Hindi']))
+    Name  UT  Maths  Science  S.St  Hindi  Eng
+    5    Zuhaire   3     22       18    19     23   13
+    11    Mishti   3     17       18    20     25   20
+    2      Raman   3     14       19    15     24   23
+    8    Ashravy   3     12       25    19     21   23
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.5 GROUP BY Functions
+</summary>
+<p>
+  The
+  <span class="keyword">
+  groupby()
+</span>
+function splits the dataset into groups based on specified criteria, applies a function, and combines the results (Split-Apply-Combine strategy).
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  "The GROUP BY function works based on a split-apply-combine strategy: Step 1: Split the data into groups by creating a GROUP BY object. Step 2: Apply the required function. Step 3: Combine the results to form a new DataFrame."
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Grouping allows educators and analysts to aggregate individual performance metrics (like unit test scores) into institutional insights (like student-wise averages or test-wise trends), shifting focus from raw transactional data to systemic performance evaluation.
+</p>
+</blockquote>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Group by Name
+    &gt;&gt;&gt; g1 = df.groupby('Name')
+    &gt;&gt;&gt; # Display first entry of each group
+    &gt;&gt;&gt; print(g1.first())
+    UT  Maths  Science  S.St  Hindi  Eng
+    Name
+    Ashravy   1     23       19    20     15   22
+    Mishti    1     15       22    25     22   22
+    Raman     1     22       21    18     20   21
+    Zuhaire   1     20       17    22     24   19
+    &gt;&gt;&gt; # Display size of each group
+    &gt;&gt;&gt; print(g1.size())
+    Name
+    Ashravy    3
+    Mishti     3
+    Raman      3
+    Zuhaire    3
+    dtype: int64
+    &gt;&gt;&gt; # Retrieve a single group
+    &gt;&gt;&gt; print(g1.get_group('Raman'))
+    Name  UT  Maths  Science  S.St  Hindi  Eng
+    0  Raman   1     22       21    18     20   21
+    1  Raman   2     21       20    17     22   24
+    2  Raman   3     14       19    15     24   23
+    &gt;&gt;&gt; # Grouping by multiple attributes (Name and UT)
+    &gt;&gt;&gt; g2 = df.groupby(['Name', 'UT'])
+    &gt;&gt;&gt; print(g2.first().head(3))
+    &gt;&gt;&gt; # Aggregation on groups: average marks per UT
+    &gt;&gt;&gt; print(df.groupby(['UT']).aggregate('mean'))
+    Maths  Science   S.St  Hindi    Eng
+    UT
+    1   20.00    19.75  21.25  20.25  21.00
+    2   21.50    19.50  21.75  22.00  20.75
+    3   16.25    20.00  18.25  23.25  19.75
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.6 Altering the Index
+</summary>
+<p>
+Indexes are used for fast retrieval of data. Pandas allows resetting, setting, or dropping indexes to align with analytical requirements.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Slicing data creates non-continuous index
+    &gt;&gt;&gt; dfUT1 = df[df.UT == 1]
+    &gt;&gt;&gt; print(dfUT1)
+    Name  UT  Maths  Science  S.St  Hindi  Eng
+    0     Raman   1     22       21    18     20   21
+    3   Zuhaire   1     20       17    22     24   19
+    6   Ashravy   1     23       19    20     15   22
+    9    Mishti   1     15       22    25     22   22
+    &gt;&gt;&gt; # Reset index to create a continuous sequence (keeps old index as a column)
+    &gt;&gt;&gt; dfUT1.reset_index(inplace=True)
+    &gt;&gt;&gt; print(dfUT1)
+    index     Name  UT  Maths  Science  S.St  Hindi  Eng
+    0      0    Raman   1     22       21    18     20   21
+    1      3  Zuhaire   1     20       17    22     24   19
+    &gt;&gt;&gt; # Drop the old index column
+    &gt;&gt;&gt; dfUT1.drop(columns=['index'], inplace=True)
+    &gt;&gt;&gt; # Set a specific column as the index
+    &gt;&gt;&gt; dfUT1.set_index('Name', inplace=True)
+    &gt;&gt;&gt; print(dfUT1)
+    UT  Maths  Science  S.St  Hindi  Eng
+    Name
+    Raman     1     22       21    18     20   21
+    Zuhaire   1     20       17    22     24   19
+    &gt;&gt;&gt; # Revert back to default integer index
+    &gt;&gt;&gt; dfUT1.reset_index(inplace=True)
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.7 Reshaping Data (Pivot &amp; Pivot Table)
+</summary>
+<p>
+  Reshaping changes the layout of a dataset to make it more readable and suitable for analysis. Pandas provides
+  <span class="keyword">
+  pivot()
+</span>
+and
+<span class="keyword">
+pivot_table()
+</span>
+for this purpose.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.7.1 (A) Pivot Function
+</summary>
+<p>
+  The
+  <span class="keyword">
+  pivot()
+</span>
+function reshapes data based on column values. It requires unique index-column combinations; duplicate entries will raise a
+<span class="keyword">
+ValueError
+</span>
+.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Reshaping store sales data
+    &gt;&gt;&gt; pivot1 = df.pivot(index='Store', columns='Year', values='Total_sales(Rs)')
+    &gt;&gt;&gt; print(pivot1)
+    Year      2016      2017     2018
+    Store
+    S1     12000.0   20000.0  30000.0
+    S2         NaN   10000.0  11000.0
+    S3    420000.0  450000.0  89000.0
+    S4    330000.0       NaN      NaN
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.7.2 (B) Pivot Table Function
+</summary>
+<p>
+  The
+  <span class="keyword">
+  pivot_table()
+</span>
+function aggregates values from rows with duplicate entries for specified columns. The default aggregation function is
+<span class="keyword">
+mean
+</span>
+.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Pivot table with duplicate entries, aggregating by mean
+    &gt;&gt;&gt; df1 = df.pivot_table(index=['Item', 'Color'])
+    &gt;&gt;&gt; print(df1)
+    Price(Rs)  Units_in_stock
+    Item   Color
+    Pen    Blue            35.0            34.5
+    Red             17.5            30.0
+    Pencil Black            6.0            40.5
+    &gt;&gt;&gt; # Using multiple aggregate functions (sum, max, mean)
+    &gt;&gt;&gt; pivot_table1 = df.pivot_table(index='Item', columns='Color', values='Units_in_stock', aggfunc=[sum, max, 'mean'])
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.8 Handling Missing Values
+</summary>
+<p>
+  Real-world datasets often contain missing values, represented as
+  <span class="keyword">
+  NaN
+</span>
+(Not a Number) in Pandas. These must be identified and resolved to prevent analytical errors.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  "Missing values can be handled by either dropping the entire row having missing value or replacing it with an appropriate value."
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Dropping rows with missing values reduces dataset size and can introduce selection bias if the missingness is non-random. Conversely, estimating/imputing values (e.g., using zero, mean, or forward-fill) preserves sample size but introduces artificial variance, potentially skewing downstream statistical models.
+</p>
+</blockquote>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.8.1 Checking for Missing Values
+</summary>
+<p>
+Functions used to detect missing values:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    isnull()
+  </span>
+  : Returns a boolean DataFrame indicating missing values (
+  <span class="keyword">
+  True
+</span>
+).
+</li>
+<li>
+  <span class="keyword">
+  any()
+</span>
+: Checks if any value in a column is missing.
+</li>
+<li>
+  <span class="keyword">
+  sum()
+</span>
+: Counts the number of missing values per column.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Check for nulls in the entire DataFrame
+    &gt;&gt;&gt; print(df.isnull().any())
+    Name       False
+    UT         False
+    Maths       True
+    Science     True
+    S.St       False
+    Hindi      False
+    Eng         True
+    dtype: bool
+    &gt;&gt;&gt; # Count missing values per column
+    &gt;&gt;&gt; print(df.isnull().sum())
+    Maths      1
+    Science    1
+    Eng        1
+    dtype: int64
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.8.2 Dropping Missing Values
+</summary>
+<p>
+  The
+  <span class="keyword">
+  dropna()
+</span>
+function removes rows or columns containing missing values.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Drop any row containing at least one NaN value
+    &gt;&gt;&gt; df_clean = df.dropna()
+    &gt;&gt;&gt; # Drop in-place for a specific subset
+    &gt;&gt;&gt; dfRaman.dropna(inplace=True, how='any')
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.8.3 Estimating &amp; Filling Missing Values
+</summary>
+<p>
+  The
+  <span class="keyword">
+  fillna()
+</span>
+function replaces missing values with specified constants or calculated estimates.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    fillna(0)
+  </span>
+  : Replaces all
+  <span class="keyword">
+  NaN
+</span>
+values with 0.
+</li>
+<li>
+  <span class="keyword">
+  fillna(method='pad')
+</span>
+/
+<span class="keyword">
+ffill
+</span>
+: Replaces missing values with the preceding row's value.
+</li>
+<li>
+  <span class="keyword">
+  fillna(method='bfill')
+</span>
+: Replaces missing values with the succeeding row's value.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Replace NaN with 0 in Science marks
+    &gt;&gt;&gt; df['Science'].fillna(0, inplace=True)
+    &gt;&gt;&gt; # Forward fill (pad) English marks
+    &gt;&gt;&gt; df['Eng'].fillna(method='pad', inplace=True)
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.9 Import and Export of Data between Pandas and MySQL
+</summary>
+<p>
+Integrating Pandas with relational databases like MySQL allows seamless data pipelines for loading raw transactional records and saving processed analytical results.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Database Connectors (pymysql &amp; sqlalchemy)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Database Driver Layer (
+  <span class="keyword">
+  pymysql
+</span>
+) and Object-Relational Mapping/Engine Layer (
+<span class="keyword">
+sqlalchemy
+</span>
+).
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Connection string format:
+<code>
+mysql+pymysql://username:password@host:port/database_name
+</code>
+. Established via
+<code>
+create_engine()
+</code>
+.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Enables high-throughput read/write operations directly between Pandas DataFrames and MySQL tables.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.9.1 Importing Data from MySQL to Pandas
+</summary>
+<p>
+Three primary functions are available for reading database records:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0; \text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Function
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters &amp; Arguments
+</th>
+<th>
+Algorithmic Purpose &amp; Output Representation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      read_sql_query()
+    </span>
+  </td>
+  <td>
+    <code>
+    pandas.read_sql_query(sql, con)
+  </code>
+</td>
+<td>
+  <code>
+  sql
+</code>
+(SQL query string),
+<code>
+con
+</code>
+(Engine connection object)
+</td>
+<td>
+Executes a SQL query and returns the result set as a DataFrame.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    read_sql_table()
+  </span>
+</td>
+<td>
+  <code>
+  pandas.read_sql_table(table_name, con)
+</code>
+</td>
+<td>
+  <code>
+  table_name
+</code>
+(string),
+<code>
+con
+</code>
+(Engine connection object)
+</td>
+<td>
+Reads an entire database table directly into a DataFrame.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    read_sql()
+  </span>
+</td>
+<td>
+  <code>
+  pandas.read_sql(sql, con)
+</code>
+</td>
+<td>
+  <code>
+  sql
+</code>
+(Query or Table name),
+<code>
+con
+</code>
+(Engine connection object)
+</td>
+<td>
+Generic wrapper that routes to either query or table reader based on input.
+</td>
+</tr>
+</tbody>
+</table>
+<pre>
+  <code>
+    &gt;&gt;&gt; import pandas as pd
+    &gt;&gt;&gt; import sqlalchemy
+    &gt;&gt;&gt; # Create database engine connection
+    &gt;&gt;&gt; engine = sqlalchemy.create_engine('mysql+pymysql://root:smsmb@localhost:3306/CARSHOWROOM')
+    &gt;&gt;&gt; # Import table data using SQL query
+    &gt;&gt;&gt; df_inventory = pd.read_sql_query('SELECT * FROM INVENTORY', engine)
+    &gt;&gt;&gt; print(df_inventory.head(2))
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.9.2 Exporting Data from Pandas to MySQL
+</summary>
+<p>
+  The
+  <span class="keyword">
+  to_sql()
+</span>
+function writes DataFrame records to a MySQL database table.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Export DataFrame to MySQL table
+    &gt;&gt;&gt; df.to_sql('showroom_info', engine, if_exists='replace', index=False)
+  </code>
+</pre>
+<p>
+  <strong>
+  Parameters for
+  <span class="keyword">
+  if_exists
+</span>
+:
+</strong>
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    "fail"
+  </span>
+  : Default. Raises a
+  <span class="keyword">
+  ValueError
+</span>
+if the table already exists.
+</li>
+<li>
+  <span class="keyword">
+  "replace"
+</span>
+: Drops the existing table and recreates it with the new DataFrame structure and values.
+</li>
+<li>
+  <span class="keyword">
+  "append"
+</span>
+: Inserts new rows into the existing table. Requires matching column schemas.
+</li>
+</ul>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-02-data-handling-using-pandas-i.html"; } else { window.location.href = "12-chapter-04-plotting-data-using-matplotlib.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
