@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 2: Encoding Schemes and Number System
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 2: Encoding Schemes and Number System
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.1 Introduction to Encoding Schemes
+</summary>
+<p>
+  Computers internally understand only the binary language of 0s and 1s. Therefore, when a key on the keyboard is pressed, it is internally mapped to a unique code, which is further converted to binary. The mechanism of converting data into an equivalent cipher using a specific code is called
+  <span class="keyword">
+  encoding
+</span>
+.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 2.1: Keyboard Input Mapping
+</em>
+</p>
+<p>
+When the key &lsquo;A&rsquo; is pressed, it is internally mapped to a decimal value 65 (code value), which is then converted to its equivalent binary value 01000001 for the computer to understand. Similarly, when we press the alphabet &lsquo;&#2309;&rsquo; on a Hindi keyboard, it is internally mapped to a hexadecimal value 0905, whose binary equivalent is 0000100100000101.
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Standardized encoding ensures that different hardware manufacturers and software applications interpret user keystrokes identically, preventing data corruption and enabling global localization of software systems.
+</p>
+</blockquote>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Character Encoding Schemes
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Presentation Layer / Data Representation Tier
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Maps alphanumeric characters and symbols to unique numeric codes (decimal/hexadecimal) which are then represented as binary digits (bits).
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Limited character sets (e.g., ASCII) fail to represent multilingual \text, leading to the development of larger, more resource-intensive standards like UNICODE.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.1.1 American Standard Code for Information Interchange (ASCII)
+</summary>
+<p>
+  In the early 1960s, computers had no standard way of communicating with each other due to different character representations.
+  <span class="keyword">
+  ASCII
+</span>
+was developed to overcome this shortcoming and is still widely used.
+</p>
+<ul>
+  <li>
+    Initially used
+    <span class="keyword">
+    7 bits
+  </span>
+  to represent characters.
+</li>
+<li>
+Total number of different characters that can be encoded is $2^7 = 128$.
+</li>
+<li>
+ASCII is able to encode the character set of the English language only.
+</li>
+</ul>
+<p>
+  <strong>
+  Table 2.1: ASCII code for some printable characters
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; \text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Character
+    </th>
+    <th>
+    Decimal Value
+  </th>
+  <th>
+  Character
+</th>
+<th>
+Decimal Value
+</th>
+<th>
+Character
+</th>
+<th>
+Decimal Value
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Space
+  </td>
+  <td>
+  32
+</td>
+<td>
+@
+</td>
+<td>
+64
+</td>
+<td>
+`
+</td>
+<td>
+96
+</td>
+</tr>
+<tr>
+  <td>
+  !
+</td>
+<td>
+33
+</td>
+<td>
+A
+</td>
+<td>
+65
+</td>
+<td>
+a
+</td>
+<td>
+97
+</td>
+</tr>
+<tr>
+  <td>
+  &quot;
+</td>
+<td>
+34
+</td>
+<td>
+B
+</td>
+<td>
+66
+</td>
+<td>
+b
+</td>
+<td>
+98
+</td>
+</tr>
+<tr>
+  <td>
+  #
+</td>
+<td>
+35
+</td>
+<td>
+C
+</td>
+<td>
+67
+</td>
+<td>
+c
+</td>
+<td>
+99
+</td>
+</tr>
+<tr>
+  <td>
+  $
+</td>
+<td>
+36
+</td>
+<td>
+D
+</td>
+<td>
+68
+</td>
+<td>
+d
+</td>
+<td>
+100
+</td>
+</tr>
+<tr>
+  <td>
+  %
+</td>
+<td>
+37
+</td>
+<td>
+E
+</td>
+<td>
+69
+</td>
+<td>
+e
+</td>
+<td>
+101
+</td>
+</tr>
+<tr>
+  <td>
+  &amp;
+</td>
+<td>
+38
+</td>
+<td>
+F
+</td>
+<td>
+70
+</td>
+<td>
+f
+</td>
+<td>
+102
+</td>
+</tr>
+<tr>
+  <td>
+  &apos;
+</td>
+<td>
+39
+</td>
+<td>
+G
+</td>
+<td>
+71
+</td>
+<td>
+g
+</td>
+<td>
+103
+</td>
+</tr>
+<tr>
+  <td>
+  (
+</td>
+<td>
+40
+</td>
+<td>
+H
+</td>
+<td>
+72
+</td>
+<td>
+h
+</td>
+<td>
+104
+</td>
+</tr>
+<tr>
+  <td>
+  )
+</td>
+<td>
+41
+</td>
+<td>
+I
+</td>
+<td>
+73
+</td>
+<td>
+i
+</td>
+<td>
+105
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 2.2: Encoding the word &quot;DATA&quot;
+</em>
+</p>
+<ul>
+  <li>
+  ASCII value of D is 68 (Binary: 1000100)
+</li>
+<li>
+ASCII value of A is 65 (Binary: 1000001)
+</li>
+<li>
+ASCII value of T is 84 (Binary: 1010100)
+</li>
+<li>
+ASCII value of A is 65 (Binary: 1000001)
+</li>
+</ul>
+<p>
+  <strong>
+  Resulting Binary Stream:
+</strong>
+1000100 1000001 1010100 1000001
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.1.2 Indian Script Code for Information Interchange (ISCII)
+</summary>
+<p>
+  To facilitate the use of Indian languages on computers,
+  <span class="keyword">
+  ISCII
+</span>
+was developed in India during the mid-1980s.
+</p>
+<ul>
+  <li>
+    It is an
+    <span class="keyword">
+    8-bit code
+  </span>
+  representation, allowing it to represent $2^8 = 256$ characters.
+</li>
+<li>
+It retains all 128 ASCII codes and uses the remaining 128 codes for additional Indian language character sets.
+</li>
+<li>
+Additional codes in the upper region (160&ndash;255) are assigned for the &lsquo;aksharas&rsquo; of the languages.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.1.3 UNICODE
+</summary>
+<p>
+  To resolve incompatibility issues between various localized encoding schemes,
+  <span class="keyword">
+  UNICODE
+</span>
+was developed to incorporate all characters of every written language in the world.
+</p>
+<ul>
+  <li>
+  Provides a unique number for every character, irrespective of device, operating system, or software application.
+</li>
+<li>
+  Commonly used UNICODE encodings are
+  <span class="keyword">
+  UTF-8
+</span>
+,
+<span class="keyword">
+UTF-16
+</span>
+, and
+<span class="keyword">
+UTF-32
+</span>
+.
+</li>
+<li>
+It is a superset of ASCII; values 0&ndash;127 represent the same characters as in ASCII.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.2 Number Systems
+</summary>
+<p>
+  A
+  <span class="keyword">
+  number system
+</span>
+is a method to represent (write) numbers. Every number system has a set of unique characters or literals. The count of these literals is called the
+<span class="keyword">
+radix
+</span>
+or
+<span class="keyword">
+base
+</span>
+of the number system.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; \text-align: left; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Decimal
+    </strong>
+  </td>
+  <td>
+  Base-10 positional system used in daily life.
+</td>
+<td>
+Digits: 0&ndash;9. Base: 10.
+</td>
+<td>
+Human-readable numerical representation and calculations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Binary
+  </strong>
+</td>
+<td>
+Base-2 system representing electronic states.
+</td>
+<td>
+Digits: 0, 1. Base: 2.
+</td>
+<td>
+Machine-level execution, logic gates, and memory storage.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Octal
+  </strong>
+</td>
+<td>
+Base-8 system used for compact binary representation.
+</td>
+<td>
+Digits: 0&ndash;7. Base: 8.
+</td>
+<td>
+Simplifies long binary streams (1 octal digit = 3 bits).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Hexadecimal
+  </strong>
+</td>
+<td>
+Base-16 system used for memory addressing and color codes.
+</td>
+<td>
+Digits: 0&ndash;9, A&ndash;F. Base: 16.
+</td>
+<td>
+Compact representation of binary data (1 hex digit = 4 bits).
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.1 Decimal Number System
+</summary>
+<p>
+The value of each digit in a decimal number depends on its position. The positional value of the integer part increases from right to left by powers of 10, starting at $10^0$. The fractional part decreases from left to right by negative powers of 10, starting at $10^{-1}$.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example: Positional expansion of 123.45
+</em>
+</p>
+<p>
+$$1 	imes 10^2 + 2 	imes 10^1 + 3 	imes 10^0 + 4 	imes 10^{-1} + 5 	imes 10^{-2} = (123.45)_{10}$$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.2 Binary Number System
+</summary>
+<p>
+Computers use Integrated Circuits (ICs) made of transistors that act as switches. The ON (high voltage) state is represented by 1, and the OFF (low voltage) state is represented by 0.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.5 Applications of Hexadecimal Number System
+</summary>
+<ul>
+  <li>
+    <strong>
+    Memory Addressing:
+  </strong>
+  Simplifies 16-bit or 32-bit binary memory addresses (e.g., binary 1100000011110001 maps to hex C0F1).
+</li>
+<li>
+  <strong>
+  Web Colors (RGB):
+</strong>
+Colors are represented using 24 bits (8 bits each for Red, Green, and Blue). Hexadecimal notation (e.g., #FF0000 for Red) is used for compact representation.
+</li>
+</ul>
+<p>
+  <strong>
+  Table 2.7: Color codes in decimal, binary, and hexadecimal
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; \text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Color Name
+    </th>
+    <th>
+    Decimal (R,G,B)
+  </th>
+  <th>
+  Binary Representation
+</th>
+<th>
+Hexadecimal
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Black
+  </td>
+  <td>
+  (0,0,0)
+</td>
+<td>
+(00000000,00000000,00000000)
+</td>
+<td>
+(00,00,00)
+</td>
+</tr>
+<tr>
+  <td>
+  White
+</td>
+<td>
+(255,255,255)
+</td>
+<td>
+(11111111,11111111,11111111)
+</td>
+<td>
+(FF,FF,FF)
+</td>
+</tr>
+<tr>
+  <td>
+  Yellow
+</td>
+<td>
+(255,255,0)
+</td>
+<td>
+(11111111,11111111,00000000)
+</td>
+<td>
+(FF,FF,00)
+</td>
+</tr>
+<tr>
+  <td>
+  Grey
+</td>
+<td>
+(128,128,128)
+</td>
+<td>
+(10000000,10000000,10000000)
+</td>
+<td>
+(80,80,80)
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.3 Conversion Between Number Systems
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.1 Conversion from Decimal to other Number Systems
+</summary>
+<p>
+To convert a decimal number to binary, octal, or hexadecimal, use the successive division method:
+</p>
+<ol>
+  <li>
+  Divide the decimal number by the target base value $b$ (2, 8, or 16).
+</li>
+<li>
+Record the remainder.
+</li>
+<li>
+Divide the quotient by $b$ again, recording the remainder, until the quotient is 0.
+</li>
+<li>
+Write the remainders in reverse order (from bottom to top).
+</li>
+</ol>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 2.3: Convert $(122)_{10}$ to Binary
+</em>
+</p>
+<pre>
+  <code>
+    122 / 2 = 61  Remainder: 0
+    61 / 2 = 30  Remainder: 1
+    30 / 2 = 15  Remainder: 0
+    15 / 2 = 7   Remainder: 1
+    7 / 2 = 3   Remainder: 1
+    3 / 2 = 1   Remainder: 1
+    1 / 2 = 0   Remainder: 1
+    Result: (1111010)₂
+  </code>
+</pre>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.2 Conversion from other Number Systems to Decimal
+</summary>
+<p>
+Multiply each digit of the number by its positional value (base raised to the power of its position index) and sum the products.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 2.8: Convert $(3A5)_{16}$ to Decimal
+</em>
+</p>
+<p>
+$$3 	imes 16^2 + 10 	imes 16^1 + 5 	imes 16^0 = 768 + 160 + 5 = (933)_{10}$$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.3 Binary to Octal/Hexadecimal and Vice-Versa
+</summary>
+<ul>
+  <li>
+    <strong>
+    Binary to Octal:
+  </strong>
+  Group binary bits into sets of 3 from right to left. Replace each group with its octal equivalent.
+</li>
+<li>
+  <strong>
+  Binary to Hexadecimal:
+</strong>
+Group binary bits into sets of 4 from right to left. Replace each group with its hexadecimal equivalent.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 2.9: Convert $(10101100)_2$ to Octal
+</em>
+</p>
+<p>
+  Grouping into 3s:
+  <span class="keyword">
+  010
+</span>
+<span class="keyword">
+101
+</span>
+<span class="keyword">
+100
+</span>
+&rarr; $2$ $5$ $4$ &rarr; $(254)_8$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.4 Conversion of Numbers with Fractional Parts
+</summary>
+<p>
+To convert a decimal fraction to another base, multiply the fractional part repeatedly by the target base $b$. Record the integer part of the product. Repeat with the remaining fractional part until it becomes 0 or starts repeating.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 2.13: Convert $(0.25)_{10}$ to Binary
+</em>
+</p>
+<pre>
+  <code>
+    0.25 * 2 = 0.50  Integer part: 0
+    0.50 * 2 = 1.00  Integer part: 1
+    Result: (0.01)₂
+  </code>
+</pre>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 2
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-01-computer-system.html"; } else { window.location.href = "11-chapter-03-emerging-trends.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
