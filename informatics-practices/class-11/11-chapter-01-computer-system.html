@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 11 — Chapter 1: Computer System
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 11 — Chapter 1: Computer System
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Computer System
+</summary>
+<p>
+A computer is an electronic device that can be programmed to accept data (input), process it, and generate a result (output). A computer along with additional hardware and software together is called a computer system.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Central Processing Unit (CPU)
+</summary>
+<p>
+The CPU is the electronic circuitry of a computer that carries out the actual processing and is usually referred to as the brain of the computer. It is commonly called a processor.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Central Processing Unit (CPU)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Core Hardware Processing Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Fetches instructions and data from memory, performs arithmetic and logical operations, and stores results back to memory. Uses local high-speed memory called
+<span class="keyword">
+registers
+</span>
+.
+</li>
+<li>
+  <strong>
+  System Impact & Execution Outputs:
+</strong>
+Comprises the
+<span class="keyword">
+Arithmetic Logic Unit (ALU)
+</span>
+for mathematical/logical operations and the
+<span class="keyword">
+Control Unit (CU)
+</span>
+for sequential instruction execution and data flow control.
+</li>
+</ul>
+</div>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Input and Output Devices
+</summary>
+<p>
+Devices that facilitate interaction between the user and the computer system:
+</p>
+<ul>
+  <li>
+    <strong>
+    Input Devices:
+  </strong>
+  Convert input data into digital form. Examples:
+  <span class="keyword">
+  Keyboard
+</span>
+,
+<span class="keyword">
+Mouse
+</span>
+,
+<span class="keyword">
+Scanner
+</span>
+,
+<span class="keyword">
+Touch Screen
+</span>
+, and specialized
+<span class="keyword">
+Braille keyboards
+</span>
+.
+</li>
+<li>
+  <strong>
+  Output Devices:
+</strong>
+Convert digital information into human-understandable form. Examples:
+<span class="keyword">
+Display monitor
+</span>
+,
+<span class="keyword">
+Speaker
+</span>
+,
+<span class="keyword">
+Printer
+</span>
+(Inkjet, Laserjet, Dot matrix, and
+<span class="keyword">
+3D printer
+</span>
+), and
+<span class="keyword">
+Braille display monitors
+</span>
+.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Evolution of Computer
+</summary>
+<p>
+Computing devices have evolved from simple mechanical calculators to modern high-speed processors. The Von Neumann architecture forms the basis of modern computers, consisting of a CPU, memory, input/output devices, and communication channels.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Timeline of Key Inventions
+</summary>
+<ul>
+  <li>
+    <strong>
+    Abacus (500 BC):
+  </strong>
+  Mechanical device for simple arithmetic calculations.
+</li>
+<li>
+  <strong>
+  Pascaline (1642):
+</strong>
+Mechanical calculator invented by Blaise Pascal for addition, subtraction, multiplication, and division.
+</li>
+<li>
+  <strong>
+  Analytical Engine (1834):
+</strong>
+Designed by Charles Babbage; introduced input, processing, storage, and output concepts.
+</li>
+<li>
+  <strong>
+  Tabulating Machine (1890):
+</strong>
+Designed by Herman Hollerith for summarizing data on punched cards.
+</li>
+<li>
+  <strong>
+  Turing Machine (1937):
+</strong>
+General-purpose programmable machine concept by Alan Turing.
+</li>
+<li>
+  <strong>
+  EDVAC/ENIAC (1945):
+</strong>
+First binary programmable computers based on the stored-program concept.
+</li>
+<li>
+  <strong>
+  Transistor (1947):
+</strong>
+Replaced vacuum tubes, highly reducing size and power consumption.
+</li>
+<li>
+  <strong>
+  Integrated Circuit (1970):
+</strong>
+Silicon chips containing entire electronic circuits.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Moore's Law and Modern Scaling
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Moore's Law & Silicon Scaling
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Semiconductor Physics & Hardware Engineering
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Predicted that the number of transistors on a microchip doubles approximately every two years while the cost is halved.
+</li>
+<li>
+  <strong>
+  System Impact & Execution Outputs:
+</strong>
+Led to the transition from Large Scale Integration (LSI) to Very Large Scale Integration (VLSI) and Super Large Scale Integration (SLSI), enabling modern smartphones, IoT, and AI.
+</li>
+</ul>
+</div>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Computer Memory
+</summary>
+<p>
+Computer memory is required to store data and instructions for processing. It is broadly categorized into primary and secondary memory.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Units of Memory
+</summary>
+<p>
+  Data is stored in binary format using bits (0 and 1). A group of 4 bits is a
+  <span class="keyword">
+  nibble
+</span>
+, and 8 bits is a
+<span class="keyword">
+byte
+</span>
+.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr>
+      <th>
+      Unit
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Unit
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    KB (Kilobyte)
+  </td>
+  <td>
+  1 KB = 1024 Bytes
+</td>
+<td>
+PB (Petabyte)
+</td>
+<td>
+1 PB = 1024 TB
+</td>
+</tr>
+<tr>
+  <td>
+  MB (Megabyte)
+</td>
+<td>
+1 MB = 1024 KB
+</td>
+<td>
+EB (Exabyte)
+</td>
+<td>
+1 EB = 1024 PB
+</td>
+</tr>
+<tr>
+  <td>
+  GB (Gigabyte)
+</td>
+<td>
+1 GB = 1024 MB
+</td>
+<td>
+ZB (Zettabyte)
+</td>
+<td>
+1 ZB = 1024 EB
+</td>
+</tr>
+<tr>
+  <td>
+  TB (Terabyte)
+</td>
+<td>
+1 TB = 1024 GB
+</td>
+<td>
+YB (Yottabyte)
+</td>
+<td>
+1 YB = 1024 ZB
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Types of Memory
+</summary>
+<ul>
+  <li>
+    <strong>
+    Primary Memory:
+  </strong>
+  Directly accessed by the CPU. Includes volatile
+  <span class="keyword">
+  RAM (Random Access Memory)
+</span>
+and non-volatile
+<span class="keyword">
+ROM (Read Only Memory)
+</span>
+.
+</li>
+<li>
+  <strong>
+  Cache Memory:
+</strong>
+High-speed memory placed between the CPU and primary memory to speed up access to frequently used data.
+</li>
+<li>
+  <strong>
+  Secondary Memory:
+</strong>
+Non-volatile, high-capacity storage. Examples:
+<span class="keyword">
+HDD (Hard Disk Drive)
+</span>
+,
+<span class="keyword">
+SSD (Solid-State Drive)
+</span>
+,
+<span class="keyword">
+CD/DVD
+</span>
+, and
+<span class="keyword">
+Pen Drives
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Data Capturing, Storage, Retrieval, and Recovery
+</summary>
+<p>
+The lifecycle of digital data involves several critical phases:
+</p>
+<ol>
+  <li>
+    <strong>
+    Data Capturing:
+  </strong>
+  Gathering data from sources (e.g., barcode readers, remote sensors).
+</li>
+<li>
+  <strong>
+  Data Storage:
+</strong>
+Saving captured data on digital storage devices or data servers.
+</li>
+<li>
+  <strong>
+  Data Retrieval:
+</strong>
+Fetching data from storage devices for processing.
+</li>
+<li>
+  <strong>
+  Data Deletion and Recovery:
+</strong>
+Deleting data marks its address space as free without immediate physical erasure. Data recovery tools can retrieve this data unless it is overwritten.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Software
+</summary>
+<p>
+Software is a set of instructions that makes the hardware functional. It is categorized into system software, programming tools, and application software.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  System Software
+</summary>
+<p>
+Provides basic functionality to operate a computer by interacting directly with the hardware.
+</p>
+<ul>
+  <li>
+    <strong>
+    Operating System (OS):
+  </strong>
+  Manages system resources and provides a user interface (e.g., Windows, Linux, macOS, Android).
+</li>
+<li>
+  <strong>
+  System Utilities:
+</strong>
+Used for maintenance and configuration (e.g., disk defragmentation, anti-virus).
+</li>
+<li>
+  <strong>
+  Device Drivers:
+</strong>
+Act as translators between the OS and specific hardware peripherals.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Application Software
+</summary>
+<p>
+Software designed to perform specific tasks for users.
+</p>
+<ul>
+  <li>
+    <strong>
+    General Purpose Software:
+  </strong>
+  Developed for generic applications (e.g., word processors, spreadsheets like
+  <span class="keyword">
+  LibreOffice Calc
+</span>
+, web browsers).
+</li>
+<li>
+  <strong>
+  Customised Software:
+</strong>
+Tailor-made to meet the requirements of a specific organization or individual (e.g., school management systems).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Software Licensing Models
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Software Licensing & Distribution
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    FOSS (Free and Open Source Software):
+  </strong>
+  Software that is freely usable, and its source code is open for modification (e.g., Ubuntu, Python).
+</li>
+<li>
+  <strong>
+  Freeware:
+</strong>
+Freely available software, but the source code is not accessible (e.g., Skype, Adobe Reader).
+</li>
+<li>
+  <strong>
+  Proprietary Software:
+</strong>
+Purchased software with restricted usage rights and closed source code (e.g., Microsoft Windows, Tally).
+</li>
+</ul>
+</div>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "11-chapter-02-emerging-trends.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

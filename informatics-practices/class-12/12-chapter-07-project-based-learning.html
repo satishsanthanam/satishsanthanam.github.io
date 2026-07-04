@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 12 — Chapter 7: Project Based Learning
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 12 — Chapter 7: Project Based Learning
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.1 Introduction to Project Based Learning
+</summary>
+<p>
+Project based learning (PBL) provides students with thorough practical exposure to real-world problems. Through PBL, students learn to organize their projects, collaborate in groups, and manage their time effectively to achieve successful outcomes.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Philosophical Foundation of Project Work
+  </strong>
+</p>
+<blockquote style="margin: 0; font-style: italic;">
+"An idea that is developed and put into action is more important than idea that exists only as an idea."
+<br>
+— Gautam Buddha
+</blockquote>
+</div>
+<p>
+Project based learning systematically guides students through the following core computational and analytical phases:
+</p>
+<ul>
+  <li>
+    <strong>
+    Analyzing the problem:
+  </strong>
+  Understanding the domain, constraints, and requirements.
+</li>
+<li>
+  <strong>
+  Formulating the problem:
+</strong>
+Decomposing a large problem into smaller, manageable modules.
+</li>
+<li>
+  <strong>
+  Applying mechanisms:
+</strong>
+Implementing specific algorithms, methods, or libraries to solve each module.
+</li>
+<li>
+  <strong>
+  Integrating solutions:
+</strong>
+Combining modular outputs to form a cohesive, fully functional system.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.2 Approaches for Solving Projects
+</summary>
+<p>
+The methodology chosen for project development plays a critical role in its execution. Common software engineering paradigms applied in project-based learning include:
+</p>
+<ul>
+  <li>
+    <strong>
+    Modular Approach:
+  </strong>
+  Dividing the project into independent, manageable modules where each module performs a well-defined task with specific inputs and outputs.
+</li>
+<li>
+  <strong>
+  Top-Down Approach:
+</strong>
+Starting with the high-level system architecture and progressively detailing the lower-level sub-systems.
+</li>
+<li>
+  <strong>
+  Bottom-Up Approach:
+</strong>
+Designing and testing low-level base modules first, then integrating them to build the complete system.
+</li>
+</ul>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Steps in Project Based Learning
+</summary>
+<ol>
+  <li>
+    <strong>
+    Identification of a project:
+  </strong>
+  Recognizing real-life situations or interdisciplinary problems that can be solved computationally.
+</li>
+<li>
+  <strong>
+  Defining a plan:
+</strong>
+Identifying team members, assigning a project leader, defining specific roles, and selecting appropriate development tools.
+</li>
+<li>
+  <strong>
+  Fixing a time frame and processing:
+</strong>
+Establishing a structured yet flexible timeline for completing various project milestones.
+</li>
+<li>
+  <strong>
+  Providing guidance and monitoring:
+</strong>
+Utilizing resources such as books, websites, and mentor feedback to resolve technical bottlenecks.
+</li>
+<li>
+  <strong>
+  Outcome of a project:
+</strong>
+Generating single or multiple deliverables, which are peer-reviewed and refined based on user feedback.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.3 Teamwork in Project Development
+</summary>
+<p>
+Complex real-world tasks require collective efforts. Teamwork is defined as a collaborative effort made by individuals to accomplish a common goal.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.3.1 Components of Teamwork
+</summary>
+<p>
+A successful project team relies on several non-technical interpersonal components alongside technical proficiency:
+</p>
+<ul>
+  <li>
+    <strong>
+    (A) Communicate with Others:
+  </strong>
+  Maintaining clear, active communication channels via emails, phone calls, or group meetings to resolve issues and align goals.
+</li>
+<li>
+  <strong>
+  (B) Listen to Others:
+</strong>
+Understanding and respecting team members' ideas during group discussions to reach a consensus.
+</li>
+<li>
+  <strong>
+  (C) Share with Others:
+</strong>
+Distributing ideas, tools, and domain expertise to ensure the project is completed within the designated timeframe.
+</li>
+<li>
+  <strong>
+  (D) Respect for Others:
+</strong>
+Treating every team member respectfully and valuing their contributions to maintain high morale.
+</li>
+<li>
+  <strong>
+  (E) Help Others:
+</strong>
+Offering assistance within the team and seeking external expert guidance when necessary.
+</li>
+<li>
+  <strong>
+  (F) Participate:
+</strong>
+Encouraging active involvement from all members in both technical tasks and group discussions.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.4 Project Descriptions &amp; Specifications
+</summary>
+<p>
+  The curriculum outlines four sample projects designed to be implemented using Python,
+  <span class="keyword">
+  Pandas
+</span>
+, and
+<span class="keyword">
+Matplotlib
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.4.1 Project I: Online Shopping Platform (APPAREL EASY)
+</summary>
+<p>
+  <strong>
+  Description:
+</strong>
+An online shopping platform featuring two broad categories (Men, Women) and three sub-categories (Clothing, Footwear, Accessories). It supports promotional events like Festive Sales and End of Season Sales, and tracks monthly revenue, category-wise sales, and promotional discounts.
+</p>
+<p>
+  <strong>
+  Specifications:
+</strong>
+</p>
+<ul>
+  <li>
+    Data storage: CSV/Data file containing fields:
+    <span class="keyword">
+    Apparel Code
+  </span>
+  ,
+  <span class="keyword">
+  Name
+</span>
+,
+<span class="keyword">
+Category
+</span>
+,
+<span class="keyword">
+Size
+</span>
+,
+<span class="keyword">
+Price
+</span>
+,
+<span class="keyword">
+Customer Name
+</span>
+,
+<span class="keyword">
+Payment Mode
+</span>
+,
+<span class="keyword">
+Discount Code
+</span>
+.
+</li>
+<li>
+Payment validation: If payment is by Card, collect card number, name, CVV, and validity. If Cash on Delivery (COD), bypass details.
+</li>
+<li>
+  Discount logic:
+  <span class="keyword">
+  FEST
+</span>
+(10% discount) and
+<span class="keyword">
+EOS
+</span>
+(15% discount).
+</li>
+<li>
+  Implementation: Model data structures using
+  <span class="keyword">
+  Pandas
+</span>
+and plot sales trends for decision-making.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.4.2 Project II: Automating a Books Donation Camp
+</summary>
+<p>
+  <strong>
+  Description:
+</strong>
+Automating the operations of a Bookworm Club donation camp that collects, assesses, refurbishes, and resells books and notebooks.
+</p>
+<p>
+  <strong>
+  Specifications:
+</strong>
+</p>
+<ul>
+  <li>
+    Initial collection file: CSV with columns
+    <span class="keyword">
+    Item category
+  </span>
+  ,
+  <span class="keyword">
+  Item ID
+</span>
+,
+<span class="keyword">
+Item name
+</span>
+,
+<span class="keyword">
+Item type
+</span>
+,
+<span class="keyword">
+Condition
+</span>
+.
+</li>
+<li>
+ID Prefixing: Books prefixed with 'B' (Academic/Non-Academic); Notebooks prefixed with 'N' (Single/Four/Five line).
+</li>
+<li>
+  Condition categories:
+  <span class="keyword">
+  Fit
+</span>
+,
+<span class="keyword">
+Needs Mending
+</span>
+, or
+<span class="keyword">
+Unfit
+</span>
+.
+</li>
+<li>
+  Refurbished inventory file: CSV with columns
+  <span class="keyword">
+  Item id
+</span>
+,
+<span class="keyword">
+Item name
+</span>
+,
+<span class="keyword">
+Item Category
+</span>
+,
+<span class="keyword">
+Quantity
+</span>
+,
+<span class="keyword">
+Price
+</span>
+.
+</li>
+<li>
+Order processing: Update quantities in the refurbished CSV when orders are placed. Plot sales and collection metrics.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.4.3 Project III: Survey on the Effect of Social Networking Sites on Teenagers
+</summary>
+<p>
+  <strong>
+  Description:
+</strong>
+A data-driven study analyzing the impact of social media usage on the mental health and behavior of teenagers.
+</p>
+<p>
+  <strong>
+  Specifications:
+</strong>
+</p>
+<ol>
+  <li>
+  Design a survey questionnaire using online tools (e.g., Google Forms) and export responses to a CSV file.
+</li>
+<li>
+Formulate analytical questions to extract insights from the survey data.
+</li>
+<li>
+  Import the CSV file into a
+  <span class="keyword">
+  Pandas DataFrame
+</span>
+.
+</li>
+<li>
+  Perform statistical computations (e.g.,
+  <span class="keyword">
+  mean()
+</span>
+,
+<span class="keyword">
+median()
+</span>
+).
+</li>
+<li>
+Visualize findings using appropriate charts (bar, pie, line).
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.4.4 Project IV: Utilizing an Open Data Source (National/State/District Dataset)
+</summary>
+<p>
+  <strong>
+  Description:
+</strong>
+Analyzing census data from the Open Government Data (OGD) Platform India (
+<span class="keyword">
+data.gov.in
+</span>
+). The dataset used is "Special Tabulation on Adolescent and youth population classified by various parameters for India, States and Union Territories, 2011".
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Dataset Profile: Census Special Tabulation (2011)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Number of Rows:
+  </strong>
+  12,168
+</li>
+<li>
+  <strong>
+  Number of Columns:
+</strong>
+123
+</li>
+<li>
+  <strong>
+  Data Source:
+</strong>
+Ministry of Home Affairs, Government of India
+</li>
+<li>
+  <strong>
+  Policy Framework:
+</strong>
+Released under National Data Sharing and Accessibility Policy (NDSAP)
+</li>
+</ul>
+</div>
+<p>
+  <strong>
+  Selected Column Descriptions:
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Column Name
+    </th>
+    <th>
+    Description
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      State
+    </span>
+  </td>
+  <td>
+  Serial numbers assigned to states
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Area Name
+  </span>
+</td>
+<td>
+Name of the states and union territories
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Total/Rural/Urban
+  </span>
+</td>
+<td>
+Segmented geographic area type
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Adolescent and youth
+  </span>
+</td>
+<td>
+Data categorized by age groups
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Total Male / Total Female
+  </span>
+</td>
+<td>
+Gender-wise population counts
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    SC-M / SC-F
+  </span>
+</td>
+<td>
+Scheduled Castes male and female counts
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    ST-M / ST-F
+  </span>
+</td>
+<td>
+Scheduled Tribes male and female counts
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Literates-M / Literates-F
+  </span>
+</td>
+<td>
+Literate male and female counts
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Illiterates-M / Illiterates-F
+  </span>
+</td>
+<td>
+Illiterate male and female counts
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    MainWorker-M / MainWorker-F
+  </span>
+</td>
+<td>
+Main worker male and female counts
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    MarginalWorker-M / MarginalWorker-F
+  </span>
+</td>
+<td>
+Marginal worker male and female counts
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.5 Step-by-Step Implementation Walkthrough (Task 1)
+</summary>
+<p>
+  <strong>
+  Task 1:
+</strong>
+What is the total population, total male population, and total female population aged 10 to 24 in India?
+</p>
+<p>
+  The following step-by-step implementation demonstrates how to load, filter, aggregate, and plot the dataset using Python
+  <span class="keyword">
+  Pandas
+</span>
+and
+<span class="keyword">
+Matplotlib
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Step-by-Step Code Implementation
+</summary>
+<p>
+  <strong>
+  Step 0: Import required libraries
+</strong>
+</p>
+<pre>
+  <code>
+    import pandas as pd
+    import matplotlib.pyplot as plt
+  </code>
+</pre>
+<p>
+  <strong>
+  Step 1: Read the CSV file into a DataFrame
+</strong>
+</p>
+<pre>
+  <code>
+    # Load the downloaded dataset
+    data = pd.read_csv("PCA_AY_2011_Revised.csv")
+    df = pd.DataFrame(data)
+  </code>
+</pre>
+<p>
+  <strong>
+  Step 2: Check the shape of the DataFrame
+</strong>
+</p>
+<pre>
+  <code>
+    print(df.shape)
+    # Output: (12168, 123)
+  </code>
+</pre>
+<p>
+  <strong>
+  Step 3: Display the columns
+</strong>
+</p>
+<pre>
+  <code>
+    print(df.columns.values)
+    # Displays the list of 123 columns including 'Area Name', 'Total/ Rural/ Urban', etc.
+  </code>
+</pre>
+<p>
+  <strong>
+  Step 4: Filter Data
+</strong>
+</p>
+<p>
+  We identify the columns needed for plotting:
+  <span class="keyword">
+  'Area Name'
+</span>
+,
+<span class="keyword">
+'Total/Rural/Urban'
+</span>
+,
+<span class="keyword">
+'Adolescent and youth categories'
+</span>
+, and
+<span class="keyword">
+'Total Population - Persons'
+</span>
+.
+</p>
+<p>
+  <strong>
+  Step 5: Create a new DataFrame containing the filtered data
+</strong>
+</p>
+<pre>
+  <code>
+    # Filter rows where Area Name is 'INDIA'
+    df1 = df.loc[(df['Area Name'] == 'INDIA'), 'Area Name':'Total Population - Females']
+  </code>
+</pre>
+<p>
+  <strong>
+  Step 6: Rename columns for ease of use
+</strong>
+</p>
+<pre>
+  <code>
+  df1.columns = ['Area', 'Class', 'Category', 'TotalPop', 'MalePop', 'FemalePop']
+</code>
+</pre>
+<p>
+  <strong>
+  Step 7: Group and clean data as per requirement
+</strong>
+</p>
+<p>
+  The
+  <span class="keyword">
+  Category
+</span>
+column contains six distinct groups: '10-14', '15-19', '20-24', 'Adolescent (10-19)', 'All Ages', and 'Youth (15-24)'. We group by Category, sum the values, and drop the aggregate categories to isolate the 5-year age brackets.
+</p>
+<pre>
+  <code>
+    # Group by Category and sum
+    d = df1.groupby('Category').sum()
+    # Drop unwanted aggregate rows
+    d = d.drop(['Adolescent (10-19)', 'All Ages', 'Youth (15-24)'], axis=0)
+    print(d)
+  </code>
+</pre>
+<p>
+  <strong>
+  Resulting Cleaned DataFrame:
+</strong>
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Category
+    </th>
+    <th>
+    TotalPop
+  </th>
+  <th>
+  MalePop
+</th>
+<th>
+FemalePop
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      10-14
+    </strong>
+  </td>
+  <td>
+  265,418,424
+</td>
+<td>
+138,837,670
+</td>
+<td>
+126,580,754
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    15-19
+  </strong>
+</td>
+<td>
+241,052,898
+</td>
+<td>
+127,964,792
+</td>
+<td>
+113,088,106
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    20-24
+  </strong>
+</td>
+<td>
+222,848,444
+</td>
+<td>
+115,169,386
+</td>
+<td>
+107,679,058
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Step 8: Plot the data as a bar chart
+</strong>
+</p>
+<pre>
+  <code>
+    # Generate the bar chart
+    d.plot(kind='bar')
+    plt.title("Population in Different Categories (Ages 10-24)")
+    plt.ylabel("Population (in hundreds of millions)")
+    plt.show()
+  </code>
+</pre>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 7
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-06-societal-impacts.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

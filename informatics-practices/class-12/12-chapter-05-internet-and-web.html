@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 12 — Chapter 5: Internet and Web
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 12 — Chapter 5: Internet and Web
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.1 Introduction to Computer Networks
+</summary>
+<p>
+We live in an interconnected world where information is produced, exchanged, and traced globally in real time. A group of two or more similar things or people interconnected with each other is called a network.
+</p>
+<p>
+Examples of everyday networks include:
+</p>
+<ul>
+  <li>
+  Social networks
+</li>
+<li>
+Mobile networks
+</li>
+<li>
+Network of computers
+</li>
+<li>
+Airlines, railway, banks, and hospital networks
+</li>
+</ul>
+<details class="sub-topic">
+  <summary class="sub-title">
+  What is a Computer Network?
+</summary>
+<p>
+  A
+  <span class="keyword">
+  computer network
+</span>
+is an interconnection among two or more computers or computing devices. This interconnection allows computers to share data and resources among each other.
+</p>
+<ul>
+  <li>
+    <strong>
+    Network Size:
+  </strong>
+  Can vary from small (connecting a few computers in a single room) to large (connecting millions of devices globally).
+</li>
+<li>
+  <strong>
+  Hosts/Nodes:
+</strong>
+Any device that is part of a network and can receive, create, store, or send data is called a
+<span class="keyword">
+node
+</span>
+or host (e.g., server, desktop, laptop, cellular phone, printer, scanner, modem, router).
+</li>
+<li>
+  <strong>
+  Data Transmission:
+</strong>
+For communication, data in a network is divided into smaller chunks called
+<span class="keyword">
+packets
+</span>
+, which are carried over wired media (cables) or wireless media (air).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.2 Types of Networks
+</summary>
+<p>
+Based on the geographical area covered and data transfer rate, computer networks are broadly categorised into three main types:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2.1 Local Area Network (LAN)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  LAN
+</span>
+connects computers, mobile phones, tablets, printers, and other devices placed at a limited distance.
+</p>
+<ul>
+  <li>
+    <strong>
+    Geographical Area:
+  </strong>
+  Ranges from a single room, a floor, an office, a school, to a college or university campus (up to 1 km).
+</li>
+<li>
+  <strong>
+  Connectivity Media:
+</strong>
+Wires, Ethernet cables, fibre optics, or Wi-Fi.
+</li>
+<li>
+  <strong>
+  Data Transfer Rate:
+</strong>
+High speed, usually varying from 10 Mbps (Ethernet) to 1000 Mbps (Gigabit Ethernet).
+</li>
+<li>
+  <strong>
+  Security:
+</strong>
+Comparatively secure as only authentic users in the network can access shared resources.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2.2 Metropolitan Area Network (MAN)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  MAN
+</span>
+is an extended form of LAN that covers a larger geographical area like a city or a town.
+</p>
+<ul>
+  <li>
+    <strong>
+    Geographical Area:
+  </strong>
+  Can extend up to 30&ndash;40 km. Often formed by connecting multiple LANs together.
+</li>
+<li>
+  <strong>
+  Data Transfer Rate:
+</strong>
+Ranges in Mbps, but is considerably less compared to a LAN.
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+Cable TV networks, cable-based broadband internet services.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2.3 Wide Area Network (WAN)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  WAN
+</span>
+connects computers, LANs, and MANs spread across different geographical locations of a country, or across different countries and continents.
+</p>
+<ul>
+  <li>
+    <strong>
+    Geographical Area:
+  </strong>
+  Global span, connecting devices via wired or wireless media (satellites, fiber-optic undersea cables).
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+Large business, educational, and government networks. The Internet is the largest WAN in existence.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Network Types Comparison Matrix
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Parameter
+    </th>
+    <th>
+    Local Area Network (LAN)
+  </th>
+  <th>
+  Metropolitan Area Network (MAN)
+</th>
+<th>
+Wide Area Network (WAN)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Geographical Range
+    </strong>
+  </td>
+  <td>
+  Up to 1 km
+</td>
+<td>
+Up to 30&ndash;40 km
+</td>
+<td>
+Span across countries/continents
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Data Transfer Rate
+  </strong>
+</td>
+<td>
+Very High (10 Mbps to 1 Gbps)
+</td>
+<td>
+Moderate (Mbps)
+</td>
+<td>
+Lower compared to LAN
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Ownership
+  </strong>
+</td>
+<td>
+Private (Single organization)
+</td>
+<td>
+Private or Public
+</td>
+<td>
+Private or Public (Distributed)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Examples
+  </strong>
+</td>
+<td>
+School lab, office building
+</td>
+<td>
+Cable TV network, city broadband
+</td>
+<td>
+The Internet
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.3 Network Devices
+</summary>
+<p>
+To communicate data through different transmission media and configure networks with different functionalities, various hardware devices are required.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3.1 Modem (MOdulator DEMolulator)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Modem
+</span>
+is a device used for conversion between analog signals and digital bits.
+</p>
+<ul>
+  <li>
+    <strong>
+    Modulation:
+  </strong>
+  Converts digital data from the sender's computer into analog signals for transmission over communication lines (like telephone lines).
+</li>
+<li>
+  <strong>
+  Demodulation:
+</strong>
+Converts incoming analog signals back into digital data for the receiver's computer to understand.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3.2 Ethernet Card / Network Interface Card (NIC)
+</summary>
+<p>
+  An
+  <span class="keyword">
+  Ethernet Card
+</span>
+(or NIC) is a network adaptor used to set up a wired network. It acts as an interface between the computer and the network.
+</p>
+<ul>
+  <li>
+    <strong>
+    Physical Form:
+  </strong>
+  A circuit board mounted on the motherboard of a computer.
+</li>
+<li>
+  <strong>
+  MAC Address:
+</strong>
+Each NIC has a unique physical address called a
+<span class="keyword">
+MAC address
+</span>
+, which helps in uniquely identifying the computer on the network.
+</li>
+<li>
+  <strong>
+  Speed Support:
+</strong>
+Supports data transfer rates between 10 Mbps and 1 Gbps.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3.3 Repeater
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Repeater
+</span>
+is an analog device that works with signals on the cables to which it is connected.
+</p>
+<ul>
+  <li>
+    <strong>
+    Purpose:
+  </strong>
+  Signals lose strength beyond a certain distance (usually 100 m). A repeater regenerates the weakened signal and puts it back on the cable to extend the transmission range.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3.4 Hub
+</summary>
+<p>
+  An
+  <span class="keyword">
+  Ethernet Hub
+</span>
+is a network device used to connect multiple devices through wires.
+</p>
+<ul>
+  <li>
+    <strong>
+    Working Principle:
+  </strong>
+  It is a non-intelligent broadcasting device. Data arriving on any port is sent out to all other ports.
+</li>
+<li>
+  <strong>
+  Limitation:
+</strong>
+If data from two devices arrive at the same time, they collide, leading to transmission errors.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3.5 Switch
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Switch
+</span>
+is an intelligent networking device that plays a central role in a Local Area Network (LAN).
+</p>
+<ul>
+  <li>
+    <strong>
+    Working Principle:
+  </strong>
+  When data arrives, the switch extracts the destination address from the packet, looks it up in an internal table, and forwards the packet only to the selected destination device (unicast).
+</li>
+<li>
+  <strong>
+  Advantages:
+</strong>
+Avoids data collisions, forwards multiple packets simultaneously, filters out noisy or corrupted packets, and requests retransmission.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3.6 Router
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Router
+</span>
+is an advanced network device that can receive, analyze, and transmit data packets across different networks.
+</p>
+<ul>
+  <li>
+    <strong>
+    Working Principle:
+  </strong>
+  Connects a local area network to the Internet. It can analyze data packets, decide or alter how they are packaged, and route them to another network of a different type.
+</li>
+<li>
+  <strong>
+  Wired vs Wireless:
+</strong>
+Wireless routers provide Wi-Fi access to mobile devices while also containing physical ports for wired connections.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.3.7 Gateway
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Gateway
+</span>
+is a key access point that acts as a &quot;gate&quot; between an organization's private network and the outside world of the Internet.
+</p>
+<ul>
+  <li>
+    <strong>
+    Purpose:
+  </strong>
+  Serves as the entry and exit point of a network. All data coming in or going out must pass through the gateway to use routing paths.
+</li>
+<li>
+  <strong>
+  Implementation:
+</strong>
+Can be implemented as software, hardware, or a combination of both. A router is often configured to work as a gateway device.
+</li>
+</ul>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Router vs Gateway
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Network Layer routing and protocol translation.
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Routers route data packets across similar networks using IP addresses. Gateways connect completely dissimilar networks that use different protocols, translating data formats between them.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Gateways establish the boundary of a network and are typically integrated with firewalls for security, while routers manage internal and external traffic flow.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.4 Networking Topologies
+</summary>
+<p>
+  The physical or logical arrangement of computers and other peripherals in a network is called its
+  <span class="keyword">
+  topology
+</span>
+. Common topologies include mesh, ring, bus, star, and tree.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.4.1 Mesh Topology
+</summary>
+<p>
+  In a
+  <span class="keyword">
+  mesh topology
+</span>
+, each communicating device is connected directly to every other device in the network.
+</p>
+<ul>
+  <li>
+    <strong>
+    Formula for Wires:
+  </strong>
+  To build a fully-connected mesh topology of $n$ nodes, it requires $n(n-1)/2$ physical wires.
+</li>
+<li>
+  <strong>
+  Advantages:
+</strong>
+Highly reliable (no single point of failure), secure (dedicated channels), and handles high traffic.
+</li>
+<li>
+  <strong>
+  Disadvantages:
+</strong>
+Complex wiring and high cabling cost.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.4.2 Ring Topology
+</summary>
+<p>
+  In a
+  <span class="keyword">
+  ring topology
+</span>
+, each node is connected to exactly two other devices, one on either side, forming a closed circular loop.
+</p>
+<ul>
+  <li>
+    <strong>
+    Data Flow:
+  </strong>
+  Unidirectional (data travels in one direction only, either clockwise or counterclockwise).
+</li>
+<li>
+  <strong>
+  Disadvantage:
+</strong>
+If a single node or cable breaks, the entire network goes down.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.4.3 Bus Topology
+</summary>
+<p>
+  In a
+  <span class="keyword">
+  bus topology
+</span>
+, all communicating devices connect to a single common transmission medium known as the bus (backbone wire).
+</p>
+<ul>
+  <li>
+    <strong>
+    Data Flow:
+  </strong>
+  Data sent from a node travels along the backbone in both directions and can be received by any node.
+</li>
+<li>
+  <strong>
+  Advantages:
+</strong>
+Cheap, simple to install, and easy to maintain.
+</li>
+<li>
+  <strong>
+  Disadvantages:
+</strong>
+Less secure, less reliable (if the backbone cable fails, the entire network fails).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.4.4 Star Topology
+</summary>
+<p>
+  In a
+  <span class="keyword">
+  star topology
+</span>
+, each communicating device is connected directly to a central node (a hub or a switch).
+</p>
+<ul>
+  <li>
+    <strong>
+    Advantages:
+  </strong>
+  Highly effective, fast, and easy to troubleshoot. Failure of one device does not affect the rest of the network.
+</li>
+<li>
+  <strong>
+  Disadvantages:
+</strong>
+If the central hub or switch fails, the entire network collapses.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.4.5 Tree or Hybrid Topology
+</summary>
+<p>
+  A
+  <span class="keyword">
+  tree topology
+</span>
+is a hierarchical topology where multiple branches exist, and each branch can contain one or more basic topologies like star, ring, or bus.
+</p>
+<ul>
+  <li>
+    <strong>
+    Application:
+  </strong>
+  Commonly used in Wide Area Networks (WANs) to connect multiple LANs together.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.5 The Internet &amp; Its Applications
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Internet
+</span>
+is a global network of interconnected computing devices, including desktops, laptops, servers, tablets, smartphones, smart appliances, and peripheral devices.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.6 Applications of Internet
+</summary>
+<ul>
+  <li>
+    <strong>
+    The World Wide Web (WWW):
+  </strong>
+  An ocean of information stored in the form of trillions of interlinked web pages and web resources.
+</li>
+<li>
+  <strong>
+  Electronic Mail (Email):
+</strong>
+A fast, reliable method of sending and receiving digital messages over the Internet.
+</li>
+<li>
+  <strong>
+  Chat:
+</strong>
+Real-time \text-based communication (Instant Messaging) between users at different locations.
+</li>
+<li>
+  <strong>
+  Voice Over Internet Protocol (VoIP):
+</strong>
+Allows voice calls (telephone service) to be transmitted over a computer network rather than traditional telephone lines.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.6.1 World Wide Web (WWW) Core Technologies
+</summary>
+<p>
+Invented by Sir Tim Berners-Lee in 1990, the WWW relies on three fundamental technologies:
+</p>
+<ol>
+  <li>
+    <strong>
+    HTML (HyperText Markup Language):
+  </strong>
+  Used to design standardized web pages so that content can be read and displayed by any web browser.
+</li>
+<li>
+  <strong>
+  URI (Uniform Resource Identifier):
+</strong>
+A unique identifier to identify a resource on the web. A
+<span class="keyword">
+URL
+</span>
+(Uniform Resource Locator) is a specific type of URI that provides the location and mechanism (protocol) to access the resource.
+</li>
+<li>
+  <strong>
+  HTTP (HyperText Transfer Protocol):
+</strong>
+A set of rules used to retrieve linked web pages across the web. Its secure version is
+<span class="keyword">
+HTTPS
+</span>
+.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Anatomy of a URL
+</summary>
+<p>
+  Consider the URL:
+  <code>
+  http://www.ncert.nic.in/textbook/textbook.htm
+</code>
+</p>
+<ul>
+  <li>
+    <strong>
+    Protocol:
+  </strong>
+  <code>
+  http
+</code>
+(can also be
+<code>
+https
+</code>
+,
+<code>
+ftp
+</code>
+, etc.)
+</li>
+<li>
+  <strong>
+  Subdomain:
+</strong>
+<code>
+www
+</code>
+</li>
+<li>
+  <strong>
+  Domain Name:
+</strong>
+<code>
+ncert.nic.in
+</code>
+</li>
+<li>
+  <strong>
+  Path/File:
+</strong>
+<code>
+textbook/textbook.htm
+</code>
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.7 Website, Web Pages, and Web Servers
+</summary>
+<p>
+Understanding the building blocks of the web: websites, web pages, and the servers that host them.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.7 Website &amp; Web Pages
+</summary>
+<p>
+  A
+  <span class="keyword">
+  website
+</span>
+is a collection of related web pages integrated under a single domain name, sharing a common theme and template. A
+<span class="keyword">
+web page
+</span>
+is a document on the WWW viewed in a web browser, created using HTML, CSS, and scripting languages like JavaScript.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.8.1 Static vs Dynamic Web Pages
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Feature
+    </th>
+    <th>
+    Static Web Page
+  </th>
+  <th>
+  Dynamic Web Page
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Content Consistency
+    </strong>
+  </td>
+  <td>
+  Content remains the same for all users until manually changed.
+</td>
+<td>
+Content can change dynamically for different users or based on inputs.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Development Languages
+  </strong>
+</td>
+<td>
+HTML, CSS, basic JavaScript.
+</td>
+<td>
+PHP, ASP.NET, Python, Java, Ruby, etc.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Database Connectivity
+  </strong>
+</td>
+<td>
+Not connected to a database.
+</td>
+<td>
+Connected to databases to retrieve and update information.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Loading Speed
+  </strong>
+</td>
+<td>
+Loads quickly as no server-side processing is needed.
+</td>
+<td>
+Takes more time to load due to server-side execution and database queries.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.9 Web Server
+</summary>
+<p>
+  A
+  <span class="keyword">
+  web server
+</span>
+is used to store and deliver website contents to client browsers upon request.
+</p>
+<ul>
+  <li>
+    <strong>
+    Hardware Web Server:
+  </strong>
+  A physical computer that stores web server software and website files (HTML, CSS, JS, images).
+</li>
+<li>
+  <strong>
+  Software Web Server:
+</strong>
+A specialized program that understands URLs, processes HTTP requests from browsers, and returns HTTP responses.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.10 Web Hosting &amp; Browsers
+</summary>
+<p>
+How websites are published and accessed on the Internet.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.10 Hosting of a Website
+</summary>
+<p>
+Web hosting is a service that allows individuals or organizations to post a website or web page onto the Internet.
+</p>
+<ol>
+  <li>
+  Select a web hosting service provider (to rent server space, bandwidth, and database support).
+</li>
+<li>
+Identify and register a unique domain name through a domain registrar.
+</li>
+<li>
+Upload website files (HTML, CSS, JS, databases) to the allocated server space.
+</li>
+<li>
+  Map the domain name to the server's unique IP address using the
+  <span class="keyword">
+  Domain Name System (DNS)
+</span>
+.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.11 Web Browsers
+</summary>
+<p>
+  A
+  <span class="keyword">
+  browser
+</span>
+is a software application that retrieves and displays web pages from web servers.
+</p>
+<ul>
+  <li>
+    <strong>
+    History:
+  </strong>
+  <span class="keyword">
+  Mosaic
+</span>
+was the first web browser, developed by the National Centre for Supercomputing Applications (NCSA).
+</li>
+<li>
+  <strong>
+  Common Browsers:
+</strong>
+Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari, Opera.
+</li>
+<li>
+  <strong>
+  Add-ons vs Plug-ins:
+</strong>
+<ul>
+  <li>
+    <strong>
+    Plug-in:
+  </strong>
+  A complete, third-party program installed on the host computer to add broad capabilities (e.g., Flash Player, Java).
+</li>
+<li>
+  <strong>
+  Add-on (Extension):
+</strong>
+A lightweight tool used to add specific, custom functionalities directly to the browser interface (e.g., ad blockers, grammar checkers).
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Cookies:
+</strong>
+Small \text files stored on the user's computer by the browser to save user preferences, login states, and browsing history.
+</li>
+</ul>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-04-plotting-data-using-matplotlib.html"; } else { window.location.href = "12-chapter-06-societal-impacts.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

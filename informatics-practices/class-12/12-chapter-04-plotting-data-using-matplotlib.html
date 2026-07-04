@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 12 — Chapter 4: Plotting Data using Matplotlib
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 12 — Chapter 4: Plotting Data using Matplotlib
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Data Visualisation
+</summary>
+<p>
+Data visualisation is the graphical or pictorial representation of data using graphs, charts, and other visual elements. It helps in making inferences, drawing conclusions, and making important business decisions by presenting complex numerical analysis in an easily understandable format.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Matplotlib Library
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Python 2D plotting library.
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Generates static, animated, and interactive visualisations. Uses the
+<span class="keyword">
+pyplot
+</span>
+module to provide a MATLAB-like interface.
+</li>
+<li>
+  <strong>
+  System Impact & Execution Outputs:
+</strong>
+Produces high-quality figures across various hardcopy formats and interactive environments.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Plotting using Matplotlib
+</summary>
+<p>
+  The
+  <span class="keyword">
+  pyplot
+</span>
+module of Matplotlib contains a collection of functions to create and modify plots. A
+<span class="keyword">
+figure
+</span>
+is the overall window where the outputs are plotted, containing plotting areas, legends, axis labels, ticks, and titles.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Installation and Importing
+</summary>
+<p>
+Install Matplotlib via pip:
+</p>
+<pre>
+  <code>
+  pip install matplotlib
+</code>
+</pre>
+<p>
+  Import the
+  <span class="keyword">
+  pyplot
+</span>
+module with an alias:
+</p>
+<pre>
+  <code>
+  import matplotlib.pyplot as plt
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Basic Plotting and Components
+</summary>
+<p>
+  To plot $x$ versus $y$, use
+  <span class="keyword">
+  plt.plot(x, y)
+</span>
+. To display the plot, use
+<span class="keyword">
+plt.show()
+</span>
+.
+</p>
+<pre>
+  <code>
+    import matplotlib.pyplot as plt
+    date = ["25/12", "26/12", "27/12"]
+    temp = [8.5, 10.5, 6.8]
+    plt.plot(date, temp)
+    plt.show()
+  </code>
+</pre>
+<p>
+  <strong>
+  Table 4.1: List of Pyplot functions to plot different charts
+</strong>
+</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>
+      Computing Method
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters
+</th>
+<th>
+Algorithmic Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      plot()
+    </span>
+  </td>
+  <td>
+    <code>
+    plot(*args, scalex, scaley, data)
+  </code>
+</td>
+<td>
+x, y, markers, line properties
+</td>
+<td>
+Plot x versus y as lines and/or markers.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    bar()
+  </span>
+</td>
+<td>
+  <code>
+  bar(x, height, width, bottom, align, data)
+</code>
+</td>
+<td>
+x, height, width, align, color
+</td>
+<td>
+Make a bar plot.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    boxplot()
+  </span>
+</td>
+<td>
+  <code>
+  boxplot(x, notch, sym, vert, whis, ...)
+</code>
+</td>
+<td>
+x, vert, notch, sym
+</td>
+<td>
+Make a box and whisker plot.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    hist()
+  </span>
+</td>
+<td>
+  <code>
+  hist(x, bins, range, density, weights, ...)
+</code>
+</td>
+<td>
+x, bins, range, color, hatch
+</td>
+<td>
+Plot a histogram.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    pie()
+  </span>
+</td>
+<td>
+  <code>
+  pie(x, explode, labels, colors, autopct, ...)
+</code>
+</td>
+<td>
+x, explode, labels, colors, autopct
+</td>
+<td>
+Plot a pie chart.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    scatter()
+  </span>
+</td>
+<td>
+  <code>
+  scatter(x, y, s, c, marker, cmap, norm, ...)
+</code>
+</td>
+<td>
+x, y, s (size), c (color), marker
+</td>
+<td>
+A scatter plot of x versus y.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Customisation of Plots
+</summary>
+<p>
+Pyplot provides numerous functions to customise charts by adding titles, labels, grids, and legends.
+</p>
+<p>
+  <strong>
+  Table 4.2: List of Pyplot functions to customise plots
+</strong>
+</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>
+      Function
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters
+</th>
+<th>
+Algorithmic Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      grid()
+    </span>
+  </td>
+  <td>
+    <code>
+    grid([b, which, axis])
+  </code>
+</td>
+<td>
+b (boolean), axis ('x', 'y', 'both')
+</td>
+<td>
+Configure the grid lines.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    legend()
+  </span>
+</td>
+<td>
+  <code>
+  legend(*args, **kwargs)
+</code>
+</td>
+<td>
+loc, labels, shadow
+</td>
+<td>
+Place a legend on the axes.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    savefig()
+  </span>
+</td>
+<td>
+  <code>
+  savefig(*args, **kwargs)
+</code>
+</td>
+<td>
+fname, dpi, format
+</td>
+<td>
+Save the current figure to a file.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    show()
+  </span>
+</td>
+<td>
+  <code>
+  show(*args, **kw)
+</code>
+</td>
+<td>
+None
+</td>
+<td>
+Display all figures.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    title()
+  </span>
+</td>
+<td>
+  <code>
+  title(label, fontdict, loc, pad)
+</code>
+</td>
+<td>
+label (str), loc, fontsize
+</td>
+<td>
+Set a title for the axes.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    xlabel()
+  </span>
+</td>
+<td>
+  <code>
+  xlabel(xlabel, fontdict, labelpad)
+</code>
+</td>
+<td>
+xlabel (str), labelpad
+</td>
+<td>
+Set the label for the x-axis.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    xticks()
+  </span>
+</td>
+<td>
+  <code>
+  xticks([ticks, labels])
+</code>
+</td>
+<td>
+ticks (list), labels (list)
+</td>
+<td>
+Get or set the current tick locations and labels of the x-axis.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    ylabel()
+  </span>
+</td>
+<td>
+  <code>
+  ylabel(ylabel, fontdict, labelpad)
+</code>
+</td>
+<td>
+ylabel (str), labelpad
+</td>
+<td>
+Set the label for the y-axis.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    yticks()
+  </span>
+</td>
+<td>
+  <code>
+  yticks([ticks, labels])
+</code>
+</td>
+<td>
+ticks (list), labels (list)
+</td>
+<td>
+Get or set the current tick locations and labels of the y-axis.
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Markers, Colours, and Line Styles
+</summary>
+<p>
+Plots can be styled using markers, custom colors, linewidths, and linestyles.
+</p>
+<p>
+  <strong>
+  Table 4.3: Some of the Matplotlib Markers
+</strong>
+</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>
+      Marker Code
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Marker Code
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>
+      "."
+    </code>
+  </td>
+  <td>
+  Point
+</td>
+<td>
+  <code>
+  "8"
+</code>
+</td>
+<td>
+Octagon
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    ","
+  </code>
+</td>
+<td>
+Pixel
+</td>
+<td>
+  <code>
+  "s"
+</code>
+</td>
+<td>
+Square
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "o"
+  </code>
+</td>
+<td>
+Circle
+</td>
+<td>
+  <code>
+  "p"
+</code>
+</td>
+<td>
+Pentagon
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "v"
+  </code>
+</td>
+<td>
+Triangle Down
+</td>
+<td>
+  <code>
+  "P"
+</code>
+</td>
+<td>
+Plus (filled)
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "^"
+  </code>
+</td>
+<td>
+Triangle Up
+</td>
+<td>
+  <code>
+  "*"
+</code>
+</td>
+<td>
+Star
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "&lt;"
+  </code>
+</td>
+<td>
+Triangle Left
+</td>
+<td>
+  <code>
+  "h"
+</code>
+</td>
+<td>
+Hexagon 1
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "&gt;"
+  </code>
+</td>
+<td>
+Triangle Right
+</td>
+<td>
+  <code>
+  "H"
+</code>
+</td>
+<td>
+Hexagon 2
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "1"
+  </code>
+</td>
+<td>
+Tri Down
+</td>
+<td>
+  <code>
+  "+"
+</code>
+</td>
+<td>
+Plus
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "2"
+  </code>
+</td>
+<td>
+Tri Up
+</td>
+<td>
+  <code>
+  "x"
+</code>
+</td>
+<td>
+X
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "3"
+  </code>
+</td>
+<td>
+Tri Left
+</td>
+<td>
+  <code>
+  "X"
+</code>
+</td>
+<td>
+X (filled)
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    "4"
+  </code>
+</td>
+<td>
+Tri Right
+</td>
+<td>
+  <code>
+  "D"
+</code>
+</td>
+<td>
+Diamond
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Table 4.4: Colour Abbreviations
+</strong>
+</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>
+      Character Code
+    </th>
+    <th>
+    Colour Name
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>
+      'b'
+    </code>
+  </td>
+  <td>
+  Blue
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'g'
+  </code>
+</td>
+<td>
+Green
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'r'
+  </code>
+</td>
+<td>
+Red
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'c'
+  </code>
+</td>
+<td>
+Cyan
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'm'
+  </code>
+</td>
+<td>
+Magenta
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'y'
+  </code>
+</td>
+<td>
+Yellow
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'k'
+  </code>
+</td>
+<td>
+Black
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'w'
+  </code>
+</td>
+<td>
+White
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Linewidth and Linestyle:
+</strong>
+Linewidth is specified in pixels (default is 1). Linestyle can take values like
+<code>
+"solid"
+</code>
+,
+<code>
+"dotted"
+</code>
+,
+<code>
+"dashed"
+</code>
+, or
+<code>
+"dashdot"
+</code>
+.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Pandas Plot Function (Pandas Visualisation)
+</summary>
+<p>
+  Pandas Series and DataFrame objects have a built-in
+  <span class="keyword">
+  .plot()
+</span>
+method, which acts as a wrapper around Matplotlib's
+<span class="keyword">
+pyplot.plot()
+</span>
+.
+</p>
+<p>
+  <strong>
+  Table 4.5: Arguments accepted by kind for different plots
+</strong>
+</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>
+      kind Value
+    </th>
+    <th>
+    Plot Type
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>
+      'line'
+    </code>
+  </td>
+  <td>
+  Line plot (default)
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'bar'
+  </code>
+</td>
+<td>
+Vertical bar plot
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'barh'
+  </code>
+</td>
+<td>
+Horizontal bar plot
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'hist'
+  </code>
+</td>
+<td>
+Histogram
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'box'
+  </code>
+</td>
+<td>
+Boxplot
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'area'
+  </code>
+</td>
+<td>
+Area plot
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'pie'
+  </code>
+</td>
+<td>
+Pie plot
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    'scatter'
+  </code>
+</td>
+<td>
+Scatter plot
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Plotting a Line Chart
+</summary>
+<p>
+Line charts are used to show continuous datasets and visualise growth or decline over time.
+</p>
+<pre>
+  <code>
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    df = pd.read_csv("MelaSales.csv")
+    df.plot(kind='line', color=['red', 'blue', 'brown'])
+    plt.title('Mela Sales Report')
+    plt.xlabel('Days')
+    plt.ylabel('Sales in Rs')
+    plt.show()
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Plotting Bar Charts
+</summary>
+<p>
+Bar charts are preferred for comparing discrete categories. Unlike line plots, bar charts can plot strings directly on the x-axis.
+</p>
+<pre>
+  <code>
+    df.plot(kind='bar', x='Day', title='Mela Sales Report')
+    plt.ylabel('Sales in Rs')
+    plt.show()
+  </code>
+</pre>
+<p>
+Customising bar charts with colors, edgecolors, linewidths, and linestyles:
+</p>
+<pre>
+  <code>
+  df.plot(kind='bar', x='Day', title='Mela Sales Report', color=['red', 'yellow', 'purple'], edgecolor='Green', linewidth=2, linestyle='--')
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Plotting Histograms
+</summary>
+<p>
+  Histograms represent the frequency distribution of continuous numerical data by grouping values into intervals called
+  <span class="keyword">
+  bins
+</span>
+.
+</p>
+<pre>
+  <code>
+    df.plot(kind='hist')
+    plt.show()
+  </code>
+</pre>
+<p>
+Customising histograms with custom bins, edgecolors, hatch patterns, and fill properties:
+</p>
+<pre>
+  <code>
+  df.plot(kind='hist', edgecolor='Green', linewidth=2, linestyle=':', fill=False, hatch='o')
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Plotting Scatter Charts
+</summary>
+<p>
+Scatter charts use dots to represent values for two different variables to show their relationship or correlation.
+</p>
+<pre>
+  <code>
+  plt.scatter(x=discount, y=saleInRs, s=size, color='red', linewidth=3, marker='*', edgecolor='blue')
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Plotting Quartiles and Box Plots
+</summary>
+<p>
+A box plot visually represents the statistical summary of a dataset: Minimum, Quartile 1 (Q1), Median (Q2), Quartile 3 (Q3), and Maximum. It also highlights outliers (data points numerically distant from the rest of the data).
+</p>
+<pre>
+  <code>
+    df.plot(kind='box')
+    plt.title('Performance Analysis')
+    plt.xlabel('Subjects')
+    plt.ylabel('Marks')
+    plt.show()
+  </code>
+</pre>
+<p>
+  To plot a horizontal box plot, set
+  <span class="keyword">
+  vert=False
+</span>
+:
+</p>
+<pre>
+  <code>
+  df.plot(kind='box', title='Compare Resorts', color='red', vert=False)
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Plotting Pie Charts
+</summary>
+<p>
+  A pie chart represents numerical data proportionally as sectors of a circle. To plot a pie chart, either the column label
+  <code>
+  y
+</code>
+or
+<code>
+subplots=True
+</code>
+must be specified.
+</p>
+<pre>
+  <code>
+  df.plot(kind='pie', y='ForestCover', title='Forest cover of North Eastern states', legend=False, explode=exp, autopct="%.2f", colors=c)
+</code>
+</pre>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 4
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-03-data-handling-using-pandas-ii.html"; } else { window.location.href = "12-chapter-05-internet-and-web.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

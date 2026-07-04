@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 12 — Chapter 1: Querying and SQL Functions
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 12 — Chapter 1: Querying and SQL Functions
+</h1>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  1.1 Introduction &amp; Database Schema
+</summary>
+<p>
+In database management systems, SQL (Structured Query Language) is utilized to populate, manipulate, and retrieve data from relational databases. This chapter builds upon basic SQL concepts to explore advanced querying mechanisms, single-row functions, aggregate functions, grouping operations, and multi-table relations using MySQL.
+</p>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Technical Profile: CARSHOWROOM Database Environment
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Relational Database Management System (RDBMS) / MySQL Backend
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Consists of four interconnected relations linked via primary and foreign key constraints to maintain referential integrity.
+</li>
+<li>
+  <strong>
+  System Impact &amp; Execution Outputs:
+</strong>
+Serves as the transactional and analytical data store for inventory tracking, customer sales, and employee management.
+</li>
+</ul>
+</div>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Database Schema &amp; Relations
+</summary>
+<p>
+  The
+  <span class='keyword'>
+  CARSHOWROOM
+</span>
+database consists of the following four relations:
+</p>
+<ul>
+  <li>
+    <strong>
+    INVENTORY:
+  </strong>
+  Stores name, price, model, year of manufacturing, and fuel type for each car in the showroom.
+</li>
+<li>
+  <strong>
+  CUSTOMER:
+</strong>
+Stores customer ID, name, address, phone number, and email.
+</li>
+<li>
+  <strong>
+  SALE:
+</strong>
+Stores invoice number, car ID, customer ID, sale date, mode of payment, sales person's employee ID, and selling price.
+</li>
+<li>
+  <strong>
+  EMPLOYEE:
+</strong>
+Stores employee ID, name, date of birth, date of joining, designation, and salary.
+</li>
+</ul>
+<p>
+  <strong>
+  Table 1.1: INVENTORY
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      CarId
+    </th>
+    <th>
+    CarName
+  </th>
+  <th>
+  Price
+</th>
+<th>
+Model
+</th>
+<th>
+YearManufacture
+</th>
+<th>
+Fueltype
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    D001
+  </td>
+  <td>
+  Car1
+</td>
+<td>
+582613.00
+</td>
+<td>
+LXI
+</td>
+<td>
+2017
+</td>
+<td>
+Petrol
+</td>
+</tr>
+<tr>
+  <td>
+  D002
+</td>
+<td>
+Car1
+</td>
+<td>
+673112.00
+</td>
+<td>
+VXI
+</td>
+<td>
+2018
+</td>
+<td>
+Petrol
+</td>
+</tr>
+<tr>
+  <td>
+  B001
+</td>
+<td>
+Car2
+</td>
+<td>
+567031.00
+</td>
+<td>
+Sigma1.2
+</td>
+<td>
+2019
+</td>
+<td>
+Petrol
+</td>
+</tr>
+<tr>
+  <td>
+  B002
+</td>
+<td>
+Car2
+</td>
+<td>
+647858.00
+</td>
+<td>
+Delta1.2
+</td>
+<td>
+2018
+</td>
+<td>
+Petrol
+</td>
+</tr>
+<tr>
+  <td>
+  E001
+</td>
+<td>
+Car3
+</td>
+<td>
+355205.00
+</td>
+<td>
+5 STR STD
+</td>
+<td>
+2017
+</td>
+<td>
+CNG
+</td>
+</tr>
+<tr>
+  <td>
+  E002
+</td>
+<td>
+Car3
+</td>
+<td>
+654914.00
+</td>
+<td>
+CARE
+</td>
+<td>
+2018
+</td>
+<td>
+CNG
+</td>
+</tr>
+<tr>
+  <td>
+  S001
+</td>
+<td>
+Car4
+</td>
+<td>
+514000.00
+</td>
+<td>
+LXI
+</td>
+<td>
+2017
+</td>
+<td>
+Petrol
+</td>
+</tr>
+<tr>
+  <td>
+  S002
+</td>
+<td>
+Car4
+</td>
+<td>
+614000.00
+</td>
+<td>
+VXI
+</td>
+<td>
+2018
+</td>
+<td>
+Petrol
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Table 1.2: CUSTOMER
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      CustId
+    </th>
+    <th>
+    CustName
+  </th>
+  <th>
+  CustAdd
+</th>
+<th>
+Phone
+</th>
+<th>
+Email
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    C0001
+  </td>
+  <td>
+  AmitSaha
+</td>
+<td>
+L-10, Pitampura
+</td>
+<td>
+4564587852
+</td>
+<td>
+amitsaha2@gmail.com
+</td>
+</tr>
+<tr>
+  <td>
+  C0002
+</td>
+<td>
+Rehnuma
+</td>
+<td>
+J-12, SAKET
+</td>
+<td>
+5527688761
+</td>
+<td>
+rehnuma@hotmail.com
+</td>
+</tr>
+<tr>
+  <td>
+  C0003
+</td>
+<td>
+CharviNayyar
+</td>
+<td>
+10/9, FF, Rohini
+</td>
+<td>
+6811635425
+</td>
+<td>
+charvi123@yahoo.com
+</td>
+</tr>
+<tr>
+  <td>
+  C0004
+</td>
+<td>
+Gurpreet
+</td>
+<td>
+A-10/2, SF, MayurVihar
+</td>
+<td>
+3511056125
+</td>
+<td>
+gur_singh@yahoo.com
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Table 1.3: SALE
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      InvoiceNo
+    </th>
+    <th>
+    CarId
+  </th>
+  <th>
+  CustId
+</th>
+<th>
+SaleDate
+</th>
+<th>
+PaymentMode
+</th>
+<th>
+EmpID
+</th>
+<th>
+SalePrice
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    I00001
+  </td>
+  <td>
+  D001
+</td>
+<td>
+C0001
+</td>
+<td>
+2019-01-24
+</td>
+<td>
+Credit Card
+</td>
+<td>
+E004
+</td>
+<td>
+613247.00
+</td>
+</tr>
+<tr>
+  <td>
+  I00002
+</td>
+<td>
+S001
+</td>
+<td>
+C0002
+</td>
+<td>
+2018-12-12
+</td>
+<td>
+Online
+</td>
+<td>
+E001
+</td>
+<td>
+590321.00
+</td>
+</tr>
+<tr>
+  <td>
+  I00003
+</td>
+<td>
+S002
+</td>
+<td>
+C0004
+</td>
+<td>
+2019-01-25
+</td>
+<td>
+Cheque
+</td>
+<td>
+E010
+</td>
+<td>
+604000.00
+</td>
+</tr>
+<tr>
+  <td>
+  I00004
+</td>
+<td>
+D002
+</td>
+<td>
+C0001
+</td>
+<td>
+2018-10-15
+</td>
+<td>
+Bank Finance
+</td>
+<td>
+E007
+</td>
+<td>
+659982.00
+</td>
+</tr>
+<tr>
+  <td>
+  I00005
+</td>
+<td>
+E001
+</td>
+<td>
+C0003
+</td>
+<td>
+2018-12-20
+</td>
+<td>
+Credit Card
+</td>
+<td>
+E002
+</td>
+<td>
+369310.00
+</td>
+</tr>
+<tr>
+  <td>
+  I00006
+</td>
+<td>
+S002
+</td>
+<td>
+C0002
+</td>
+<td>
+2019-01-30
+</td>
+<td>
+Bank Finance
+</td>
+<td>
+E007
+</td>
+<td>
+620214.00
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Table 1.4: EMPLOYEE
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      EmpID
+    </th>
+    <th>
+    EmpName
+  </th>
+  <th>
+  DOB
+</th>
+<th>
+DOJ
+</th>
+<th>
+Designation
+</th>
+<th>
+Salary
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    E001
+  </td>
+  <td>
+  Rushil
+</td>
+<td>
+1994-07-10
+</td>
+<td>
+2017-12-12
+</td>
+<td>
+Salesman
+</td>
+<td>
+25550
+</td>
+</tr>
+<tr>
+  <td>
+  E002
+</td>
+<td>
+Sanjay
+</td>
+<td>
+1990-03-12
+</td>
+<td>
+2016-06-05
+</td>
+<td>
+Salesman
+</td>
+<td>
+33100
+</td>
+</tr>
+<tr>
+  <td>
+  E003
+</td>
+<td>
+Zohar
+</td>
+<td>
+1975-08-30
+</td>
+<td>
+1999-01-08
+</td>
+<td>
+Peon
+</td>
+<td>
+20000
+</td>
+</tr>
+<tr>
+  <td>
+  E004
+</td>
+<td>
+Arpit
+</td>
+<td>
+1989-06-06
+</td>
+<td>
+2010-12-02
+</td>
+<td>
+Salesman
+</td>
+<td>
+39100
+</td>
+</tr>
+<tr>
+  <td>
+  E006
+</td>
+<td>
+Sanjucta
+</td>
+<td>
+1985-11-03
+</td>
+<td>
+2012-07-01
+</td>
+<td>
+Receptionist
+</td>
+<td>
+27350
+</td>
+</tr>
+<tr>
+  <td>
+  E007
+</td>
+<td>
+Mayank
+</td>
+<td>
+1993-04-03
+</td>
+<td>
+2017-01-01
+</td>
+<td>
+Salesman
+</td>
+<td>
+27352
+</td>
+</tr>
+<tr>
+  <td>
+  E010
+</td>
+<td>
+Rajkumar
+</td>
+<td>
+1987-02-26
+</td>
+<td>
+2013-10-23
+</td>
+<td>
+Salesman
+</td>
+<td>
+31111
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  1.2 Functions in SQL
+</summary>
+<p>
+  SQL functions are built-in operations used to perform calculations, manipulate strings, or format dates. They are broadly categorized into
+  <strong>
+  Single Row Functions
+</strong>
+(Scalar) and
+<strong>
+Multiple Row Functions
+</strong>
+(Aggregate).
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  1.2.1 Single Row Functions (Scalar)
+</summary>
+<p>
+Single row functions operate on a single value from a single row and return a single value as output. They are categorized into Numeric, String, and Date &amp; Time functions.
+</p>
+<p>
+  <strong>
+  (A) Numeric Functions Reference Matrix
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Computing Method / Keyword
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters &amp; Arguments
+</th>
+<th>
+Algorithmic Purpose &amp; Output Representation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class='keyword'>
+      POWER()
+    </span>
+    /
+    <span class='keyword'>
+    POW()
+  </span>
+</td>
+<td>
+  <code>
+  POWER(X, Y)
+</code>
+</td>
+<td>
+  <code>
+  X
+</code>
+(Base number),
+<code>
+Y
+</code>
+(Exponent)
+</td>
+<td>
+  Calculates
+  <code>
+  X
+</code>
+raised to the power of
+<code>
+Y
+</code>
+. Returns a numeric value.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    ROUND()
+  </span>
+</td>
+<td>
+  <code>
+  ROUND(N, D)
+</code>
+</td>
+<td>
+  <code>
+  N
+</code>
+(Numeric value),
+<code>
+D
+</code>
+(Decimal places, optional, defaults to 0)
+</td>
+<td>
+  Rounds off number
+  <code>
+  N
+</code>
+to
+<code>
+D
+</code>
+decimal places. If
+<code>
+D
+</code>
+is negative, rounds off to the left of the decimal point.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    MOD()
+  </span>
+</td>
+<td>
+  <code>
+  MOD(A, B)
+</code>
+</td>
+<td>
+  <code>
+  A
+</code>
+(Dividend),
+<code>
+B
+</code>
+(Divisor)
+</td>
+<td>
+  Returns the remainder of
+  <code>
+  A
+</code>
+divided by
+<code>
+B
+</code>
+. Equivalent to the modulo operator.
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  (B) String Functions Reference Matrix
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Computing Method / Keyword
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters &amp; Arguments
+</th>
+<th>
+Algorithmic Purpose &amp; Output Representation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class='keyword'>
+      UCASE()
+    </span>
+    /
+    <span class='keyword'>
+    UPPER()
+  </span>
+</td>
+<td>
+  <code>
+  UCASE(string)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text)
+</td>
+<td>
+Converts all characters in the string to uppercase.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    LCASE()
+  </span>
+  /
+  <span class='keyword'>
+  LOWER()
+</span>
+</td>
+<td>
+  <code>
+  LCASE(string)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text)
+</td>
+<td>
+Converts all characters in the string to lowercase.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    MID()
+  </span>
+  /
+  <span class='keyword'>
+  SUBSTRING()
+</span>
+/
+<span class='keyword'>
+SUBSTR()
+</span>
+</td>
+<td>
+  <code>
+  MID(string, pos, n)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text),
+<code>
+pos
+</code>
+(Starting index, 1-based),
+<code>
+n
+</code>
+(Length of substring, optional)
+</td>
+<td>
+  Extracts a substring of size
+  <code>
+  n
+</code>
+starting from position
+<code>
+pos
+</code>
+. If
+<code>
+n
+</code>
+is omitted, extracts to the end of the string.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    LENGTH()
+  </span>
+</td>
+<td>
+  <code>
+  LENGTH(string)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text)
+</td>
+<td>
+Returns the length of the string in bytes (number of characters).
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    LEFT()
+  </span>
+</td>
+<td>
+  <code>
+  LEFT(string, N)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text),
+<code>
+N
+</code>
+(Number of characters)
+</td>
+<td>
+  Returns the leftmost
+  <code>
+  N
+</code>
+characters from the string.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    RIGHT()
+  </span>
+</td>
+<td>
+  <code>
+  RIGHT(string, N)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text),
+<code>
+N
+</code>
+(Number of characters)
+</td>
+<td>
+  Returns the rightmost
+  <code>
+  N
+</code>
+characters from the string.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    INSTR()
+  </span>
+</td>
+<td>
+  <code>
+  INSTR(string, substring)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text),
+<code>
+substring
+</code>
+(Search \text)
+</td>
+<td>
+  Returns the 1-based index of the first occurrence of
+  <code>
+  substring
+</code>
+in
+<code>
+string
+</code>
+. Returns 0 if not found.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    LTRIM()
+  </span>
+</td>
+<td>
+  <code>
+  LTRIM(string)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text)
+</td>
+<td>
+Removes leading whitespace characters from the string.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    RTRIM()
+  </span>
+</td>
+<td>
+  <code>
+  RTRIM(string)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text)
+</td>
+<td>
+Removes trailing whitespace characters from the string.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    TRIM()
+  </span>
+</td>
+<td>
+  <code>
+  TRIM(string)
+</code>
+</td>
+<td>
+  <code>
+  string
+</code>
+(Target \text) or
+<code>
+TRIM(remstr FROM string)
+</code>
+</td>
+<td>
+Removes both leading and trailing whitespaces or specified characters from the string.
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  (C) Date and Time Functions Reference Matrix
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Computing Method / Keyword
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters &amp; Arguments
+</th>
+<th>
+Algorithmic Purpose &amp; Output Representation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class='keyword'>
+      NOW()
+    </span>
+  </td>
+  <td>
+    <code>
+    NOW()
+  </code>
+</td>
+<td>
+None
+</td>
+<td>
+Returns the current system date and time in 'YYYY-MM-DD HH:MM:SS' format.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    DATE()
+  </span>
+</td>
+<td>
+  <code>
+  DATE(expr)
+</code>
+</td>
+<td>
+  <code>
+  expr
+</code>
+(Date or datetime expression)
+</td>
+<td>
+Extracts the date part of a date or datetime expression.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    MONTH()
+  </span>
+</td>
+<td>
+  <code>
+  MONTH(date)
+</code>
+</td>
+<td>
+  <code>
+  date
+</code>
+(Date expression)
+</td>
+<td>
+Returns the numeric month value (1 to 12) for the given date.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    MONTHNAME()
+  </span>
+</td>
+<td>
+  <code>
+  MONTHNAME(date)
+</code>
+</td>
+<td>
+  <code>
+  date
+</code>
+(Date expression)
+</td>
+<td>
+Returns the full name of the month (e.g., 'November') for the given date.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    YEAR()
+  </span>
+</td>
+<td>
+  <code>
+  YEAR(date)
+</code>
+</td>
+<td>
+  <code>
+  date
+</code>
+(Date expression)
+</td>
+<td>
+Returns the four-digit year value (e.g., 2019) for the given date.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    DAY()
+  </span>
+</td>
+<td>
+  <code>
+  DAY(date)
+</code>
+</td>
+<td>
+  <code>
+  date
+</code>
+(Date expression)
+</td>
+<td>
+Returns the day of the month (1 to 31) for the given date.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    DAYNAME()
+  </span>
+</td>
+<td>
+  <code>
+  DAYNAME(date)
+</code>
+</td>
+<td>
+  <code>
+  date
+</code>
+(Date expression)
+</td>
+<td>
+Returns the name of the weekday (e.g., 'Wednesday') for the given date.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  1.2.2 Aggregate Functions (Multiple Row)
+</summary>
+<p>
+Aggregate functions work on a set of records as a whole and return a single summarized value for each column on which they are applied.
+</p>
+<p>
+  <strong>
+  Table 1.8: Differences between Single Row and Multiple Row Functions
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Single Row Functions
+    </th>
+    <th>
+    Multiple Row (Aggregate) Functions
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Operate on a single row at a time.
+  </td>
+  <td>
+  Operate on groups of rows.
+</td>
+</tr>
+<tr>
+  <td>
+  Return one result per row.
+</td>
+<td>
+Return one result for a group of rows.
+</td>
+</tr>
+<tr>
+  <td>
+  Can be used in SELECT, WHERE, and ORDER BY clauses.
+</td>
+<td>
+Can be used in SELECT and HAVING clauses (not directly in WHERE).
+</td>
+</tr>
+<tr>
+  <td>
+    Examples:
+    <code>
+    POWER()
+  </code>
+  ,
+  <code>
+  UPPER()
+</code>
+,
+<code>
+DAY()
+</code>
+.
+</td>
+<td>
+  Examples:
+  <code>
+  SUM()
+</code>
+,
+<code>
+COUNT()
+</code>
+,
+<code>
+AVG()
+</code>
+.
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  Aggregate Functions Reference Matrix
+</strong>
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; \text-align: left; margin-bottom: 1em;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Computing Method / Keyword
+    </th>
+    <th>
+    Exact Syntactic Execution Signature
+  </th>
+  <th>
+  Supported Parameters &amp; Arguments
+</th>
+<th>
+Algorithmic Purpose &amp; Output Representation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class='keyword'>
+      MAX()
+    </span>
+  </td>
+  <td>
+    <code>
+    MAX(column)
+  </code>
+</td>
+<td>
+  <code>
+  column
+</code>
+(Numeric, string, or date column)
+</td>
+<td>
+Returns the maximum value in the specified column.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    MIN()
+  </span>
+</td>
+<td>
+  <code>
+  MIN(column)
+</code>
+</td>
+<td>
+  <code>
+  column
+</code>
+(Numeric, string, or date column)
+</td>
+<td>
+Returns the minimum value in the specified column.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    AVG()
+  </span>
+</td>
+<td>
+  <code>
+  AVG(column)
+</code>
+</td>
+<td>
+  <code>
+  column
+</code>
+(Numeric column)
+</td>
+<td>
+Returns the average value of the specified column. Ignores NULL values.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    SUM()
+  </span>
+</td>
+<td>
+  <code>
+  SUM(column)
+</code>
+</td>
+<td>
+  <code>
+  column
+</code>
+(Numeric column)
+</td>
+<td>
+Returns the sum of all values in the specified column. Ignores NULL values.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    COUNT()
+  </span>
+</td>
+<td>
+  <code>
+  COUNT(column)
+</code>
+</td>
+<td>
+  <code>
+  column
+</code>
+(Any column)
+</td>
+<td>
+Returns the count of non-NULL values in the specified column.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    COUNT(*)
+  </span>
+</td>
+<td>
+  <code>
+  COUNT(*)
+</code>
+</td>
+<td>
+None
+</td>
+<td>
+Returns the total number of rows in the table, including NULLs and duplicates.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  1.3 GROUP BY in SQL
+</summary>
+<p>
+  The
+  <span class='keyword'>
+  GROUP BY
+</span>
+clause is used to group rows that have the same values in specified columns into summary rows. It is frequently used with aggregate functions to perform calculations on each group.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  HAVING Clause
+</summary>
+<p>
+  The
+  <span class='keyword'>
+  HAVING
+</span>
+clause is used to apply filter conditions on grouped records. Unlike the
+<span class='keyword'>
+WHERE
+</span>
+clause, which filters rows before grouping,
+<span class='keyword'>
+HAVING
+</span>
+filters groups after
+<span class='keyword'>
+GROUP BY
+</span>
+has been applied.
+</p>
+<pre>
+  <code>
+    mysql&gt; SELECT CustID, COUNT(*)
+    FROM SALE
+    GROUP BY CustID
+    HAVING COUNT(*) &gt; 1;
+  </code>
+</pre>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  1.4 Operations on Relations
+</summary>
+<p>
+  Relational algebra operations allow merging and manipulating tuples from two or more tables. These operations require the participating relations to be
+  <strong>
+  Union Compatible
+</strong>
+(same number of attributes, with corresponding attributes sharing the same domain).
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Set Operations
+</summary>
+<ul>
+  <li>
+    <strong>
+    UNION (U):
+  </strong>
+  Combines the selected rows of two tables, eliminating duplicate rows.
+</li>
+<li>
+  <strong>
+  INTERSECT (∩):
+</strong>
+Returns only the common tuples present in both tables.
+</li>
+<li>
+  <strong>
+  MINUS (-):
+</strong>
+Returns tuples present in the first table but absent in the second table.
+</li>
+<li>
+  <strong>
+  Cartesian Product (X):
+</strong>
+Combines each row of the first table with every row of the second table. The degree of the resulting relation is the sum of the degrees of both tables ($Degree = D_1 + D_2$), and the cardinality is the product of their cardinalities ($Cardinality = C_1 \times C_2$).
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  1.5 Using Two Relations in a Query
+</summary>
+<p>
+To retrieve data from multiple tables, SQL provides mechanisms to perform Cartesian products and Joins.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Cartesian Product &amp; Joins
+</summary>
+<p>
+  When multiple tables are specified in the
+  <span class='keyword'>
+  FROM
+</span>
+clause separated by commas without a join condition, a Cartesian product is performed.
+</p>
+<pre>
+  <code>
+  mysql&gt; SELECT * FROM DANCE, MUSIC;
+</code>
+</pre>
+<p>
+  <strong>
+  JOIN Operations:
+</strong>
+</p>
+<ul>
+  <li>
+    <strong>
+    Equi-Join:
+  </strong>
+  Joins tables based on an equality condition between common columns using the
+  <span class='keyword'>
+  WHERE
+</span>
+clause.
+</li>
+<li>
+  <strong>
+  Explicit JOIN Clause:
+</strong>
+Uses the
+<span class='keyword'>
+JOIN
+</span>
+keyword along with the
+<span class='keyword'>
+ON
+</span>
+clause to specify join conditions.
+</li>
+<li>
+  <strong>
+  NATURAL JOIN:
+</strong>
+An automated join that matches columns with identical names in both tables and automatically eliminates duplicate columns from the output.
+</li>
+</ul>
+<pre>
+  <code>
+  mysql&gt; SELECT * FROM UNIFORM NATURAL JOIN COST;
+</code>
+</pre>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "12-chapter-02-data-handling-using-pandas-i.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

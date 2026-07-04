@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 12 — Chapter 6: Societal Impacts
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 12 — Chapter 6: Societal Impacts
+</h1>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.1 Introduction
+</summary>
+<p>
+  In recent years, the world has undergone dramatic transformations driven by the widespread adoption of
+  <span class='keyword'>
+  Digital Technologies
+</span>
+. These advancements have made communication, commerce, and daily operations faster, more convenient, and highly efficient. While these technologies offer immense benefits, they also present significant challenges and opportunities for misuse, making it essential to understand their societal impacts and adopt safe digital practices.
+</p>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.2 Digital Footprints
+</summary>
+<p>
+  A
+  <span class='keyword'>
+  digital footprint
+</span>
+is the trail of data that users leave behind while performing any online activity. This trail is stored on various servers and can be used to track, analyze, and profile individuals.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Types of Digital Footprints
+</summary>
+<ul>
+  <li>
+    <strong>
+    Active Digital Footprints:
+  </strong>
+  Created when a user intentionally shares data online. Examples include sending emails, publishing blog posts, uploading photos, or writing social media updates.
+</li>
+<li>
+  <strong>
+  Passive Digital Footprints:
+</strong>
+Created unintentionally without the user's active consent or direct knowledge. Examples include web servers logging the user's
+<span class='keyword'>
+IP address
+</span>
+, physical location, device specifications, search history, and tracking cookies.
+</li>
+</ul>
+</details>
+<blockquote class='example-block'>
+<p>
+  <em>
+  Socio-Technical Case Study: The Permanence of Online Data
+</em>
+</p>
+<p>
+Preeti uploaded birthday photographs to a social networking site and later deleted them after a personal dispute. However, she discovered that her friend Himanshu had already downloaded and forwarded the images before they were deleted.
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis & Core Systemic Impact:
+</strong>
+This scenario demonstrates that digital footprints are extremely difficult to erase. Once data is uploaded to the internet, it is stored on remote servers, cached by search engines, or downloaded by other users. There is no guarantee of permanent deletion, highlighting the critical need for caution before sharing sensitive personal information online.
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.3 Digital Society and Netizen
+</summary>
+<p>
+  As daily activities like banking, shopping, education, and communication shift online, we transition into a digital society. Any individual who uses digital technology and the internet is recognized as a
+  <span class='keyword'>
+  digital citizen
+</span>
+or
+<span class='keyword'>
+netizen
+</span>
+. Being a responsible netizen requires adhering to specific digital etiquettes.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  6.3.1 Net Etiquettes
+</summary>
+<p>
+Net etiquettes govern ethical, respectful, and responsible behavior during online interactions:
+</p>
+<ul>
+  <li>
+    <strong>
+    Be Ethical:
+  </strong>
+  Avoid
+  <span class='keyword'>
+  copyright violations
+</span>
+by not using protected materials without permission. Share verified, accurate, and unambiguous expertise.
+</li>
+<li>
+  <strong>
+  Be Respectful:
+</strong>
+Respect the privacy of others and do not share private communications, files, or images without mutual consent. Respect diversity in public forums.
+</li>
+<li>
+  <strong>
+  Be Responsible:
+</strong>
+Avoid
+<span class='keyword'>
+cyber bullying
+</span>
+(insulting, degrading, or intimidating behavior online). Do not feed internet trolls who deliberately post inflammatory messages to disrupt discussions.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  6.3.2 Communication Etiquettes
+</summary>
+<p>
+Proper communication manners ensure clear, credible, and efficient digital exchanges:
+</p>
+<ul>
+  <li>
+    <strong>
+    Be Precise:
+  </strong>
+  Respect others' time by keeping messages concise. Respect data limits by compressing large files or sharing cloud storage links (e.g., Google Drive, OneDrive) instead of sending massive attachments.
+</li>
+<li>
+  <strong>
+  Be Polite:
+</strong>
+Maintain a non-aggressive, respectful tone in both synchronous (real-time chat, video calls) and asynchronous (emails, forum posts) communications.
+</li>
+<li>
+  <strong>
+  Be Credible:
+</strong>
+Ensure comments and posts are well-thought-out, as online behavior directly establishes a user's long-term credibility.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  6.3.3 Social Media Etiquettes
+</summary>
+<p>
+Social media platforms enable massive content sharing but require strict safety guidelines:
+</p>
+<ul>
+  <li>
+    <strong>
+    Be Secure:
+  </strong>
+  Choose strong, unique, alphanumeric passwords and change them periodically. Never share login credentials.
+</li>
+<li>
+  <strong>
+  Know Who You Befriend:
+</strong>
+Exercise extreme caution when connecting with strangers online, as their intentions may be malicious.
+</li>
+<li>
+  <strong>
+  Beware of Fake Information:
+</strong>
+Critically evaluate news, posts, and messages before believing or sharing them.
+</li>
+<li>
+  <strong>
+  Think Before You Upload:
+</strong>
+Remember that uploaded files remain on remote servers indefinitely, even after local deletion.
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.4 Data Protection
+</summary>
+<p>
+  Data protection focuses on securing the privacy of digitally stored information, particularly
+  <span class='keyword'>
+  sensitive data
+</span>
+(such as biometrics, health records, financial details, and personal documents). Security measures include encryption, multi-factor authentication, and secure access protocols.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  6.4.1 Intellectual Property Rights (IPR)
+</summary>
+<p>
+Intellectual Property (IP) refers to original human creations like inventions, literary works, designs, and symbols. IPR legally protects these creations through:
+</p>
+<ul>
+  <li>
+    <strong>
+    Copyright:
+  </strong>
+  Automatically grants creators exclusive legal rights to reproduce, distribute, and display their original works (e.g., books, music, software, photos).
+</li>
+<li>
+  <strong>
+  Patent:
+</strong>
+Granted for new inventions, giving the inventor exclusive rights to prevent others from making, using, or selling the invention for a set period (typically 20 years).
+</li>
+<li>
+  <strong>
+  Trademark:
+</strong>
+A visual symbol, word, design, or slogan that uniquely distinguishes a brand or commercial enterprise from competitors.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  6.4.2 Licensing and IPR Violations
+</summary>
+<p>
+  A
+  <span class='keyword'>
+  license
+</span>
+is a legal contract permitting others to use a copyrighted work under specific terms (e.g., an End User License Agreement or
+<span class='keyword'>
+EULA
+</span>
+). Violating these terms or IPR laws constitutes a serious offense:
+</p>
+<ul>
+  <li>
+    <strong>
+    Plagiarism:
+  </strong>
+  Presenting someone else's work, ideas, or words as one's own without giving proper citation or credit.
+</li>
+<li>
+  <strong>
+  Copyright Infringement:
+</strong>
+Using, copying, or distributing copyrighted material without obtaining explicit permission or paying for it.
+</li>
+<li>
+  <strong>
+  Trademark Infringement:
+</strong>
+Unauthorised use of a registered trademark on competing products or services.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  6.4.3 Public Access and Open Source Software
+</summary>
+<p>
+To foster collaboration and innovation, some creators release their works under public licenses:
+</p>
+<ul>
+  <li>
+    <strong>
+    GNU General Public License (GPL):
+  </strong>
+  A widely used free software license that grants users the freedom to run, study, share, and modify the software's source code.
+</li>
+<li>
+  <strong>
+  Creative Commons (CC):
+</strong>
+A set of public copyright licenses that allow creators to specify how others can share, use, and build upon their creative works.
+</li>
+<li>
+  <strong>
+  FOSS (Free and Open Source Software):
+</strong>
+Software that is distributed freely with its source code accessible for modification (e.g., Linux, Ubuntu, LibreOffice, Mozilla Firefox).
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.5 Creative Commons Licenses
+</summary>
+<p>
+The Creative Commons organization provides standardized licensing options to help creators define the usage terms of their works:
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; margin: 10px 0;'>
+  <thead>
+    <tr style='background-color: #f1f5f9;'>
+      <th>
+      License Name
+    </th>
+    <th>
+    Symbolic Name
+  </th>
+  <th>
+  Description
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Attribution
+    </strong>
+  </td>
+  <td>
+  CC BY
+</td>
+<td>
+Allows others to distribute, remix, tweak, and build upon the work, even commercially, as long as they credit the original creator.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Attribution-ShareAlike
+  </strong>
+</td>
+<td>
+CC BY-SA
+</td>
+<td>
+Allows remixing and building upon the work even for commercial purposes, provided credit is given and new creations are licensed under identical terms.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Attribution-NoDerivs
+  </strong>
+</td>
+<td>
+CC BY-ND
+</td>
+<td>
+Allows reuse of the work for any purpose, including commercially, but it cannot be shared with others in an adapted form, and credit must be provided.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Attribution-NonCommercial
+  </strong>
+</td>
+<td>
+CC BY-NC
+</td>
+<td>
+Allows others to remix, tweak, and build upon the work non-commercially, with acknowledgment of the original creator.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Attribution-NonCommercial-ShareAlike
+  </strong>
+</td>
+<td>
+CC BY-NC-SA
+</td>
+<td>
+Allows remixing and building upon the work non-commercially, as long as credit is given and new creations are licensed under identical terms.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Attribution-NonCommercial-NoDerivs
+  </strong>
+</td>
+<td>
+CC BY-NC-ND
+</td>
+<td>
+The most restrictive license; only allows downloading and sharing the work with credit, without any modifications or commercial use.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.6 Cyber Crime
+</summary>
+<p>
+Cyber crime refers to criminal activities carried out in a digital environment where a computer is either the target or the tool used to commit the offense.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Common Types of Cyber Crimes
+</summary>
+<ul>
+  <li>
+    <strong>
+    Hacking:
+  </strong>
+  Gaining unauthorized access to a computer system or network.
+  <em>
+  Ethical Hacking (White Hat)
+</em>
+involves finding vulnerabilities with permission to improve security.
+<em>
+Non-ethical Hacking (Black Hat)
+</em>
+involves breaking into systems maliciously to steal data or cause damage.
+</li>
+<li>
+  <strong>
+  Phishing:
+</strong>
+An unlawful activity where fraudulent websites or spoofed emails mimicking trusted entities are used to trick users into revealing sensitive credentials, passwords, or financial details.
+</li>
+<li>
+  <strong>
+  Identity Theft:
+</strong>
+Stealing and misusing another person's personal data (e.g., Aadhaar, PAN, banking credentials) for financial, criminal, or medical fraud.
+</li>
+<li>
+  <strong>
+  Ransomware:
+</strong>
+Malicious software that encrypts a victim's data and demands a ransom payment to restore access.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Combatting and Preventing Cyber Crime
+</summary>
+<ol>
+  <li>
+  Take regular backups of all critical data.
+</li>
+<li>
+Install and regularly update reliable antivirus software.
+</li>
+<li>
+Avoid downloading pirated software or visiting untrusted websites.
+</li>
+<li>
+Use strong, unique, alphanumeric passwords for different accounts and change them periodically.
+</li>
+<li>
+Enable secure wireless network configurations (WPA2/WPA3) at home.
+</li>
+</ol>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.7 Indian Information Technology Act (IT Act)
+</summary>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Technical Profile: Indian IT Act, 2000
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  National Legal and Regulatory Framework
+</li>
+<li>
+  <strong>
+  Operational Mechanics:
+</strong>
+Amended in 2008, the act provides a legal framework for electronic governance by recognizing electronic records and digital signatures. It defines cyber offenses, prescribes penalties, and establishes the Cyber Appellate Tribunal to resolve disputes.
+</li>
+<li>
+  <strong>
+  System Impact & Execution Outputs:
+</strong>
+Enables secure digital transactions, empowers law enforcement to establish specialized cyber cells, and provides legal recourse for victims of hacking, identity theft, and cyber bullying.
+</li>
+</ul>
+</div>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.8 E-waste: Hazards and Management
+</summary>
+<p>
+E-waste (Electronic waste) comprises discarded electrical or electronic devices that are near or at the end of their useful life (e.g., old computers, mobile phones, televisions, and printers).
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Environmental and Human Health Hazards
+</summary>
+<ul>
+  <li>
+    <strong>
+    Environmental Impact:
+  </strong>
+  Careless dumping of e-waste in landfills leads to toxic chemicals leaching into the soil and contaminating groundwater, causing severe soil and water pollution. Burning electronic components releases heavy metals into the air, causing air pollution.
+</li>
+<li>
+  <strong>
+  Human Health Impact:
+</strong>
+Electronic components contain toxic materials like lead (causes brain and kidney damage), beryllium (causes skin diseases and lung cancer), mercury (causes respiratory and neurological disorders), and cadmium (damages kidneys and bones).
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  E-waste Management Strategies
+</summary>
+<ul>
+  <li>
+    <strong>
+    Reduce:
+  </strong>
+  Minimize e-waste generation by purchasing electronic devices only when necessary and maintaining them properly to extend their lifespan.
+</li>
+<li>
+  <strong>
+  Reuse:
+</strong>
+Donate or sell functional, older electronics to others. Refurbish slightly damaged devices for resale at lower prices.
+</li>
+<li>
+  <strong>
+  Recycle:
+</strong>
+Extract valuable materials from non-functional electronics through certified recycling facilities.
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.9 Impact on Health
+</summary>
+<p>
+Prolonged and improper use of digital devices can lead to physical and psychological health issues, including eye strain, backaches, neck pain, obesity, and digital addiction.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Ergonomics and Correct Posture
+</summary>
+<p>
+Ergonomics is the science of designing and arranging workplaces, equipment, and systems to ensure safety and comfort for the user. Key ergonomic recommendations include:
+</p>
+<ul>
+  <li>
+  Maintain a viewing distance of 19 to 24 inches from the monitor.
+</li>
+<li>
+Keep the wrist straight and elbows at a 90-degree angle while typing.
+</li>
+<li>
+Adjust seat height so feet rest flat on the floor or on a footrest.
+</li>
+<li>
+Ensure the chair provides adequate lumbar support for the lower back.
+</li>
+<li>
+Take regular breaks to focus on distant objects and engage in physical activities.
+</li>
+</ul>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 6
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-05-internet-and-web.html"; } else { window.location.href = "12-chapter-07-project-based-learning.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
