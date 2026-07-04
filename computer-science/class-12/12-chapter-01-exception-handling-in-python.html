@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 1: Exception Handling in Python
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 1: Exception Handling in Python
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Program Anomalies &amp; Syntax Errors
+</summary>
+<p>
+During the execution of a Python program, various anomalies can prevent the program from running successfully, generate unexpected outputs, or cause abnormal termination. These anomalies are broadly categorized into syntax errors, runtime errors, and logical errors.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Syntax Errors (Parsing Errors)
+</summary>
+<p>
+  <span class="keyword">
+  Syntax errors
+</span>
+, also known as
+<span class="keyword">
+parsing errors
+</span>
+, occur when the code violates the grammatical rules of the Python programming language. These errors are detected by the interpreter during the parsing stage, before the actual execution of the program begins.
+</p>
+<ul>
+  <li>
+    <strong>
+    Interpreter Behavior:
+  </strong>
+  Upon encountering a syntax error, the Python interpreter halts execution immediately and does not run any part of the program until the error is resolved.
+</li>
+<li>
+  <strong>
+  Shell Mode vs. Script Mode:
+</strong>
+<ul>
+  <li>
+    In
+    <em>
+    shell mode
+  </em>
+  , Python displays the error name and a brief description directly in the interactive console.
+</li>
+<li>
+  In
+  <em>
+  script mode
+</em>
+, running a program with a syntax error triggers a dialog box or console message specifying the error name, line number, and a suggestion for rectification.
+</li>
+</ul>
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; if marks &gt; 20:
+    ... print "GOOD SCORE"
+    SyntaxError: Missing parentheses in call to 'print'. Did you mean print("GOOD SCORE")?
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Exceptions &amp; Built-in Exceptions
+</summary>
+<p>
+Even when a program is syntactically correct, errors can still occur during runtime. These runtime anomalies disrupt the normal flow of execution and are represented in Python as specialized objects called exceptions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Understanding Exceptions
+</summary>
+<p>
+  An
+  <span class="keyword">
+  exception
+</span>
+is a Python object that represents an error. When an error occurs during execution (such as division by zero or attempting to open a non-existent file), an exception is said to be "raised". If left unhandled, the program terminates abruptly, printing a traceback to the console.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Common Built-in Exceptions
+</summary>
+<p>
+  Python's standard library provides a robust hierarchy of
+  <span class="keyword">
+  built-in exceptions
+</span>
+to handle common runtime errors. The table below outlines the primary built-in exceptions:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th style="padding: 8px;">
+      Exception Name
+    </th>
+    <th style="padding: 8px;">
+    Operational Trigger Condition
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px;">
+      <span class="keyword">
+      SyntaxError
+    </span>
+  </td>
+  <td style="padding: 8px;">
+  Raised when the parser encounters a syntax error in the code.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    ValueError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when a built-in operation or function receives an argument that has the correct data type but an inappropriate value.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    IOError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when an I/O operation (such as opening a file) fails due to disk/file system issues.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    KeyboardInterrupt
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when the user interrupts program execution (typically by pressing Delete or Esc/Ctrl+C).
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    ImportError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when the import statement fails to find or load a specified module.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    EOFError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when the end-of-file condition is reached without reading any data from input().
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    ZeroDivisionError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when the second argument of a division or modulo operation is zero.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    IndexError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when a sequence subscript or index is out of its allowable range.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    NameError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when a local or global variable name is not found or defined.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    IndentationError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when there is incorrect or inconsistent indentation in the program structure.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    TypeError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when an operation or function is applied to an object of an inappropriate data type.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <span class="keyword">
+    OverFlowError
+  </span>
+</td>
+<td style="padding: 8px;">
+Raised when the result of an arithmetic calculation exceeds the maximum limit of the numeric data type.
+</td>
+</tr>
+</tbody>
+</table>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Python Built-in Exception System
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Python Standard Library Runtime Environment
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Automatically instantiated and thrown by the interpreter when runtime constraints are violated, or manually triggered via code.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Generating full traceback objects incurs minor memory and CPU overhead, but provides critical debugging context.
+</li>
+</ul>
+</div>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Raising Exceptions Explicitly
+</summary>
+<p>
+Programmers can forcefully trigger exceptions within their code to enforce business logic, validate inputs, or signal exceptional states using explicit control statements.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The raise Statement
+</summary>
+<p>
+  The
+  <span class="keyword">
+  raise
+</span>
+statement allows programmers to manually throw an exception. Once a raise statement is executed, the normal flow of the program is interrupted, and control jumps to the nearest matching exception handler.
+</p>
+<p>
+  <strong>
+  Syntax:
+</strong>
+</p>
+<pre>
+  <code>
+  raise exception-name[(optional argument)]
+</code>
+</pre>
+<p>
+The optional argument is typically a string that provides a descriptive error message to be displayed when the exception is raised.
+</p>
+<pre>
+  <code>
+    # Example of raising an exception with a custom message
+    raise Exception("OOPS!! An Exception has occurred")
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The assert Statement
+</summary>
+<p>
+  The
+  <span class="keyword">
+  assert
+</span>
+statement is used to test a boolean expression in a program. If the expression evaluates to
+<code>
+True
+</code>
+, execution continues normally. If it evaluates to
+<code>
+False
+</code>
+, an
+<span class="keyword">
+AssertionError
+</span>
+is raised.
+</p>
+<p>
+  <strong>
+  Syntax:
+</strong>
+</p>
+<pre>
+  <code>
+  assert Expression[, arguments]
+</code>
+</pre>
+<p>
+This statement is commonly used at the beginning of functions to validate input parameters.
+</p>
+<pre>
+  <code>
+    def negativecheck(number):
+    assert(number &gt;= 0), "OOPS... Negative Number"
+    print(number * number)
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Exception Handling Process
+</summary>
+<p>
+To prevent programs from crashing abruptly, programmers write exception handling code to capture runtime errors and execute alternative recovery paths.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Call Stack &amp; Propagation Mechanics
+</summary>
+<p>
+  When an error occurs, the Python interpreter creates an
+  <strong>
+  exception object
+</strong>
+containing metadata about the error (type, file name, line number). The runtime system then searches for a handler in a reverse hierarchical sequence:
+</p>
+<ol>
+  <li>
+  It first searches the current block or function where the error occurred.
+</li>
+<li>
+If no handler is found, it propagates the exception up to the calling function.
+</li>
+<li>
+  This search continues up the
+  <span class="keyword">
+  call stack
+</span>
+(the ordered list of active method calls).
+</li>
+<li>
+If no suitable handler is found in the entire call stack, the program terminates and prints a traceback.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Process Characterization Matrix
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th style="padding: 8px;">
+      Core Computer Science Concept
+    </th>
+    <th style="padding: 8px;">
+    Technical Definition / Operational State
+  </th>
+  <th style="padding: 8px;">
+  Structural Parameters &amp; Specifications
+</th>
+<th style="padding: 8px;">
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px;">
+      <strong>
+      Throwing an Exception
+    </strong>
+  </td>
+  <td style="padding: 8px;">
+  The creation of an exception object and its transfer to the runtime system.
+</td>
+<td style="padding: 8px;">
+  Triggered automatically by runtime errors or manually via
+  <code>
+  raise
+</code>
+/
+<code>
+assert
+</code>
+.
+</td>
+<td style="padding: 8px;">
+Signals that an anomalous state has occurred and halts normal execution flow.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Catching an Exception
+  </strong>
+</td>
+<td style="padding: 8px;">
+The execution of a block of code specifically designed to handle a raised exception.
+</td>
+<td style="padding: 8px;">
+  Defined using
+  <code>
+  except
+</code>
+blocks associated with a
+<code>
+try
+</code>
+block.
+</td>
+<td style="padding: 8px;">
+Prevents program crashes by executing recovery or logging routines.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Catching Exceptions: try...except Blocks
+</summary>
+<p>
+  Python provides a structured syntax to isolate suspicious code and handle potential exceptions gracefully using
+  <code>
+  try
+</code>
+,
+<code>
+except
+</code>
+,
+<code>
+else
+</code>
+, and
+<code>
+finally
+</code>
+blocks.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Basic try...except Syntax
+</summary>
+<p>
+  Suspicious lines of code are placed inside a
+  <span class="keyword">
+  try block
+</span>
+. If an exception occurs within the try block, execution of the block is immediately suspended, and control transfers to the corresponding
+<span class="keyword">
+except block
+</span>
+.
+</p>
+<pre>
+  <code>
+    try:
+    numerator = 50
+    denom = int(input("Enter the denominator: "))
+    quotient = numerator / denom
+    print("Division performed successfully")
+    except ZeroDivisionError:
+    print("Denominator as ZERO is not allowed")
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Multiple Except Clauses &amp; Default Handlers
+</summary>
+<p>
+A single try block can be associated with multiple except blocks to handle different types of exceptions uniquely. Additionally, a default, unnamed except block can be placed at the end to catch any unspecified exceptions.
+</p>
+<pre>
+  <code>
+    try:
+    # Code that may raise multiple exceptions
+    denom = int(input("Enter denominator: "))
+    result = 50 / denom
+    except ZeroDivisionError:
+    print("Error: Division by zero!")
+    except ValueError:
+    print("Error: Invalid integer input!")
+    except:
+    print("Error: An unexpected exception occurred!")
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Optional else Clause
+</summary>
+<p>
+  The
+  <span class="keyword">
+  else clause
+</span>
+is executed only if no exceptions are raised in the try block. It must be placed after all except clauses.
+</p>
+<pre>
+  <code>
+    try:
+    num = int(input("Enter a number: "))
+    result = 100 / num
+    except ZeroDivisionError:
+    print("Zero division error!")
+    else:
+    print("Calculation successful. Result is:", result)
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The finally Clause
+</summary>
+<p>
+  The
+  <span class="keyword">
+  finally clause
+</span>
+is guaranteed to execute regardless of whether an exception was raised or caught. It is commonly used for clean-up actions, such as closing database connections or file streams.
+</p>
+<pre>
+  <code>
+    try:
+    file_obj = open("data.txt", "r")
+    # Perform file operations
+    except IOError:
+    print("File could not be opened")
+    finally:
+    print("Executing clean-up. Program complete.")
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Case Study: Exception Propagation with finally
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  Consider a program where a try block executes, an unhandled exception (such as ValueError) is raised, and a finally block is defined.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+When an unhandled exception occurs, Python first executes the statements inside the
+<code>
+finally
+</code>
+block. Once the finally block completes, the unhandled exception is re-raised and propagates up the call stack to the next outer handler or default system handler, ensuring that critical clean-up routines are never bypassed even during fatal application crashes.
+</p>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "12-chapter-02-file-handling-in-python.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

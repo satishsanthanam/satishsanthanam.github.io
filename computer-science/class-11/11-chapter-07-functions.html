@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 7: Functions
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 7: Functions
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.1 Introduction to Modular Programming
+</summary>
+<p>
+  As programs grow in complexity, the number of lines increases, making the code bulky and difficult to manage.
+  <span class="keyword">
+  Modular programming
+</span>
+is the process of dividing a computer program into separate, independent blocks of code or sub-problems with distinct names and specific functionalities.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Tent Manufacturing Cost Estimation (Program 7-1)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+A company manufactures tents with a cylindrical base surmounted by a conical top. To calculate the selling price, the system must: (1) Accept height, radius, and slant height; (2) Calculate the canvas area; (3) Calculate the raw material cost; (4) Apply an 18% tax. Writing this as a single monolithic script makes debugging and code reuse impossible when new tent designs (e.g., rectangular bases) are introduced.
+</p>
+</blockquote>
+<p>
+Monolithic implementation without functions (Program 7-1):
+</p>
+<pre>
+  <code>
+    # Program 7-1: Calculate payable amount without functions
+    print("Enter values for the cylindrical part of the tent in meters\n")
+    h = float(input("Enter height of the cylindrical part: "))
+    r = float(input("Enter radius: "))
+    l = float(input("Enter the slant height of the conical part in meters: "))
+    csa_conical = 3.14 * r * l
+    csa_cylindrical = 2 * 3.14 * r * h
+    canvas_area = csa_conical + csa_cylindrical
+    print("The area of the canvas is", canvas_area, "m^2")
+    unit_price = float(input("Enter the cost of 1 m^2 canvas: "))
+    total_cost = unit_price * canvas_area
+    print("The total cost of canvas = ", total_cost)
+    tax = 0.18 * total_cost
+    net_price = total_cost + tax
+    print("Net amount payable = ", net_price)
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.2 Functions &amp; User-Defined Functions
+</summary>
+<p>
+  A
+  <span class="keyword">
+  function
+</span>
+is a named group of instructions that accomplish a specific task when invoked. Once defined, a function can be called repeatedly from different places in a program, facilitating modularity and reusability.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.2.1 Advantages of Using Functions
+</summary>
+<ul>
+  <li>
+    <strong>
+    Increases Readability:
+  </strong>
+  Particularly for longer code, making the program better organized and easier to understand.
+</li>
+<li>
+  <strong>
+  Reduces Code Length:
+</strong>
+Eliminates the need to write duplicate code at multiple places, simplifying debugging.
+</li>
+<li>
+  <strong>
+  Increases Reusability:
+</strong>
+Functions can be called from other functions or programs, avoiding repetitive code blocks.
+</li>
+<li>
+  <strong>
+  Parallel Work Division:
+</strong>
+Work can be easily divided among team members and completed in parallel.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.2.2 Modular Implementation of the Tent Problem
+</summary>
+<p>
+By dividing the program into independent blocks of code, we achieve modularity (Program 7-2):
+</p>
+<pre>
+  <code>
+    # Program 7-2: Calculate payable amount using user-defined functions
+    def cyl(h, r):
+    area_cyl = 2 * 3.14 * r * h
+    return area_cyl
+    def con(l, r):
+    area_con = 3.14 * r * l
+    return area_con
+    def post_tax_price(cost):
+    tax = 0.18 * cost
+    net_price = cost + tax
+    return net_price
+    print("Enter values of cylindrical part of the tent in meters:")
+    h = float(input("Height: "))
+    r = float(input("Radius: "))
+    csa_cyl = cyl(h, r)
+    l = float(input("Enter slant height of the conical area in meters: "))
+    csa_con = con(l, r)
+    canvas_area = csa_cyl + csa_con
+    print("Area of canvas = ", canvas_area, " m^2")
+    unit_price = float(input("Enter cost of 1 m^2 canvas in rupees: "))
+    total_cost = unit_price * canvas_area
+    print("Total cost of canvas before tax = ", total_cost)
+    print("Net amount payable (including tax) = ", post_tax_price(total_cost))
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.3 Creating and Managing User-Defined Functions
+</summary>
+<p>
+  A function definition begins with the keyword
+  <span class="keyword">
+  def
+</span>
+(short for define), followed by the function name, optional parameters enclosed in parentheses, and a colon.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.3.1 Syntax of a Function Definition
+</summary>
+<pre>
+  <code>
+    def function_name([parameter_1, parameter_2, ...]):
+    # Function Header
+    set_of_instructions_to_be_executed
+    [return value] # Function Body
+  </code>
+</pre>
+<ul>
+  <li>
+    The items enclosed in square brackets
+    <code>
+    [ ]
+  </code>
+  are optional parameters.
+</li>
+<li>
+  The function header always ends with a colon (
+  <code>
+  :
+</code>
+).
+</li>
+<li>
+The function name must be unique and follow the rules for naming identifiers.
+</li>
+<li>
+Statements outside the function indentation are not considered part of the function.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.3.2 Arguments and Parameters
+</summary>
+<p>
+  An
+  <span class="keyword">
+  argument
+</span>
+is a value passed to the function during a function call, which is received by the corresponding
+<span class="keyword">
+parameter
+</span>
+defined in the function header.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Parameter Passing &amp; Object Identity
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Python Runtime Environment / Memory Management
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+When an argument is passed, both the argument and parameter refer to the same memory address (identity). This can be verified using the
+<code>
+id()
+</code>
+function.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+For immutable types (like integers, floats, strings), modifying the parameter inside the function creates a new object in memory, leaving the original argument unchanged.
+</li>
+</ul>
+</div>
+<p>
+Demonstrating parameter identity and modification (Program 7-5):
+</p>
+<pre>
+  <code>
+    def incrValue(num):
+    print("Parameter num has value:", num, "\nid =", id(num))
+    num = num + 5
+    print("num incremented by 5 is", num, "\nNow id is ", id(num))
+    number = int(input("Enter a number: "))
+    print("id of argument number is:", id(number))
+    incrValue(number)
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.3.3 Default Parameters
+</summary>
+<p>
+  Python allows assigning a
+  <span class="keyword">
+  default parameter
+</span>
+value to a parameter. If the function call does not provide an argument for that parameter, the predecided default value is used.
+</p>
+<pre>
+  <code>
+    def mixedFraction(num, deno = 1):
+    remainder = num % deno
+    if remainder != 0:
+    quotient = int(num / deno)
+    print("The mixed fraction=", quotient, "(", remainder, "/", deno, ")")
+    else:
+    print("The given fraction evaluates to a whole number")
+  </code>
+</pre>
+<ul>
+  <li>
+    <strong>
+    Rule of Trailing Parameters:
+  </strong>
+  All default parameters must be placed at the end of the parameter list. Any parameter to the right of a default parameter must also have a default value.
+</li>
+<li>
+  <em>
+  Incorrect:
+</em>
+<code>
+def calcInterest(principal = 1000, rate, time = 5):
+</code>
+</li>
+<li>
+  <em>
+  Correct:
+</em>
+<code>
+def calcInterest(rate, principal = 1000, time = 5):
+</code>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.3.4 Functions Returning Values
+</summary>
+<p>
+  Functions that perform calculations and display results without returning a value are called
+  <span class="keyword">
+  void functions
+</span>
+. Functions can return values using the
+<code>
+return
+</code>
+statement. Python functions can return multiple values packaged as a
+<span class="keyword">
+tuple
+</span>
+.
+</p>
+<pre>
+  <code>
+    def calcAreaPeri(length, breadth):
+    area = length * breadth
+    perimeter = 2 * (length + breadth)
+    return (area, perimeter) # Returns a tuple
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.3.5 Flow of Execution
+</summary>
+<p>
+  The
+  <span class="keyword">
+  flow of execution
+</span>
+is the order in which statements are executed. Execution always begins at the first statement of the program. Function definitions are parsed but their internal statements are not executed until the function is called.
+</p>
+<p>
+  A function must be defined before it is called. Calling a function before its definition raises a
+  <code>
+  NameError
+</code>
+:
+</p>
+<pre>
+  <code>
+    # Program 7-11: Raises NameError
+    helloPython() # Function Call before definition
+    def helloPython():
+    print("I love Programming")
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.4 Scope of a Variable
+</summary>
+<p>
+  The
+  <span class="keyword">
+  scope of a variable
+</span>
+refers to the part of the program where a variable is accessible. Python supports two primary scopes:
+</p>
+<ul>
+  <li>
+    <strong>
+    Global Variable:
+  </strong>
+  Defined outside any function or block. It can be accessed by any function in the program. Any modification to a global variable inside a function requires the
+  <span class="keyword">
+  global
+</span>
+keyword.
+</li>
+<li>
+  <strong>
+  Local Variable:
+</strong>
+Defined inside a function or block. It can only be accessed within that specific function or block and ceases to exist once the function finishes execution.
+</li>
+</ul>
+<p>
+  Using the
+  <code>
+  global
+</code>
+keyword to modify global variables (Program 7-15):
+</p>
+<pre>
+  <code>
+    num = 5
+    def myfunc1():
+    global num # Informs Python to use the global variable
+    print("Accessing num =", num)
+    num = 10
+    print("num reassigned =", num)
+    myfunc1()
+    print("Accessing num outside myfunc1", num) # Prints 10
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.5 Python Standard Library
+</summary>
+<p>
+The Python Standard Library is an extensive collection of built-in functions and modules that facilitate rapid application development.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.5.1 Built-in Functions
+</summary>
+<p>
+Built-in functions are always available in the Python interpreter without importing any module.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>
+      Function Syntax
+    </th>
+    <th>
+    Arguments
+  </th>
+  <th>
+  Returns
+</th>
+<th>
+Example Output
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>
+      abs(x)
+    </code>
+  </td>
+  <td>
+    Integer or float
+    <code>
+    x
+  </code>
+</td>
+<td>
+  Absolute value of
+  <code>
+  x
+</code>
+</td>
+<td>
+  <code>
+  abs(-5.7)
+</code>
+&rarr;
+<code>
+5.7
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    divmod(x, y)
+  </code>
+</td>
+<td>
+  Integers
+  <code>
+  x
+</code>
+and
+<code>
+y
+</code>
+</td>
+<td>
+  Tuple
+  <code>
+  (quotient, remainder)
+</code>
+</td>
+<td>
+  <code>
+  divmod(7, 2)
+</code>
+&rarr;
+<code>
+(3, 1)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    max(sequence)
+  </code>
+  or
+  <code>
+  max(x, y, ...)
+</code>
+</td>
+<td>
+Sequence or multiple arguments
+</td>
+<td>
+Largest item
+</td>
+<td>
+  <code>
+  max([1, 2, 3, 4])
+</code>
+&rarr;
+<code>
+4
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    min(sequence)
+  </code>
+  or
+  <code>
+  min(x, y, ...)
+</code>
+</td>
+<td>
+Sequence or multiple arguments
+</td>
+<td>
+Smallest item
+</td>
+<td>
+  <code>
+  min("Sincerity")
+</code>
+&rarr;
+<code>
+'S'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    pow(x, y[, z])
+  </code>
+</td>
+<td>
+  Numbers
+  <code>
+  x
+</code>
+,
+<code>
+y
+</code>
+, and optional
+<code>
+z
+</code>
+</td>
+<td>
+$x^y$ or $(x^y) \% z$
+</td>
+<td>
+  <code>
+  pow(5, 2, 4)
+</code>
+&rarr;
+<code>
+1
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    sum(x[, num])
+  </code>
+</td>
+<td>
+  Numeric sequence
+  <code>
+  x
+</code>
+, optional start
+<code>
+num
+</code>
+</td>
+<td>
+  Sum of elements (+
+  <code>
+  num
+</code>
+)
+</td>
+<td>
+  <code>
+  sum([2, 4, 7], 3)
+</code>
+&rarr;
+<code>
+16
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    len(x)
+  </code>
+</td>
+<td>
+  Sequence or dictionary
+  <code>
+  x
+</code>
+</td>
+<td>
+Count of elements
+</td>
+<td>
+  <code>
+  len("Patience")
+</code>
+&rarr;
+<code>
+8
+</code>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.5.2 Standard Library Modules
+</summary>
+<p>
+  A
+  <span class="keyword">
+  module
+</span>
+is a file containing a collection of related function definitions and statements. To use a module, it must be imported using the
+<code>
+import
+</code>
+statement.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Core Python Modules
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Python Standard Library
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Modules are imported via
+<code>
+import module_name
+</code>
+or
+<code>
+from module_name import function_name
+</code>
+. Functions are accessed using dot notation:
+<code>
+module_name.function_name()
+</code>
+.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Importing an entire module loads all its functions into memory. Using the
+<code>
+from
+</code>
+statement saves memory by loading only specified functions, but can lead to namespace conflicts.
+</li>
+</ul>
+</div>
+<p>
+  <strong>
+  1. The
+  <code>
+  math
+</code>
+Module:
+</strong>
+Contains mathematical functions that return float values.
+</p>
+<ul>
+  <li>
+    <code>
+    math.ceil(x)
+  </code>
+  : Returns the smallest integer greater than or equal to
+  <code>
+  x
+</code>
+.
+</li>
+<li>
+  <code>
+  math.floor(x)
+</code>
+: Returns the largest integer less than or equal to
+<code>
+x
+</code>
+.
+</li>
+<li>
+  <code>
+  math.fabs(x)
+</code>
+: Returns the absolute value of float
+<code>
+x
+</code>
+.
+</li>
+<li>
+  <code>
+  math.factorial(x)
+</code>
+: Returns the factorial of positive integer
+<code>
+x
+</code>
+.
+</li>
+<li>
+  <code>
+  math.gcd(x, y)
+</code>
+: Returns the greatest common divisor of
+<code>
+x
+</code>
+and
+<code>
+y
+</code>
+.
+</li>
+<li>
+  <code>
+  math.sqrt(x)
+</code>
+: Returns the square root of
+<code>
+x
+</code>
+.
+</li>
+</ul>
+<p>
+  <strong>
+  2. The
+  <code>
+  random
+</code>
+Module:
+</strong>
+Used for generating pseudo-random numbers.
+</p>
+<ul>
+  <li>
+    <code>
+    random.random()
+  </code>
+  : Returns a random float in the range $[0.0, 1.0)$.
+</li>
+<li>
+  <code>
+  random.randint(x, y)
+</code>
+: Returns a random integer between
+<code>
+x
+</code>
+and
+<code>
+y
+</code>
+(inclusive).
+</li>
+<li>
+  <code>
+  random.randrange([start], stop[, step])
+</code>
+: Returns a randomly selected element from the specified range.
+</li>
+</ul>
+<p>
+  <strong>
+  3. The
+  <code>
+  statistics
+</code>
+Module:
+</strong>
+Provides functions for calculating mathematical statistics of numeric data.
+</p>
+<ul>
+  <li>
+    <code>
+    statistics.mean(x)
+  </code>
+  : Calculates the arithmetic mean of sequence
+  <code>
+  x
+</code>
+.
+</li>
+<li>
+  <code>
+  statistics.median(x)
+</code>
+: Calculates the middle value of sequence
+<code>
+x
+</code>
+.
+</li>
+<li>
+  <code>
+  statistics.mode(x)
+</code>
+: Calculates the most common data point in sequence
+<code>
+x
+</code>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  7.5.3 Creating User-Defined Modules &amp; Docstrings
+</summary>
+<p>
+  Any Python file (
+  <code>
+  .py
+</code>
+) containing function definitions can be imported as a module. A
+<span class="keyword">
+docstring
+</span>
+is a multiline comment enclosed in triple quotes (
+<code>
+"""
+</code>
+) placed at the beginning of a module or function to describe its purpose. It is stored in the
+<code>
+__doc__
+</code>
+attribute.
+</p>
+<pre>
+  <code>
+    """
+    basic_math Module
+    *******************
+    This module contains basic arithmetic operations.
+    """
+    def addnum(x, y):
+    return x + y
+    def subnum(x, y):
+    return x - y
+  </code>
+</pre>
+<p>
+To access the docstring of an imported module:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; import basic_math
+    &gt;&gt;&gt; print(basic_math.__doc__)
+    basic_math Module
+    *******************
+    This module contains basic arithmetic operations.
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Chapter Technical Concept Characterization Matrix
+</summary>
+<table>
+  <thead>
+    <tr>
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Modular Programming
+    </strong>
+  </td>
+  <td>
+  Decomposing a monolithic program into independent, named sub-units.
+</td>
+<td>
+Defined by logical boundaries, parameter interfaces, and return types.
+</td>
+<td>
+Improves code maintainability, readability, and parallel development.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    User-Defined Functions
+  </strong>
+</td>
+<td>
+  Custom blocks of code defined by the programmer using the
+  <code>
+  def
+</code>
+keyword.
+</td>
+<td>
+Consists of a function header, parameters, indented body, and optional return statement.
+</td>
+<td>
+Encapsulates repetitive logic to achieve code reusability.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Variable Scope
+  </strong>
+</td>
+<td>
+The accessibility and lifetime of variables within different parts of a program.
+</td>
+<td>
+Classified into Global (module-level) and Local (function-level) scopes.
+</td>
+<td>
+Prevents namespace pollution and accidental state modification.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Standard Library Modules
+  </strong>
+</td>
+<td>
+Pre-compiled Python files containing collections of related functions.
+</td>
+<td>
+  Imported using
+  <code>
+  import
+</code>
+or
+<code>
+from ... import
+</code>
+statements.
+</td>
+<td>
+Provides optimized, ready-to-use solutions for math, statistics, and random generation.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  System Case Study &amp; Exercises
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Student Management Information System (SMIS) Attendance Checker
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+To automate attendance tracking, a user-defined function must accept the total number of working days in a month and the count of days a student was present. The function calculates the attendance percentage. If the attendance is less than 78%, it returns
+<code>
+1
+</code>
+(indicating short attendance/defaulter status); otherwise, it returns
+<code>
+0
+</code>
+. This modular component can be integrated into larger school administration portals to automatically flag students with low attendance.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 7
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-06-flow-of-control.html"; } else { window.location.href = "11-chapter-08-strings.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

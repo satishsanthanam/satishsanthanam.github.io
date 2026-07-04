@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 3: Emerging Trends
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 3: Emerging Trends
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.1 Introduction
+</summary>
+<p>
+  Computers have been around for quite some time, and new technologies emerge with each passing day. To understand existing technologies and developments around us, we must keep an eye on
+  <span class="keyword">
+  emerging trends
+</span>
+. Emerging trends are state-of-the-art technologies that gain popularity and set new trends among users, making a huge impact on the digital economy and digital societies.
+</p>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.2 Artificial Intelligence (AI)
+</summary>
+<p>
+  <span class="keyword">
+  Artificial Intelligence
+</span>
+endeavors to simulate the natural intelligence of human beings into machines, making them behave intelligently. An intelligent machine is supposed to imitate cognitive functions of humans like learning, decision-making, and problem-solving. To perform tasks with minimum human intervention, AI systems are programmed to create a knowledge base and make decisions based on it.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Knowledge Base
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Core AI Decision-Support Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+A store of information consisting of facts, assumptions, and rules which an AI system uses for decision-making and learning from past experiences.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly dependent on data quality; incorrect assumptions lead to biased or faulty decision-making.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2.1 Machine Learning
+</summary>
+<p>
+  <span class="keyword">
+  Machine Learning
+</span>
+is a subsystem of Artificial Intelligence wherein computers have the ability to learn from data using statistical techniques without being explicitly programmed by a human being. It comprises algorithms (called models) that use data to learn on their own and make predictions.
+</p>
+<ul>
+  <li>
+    <strong>
+    Training Data:
+  </strong>
+  Used to train the machine learning model to recognize patterns.
+</li>
+<li>
+  <strong>
+  Testing Data:
+</strong>
+Used to evaluate the accuracy of the trained model.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2.2 Natural Language Processing (NLP)
+</summary>
+<p>
+  <span class="keyword">
+  Natural Language Processing (NLP)
+</span>
+deals with the interaction between humans and computers using human spoken languages, such as Hindi, English, etc. It enables features like predictive typing, spell checking, search engine suggestions, and voice-controlled devices.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Natural Language Processing (NLP)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Human-Computer Interaction (HCI) Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Performs \text-to-speech and speech-to-\text conversions, machine translation, and automated customer service interaction.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Struggles with complex dialects, accents, homonyms, and contextual nuances.
+</li>
+</ul>
+</div>
+<blockquote class="example-block">
+<p>
+  <em>
+  Activity 3.1: Find out how NLP is helping differently-abled persons?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+NLP enables speech-to-\text and \text-to-speech systems, allowing visually impaired individuals to listen to written \text and hearing-impaired individuals to read spoken words. Voice-controlled interfaces allow physically challenged individuals to operate computers and smart devices hands-free.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2.3 Immersive Experiences
+</summary>
+<p>
+Immersive experiences allow users to visualize, feel, and react by stimulating their senses, making interactions more realistic and engaging. They are achieved using Virtual Reality and Augmented Reality.
+</p>
+<ul>
+  <li>
+    <strong>
+    (A) Virtual Reality (VR):
+  </strong>
+  A three-dimensional, computer-generated situation that simulates the real world. The user interacts with and explores the environment using VR Headsets. It promotes sensory information like sound, smell, motion, and temperature. Applications include gaming, military training, medical procedures, and engineering.
+</li>
+<li>
+  <strong>
+  (B) Augmented Reality (AR):
+</strong>
+The superimposition of computer-generated perceptual information over the existing physical surroundings. Unlike VR, AR does not create a completely new virtual environment; it alters or augments the perception of the physical world through additional digital information (e.g., location-based AR apps for travelers).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2.4 Robotics
+</summary>
+<p>
+  A
+  <span class="keyword">
+  robot
+</span>
+is a machine capable of carrying out one or more tasks automatically with accuracy and precision. Unlike other machines, a robot is programmable by a computer and can follow instructions given through computer programs.
+</p>
+<ul>
+  <li>
+    <strong>
+    Sensors:
+  </strong>
+  One of the prime components of a robot to detect environmental inputs.
+</li>
+<li>
+  <strong>
+  Types of Robots:
+</strong>
+Wheeled robots, legged robots, manipulators, and humanoids (robots that resemble humans, e.g.,
+<span class="keyword">
+Sophia
+</span>
+).
+</li>
+<li>
+  <strong>
+  Drones:
+</strong>
+Unmanned aircraft (UAVs) that can be remotely controlled or fly autonomously using software-controlled flight plans, onboard sensors, and GPS.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.3 Big Data
+</summary>
+<p>
+  With technology making inroads into almost every sphere of our lives, data is being produced at a colossal rate. Around $2.5$ quintillion bytes of data are created each day. This results in the generation of datasets of enormous volume and complexity called
+  <span class="keyword">
+  Big Data
+</span>
+, which cannot be processed and analyzed using traditional database management tools.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.3.1 Characteristics of Big Data
+</summary>
+<p>
+Big Data exhibits five distinct characteristics (the 5 Vs):
+</p>
+<ol>
+  <li>
+    <strong>
+    Volume:
+  </strong>
+  The enormous size of the dataset, making it difficult to process with traditional DBMS tools.
+</li>
+<li>
+  <strong>
+  Velocity:
+</strong>
+The rapid rate at which data is generated and stored.
+</li>
+<li>
+  <strong>
+  Variety:
+</strong>
+The diverse formats of data, including structured, semi-structured, and unstructured data (\text, images, videos, web pages).
+</li>
+<li>
+  <strong>
+  Veracity:
+</strong>
+The trustworthiness and accuracy of the data, which can sometimes be inconsistent, biased, or noisy.
+</li>
+<li>
+  <strong>
+  Value:
+</strong>
+The business utility and actionable insights that can be extracted from the data.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.3.2 Data Analytics
+</summary>
+<p>
+  <span class="keyword">
+  Data Analytics
+</span>
+is the process of examining datasets in order to draw conclusions about the information they contain, with the aid of specialized systems and software. It is widely used in commercial industries to make informed business decisions and in science to verify or disprove scientific models.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.4 Internet of Things (IoT)
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Internet of Things (IoT)
+</span>
+is a network of physical devices that have embedded hardware and software to communicate, connect, and exchange data with other devices on the same network. It brings together isolated devices (like microwave ovens, air conditioners, door locks, and CCTV cameras) to work in collaboration with minimum human intervention.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.4.1 Web of Things (WoT)
+</summary>
+<p>
+  <span class="keyword">
+  Web of Things (WoT)
+</span>
+allows the use of web services to connect and integrate physical things with the web, providing a single interface to connect and control diverse devices instead of using multiple independent applications.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.4.2 Sensors
+</summary>
+<p>
+  Sensors are monitoring and observing elements in real-world applications. A
+  <span class="keyword">
+  smart sensor
+</span>
+is a device that takes input from the physical environment and uses built-in computing resources to perform predefined functions upon detection of specific input before passing it on.
+</p>
+<ul>
+  <li>
+    <strong>
+    Accelerometer:
+  </strong>
+  Detects the physical orientation of a device (e.g., switching mobile display from vertical to horizontal).
+</li>
+<li>
+  <strong>
+  Gyroscope:
+</strong>
+Tracks rotation or twist of the hand to supplement orientation data.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.4.3 Smart Cities
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Smart City
+</span>
+uses computer and communication technology along with IoT to manage and distribute resources efficiently. It optimizes transportation, power plants, water supply networks, waste management, law enforcement, and community services.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Figure 3.11: Smart City Infrastructure Analysis
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Smart buildings use sensors to detect earthquake tremors and warn nearby buildings. Smart bridges use wireless sensors to detect loose bolts, cracks, or structural failures and alert authorities via SMS. Smart tunnels monitor leakages or traffic congestion, sending wireless signals to a centralized computer for real-time analysis.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.5 Cloud Computing
+</summary>
+<p>
+  <span class="keyword">
+  Cloud Computing
+</span>
+is an emerging trend in IT where computer-based services (software, hardware, servers, databases, storage) are delivered over the Internet on a pay-per-use basis. It allows users to run large applications without having high-end local storage or processing power.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.5.1 Cloud Services
+</summary>
+<p>
+Cloud services are categorized into three standard delivery models:
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Cloud Service Model
+    </th>
+    <th>
+    Technical Definition &amp; Scope
+  </th>
+  <th>
+  Key Resources Provided
+</th>
+<th>
+Examples
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Infrastructure as a Service (IaaS)
+    </strong>
+  </td>
+  <td>
+  Provides raw computing infrastructure over the cloud, outsourcing hardware requirements.
+</td>
+<td>
+Servers, Virtual Machines (VMs), storage, backup facilities, operating systems.
+</td>
+<td>
+Amazon EC2, Microsoft Azure VMs
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Platform as a Service (PaaS)
+  </strong>
+</td>
+<td>
+Provides a pre-configured environment to develop, test, deploy, and deliver software applications.
+</td>
+<td>
+Database engines, web servers, runtime environments, development tools.
+</td>
+<td>
+Google App Engine, Apache pre-configured servers
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Software as a Service (SaaS)
+  </strong>
+</td>
+<td>
+Provides on-demand access to fully functional application software over the web.
+</td>
+<td>
+End-user applications, cloud storage interfaces.
+</td>
+<td>
+Google Docs, Microsoft Office 365, Dropbox
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  <strong>
+  MeghRaj:
+</strong>
+The Government of India's "GI Cloud" initiative to utilize and harness the benefits of cloud computing for public administration.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.6 Grid Computing
+</summary>
+<p>
+  A
+  <span class="keyword">
+  grid
+</span>
+is a computer network of geographically dispersed and heterogeneous computational resources. Unlike cloud computing, which focuses on service delivery, grid computing is application-specific and creates a virtual supercomputer to solve computationally intense scientific and research problems.
+</p>
+<ul>
+  <li>
+    <strong>
+    Data Grid:
+  </strong>
+  Used to manage large, distributed datasets requiring multi-user access.
+</li>
+<li>
+  <strong>
+  CPU/Processor Grid:
+</strong>
+Divides a large task into subtasks and distributes them across various nodes for parallel processing.
+</li>
+<li>
+  <strong>
+  Middleware:
+</strong>
+Software required to implement distributed processor architecture (e.g., the open-source
+<span class="keyword">
+Globus Toolkit
+</span>
+).
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.7 Blockchains
+</summary>
+<p>
+  A
+  <span class="keyword">
+  blockchain
+</span>
+is a system that allows a group of connected computers to maintain a single, updated, and secure ledger. It works on the concept of a decentralized and shared database where each computer (node) has a copy of the database.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Blockchain Technology
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Decentralized Ledger &amp; Consensus Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Maintains an "append-only" open ledger. Transactions are grouped into blocks. Each block has a header visible to all nodes, while private data is accessible only to the owner. Transactions are updated only after all nodes authenticate them.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+High computational overhead for consensus mechanisms; irreversible transactions if private keys are lost.
+</li>
+</ul>
+</div>
+<blockquote class="example-block">
+<p>
+  <em>
+  Socio-Technical Applications of Blockchain
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+<br>
+1.
+<strong>
+Healthcare:
+</strong>
+Secure data sharing between healthcare providers leads to accurate diagnoses and cost-effective care.
+<br>
+2.
+<strong>
+Land Registration:
+</strong>
+Prevents disputes arising from land ownership claims and unauthorized encroachments.
+<br>
+3.
+<strong>
+Voting Systems:
+</strong>
+A blockchain-based voting system prevents vote alteration, ensuring transparent and authentic elections.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Chapter Summary &amp; Exercises
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Takeaways
+</summary>
+<ul>
+  <li>
+  AI simulates human intelligence; Machine Learning allows computers to learn from data; NLP enables natural language interaction.
+</li>
+<li>
+VR creates computer-generated simulations; AR superimposes digital information on physical surroundings.
+</li>
+<li>
+Big Data is characterized by Volume, Velocity, Variety, Veracity, and Value.
+</li>
+<li>
+IoT connects physical devices; WoT integrates them with web services; Smart Sensors enable intelligent data collection.
+</li>
+<li>
+Cloud Computing offers on-demand services (IaaS, PaaS, SaaS); Grid Computing pools dispersed resources to act as a virtual supercomputer.
+</li>
+<li>
+Blockchain provides a secure, decentralized, append-only ledger for transparent transactions.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Match the Columns (Exercise 14)
+</summary>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Column A (Scenario)
+    </th>
+    <th>
+    Column B (Technology Category)
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    1. You got a reminder to take medication
+  </td>
+  <td>
+  D. Smart Health
+</td>
+</tr>
+<tr>
+  <td>
+  2. You got an SMS alert that you forgot to lock the door
+</td>
+<td>
+C. Home Automation
+</td>
+</tr>
+<tr>
+  <td>
+  3. You got an SMS alert that parking space is available near your block
+</td>
+<td>
+A. Smart Parking
+</td>
+</tr>
+<tr>
+  <td>
+  4. You turned off your LED TV from your wrist watch
+</td>
+<td>
+B. Smart Wearable
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-02-encoding-schemes-and-number-system.html"; } else { window.location.href = "11-chapter-04-introduction-to-problem-solving.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

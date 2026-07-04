@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 8: Database Concepts
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 8: Database Concepts
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.1 Introduction to Data Management
+</summary>
+<p>
+Data management is critical for storing and retrieving information efficiently. Manual record keeping, such as using paper registers, becomes tedious and error-prone as data volume grows.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Limitations of Manual Record Keeping
+</summary>
+<ul>
+  <li>
+    <strong>
+    Repetitive Data Entry:
+  </strong>
+  Re-entering student details (Roll number, name) upon promotion or on monthly attendance sheets.
+</li>
+<li>
+  <strong>
+  Inconsistency:
+</strong>
+High risk of spelling errors, mismatched names, or skipped records.
+</li>
+<li>
+  <strong>
+  Data Loss:
+</strong>
+Physical damage or loss of registers.
+</li>
+<li>
+  <strong>
+  Calculation Errors:
+</strong>
+Manual consolidation of attendance percentages is prone to mistakes.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.2 File System &amp; Its Limitations
+</summary>
+<p>
+  A
+  <span class="keyword">
+  file system
+</span>
+stores data in separate files on a computer's storage device. While files can be accessed and searched, retrieving complex data requires custom application programs.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Limitations of File Systems
+</summary>
+<ul>
+  <li>
+    <strong>
+    Difficulty in Access:
+  </strong>
+  Files do not provide built-in query mechanisms; developers must write custom application programs to retrieve data in specific formats.
+</li>
+<li>
+  <strong>
+  Data Redundancy:
+</strong>
+Duplication of identical data across multiple files (e.g., student names stored in both student and attendance files), leading to wasted storage.
+</li>
+<li>
+  <strong>
+  Data Inconsistency:
+</strong>
+Occurs when redundant data is updated in one file but not in another, leading to conflicting records.
+</li>
+<li>
+  <strong>
+  Data Isolation:
+</strong>
+Files are created in isolation, often in different formats, with no logical mapping or links between them.
+</li>
+<li>
+  <strong>
+  Data Dependence:
+</strong>
+The structure of the data file is tightly coupled with the application programs; changing the file format requires modifying all accessing programs.
+</li>
+<li>
+  <strong>
+  Controlled Data Sharing:
+</strong>
+Difficulty in enforcing granular security and access permissions (e.g., allowing teachers to edit attendance while restricting parents to read-only access).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.3 Database Management System (DBMS)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Database Management System (DBMS)
+</span>
+is software designed to create, manage, and retrieve logically related data efficiently, overcoming the limitations of file systems.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Database Management System (DBMS)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Software interface layer between physical storage files and end-user applications.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Uses structured query languages (SQL) to perform CRUD (Create, Read, Update, Delete) operations, enforcing schema definitions and constraints.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+High initial cost of hardware/software, training overhead, and increased vulnerability due to centralized data storage (single point of failure).
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Concepts in DBMS
+</summary>
+<ul>
+  <li>
+    <strong>
+    Database Schema:
+  </strong>
+  The logical design or skeleton of the database, defining tables, columns, data types, constraints, and relationships.
+</li>
+<li>
+  <strong>
+  Data Constraint:
+</strong>
+Restrictions on data values (e.g.,
+<span class="keyword">
+NOT NULL
+</span>
+,
+<span class="keyword">
+UNIQUE
+</span>
+) to ensure accuracy and reliability.
+</li>
+<li>
+  <strong>
+  Meta-data / Data Dictionary:
+</strong>
+Data about data (schema definitions, constraints) stored in the database catalog.
+</li>
+<li>
+  <strong>
+  Database Instance:
+</strong>
+The actual snapshot of the database state at any given point in time.
+</li>
+<li>
+  <strong>
+  Query:
+</strong>
+A formal request to retrieve specific information from the database.
+</li>
+<li>
+  <strong>
+  Data Manipulation:
+</strong>
+Operations to modify the database, including Insertion, Deletion, and Update.
+</li>
+<li>
+  <strong>
+  Database Engine:
+</strong>
+The core software component that processes queries and manages physical storage.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.4 Relational Data Model
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Relational Data Model
+</span>
+organizes data into tables, known as
+<span class="keyword">
+relations
+</span>
+. It is the most widely used data model in modern database systems.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Relational Terminologies
+</summary>
+<ul>
+  <li>
+    <strong>
+    Attribute:
+  </strong>
+  A column in a relation representing a specific property or characteristic (e.g.,
+  <code>
+  SName
+</code>
+).
+</li>
+<li>
+  <strong>
+  Tuple:
+</strong>
+A row in a relation representing a single record of an entity.
+</li>
+<li>
+  <strong>
+  Domain:
+</strong>
+The set of all permissible values for an attribute (defined by data types).
+</li>
+<li>
+  <strong>
+  Degree:
+</strong>
+The total number of attributes (columns) in a relation.
+</li>
+<li>
+  <strong>
+  Cardinality:
+</strong>
+The total number of tuples (rows) in a relation.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of a Relation
+</summary>
+<ul>
+  <li>
+  Each attribute has a unique name, and their order is immaterial.
+</li>
+<li>
+Each tuple is distinct (no duplicate rows), and their order is immaterial.
+</li>
+<li>
+All values under an attribute must belong to the same domain.
+</li>
+<li>
+Each attribute value must be atomic (indivisible).
+</li>
+<li>
+No attribute can have multiple values in a single tuple.
+</li>
+<li>
+  The special value
+  <span class="keyword">
+  NULL
+</span>
+is used to represent missing or unknown data.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.5 Keys in a Relational Database
+</summary>
+<p>
+Keys are attributes or sets of attributes used to uniquely identify tuples within a relation and establish relationships between tables.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Relational Database Keys
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Logical schema design and integrity enforcement layer.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Primary keys enforce entity integrity (uniqueness, non-null); Foreign keys enforce referential integrity by linking referencing and referenced relations.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Over-indexing or complex composite keys can degrade write performance; improper foreign key cascading can lead to accidental data deletion or update anomalies.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Types of Keys
+</summary>
+<ul>
+  <li>
+    <strong>
+    Candidate Key:
+  </strong>
+  Any attribute or minimal set of attributes that can uniquely identify every tuple in a relation.
+</li>
+<li>
+  <strong>
+  Primary Key:
+</strong>
+The specific candidate key selected by the database designer to uniquely identify tuples. It cannot contain NULL values.
+</li>
+<li>
+  <strong>
+  Composite Primary Key:
+</strong>
+A primary key composed of two or more attributes when no single attribute can guarantee uniqueness (e.g.,
+<code>
+{RollNumber, AttendanceDate}
+</code>
+).
+</li>
+<li>
+  <strong>
+  Foreign Key:
+</strong>
+An attribute in a referencing relation whose values must match the primary key of a referenced relation, enforcing referential integrity.
+</li>
+</ul>
+</details>
+</details>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Transitioning a School Attendance System from Files to a Relational Database
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+In a manual or file-based system, student and guardian details are duplicated across multiple files, leading to data redundancy and inconsistency. By decomposing the flat files into three normalized relations—
+<code>
+STUDENT
+</code>
+,
+<code>
+GUARDIAN
+</code>
+, and
+<code>
+ATTENDANCE
+</code>
+—and establishing relationships via
+<code>
+GUID
+</code>
+(Foreign Key) and
+<code>
+RollNumber
+</code>
+, the system ensures data integrity. Any update to a guardian's phone number is made exactly once in the
+<code>
+GUARDIAN
+</code>
+table, instantly reflecting across all related student records without risk of inconsistency.
+</p>
+</blockquote>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 8
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-07-understanding-data.html"; } else { window.location.href = "12-chapter-09-structured-query-language-sql.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

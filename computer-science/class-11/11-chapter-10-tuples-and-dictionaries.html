@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 10: Tuples and Dictionaries
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 10: Tuples and Dictionaries
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.1 Introduction to Tuples
+</summary>
+<p>
+  A
+  <span class="keyword">
+  tuple
+</span>
+is an ordered sequence of elements of different data types, such as integer, float, string, list, or even another tuple. Elements of a tuple are enclosed in parenthesis (round brackets) and are separated by commas. Like lists and strings, elements of a tuple can be accessed using zero-based index values.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Creating and Initializing Tuples
+</summary>
+<p>
+Tuples can be created with mixed data types, nested lists, or nested tuples. A sequence without parenthesis is also treated as a tuple by default.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; tuple1 = (1, 2, 3, 4, 5)
+    &gt;&gt;&gt; tuple2 = ('Economics', 87, 'Accountancy', 89.6)
+    &gt;&gt;&gt; tuple3 = (10, 20, 30, [40, 50])
+    &gt;&gt;&gt; tuple4 = (1, 2, 3, 4, 5, (10, 20))
+  </code>
+</pre>
+<p>
+  <strong>
+  Critical Rule for Single Element Tuples:
+</strong>
+If there is only a single element in a tuple, it must be followed by a trailing comma. Otherwise, Python treats it as a regular scalar type (e.g., integer or string).
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; tuple5 = (20) # Treated as integer
+    &gt;&gt;&gt; type(tuple5)
+    &lt;class 'int'&gt;
+    &gt;&gt;&gt; tuple5 = (20,) # Correct single-element tuple
+    &gt;&gt;&gt; type(tuple5)
+    &lt;class 'tuple'&gt;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Accessing Elements and Immutability
+</summary>
+<p>
+Elements of a tuple are accessed using zero-based indexing and slicing, similar to lists and strings. Negative indexing is also supported.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; tuple1 = (2, 4, 6, 8, 10, 12)
+    &gt;&gt;&gt; tuple1[0]
+    2
+    &gt;&gt;&gt; tuple1[-1]
+    12
+  </code>
+</pre>
+<p>
+  <strong>
+  Immutability:
+</strong>
+Tuples are
+<span class="keyword">
+immutable
+</span>
+. Once created, their elements cannot be changed or reassigned. Attempting to do so raises a
+<code>
+TypeError
+</code>
+.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; tuple1[4] = 10
+    TypeError: 'tuple' object does not support item assignment
+  </code>
+</pre>
+<p>
+  However, if a tuple contains a mutable element (like a
+  <span class="keyword">
+  list
+</span>
+), the contents of that mutable element can be modified in-place.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; tuple2 = (1, 2, 3, [8, 9])
+    &gt;&gt;&gt; tuple2[3][1] = 10
+    &gt;&gt;&gt; tuple2
+    (1, 2, 3, [8, 10])
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.2 Tuple Operations &amp; Built-in Functions
+</summary>
+<p>
+Python supports several operations and built-in functions to manipulate and query tuples efficiently.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Tuple Operations
+</summary>
+<ul>
+  <li>
+    <strong>
+    Concatenation (
+    <code>
+    +
+  </code>
+  ):
+</strong>
+Joins two tuples to create a new tuple. Both operands must be tuples.
+</li>
+<li>
+  <strong>
+  Repetition (
+  <code>
+  *
+</code>
+):
+</strong>
+Repeats the elements of a tuple a specified number of \times. One operand must be a tuple, and the other must be an integer.
+</li>
+<li>
+  <strong>
+  Membership (
+  <code>
+  in
+</code>
+/
+<code>
+not in
+</code>
+):
+</strong>
+Checks if an element exists within the tuple, returning a boolean value.
+</li>
+<li>
+  <strong>
+  Slicing:
+</strong>
+Extracts a subpart of the tuple using
+<code>
+[start:stop:step]
+</code>
+.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; t1 = (1, 3, 5)
+    &gt;&gt;&gt; t2 = (2, 4)
+    &gt;&gt;&gt; t1 + t2
+    (1, 3, 5, 2, 4)
+    &gt;&gt;&gt; t2 * 3
+    (2, 4, 2, 4, 2, 4)
+    &gt;&gt;&gt; 3 in t1
+    True
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Built-in Functions for Tuples
+</summary>
+<p>
+The following built-in functions are commonly used with tuples:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    len()
+  </span>
+  : Returns the total number of elements in the tuple.
+</li>
+<li>
+  <span class="keyword">
+  tuple()
+</span>
+: Creates an empty tuple or converts a sequence (string, list, range) into a tuple.
+</li>
+<li>
+  <span class="keyword">
+  count()
+</span>
+: Returns the number of \times a given element appears in the tuple.
+</li>
+<li>
+  <span class="keyword">
+  index()
+</span>
+: Returns the index of the first occurrence of a specified element. Raises
+<code>
+ValueError
+</code>
+if not found.
+</li>
+<li>
+  <span class="keyword">
+  sorted()
+</span>
+: Takes elements of the tuple and returns a new sorted list (does not modify the original tuple).
+</li>
+<li>
+  <span class="keyword">
+  min()
+</span>
+,
+<span class="keyword">
+max()
+</span>
+,
+<span class="keyword">
+sum()
+</span>
+: Compute the minimum, maximum, and sum of elements in a numeric tuple.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Tuple Assignment &amp; Unpacking
+</summary>
+<p>
+Tuple assignment allows a tuple of variables on the left side of an assignment operator to be assigned values from a tuple on the right side. The number of variables must match the number of elements in the tuple.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; (num1, num2) = (10, 20)
+    &gt;&gt;&gt; record = ("Pooja", 40, "CS")
+    &gt;&gt;&gt; (name, rollNo, subject) = record
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.7 Introduction to Dictionaries
+</summary>
+<p>
+  A
+  <span class="keyword">
+  dictionary
+</span>
+is a mapping data type that stores data as key-value pairs. It is an unordered collection of items enclosed in curly braces
+<code>
+{}
+</code>
+, where each key is separated from its value by a colon (
+<code>
+:
+</code>
+).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Creating and Accessing Dictionaries
+</summary>
+<p>
+  Keys in a dictionary must be unique and of an
+  <span class="keyword">
+  immutable
+</span>
+data type (e.g., number, string, or tuple). Values can be of any data type and can be repeated.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; dict1 = {} # Empty dictionary
+    &gt;&gt;&gt; dict2 = dict() # Using built-in function
+    &gt;&gt;&gt; dict3 = {'Mohan': 95, 'Ram': 89, 'Suhel': 92}
+  </code>
+</pre>
+<p>
+  Items are accessed via their keys rather than relative positions or indices. Attempting to access a non-existent key raises a
+  <code>
+  KeyError
+</code>
+.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; dict3['Ram']
+    89
+    &gt;&gt;&gt; dict3['Shyam']
+    KeyError: 'Shyam'
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mutability and Operations
+</summary>
+<p>
+  Dictionaries are
+  <span class="keyword">
+  mutable
+</span>
+. You can add new key-value pairs or modify existing ones by direct assignment.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; dict3['Meena'] = 78 # Adding a new item
+    &gt;&gt;&gt; dict3['Suhel'] = 93.5 # Modifying an existing item
+  </code>
+</pre>
+<p>
+  <strong>
+  Membership Operators:
+</strong>
+The
+<code>
+in
+</code>
+and
+<code>
+not in
+</code>
+operators check for the presence of a
+<strong>
+key
+</strong>
+in the dictionary (not the value).
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; 'Suhel' in dict3
+    True
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Traversing a Dictionary
+</summary>
+<p>
+  Dictionaries can be traversed using a
+  <code>
+  for
+</code>
+loop in two primary ways:
+</p>
+<p>
+  <strong>
+  Method 1: Iterating over keys directly
+</strong>
+</p>
+<pre>
+  <code>
+    for key in dict1:
+    print(key, ':', dict1[key])
+  </code>
+</pre>
+<p>
+  <strong>
+  Method 2: Iterating over key-value pairs using
+  <code>
+  items()
+</code>
+</strong>
+</p>
+<pre>
+  <code>
+    for key, value in dict1.items():
+    print(key, ':', value)
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.11 Dictionary Methods &amp; Built-in Functions
+</summary>
+<p>
+Python provides several built-in functions and methods to manipulate dictionaries:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    len()
+  </span>
+  : Returns the number of key-value pairs in the dictionary.
+</li>
+<li>
+  <span class="keyword">
+  dict()
+</span>
+: Creates a dictionary from a sequence of key-value pairs (e.g., list of tuples).
+</li>
+<li>
+  <span class="keyword">
+  keys()
+</span>
+: Returns a view object containing all the keys of the dictionary.
+</li>
+<li>
+  <span class="keyword">
+  values()
+</span>
+: Returns a view object containing all the values of the dictionary.
+</li>
+<li>
+  <span class="keyword">
+  items()
+</span>
+: Returns a view object containing tuples of key-value pairs.
+</li>
+<li>
+  <span class="keyword">
+  get(key)
+</span>
+: Returns the value associated with the key. If the key does not exist, it returns
+<code>
+None
+</code>
+instead of raising an error.
+</li>
+<li>
+  <span class="keyword">
+  update(other_dict)
+</span>
+: Appends key-value pairs from another dictionary, overwriting existing keys.
+</li>
+<li>
+  <span class="keyword">
+  del dict[key]
+</span>
+: Deletes the item with the specified key. Can also delete the entire dictionary from memory.
+</li>
+<li>
+  <span class="keyword">
+  clear()
+</span>
+: Deletes all items from the dictionary, leaving it empty.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.12 Technical Profiles &amp; Characterization Matrices
+</summary>
+<p>
+This section provides formal computer science characterizations of the data structures covered in this chapter.
+</p>
+<p>
+  <strong>
+  Technical Concept Characterization Matrix
+</strong>
+</p>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Tuple
+    </strong>
+  </td>
+  <td>
+  Immutable ordered sequence of elements.
+</td>
+<td>
+  Enclosed in
+  <code>
+  ()
+</code>
+; elements separated by commas; supports indexing and slicing.
+</td>
+<td>
+Used to store read-only, heterogeneous data collections securely and perform faster iterations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Dictionary
+  </strong>
+</td>
+<td>
+Mutable mapping of unique keys to arbitrary values.
+</td>
+<td>
+  Enclosed in
+  <code>
+  {}
+</code>
+; key-value pairs separated by
+<code>
+:
+</code>
+; keys must be immutable.
+</td>
+<td>
+Used for high-performance associative lookups, database-like records, and structured data representation.
+</td>
+</tr>
+</tbody>
+</table>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Python Tuple (tuple)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Built-in sequence data type in Python's standard library.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Created via
+<code>
+(elem1, elem2)
+</code>
+or
+<code>
+tuple(iterable)
+</code>
+. Elements accessed via
+<code>
+t[index]
+</code>
+. Supports concatenation (
+<code>
++
+</code>
+) and repetition (
+<code>
+*
+</code>
+).
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Offers faster iteration and lower memory footprint than lists, but lacks dynamic resizing and in-place modification capabilities.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Python Dictionary (dict)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Built-in mapping/associative container type in Python's standard library.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Created via
+<code>
+{key: value}
+</code>
+or
+<code>
+dict()
+</code>
+. Keys must be hashable (immutable). Values accessed via
+<code>
+d[key]
+</code>
+or
+<code>
+d.get(key)
+</code>
+.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Provides $O(1)$ average-case lookup complexity. However, consumes significantly more memory than sequences due to underlying hash table structures, and raises
+<code>
+KeyError
+</code>
+on missing keys if not handled safely.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.13 Case Studies &amp; Practical Implementations
+</summary>
+<p>
+Below are socio-technical analyses of key programming problems and system implementations using tuples and dictionaries.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  <strong>
+  Program 10-1: Nested Tuple Student Records
+</strong>
+<br>
+Create a nested tuple to store student details (roll number, name, marks) and print them in a formatted tabular layout.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This program demonstrates how nested tuples can act as lightweight, read-only database records. By using a nested structure
+<code>
+st = ((101, "Aman", 98), ...)
+</code>
+, the system guarantees data integrity (records cannot be accidentally modified). The traversal loop uses double indexing
+<code>
+st[i][j]
+</code>
+to unpack and format the output cleanly using tab escape characters (
+<code>
+\t
+</code>
+).
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  <strong>
+  Program 10-6: Employee Salary Directory
+</strong>
+<br>
+Write a program to dynamically input employee names and salaries from the user and store them in a dictionary.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This program highlights the mutable nature of dictionaries for dynamic data collection. It initializes an empty dictionary
+<code>
+employee = dict()
+</code>
+and uses a
+<code>
+while
+</code>
+loop to populate it with user-defined keys (employee names) and values (salaries). This structure allows instant lookups and updates, making it highly suitable for payroll and directory management systems.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 10
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-09-lists.html"; } else { window.location.href = "11-chapter-11-societal-impact.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 9: Lists
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 9: Lists
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.1 Introduction to List
+</summary>
+<p>
+  A
+  <span class="keyword">
+  list
+</span>
+is an ordered sequence of elements that is
+<span class="keyword">
+mutable
+</span>
+(changeable). Unlike strings, which only contain characters, lists can contain elements of mixed data types, including integers, floats, strings, tuples, or even other lists.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.1.1 Accessing Elements in a List
+</summary>
+<p>
+Elements are accessed using zero-based indexing for forward traversal, and negative indexing for backward traversal.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; list1 = [2, 4, 6, 8, 10, 12]
+    &gt;&gt;&gt; list1[0]
+    2
+    &gt;&gt;&gt; list1[-1]
+    12
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.1.2 Lists are Mutable
+</summary>
+<p>
+Lists can be modified in-place after creation. Assigning a new value to an index updates the list directly without creating a new list object.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; list1 = ['Red', 'Green', 'Blue']
+    &gt;&gt;&gt; list1[2] = 'Black'
+    &gt;&gt;&gt; list1
+    ['Red', 'Green', 'Black']
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.2 List Operations
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.2.1 Concatenation (+)
+</summary>
+<p>
+  Joins two or more lists together. Both operands must be of type
+  <span class="keyword">
+  list
+</span>
+, otherwise a
+<span class="keyword">
+TypeError
+</span>
+is raised.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; [1, 2] + [3, 4]
+    [1, 2, 3, 4]
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.2.2 Repetition (*)
+</summary>
+<p>
+Replicates a list a specified number of \times.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; ['Hello'] * 3
+    ['Hello', 'Hello', 'Hello']
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.2.3 Membership (in, not in)
+</summary>
+<p>
+  Checks if an element exists within the list, returning a boolean value (
+  <span class="keyword">
+  True
+</span>
+or
+<span class="keyword">
+False
+</span>
+).
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; 'Green' in ['Red', 'Green', 'Blue']
+    True
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.2.4 Slicing
+</summary>
+<p>
+  Extracts a subset of elements using the syntax
+  <code>
+  list[start:stop:step]
+</code>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Positive Step:
+  </strong>
+  Slices from left to right.
+</li>
+<li>
+  <strong>
+  Negative Step:
+</strong>
+Slices from right to left (reverses the list if step is -1).
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; list1 = ['Red', 'Green', 'Blue', 'Cyan', 'Magenta']
+    &gt;&gt;&gt; list1[1:4]
+    ['Green', 'Blue', 'Cyan']
+    &gt;&gt;&gt; list1[::-1]
+    ['Magenta', 'Cyan', 'Blue', 'Green', 'Red']
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.3 Traversing a List
+</summary>
+<p>
+Traversing refers to accessing each element of the list systematically. This can be achieved using loops.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Method A: Using a for Loop
+</summary>
+<p>
+Direct element iteration:
+</p>
+<pre>
+  <code>
+    for item in list1:
+    print(item)
+  </code>
+</pre>
+<p>
+  Index-based iteration using
+  <span class="keyword">
+  range()
+</span>
+and
+<span class="keyword">
+len()
+</span>
+:
+</p>
+<pre>
+  <code>
+    for i in range(len(list1)):
+    print(list1[i])
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Method B: Using a while Loop
+</summary>
+<pre>
+  <code>
+    i = 0
+    while i &lt; len(list1):
+    print(list1[i])
+    i += 1
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.4 List Methods and Built-in Functions
+</summary>
+<p>
+Python provides a rich set of built-in functions and methods for list manipulation.
+</p>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Method / Function
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Example
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      len()
+    </span>
+  </td>
+  <td>
+  Returns the number of elements in the list.
+</td>
+<td>
+  <code>
+  len([10, 20, 30])
+</code>
+&rarr;
+<code>
+3
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    list()
+  </span>
+</td>
+<td>
+Creates an empty list or converts a sequence to a list.
+</td>
+<td>
+  <code>
+  list('abc')
+</code>
+&rarr;
+<code>
+['a', 'b', 'c']
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    append()
+  </span>
+</td>
+<td>
+Adds a single element to the end of the list.
+</td>
+<td>
+  <code>
+  l.append(40)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    extend()
+  </span>
+</td>
+<td>
+Appends all elements of another list to the end.
+</td>
+<td>
+  <code>
+  l.extend([50, 60])
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    insert()
+  </span>
+</td>
+<td>
+Inserts an element at a specified index.
+</td>
+<td>
+  <code>
+  l.insert(1, 15)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    count()
+  </span>
+</td>
+<td>
+Returns the frequency of an element in the list.
+</td>
+<td>
+  <code>
+  l.count(10)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    index()
+  </span>
+</td>
+<td>
+Returns the index of the first occurrence of an element. Raises ValueError if not found.
+</td>
+<td>
+  <code>
+  l.index(20)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    remove()
+  </span>
+</td>
+<td>
+Removes the first occurrence of a specified element. Raises ValueError if not found.
+</td>
+<td>
+  <code>
+  l.remove(30)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    pop()
+  </span>
+</td>
+<td>
+Removes and returns the element at the given index (default is the last element).
+</td>
+<td>
+  <code>
+  l.pop(2)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    reverse()
+  </span>
+</td>
+<td>
+Reverses the elements of the list in-place.
+</td>
+<td>
+  <code>
+  l.reverse()
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    sort()
+  </span>
+</td>
+<td>
+Sorts the elements of the list in-place.
+</td>
+<td>
+  <code>
+  l.sort()
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    sorted()
+  </span>
+</td>
+<td>
+Returns a new sorted list, leaving the original list unchanged.
+</td>
+<td>
+  <code>
+  sorted(l)
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    min()
+  </span>
+  ,
+  <span class="keyword">
+  max()
+</span>
+,
+<span class="keyword">
+sum()
+</span>
+</td>
+<td>
+Returns the minimum, maximum, or sum of elements in the list.
+</td>
+<td>
+  <code>
+  sum([1, 2, 3])
+</code>
+&rarr;
+<code>
+6
+</code>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: append() vs extend()
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Built-in Python List Methods
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+<code>
+append(element)
+</code>
+adds the argument as a single element (even if it is a list).
+<code>
+extend(sequence)
+</code>
+iterates over the sequence and appends each item individually.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Using
+<code>
+append()
+</code>
+with a list argument creates a nested list structure, whereas
+<code>
+extend()
+</code>
+maintains a flat list structure.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: sort() vs sorted()
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  In-place modification vs. Pure functional transformation
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+<code>
+list.sort()
+</code>
+modifies the original list in-place and returns
+<code>
+None
+</code>
+.
+<code>
+sorted(list)
+</code>
+is a built-in function that returns a new sorted list object.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+<code>
+sort()
+</code>
+is more memory-efficient as it does not create a copy, but it destroys the original order of the list.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.5 Nested Lists
+</summary>
+<p>
+  A
+  <span class="keyword">
+  nested list
+</span>
+is a list that appears as an element inside another list.
+</p>
+<p>
+  To access elements within a nested list, use double indexing:
+  <code>
+  list1[i][j]
+</code>
+, where
+<code>
+i
+</code>
+is the index of the nested list, and
+<code>
+j
+</code>
+is the index of the element inside that nested list.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; list1 = [1, 2, ['a', 'b', 'c'], 4]
+    &gt;&gt;&gt; list1[2][1]
+    'b'
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.6 Copying Lists
+</summary>
+<p>
+  Assigning a list to another variable (e.g.,
+  <code>
+  list2 = list1
+</code>
+) does not create a copy. Instead, it creates an
+<span class="keyword">
+alias
+</span>
+. Both variables point to the same object in memory, meaning changes to one will affect the other.
+</p>
+<p>
+To create a true copy (shallow copy) of a list, use one of the following three methods:
+</p>
+<ol>
+  <li>
+    <strong>
+    Slicing:
+  </strong>
+  <code>
+  newList = oldList[:]
+</code>
+</li>
+<li>
+  <strong>
+  Built-in list() function:
+</strong>
+<code>
+newList = list(oldList)
+</code>
+</li>
+<li>
+  <strong>
+  copy() function from the copy module:
+</strong>
+<pre>
+  <code>
+    import copy
+    newList = copy.copy(oldList)
+  </code>
+</pre>
+</li>
+</ol>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.7 List as Argument to a Function
+</summary>
+<p>
+When a list is passed as an argument to a function, Python passes a reference to the list. This leads to two distinct behaviors:
+</p>
+<ul>
+  <li>
+    <strong>
+    In-place Modification:
+  </strong>
+  If elements of the list are modified inside the function, the changes are reflected back in the calling function.
+</li>
+<li>
+  <strong>
+  Reassignment:
+</strong>
+If the list variable is reassigned to a new list inside the function, a new local object is created, and the original list in the calling function remains unchanged.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Program 9-1 vs Program 9-2 (Parameter Passing Behaviors)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+In Program 9-1, the function
+<code>
+increment(list2)
+</code>
+modifies elements in-place using
+<code>
+list2[i] += 5
+</code>
+. Because lists are mutable and passed by reference, the ID of the list remains identical inside and outside the function, and the caller's list is updated. In Program 9-2, the statement
+<code>
+list2 = [15, 25, 35, 45, 55]
+</code>
+reassigns the local variable to a new list object, changing its memory ID. Consequently, any subsequent modifications only affect the local copy, leaving the original list in the main scope untouched.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.8 Technical Concept Characterization Matrix
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      List Mutability
+    </strong>
+  </td>
+  <td>
+  The ability to modify list elements in-place without changing the list's memory address.
+</td>
+<td>
+  Modifiable via index assignment (e.g.,
+  <code>
+  L[i] = val
+</code>
+) or in-place methods like
+<code>
+append()
+</code>
+.
+</td>
+<td>
+Enables dynamic, memory-efficient data structures that can grow, shrink, or update during execution.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    List Aliasing
+  </strong>
+</td>
+<td>
+Multiple reference variables pointing to the exact same list object in memory.
+</td>
+<td>
+  Created via simple assignment:
+  <code>
+  list2 = list1
+</code>
+. Both share the same
+<code>
+id()
+</code>
+.
+</td>
+<td>
+Saves memory by avoiding redundant copies, but introduces side effects where modifications affect all aliases.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Shallow Copying
+  </strong>
+</td>
+<td>
+Creating a new list object containing references to the elements of the original list.
+</td>
+<td>
+  Achieved via
+  <code>
+  list1[:]
+</code>
+,
+<code>
+list(list1)
+</code>
+, or
+<code>
+copy.copy(list1)
+</code>
+.
+</td>
+<td>
+Isolates the outer list structure from modifications made to the copy, preventing unintended side effects.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 9
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-08-strings.html"; } else { window.location.href = "11-chapter-10-tuples-and-dictionaries.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

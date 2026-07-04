@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 8: Strings
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 8: Strings
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Strings
+</summary>
+<p>
+  A
+  <span class="keyword">
+  string
+</span>
+is a sequence of one or more UNICODE characters. In Python, strings are sequence data types, similar to lists and tuples, where each item is indexed by an integer.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  String Creation and Representation
+</summary>
+<p>
+  Strings can be created by enclosing characters in single, double, or triple quotes. Triple quotes (
+  <code>
+  """
+</code>
+or
+<code>
+'''
+</code>
+) allow strings to span multiple lines.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; str1 = 'Hello World!'
+    &gt;&gt;&gt; str2 = "Hello World!"
+    &gt;&gt;&gt; str3 = """Hello World!
+    welcome to the world of Python"""
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Accessing Characters via Indexing
+</summary>
+<p>
+  Each character in a string is accessed using
+  <span class="keyword">
+  indexing
+</span>
+via square brackets
+<code>
+[]
+</code>
+. Python supports both positive (left-to-right) and negative (right-to-left) indexing.
+</p>
+<p>
+  The index of the first character is
+  <code>
+  0
+</code>
+(or
+<code>
+-n
+</code>
+), and the last character is
+<code>
+n-1
+</code>
+(or
+<code>
+-1
+</code>
+), where
+<code>
+n
+</code>
+is the length of the string.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; \text-align: center; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Positive Indices
+    </th>
+    <th>
+    0
+  </th>
+  <th>
+  1
+</th>
+<th>
+2
+</th>
+<th>
+3
+</th>
+<th>
+4
+</th>
+<th>
+5
+</th>
+<th>
+6
+</th>
+<th>
+7
+</th>
+<th>
+8
+</th>
+<th>
+9
+</th>
+<th>
+10
+</th>
+<th>
+11
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      String
+    </strong>
+  </td>
+  <td>
+  H
+</td>
+<td>
+e
+</td>
+<td>
+l
+</td>
+<td>
+l
+</td>
+<td>
+o
+</td>
+<td>
+</td>
+<td>
+W
+</td>
+<td>
+o
+</td>
+<td>
+r
+</td>
+<td>
+l
+</td>
+<td>
+d
+</td>
+<td>
+!
+</td>
+</tr>
+<tr style="background-color: #f8fafc;">
+  <td>
+    <strong>
+    Negative Indices
+  </strong>
+</td>
+<td>
+-12
+</td>
+<td>
+-11
+</td>
+<td>
+-10
+</td>
+<td>
+-9
+</td>
+<td>
+-8
+</td>
+<td>
+-7
+</td>
+<td>
+-6
+</td>
+<td>
+-5
+</td>
+<td>
+-4
+</td>
+<td>
+-3
+</td>
+<td>
+-2
+</td>
+<td>
+-1
+</td>
+</tr>
+</tbody>
+</table>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Indexing Errors
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Python Runtime Environment
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Accessing an index outside the range
+<code>
+[-n, n-1]
+</code>
+raises an
+<code>
+IndexError
+</code>
+. Using a non-integer index (e.g., float) raises a
+<code>
+TypeError
+</code>
+.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Strict type checking prevents silent memory corruption but requires explicit exception handling or bounds checking.
+</li>
+</ul>
+</div>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  String Immutability
+</summary>
+<p>
+  Strings in Python are
+  <span class="keyword">
+  immutable
+</span>
+. Once created, their elements cannot be changed or replaced in-place. Attempting to do so raises a
+<code>
+TypeError
+</code>
+.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; str1 = "Hello World!"
+    &gt;&gt;&gt; str1[1] = 'a'
+    TypeError: 'str' object does not support item assignment
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  String Operations
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Concatenation and Repetition
+</summary>
+<ul>
+  <li>
+    <strong>
+    Concatenation (
+    <code>
+    +
+  </code>
+  ):
+</strong>
+Joins two strings together to form a new string.
+</li>
+<li>
+  <strong>
+  Repetition (
+  <code>
+  *
+</code>
+):
+</strong>
+Repeats a string a specified number of \times.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; 'Hello' + 'World!'
+    'HelloWorld!'
+    &gt;&gt;&gt; 'Hello' * 2
+    'HelloHello'
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Membership Operators
+</summary>
+<p>
+  Python provides two membership operators:
+  <code>
+  in
+</code>
+and
+<code>
+not in
+</code>
+. They check if a substring exists within a string, returning a boolean value.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; 'W' in 'Hello World!'
+    True
+    &gt;&gt;&gt; 'My' not in 'Hello World!'
+    True
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Slicing and Step Sizes
+</summary>
+<p>
+  <span class="keyword">
+  Slicing
+</span>
+allows retrieving a subset of a string using the syntax
+<code>
+str1[n:m:k]
+</code>
+, where
+<code>
+n
+</code>
+is the start index (inclusive),
+<code>
+m
+</code>
+is the stop index (exclusive), and
+<code>
+k
+</code>
+is the step size.
+</p>
+<ul>
+  <li>
+    If
+    <code>
+    n
+  </code>
+  is omitted, slicing starts from index 0.
+</li>
+<li>
+  If
+  <code>
+  m
+</code>
+is omitted, slicing goes to the end of the string.
+</li>
+<li>
+  A negative step size (e.g.,
+  <code>
+  -1
+</code>
+) reverses the string.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; str1 = 'Hello World!'
+    &gt;&gt;&gt; str1[1:5]
+    'ello'
+    &gt;&gt;&gt; str1[::-1]
+    '!dlroW olleH'
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Traversing a String
+</summary>
+<p>
+String traversal involves accessing each character of a string sequentially. This can be achieved using loops.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Traversal Methods
+</summary>
+<p>
+  <strong>
+  Method A: Using a
+  <code>
+  for
+</code>
+loop (Character-based)
+</strong>
+</p>
+<pre>
+  <code>
+    str1 = 'Hello World!'
+    for ch in str1:
+    print(ch, end='')
+  </code>
+</pre>
+<p>
+  <strong>
+  Method B: Using a
+  <code>
+  while
+</code>
+loop (Index-based)
+</strong>
+</p>
+<pre>
+  <code>
+    str1 = 'Hello World!'
+    index = 0
+    while index &lt; len(str1):
+    print(str1[index], end='')
+    index += 1
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Built-in Functions and Methods
+</summary>
+<p>
+Python provides a rich set of built-in methods for string manipulation. Below is a comprehensive matrix of these methods.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Method
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Example &amp; Output
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>
+      len()
+    </code>
+  </td>
+  <td>
+  Returns the length of the string.
+</td>
+<td>
+  <code>
+  len('Hello')
+</code>
+&rarr;
+<code>
+5
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    title()
+  </code>
+</td>
+<td>
+Capitalizes the first letter of each word.
+</td>
+<td>
+  <code>
+  'hello WORLD'.title()
+</code>
+&rarr;
+<code>
+'Hello World'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    lower()
+  </code>
+</td>
+<td>
+Converts all characters to lowercase.
+</td>
+<td>
+  <code>
+  'Hello'.lower()
+</code>
+&rarr;
+<code>
+'hello'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    upper()
+  </code>
+</td>
+<td>
+Converts all characters to uppercase.
+</td>
+<td>
+  <code>
+  'Hello'.upper()
+</code>
+&rarr;
+<code>
+'HELLO'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    count(str, start, end)
+  </code>
+</td>
+<td>
+Counts occurrences of a substring.
+</td>
+<td>
+  <code>
+  'Hello Hello'.count('Hello')
+</code>
+&rarr;
+<code>
+2
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    find(str, start, end)
+  </code>
+</td>
+<td>
+Returns the lowest index of substring, or -1 if not found.
+</td>
+<td>
+  <code>
+  'Hello'.find('l')
+</code>
+&rarr;
+<code>
+2
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    index(str, start, end)
+  </code>
+</td>
+<td>
+Like find(), but raises ValueError if not found.
+</td>
+<td>
+  <code>
+  'Hello'.index('x')
+</code>
+&rarr;
+<code>
+ValueError
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    endswith(str)
+  </code>
+</td>
+<td>
+Returns True if string ends with specified suffix.
+</td>
+<td>
+  <code>
+  'Hello'.endswith('o')
+</code>
+&rarr;
+<code>
+True
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    startswith(str)
+  </code>
+</td>
+<td>
+Returns True if string starts with specified prefix.
+</td>
+<td>
+  <code>
+  'Hello'.startswith('H')
+</code>
+&rarr;
+<code>
+True
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    isalnum()
+  </code>
+</td>
+<td>
+Returns True if all characters are alphanumeric.
+</td>
+<td>
+  <code>
+  'Hello12'.isalnum()
+</code>
+&rarr;
+<code>
+True
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    islower()
+  </code>
+</td>
+<td>
+Returns True if all cased characters are lowercase.
+</td>
+<td>
+  <code>
+  'hello'.islower()
+</code>
+&rarr;
+<code>
+True
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    isupper()
+  </code>
+</td>
+<td>
+Returns True if all cased characters are uppercase.
+</td>
+<td>
+  <code>
+  'HELLO'.isupper()
+</code>
+&rarr;
+<code>
+True
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    isspace()
+  </code>
+</td>
+<td>
+Returns True if there are only whitespace characters.
+</td>
+<td>
+  <code>
+  ' \n \t \r'.isspace()
+</code>
+&rarr;
+<code>
+True
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    istitle()
+  </code>
+</td>
+<td>
+Returns True if string is titlecased.
+</td>
+<td>
+  <code>
+  'Hello World'.istitle()
+</code>
+&rarr;
+<code>
+True
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    lstrip()
+  </code>
+</td>
+<td>
+Removes leading whitespace.
+</td>
+<td>
+  <code>
+  '  Hello'.lstrip()
+</code>
+&rarr;
+<code>
+'Hello'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    rstrip()
+  </code>
+</td>
+<td>
+Removes trailing whitespace.
+</td>
+<td>
+  <code>
+  'Hello  '.rstrip()
+</code>
+&rarr;
+<code>
+'Hello'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    strip()
+  </code>
+</td>
+<td>
+Removes leading and trailing whitespace.
+</td>
+<td>
+  <code>
+  '  Hello  '.strip()
+</code>
+&rarr;
+<code>
+'Hello'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    replace(old, new)
+  </code>
+</td>
+<td>
+Replaces occurrences of old substring with new.
+</td>
+<td>
+  <code>
+  'Hello'.replace('l', '*')
+</code>
+&rarr;
+<code>
+'He**o'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    join()
+  </code>
+</td>
+<td>
+Joins elements of an iterable with a separator.
+</td>
+<td>
+  <code>
+  '-'.join('Hello')
+</code>
+&rarr;
+<code>
+'H-e-l-l-o'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    partition(sep)
+  </code>
+</td>
+<td>
+Splits string at first occurrence of separator into a 3-tuple.
+</td>
+<td>
+  <code>
+  'A-B-C'.partition('-')
+</code>
+&rarr;
+<code>
+('A', '-', 'B-C')
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    split(sep)
+  </code>
+</td>
+<td>
+Splits string into a list of substrings based on separator.
+</td>
+<td>
+  <code>
+  'A B C'.split()
+</code>
+&rarr;
+<code>
+['A', 'B', 'C']
+</code>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Handling Strings: User-Defined Functions
+</summary>
+<p>
+This section explores custom programmatic solutions for common string manipulation tasks.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  <strong>
+  Program 8-1: Character Frequency Counter
+</strong>
+</em>
+<br>
+Write a program with a user-defined function to count the number of \times a character (passed as argument) occurs in a given string.
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This program demonstrates basic linear search traversal. By iterating through each character of the string and comparing it to the target character, it maintains a running counter. This is a fundamental pattern for frequency analysis in \text processing.
+</p>
+<pre>
+  <code>
+    def charCount(ch, st):
+    count = 0
+    for character in st:
+    if character == ch:
+    count += 1
+    return count
+  </code>
+</pre>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  <strong>
+  Program 8-2: Vowel Obfuscation
+</strong>
+</em>
+<br>
+Write a program with a user-defined function with string as a parameter which replaces all vowels in the string with '*'.
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This program showcases string reconstruction. Since strings are immutable, we cannot modify the original string in-place. Instead, we build a new string character-by-character, substituting vowels with asterisks. This pattern is widely used in data masking and sanitization pipelines.
+</p>
+<pre>
+  <code>
+    def replaceVowel(st):
+    newstr = ''
+    for character in st:
+    if character in 'aeiouAEIOU':
+    newstr += '*'
+    else:
+    newstr += character
+    return newstr
+  </code>
+</pre>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <em>
+  <strong>
+  Program 8-5: Palindrome Verification
+</strong>
+</em>
+<br>
+Write a program using a user-defined function to check if a string is a palindrome or not.
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This algorithm uses a two-pointer approach (starting from both ends of the string and moving inward) to verify symmetry. It is highly efficient, running in $O(n)$ time complexity and requiring $O(1)$ auxiliary space, making it superior to reversing the entire string for large inputs.
+</p>
+<pre>
+  <code>
+    def checkPalin(st):
+    i = 0
+    j = len(st) - 1
+    while(i &lt;= j):
+    if(st[i] != st[j]):
+    return False
+    i += 1
+    j -= 1
+    return True
+  </code>
+</pre>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Exercises &amp; Programming Problems
+</summary>
+<p>
+Test your understanding of string operations, slicing, and built-in methods with these exercises.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Conceptual Exercises
+</summary>
+<ol>
+  <li>
+    Given
+    <code>
+    mySubject = "Computer Science"
+  </code>
+  , determine the output of:
+  <ul>
+    <li>
+      <code>
+      print(mySubject[0:len(mySubject)])
+    </code>
+    &rarr;
+    <code>
+    "Computer Science"
+  </code>
+</li>
+<li>
+  <code>
+  print(mySubject[-7:-1])
+</code>
+&rarr;
+<code>
+"Scienc"
+</code>
+</li>
+<li>
+  <code>
+  print(mySubject[::2])
+</code>
+&rarr;
+<code>
+"Cmue ce"
+</code>
+</li>
+<li>
+  <code>
+  print(mySubject[::-2])
+</code>
+&rarr;
+<code>
+"encSrtpC"
+</code>
+</li>
+</ul>
+</li>
+<li>
+  Given
+  <code>
+  myAddress = "WZ-1,New Ganga Nagar,New Delhi"
+</code>
+, determine the output of:
+<ul>
+  <li>
+    <code>
+    print(myAddress.split(','))
+  </code>
+  &rarr;
+  <code>
+  ['WZ-1', 'New Ganga Nagar', 'New Delhi']
+</code>
+</li>
+<li>
+  <code>
+  print(myAddress.replace('New','Old'))
+</code>
+&rarr;
+<code>
+"WZ-1,Old Ganga Nagar,Old Delhi"
+</code>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 8
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-07-functions.html"; } else { window.location.href = "11-chapter-09-lists.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
