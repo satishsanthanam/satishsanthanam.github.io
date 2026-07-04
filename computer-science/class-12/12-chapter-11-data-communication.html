@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 11: Data Communication
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 11: Data Communication
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.1 Concept of Communication
+</summary>
+<p>
+  The term
+  <span class="keyword">
+  Data Communication
+</span>
+comprises two words: Data and Communication.
+</p>
+<ul>
+  <li>
+    <strong>
+    Data:
+  </strong>
+  Any \text, image, audio, video, and multimedia files.
+</li>
+<li>
+  <strong>
+  Communication:
+</strong>
+An act of sending or receiving data.
+</li>
+<li>
+  <strong>
+  Data Communication:
+</strong>
+Refers to the exchange of data between two or more networked or connected devices (nodes) over a communication medium. These devices must be capable of sending and receiving data over a communication medium.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.2 Components of Data Communication
+</summary>
+<p>
+Data communication relies on five essential components to establish a connection and exchange information successfully.
+</p>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Sender
+    </strong>
+  </td>
+  <td>
+  A computer or device capable of sending data over a network.
+</td>
+<td>
+Can be a personal computer, mobile phone, smartwatch, walkie-talkie, or video recorder.
+</td>
+<td>
+Initiates the communication process by converting information into transmittable signals.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Receiver
+  </strong>
+</td>
+<td>
+A computer or device capable of receiving data from the network.
+</td>
+<td>
+Can be a computer, printer, laptop, mobile phone, or television. Known as a node in the network.
+</td>
+<td>
+Accepts incoming signals and converts them back into readable data for the user.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Message
+  </strong>
+</td>
+<td>
+The actual data or information that needs to be exchanged.
+</td>
+<td>
+Formats include \text, numbers, images, audio, video, and multimedia files.
+</td>
+<td>
+Represents the payload or content being transmitted between source and destination.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Communication Media
+  </strong>
+</td>
+<td>
+The physical or virtual path through which the message travels.
+</td>
+<td>
+Classified as wired (guided) or wireless (unguided). Examples: coaxial cable, fiber-optic, air.
+</td>
+<td>
+Provides the physical or electromagnetic channel to propagate signals from sender to receiver.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Protocols
+  </strong>
+</td>
+<td>
+A set of standard rules followed by communicating parties.
+</td>
+<td>
+Examples include Ethernet, HTTP, FTP, TCP/IP.
+</td>
+<td>
+Ensures successful, reliable, and standardized data exchange across diverse systems.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.3 Measuring Capacity of Communication Media
+</summary>
+<p>
+  The transmission medium is also known as a
+  <span class="keyword">
+  channel
+</span>
+. Its capacity is measured using two primary metrics:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.3.1 Bandwidth
+</summary>
+<p>
+The range of frequencies available for transmission of data through a channel. Higher bandwidth allows for a higher data transfer rate.
+</p>
+<ul>
+  <li>
+    <strong>
+    Definition:
+  </strong>
+  The difference between the maximum and minimum frequency contained in composite signals.
+</li>
+<li>
+  <strong>
+  Unit:
+</strong>
+Measured in Hertz (Hz).
+</li>
+<li>
+  <strong>
+  Conversion Units:
+</strong>
+<ul>
+  <li>
+  1 KHz = 1000 Hz
+</li>
+<li>
+1 MHz = 1000 KHz = 1,000,000 Hz
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.3.2 Data Transfer Rate
+</summary>
+<p>
+  The number of bits transmitted between source and destination in one second. Also known as
+  <span class="keyword">
+  bit rate
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Unit:
+  </strong>
+  Measured in bits per second (bps).
+</li>
+<li>
+  <strong>
+  Higher Units:
+</strong>
+<ul>
+  <li>
+  1 Kbps = 2^10 bps = 1024 bps
+</li>
+<li>
+1 Mbps = 2^20 bps = 1024 Kbps
+</li>
+<li>
+1 Gbps = 2^30 bps = 1024 Mbps
+</li>
+<li>
+1 Tbps = 2^40 bps = 1024 Gbps
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Note:
+</strong>
+<span class="keyword">
+MBps
+</span>
+stands for Megabyte per second, whereas
+<span class="keyword">
+Mbps
+</span>
+stands for Megabit per second.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <em>
+  Example 11.1: A user wants to upload a \text document at the rate of 10 pages per 20 seconds. What will be the required data rate of the channel? (Assume that 1 page contains 1600 characters and each character is of 8 bits).
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+</p>
+<ul>
+  <li>
+  Total characters to transmit: 10 pages * 1600 characters/page = 16,000 characters
+</li>
+<li>
+Total bits to transmit: 16,000 characters * 8 bits/character = 128,000 bits
+</li>
+<li>
+Time duration: 20 seconds
+</li>
+<li>
+Required data rate calculation: Required data rate = (10 * 1600 * 8) / 20 = 6400 bps = 6.25 Kbps
+</li>
+</ul>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.4 Types of Data Communication
+</summary>
+<p>
+Data communication between different devices is broadly categorized into three transmission modes:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.4.1 Simplex Communication
+</summary>
+<p>
+A one-way or unidirectional communication where one device acts solely as the sender and the other as the receiver.
+</p>
+<ul>
+  <li>
+    <strong>
+    Characteristics:
+  </strong>
+  Devices utilize the entire capacity of the link to transmit data in a single direction.
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+Data entered through a keyboard, audio sent to a speaker, or controlling smart home appliances (fans, lights, fridge) via IoT.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.4.2 Half-duplex Communication
+</summary>
+<p>
+A two-way or bidirectional communication where both devices can send and receive data, but not at the same time.
+</p>
+<ul>
+  <li>
+    <strong>
+    Characteristics:
+  </strong>
+  While one device is transmitting, the other must receive, and vice-versa. It is analogous to sharing a one-way narrow bridge.
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+Walkie-talkies, where pressing the "push-to-talk" button enables the transmitter and disables the receiver on that device.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.4.3 Full-duplex Communication
+</summary>
+<p>
+A two-way or bidirectional communication where both devices can send and receive data simultaneously.
+</p>
+<ul>
+  <li>
+    <strong>
+    Characteristics:
+  </strong>
+  The capacity of the transmission link is shared between signals traveling in both directions. This can be achieved using two physically separate simplex lines or by sharing the capacity of a single channel.
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+Mobile phones and landline telephone networks.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.5 Switching Techniques
+</summary>
+<p>
+  In large networks, establishing dedicated physical connections (like mesh or star topologies) between every pair of devices is highly expensive.
+  <span class="keyword">
+  Switching
+</span>
+provides an alternative by routing data through various intermediate nodes to form temporary paths.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.5.1 Circuit Switching
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Circuit Switching
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical and Data Link Layer routing.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Establishes a dedicated, continuous physical path (connected sequence of links) between sender and receiver before communication begins. All data packets follow this exact same path.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+High resource reservation overhead; the channel remains occupied even during idle periods, leading to inefficient bandwidth utilization.
+</li>
+</ul>
+</div>
+<p>
+  <strong>
+  Historical Example:
+</strong>
+Early telephone systems, where switching equipment established a physical copper path from the caller's home to the receiver's telephone.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.5.2 Packet Switching
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Packet Switching
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Network Layer routing.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Messages are broken down into smaller pieces called
+<span class="keyword">
+packets
+</span>
+. Each packet contains a header (with destination address and routing info) and the payload. Packets travel independently and can take different routes based on network availability, being reassembled at the destination.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly efficient bandwidth utilization as channels are occupied only during packet transmission. However, packets may arrive out of order or experience variable latency (jitter).
+</li>
+</ul>
+</div>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.6 Transmission Media
+</summary>
+<p>
+  Transmission media are the physical or virtual links that carry signals or data between a transmitter (source) and a receiver (destination). They are broadly classified into
+  <span class="keyword">
+  guided
+</span>
+(wired) and
+<span class="keyword">
+unguided
+</span>
+(wireless) media.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.6.1 Wired (Guided) Transmission Media
+</summary>
+<p>
+Physical links made of wires or cables through which electromagnetic or optical signals propagate between nodes.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Twisted Pair Cable
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical Layer (Wired).
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Consists of two insulated copper wires twisted together in a helical structure (similar to DNA). Twisting minimizes electrical interference and crosstalk from adjacent pairs.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Inexpensive and easy to install, but has limited bandwidth and is susceptible to external noise over long distances. Available as Unshielded Twisted-Pair (
+<span class="keyword">
+UTP
+</span>
+) and Shielded Twisted-Pair (
+<span class="keyword">
+STP
+</span>
+).
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Coaxial Cable
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical Layer (Wired).
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Features a central solid copper core surrounded by an insulating layer, which is wrapped in an outer conductor (braided copper mesh) and covered by a protective plastic jacket.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Better shielding and higher bandwidth than twisted pair, allowing high-frequency signal transmission over longer distances. However, it is bulkier and less flexible.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Optical Fibre Cable
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Physical Layer (Wired / High-Speed Backbone).
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Transmits data as light pulses through a thin strand of glass (core) using the principle of total internal reflection. The core is surrounded by a less dense glass layer called
+<span class="keyword">
+cladding
+</span>
+, protected by an outer PVC or Teflon jacket.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Extremely high bandwidth, lightweight, and completely immune to electromagnetic interference (EMI). However, it is expensive, fragile, and unidirectional (requiring two separate fibers for full-duplex communication).
+</li>
+</ul>
+</div>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.6.2 Wireless (Unguided) Transmission Media
+</summary>
+<p>
+Data travels through the air in the form of electromagnetic waves using antennas. The electromagnetic spectrum ranging from 3 KHz to 900 THz is utilized for wireless communication.
+</p>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Transmission Wave Type
+    </th>
+    <th>
+    Frequency Range
+  </th>
+  <th>
+  Key Properties &amp; Operational Characteristics
+</th>
+<th>
+Common Applications
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Radio Waves
+    </strong>
+  </td>
+  <td>
+  3 KHz to 1 GHz
+</td>
+<td>
+Omni-directional (propagates in all directions); can penetrate solid walls; susceptible to interference.
+</td>
+<td>
+AM/FM radio, television broadcasting, cordless phones.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Microwaves
+  </strong>
+</td>
+<td>
+1 GHz to 300 GHz
+</td>
+<td>
+Unidirectional (line-of-sight propagation required); cannot penetrate solid obstacles like walls or mountains; high information-carrying capacity.
+</td>
+<td>
+Radar, satellite communication, point-to-point terrestrial links.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Infrared Waves
+  </strong>
+</td>
+<td>
+300 GHz to 400 THz
+</td>
+<td>
+Very high frequency; strictly short-distance; cannot penetrate solid walls (provides high security against eavesdropping).
+</td>
+<td>
+TV remote controls, wireless keyboards/mice, mobile-to-mobile short-range transfers.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.6.3 Wireless Technologies
+</summary>
+<ul>
+  <li>
+    <strong>
+    Bluetooth:
+  </strong>
+  A short-range wireless technology operating in the unlicensed 2.4 GHz frequency band. It builds a Personal Area Network (
+  <span class="keyword">
+  PAN
+</span>
+) called a
+<span class="keyword">
+piconet
+</span>
+using a master-slave configuration (1 master can communicate with up to 7 active slaves simultaneously, supporting up to 255 total connected devices). Range is typically up to 10 meters with speeds of 1-2 Mbps.
+</li>
+<li>
+  <strong>
+  Wireless LAN (Wi-Fi):
+</strong>
+Standardized under
+<span class="keyword">
+IEEE 802.11
+</span>
+. Uses Access Points (
+<span class="keyword">
+APs
+</span>
+) connected to a wired network to allow mobile devices to communicate wirelessly within a local area.
+</li>
+<li>
+  <strong>
+  WiMax:
+</strong>
+Worldwide Interoperability for Microwave Access. Unlike Wi-Fi (which forms small WLANs), WiMax uses a larger spectrum to deliver high-speed connections over a much larger area, making it suitable for Metropolitan Area Network (
+<span class="keyword">
+MAN
+</span>
+) applications.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.7 Mobile Telecommunication Technologies
+</summary>
+<p>
+The architecture of mobile networks has evolved through distinct generations, each introducing major technological advancements:
+</p>
+<ol>
+  <li>
+    <strong>
+    First Generation (1G):
+  </strong>
+  Introduced around 1982. Used analog signals to transmit voice calls only.
+</li>
+<li>
+  <strong>
+  Second Generation (2G):
+</strong>
+Introduced around 1991. Shifted from analog to digital signals, improving voice quality, enabling encryption for security, and introducing SMS (Short Message Service) and MMS (Multimedia Message Service).
+</li>
+<li>
+  <strong>
+  Third Generation (3G):
+</strong>
+Developed in the late 90s and commercially introduced around 2001. Offered digital voice and high-speed data services, enabling mobile Internet access, video calling, and greater network capacity.
+</li>
+<li>
+  <strong>
+  Fourth Generation (4G):
+</strong>
+Revolutionized mobile broadband by supporting interactive multimedia, high-definition video streaming, wireless internet, and IP-based telephony (VoLTE).
+</li>
+<li>
+  <strong>
+  Fifth Generation (5G):
+</strong>
+Designed to support extremely high data transfer rates (in the Gbps range), ultra-low latency, and massive connectivity for the Internet of Things (IoT) and Machine-to-Machine (
+<span class="keyword">
+M2M
+</span>
+) communications.
+</li>
+</ol>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.8 Protocol
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Protocol
+</span>
+is a set of standard rules that communicating parties (sender, receiver, and intermediate devices) must follow to ensure structured and error-free data exchange.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.8.1 Need for Protocols
+</summary>
+<p>
+Protocols are essential for managing key aspects of network communication:
+</p>
+<ul>
+  <li>
+    <strong>
+    Flow Control:
+  </strong>
+  Manages speed mismatches between sender and receiver. For example, if Computer A sends data at 1024 Mbps but Computer B can only receive at 512 Mbps, flow control prevents packet loss by signaling the sender to slow down.
+</li>
+<li>
+  <strong>
+  Access Control:
+</strong>
+Determines which node can access a shared communication link at any given instant to prevent packet collisions and data corruption.
+</li>
+<li>
+  <strong>
+  Addressing:
+</strong>
+Ensures data is delivered to the correct destination node on the network.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  11.8.2 Specific Network Protocols
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: HTTP (HyperText Transfer Protocol)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Application Layer.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+A request-response (client-server) protocol running over TCP. Used by web browsers (clients) to request hypertext documents from web servers.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Stateless by default, requiring cookies or session tokens to maintain state across multiple requests.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: FTP (File Transfer Protocol)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Application Layer.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Used for transferring files between machines. Establishes a connection, handles user authentication (ID/password), and resolves differences in file naming conventions, directory structures, and data formats.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Transmits credentials and data in cleartext, making it insecure unless upgraded to SFTP or FTPS.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: PPP (Point-to-Point Protocol)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Data Link Layer.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Establishes a direct, dedicated connection between two communicating devices (e.g., two routers or a home computer connecting to an ISP via modem). Handles authentication, link establishment, and data integrity.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Requires duplex mode support on both devices; designed strictly for point-to-point links, not multi-point networks.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: SMTP (Simple Mail Transfer Protocol)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Application Layer.
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Used for email transmission. Reads the message header (containing recipient addresses) and places the email in an outgoing queue. The SMTP sender program transmits it to the destination mail server, where the SMTP receiver places it in the user's mailbox.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Strictly a push protocol (cannot pull emails from a server; requires POP3 or IMAP for retrieval).
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: TCP/IP (Transmission Control Protocol / Internet Protocol)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Transport Layer (TCP) and Network Layer (IP).
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+<ul>
+  <li>
+    <strong>
+    IP:
+  </strong>
+  Assigns a unique IP address to each node on the network to identify it and routes individual packets across routers.
+</li>
+<li>
+  <strong>
+  TCP:
+</strong>
+Breaks messages into smaller packets, guarantees reliable delivery to the destination IP, and reassembles packets in their correct sequence.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+TCP introduces latency due to connection establishment (three-way handshake) and error-checking overhead, making it slower than connectionless protocols like UDP.
+</li>
+</ul>
+</div>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 11
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-10-computer-networks.html"; } else { window.location.href = "12-chapter-12-security-aspects.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
