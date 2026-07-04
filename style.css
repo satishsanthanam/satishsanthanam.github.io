@@ -280,3 +280,52 @@ blockquote.example-block {
   background: #f8fafc !important; 
   border-left: 4px solid #3182ce !important; 
 }
+
+/* ==========================================================================
+   BUILD CALIBRE CURRICULUM HIGHLIGHTS & BORDER TOKENS
+   ========================================================================== */
+
+/* 1. The Missing Yellow Keyword Highlighting */
+span.keyword {
+  background-color: #fef08a; /* Soft, readable educational yellow highlight */
+  color: #1e293b;            /* High-contrast dark charcoal text */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* 2. Uniform Blockquote / Primary Source Borders & Backgrounds */
+blockquote.example-block {
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-left: 4px solid #94a3b8; /* Solid slate-gray left accent border */
+  background-color: #f8fafc;     /* Clean off-white/slate-tint background tint */
+  border-radius: 0 8px 8px 0;
+}
+
+blockquote.example-block hr {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 12px 0;
+}
+
+/* 3. Global Interactive Tree Structural Borders */
+details.topic-box {
+  display: block;
+  margin-bottom: 16px;
+  border: 1px solid #cbd5e1;       /* Light slate layout grid border */
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 14px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+details.sub-topic {
+  display: block;
+  margin-left: 20px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding-left: 14px;
+  border-left: 2px solid #e2e8f0;  /* Standard connecting hierarchy line */
+}
