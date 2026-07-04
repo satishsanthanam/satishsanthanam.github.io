@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 12 — Chapter 9: Structured Query Language (SQL)
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 12 — Chapter 9: Structured Query Language (SQL)
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.1 &amp; 9.2 Introduction to Relational Databases &amp; SQL
+</summary>
+<p>
+  Relational Database Management Systems (
+  <span class="keyword">
+  RDBMS
+</span>
+) allow users to create, store, retrieve, and manipulate data organized in relations (tables). Popular RDBMS software includes
+<span class="keyword">
+MySQL
+</span>
+,
+<span class="keyword">
+Microsoft SQL Server
+</span>
+,
+<span class="keyword">
+PostgreSQL
+</span>
+, and
+<span class="keyword">
+Oracle
+</span>
+.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: MySQL RDBMS
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Database Management Layer (Client-Server Architecture)
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Uses SQL to define and manipulate data. Operates via a command-line shell interface using the
+<code>
+mysql&gt;
+</code>
+prompt.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly scalable and open-source, but requires careful indexing to prevent performance degradation on large datasets; lacks native support for some advanced analytical functions compared to commercial alternatives.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Characteristics of SQL
+</summary>
+<ul>
+  <li>
+    <strong>
+    Declarative Language:
+  </strong>
+  Users specify
+  <em>
+  what
+</em>
+data to retrieve rather than
+<em>
+how
+</em>
+to retrieve it.
+</li>
+<li>
+  <strong>
+  Case Insensitivity:
+</strong>
+SQL statements are case-insensitive (e.g.,
+<code>
+SELECT
+</code>
+is equivalent to
+<code>
+select
+</code>
+). However, database and table names can be case-sensitive in Linux environments.
+</li>
+<li>
+  <strong>
+  Statement Terminator:
+</strong>
+Every SQL statement must end with a semicolon (
+<code>
+;
+</code>
+).
+</li>
+<li>
+  <strong>
+  Multiline Input:
+</strong>
+Statements can span multiple lines. The prompt changes from
+<code>
+mysql&gt;
+</code>
+to
+<code>
+-&gt;
+</code>
+to indicate continuation.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.3 Data Types and Constraints in MySQL
+</summary>
+<p>
+  Every attribute in a relation must have a defined
+  <span class="keyword">
+  data type
+</span>
+and can optionally have
+<span class="keyword">
+constraints
+</span>
+to enforce data integrity.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Technical Concept Characterization Matrix: Data Types
+</summary>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      CHAR(n)
+    </strong>
+  </td>
+  <td>
+  Fixed-length character string.
+</td>
+<td>
+Size $n$ ranges from 0 to 255. Right-padded with spaces if the string is shorter than $n$.
+</td>
+<td>
+Ensures predictable storage size for fixed-length attributes like codes, state abbreviations, or hashes.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    VARCHAR(n)
+  </strong>
+</td>
+<td>
+Variable-length character string.
+</td>
+<td>
+Size $n$ ranges from 0 to 65535. Allocates only the bytes needed for the actual string.
+</td>
+<td>
+Optimizes storage for variable-length \text fields like names, addresses, and descriptions.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    INT
+  </strong>
+</td>
+<td>
+Standard integer representation.
+</td>
+<td>
+  Occupies 4 bytes of storage. Unsigned range: 0 to 4,294,967,295. Larger values require
+  <code>
+  BIGINT
+</code>
+(8 bytes).
+</td>
+<td>
+Used for numeric identifiers, counts, and mathematical calculations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    FLOAT
+  </strong>
+</td>
+<td>
+Single-precision floating-point number.
+</td>
+<td>
+Occupies 4 bytes of storage. Represents decimal values.
+</td>
+<td>
+Used for fractional values where absolute precision is not critical (e.g., metrics, ratings).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    DATE
+  </strong>
+</td>
+<td>
+Calendar date representation.
+</td>
+<td>
+Format: 'YYYY-MM-DD'. Supported range: '1000-01-01' to '9999-12-31'.
+</td>
+<td>
+Enables chronological sorting, date arithmetic, and temporal filtering.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  SQL Constraints
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    NOT NULL
+  </span>
+  : Ensures that a column cannot store a
+  <code>
+  NULL
+</code>
+(missing/unknown) value.
+</li>
+<li>
+  <span class="keyword">
+  UNIQUE
+</span>
+: Guarantees that all values in a column are distinct.
+</li>
+<li>
+  <span class="keyword">
+  DEFAULT
+</span>
+: Provides a fallback value when no explicit value is specified during insertion.
+</li>
+<li>
+  <span class="keyword">
+  PRIMARY KEY
+</span>
+: Uniquely identifies each record in a table. It implicitly combines
+<code>
+NOT NULL
+</code>
+and
+<code>
+UNIQUE
+</code>
+.
+</li>
+<li>
+  <span class="keyword">
+  FOREIGN KEY
+</span>
+: Establishes a link between tables by referencing the primary key of another table, enforcing referential integrity.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.4 SQL for Data Definition Language (DDL)
+</summary>
+<p>
+  Data Definition Language (
+  <span class="keyword">
+  DDL
+</span>
+) statements are used to define, modify, and destroy database schemas and structures.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Database Management Commands
+</summary>
+<pre>
+  <code>
+    -- Create a new database
+    CREATE DATABASE StudentAttendance;
+    -- View existing databases
+    SHOW DATABASES;
+    -- Select a database for active use
+    USE StudentAttendance;
+    -- View tables within the active database
+    SHOW TABLES;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Table Creation and Schema Inspection
+</summary>
+<p>
+  The
+  <code>
+  CREATE TABLE
+</code>
+statement defines the relation name, attributes, data types, and constraints.
+</p>
+<pre>
+  <code>
+    CREATE TABLE STUDENT(
+    RollNumber INT,
+    SName VARCHAR(20) NOT NULL,
+    SDateofBirth DATE,
+    GUID CHAR(12),
+    PRIMARY KEY (RollNumber)
+    );
+  </code>
+</pre>
+<p>
+  To inspect the schema of an existing table, use the
+  <code>
+  DESCRIBE
+</code>
+or
+<code>
+DESC
+</code>
+command:
+</p>
+<pre>
+  <code>
+  DESCRIBE STUDENT;
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Schema Modification (ALTER TABLE)
+</summary>
+<p>
+  The
+  <code>
+  ALTER TABLE
+</code>
+statement allows dynamic modifications to an existing table structure without destroying data.
+</p>
+<ol>
+  <li>
+    <strong>
+    Add a Primary Key:
+  </strong>
+  <pre>
+    <code>
+    ALTER TABLE GUARDIAN ADD PRIMARY KEY (GUID);
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add a Composite Primary Key:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE ATTENDANCE ADD PRIMARY KEY (AttendanceDate, RollNumber);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add a Foreign Key:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE STUDENT ADD FOREIGN KEY (GUID) REFERENCES GUARDIAN(GUID);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add a UNIQUE Constraint:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE GUARDIAN ADD UNIQUE (GPhone);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add a New Attribute:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE GUARDIAN ADD income INT;
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Modify Attribute Datatype:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE GUARDIAN MODIFY GAddress VARCHAR(40);
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Modify Constraint (Add NOT NULL):
+</strong>
+<pre>
+  <code>
+  ALTER TABLE STUDENT MODIFY SName VARCHAR(20) NOT NULL;
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Add a Default Value:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE STUDENT MODIFY SDateofBirth DATE DEFAULT '2000-05-15';
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Remove an Attribute:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE GUARDIAN DROP COLUMN income;
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Remove a Primary Key:
+</strong>
+<pre>
+  <code>
+  ALTER TABLE GUARDIAN DROP PRIMARY KEY;
+</code>
+</pre>
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Destructive Schema Commands (DROP)
+</summary>
+<p>
+  The
+  <code>
+  DROP
+</code>
+statement permanently deletes tables or databases from the system. This operation is non-reversible.
+</p>
+<pre>
+  <code>
+    -- Delete a table and all its data
+    DROP TABLE STUDENT;
+    -- Delete an entire database and all its tables
+    DROP DATABASE StudentAttendance;
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.5 &amp; 9.7 SQL for Data Manipulation Language (DML)
+</summary>
+<p>
+  Data Manipulation Language (
+  <span class="keyword">
+  DML
+</span>
+) statements handle the insertion, modification, and deletion of records within tables.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Record Insertion (INSERT INTO)
+</summary>
+<p>
+Records can be inserted by specifying values for all columns in schema order, or by explicitly declaring target columns.
+</p>
+<pre>
+  <code>
+    -- Insertion by schema order
+    INSERT INTO GUARDIAN
+    VALUES (444444444444, 'Amit Ahuja', 5711492685, 'G-35, Ashok Vihar, Delhi');
+    -- Insertion with explicit column mapping (useful for omitting nullable/default columns)
+    INSERT INTO GUARDIAN (GUID, GName, GAddress)
+    VALUES (333333333333, 'Danny Dsouza', 'S-13, Ashok Village, Daman');
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Record Modification (UPDATE)
+</summary>
+<p>
+  The
+  <code>
+  UPDATE
+</code>
+statement modifies existing values. A
+<code>
+WHERE
+</code>
+clause is critical to restrict the scope of modification; omitting it updates all rows in the table.
+</p>
+<pre>
+  <code>
+    UPDATE STUDENT
+    SET GUID = '101010101010'
+    WHERE RollNumber = 3;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Record Deletion (DELETE)
+</summary>
+<p>
+  The
+  <code>
+  DELETE
+</code>
+statement removes rows. Like
+<code>
+UPDATE
+</code>
+, omitting the
+<code>
+WHERE
+</code>
+clause deletes all records while preserving the table structure.
+</p>
+<pre>
+  <code>
+    DELETE FROM STUDENT
+    WHERE RollNumber = 2;
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.6 SQL for Data Query Language (DQL)
+</summary>
+<p>
+  Data Query Language (
+  <span class="keyword">
+  DQL
+</span>
+) centers on the
+<code>
+SELECT
+</code>
+statement, which retrieves data from one or more tables.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: SELECT Statement
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Query Execution Engine
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Evaluates clauses in the logical order:
+<code>
+FROM
+</code>
+&rarr;
+<code>
+WHERE
+</code>
+&rarr;
+<code>
+GROUP BY
+</code>
+&rarr;
+<code>
+HAVING
+</code>
+&rarr;
+<code>
+SELECT
+</code>
+&rarr;
+<code>
+ORDER BY
+</code>
+.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly expressive, but complex nested queries or unindexed
+<code>
+WHERE
+</code>
+clauses can cause full-table scans, leading to severe performance bottlenecks.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Basic Queries and Column Aliasing
+</summary>
+<pre>
+  <code>
+    -- Retrieve all columns and rows
+    SELECT * FROM EMPLOYEE;
+    -- Retrieve specific columns
+    SELECT EmpNo, Ename FROM EMPLOYEE;
+    -- Column Aliasing (Renaming output headers)
+    SELECT EName AS Name, Salary * 12 AS 'Annual Income'
+    FROM EMPLOYEE;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Filtering and Conditional Operators
+</summary>
+<p>
+  The
+  <code>
+  WHERE
+</code>
+clause filters records based on logical and comparison expressions.
+</p>
+<ul>
+  <li>
+    <strong>
+    Relational Operators:
+  </strong>
+  <code>
+  =
+</code>
+,
+<code>
+&lt;
+</code>
+,
+<code>
+&gt;
+</code>
+,
+<code>
+&lt;=
+</code>
+,
+<code>
+&gt;=
+</code>
+,
+<code>
+!=
+</code>
+(or
+<code>
+&lt;&gt;
+</code>
+).
+</li>
+<li>
+  <strong>
+  Logical Operators:
+</strong>
+<code>
+AND
+</code>
+,
+<code>
+OR
+</code>
+,
+<code>
+NOT
+</code>
+.
+</li>
+<li>
+  <strong>
+  Range Filtering (BETWEEN):
+</strong>
+Inclusive boundary check.
+<pre>
+  <code>
+    SELECT Ename, DeptId FROM EMPLOYEE
+    WHERE Salary BETWEEN 20000 AND 50000;
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Set Membership (IN):
+</strong>
+Matches any value in a specified list.
+<pre>
+  <code>
+    SELECT * FROM EMPLOYEE
+    WHERE DeptId IN ('D01', 'D02', 'D04');
+  </code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Sorting Results (ORDER BY)
+</summary>
+<p>
+  Sorts the output in ascending (
+  <code>
+  ASC
+</code>
+, default) or descending (
+<code>
+DESC
+</code>
+) order.
+</p>
+<pre>
+  <code>
+    SELECT * FROM EMPLOYEE
+    ORDER BY Salary DESC, Bonus ASC;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Handling NULL Values
+</summary>
+<p>
+  Because
+  <code>
+  NULL
+</code>
+represents an unknown state, standard comparison operators (like
+<code>
+= NULL
+</code>
+) fail. Special operators must be used:
+</p>
+<pre>
+  <code>
+    -- Find records with missing values
+    SELECT * FROM EMPLOYEE WHERE Bonus IS NULL;
+    -- Find records with defined values
+    SELECT * FROM EMPLOYEE WHERE Bonus IS NOT NULL;
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Pattern Matching (LIKE Operator)
+</summary>
+<p>
+Enables substring search using wildcards:
+</p>
+<ul>
+  <li>
+    <code>
+    %
+  </code>
+  : Matches zero, one, or multiple characters.
+</li>
+<li>
+  <code>
+  _
+</code>
+: Matches exactly one character.
+</li>
+</ul>
+<pre>
+  <code>
+    -- Names starting with 'K'
+    SELECT * FROM EMPLOYEE WHERE Ename LIKE 'K%';
+    -- Names ending with 'a'
+    SELECT * FROM EMPLOYEE WHERE Ename LIKE '%a';
+    -- Names with 'a' as the second character
+    SELECT * FROM EMPLOYEE WHERE Ename LIKE '_a%';
+    -- Exactly 5-character names ending with 'ANYA'
+    SELECT * FROM EMPLOYEE WHERE Ename LIKE '_ANYA';
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.8 Built-in Functions in SQL
+</summary>
+<p>
+  SQL provides built-in functions categorized into
+  <span class="keyword">
+  Single Row Functions
+</span>
+(Scalar) and
+<span class="keyword">
+Multiple Row Functions
+</span>
+(Aggregate).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Single Row Functions
+</summary>
+<p>
+These functions operate on a single value per row and return one result per row.
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Category
+    </th>
+    <th>
+    Function
+  </th>
+  <th>
+  Description &amp; Example
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3">
+      <strong>
+      Math Functions
+    </strong>
+  </td>
+  <td>
+    <code>
+    POWER(X, Y)
+  </code>
+</td>
+<td>
+  Calculates $X^Y$.
+  <br>
+  <code>
+  SELECT POWER(2,3); -- Output: 8
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    ROUND(N, D)
+  </code>
+</td>
+<td>
+  Rounds $N$ to $D$ decimal places.
+  <br>
+  <code>
+  SELECT ROUND(2912.564, 1); -- Output: 2912.6
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    MOD(A, B)
+  </code>
+</td>
+<td>
+  Returns the remainder of $A/B$.
+  <br>
+  <code>
+  SELECT MOD(21, 2); -- Output: 1
+</code>
+</td>
+</tr>
+<tr>
+  <td rowspan="6">
+    <strong>
+    String Functions
+  </strong>
+</td>
+<td>
+  <code>
+  UCASE(str) / UPPER(str)
+</code>
+</td>
+<td>
+  Converts string to uppercase.
+  <br>
+  <code>
+  SELECT UCASE('sql'); -- Output: 'SQL'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    LOWER(str) / LCASE(str)
+  </code>
+</td>
+<td>
+  Converts string to lowercase.
+  <br>
+  <code>
+  SELECT LCASE('SQL'); -- Output: 'sql'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    MID(str, pos, n)
+  </code>
+</td>
+<td>
+  Extracts $n$ characters starting from position $pos$.
+  <br>
+  <code>
+  SELECT MID('Informatics', 3, 4); -- Output: 'form'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    LENGTH(str)
+  </code>
+</td>
+<td>
+  Returns character count.
+  <br>
+  <code>
+  SELECT LENGTH('Delhi'); -- Output: 5
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    INSTR(str, substr)
+  </code>
+</td>
+<td>
+  Returns 1-based index of first occurrence of $substr$.
+  <br>
+  <code>
+  SELECT INSTR('Informatics', 'ma'); -- Output: 6
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    TRIM(str)
+  </code>
+</td>
+<td>
+  Removes leading and trailing spaces.
+  <br>
+  <code>
+  SELECT TRIM('  MADAM  '); -- Output: 'MADAM'
+</code>
+</td>
+</tr>
+<tr>
+  <td rowspan="4">
+    <strong>
+    Date Functions
+  </strong>
+</td>
+<td>
+  <code>
+  NOW()
+</code>
+</td>
+<td>
+  Returns current system date and time.
+  <br>
+  <code>
+  SELECT NOW(); -- Output: '2019-07-11 19:41:17'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    DATE(dt)
+  </code>
+</td>
+<td>
+  Extracts date portion.
+  <br>
+  <code>
+  SELECT DATE(NOW()); -- Output: '2019-07-11'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    MONTHNAME(d)
+  </code>
+</td>
+<td>
+  Returns name of the month.
+  <br>
+  <code>
+  SELECT MONTHNAME('2019-07-11'); -- Output: 'July'
+</code>
+</td>
+</tr>
+<tr>
+  <td>
+    <code>
+    DAYNAME(d)
+  </code>
+</td>
+<td>
+  Returns name of the day.
+  <br>
+  <code>
+  SELECT DAYNAME('2019-07-11'); -- Output: 'Thursday'
+</code>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Multiple Row (Aggregate) Functions
+</summary>
+<p>
+These functions process a set of values across multiple rows to return a single summary value.
+</p>
+<ul>
+  <li>
+    <code>
+    MAX(column)
+  </code>
+  : Returns the largest value in the column.
+</li>
+<li>
+  <code>
+  MIN(column)
+</code>
+: Returns the smallest value in the column.
+</li>
+<li>
+  <code>
+  AVG(column)
+</code>
+: Computes the average value (ignores
+<code>
+NULL
+</code>
+).
+</li>
+<li>
+  <code>
+  SUM(column)
+</code>
+: Calculates the total sum of values.
+</li>
+<li>
+  <code>
+  COUNT(*)
+</code>
+: Counts the total number of rows in a table, including those with
+<code>
+NULL
+</code>
+values.
+</li>
+<li>
+  <code>
+  COUNT(column)
+</code>
+: Counts the number of non-NULL values in a specific column.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.9 GROUP BY and HAVING Clauses
+</summary>
+<p>
+  The
+  <code>
+  GROUP BY
+</code>
+clause aggregates rows with identical values in specified columns into summary rows.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Grouping and Filtering Aggregates
+</summary>
+<p>
+  To filter groups based on aggregate conditions, the
+  <code>
+  HAVING
+</code>
+clause must be used instead of
+<code>
+WHERE
+</code>
+(since
+<code>
+WHERE
+</code>
+filters individual rows before aggregation occurs).
+</p>
+<pre>
+  <code>
+    -- Count cars purchased by each customer
+    SELECT CustID, COUNT(*) AS 'Number of Cars'
+    FROM SALE
+    GROUP BY CustID;
+    -- Find customers who purchased more than 1 car
+    SELECT CustID, COUNT(*)
+    FROM SALE
+    GROUP BY CustID
+    HAVING COUNT(*) &gt; 1;
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.10 Operations on Relations (Set Operations &amp; Cartesian Product)
+</summary>
+<p>
+  Relational algebra operations combine tuples from two relations. For set operations, relations must be
+  <strong>
+  union-compatible
+</strong>
+(same number of attributes with matching domains).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Set Operations
+</summary>
+<ul>
+  <li>
+    <strong>
+    UNION ($\\cup$):
+  </strong>
+  Combines rows from both tables, eliminating duplicate rows.
+  <pre>
+    <code>
+      SELECT Name FROM DANCE
+      UNION
+      SELECT Name FROM MUSIC;
+    </code>
+  </pre>
+</li>
+<li>
+  <strong>
+  INTERSECT ($\\cap$):
+</strong>
+Returns only the common rows present in both tables.
+<pre>
+  <code>
+    -- Conceptual representation (MySQL uses INNER JOIN or IN for intersection)
+    SELECT D.Name FROM DANCE D
+    WHERE D.Name IN (SELECT M.Name FROM MUSIC M);
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  MINUS / EXCEPT (-):
+</strong>
+Returns rows present in the first table but absent in the second.
+<pre>
+  <code>
+    -- Conceptual representation
+    SELECT D.Name FROM DANCE D
+    WHERE D.Name NOT IN (SELECT M.Name FROM MUSIC M);
+  </code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Cartesian Product (X)
+</summary>
+<p>
+Combines every row of the first relation with every row of the second relation.
+</p>
+<ul>
+  <li>
+    <strong>
+    Degree:
+  </strong>
+  Sum of the degrees of both relations ($Degree(R \\times S) = Degree(R) + Degree(S)$).
+</li>
+<li>
+  <strong>
+  Cardinality:
+</strong>
+Product of the cardinalities of both relations ($Cardinality(R \\times S) = Cardinality(R) \\times Cardinality(S)$).
+</li>
+</ul>
+<pre>
+  <code>
+  SELECT * FROM DANCE, MUSIC;
+</code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.11 Querying Multiple Relations (JOINs)
+</summary>
+<p>
+  A
+  <span class="keyword">
+  JOIN
+</span>
+operation combines related tuples from two tables based on a common attribute.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: NATURAL JOIN
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Relational Algebra Engine
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Automatically joins tables based on columns with identical names and data types, returning only one copy of the common column. Syntax:
+<code>
+SELECT * FROM TableA NATURAL JOIN TableB;
+</code>
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Simplifies query syntax and removes redundant columns, but can produce unexpected empty sets if tables share unrelated columns with matching names (e.g., 'Remarks' or 'Status').
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Join Implementations
+</summary>
+<ol>
+  <li>
+    <strong>
+    Equi-Join using WHERE clause:
+  </strong>
+  <pre>
+    <code>
+      SELECT * FROM UNIFORM U, COST C
+      WHERE U.UCode = C.UCode;
+    </code>
+  </pre>
+</li>
+<li>
+  <strong>
+  Explicit JOIN ON clause:
+</strong>
+<pre>
+  <code>
+    SELECT * FROM UNIFORM U
+    JOIN COST C ON U.UCode = C.UCode;
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Natural Join:
+</strong>
+<pre>
+  <code>
+    SELECT * FROM UNIFORM
+    NATURAL JOIN COST;
+  </code>
+</pre>
+</li>
+</ol>
+</details>
+</details>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: CARSHOWROOM Database Schema Design
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Designing a multi-table relational database for a car showroom requires establishing clear primary and foreign key relationships to prevent anomalies. For instance, the
+<code>
+SALE
+</code>
+table references
+<code>
+INVENTORY(CarID)
+</code>
+,
+<code>
+CUSTOMER(CustID)
+</code>
+, and
+<code>
+EMPLOYEE(EmpID)
+</code>
+. If referential integrity constraints are not strictly enforced, a sale could be recorded for a non-existent car or customer, leading to critical accounting and inventory discrepancies. Implementing cascading updates and deletes ensures that changes in core business entities propagate safely throughout the system.
+</p>
+</blockquote>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 9
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-08-database-concepts.html"; } else { window.location.href = "12-chapter-10-computer-networks.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
