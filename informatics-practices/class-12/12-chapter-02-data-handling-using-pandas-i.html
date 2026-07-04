@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Informatics Practices: Class 12 — Chapter 2: Data Handling Using Pandas - I
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Informatics Practices: Class 12 — Chapter 2: Data Handling Using Pandas - I
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.1 Introduction to Python Libraries
+</summary>
+<p>
+Python libraries contain collections of built-in modules that allow developers to perform complex tasks without writing detailed programs from scratch. Each library contains numerous modules that can be imported and utilized.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Core Python Data Science Libraries
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    NumPy (Numerical Python):
+  </strong>
+  Used for scientific computing, multidimensional array operations (
+  <span class="keyword">
+  ndarray
+</span>
+), and efficient memory management.
+</li>
+<li>
+  <strong>
+  Pandas (PANel DAta):
+</strong>
+A high-level data manipulation tool built on top of NumPy and Matplotlib, designed for structured data analysis and visualization.
+</li>
+<li>
+  <strong>
+  Matplotlib:
+</strong>
+Used for plotting high-quality graphs, histograms, bar charts, and scatterplots with minimal code.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Differences: Pandas vs NumPy
+</summary>
+<ol>
+  <li>
+    A NumPy array requires homogeneous data, whereas a Pandas
+    <span class="keyword">
+    DataFrame
+  </span>
+  can store heterogeneous data types (e.g., float, int, string, datetime).
+</li>
+<li>
+  Pandas provides a simpler interface for operations like file loading, plotting, selection, joining, and grouping (
+  <span class="keyword">
+  GROUP BY
+</span>
+).
+</li>
+<li>
+  Pandas
+  <span class="keyword">
+  DataFrames
+</span>
+use explicit column names, making data tracking highly intuitive.
+</li>
+<li>
+Pandas is optimized for tabular data formats, while NumPy is designed for low-level numeric array-based manipulations.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.1.1 Installing Pandas
+</summary>
+<p>
+Pandas can be installed via the command line using the Python package installer:
+</p>
+<pre>
+  <code>
+  pip install pandas
+</code>
+</pre>
+<p>
+  <em>
+  Note: Both NumPy and Pandas require Python to be pre-installed on the system.
+</em>
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.1.2 Data Structures in Pandas
+</summary>
+<p>
+A data structure is a collection of data values and operations that can be applied to that data, enabling efficient storage, retrieval, and modification. Pandas primarily uses two data structures:
+</p>
+<ul>
+  <li>
+    <strong>
+    Series:
+  </strong>
+  A one-dimensional array-like structure.
+</li>
+<li>
+  <strong>
+  DataFrame:
+</strong>
+A two-dimensional tabular structure.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.2 Pandas Series
+</summary>
+<p>
+  A
+  <span class="keyword">
+  Series
+</span>
+is a one-dimensional array containing a sequence of values of any data type (int, float, list, string, etc.), which by default have numeric data labels starting from zero. The data label associated with a particular value is called its
+<strong>
+index
+</strong>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.1 Creation of Series
+</summary>
+<p>
+To create or use a Series, the Pandas library must first be imported:
+</p>
+<pre>
+  <code>
+  import pandas as pd
+</code>
+</pre>
+<p>
+  <strong>
+  (A) Creation of Series from Scalar Values:
+</strong>
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; series1 = pd.Series([10, 20, 30])
+    &gt;&gt;&gt; print(series1)
+    0    10
+    1    20
+    2    30
+    dtype: int64
+  </code>
+</pre>
+<p>
+  <strong>
+  (B) Creation of Series with User-Defined Indices:
+</strong>
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; series2 = pd.Series(["Kavi", "Shyam", "Ravi"], index=[3, 5, 1])
+    &gt;&gt;&gt; print(series2)
+    3     Kavi
+    5    Shyam
+    1     Ravi
+    dtype: object
+  </code>
+</pre>
+<p>
+  <strong>
+  (C) Creation of Series from NumPy Arrays:
+</strong>
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; import numpy as np
+    &gt;&gt;&gt; array1 = np.array([1, 2, 3, 4])
+    &gt;&gt;&gt; series3 = pd.Series(array1)
+    &gt;&gt;&gt; print(series3)
+    0    1
+    1    2
+    2    3
+    3    4
+    dtype: int32
+  </code>
+</pre>
+<p>
+  <em>
+  Note: If index labels are passed with a NumPy array, the length of the index and the array must match, otherwise a
+  <span class="keyword">
+  ValueError
+</span>
+is raised.
+</em>
+</p>
+<p>
+  <strong>
+  (D) Creation of Series from a Dictionary:
+</strong>
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; dict1 = {'India': 'NewDelhi', 'UK': 'London', 'Japan': 'Tokyo'}
+    &gt;&gt;&gt; series8 = pd.Series(dict1)
+    &gt;&gt;&gt; print(series8)
+    India    NewDelhi
+    UK         London
+    Japan       Tokyo
+    dtype: object
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.2 Accessing Elements of a Series
+</summary>
+<p>
+  Elements of a Series can be accessed using two primary methods:
+  <strong>
+  Indexing
+</strong>
+and
+<strong>
+Slicing
+</strong>
+.
+</p>
+<p>
+  <strong>
+  (A) Indexing:
+</strong>
+</p>
+<ul>
+  <li>
+    <strong>
+    Positional Index:
+  </strong>
+  Uses integer values corresponding to the position starting from 0.
+</li>
+<li>
+  <strong>
+  Labelled Index:
+</strong>
+Uses user-defined labels.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; seriesNum = pd.Series([10, 20, 30])
+    &gt;&gt;&gt; seriesNum[2]
+    30
+  </code>
+</pre>
+<p>
+Accessing multiple elements using a list of indices:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; seriesCapCntry[['UK', 'USA']]
+    UK           London
+    USA    WashingtonDC
+    dtype: object
+  </code>
+</pre>
+<p>
+  <strong>
+  (B) Slicing:
+</strong>
+</p>
+<p>
+  Slicing extracts a subset of a Series using the syntax
+  <span class="keyword">
+  [start:end]
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Positional Slicing:
+  </strong>
+  Excludes the end index value (i.e., extracts up to
+  <span class="keyword">
+  end - 1
+</span>
+).
+</li>
+<li>
+  <strong>
+  Labelled Slicing:
+</strong>
+Includes the end index value.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; seriesCapCntry[1:3]
+    USA    WashingtonDC
+    UK           London
+    dtype: object
+    &gt;&gt;&gt; seriesCapCntry['USA':'France']
+    USA       WashingtonDC
+    UK              London
+    France           Paris
+    dtype: object
+  </code>
+</pre>
+<p>
+Reversing a Series using slicing:
+</p>
+<pre>
+  <code>
+  &gt;&gt;&gt; seriesCapCntry[::-1]
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.3 Attributes of Series
+</summary>
+<p>
+The following table details the core attributes of a Pandas Series:
+</p>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Attribute Name
+    </th>
+    <th>
+    Purpose
+  </th>
+  <th>
+  Example Syntax
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      name
+    </span>
+  </td>
+  <td>
+  Assigns or retrieves a name for the Series
+</td>
+<td>
+  <span class="keyword">
+  series.name = 'Capitals'
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    index.name
+  </span>
+</td>
+<td>
+Assigns or retrieves a name for the index of the Series
+</td>
+<td>
+  <span class="keyword">
+  series.index.name = 'Countries'
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    values
+  </span>
+</td>
+<td>
+Returns a list of values in the Series as a NumPy ndarray
+</td>
+<td>
+  <span class="keyword">
+  series.values
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    size
+  </span>
+</td>
+<td>
+Returns the number of elements in the Series
+</td>
+<td>
+  <span class="keyword">
+  series.size
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    empty
+  </span>
+</td>
+<td>
+  Returns
+  <span class="keyword">
+  True
+</span>
+if the Series is empty, otherwise
+<span class="keyword">
+False
+</span>
+</td>
+<td>
+  <span class="keyword">
+  series.empty
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.4 Methods of Series
+</summary>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Method
+    </th>
+    <th>
+    Explanation
+  </th>
+  <th>
+  Example Syntax
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      head(n)
+    </span>
+  </td>
+  <td>
+    Returns the first
+    <span class="keyword">
+    n
+  </span>
+  elements of the Series (default is 5)
+</td>
+<td>
+  <span class="keyword">
+  series.head(2)
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    count()
+  </span>
+</td>
+<td>
+Returns the number of non-NaN (non-null) values in the Series
+</td>
+<td>
+  <span class="keyword">
+  series.count()
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    tail(n)
+  </span>
+</td>
+<td>
+  Returns the last
+  <span class="keyword">
+  n
+</span>
+elements of the Series (default is 5)
+</td>
+<td>
+  <span class="keyword">
+  series.tail(2)
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2.5 Mathematical Operations on Series
+</summary>
+<p>
+  Mathematical operations on Series align data based on index labels. If an index is present in one Series but not the other, the resulting value is marked as
+  <span class="keyword">
+  NaN
+</span>
+(Not a Number).
+</p>
+<p>
+  <strong>
+  Using Operators vs Methods:
+</strong>
+</p>
+<ul>
+  <li>
+    <strong>
+    Operators (
+    <span class="keyword">
+    +
+  </span>
+  ,
+  <span class="keyword">
+  -
+</span>
+,
+<span class="keyword">
+*
+</span>
+,
+<span class="keyword">
+/
+</span>
+):
+</strong>
+Perform operations but result in
+<span class="keyword">
+NaN
+</span>
+for missing indices.
+</li>
+<li>
+  <strong>
+  Methods (
+  <span class="keyword">
+  add()
+</span>
+,
+<span class="keyword">
+sub()
+</span>
+,
+<span class="keyword">
+mul()
+</span>
+,
+<span class="keyword">
+div()
+</span>
+):
+</strong>
+Allow the use of the
+<span class="keyword">
+fill_value
+</span>
+parameter to replace missing values before calculation.
+</li>
+</ul>
+<pre>
+  <code>
+    &gt;&gt;&gt; # Addition with operator
+    &gt;&gt;&gt; seriesA + seriesB
+    a     -9.0
+    b      NaN
+    c    -47.0
+    &gt;&gt;&gt; # Addition with method and fill_value
+    &gt;&gt;&gt; seriesA.add(seriesB, fill_value=0)
+    a     -9.0
+    b      2.0
+    c    -47.0
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.3 Pandas DataFrame
+</summary>
+<p>
+  A
+  <span class="keyword">
+  DataFrame
+</span>
+is a two-dimensional, tabular, labelled data structure containing rows and columns. It has both a row index and a column index, and can store heterogeneous data types.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.1 Creation of DataFrame
+</summary>
+<p>
+DataFrames can be created from various inputs:
+</p>
+<ul>
+  <li>
+    <strong>
+    Empty DataFrame:
+  </strong>
+  <span class="keyword">
+  pd.DataFrame()
+</span>
+</li>
+<li>
+  <strong>
+  NumPy ndarrays:
+</strong>
+<pre>
+  <code>
+  &gt;&gt;&gt; dFrame = pd.DataFrame([array1, array2], columns=['A', 'B', 'C', 'D'])
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  List of Dictionaries:
+</strong>
+Keys become column labels; missing keys are filled with
+<span class="keyword">
+NaN
+</span>
+.
+<pre>
+  <code>
+    &gt;&gt;&gt; listDict = [{'a': 10, 'b': 20}, {'a': 5, 'b': 10, 'c': 20}]
+    &gt;&gt;&gt; dFrame = pd.DataFrame(listDict)
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Dictionary of Lists:
+</strong>
+Keys become column labels, and lists become column values.
+<pre>
+  <code>
+    &gt;&gt;&gt; dictForest = {'State': ['Assam', 'Delhi'], 'GArea': [78438, 1483]}
+    &gt;&gt;&gt; dFrame = pd.DataFrame(dictForest)
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Dictionary of Series:
+</strong>
+<pre>
+  <code>
+  &gt;&gt;&gt; dFrame = pd.DataFrame({'Series1': seriesA, 'Series2': seriesB})
+</code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.2 Operations on Rows and Columns
+</summary>
+<ul>
+  <li>
+    <strong>
+    Adding a Column:
+  </strong>
+  <pre>
+    <code>
+    &gt;&gt;&gt; ResultDF['Preeti'] = [89, 78, 76]
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Adding a Row (using
+  <span class="keyword">
+  .loc[]
+</span>
+):
+</strong>
+<pre>
+  <code>
+  &gt;&gt;&gt; ResultDF.loc['English'] = [85, 86, 83, 80, 90, 89]
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Deleting Rows or Columns (using
+  <span class="keyword">
+  .drop()
+</span>
+):
+</strong>
+<p>
+  Use
+  <span class="keyword">
+  axis=0
+</span>
+for rows and
+<span class="keyword">
+axis=1
+</span>
+for columns.
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; ResultDF = ResultDF.drop('Science', axis=0) # Drops row
+    &gt;&gt;&gt; ResultDF = ResultDF.drop(['Samridhi', 'Riya'], axis=1) # Drops columns
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Renaming Labels (using
+  <span class="keyword">
+  .rename()
+</span>
+):
+</strong>
+<pre>
+  <code>
+    &gt;&gt;&gt; ResultDF = ResultDF.rename({'Maths': 'Sub1'}, axis='index')
+    &gt;&gt;&gt; ResultDF = ResultDF.rename({'Arnab': 'Student1'}, axis='columns')
+  </code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.3 Accessing Elements through Indexing and Slicing
+</summary>
+<ul>
+  <li>
+    <strong>
+    Label-Based Indexing (
+    <span class="keyword">
+    .loc[]
+  </span>
+  ):
+</strong>
+<pre>
+  <code>
+    &gt;&gt;&gt; ResultDF.loc['Science'] # Accesses a row as a Series
+    &gt;&gt;&gt; ResultDF.loc[:, 'Arnab'] # Accesses a column as a Series
+  </code>
+</pre>
+</li>
+<li>
+  <strong>
+  Boolean Indexing:
+</strong>
+Filters data based on conditions.
+<pre>
+  <code>
+  &gt;&gt;&gt; ResultDF.loc['Maths'] &gt; 90
+</code>
+</pre>
+</li>
+<li>
+  <strong>
+  Slicing:
+</strong>
+Slicing in DataFrames is inclusive of both start and end values.
+<pre>
+  <code>
+  &gt;&gt;&gt; ResultDF.loc['Maths':'Science', 'Arnab':'Samridhi']
+</code>
+</pre>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.4 Joining and Concatenating DataFrames
+</summary>
+<p>
+  The
+  <span class="keyword">
+  .append()
+</span>
+method is used to append rows of one DataFrame to another.
+</p>
+<p>
+  <strong>
+  Key Parameters:
+</strong>
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    sort=True
+  </span>
+  : Sorts column labels alphabetically.
+</li>
+<li>
+  <span class="keyword">
+  verify_integrity=True
+</span>
+: Raises an error if there are duplicate row labels.
+</li>
+<li>
+  <span class="keyword">
+  ignore_index=True
+</span>
+: Re-indexes the resulting DataFrame from 0 to N-1.
+</li>
+</ul>
+<pre>
+  <code>
+  &gt;&gt;&gt; dFrame1 = dFrame1.append(dFrame2, ignore_index=True)
+</code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3.5 Attributes of DataFrames
+</summary>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Attribute
+    </th>
+    <th>
+    Purpose
+  </th>
+  <th>
+  Example Output
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      index
+    </span>
+  </td>
+  <td>
+  Displays row labels
+</td>
+<td>
+  <span class="keyword">
+  Index(['GeoArea', 'VeryDense'], dtype='object')
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    columns
+  </span>
+</td>
+<td>
+Displays column labels
+</td>
+<td>
+  <span class="keyword">
+  Index(['Assam', 'Kerala'], dtype='object')
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    dtypes
+  </span>
+</td>
+<td>
+Displays data type of each column
+</td>
+<td>
+  <span class="keyword">
+  Assam: int64, Delhi: float64
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    values
+  </span>
+</td>
+<td>
+Returns values as a 2D NumPy ndarray
+</td>
+<td>
+  <span class="keyword">
+  array([[78438, 38852], [2797, 1663]])
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    shape
+  </span>
+</td>
+<td>
+Returns a tuple representing dimensionality (rows, columns)
+</td>
+<td>
+  <span class="keyword">
+  (4, 3)
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    size
+  </span>
+</td>
+<td>
+Returns total number of elements
+</td>
+<td>
+  <span class="keyword">
+  12
+</span>
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    T
+  </span>
+</td>
+<td>
+Transposes rows and columns
+</td>
+<td>
+Swaps row indices with column headers
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.4 Importing and Exporting Data between CSV Files and DataFrames
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.4.1 Importing a CSV File
+</summary>
+<p>
+  The
+  <span class="keyword">
+  read_csv()
+</span>
+function loads data from a CSV file into a DataFrame.
+</p>
+<pre>
+  <code>
+  &gt;&gt;&gt; marks = pd.read_csv("C:/NCERT/ResultData.csv", sep=",", header=0)
+</code>
+</pre>
+<p>
+  <strong>
+  Parameters:
+</strong>
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    sep
+  </span>
+  : Specifies the delimiter (default is comma).
+</li>
+<li>
+  <span class="keyword">
+  header
+</span>
+: Specifies the row number to use as column names (default is 0).
+</li>
+<li>
+  <span class="keyword">
+  names
+</span>
+: Allows custom column names to be passed as a list.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.4.2 Exporting to a CSV File
+</summary>
+<p>
+  The
+  <span class="keyword">
+  to_csv()
+</span>
+method writes a DataFrame to a CSV or \text file.
+</p>
+<pre>
+  <code>
+  &gt;&gt;&gt; ResultDF.to_csv('C:/NCERT/resultout.csv', sep=',', index=False)
+</code>
+</pre>
+<p>
+  <strong>
+  Parameters:
+</strong>
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    index=False
+  </span>
+  : Prevents row index labels from being written to the file.
+</li>
+<li>
+  <span class="keyword">
+  header=False
+</span>
+: Prevents column headers from being written to the file.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2.5 Pandas Series vs NumPy ndarray
+</summary>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Feature
+    </th>
+    <th>
+    Pandas Series
+  </th>
+  <th>
+  NumPy ndarray
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Index Type
+    </strong>
+  </td>
+  <td>
+  Supports custom labelled indices (numbers or letters)
+</td>
+<td>
+Accessed strictly by integer positions starting from 0
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Alignment
+  </strong>
+</td>
+<td>
+  Automatically aligns data based on labels; generates
+  <span class="keyword">
+  NaN
+</span>
+for mismatches
+</td>
+<td>
+Requires matching shapes; operations fail if arrays are unaligned
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Memory
+  </strong>
+</td>
+<td>
+Requires more memory due to index mapping metadata
+</td>
+<td>
+Highly memory-efficient
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 2
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-chapter-01-querying-and-sql-functions.html"; } else { window.location.href = "12-chapter-03-data-handling-using-pandas-ii.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
