@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 11: Societal Impact
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 11: Societal Impact
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.1 &amp; 11.2 Introduction &amp; Digital Footprints
+</summary>
+<p>
+  In recent years, the widespread adoption of
+  <span class="keyword">
+  Digital Technologies
+</span>
+has dramatically impacted human lives, making communication, banking, aviation, and e-commerce faster and more efficient. However, this digital transition leaves behind a permanent trail of data.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Digital Footprint
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Application and Network Layer (Data Trail)
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Created whenever a user surfs the internet, visits websites, sends emails, or submits online information. It includes IP addresses, location data, and device-specific details.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Once generated, digital footprints are stored on remote servers and are nearly impossible to fully erase, exposing users to targeted advertisements, profiling, or potential exploitation.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Active vs. Passive Digital Footprints
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Active Digital Footprints
+  </span>
+  : Data that a user intentionally submits online, such as sending emails, publishing blog posts, or uploading social media updates.
+</li>
+<li>
+  <span class="keyword">
+  Passive Digital Footprints
+</span>
+: Data collected unintentionally without the user's active intervention, such as web browsing history, cookies, IP addresses, and app usage statistics.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.3 Digital Society and Netizen
+</summary>
+<p>
+  A
+  <span class="keyword">
+  netizen
+</span>
+(digital citizen) is anyone who uses digital technology and the internet. Being a responsible netizen requires practicing safe, ethical, and legal behaviors online by adhering to specific etiquettes.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Net Etiquettes
+</summary>
+<ul>
+  <li>
+    <strong>
+    Be Ethical:
+  </strong>
+  Avoid
+  <span class="keyword">
+  copyright violation
+</span>
+by not using copyrighted materials without permission. Share expertise and ensure shared information is accurate and non-redundant.
+</li>
+<li>
+  <strong>
+  Be Respectful:
+</strong>
+Respect the privacy of others (do not share private files/images without consent) and respect diversity in public forums.
+</li>
+<li>
+  <strong>
+  Be Responsible:
+</strong>
+Avoid
+<span class="keyword">
+cyber bullying
+</span>
+(harassment, threats, or public ridicule online). Do not feed internet trolls who deliberately sow discord.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Communication &amp; Social Media Etiquettes
+</summary>
+<ul>
+  <li>
+    <strong>
+    Communication Etiquettes:
+  </strong>
+  Be precise (respect time and data limits by compressing large files) and be polite/credible in all digital interactions.
+</li>
+<li>
+  <strong>
+  Social Media Etiquettes:
+</strong>
+Be secure (choose strong, frequently changed passwords; know who you befriend; beware of fake news) and be reliable (think carefully before uploading sensitive content).
+</li>
+</ul>
+</details>
+<table border="1" style="border-collapse: collapse; width: 100%; margin-top: 10px;">
+  <thead>
+    <tr>
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class="keyword">
+      Netizen
+    </span>
+  </td>
+  <td>
+  An active user of the internet and digital platforms.
+</td>
+<td>
+Governed by Net, Communication, and Social Media Etiquettes.
+</td>
+<td>
+Ensures safe, legal, and collaborative digital environments.
+</td>
+</tr>
+<tr>
+  <td>
+    <span class="keyword">
+    Cyber Bullying
+  </span>
+</td>
+<td>
+Insulting, degrading, or intimidating online behavior.
+</td>
+<td>
+Repeated targeting, posting rumors, or sharing private info.
+</td>
+<td>
+Traced via digital footprints; subject to legal penalties.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.4 Data Protection &amp; Intellectual Property Rights (IPR)
+</summary>
+<p>
+Data protection focuses on securing the privacy of digitally stored sensitive data (such as biometrics, financial records, and health information) using encryption and authentication.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Intellectual Property Rights (IPR)
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Copyright
+  </span>
+  : Automatically granted legal rights protecting original creative works (writing, music, software, photos) from unauthorized reproduction.
+</li>
+<li>
+  <span class="keyword">
+  Patent
+</span>
+: Legal protection for inventions, requiring an application. Grants exclusive rights to use/sell the invention for 20 years.
+</li>
+<li>
+  <span class="keyword">
+  Trademark
+</span>
+: Visual symbols, logos, slogans, or brand names that distinguish a commercial enterprise (e.g., Nike logo).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Violations of IPR
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Plagiarism
+  </span>
+  : Presenting someone else's work or ideas as one's own without proper citation.
+</li>
+<li>
+  <span class="keyword">
+  Copyright Infringement
+</span>
+: Unauthorized use of copyrighted material without permission or payment.
+</li>
+<li>
+  <span class="keyword">
+  Trademark Infringement
+</span>
+: Unauthorized use of a registered trademark on competing products or services.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Public Access and Open Source Software
+</summary>
+<p>
+Licenses define the rules for using, modifying, and distributing software and creative works.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Public Licensing Models
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Legal and Distribution Framework
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+<span class="keyword">
+Creative Commons (CC)
+</span>
+licenses allow free distribution of creative works with custom conditions.
+<span class="keyword">
+GNU General Public License (GPL)
+</span>
+ensures end-users have the freedom to run, study, share, and modify software.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+<span class="keyword">
+Software Piracy
+</span>
+(unauthorized distribution) degrades system performance via malware and harms the software industry's economy.
+</li>
+</ul>
+</div>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.5 Cyber Crime
+</summary>
+<p>
+Cyber crime refers to criminal activities carried out in a digital environment where a computer is either the target or the tool used to commit the offense.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Types of Cyber Crimes
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Hacking
+  </span>
+  : Unauthorized access to digital systems. Ethical hacking (
+  <span class="keyword">
+  White Hat
+</span>
+) identifies vulnerabilities to improve security, while non-ethical hacking (
+<span class="keyword">
+Black Hat
+</span>
+) aims to steal data or damage systems.
+</li>
+<li>
+  <span class="keyword">
+  Phishing
+</span>
+: Fraudulent attempts to collect sensitive information (passwords, credit cards) using fake websites or spoofed emails.
+</li>
+<li>
+  <span class="keyword">
+  Identity Theft
+</span>
+: Stealing personal data (Aadhaar, PAN, email ID) to commit fraud. Types include financial, criminal, and medical identity theft.
+</li>
+<li>
+  <span class="keyword">
+  Ransomware
+</span>
+: Malicious software that encrypts user data and demands a ransom payment to restore access.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Combatting and Preventing Cyber Crime
+</summary>
+<ol>
+  <li>
+  Take regular backups of important data.
+</li>
+<li>
+Use updated antivirus software.
+</li>
+<li>
+Avoid installing pirated software; download only from secure (HTTPS) sites.
+</li>
+<li>
+Use strong, unique passwords and change them periodically.
+</li>
+<li>
+Do not accept cookies from unknown sites or click on untrusted links.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.6 Indian Information Technology Act (IT Act)
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Information Technology Act, 2000
+</span>
+(amended in 2008) provides the legal framework for electronic governance and cyber crime regulation in India.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Digital Signature
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Security and Authentication Layer
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Digital equivalent of a paper certificate, issued by a licensed
+<span class="keyword">
+Certifying Authority (CA)
+</span>
+under Section 24 of the IT Act. It binds a unique digital ID to a document to authenticate the signer's identity.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly secure but dependent on the integrity of the private key and the trust of the issuing CA.
+</li>
+</ul>
+</div>
+<p>
+  The IT Act also established the
+  <span class="keyword">
+  Cyber Appellate Tribunal
+</span>
+to resolve disputes arising from cyber crimes such as hacking, tampering with source documents, and unauthorized data publishing.
+</p>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.7 Impact on Health &amp; Ergonomics
+</summary>
+<p>
+Excessive use of digital devices can lead to physical and psychological health issues, including eye strain, backaches, and stress.
+</p>
+<blockquote class="example-block">
+<p>
+  <em>
+  Ergonomics is the science of designing and arranging workplaces, equipment, and systems so that they are safe and comfortable for the user.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+Maintaining correct posture (viewing distance of 19 to 24 inches, viewing angle of 30 degrees, straight wrists, and 90-degree seat back angle) reduces physical fatigue and long-term injuries. Device safety practices, such as regular cleaning and proper ventilation, ensure the longevity of the computer system itself.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 11
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-10-tuples-and-dictionaries.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
