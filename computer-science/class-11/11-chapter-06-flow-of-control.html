@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Computer Science: Class 11 — Chapter 6: Flow of Control
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Computer Science: Class 11 — Chapter 6: Flow of Control
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Flow of Control
+</summary>
+<p>
+  In computer programming, the order in which statements are executed is critical. By default, Python executes statements sequentially, one after another, from the beginning to the end of the program. This is known as the concept of
+  <span class="keyword">
+  sequence
+</span>
+. However, real-world problem-solving requires the ability to alter this default execution path based on conditions or to repeat operations. The order of execution of statements in a program is known as the
+<span class="keyword">
+flow of control
+</span>
+, which is implemented using control structures.
+</p>
+<p>
+  Python supports two primary types of control structures to manage the flow of execution:
+  <span class="keyword">
+  selection
+</span>
+(decision making) and
+<span class="keyword">
+repetition
+</span>
+(looping).
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 14px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Core Computer Science Concept
+    </th>
+    <th>
+    Technical Definition / Operational State
+  </th>
+  <th>
+  Structural Parameters &amp; Specifications
+</th>
+<th>
+Computational Function &amp; System Purpose
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Sequence
+    </strong>
+  </td>
+  <td>
+  Linear execution of statements.
+</td>
+<td>
+Statements are executed in the exact order they are written.
+</td>
+<td>
+Performs straightforward, step-by-step calculations and operations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Selection
+  </strong>
+</td>
+<td>
+Conditional branching of execution.
+</td>
+<td>
+Evaluates boolean expressions to choose between alternative execution paths.
+</td>
+<td>
+Enables decision-making capabilities within programs based on runtime data.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Repetition
+  </strong>
+</td>
+<td>
+Iterative execution of a block of code.
+</td>
+<td>
+Repeats a block of statements as long as a control condition remains true.
+</td>
+<td>
+Automates redundant tasks and processes collections of data efficiently.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Selection Control Structures
+</summary>
+<p>
+  Selection structures allow a program to test conditions and execute different blocks of code depending on whether the condition evaluates to true or false. In Python, selection is implemented using
+  <span class="keyword">
+  if
+</span>
+,
+<span class="keyword">
+if..else
+</span>
+, and
+<span class="keyword">
+if..elif..else
+</span>
+statements.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Simple if Statement
+</summary>
+<p>
+  The
+  <span class="keyword">
+  if
+</span>
+statement is used to execute a block of code only if a specified condition is true. If the condition is false, the block is skipped.
+</p>
+<p>
+  Syntax of the
+  <span class="keyword">
+  if
+</span>
+statement:
+</p>
+<pre>
+  <code>
+    if condition:
+    statement(s)
+  </code>
+</pre>
+<p>
+  Example of a simple
+  <span class="keyword">
+  if
+</span>
+statement:
+</p>
+<pre>
+  <code>
+    age = int(input("Enter your age: "))
+    if age &gt;= 18:
+    print("Eligible to vote")
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The if..else Statement
+</summary>
+<p>
+  The
+  <span class="keyword">
+  if..else
+</span>
+statement provides two alternative paths of execution. If the condition evaluates to true, the block under the
+<span class="keyword">
+if
+</span>
+statement is executed; otherwise, the block under the
+<span class="keyword">
+else
+</span>
+statement is executed.
+</p>
+<p>
+  Syntax of the
+  <span class="keyword">
+  if..else
+</span>
+statement:
+</p>
+<pre>
+  <code>
+    if condition:
+    statement(s)
+    else:
+    statement(s)
+  </code>
+</pre>
+<p>
+  Example of an
+  <span class="keyword">
+  if..else
+</span>
+statement:
+</p>
+<pre>
+  <code>
+    age = int(input("Enter your age: "))
+    if age &gt;= 18:
+    print("Eligible to vote")
+    else:
+    print("Not eligible to vote")
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The if..elif..else Statement
+</summary>
+<p>
+  When multiple conditions need to be checked, Python provides the
+  <span class="keyword">
+  if..elif..else
+</span>
+structure (where
+<span class="keyword">
+elif
+</span>
+stands for else-if). This creates a chain of conditions that are evaluated sequentially.
+</p>
+<p>
+  Syntax of the
+  <span class="keyword">
+  if..elif..else
+</span>
+statement:
+</p>
+<pre>
+  <code>
+    if condition_1:
+    statement(s)
+    elif condition_2:
+    statement(s)
+    elif condition_3:
+    statement(s)
+    else:
+    statement(s)
+  </code>
+</pre>
+<p>
+Example of checking if a number is positive, negative, or zero:
+</p>
+<pre>
+  <code>
+    number = int(input("Enter a number: "))
+    if number &gt; 0:
+    print("Number is positive")
+    elif number &lt; 0:
+    print("Number is negative")
+    else:
+    print("Number is zero")
+  </code>
+</pre>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Python Selection Statements
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Core Language Control Flow
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+Evaluates expressions to boolean values (
+<code>
+True
+</code>
+or
+<code>
+False
+</code>
+). Uses colon (
+<code>
+:
+</code>
+) to denote the start of a block and relies on indentation to define block boundaries.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+Highly readable, but deeply nested selection structures can lead to complex, hard-to-maintain code (often referred to as "spaghetti code").
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Indentation in Python
+</summary>
+<p>
+  Unlike many programming languages that use curly braces
+  <code>
+  {}
+</code>
+to define blocks of code, Python uses
+<span class="keyword">
+indentation
+</span>
+. Leading whitespace (spaces or tabs) at the beginning of a line is used to determine the grouping of statements.
+</p>
+<ul>
+  <li>
+  All statements within a block must be indented by the same amount of spaces or tabs.
+</li>
+<li>
+The standard practice is to use a single tab or four spaces for each level of indentation.
+</li>
+<li>
+  The Python interpreter strictly enforces indentation rules and throws an
+  <code>
+  IndentationError
+</code>
+if the indentation is inconsistent or incorrect.
+</li>
+</ul>
+<p>
+Example of correct block indentation:
+</p>
+<pre>
+  <code>
+    if num1 &gt; num2:
+    # Block 1 starts
+    print("first number is larger")
+    print("Bye")
+    # Block 1 ends
+    else:
+    # Block 2 starts
+    print("second number is larger")
+    print("Bye Bye")
+    # Block 2 ends
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Repetition (Looping Constructs)
+</summary>
+<p>
+  Repetition or
+  <span class="keyword">
+  iteration
+</span>
+constructs allow a set of statements to be executed repeatedly based on a loop control condition. Python provides two looping constructs: the
+<span class="keyword">
+for loop
+</span>
+and the
+<span class="keyword">
+while loop
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The for Loop
+</summary>
+<p>
+  The
+  <span class="keyword">
+  for loop
+</span>
+is used to iterate over a range of values or a sequence (such as a string, list, or tuple). It is typically used when the number of iterations is known in advance.
+</p>
+<p>
+  Syntax of the
+  <span class="keyword">
+  for loop
+</span>
+:
+</p>
+<pre>
+  <code>
+    for control_variable in sequence:
+    statements inside body of the loop
+  </code>
+</pre>
+<p>
+Example of iterating over a string:
+</p>
+<pre>
+  <code>
+    for letter in 'PYTHON':
+    print(letter)
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The range() Function
+</summary>
+<p>
+  The built-in
+  <span class="keyword">
+  range()
+</span>
+function is commonly used with the
+<span class="keyword">
+for loop
+</span>
+to generate a sequence of integers.
+</p>
+<p>
+  Syntax of the
+  <span class="keyword">
+  range()
+</span>
+function:
+</p>
+<pre>
+  <code>
+  range([start], stop[, step])
+</code>
+</pre>
+<ul>
+  <li>
+    <strong>
+    start (optional):
+  </strong>
+  The starting value of the sequence (default is 0).
+</li>
+<li>
+  <strong>
+  stop (required):
+</strong>
+The upper limit of the sequence (excluded from the generated sequence).
+</li>
+<li>
+  <strong>
+  step (optional):
+</strong>
+The increment/decrement value between consecutive numbers (default is 1).
+</li>
+</ul>
+<p>
+  Interactive terminal examples of
+  <span class="keyword">
+  range()
+</span>
+:
+</p>
+<pre>
+  <code>
+    &gt;&gt;&gt; list(range(10))
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    &gt;&gt;&gt; list(range(2, 10))
+    [2, 3, 4, 5, 6, 7, 8, 9]
+    &gt;&gt;&gt; list(range(0, 30, 5))
+    [0, 5, 10, 15, 20, 25]
+    &gt;&gt;&gt; list(range(0, -9, -1))
+    [0, -1, -2, -3, -4, -5, -6, -7, -8]
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The while Loop
+</summary>
+<p>
+  The
+  <span class="keyword">
+  while loop
+</span>
+executes a block of code repeatedly as long as a specified control condition remains true. It is an entry-controlled loop, meaning the condition is evaluated before executing the loop body.
+</p>
+<p>
+  Syntax of the
+  <span class="keyword">
+  while loop
+</span>
+:
+</p>
+<pre>
+  <code>
+    while test_condition:
+    body of while
+  </code>
+</pre>
+<p>
+  Example of a
+  <span class="keyword">
+  while loop
+</span>
+:
+</p>
+<pre>
+  <code>
+    count = 1
+    while count &lt;= 5:
+    print(count)
+    count += 1
+  </code>
+</pre>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Technical Profile: Python Looping Constructs
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Architecture Layer / Tier:
+  </strong>
+  Iterative Control Flow
+</li>
+<li>
+  <strong>
+  Operational Mechanics &amp; Syntax:
+</strong>
+<code>
+for
+</code>
+loops iterate over iterable sequences.
+<code>
+while
+</code>
+loops evaluate a boolean expression on each iteration.
+</li>
+<li>
+  <strong>
+  System Trade-offs &amp; Failures:
+</strong>
+If the loop control variable in a
+<code>
+while
+</code>
+loop is not updated correctly to eventually make the condition
+<code>
+False
+</code>
+, it results in an
+<strong>
+infinite loop
+</strong>
+, causing the program to hang or crash due to resource exhaustion.
+</li>
+</ul>
+</div>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Jump Statements: Break and Continue
+</summary>
+<p>
+Jump statements are used to alter the normal flow of a loop by prematurely exiting the loop or skipping specific iterations.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The break Statement
+</summary>
+<p>
+  The
+  <span class="keyword">
+  break
+</span>
+statement immediately terminates the execution of the loop in which it is placed. The program control resumes at the statement immediately following the loop.
+</p>
+<p>
+  Example of using
+  <span class="keyword">
+  break
+</span>
+in a loop:
+</p>
+<pre>
+  <code>
+    for num in range(10):
+    num = num + 1
+    if num == 8:
+    break
+    print('Num has value ' + str(num))
+    print('Out of loop')
+  </code>
+</pre>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The continue Statement
+</summary>
+<p>
+  The
+  <span class="keyword">
+  continue
+</span>
+statement skips the remaining statements in the current iteration of the loop and jumps directly to the next iteration, re-evaluating the loop's control condition.
+</p>
+<p>
+  Example of using
+  <span class="keyword">
+  continue
+</span>
+in a loop:
+</p>
+<pre>
+  <code>
+    num = 0
+    for num in range(6):
+    num = num + 1
+    if num == 3:
+    continue
+    print('Num has value ' + str(num))
+    print('End of loop')
+  </code>
+</pre>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Nested Loops
+</summary>
+<p>
+  A loop can contain another loop inside its body. This structure is called a
+  <span class="keyword">
+  nested loop
+</span>
+. Python allows any type of loop (for or while) to be nested inside any other loop.
+</p>
+<p>
+  Example of nested
+  <span class="keyword">
+  for
+</span>
+loops:
+</p>
+<pre>
+  <code>
+    for var1 in range(3):
+    print("Iteration " + str(var1 + 1) + " of outer loop")
+    for var2 in range(2):
+    print(var2 + 1)
+    print("Out of inner loop")
+    print("Out of outer loop")
+  </code>
+</pre>
+<p>
+Example of generating a pattern using nested loops:
+</p>
+<pre>
+  <code>
+    num = int(input("Enter a number to generate its pattern = "))
+    for i in range(1, num + 1):
+    for j in range(1, i + 1):
+    print(j, end=" ")
+    print()
+  </code>
+</pre>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Case Studies &amp; Programming Exercises
+</summary>
+<blockquote class="example-block">
+<p>
+  <em>
+  Case Study: Student Marks Information System (SMIS) Grading Logic
+</em>
+</p>
+<p>
+Develop a menu-driven program for SMIS that accepts student marks in five major subjects, calculates the total sum, computes the percentage, and assigns a letter grade based on the following criteria:
+</p>
+<ul>
+  <li>
+  Percentage &gt; 85: Grade A
+</li>
+<li>
+Percentage &lt; 85 and &gt;= 75: Grade B
+</li>
+<li>
+Percentage &lt; 75 and &gt;= 50: Grade C
+</li>
+<li>
+Percentage &gt; 30 and &lt;= 50: Grade D
+</li>
+<li>
+Percentage &lt; 30: Reappear
+</li>
+</ul>
+<hr>
+<p>
+  <strong>
+  Socio-Technical Analysis &amp; Core Systemic Impact:
+</strong>
+This system automates academic evaluation using sequential input, arithmetic processing, and multi-way selection structures. The implementation of logical operators (such as
+<code>
+and
+</code>
+) ensures mutually exclusive grading boundaries. Proper validation is required to handle edge cases, such as preventing division by zero if the number of subjects is dynamically modified, and ensuring input values fall within valid ranges (0 to 100).
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 6
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-05-getting-started-with-python.html"; } else { window.location.href = "11-chapter-07-functions.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
