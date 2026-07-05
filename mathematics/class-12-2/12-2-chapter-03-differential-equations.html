@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 12 (Book 2) — Chapter 3: Differential Equations
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 2) — Chapter 3: Differential Equations
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.1 &amp; 9.2 Introduction and Basic Concepts
+</summary>
+<p>
+In calculus, we study how to differentiate a given function $f$ to find its derivative $f'(x)$, as well as how to find a function whose derivative is a given function $g(x)$. This inverse process leads to equations of the form $\\frac{dy}{dx} = g(x)$, which are the simplest examples of differential equations.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Definitions and Classifications
+</summary>
+<ul>
+  <li>
+    <strong>
+    Differential Equation:
+  </strong>
+  An equation involving derivative(s) of the dependent variable with respect to independent variable(s) is called a
+  <span class="keyword">
+  differential equation
+</span>
+.
+</li>
+<li>
+  <strong>
+  Ordinary Differential Equation (ODE):
+</strong>
+A differential equation involving derivatives of the dependent variable with respect to only one independent variable is called an
+<span class="keyword">
+ordinary differential equation
+</span>
+. For example: $$2\\frac{d^2y}{dx^2} + \\left(\\frac{dy}{dx}\\right)^3 = 0$$
+</li>
+<li>
+  <strong>
+  Notation Conventions:
+</strong>
+We prefer the following shorthand notations for derivatives:
+<ul>
+  <li>
+  First derivative: $\\frac{dy}{dx} = y'$
+</li>
+<li>
+Second derivative: $\\frac{d^2y}{dx^2} = y''$
+</li>
+<li>
+Third derivative: $\\frac{d^3y}{dx^3} = y'''$
+</li>
+<li>
+$n$-th derivative: $\\frac{d^ny}{dx^n} = y_n$
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Order and Degree of a Differential Equation
+</summary>
+<p>
+The classification of differential equations by order and degree is fundamental to determining their solution methodologies.
+</p>
+<ul>
+  <li>
+    <strong>
+    Order:
+  </strong>
+  The
+  <span class="keyword">
+  order of a differential equation
+</span>
+is defined as the order of the highest order derivative of the dependent variable with respect to the independent variable involved in the given differential equation.
+</li>
+<li>
+  <strong>
+  Degree:
+</strong>
+The
+<span class="keyword">
+degree of a differential equation
+</span>
+is the highest power (positive integral index) of the highest order derivative involved in the equation, provided the differential equation is a polynomial equation in its derivatives. If the equation cannot be expressed as a polynomial in its derivatives (e.g., if a derivative is inside a trigonometric, exponential, or logarithmic function), its degree is
+<strong>
+not defined
+</strong>
+.
+</li>
+</ul>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 12px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Differential Equation
+    </th>
+    <th>
+    Highest Order Derivative
+  </th>
+  <th>
+  Polynomial in Derivatives?
+</th>
+<th>
+Order
+</th>
+<th>
+Degree
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $$\\frac{dy}{dx} = e^x$$
+  </td>
+  <td>
+  $$\\frac{dy}{dx}$$
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+  <td>
+  $$\\frac{d^2y}{dx^2} + y = 0$$
+</td>
+<td>
+$$\\frac{d^2y}{dx^2}$$
+</td>
+<td>
+Yes
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+  <td>
+  $$\\left(\\frac{d^3y}{dx^3}\\right) + x^2\\left(\\frac{d^2y}{dx^2}\\right)^3 = 0$$
+</td>
+<td>
+$$\\frac{d^3y}{dx^3}$$
+</td>
+<td>
+Yes
+</td>
+<td>
+3
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+  <td>
+  $$\\left(\\frac{dy}{dx}\\right)^2 + \\left(\\frac{dy}{dx}\\right) - \\sin^2 y = 0$$
+</td>
+<td>
+$$\\frac{dy}{dx}$$
+</td>
+<td>
+Yes
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+  <td>
+  $$\\frac{dy}{dx} + \\sin\\left(\\frac{dy}{dx}\\right) = 0$$
+</td>
+<td>
+$$\\frac{dy}{dx}$$
+</td>
+<td>
+No (due to $\\sin(y')$)
+</td>
+<td>
+1
+</td>
+<td>
+Not Defined
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the order and degree (if defined) of the differential equation: $$y''' + y^2 + e^{y'} = 0$$
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Identify the highest order derivative present in the equation. The term $y'''$ represents the third derivative $\\frac{d^3y}{dx^3}$, which is the highest order derivative. Thus, the
+    <strong>
+    order is 3
+  </strong>
+  .
+</li>
+<li>
+Examine if the differential equation is a polynomial equation in its derivatives. The term $e^{y'}$ is an exponential function of a derivative, which means the equation cannot be written as a polynomial in terms of $y', y'', y'''$.
+</li>
+<li>
+Since it is not a polynomial equation in its derivatives, the degree is not defined.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Order = 3, Degree = Not Defined
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.3 General and Particular Solutions
+</summary>
+<p>
+A solution of a differential equation is a relation between the variables (not involving derivatives) which satisfies the given differential equation.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  General vs. Particular Solutions
+</summary>
+<ul>
+  <li>
+    <strong>
+    General Solution:
+  </strong>
+  The solution of a differential equation which contains as many arbitrary constants as the order of the differential equation is called its
+  <span class="keyword">
+  general solution
+</span>
+(or primitive).
+</li>
+<li>
+  <strong>
+  Particular Solution:
+</strong>
+A solution obtained from the general solution by giving particular values to the arbitrary constants is called a
+<span class="keyword">
+particular solution
+</span>
+. It contains zero arbitrary constants.
+</li>
+</ul>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Henri Poincaré (1854-1912)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Poincaré strongly advocated for the modern terminology of "solutions" over "integrals" of differential equations, which helped standardize mathematical language in the late 19th century.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+His work shifted the focus of differential equations from finding explicit closed-form algebraic solutions to qualitative analysis and geometric behavior of solution curves.
+</li>
+</ul>
+</div>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Verify that the function $y = e^{-3x}$ is a solution of the differential equation: $$\\frac{d^2y}{dx^2} + \\frac{dy}{dx} - 6y = 0$$
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Find the first derivative of the given function $y = e^{-3x}$ with respect to $x$: $$\\frac{dy}{dx} = -3e^{-3x}$$
+</li>
+<li>
+Find the second derivative by differentiating again: $$\\frac{d^2y}{dx^2} = 9e^{-3x}$$
+</li>
+<li>
+Substitute $y$, $\\frac{dy}{dx}$, and $\\frac{d^2y}{dx^2}$ into the left-hand side (L.H.S.) of the differential equation: $$\\text{L.H.S.} = 9e^{-3x} + (-3e^{-3x}) - 6(e^{-3x})$$
+</li>
+<li>
+Simplify the expression: $$\\text{L.H.S.} = (9 - 3 - 6)e^{-3x} = 0 \\cdot e^{-3x} = 0 = \\text{R.H.S.}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Since L.H.S. = R.H.S., the function $y = e^{-3x}$ is verified as a solution.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.4 Methods of Solving First Order, First Degree Differential Equations
+</summary>
+<p>
+We focus on three systematic classes of first-order, first-degree differential equations: variable separable, homogeneous, and linear equations.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.4.1 Differential Equations with Variables Separable
+</summary>
+<p>
+  If a first-order differential equation can be expressed in the form: $$\\frac{dy}{dx} = g(x) \\cdot h(y)$$ then it is of the
+  <span class="keyword">
+  variable separable
+</span>
+type. We solve it by separating the variables and integrating both sides: $$\\int \\frac{1}{h(y)} dy = \\int g(x) dx + C$$
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the particular solution of the differential equation $\\frac{dy}{dx} = -4xy^2$, given that $y = 1$ when $x = 0$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Separate the variables $x$ and $y$: $$\\frac{1}{y^2} dy = -4x dx$$
+</li>
+<li>
+Integrate both sides: $$\\int y^{-2} dy = -4 \\int x dx \\implies -\\frac{1}{y} = -2x^2 + C$$
+</li>
+<li>
+Express $y$ explicitly: $$y = \\frac{1}{2x^2 - C}$$
+</li>
+<li>
+Substitute the initial conditions $x = 0, y = 1$ to find the particular constant $C$: $$1 = \\frac{1}{2(0)^2 - C} \\implies C = -1$$
+</li>
+<li>
+Substitute $C = -1$ back into the general solution: $$y = \\frac{1}{2x^2 + 1}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Particular Solution: $y = \\frac{1}{2x^2 + 1}$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.4.2 Homogeneous Differential Equations
+</summary>
+<p>
+  A function $F(x, y)$ is a
+  <span class="keyword">
+  homogeneous function
+</span>
+of degree $n$ if $F(\\lambda x, \\lambda y) = \\lambda^n F(x, y)$ for any non-zero constant $\\lambda$. A differential equation of the form $\\frac{dy}{dx} = F(x, y)$ is homogeneous if $F(x, y)$ is a homogeneous function of degree zero.
+</p>
+<ul>
+  <li>
+    <strong>
+    Substitution Method:
+  </strong>
+  To solve $\\frac{dy}{dx} = g\\left(\\frac{y}{x}\\right)$, substitute: $$y = vx \\implies \\frac{dy}{dx} = v + x\\frac{dv}{dx}$$ This transforms the equation into a variable separable form in $v$ and $x$: $$v + x\\frac{dv}{dx} = g(v) \\implies x\\frac{dv}{dx} = g(v) - v \\implies \\frac{dv}{g(v) - v} = \\frac{dx}{x}$$
+</li>
+<li>
+  <strong>
+  Alternative Form:
+</strong>
+If the equation is of the form $\\frac{dx}{dy} = h\\left(\\frac{x}{y}\\right)$, substitute $x = vy$ to obtain: $$v + y\\frac{dv}{dy} = h(v)$$
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Show that the differential equation $(x - y)\\frac{dy}{dx} = x + 2y$ is homogeneous and solve it.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Rewrite the equation as: $$\\frac{dy}{dx} = \\frac{x + 2y}{x - y} = F(x, y)$$
+</li>
+<li>
+Verify homogeneity: $$F(\\lambda x, \\lambda y) = \\frac{\\lambda x + 2\\lambda y}{\\lambda x - \\lambda y} = \\frac{\\lambda(x + 2y)}{\\lambda(x - y)} = \\lambda^0 F(x, y)$$ Thus, it is homogeneous of degree zero.
+</li>
+<li>
+Substitute $y = vx$ and $\\frac{dy}{dx} = v + x\\frac{dv}{dx}$: $$v + x\\frac{dv}{dx} = \\frac{x + 2vx}{x - vx} = \\frac{1 + 2v}{1 - v}$$
+</li>
+<li>
+Isolate the variable separable terms: $$x\\frac{dv}{dx} = \\frac{1 + 2v}{1 - v} - v = \\frac{1 + 2v - v + v^2}{1 - v} = \\frac{v^2 + v + 1}{1 - v}$$
+</li>
+<li>
+Separate variables and integrate: $$\\int \\frac{1 - v}{v^2 + v + 1} dv = \\int \\frac{dx}{x}$$
+</li>
+<li>
+Solve the integral on the left by splitting the numerator: $$- \\frac{1}{2} \\int \\frac{2v + 1 - 3}{v^2 + v + 1} dv = \\log |x| + C_1$$ $$- \\frac{1}{2} \\log |v^2 + v + 1| + \\frac{3}{\\sqrt{3}} \\tan^{-1}\\left(\\frac{2v + 1}{\\sqrt{3}}\\right) = \\log |x| + C_1$$
+</li>
+<li>
+Substitute $v = \\frac{y}{x}$ back and simplify to obtain the general solution: $$\\log |x^2 + xy + y^2| = 2\\sqrt{3} \\tan^{-1}\\left(\\frac{x + 2y}{\\sqrt{3}x}\\right) + C$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+General Solution: $\\log |x^2 + xy + y^2| = 2\\sqrt{3} \\tan^{-1}\\left(\\frac{x + 2y}{\\sqrt{3}x}\\right) + C$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  9.4.3 Linear Differential Equations
+</summary>
+<p>
+A first-order differential equation is linear if it can be written in one of the following two standard forms:
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 12px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Type
+    </th>
+    <th>
+    Standard Form
+  </th>
+  <th>
+  Integrating Factor (I.F.)
+</th>
+<th>
+General Solution Formula
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Type I
+    </strong>
+  </td>
+  <td>
+    $$\\frac{dy}{dx} + Py = Q$$
+    <br>
+    (where $P, Q$ are functions of $x$ only)
+  </td>
+  <td>
+  $$\\text{I.F.} = e^{\\int P dx}$$
+</td>
+<td>
+$$y \\cdot (\\text{I.F.}) = \\int (Q \\cdot \\text{I.F.}) dx + C$$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Type II
+  </strong>
+</td>
+<td>
+  $$\\frac{dx}{dy} + P_1x = Q_1$$
+  <br>
+  (where $P_1, Q_1$ are functions of $y$ only)
+</td>
+<td>
+$$\\text{I.F.} = e^{\\int P_1 dy}$$
+</td>
+<td>
+$$x \\cdot (\\text{I.F.}) = \\int (Q_1 \\cdot \\text{I.F.}) dy + C$$
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the general solution of the differential equation: $$x\\frac{dy}{dx} + 2y = x^2 \\quad (x \\neq 0)$$
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Divide the entire equation by $x$ to convert it to standard linear form: $$\\frac{dy}{dx} + \\frac{2}{x}y = x$$ Here, $P = \\frac{2}{x}$ and $Q = x$.
+</li>
+<li>
+  Calculate the
+  <span class="keyword">
+  Integrating Factor
+</span>
+(I.F.): $$\\text{I.F.} = e^{\\int P dx} = e^{\\int \\frac{2}{x} dx} = e^{2\\log x} = e\\log(x^2) = x^2$$
+</li>
+<li>
+Write the general solution using the formula: $$y \\cdot (\\text{I.F.}) = \\int (Q \\cdot \\text{I.F.}) dx + C$$ $$y \\cdot x^2 = \\int (x \\cdot x^2) dx + C$$
+</li>
+<li>
+Integrate the right-hand side: $$y x^2 = \\int x^3 dx + C \\implies y x^2 = \\frac{x^4}{4} + C$$
+</li>
+<li>
+Solve for $y$: $$y = \\frac{x^2}{4} + Cx^{-2}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+General Solution: $y = \\frac{x^2}{4} + Cx^{-2}$
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Chapter Summary &amp; Historical Epilogue
+</summary>
+<p>
+Differential equations serve as the mathematical language of physical sciences, modeling rates of change across physics, chemistry, biology, and economics.
+</p>
+<ul>
+  <li>
+    <strong>
+    Order:
+  </strong>
+  Determined by the highest derivative present.
+</li>
+<li>
+  <strong>
+  Degree:
+</strong>
+Determined by the power of the highest derivative when expressed as a polynomial in derivatives.
+</li>
+<li>
+  <strong>
+  General Solution:
+</strong>
+Contains $n$ arbitrary constants for an $n$-th order ODE.
+</li>
+<li>
+  <strong>
+  Particular Solution:
+</strong>
+Contains $0$ arbitrary constants.
+</li>
+</ul>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Gottfried Wilhelm Leibniz (1646-1716)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  The formal birth of differential equations is celebrated as November 11, 1675, when Leibniz first wrote down the integration symbol $\\int$ and the identity $\\int y dy = \\frac{1}{2}y^2$.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Leibniz developed the highly flexible $\\frac{dy}{dx}$ notation, which allows treating differentials as separable algebraic entities, facilitating the "separation of variables" method in 1691.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-02-application-of-integrals.html"; } else { window.location.href = "12-2-chapter-04-vector-algebra.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
