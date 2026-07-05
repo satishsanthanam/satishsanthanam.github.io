@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 8: ELECTROMAGNETIC WAVES
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 8: ELECTROMAGNETIC WAVES
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.1 Introduction &amp; The Inconsistency of Ampere's Law
+</summary>
+<p>
+  In classical electromagnetism, Oersted and Ampere established that an electric current produces a magnetic field, while Faraday showed that a time-varying magnetic field induces an electric field.
+  <span class="keyword">
+  James Clerk Maxwell
+</span>
+proposed the converse: a time-varying electric field must also generate a magnetic field. This symmetry unified electricity, magnetism, and light into a single framework.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Capacitor Charging Paradox
+</summary>
+<p>
+  Consider a parallel plate capacitor $C$ being charged by a time-dependent current $i(t)$. To find the magnetic field at a point $P$ outside the capacitor, we apply
+  <span class="keyword">
+  Ampere's circuital law
+</span>
+along a circular loop of radius $r$ centered on the wire:
+</p>
+$$\oint \mathbf{B}\cdot d\mathbf{l} = \mu_0 i(t)$$
+<p>
+This yields a non-zero magnetic field $B$ at point $P$:
+</p>
+$$B(2\pi r) = \mu_0 i(t) \implies B = \frac{\mu_0 i(t)}{2\pi r}$$
+<p>
+However, if we choose a pot-shaped surface that does not touch the wire but has its bottom passing through the gap between the capacitor plates, no conduction current passes through this surface. Applying Ampere's law to this surface yields:
+</p>
+$$\oint \mathbf{B}\cdot d\mathbf{l} = 0$$
+<p>
+This contradiction (where the magnetic field at $P$ is calculated to be both non-zero and zero depending on the surface chosen) indicates that Ampere's circuital law was incomplete and missing a crucial term.
+</p>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: James Clerk Maxwell (1831–1879)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Unified the laws of electricity and magnetism (discovered by Coulomb, Oersted, Ampere, and Faraday) into a single, consistent mathematical framework. He derived the thermal velocity distribution of gas molecules and predicted that light is an electromagnetic wave.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Introduced the concept of displacement current to resolve the logical inconsistency in Ampere's law, establishing the foundation for classical electrodynamics.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.2 Displacement Current &amp; The Ampere-Maxwell Law
+</summary>
+<p>
+  To resolve the inconsistency, Maxwell postulated the existence of an additional current acting in the space between the capacitor plates, termed the
+  <span class="keyword">
+  displacement current
+</span>
+($i_d$). This current is produced by the time-varying electric field between the plates.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Derivation of Displacement Current
+</summary>
+<ol>
+  <li>
+    Let the parallel plates of the capacitor have area $A$ and charge $Q(t)$. The uniform electric field $E$ between the plates is:
+    $$E = \frac{Q}{\epsilon_0 A}$$
+  </li>
+  <li>
+    The electric flux $\Phi_E$ through a flat surface between the plates is:
+    $$\Phi_E = E \cdot A = \frac{Q}{\epsilon_0}$$
+  </li>
+  <li>
+    If the charge $Q$ on the plates changes with time, a current $i = \frac{dQ}{dt}$ flows in the circuit. Differentiating the flux equation with respect to time:
+    $$\frac{d\Phi_E}{dt} = \frac{1}{\epsilon_0} \frac{dQ}{dt}$$
+  </li>
+  <li>
+    Isolating the current term yields the definition of the displacement current:
+    $$i_d = \epsilon_0 \frac{d\Phi_E}{dt}$$
+  </li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Generalized Ampere-Maxwell Law
+</summary>
+<p>
+  The total current $i$ is the sum of the
+  <span class="keyword">
+  conduction current
+</span>
+($i_c$) carried by charge carriers in conductors, and the displacement current ($i_d$) due to changing electric fields:
+</p>
+$$i = i_c + i_d = i_c + \epsilon_0 \frac{d\Phi_E}{dt}$$
+<p>
+  Substituting this total current into Ampere's law yields the generalized
+  <span class="keyword">
+  Ampere-Maxwell Law
+</span>
+:
+</p>
+$$\oint \mathbf{B}\cdot d\mathbf{l} = \mu_0 i_c + \mu_0 \epsilon_0 \frac{d\Phi_E}{dt}$$
+<p>
+Outside the capacitor plates, $i_d = 0$ and $i_c = i$. Inside the plates, $i_c = 0$ and $i_d = i$. This formulation ensures continuity of current and resolves the charging paradox.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.3 Maxwell's Equations in Vacuum
+</summary>
+<p>
+Maxwell's equations represent a complete, unified set of four fundamental equations that mathematically express all classical laws of electromagnetism in vacuum:
+</p>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0; text-align:left;">
+  <thead>
+    <tr style="background-color:#f2f2f2;">
+      <th style="padding:8px;">
+      Law / Equation Name
+    </th>
+    <th style="padding:8px;">
+    Mathematical Form
+  </th>
+  <th style="padding:8px;">
+  Physical Significance
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding:8px;">
+      <strong>
+      Gauss's Law for Electricity
+    </strong>
+  </td>
+  <td style="padding:8px;">
+  $$\oint \mathbf{E}\cdot d\mathbf{A} = \frac{Q}{\epsilon_0}$$
+</td>
+<td style="padding:8px;">
+Relates the net electric flux through a closed surface to the enclosed net charge.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Gauss's Law for Magnetism
+  </strong>
+</td>
+<td style="padding:8px;">
+$$\oint \mathbf{B}\cdot d\mathbf{A} = 0$$
+</td>
+<td style="padding:8px;">
+States that the net magnetic flux through any closed surface is zero; magnetic monopoles do not exist.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Faraday's Law of Induction
+  </strong>
+</td>
+<td style="padding:8px;">
+$$\oint \mathbf{E}\cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}$$
+</td>
+<td style="padding:8px;">
+Shows that a time-varying magnetic field induces a spatially varying, non-conservative electric field.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Ampere-Maxwell Law
+  </strong>
+</td>
+<td style="padding:8px;">
+$$\oint \mathbf{B}\cdot d\mathbf{l} = \mu_0 i_c + \mu_0 \epsilon_0 \frac{d\Phi_E}{dt}$$
+</td>
+<td style="padding:8px;">
+Shows that magnetic fields are generated by both conduction currents and time-varying electric fields.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.4 Electromagnetic Waves: Sources &amp; Nature
+</summary>
+<p>
+  The most profound prediction of Maxwell's equations is the existence of
+  <span class="keyword">
+  electromagnetic waves
+</span>
+(EM waves), which are self-sustaining, coupled time-varying electric and magnetic fields propagating through space.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Sources of Electromagnetic Waves
+</summary>
+<ul>
+  <li>
+  Stationary charges produce only static electric fields.
+</li>
+<li>
+Charges in uniform motion (steady currents) produce constant magnetic fields but do not radiate energy.
+</li>
+<li>
+  <strong>
+  Accelerated charges
+</strong>
+(such as an oscillating charge in an LC circuit) radiate electromagnetic waves. The frequency of the emitted EM wave is exactly equal to the frequency of oscillation of the charge.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Transverse Nature &amp; Mathematical Representation
+</summary>
+<p>
+EM waves are transverse waves: the electric field vector $\mathbf{E}$ and magnetic field vector $\mathbf{B}$ are perpendicular to each other and perpendicular to the direction of wave propagation.
+</p>
+<p>
+For a plane electromagnetic wave propagating along the $+z$ direction:
+</p>
+$$E_x(z, t) = E_0 \sin(kz - \omega t)$$
+$$B_y(z, t) = B_0 \sin(kz - \omega t)$$
+<p>
+Where:
+</p>
+<ul>
+  <li>
+  $E_0$ and $B_0$ are the amplitudes of the electric and magnetic fields.
+</li>
+<li>
+$k = \frac{2\pi}{\lambda}$ is the wave propagation vector.
+</li>
+<li>
+$\omega = 2\pi \nu$ is the angular frequency.
+</li>
+<li>
+The speed of propagation is given by $c = \frac{\omega}{k} = \nu\lambda$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Properties of EM Waves
+</summary>
+<ol>
+  <li>
+    <strong>
+    Speed in Vacuum:
+  </strong>
+  The speed of EM waves in free space is determined by the fundamental constants of electromagnetism:
+  $$c = \frac{1}{\sqrt{\mu_0 \epsilon_0}} \approx 3 \times 10^8 \text{ m/s}$$
+</li>
+<li>
+  <strong>
+  Speed in a Material Medium:
+</strong>
+In a medium with permittivity $\epsilon$ and permeability $\mu$, the velocity $v$ is:
+$$v = \frac{1}{\sqrt{\mu \epsilon}}$$
+</li>
+<li>
+  <strong>
+  Field Amplitude Relation:
+</strong>
+At every point in the wave, the amplitudes of the electric and magnetic fields are related by:
+$$\frac{E_0}{B_0} = c$$
+</li>
+<li>
+  <strong>
+  No Medium Required:
+</strong>
+Unlike mechanical waves, EM waves do not require a material medium to propagate; they are self-sustaining oscillations of fields in vacuum.
+</li>
+<li>
+  <strong>
+  Energy Transport:
+</strong>
+EM waves carry energy and momentum. The energy is shared equally between the electric and magnetic fields.
+</li>
+</ol>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Heinrich Rudolf Hertz (1857–1894)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Experimentally demonstrated the existence of electromagnetic waves in 1887 using a spark-gap transmitter. He showed that EM waves exhibit reflection, refraction, and polarization, confirming Maxwell's electromagnetic theory of light.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Pioneered research on electrical discharges in gases and discovered the photoelectric effect, which later became a cornerstone of quantum mechanics.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.5 The Electromagnetic Spectrum
+</summary>
+<p>
+  The classification of electromagnetic waves according to their frequency or wavelength is known as the
+  <span class="keyword">
+  electromagnetic spectrum
+</span>
+. There are no sharp boundaries between adjacent regions.
+</p>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0; text-align:left;">
+  <thead>
+    <tr style="background-color:#f2f2f2;">
+      <th style="padding:8px;">
+      Type of Wave
+    </th>
+    <th style="padding:8px;">
+    Wavelength Range
+  </th>
+  <th style="padding:8px;">
+  Production Method
+</th>
+<th style="padding:8px;">
+Detection Method
+</th>
+<th style="padding:8px;">
+Key Applications
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding:8px;">
+      <strong>
+      Radio Waves
+    </strong>
+  </td>
+  <td style="padding:8px;">
+  $&gt; 0.1 \text{ m}$
+</td>
+<td style="padding:8px;">
+Accelerated motion of charges in conducting wires / antennas.
+</td>
+<td style="padding:8px;">
+Receiver aerials.
+</td>
+<td style="padding:8px;">
+Radio and television communication, cellular phones (UHF).
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Microwaves
+  </strong>
+</td>
+<td style="padding:8px;">
+$0.1 \text{ m}$ to $1 \text{ mm}$
+</td>
+<td style="padding:8px;">
+Special vacuum tubes (klystrons, magnetrons, Gunn diodes).
+</td>
+<td style="padding:8px;">
+Point contact diodes.
+</td>
+<td style="padding:8px;">
+Radar systems for aircraft navigation, speed guns, microwave ovens.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Infrared (Heat) Waves
+  </strong>
+</td>
+<td style="padding:8px;">
+$1 \text{ mm}$ to $700 \text{ nm}$
+</td>
+<td style="padding:8px;">
+Vibration of atoms and molecules in hot bodies.
+</td>
+<td style="padding:8px;">
+Thermopiles, bolometers, infrared photographic film.
+</td>
+<td style="padding:8px;">
+Physical therapy, greenhouse effect, remote switches, night vision.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Visible Light
+  </strong>
+</td>
+<td style="padding:8px;">
+$700 \text{ nm}$ to $400 \text{ nm}$
+</td>
+<td style="padding:8px;">
+Electrons in atoms transitioning between energy levels.
+</td>
+<td style="padding:8px;">
+Human eye, photocells, photographic film.
+</td>
+<td style="padding:8px;">
+Vision, photography, optical instruments.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Ultraviolet (UV) Rays
+  </strong>
+</td>
+<td style="padding:8px;">
+$400 \text{ nm}$ to $1 \text{ nm}$
+</td>
+<td style="padding:8px;">
+Inner shell atomic transitions, very hot bodies (the Sun, arc lamps).
+</td>
+<td style="padding:8px;">
+Photocells, photographic film.
+</td>
+<td style="padding:8px;">
+Water purification (killing germs), LASIK eye surgery, forensics.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    X-Rays
+  </strong>
+</td>
+<td style="padding:8px;">
+$1 \text{ nm}$ to $10^{-3} \text{ nm}$
+</td>
+<td style="padding:8px;">
+Bombarding a high-melting-point metal target with high-energy electrons.
+</td>
+<td style="padding:8px;">
+Photographic film, Geiger tubes, ionization chambers.
+</td>
+<td style="padding:8px;">
+Medical diagnostics (fractures), cancer treatment, security scanners.
+</td>
+</tr>
+<tr>
+  <td style="padding:8px;">
+    <strong>
+    Gamma Rays
+  </strong>
+</td>
+<td style="padding:8px;">
+$&lt; 10^{-3} \text{ nm}$
+</td>
+<td style="padding:8px;">
+Radioactive decay of atomic nuclei, nuclear reactions.
+</td>
+<td style="padding:8px;">
+Geiger tubes, ionization chambers, photographic film.
+</td>
+<td style="padding:8px;">
+Radiotherapy (destroying cancer cells), nuclear physics research.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.6 Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 8.1):
+</strong>
+A plane electromagnetic wave of frequency
+<strong>
+25 MHz
+</strong>
+travels in free space along the $x$-direction. At a particular point in space and time, the electric field is $\mathbf{E} = 6.3 \mathbf{\hat{j}}$ V/m. What is the magnetic field $\mathbf{B}$ at this point?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Identify the relationship between the amplitudes of the electric and magnetic fields:
+    $$B = \frac{E}{c}$$
+  </li>
+  <li>
+    Substitute the given values ($E = 6.3$ V/m and $c = 3 \times 10^8$ m/s):
+    $$B = \frac{6.3}{3 \times 10^8} = 2.1 \times 10^{-8} \text{ T}$$
+  </li>
+  <li>
+    Determine the direction of the magnetic field vector. The wave propagates along the $+x$-direction ($\mathbf{\hat{i}}$), and the electric field is along the $+y$-direction ($\mathbf{\hat{j}}$). Since the direction of propagation is given by the cross product $\mathbf{E} \times \mathbf{B}$:
+    $$\mathbf{\hat{j}} \times \mathbf{\hat{k}} = \mathbf{\hat{i}}$$
+    Therefore, the magnetic field vector must point along the $+z$-direction ($\mathbf{\hat{k}}$).
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\mathbf{B} = 2.1 \times 10^{-8} \mathbf{\hat{k}} \text{ T}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 8.2):
+</strong>
+The magnetic field in a plane electromagnetic wave is given by:
+$$B_y = (2 \times 10^{-7} \text{ T}) \sin(0.5 \times 10^3 x + 1.5 \times 10^{11} t)$$
+(a) What is the wavelength and frequency of the wave?
+(b) Write an expression for the electric field.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Compare the given equation with the standard wave equation $B_y = B_0 \sin(kx + \omega t)$:
+    <ul>
+      <li>
+      $B_0 = 2 \times 10^{-7}$ T
+    </li>
+    <li>
+    $k = 0.5 \times 10^3 \text{ rad/m}$
+  </li>
+  <li>
+  $\omega = 1.5 \times 10^{11} \text{ rad/s}$
+</li>
+</ul>
+</li>
+<li>
+  Calculate the wavelength $\lambda$ using $k = \frac{2\pi}{\lambda}$:
+  $$\lambda = \frac{2\pi}{k} = \frac{2\pi}{0.5 \times 10^3} \approx 1.26 \times 10^{-2} \text{ m} = 1.26 \text{ cm}$$
+</li>
+<li>
+  Calculate the frequency $\nu$ using $\omega = 2\pi\nu$:
+  $$\nu = \frac{\omega}{2\pi} = \frac{1.5 \times 10^{11}}{2\pi} \approx 2.39 \times 10^{10} \text{ Hz} = 23.9 \text{ GHz}$$
+</li>
+<li>
+  Calculate the electric field amplitude $E_0$ using $E_0 = B_0 c$:
+  $$E_0 = (2 \times 10^{-7} \text{ T}) \times (3 \times 10^8 \text{ m/s}) = 60 \text{ V/m}$$
+</li>
+<li>
+  Determine the direction of the electric field. The wave propagates along the $-x$-direction (due to the $+$ sign in the phase), and the magnetic field is along the $+y$-direction. Since $\mathbf{E}$ must be perpendicular to both, the electric field oscillates along the $z$-axis:
+  $$E_z = 60 \sin(0.5 \times 10^3 x + 1.5 \times 10^{11} t) \text{ V/m}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(a) $\lambda = 1.26 \text{ cm}$, $\nu = 23.9 \text{ GHz}$
+(b) $E_z = 60 \sin(0.5 \times 10^3 x + 1.5 \times 10^{11} t) \text{ V/m}$
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 8
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-07-alternating-current.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
