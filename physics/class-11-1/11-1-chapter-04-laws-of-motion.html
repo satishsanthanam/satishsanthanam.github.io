@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 4: Laws of Motion
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 4: Laws of Motion
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.1 Introduction &amp; Aristotle's Fallacy
+</summary>
+<p>
+  In kinematics, we described the motion of a particle in space quantitatively using velocity and acceleration without discussing its cause. Dynamics investigates the factors that govern and change the motion of bodies. A
+  <span class="keyword">
+  force
+</span>
+is required to put a stationary body in motion, or to retard/stop a moving body. This force is provided by an external agency, which may be in contact (e.g., hands, wind, friction) or act at a distance (e.g., gravitational, magnetic, or electrostatic forces).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Aristotle's Fallacy
+</summary>
+<p>
+  The Greek philosopher Aristotle (384 B.C. – 322 B.C.) postulated that:
+  <br>
+  <em>
+  "An external force is required to keep a body in motion."
+</em>
+</p>
+<p>
+  <strong>
+  The Flaw in Aristotelian Mechanics:
+</strong>
+Aristotle's view is flawed because it fails to account for opposing environmental forces such as
+<span class="keyword">
+friction
+</span>
+(for solids) and
+<span class="keyword">
+viscous drag
+</span>
+(for fluids) present in the natural world. In practice, an applied force is only required to counter these opposing forces, making the net external force acting on the body zero. If friction and viscous forces were completely absent, a body in uniform motion would continue to move indefinitely without any external force.
+</p>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Ideas on Motion in Ancient Indian Science
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Ancient Indian thinkers classified forces into continuous pressure (
+  <em>
+  nodan
+</em>
+), impact (
+<em>
+abhighat
+</em>
+), persistent tendency (
+<em>
+sanskara
+</em>
+), and transmitted force. The Vaisesika school formulated the concept of
+<em>
+vega
+</em>
+, which closely aligns with the modern concept of inertia.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Bhaskara (1150 A.D.) introduced the concept of
+<em>
+tatkaliki gati
+</em>
+(instantaneous motion), anticipating modern differential calculus and instantaneous velocity.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.2 Galileo's Law of Inertia
+</summary>
+<p>
+  Galileo Galilei studied the motion of objects on inclined planes to understand the fundamental nature of force and motion, leading to the formulation of the
+  <span class="keyword">
+  law of inertia
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Galileo's Double Inclined Plane Experiments
+</summary>
+<ol>
+  <li>
+    <strong>
+    Single Inclined Plane:
+  </strong>
+  Objects moving down an inclined plane accelerate, while those moving up retard. Motion on a horizontal plane represents an intermediate state where, in the absence of friction, the object must move with constant velocity (zero acceleration).
+</li>
+<li>
+  <strong>
+  Double Inclined Plane:
+</strong>
+A ball released from rest on one plane rolls down and climbs up the opposing plane to nearly the same height. If the slope of the second plane is decreased, the ball travels a longer distance to reach the same height. In the limiting case where the slope of the second plane is reduced to zero (horizontal), the ball travels an infinite distance, and its motion never ceases.
+</li>
+</ol>
+<p>
+  <strong>
+  Definition of Inertia:
+</strong>
+The inherent property of a body by virtue of which it resists any change in its state of rest or uniform motion in a straight line. Inertia literally means
+<em>
+'resistance to change'
+</em>
+.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.3 Newton's First Law of Motion
+</summary>
+<p>
+Isaac Newton built upon Galileo's insights to lay the foundation of classical mechanics. The first law of motion formalizes the concept of inertia.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Statement &amp; Physical Significance
+</summary>
+<p>
+  <strong>
+  Statement:
+</strong>
+<br>
+<em>
+"Every body continues to be in its state of rest or of uniform motion in a straight line unless compelled by some external force to act otherwise."
+</em>
+</p>
+<p>
+Mathematically, if the net external force $\vec{F}_{ext} = 0$, then the acceleration $\vec{a} = 0$. Conversely, acceleration can be non-zero only if there is a net external force acting on the body.
+</p>
+<ul>
+  <li>
+    <strong>
+    Inertia of Rest:
+  </strong>
+  A body at rest remains at rest unless acted upon by an external force (e.g., passengers are thrown backward with a jerk when a stationary bus starts suddenly because their feet move forward with the bus while the upper body remains at rest due to inertia).
+</li>
+<li>
+  <strong>
+  Inertia of Motion:
+</strong>
+A body in uniform motion continues to move with the same velocity unless acted upon by an external force (e.g., passengers are thrown forward when a moving bus stops suddenly because their feet stop due to friction with the floor while the upper body continues moving forward due to inertia).
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.1: An astronaut accidentally gets separated out of his small spaceship accelerating in interstellar space at a constant rate of
+<strong>
+100 m s
+<sup>
+-2
+</sup>
+</strong>
+. What is the acceleration of the astronaut the instant after he is outside the spaceship? (Assume there are no nearby stars to exert gravitational force on him.)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the forces acting on the astronaut once he is outside the spaceship. Since there are no nearby stars, gravitational forces are negligible.
+</li>
+<li>
+The spaceship's acceleration does not affect the astronaut once contact is broken, as the spaceship exerts no gravitational or contact force on him.
+</li>
+<li>
+According to Newton's first law, since the net external force $\vec{F}_{ext} = 0$, the acceleration $\vec{a}$ of the astronaut must be zero.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$a = 0$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.4 Newton's Second Law of Motion
+</summary>
+<p>
+The second law of motion quantitatively relates the net external force acting on a body to its rate of change of momentum.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Linear Momentum
+</summary>
+<p>
+  The
+  <span class="keyword">
+  linear momentum
+</span>
+$\vec{p}$ of a body is defined as the product of its mass $m$ and velocity $\vec{v}$:
+</p>
+<p>
+$$\vec{p} = m \vec{v}$$
+</p>
+<p>
+  Momentum is a vector quantity. Its SI unit is
+  <strong>
+  kg m s
+  <sup>
+  -1
+</sup>
+</strong>
+(or
+<strong>
+N s
+</strong>
+), and its dimensional formula is $[MLT^{-1}]$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation of the Second Law
+</summary>
+<p>
+  <strong>
+  Statement:
+</strong>
+<br>
+<em>
+"The rate of change of momentum of a body is directly proportional to the applied force and takes place in the direction in which the force acts."
+</em>
+</p>
+<p>
+$$\vec{F} \propto \frac{d\vec{p}}{dt} \implies \vec{F} = k \frac{d\vec{p}}{dt}$$
+</p>
+<p>
+For a body of constant mass $m$:
+</p>
+<p>
+$$\frac{d\vec{p}}{dt} = \frac{d}{dt}(m\vec{v}) = m\frac{d\vec{v}}{dt} = m\vec{a}$$
+</p>
+<p>
+$$\vec{F} = k m \vec{a}$$
+</p>
+<p>
+  In SI units, the constant of proportionality $k$ is chosen to be
+  <strong>
+  1
+</strong>
+, defining the unit of force (Newton):
+</p>
+<p>
+$$\vec{F} = \frac{d\vec{p}}{dt} = m\vec{a}$$
+</p>
+<p>
+  <strong>
+  Definition of Newton (N):
+</strong>
+One Newton is the force that produces an acceleration of
+<strong>
+1 m s
+<sup>
+-2
+</sup>
+</strong>
+when applied to a mass of
+<strong>
+1 kg
+</strong>
+.
+<br>
+<strong>
+1 N = 1 kg m s
+<sup>
+-2
+</sup>
+</strong>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Properties of the Second Law
+</summary>
+<ul>
+  <li>
+  If $\vec{F} = 0$, then $\vec{a} = 0$, showing that the second law is consistent with the first law.
+</li>
+<li>
+  The second law is a vector equation, equivalent to three scalar component equations:
+  <br>
+  $F_x = \frac{dp_x}{dt} = ma_x$, $F_y = \frac{dp_y}{dt} = ma_y$, $F_z = \frac{dp_z}{dt} = ma_z$.
+</li>
+<li>
+  The force $\vec{F}$ is the
+  <em>
+  net external force
+</em>
+acting on the system. Any internal forces within the system cancel out in pairs and do not contribute to the net acceleration.
+</li>
+<li>
+  The second law is a
+  <em>
+  local relation
+</em>
+: the force $\vec{F}$ at a given instant $t$ at a point in space determines the acceleration $\vec{a}$ at that same instant and point, independent of the history of motion.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.2: A bullet of mass
+<strong>
+0.04 kg
+</strong>
+moving with a speed of
+<strong>
+90 m s
+<sup>
+-1
+</sup>
+</strong>
+enters a heavy wooden block and is stopped after a distance of
+<strong>
+60 cm
+</strong>
+. What is the average resistive force exerted by the block on the bullet?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Convert all quantities to SI units: mass $m = 0.04\text{ kg}$, initial velocity $u = 90\text{ m s}^{-1}$, final velocity $v = 0$, distance $s = 60\text{ cm} = 0.6\text{ m}$.
+</li>
+<li>
+  Use the kinematic equation to find constant retardation $a$:
+  <br>
+  $$v^2 = u^2 + 2as \implies 0 = 90^2 + 2a(0.6)$$
+  <br>
+  $$a = -\frac{90 \times 90}{1.2} = -6750 \text{ m s}^{-2}$$
+</li>
+<li>
+  Apply Newton's second law to find the retarding force $F$:
+  <br>
+  $$F = ma = 0.04 \text{ kg} \times (-6750 \text{ m s}^{-2}) = -270 \text{ N}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Average resistive force is $270 \text{ N}$ (opposing the motion).
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.3: The motion of a particle of mass $m$ is described by $y = ut + \frac{1}{2}gt^2$. Find the force acting on the particle.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Differentiate the position equation $y$ with respect to time $t$ to find velocity $v$:
+    <br>
+    $$v = \frac{dy}{dt} = \frac{d}{dt}\left(ut + \frac{1}{2}gt^2\right) = u + gt$$
+  </li>
+  <li>
+    Differentiate velocity $v$ with respect to time $t$ to find acceleration $a$:
+    <br>
+    $$a = \frac{dv}{dt} = \frac{d}{dt}(u + gt) = g$$
+  </li>
+  <li>
+    Apply Newton's second law:
+    <br>
+    $$F = ma = mg$$
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$F = mg$ (force due to gravity acting vertically downward).
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.5 Impulse
+</summary>
+<p>
+  When a large force acts on a body for a very short duration of time, it produces a finite change in its momentum. This product of force and time duration is defined as
+  <span class="keyword">
+  impulse
+</span>
+.
+</p>
+<p>
+$$\text{Impulse} = \vec{F} \times \Delta t = \Delta \vec{p}$$
+</p>
+<p>
+  Impulse is equal to the total change in momentum of the body. It is a vector quantity with SI units of
+  <strong>
+  N s
+</strong>
+or
+<strong>
+kg m s
+<sup>
+-1
+</sup>
+</strong>
+.
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.4: A batsman hits back a ball straight in the direction of the bowler without changing its initial speed of
+<strong>
+12 m s
+<sup>
+-1
+</sup>
+</strong>
+. If the mass of the ball is
+<strong>
+0.15 kg
+</strong>
+, determine the impulse imparted to the ball. (Assume linear motion of the ball.)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Define the coordinate system: Let the direction from the batsman to the bowler be positive.
+</li>
+<li>
+Initial velocity $u = -12\text{ m s}^{-1}$ (towards the batsman), final velocity $v = +12\text{ m s}^{-1}$ (towards the bowler).
+</li>
+<li>
+  Calculate the change in momentum $\Delta p$:
+  <br>
+  $$\Delta p = mv - \mu = m(v - u)$$
+  <br>
+  $$\Delta p = 0.15 \text{ kg} \times [12 - (-12)] \text{ m s}^{-1} = 0.15 \times 24 = 3.6 \text{ kg m s}^{-1}$$
+</li>
+<li>
+Since Impulse = Change in Momentum, the impulse is $3.6\text{ N s}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\text{Impulse} = 3.6 \text{ N s}$ (directed from the batsman to the bowler).
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.6 Newton's Third Law of Motion
+</summary>
+<p>
+Newton's third law of motion describes the mutual interactions between two bodies, stating that forces always occur in matched pairs.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Statement &amp; Key Concepts
+</summary>
+<p>
+  <strong>
+  Statement:
+</strong>
+<br>
+<em>
+"To every action, there is always an equal and opposite reaction."
+</em>
+</p>
+<p>
+If body $A$ exerts a force $\vec{F}_{AB}$ on body $B$, then body $B$ simultaneously exerts an equal and opposite force $\vec{F}_{BA}$ on body $A$:
+</p>
+<p>
+$$\vec{F}_{AB} = -\vec{F}_{BA}$$
+</p>
+<ul>
+  <li>
+    <strong>
+    No Single Isolated Force:
+  </strong>
+  Forces in nature always occur in pairs. An isolated single force cannot exist.
+</li>
+<li>
+  <strong>
+  Simultaneous Action:
+</strong>
+Action and reaction forces act at the exact same instant. There is no time lag or cause-and-effect relationship between them.
+</li>
+<li>
+  <strong>
+  Different Bodies:
+</strong>
+Action and reaction forces always act on
+<em>
+different
+</em>
+bodies. Therefore, they never cancel each other out to produce equilibrium on a single body.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.5: Two identical billiard balls strike a rigid wall with the same speed $u$ but at different angles, and get reflected without any change in speed, as shown in Fig. 4.6. Case (a): Ball strikes normally. Case (b): Ball strikes at an angle of
+<strong>
+30°
+</strong>
+to the normal. What is (i) the direction of the force on the wall due to each ball? (ii) the ratio of the magnitudes of impulses imparted to the balls by the wall?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    <strong>
+    Case (a) - Normal Impact:
+  </strong>
+  <br>
+  Initial momentum $p_{x,\text{initial}} = \mu$, $p_{y,\text{initial}} = 0$.
+  <br>
+  Final momentum $p_{x,\text{final}} = -\mu$, $p_{y,\text{final}} = 0$.
+  <br>
+  Change in momentum along x-axis: $\Delta p_x = -\mu - \mu = -2mu$.
+  <br>
+  Impulse along y-axis: $\Delta p_y = 0$.
+  <br>
+  Impulse vector $\vec{I}_a = -2mu \hat{i}$. Force on the wall is along the $+x$ direction (normal to the wall).
+</li>
+<li>
+  <strong>
+  Case (b) - Angled Impact (30° to normal):
+</strong>
+<br>
+Initial momentum components: $p_{x,\text{initial}} = -\mu\cos 30^\circ$, $p_{y,\text{initial}} = -\mu\sin 30^\circ$.
+<br>
+Final momentum components: $p_{x,\text{final}} = \mu\cos 30^\circ$, $p_{y,\text{final}} = -\mu\sin 30^\circ$.
+<br>
+Change in momentum along x-axis: $\Delta p_x = -\mu\cos 30^\circ - \mu\cos 30^\circ = -2mu\cos 30^\circ$.
+<br>
+Change in momentum along y-axis: $\Delta p_y = 0$.
+<br>
+Impulse vector $\vec{I}_b = -2mu\cos 30^\circ \hat{i}$. Force on the wall is along the $+x$ direction (normal to the wall).
+</li>
+<li>
+  <strong>
+  Ratio of Impulse Magnitudes:
+</strong>
+<br>
+$$\frac{I_a}{I_b} = \frac{2mu}{2mu\cos 30^\circ} = \frac{1}{\cos 30^\circ} = \frac{2}{\sqrt{3}} \approx 1.2$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(i) Force on the wall is normal to the wall in both cases. (ii) Ratio of impulses is $1.2$.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.7 Conservation of Momentum
+</summary>
+<p>
+  The second and third laws of motion lead directly to the
+  <span class="keyword">
+  law of conservation of momentum
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation for a Two-Body Collision
+</summary>
+<p>
+Consider two bodies $A$ and $B$ with initial momenta $\vec{p}_A$ and $\vec{p}_B$. They collide for a time interval $\Delta t$ and emerge with final momenta $\vec{p}'_A$ and $\vec{p}'_B$.
+</p>
+<p>
+By Newton's second law:
+</p>
+<p>
+$$\vec{F}_{AB}\Delta t = \vec{p}'_A - \vec{p}_A$$
+</p>
+<p>
+$$\vec{F}_{BA}\Delta t = \vec{p}'_B - \vec{p}_B$$
+</p>
+<p>
+By Newton's third law, $\vec{F}_{AB} = -\vec{F}_{BA}$. Therefore:
+</p>
+<p>
+$$\vec{p}'_A - \vec{p}_A = -(\vec{p}'_B - \vec{p}_B)$$
+</p>
+<p>
+$$\vec{p}'_A + \vec{p}'_B = \vec{p}_A + \vec{p}_B$$
+</p>
+<p>
+  <strong>
+  Statement:
+</strong>
+<br>
+<em>
+"The total momentum of an isolated system of interacting particles is conserved."
+</em>
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.8 Equilibrium of a Particle
+</summary>
+<p>
+Equilibrium of a particle in mechanics refers to the state where the net external force acting on the particle is zero.
+</p>
+<p>
+$$\sum \vec{F} = 0$$
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Concurrent Forces in Equilibrium
+</summary>
+<p>
+For a particle acted upon by three concurrent forces $\vec{F}_1$, $\vec{F}_2$, and $\vec{F}_3$, equilibrium requires:
+</p>
+<p>
+$$\vec{F}_1 + \vec{F}_2 + \vec{F}_3 = 0$$
+</p>
+<p>
+This \implies that the vector sum of any two forces must be equal and opposite to the third force. In component form:
+</p>
+<p>
+$$\sum F_x = 0, \quad \sum F_y = 0, \quad \sum F_z = 0$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.6: A mass of
+<strong>
+6 kg
+</strong>
+is suspended by a rope of length
+<strong>
+2 m
+</strong>
+from the ceiling. A force of
+<strong>
+50 N
+</strong>
+in the horizontal direction is applied at the midpoint $P$ of the rope. What is the angle the rope makes with the vertical in equilibrium? (Take $g = 10\text{ m s}^{-2}$. Neglect the mass of the rope.)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Analyze the lower half of the rope: The tension $T_2$ must balance the weight of the suspended mass $W = mg = 6\text{ kg} \times 10\text{ m s}^{-2} = 60\text{ N}$. Thus, $T_2 = 60\text{ N}$.
+</li>
+<li>
+Analyze the equilibrium of midpoint $P$ under three forces: horizontal force $F = 50\text{ N}$, downward tension $T_2 = 60\text{ N}$, and tension $T_1$ in the upper rope making an angle $\theta$ with the vertical.
+</li>
+<li>
+  Resolve forces at $P$ horizontally and vertically:
+  <br>
+  $$T_1 \sin\theta = 50 \text{ N}$$
+  <br>
+  $$T_1 \cos\theta = T_2 = 60 \text{ N}$$
+</li>
+<li>
+  Divide the two equations to find $\tan\theta$:
+  <br>
+  $$\tan\theta = \frac{50}{60} = \frac{5}{6}$$
+  <br>
+  $$\theta = \tan^{-1}\left(\frac{5}{6}\right) \approx 40^\circ$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\theta \approx 40^\circ$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.9 Common Forces in Mechanics &amp; Friction
+</summary>
+<p>
+Forces in mechanics can be broadly classified into contact forces and non-contact forces (forces acting at a distance like gravity).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Friction
+</summary>
+<p>
+  When two bodies are in contact,
+  <span class="keyword">
+  friction
+</span>
+is the component of the contact force parallel to the surfaces in contact that opposes impending or actual relative motion between them.
+</p>
+<ul>
+  <li>
+    <strong>
+    Static Friction ($f_s$):
+  </strong>
+  Opposes impending motion. It is a self-adjusting force that increases to match the applied force up to a maximum limiting value:
+  <br>
+  $$(f_s)_{\text{max}} = \mu_s N$$
+  <br>
+  where $\mu_s$ is the coefficient of static friction and $N$ is the normal reaction force.
+</li>
+<li>
+  <strong>
+  Kinetic Friction ($f_k$):
+</strong>
+Opposes actual sliding motion. It is independent of the area of contact and nearly independent of velocity:
+<br>
+$$f_k = \mu_k N$$
+<br>
+where $\mu_k$ is the coefficient of kinetic friction ($\mu_k &lt; \mu_s$).
+</li>
+<li>
+  <strong>
+  Rolling Friction:
+</strong>
+Opposes the rolling of a body (like a wheel or sphere) over a surface. It is much smaller than static or kinetic friction.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Friction Parameter Matrix
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Friction Type
+    </th>
+    <th>
+    Mathematical Domain
+  </th>
+  <th>
+  Active Formulas
+</th>
+<th>
+Systemic Role &amp; Limits
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Static Friction
+  </td>
+  <td>
+  $0 \le f_s \le \mu_s N$
+</td>
+<td>
+$(f_s)_{\text{max}} = \mu_s N$
+</td>
+<td>
+Self-adjusting; prevents relative motion up to a threshold.
+</td>
+</tr>
+<tr>
+  <td>
+  Kinetic Friction
+</td>
+<td>
+Constant value
+</td>
+<td>
+$f_k = \mu_k N$
+</td>
+<td>
+Opposes active relative sliding; dissipates energy as heat.
+</td>
+</tr>
+<tr>
+  <td>
+  Rolling Friction
+</td>
+<td>
+Very small
+</td>
+<td>
+$f_r = \mu_r \frac{N}{r}$
+</td>
+<td>
+Opposes rolling; minimized using ball bearings.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.7: Determine the maximum acceleration of a train in which a box lying on its floor will remain stationary, given that the coefficient of static friction between the box and the train's floor is
+<strong>
+0.15
+</strong>
+.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  The force accelerating the box is the static friction $f_s$ between the box and the floor: $f_s = ma$.
+</li>
+<li>
+  For the box to remain stationary relative to the train, the acceleration $a$ must satisfy:
+  <br>
+  $$ma \le (f_s)_{\text{max}} = \mu_s N$$
+</li>
+<li>
+  Since $N = mg$ on a horizontal floor:
+  <br>
+  $$ma \le \mu_s mg \implies a \le \mu_s g$$
+</li>
+<li>
+  Calculate maximum acceleration $a_{\text{max}}$:
+  <br>
+  $$a_{\text{max}} = \mu_s g = 0.15 \times 10 \text{ m s}^{-2} = 1.5 \text{ m s}^{-2}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$a_{\text{max}} = 1.5 \text{ m s}^{-2}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.8: A mass of
+<strong>
+4 kg
+</strong>
+rests on a horizontal plane. The plane is gradually inclined until at an angle of
+<strong>
+15°
+</strong>
+with the horizontal, the mass just begins to slide. What is the coefficient of static friction between the block and the surface?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Resolve the weight $mg$ of the block along and perpendicular to the inclined plane:
+    <br>
+    Component parallel to incline: $mg \sin\theta$ (tends to slide the block down).
+    <br>
+    Component perpendicular to incline: $mg \cos\theta$ (balanced by normal reaction $N$).
+  </li>
+  <li>
+    At the verge of sliding, static friction reaches its maximum value:
+    <br>
+    $$f_s = mg \sin\theta$$
+    <br>
+    $$N = mg \cos\theta$$
+  </li>
+  <li>
+    Substitute $(f_s)_{\text{max}} = \mu_s N$:
+    <br>
+    $$\mu_s (mg \cos\theta) = mg \sin\theta \implies \mu_s = \tan\theta$$
+  </li>
+  <li>
+    Calculate $\mu_s$ for $\theta = 15^\circ$:
+    <br>
+    $$\mu_s = \tan 15^\circ \approx 0.27$$
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\mu_s = 0.27$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.9: What is the acceleration of the block and trolley system shown in Fig. 4.12(a), if the coefficient of kinetic friction between the trolley and the surface is
+<strong>
+0.04
+</strong>
+? What is the tension in the string? (Take $g = 10\text{ m s}^{-2}$. Neglect the mass of the string.)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify system parameters: mass of trolley $M = 20\text{ kg}$, mass of hanging block $m = 3\text{ kg}$, coefficient of kinetic friction $\mu_k = 0.04$.
+</li>
+<li>
+  Write the equation of motion for the hanging block:
+  <br>
+  $$mg - T = ma \implies 30 - T = 3a \quad \text{--- (Equation 1)}$$
+</li>
+<li>
+  Write the equation of motion for the trolley:
+  <br>
+  $$T - f_k = Ma \implies T - \mu_k N = 20a$$
+  <br>
+  Since $N = Mg = 20 \times 10 = 200 \text{ N}$:
+  <br>
+  $$f_k = 0.04 \times 200 = 8 \text{ N}$$
+  <br>
+  $$T - 8 = 20a \quad \text{--- (Equation 2)}$$
+</li>
+<li>
+  Add Equation 1 and Equation 2 to solve for $a$:
+  <br>
+  $$(30 - T) + (T - 8) = 3a + 20a \implies 22 = 23a$$
+  <br>
+  $$a = \frac{22}{23} \approx 0.96 \text{ m s}^{-2}$$
+</li>
+<li>
+  Substitute $a$ back into Equation 1 to find $T$:
+  <br>
+  $$T = 30 - 3(0.96) = 30 - 2.88 = 27.12 \text{ N}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$a = 0.96 \text{ m s}^{-2}$, $T = 27.1 \text{ N}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.10 Circular Motion
+</summary>
+<p>
+  An object in uniform circular motion of radius $R$ with speed $v$ experiences a centripetal acceleration $a_c = v^2/R$ directed towards the center. The force providing this acceleration is the
+  <span class="keyword">
+  centripetal force
+</span>
+:
+</p>
+<p>
+$$f_c = \frac{mv^2}{R}$$
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Motion of a Car on a Level Road
+</summary>
+<p>
+On a flat, level circular road, the centripetal force is provided solely by static friction between the tires and the road:
+</p>
+<p>
+$$\frac{mv^2}{R} \le f_s \le \mu_s N$$
+</p>
+<p>
+Since $N = mg$:
+</p>
+<p>
+$$\frac{mv^2}{R} \le \mu_s mg \implies v \le \sqrt{\mu_s g R}$$
+</p>
+<p>
+The maximum safe speed on a level circular road is:
+</p>
+<p>
+$$v_{\text{max}} = \sqrt{\mu_s g R}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Motion of a Car on a Banked Road
+</summary>
+<p>
+To reduce reliance on friction and prevent tire wear, roads are banked at an angle $\theta$ to the horizontal. The normal force $N$ is tilted, and its horizontal component contributes to the centripetal force.
+</p>
+<p>
+From force equilibrium equations:
+</p>
+<p>
+$$N \cos\theta = mg + f \sin\theta$$
+</p>
+<p>
+$$N \sin\theta + f \cos\theta = \frac{mv^2}{R}$$
+</p>
+<p>
+Setting $f = f_s = \mu_s N$ to find the maximum speed limit $v_{\text{max}}$ yields:
+</p>
+<p>
+$$v_{\text{max}} = \left[ Rg \left( \frac{\mu_s + \tan\theta}{1 - \mu_s \tan\theta} \right) \right]^{1/2}$$
+</p>
+<p>
+  <strong>
+  Optimum Speed ($v_o$):
+</strong>
+The speed at which no frictional force is needed at all ($\mu_s = 0$):
+</p>
+<p>
+$$v_o = \sqrt{Rg \tan\theta}$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.10: A cyclist speeding at
+<strong>
+18 km/h
+</strong>
+on a level road takes a sharp circular turn of radius
+<strong>
+3 m
+</strong>
+without reducing speed. The coefficient of static friction between the tires and the road is
+<strong>
+0.1
+</strong>
+. Will the cyclist slip while taking the turn?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Convert speed to SI units: $v = 18\text{ km/h} = 18 \times \frac{5}{18} = 5\text{ m s}^{-1}$.
+</li>
+<li>
+  Calculate the minimum coefficient of friction required to prevent slipping:
+  <br>
+  $$v^2 \le \mu_s g R \implies \mu_{s,\text{req}} = \frac{v^2}{gR}$$
+</li>
+<li>
+  Substitute the given values ($v = 5\text{ m s}^{-1}$, $R = 3\text{ m}$, $g = 9.8\text{ m s}^{-2}$):
+  <br>
+  $$\mu_{s,\text{req}} = \frac{5^2}{9.8 \times 3} = \frac{25}{29.4} \approx 0.85$$
+</li>
+<li>
+Compare with the actual coefficient of static friction ($\mu_s = 0.1$): Since $\mu_{s,\text{req}} = 0.85 &gt; 0.1$, the available friction is insufficient.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Yes, the cyclist will slip.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.11: A circular racetrack of radius
+<strong>
+300 m
+</strong>
+is banked at an angle of
+<strong>
+15°
+</strong>
+. If the coefficient of friction between the wheels of a race-car and the road is
+<strong>
+0.2
+</strong>
+, what is the (a) optimum speed of the race-car to avoid wear and tear on its tires, and (b) maximum permissible speed to avoid slipping?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    <strong>
+    (a) Optimum Speed ($v_o$):
+  </strong>
+  <br>
+  $$v_o = \sqrt{Rg \tan\theta}$$
+  <br>
+  Substitute $R = 300\text{ m}$, $g = 9.8\text{ m s}^{-2}$, $\theta = 15^\circ$ ($\tan 15^\circ \approx 0.268$):
+  <br>
+  $$v_o = \sqrt{300 \times 9.8 \times 0.268} = \sqrt{787.92} \approx 28.1 \text{ m s}^{-1}$$
+</li>
+<li>
+  <strong>
+  (b) Maximum Permissible Speed ($v_{\text{max}}$):
+</strong>
+<br>
+$$v_{\text{max}} = \left[ Rg \left( \frac{\mu_s + \tan\theta}{1 - \mu_s \tan\theta} \right) \right]^{1/2}$$
+<br>
+Substitute $\mu_s = 0.2$:
+<br>
+$$v_{\text{max}} = \left[ 300 \times 9.8 \times \left( \frac{0.2 + 0.268}{1 - 0.2 \times 0.268} \right) \right]^{1/2}$$
+<br>
+$$v_{\text{max}} = \left[ 2940 \times \left( \frac{0.468}{0.9464} \right) \right]^{1/2} = \sqrt{1453.7} \approx 38.1 \text{ m s}^{-1}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(a) Optimum speed is $28.1 \text{ m s}^{-1}$. (b) Maximum speed is $38.1 \text{ m s}^{-1}$.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.11 Solving Problems in Mechanics
+</summary>
+<p>
+  To solve complex mechanical problems systematically, use the
+  <span class="keyword">
+  Free-Body Diagram (FBD)
+</span>
+method.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  FBD Methodology Steps
+</summary>
+<ol>
+  <li>
+  Draw a schematic diagram showing all assembly parts, links, and supports.
+</li>
+<li>
+Isolate a convenient part of the assembly as the "system."
+</li>
+<li>
+Draw a separate diagram showing this isolated system and all external forces acting on it (e.g., gravity, contact forces, tension, normal reaction). Do not include internal forces.
+</li>
+<li>
+Write down equations of motion using Newton's second law ($\vec{F} = m\vec{a}$) along coordinate axes.
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Example 4.12: A wooden block of mass
+<strong>
+2 kg
+</strong>
+rests on a soft horizontal floor. When an iron cylinder of mass
+<strong>
+25 kg
+</strong>
+is placed on top of the block, the floor yields steadily and the block and cylinder together go down with an acceleration of
+<strong>
+0.1 m s
+<sup>
+-2
+</sup>
+</strong>
+. What is the action of the block on the floor (a) before and (b) after the floor yields? (Take $g = 10\text{ m s}^{-2}$. Identify action-reaction pairs.)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    <strong>
+    (a) Before the floor yields (System is at rest):
+  </strong>
+  <br>
+  Mass of block $m = 2\text{ kg}$.
+  <br>
+  Forces on block: downward gravity $W = mg = 20\text{ N}$, upward normal reaction $R$.
+  <br>
+  Since $a = 0$, $R = W = 20\text{ N}$.
+  <br>
+  By Newton's third law, the action of the block on the floor is equal and opposite to $R$.
+</li>
+<li>
+  <strong>
+  (b) After the floor yields (System accelerates downward):
+</strong>
+<br>
+Combined mass $M = 2 + 25 = 27\text{ kg}$. Downward acceleration $a = 0.1\text{ m s}^{-2}$.
+<br>
+Forces on combined system: downward gravity $W' = Mg = 270\text{ N}$, upward normal reaction $R'$.
+<br>
+Apply Newton's second law:
+<br>
+$$Mg - R' = Ma \implies 270 - R' = 27 \times 0.1$$
+<br>
+$$R' = 270 - 2.7 = 267.3 \text{ N}$$
+<br>
+The action of the system on the floor is equal and opposite to $R'$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(a) Action on the floor is $20 \text{ N}$ vertically downward. (b) Action on the floor is $267.3 \text{ N}$ vertically downward.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 4
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-1-chapter-03-motion-in-a-plane.html"; } else { window.location.href = "11-1-chapter-05-work-energy-and-power.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
