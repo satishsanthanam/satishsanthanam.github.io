@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 11 — Chapter 14: PROBABILITY
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 14: PROBABILITY
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1. Foundations of Events and Sample Spaces
+</summary>
+<p>
+  In probability theory, we analyze random experiments where the exact outcome cannot be predicted with certainty, though the set of all possible outcomes is known. The
+  <span class="keyword">
+  sample space
+</span>
+, denoted by $S$, serves as the universal set containing all possible outcomes of the experiment.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Concept of an Event
+</summary>
+<p>
+  An
+  <span class="keyword">
+  event
+</span>
+is mathematically defined as any subset of the sample space $S$. If the actual outcome $\omega$ of a random experiment belongs to the subset $E$ (i.e., $\omega \in E$), we say that the event $E$ has occurred.
+</p>
+<ul>
+  <li>
+    <strong>
+    Sample Space ($S$):
+  </strong>
+  The set of all possible outcomes. For example, tossing a coin twice yields $S = \{HH, HT, TH, TT\}$.
+</li>
+<li>
+  <strong>
+  Event ($E$):
+</strong>
+A subset $E \subseteq S$. For example, the event of getting exactly one head is $E = \{HT, TH\}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Events
+</summary>
+<p>
+Events can be classified based on the number of sample points (elements) they contain:
+</p>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Event Type
+    </th>
+    <th>
+    Mathematical Definition
+  </th>
+  <th>
+  Characteristics &amp; Examples
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Impossible Event
+    </strong>
+  </td>
+  <td>
+  The empty set $\phi$
+</td>
+<td>
+An event that contains no outcomes and can never occur. For example, rolling a standard die and getting a multiple of 7 ($E = \phi$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Sure Event
+  </strong>
+</td>
+<td>
+The entire sample space $S$
+</td>
+<td>
+An event that contains all possible outcomes and is guaranteed to occur. For example, rolling a die and getting either an odd or an even number ($E = S$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Simple (Elementary) Event
+  </strong>
+</td>
+<td>
+A singleton subset $\{\omega_i\}$
+</td>
+<td>
+An event that contains exactly one sample point. A sample space with $n$ distinct elements has exactly $n$ simple events.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Compound Event
+  </strong>
+</td>
+<td>
+A subset with cardinality greater than 1
+</td>
+<td>
+An event that contains more than one sample point. For example, tossing a coin thrice and getting at least two heads ($E = \{HHT, HTH, THH, HHH\}$).
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2. Algebra of Events
+</summary>
+<p>
+  Since events are subsets of a sample space, we can apply set-theoretic operations to combine, modify, and analyze them. This forms the
+  <span class="keyword">
+  algebra of events
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Set-Theoretic Operations on Events
+</summary>
+<ul>
+  <li>
+    <strong>
+    Complementary Event ('not A'):
+  </strong>
+  For any event $A$, the complementary event $A'$ (or $S - A$) consists of all outcomes in $S$ that are not in $A$. Mathematically, $A' = \{\omega \in S : \omega \notin A\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A or B' (Union):
+</strong>
+Denoted by $A \cup B$, this event occurs if either $A$ occurs, $B$ occurs, or both occur. Mathematically, $A \cup B = \{\omega : \omega \in A \text{ or } \omega \in B\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A and B' (Intersection):
+</strong>
+Denoted by $A \cap B$, this event occurs only when both $A$ and $B$ occur simultaneously. Mathematically, $A \cap B = \{\omega : \omega \in A \text{ and } \omega \in B\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A but not B' (Difference):
+</strong>
+Denoted by $A - B$ or $A \cap B'$, this event occurs when $A$ occurs but $B$ does not. Mathematically, $A - B = \{\omega : \omega \in A \text{ and } \omega \notin B\}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mutually Exclusive and Exhaustive Events
+</summary>
+<ul>
+  <li>
+    <strong>
+    Mutually Exclusive Events:
+  </strong>
+  Two events $A$ and $B$ are called
+  <span class="keyword">
+  mutually exclusive
+</span>
+if they cannot occur simultaneously. In set notation, $A \cap B = \phi$. For example, in rolling a die, getting an odd number and getting an even number are mutually exclusive.
+</li>
+<li>
+  <strong>
+  Exhaustive Events:
+</strong>
+A collection of events $E_1, E_2, \dots, E_n$ is called
+<span class="keyword">
+exhaustive
+</span>
+if their union equals the entire sample space $S$. That is, $\bigcup_{i=1}^n E_i = S$. At least one of these events must occur whenever the experiment is performed.
+</li>
+<li>
+  <strong>
+  Mutually Exclusive and Exhaustive Events:
+</strong>
+If a set of events $E_1, E_2, \dots, E_n$ satisfies both conditions (i.e., $E_i \cap E_j = \phi$ for all $i \neq j$, and $\bigcup_{i=1}^n E_i = S$), they partition the sample space.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A coin is tossed three \times. Let $A$ be the event 'No head appears', $B$ be the event 'Exactly one head appears', and $C$ be the event 'At least two heads appear'. Do they form a set of mutually exclusive and exhaustive events?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Write down the sample space: $S = \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\}$.
+</li>
+<li>
+  Identify the subsets for each event:
+  <ul>
+    <li>
+    $A = \{TTT\}$
+  </li>
+  <li>
+  $B = \{HTT, THT, TTH\}$
+</li>
+<li>
+$C = \{HHT, HTH, THH, HHH\}$
+</li>
+</ul>
+</li>
+<li>
+Check the union of the events:$$A \cup B \cup C = \{TTT, HTT, THT, TTH, HHT, HTH, THH, HHH\} = S$$Since the union equals $S$, the events are exhaustive.
+</li>
+<li>
+  Check pairwise intersections:
+  <ul>
+    <li>
+    $A \cap B = \phi$
+  </li>
+  <li>
+  $A \cap C = \phi$
+</li>
+<li>
+$B \cap C = \phi$
+</li>
+</ul>
+Since all pairwise intersections are empty, the events are mutually exclusive.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Yes, the events $A$, $B$, and $C$ form a set of mutually exclusive and exhaustive events.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3. Axiomatic Approach to Probability
+</summary>
+<p>
+  The
+  <span class="keyword">
+  axiomatic approach
+</span>
+is a rigorous mathematical framework that defines probability as a real-valued function $P$ mapping the power set of a sample space $S$ to the real interval $[0, 1]$, satisfying three fundamental axioms.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Three Axioms of Probability
+</summary>
+<p>
+For any sample space $S$ and events $E, F \subseteq S$:
+</p>
+<ol>
+  <li>
+    <strong>
+    Axiom 1 (Non-negativity):
+  </strong>
+  For any event $E$, the probability is non-negative:$$P(E) \ge 0$$
+</li>
+<li>
+  <strong>
+  Axiom 2 (Certainty):
+</strong>
+The probability of the entire sample space (sure event) is 1:$$P(S) = 1$$
+</li>
+<li>
+  <strong>
+  Axiom 3 (Additivity):
+</strong>
+If $E$ and $F$ are mutually exclusive events ($E \cap F = \phi$), then:$$P(E \cup F) = P(E) + P(F)$$
+</li>
+</ol>
+<p>
+  <strong>
+  Immediate Consequences:
+</strong>
+</p>
+<ul>
+  <li>
+  The probability of the impossible event is zero: $P(\phi) = 0$.
+</li>
+<li>
+For a finite sample space $S = \{\omega_1, \omega_2, \dots, \omega_n\}$, the sum of probabilities of all elementary outcomes is 1: $\sum_{i=1}^n P(\omega_i) = 1$.
+</li>
+<li>
+For any event $A$, its probability is the sum of the probabilities of its constituent outcomes: $P(A) = \sum_{\omega_i \in A} P(\omega_i)$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equally Likely Outcomes
+</summary>
+<p>
+  When all outcomes in a finite sample space $S$ of size $n$ have an equal chance of occurring, they are called
+  <span class="keyword">
+  equally likely outcomes
+</span>
+. Under this assumption:
+</p>
+<ul>
+  <li>
+  The probability of each elementary outcome $\omega_i$ is:$$P(\omega_i) = \frac{1}{n}$$
+</li>
+<li>
+For any event $E$ containing $m$ outcomes:$$P(E) = \frac{m}{n} = \frac{\text{Number of outcomes favourable to } E}{\text{Total possible outcomes}}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Addition Theorem and Complementary Probability
+</summary>
+<p>
+Using the axioms, we can derive key formulas for calculating probabilities of combined events:
+</p>
+<ul>
+  <li>
+    <strong>
+    Probability of 'A or B' (General Addition Rule):
+  </strong>
+  For any two events $A$ and $B$:$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+</li>
+<li>
+  <strong>
+  Probability of 'not A' (Complement Rule):
+</strong>
+For any event $A$:$$P(A') = 1 - P(A)$$
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Two students, Anil and Ashima, appear in an examination. The probability that Anil will qualify is 0.05 and that Ashima will qualify is 0.10. The probability that both will qualify is 0.02. Find the probability that: (a) Both will not qualify, (b) At least one of them will not qualify, (c) Only one of them will qualify.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Define events: Let $E$ be the event 'Anil qualifies' and $F$ be the event 'Ashima qualifies'. Given: $P(E) = 0.05$, $P(F) = 0.10$, and $P(E \cap F) = 0.02$.
+</li>
+<li>
+  <strong>
+  Part (a): Both will not qualify ($E' \cap F'$)
+</strong>
+<ul>
+  <li>
+  By De Morgan's Law, $E' \cap F' = (E \cup F)'$.
+</li>
+<li>
+First, find $P(E \cup F) = P(E) + P(F) - P(E \cap F) = 0.05 + 0.10 - 0.02 = 0.13$.
+</li>
+<li>
+Then, $P(E' \cap F') = 1 - P(E \cup F) = 1 - 0.13 = 0.87$.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Part (b): At least one of them will not qualify
+</strong>
+<ul>
+  <li>
+  This is the complement of 'both qualify': $1 - P(E \cap F) = 1 - 0.02 = 0.98$.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Part (c): Only one of them will qualify
+</strong>
+<ul>
+  <li>
+  This event is $(E \cap F') \cup (E' \cap F)$. Since these are mutually exclusive:$$P(\text{only one}) = P(E \cap F') + P(E' \cap F)$$$$= [P(E) - P(E \cap F)] + [P(F) - P(E \cap F)]$$$$= [0.05 - 0.02] + [0.10 - 0.02] = 0.03 + 0.08 = 0.11$$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(a) 0.87, (b) 0.98, (c) 0.11
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4. Historical Chronicle of Probability Theory
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Evolution of Probability
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    16th Century Origins:
+  </strong>
+  Italian physician and mathematician Jerome Cardan (1501–1576) wrote the first book on the subject,
+  <em>
+  Book on Games of Chance
+</em>
+(published posthumously in 1663), initiating the mathematical study of games of hazard.
+</li>
+<li>
+  <strong>
+  17th Century Correspondence:
+</strong>
+In 1654, French philosophers and mathematicians Blaise Pascal (1623–1662) and Pierre de Fermat (1601–1665) systematically solved dice problems, establishing the foundations of classical probability theory.
+</li>
+<li>
+  <strong>
+  Subsequent Contributors:
+</strong>
+Key advancements were made by Christian Huygens, Jakob Bernoulli, Abraham de Moivre, Pierre-Simon Laplace, Pafnuty Chebyshev, and Andrey Markov.
+</li>
+<li>
+  <strong>
+  Modern Axiomatization:
+</strong>
+Russian mathematician Andrey Kolmogorov (1903–1987) published
+<em>
+Foundations of Probability
+</em>
+in 1933, introducing the modern axiomatic framework that treats probability as a measure on a set.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 14
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-13-statistics.html"; } else { window.location.href = "11-chapter-15-infinite-series.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
+, '
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 14: PROBABILITY
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1. Foundations of Events and Sample Spaces
+</summary>
+<p>
+  In probability theory, we analyze random experiments where the exact outcome cannot be predicted with certainty, though the set of all possible outcomes is known. The
+  <span class="keyword">
+  sample space
+</span>
+, denoted by $S$, serves as the universal set containing all possible outcomes of the experiment.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Concept of an Event
+</summary>
+<p>
+  An
+  <span class="keyword">
+  event
+</span>
+is mathematically defined as any subset of the sample space $S$. If the actual outcome $\omega$ of a random experiment belongs to the subset $E$ (i.e., $\omega \in E$), we say that the event $E$ has occurred.
+</p>
+<ul>
+  <li>
+    <strong>
+    Sample Space ($S$):
+  </strong>
+  The set of all possible outcomes. For example, tossing a coin twice yields $S = \{HH, HT, TH, TT\}$.
+</li>
+<li>
+  <strong>
+  Event ($E$):
+</strong>
+A subset $E \subseteq S$. For example, the event of getting exactly one head is $E = \{HT, TH\}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Events
+</summary>
+<p>
+Events can be classified based on the number of sample points (elements) they contain:
+</p>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Event Type
+    </th>
+    <th>
+    Mathematical Definition
+  </th>
+  <th>
+  Characteristics &amp; Examples
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Impossible Event
+    </strong>
+  </td>
+  <td>
+  The empty set $\phi$
+</td>
+<td>
+An event that contains no outcomes and can never occur. For example, rolling a standard die and getting a multiple of 7 ($E = \phi$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Sure Event
+  </strong>
+</td>
+<td>
+The entire sample space $S$
+</td>
+<td>
+An event that contains all possible outcomes and is guaranteed to occur. For example, rolling a die and getting either an odd or an even number ($E = S$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Simple (Elementary) Event
+  </strong>
+</td>
+<td>
+A singleton subset $\{\omega_i\}$
+</td>
+<td>
+An event that contains exactly one sample point. A sample space with $n$ distinct elements has exactly $n$ simple events.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Compound Event
+  </strong>
+</td>
+<td>
+A subset with cardinality greater than 1
+</td>
+<td>
+An event that contains more than one sample point. For example, tossing a coin thrice and getting at least two heads ($E = \{HHT, HTH, THH, HHH\}$).
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2. Algebra of Events
+</summary>
+<p>
+  Since events are subsets of a sample space, we can apply set-theoretic operations to combine, modify, and analyze them. This forms the
+  <span class="keyword">
+  algebra of events
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Set-Theoretic Operations on Events
+</summary>
+<ul>
+  <li>
+    <strong>
+    Complementary Event ('not A'):
+  </strong>
+  For any event $A$, the complementary event $A'$ (or $S - A$) consists of all outcomes in $S$ that are not in $A$. Mathematically, $A' = \{\omega \in S : \omega \notin A\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A or B' (Union):
+</strong>
+Denoted by $A \cup B$, this event occurs if either $A$ occurs, $B$ occurs, or both occur. Mathematically, $A \cup B = \{\omega : \omega \in A \text{ or } \omega \in B\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A and B' (Intersection):
+</strong>
+Denoted by $A \cap B$, this event occurs only when both $A$ and $B$ occur simultaneously. Mathematically, $A \cap B = \{\omega : \omega \in A \text{ and } \omega \in B\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A but not B' (Difference):
+</strong>
+Denoted by $A - B$ or $A \cap B'$, this event occurs when $A$ occurs but $B$ does not. Mathematically, $A - B = \{\omega : \omega \in A \text{ and } \omega \notin B\}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mutually Exclusive and Exhaustive Events
+</summary>
+<ul>
+  <li>
+    <strong>
+    Mutually Exclusive Events:
+  </strong>
+  Two events $A$ and $B$ are called
+  <span class="keyword">
+  mutually exclusive
+</span>
+if they cannot occur simultaneously. In set notation, $A \cap B = \phi$. For example, in rolling a die, getting an odd number and getting an even number are mutually exclusive.
+</li>
+<li>
+  <strong>
+  Exhaustive Events:
+</strong>
+A collection of events $E_1, E_2, \dots, E_n$ is called
+<span class="keyword">
+exhaustive
+</span>
+if their union equals the entire sample space $S$. That is, $\bigcup_{i=1}^n E_i = S$. At least one of these events must occur whenever the experiment is performed.
+</li>
+<li>
+  <strong>
+  Mutually Exclusive and Exhaustive Events:
+</strong>
+If a set of events $E_1, E_2, \dots, E_n$ satisfies both conditions (i.e., $E_i \cap E_j = \phi$ for all $i \neq j$, and $\bigcup_{i=1}^n E_i = S$), they partition the sample space.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A coin is tossed three \times. Let $A$ be the event 'No head appears', $B$ be the event 'Exactly one head appears', and $C$ be the event 'At least two heads appear'. Do they form a set of mutually exclusive and exhaustive events?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Write down the sample space: $S = \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\}$.
+</li>
+<li>
+  Identify the subsets for each event:
+  <ul>
+    <li>
+    $A = \{TTT\}$
+  </li>
+  <li>
+  $B = \{HTT, THT, TTH\}$
+</li>
+<li>
+$C = \{HHT, HTH, THH, HHH\}$
+</li>
+</ul>
+</li>
+<li>
+Check the union of the events:$$A \cup B \cup C = \{TTT, HTT, THT, TTH, HHT, HTH, THH, HHH\} = S$$Since the union equals $S$, the events are exhaustive.
+</li>
+<li>
+  Check pairwise intersections:
+  <ul>
+    <li>
+    $A \cap B = \phi$
+  </li>
+  <li>
+  $A \cap C = \phi$
+</li>
+<li>
+$B \cap C = \phi$
+</li>
+</ul>
+Since all pairwise intersections are empty, the events are mutually exclusive.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Yes, the events $A$, $B$, and $C$ form a set of mutually exclusive and exhaustive events.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3. Axiomatic Approach to Probability
+</summary>
+<p>
+  The
+  <span class="keyword">
+  axiomatic approach
+</span>
+is a rigorous mathematical framework that defines probability as a real-valued function $P$ mapping the power set of a sample space $S$ to the real interval $[0, 1]$, satisfying three fundamental axioms.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Three Axioms of Probability
+</summary>
+<p>
+For any sample space $S$ and events $E, F \subseteq S$:
+</p>
+<ol>
+  <li>
+    <strong>
+    Axiom 1 (Non-negativity):
+  </strong>
+  For any event $E$, the probability is non-negative:$$P(E) \ge 0$$
+</li>
+<li>
+  <strong>
+  Axiom 2 (Certainty):
+</strong>
+The probability of the entire sample space (sure event) is 1:$$P(S) = 1$$
+</li>
+<li>
+  <strong>
+  Axiom 3 (Additivity):
+</strong>
+If $E$ and $F$ are mutually exclusive events ($E \cap F = \phi$), then:$$P(E \cup F) = P(E) + P(F)$$
+</li>
+</ol>
+<p>
+  <strong>
+  Immediate Consequences:
+</strong>
+</p>
+<ul>
+  <li>
+  The probability of the impossible event is zero: $P(\phi) = 0$.
+</li>
+<li>
+For a finite sample space $S = \{\omega_1, \omega_2, \dots, \omega_n\}$, the sum of probabilities of all elementary outcomes is 1: $\sum_{i=1}^n P(\omega_i) = 1$.
+</li>
+<li>
+For any event $A$, its probability is the sum of the probabilities of its constituent outcomes: $P(A) = \sum_{\omega_i \in A} P(\omega_i)$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equally Likely Outcomes
+</summary>
+<p>
+  When all outcomes in a finite sample space $S$ of size $n$ have an equal chance of occurring, they are called
+  <span class="keyword">
+  equally likely outcomes
+</span>
+. Under this assumption:
+</p>
+<ul>
+  <li>
+  The probability of each elementary outcome $\omega_i$ is:$$P(\omega_i) = \frac{1}{n}$$
+</li>
+<li>
+For any event $E$ containing $m$ outcomes:$$P(E) = \frac{m}{n} = \frac{\text{Number of outcomes favourable to } E}{\text{Total possible outcomes}}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Addition Theorem and Complementary Probability
+</summary>
+<p>
+Using the axioms, we can derive key formulas for calculating probabilities of combined events:
+</p>
+<ul>
+  <li>
+    <strong>
+    Probability of 'A or B' (General Addition Rule):
+  </strong>
+  For any two events $A$ and $B$:$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+</li>
+<li>
+  <strong>
+  Probability of 'not A' (Complement Rule):
+</strong>
+For any event $A$:$$P(A') = 1 - P(A)$$
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Two students, Anil and Ashima, appear in an examination. The probability that Anil will qualify is 0.05 and that Ashima will qualify is 0.10. The probability that both will qualify is 0.02. Find the probability that: (a) Both will not qualify, (b) At least one of them will not qualify, (c) Only one of them will qualify.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Define events: Let $E$ be the event 'Anil qualifies' and $F$ be the event 'Ashima qualifies'. Given: $P(E) = 0.05$, $P(F) = 0.10$, and $P(E \cap F) = 0.02$.
+</li>
+<li>
+  <strong>
+  Part (a): Both will not qualify ($E' \cap F'$)
+</strong>
+<ul>
+  <li>
+  By De Morgan's Law, $E' \cap F' = (E \cup F)'$.
+</li>
+<li>
+First, find $P(E \cup F) = P(E) + P(F) - P(E \cap F) = 0.05 + 0.10 - 0.02 = 0.13$.
+</li>
+<li>
+Then, $P(E' \cap F') = 1 - P(E \cup F) = 1 - 0.13 = 0.87$.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Part (b): At least one of them will not qualify
+</strong>
+<ul>
+  <li>
+  This is the complement of 'both qualify': $1 - P(E \cap F) = 1 - 0.02 = 0.98$.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Part (c): Only one of them will qualify
+</strong>
+<ul>
+  <li>
+  This event is $(E \cap F') \cup (E' \cap F)$. Since these are mutually exclusive:$$P(\text{only one}) = P(E \cap F') + P(E' \cap F)$$$$= [P(E) - P(E \cap F)] + [P(F) - P(E \cap F)]$$$$= [0.05 - 0.02] + [0.10 - 0.02] = 0.03 + 0.08 = 0.11$$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(a) 0.87, (b) 0.98, (c) 0.11
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4. Historical Chronicle of Probability Theory
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Evolution of Probability
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    16th Century Origins:
+  </strong>
+  Italian physician and mathematician Jerome Cardan (1501–1576) wrote the first book on the subject,
+  <em>
+  Book on Games of Chance
+</em>
+(published posthumously in 1663), initiating the mathematical study of games of hazard.
+</li>
+<li>
+  <strong>
+  17th Century Correspondence:
+</strong>
+In 1654, French philosophers and mathematicians Blaise Pascal (1623–1662) and Pierre de Fermat (1601–1665) systematically solved dice problems, establishing the foundations of classical probability theory.
+</li>
+<li>
+  <strong>
+  Subsequent Contributors:
+</strong>
+Key advancements were made by Christian Huygens, Jakob Bernoulli, Abraham de Moivre, Pierre-Simon Laplace, Pafnuty Chebyshev, and Andrey Markov.
+</li>
+<li>
+  <strong>
+  Modern Axiomatization:
+</strong>
+Russian mathematician Andrey Kolmogorov (1903–1987) published
+<em>
+Foundations of Probability
+</em>
+in 1933, introducing the modern axiomatic framework that treats probability as a measure on a set.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 14
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-13-statistics.html"; } else { window.location.href = "11-chapter-15-infinite-series.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
+, displayMath: [['$', '$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 14: PROBABILITY
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1. Foundations of Events and Sample Spaces
+</summary>
+<p>
+  In probability theory, we analyze random experiments where the exact outcome cannot be predicted with certainty, though the set of all possible outcomes is known. The
+  <span class="keyword">
+  sample space
+</span>
+, denoted by $S$, serves as the universal set containing all possible outcomes of the experiment.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Concept of an Event
+</summary>
+<p>
+  An
+  <span class="keyword">
+  event
+</span>
+is mathematically defined as any subset of the sample space $S$. If the actual outcome $\omega$ of a random experiment belongs to the subset $E$ (i.e., $\omega \in E$), we say that the event $E$ has occurred.
+</p>
+<ul>
+  <li>
+    <strong>
+    Sample Space ($S$):
+  </strong>
+  The set of all possible outcomes. For example, tossing a coin twice yields $S = \{HH, HT, TH, TT\}$.
+</li>
+<li>
+  <strong>
+  Event ($E$):
+</strong>
+A subset $E \subseteq S$. For example, the event of getting exactly one head is $E = \{HT, TH\}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Events
+</summary>
+<p>
+Events can be classified based on the number of sample points (elements) they contain:
+</p>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Event Type
+    </th>
+    <th>
+    Mathematical Definition
+  </th>
+  <th>
+  Characteristics &amp; Examples
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Impossible Event
+    </strong>
+  </td>
+  <td>
+  The empty set $\phi$
+</td>
+<td>
+An event that contains no outcomes and can never occur. For example, rolling a standard die and getting a multiple of 7 ($E = \phi$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Sure Event
+  </strong>
+</td>
+<td>
+The entire sample space $S$
+</td>
+<td>
+An event that contains all possible outcomes and is guaranteed to occur. For example, rolling a die and getting either an odd or an even number ($E = S$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Simple (Elementary) Event
+  </strong>
+</td>
+<td>
+A singleton subset $\{\omega_i\}$
+</td>
+<td>
+An event that contains exactly one sample point. A sample space with $n$ distinct elements has exactly $n$ simple events.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Compound Event
+  </strong>
+</td>
+<td>
+A subset with cardinality greater than 1
+</td>
+<td>
+An event that contains more than one sample point. For example, tossing a coin thrice and getting at least two heads ($E = \{HHT, HTH, THH, HHH\}$).
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2. Algebra of Events
+</summary>
+<p>
+  Since events are subsets of a sample space, we can apply set-theoretic operations to combine, modify, and analyze them. This forms the
+  <span class="keyword">
+  algebra of events
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Set-Theoretic Operations on Events
+</summary>
+<ul>
+  <li>
+    <strong>
+    Complementary Event ('not A'):
+  </strong>
+  For any event $A$, the complementary event $A'$ (or $S - A$) consists of all outcomes in $S$ that are not in $A$. Mathematically, $A' = \{\omega \in S : \omega \notin A\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A or B' (Union):
+</strong>
+Denoted by $A \cup B$, this event occurs if either $A$ occurs, $B$ occurs, or both occur. Mathematically, $A \cup B = \{\omega : \omega \in A \text{ or } \omega \in B\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A and B' (Intersection):
+</strong>
+Denoted by $A \cap B$, this event occurs only when both $A$ and $B$ occur simultaneously. Mathematically, $A \cap B = \{\omega : \omega \in A \text{ and } \omega \in B\}$.
+</li>
+<li>
+  <strong>
+  The Event 'A but not B' (Difference):
+</strong>
+Denoted by $A - B$ or $A \cap B'$, this event occurs when $A$ occurs but $B$ does not. Mathematically, $A - B = \{\omega : \omega \in A \text{ and } \omega \notin B\}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mutually Exclusive and Exhaustive Events
+</summary>
+<ul>
+  <li>
+    <strong>
+    Mutually Exclusive Events:
+  </strong>
+  Two events $A$ and $B$ are called
+  <span class="keyword">
+  mutually exclusive
+</span>
+if they cannot occur simultaneously. In set notation, $A \cap B = \phi$. For example, in rolling a die, getting an odd number and getting an even number are mutually exclusive.
+</li>
+<li>
+  <strong>
+  Exhaustive Events:
+</strong>
+A collection of events $E_1, E_2, \dots, E_n$ is called
+<span class="keyword">
+exhaustive
+</span>
+if their union equals the entire sample space $S$. That is, $\bigcup_{i=1}^n E_i = S$. At least one of these events must occur whenever the experiment is performed.
+</li>
+<li>
+  <strong>
+  Mutually Exclusive and Exhaustive Events:
+</strong>
+If a set of events $E_1, E_2, \dots, E_n$ satisfies both conditions (i.e., $E_i \cap E_j = \phi$ for all $i \neq j$, and $\bigcup_{i=1}^n E_i = S$), they partition the sample space.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A coin is tossed three \times. Let $A$ be the event 'No head appears', $B$ be the event 'Exactly one head appears', and $C$ be the event 'At least two heads appear'. Do they form a set of mutually exclusive and exhaustive events?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Write down the sample space: $S = \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\}$.
+</li>
+<li>
+  Identify the subsets for each event:
+  <ul>
+    <li>
+    $A = \{TTT\}$
+  </li>
+  <li>
+  $B = \{HTT, THT, TTH\}$
+</li>
+<li>
+$C = \{HHT, HTH, THH, HHH\}$
+</li>
+</ul>
+</li>
+<li>
+Check the union of the events:$$A \cup B \cup C = \{TTT, HTT, THT, TTH, HHT, HTH, THH, HHH\} = S$$Since the union equals $S$, the events are exhaustive.
+</li>
+<li>
+  Check pairwise intersections:
+  <ul>
+    <li>
+    $A \cap B = \phi$
+  </li>
+  <li>
+  $A \cap C = \phi$
+</li>
+<li>
+$B \cap C = \phi$
+</li>
+</ul>
+Since all pairwise intersections are empty, the events are mutually exclusive.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Yes, the events $A$, $B$, and $C$ form a set of mutually exclusive and exhaustive events.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3. Axiomatic Approach to Probability
+</summary>
+<p>
+  The
+  <span class="keyword">
+  axiomatic approach
+</span>
+is a rigorous mathematical framework that defines probability as a real-valued function $P$ mapping the power set of a sample space $S$ to the real interval $[0, 1]$, satisfying three fundamental axioms.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Three Axioms of Probability
+</summary>
+<p>
+For any sample space $S$ and events $E, F \subseteq S$:
+</p>
+<ol>
+  <li>
+    <strong>
+    Axiom 1 (Non-negativity):
+  </strong>
+  For any event $E$, the probability is non-negative:$$P(E) \ge 0$$
+</li>
+<li>
+  <strong>
+  Axiom 2 (Certainty):
+</strong>
+The probability of the entire sample space (sure event) is 1:$$P(S) = 1$$
+</li>
+<li>
+  <strong>
+  Axiom 3 (Additivity):
+</strong>
+If $E$ and $F$ are mutually exclusive events ($E \cap F = \phi$), then:$$P(E \cup F) = P(E) + P(F)$$
+</li>
+</ol>
+<p>
+  <strong>
+  Immediate Consequences:
+</strong>
+</p>
+<ul>
+  <li>
+  The probability of the impossible event is zero: $P(\phi) = 0$.
+</li>
+<li>
+For a finite sample space $S = \{\omega_1, \omega_2, \dots, \omega_n\}$, the sum of probabilities of all elementary outcomes is 1: $\sum_{i=1}^n P(\omega_i) = 1$.
+</li>
+<li>
+For any event $A$, its probability is the sum of the probabilities of its constituent outcomes: $P(A) = \sum_{\omega_i \in A} P(\omega_i)$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equally Likely Outcomes
+</summary>
+<p>
+  When all outcomes in a finite sample space $S$ of size $n$ have an equal chance of occurring, they are called
+  <span class="keyword">
+  equally likely outcomes
+</span>
+. Under this assumption:
+</p>
+<ul>
+  <li>
+  The probability of each elementary outcome $\omega_i$ is:$$P(\omega_i) = \frac{1}{n}$$
+</li>
+<li>
+For any event $E$ containing $m$ outcomes:$$P(E) = \frac{m}{n} = \frac{\text{Number of outcomes favourable to } E}{\text{Total possible outcomes}}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Addition Theorem and Complementary Probability
+</summary>
+<p>
+Using the axioms, we can derive key formulas for calculating probabilities of combined events:
+</p>
+<ul>
+  <li>
+    <strong>
+    Probability of 'A or B' (General Addition Rule):
+  </strong>
+  For any two events $A$ and $B$:$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+</li>
+<li>
+  <strong>
+  Probability of 'not A' (Complement Rule):
+</strong>
+For any event $A$:$$P(A') = 1 - P(A)$$
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Two students, Anil and Ashima, appear in an examination. The probability that Anil will qualify is 0.05 and that Ashima will qualify is 0.10. The probability that both will qualify is 0.02. Find the probability that: (a) Both will not qualify, (b) At least one of them will not qualify, (c) Only one of them will qualify.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Define events: Let $E$ be the event 'Anil qualifies' and $F$ be the event 'Ashima qualifies'. Given: $P(E) = 0.05$, $P(F) = 0.10$, and $P(E \cap F) = 0.02$.
+</li>
+<li>
+  <strong>
+  Part (a): Both will not qualify ($E' \cap F'$)
+</strong>
+<ul>
+  <li>
+  By De Morgan's Law, $E' \cap F' = (E \cup F)'$.
+</li>
+<li>
+First, find $P(E \cup F) = P(E) + P(F) - P(E \cap F) = 0.05 + 0.10 - 0.02 = 0.13$.
+</li>
+<li>
+Then, $P(E' \cap F') = 1 - P(E \cup F) = 1 - 0.13 = 0.87$.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Part (b): At least one of them will not qualify
+</strong>
+<ul>
+  <li>
+  This is the complement of 'both qualify': $1 - P(E \cap F) = 1 - 0.02 = 0.98$.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Part (c): Only one of them will qualify
+</strong>
+<ul>
+  <li>
+  This event is $(E \cap F') \cup (E' \cap F)$. Since these are mutually exclusive:$$P(\text{only one}) = P(E \cap F') + P(E' \cap F)$$$$= [P(E) - P(E \cap F)] + [P(F) - P(E \cap F)]$$$$= [0.05 - 0.02] + [0.10 - 0.02] = 0.03 + 0.08 = 0.11$$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(a) 0.87, (b) 0.98, (c) 0.11
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4. Historical Chronicle of Probability Theory
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Evolution of Probability
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    16th Century Origins:
+  </strong>
+  Italian physician and mathematician Jerome Cardan (1501–1576) wrote the first book on the subject,
+  <em>
+  Book on Games of Chance
+</em>
+(published posthumously in 1663), initiating the mathematical study of games of hazard.
+</li>
+<li>
+  <strong>
+  17th Century Correspondence:
+</strong>
+In 1654, French philosophers and mathematicians Blaise Pascal (1623–1662) and Pierre de Fermat (1601–1665) systematically solved dice problems, establishing the foundations of classical probability theory.
+</li>
+<li>
+  <strong>
+  Subsequent Contributors:
+</strong>
+Key advancements were made by Christian Huygens, Jakob Bernoulli, Abraham de Moivre, Pierre-Simon Laplace, Pafnuty Chebyshev, and Andrey Markov.
+</li>
+<li>
+  <strong>
+  Modern Axiomatization:
+</strong>
+Russian mathematician Andrey Kolmogorov (1903–1987) published
+<em>
+Foundations of Probability
+</em>
+in 1933, introducing the modern axiomatic framework that treats probability as a measure on a set.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 14
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-13-statistics.html"; } else { window.location.href = "11-chapter-15-infinite-series.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
