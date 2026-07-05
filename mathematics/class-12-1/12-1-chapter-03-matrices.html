@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 12 (Book 1) — Chapter 3: MATRICES
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['
+    <body>
+    <div class="chapter-container">
+      <div class="nav-bar">
+        <a href="#" onclick="history.back(); return false;" class="btn-nav">
+        ← Back
+      </a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+      📖 Quick Menu
+    </button>
+    <a href="../../index.html" class="btn-nav">
+    🏠 Home
+  </a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 1) — Chapter 3: MATRICES
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.1 Introduction &amp; Basic Concepts
+</summary>
+<p>
+  The study of
+  <span class="keyword">
+  matrices
+</span>
+is a fundamental pillar of modern mathematics, providing compact methods for solving systems of linear equations and representing linear transformations. Matrices are widely utilized in computer graphics, cryptography, genetics, economics, and industrial management.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition and Notation
+</summary>
+<p>
+  A
+  <span class="keyword">
+  matrix
+</span>
+is an ordered rectangular array of numbers or functions. The numbers or functions are called the elements or the entries of the matrix. We denote matrices by capital letters (e.g., $A, B, C$).
+</p>
+<p>
+In general, an $m \times n$ matrix has the following rectangular array representation:
+</p>
+$$A = \begin{bmatrix} a_{11} & a_{12} & \dots & a_{1j} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2j} & \dots & a_{2n} \\ \vdots & \vdots & & \vdots & & \vdots \\ a_{i1} & a_{i2} & \dots & a_{ij} & \dots & a_{in} \\ \vdots & \vdots & & \vdots & & \vdots \\ a_{m1} & a_{m2} & \dots & a_{mj} & \dots & a_{mn} \end{bmatrix}_{m \times n}$$$$Or compactly as $A = [a_{ij}]_{m \times n}$, where $1 \le i \le m$ and $1 \le j \le n$ ($i, j \in \mathbb{N}$). Here, $a_{ij}$ represents the element lying in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Order of a Matrix
+</summary>
+<p>
+  A matrix having $m$ rows and $n$ columns is called a matrix of
+  <span class="keyword">
+  order
+</span>
+$m \times n$ (read as "m by n" matrix). The total number of elements in an $m \times n$ matrix is equal to the product $mn$.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Construct a $3 \times 2$ matrix whose elements are given by $a_{ij} = \frac{1}{2}|i - 3j|$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the general form of a $3 \times 2$ matrix: $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \end{bmatrix}$.
+</li>
+<li>
+  Compute each element using the formula $a_{ij} = \frac{1}{2}|i - 3j|$ for $i \in \{1, 2, 3\}$ and $j \in \{1, 2\}$:
+  <ul>
+    <li>
+    $a_{11} = \frac{1}{2}|1 - 3(1)| = \frac{1}{2}|-2| = 1$
+  </li>
+  <li>
+  $a_{12} = \frac{1}{2}|1 - 3(2)| = \frac{1}{2}|-5| = \frac{5}{2}$
+</li>
+<li>
+$a_{21} = \frac{1}{2}|2 - 3(1)| = \frac{1}{2}|-1| = \frac{1}{2}$
+</li>
+<li>
+$a_{22} = \frac{1}{2}|2 - 3(2)| = \frac{1}{2}|-4| = 2$
+</li>
+<li>
+$a_{31} = \frac{1}{2}|3 - 3(1)| = \frac{1}{2}|0| = 0$
+</li>
+<li>
+$a_{32} = \frac{1}{2}|3 - 3(2)| = \frac{1}{2}|-3| = \frac{3}{2}$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$A = \begin{bmatrix} 1 & \frac{5}{2} \\ \frac{1}{2} & 2 \\ 0 & \frac{3}{2} \end{bmatrix}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.2 Types of Matrices &amp; Equality
+</summary>
+<p>
+Matrices are classified into various types based on their structural configurations, dimensions, and element distributions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification Matrix
+</summary>
+<p>
+The following table outlines the primary classifications of matrices:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Matrix Type
+    </th>
+    <th>
+    Mathematical Definition / Structural Properties
+  </th>
+  <th>
+  Example Representation
+</th>
+<th>
+Systemic Role &amp; Constraints
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Column Matrix
+    </strong>
+  </td>
+  <td>
+  Has only one column: order $m \times 1$. Compact form: $A = [a_{ij}]_{m \times 1}$.
+</td>
+<td>
+$\begin{bmatrix} 0 \\ \sqrt{3} \\ -1 \end{bmatrix}$
+</td>
+<td>
+Used to represent vectors in coordinate spaces.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Row Matrix
+  </strong>
+</td>
+<td>
+Has only one row: order $1 \times n$. Compact form: $B = [b_{ij}]_{1 \times n}$.
+</td>
+<td>
+$\begin{bmatrix} -\frac{1}{2} & \sqrt{5} & 2 \end{bmatrix}$
+</td>
+<td>
+Represents row vectors or single-point coordinates.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Square Matrix
+  </strong>
+</td>
+<td>
+Number of rows equals number of columns: $m = n$. Order is simply referred to as $n$.
+</td>
+<td>
+$\begin{bmatrix} 3 & -1 \\ 2 & 5 \end{bmatrix}$
+</td>
+<td>
+Forms the basis for determinants, inverses, and eigenvalues. Diagonal elements are $a_{ii}$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Diagonal Matrix
+  </strong>
+</td>
+<td>
+A square matrix where all non-diagonal elements are zero: $b_{ij} = 0$ when $i \neq j$.
+</td>
+<td>
+$\begin{bmatrix} -1.1 & 0 \\ 0 & 2 \end{bmatrix}$
+</td>
+<td>
+Simplifies matrix multiplication and power computations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Scalar Matrix
+  </strong>
+</td>
+<td>
+A diagonal matrix whose diagonal elements are all equal: $b_{ij} = 0$ for $i \neq j$, and $b_{ii} = k$ (constant).
+</td>
+<td>
+$\begin{bmatrix} \sqrt{3} & 0 \\ 0 & \sqrt{3} \end{bmatrix}$
+</td>
+<td>
+Acts as a scalar multiplier within matrix algebra.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Identity Matrix
+  </strong>
+</td>
+<td>
+A square matrix where diagonal elements are all $1$ and rest are $0$: $a_{ij} = 1$ if $i = j$, and $a_{ij} = 0$ if $i \neq j$. Denoted by $I_n$.
+</td>
+<td>
+$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$
+</td>
+<td>
+Serves as the multiplicative identity element: $AI = IA = A$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Zero Matrix
+  </strong>
+</td>
+<td>
+All elements are zero. Denoted by $O$. Can be of any order $m \times n$.
+</td>
+<td>
+$\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$
+</td>
+<td>
+Serves as the additive identity element: $A + O = A$.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equality of Matrices
+</summary>
+<p>
+  Two matrices $A = [a_{ij}]$ and $B = [b_{ij}]$ are said to be
+  <span class="keyword">
+  equal
+</span>
+($A = B$) if and only if:
+</p>
+<ol>
+  <li>
+  They are of the same order.
+</li>
+<li>
+Each element of $A$ is equal to the corresponding element of $B$ (i.e., $a_{ij} = b_{ij}$ for all $i, j$).
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the values of $a, b, c,$ and $d$ from the equation: $\begin{bmatrix} 2a + b & a - 2b \\ 5c - d & 4c + 3d \end{bmatrix} = \begin{bmatrix} 4 & -3 \\ 11 & 24 \end{bmatrix}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Equate corresponding elements to set up a system of linear equations:
+    <ul>
+      <li>
+      $2a + b = 4 \quad \text{--- (1)}$
+    </li>
+    <li>
+    $a - 2b = -3 \quad \text{--- (2)}$
+  </li>
+  <li>
+  $5c - d = 11 \quad \text{--- (3)}$
+</li>
+<li>
+$4c + 3d = 24 \quad \text{--- (4)}$
+</li>
+</ul>
+</li>
+<li>
+  Solve equations (1) and (2) for $a$ and $b$:
+  <ul>
+    <li>
+    From (1), $b = 4 - 2a$. Substitute into (2): $a - 2(4 - 2a) = -3 \implies 5a - 8 = -3 \implies 5a = 5 \implies a = 1$.
+  </li>
+  <li>
+  Substitute $a = 1$ back: $b = 4 - 2(1) = 2$.
+</li>
+</ul>
+</li>
+<li>
+  Solve equations (3) and (4) for $c$ and $d$:
+  <ul>
+    <li>
+    From (3), $d = 5c - 11$. Substitute into (4): $4c + 3(5c - 11) = 24 \implies 19c - 33 = 24 \implies 19c = 57 \implies c = 3$.
+  </li>
+  <li>
+  Substitute $c = 3$ back: $d = 5(3) - 11 = 4$.
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$a = 1, b = 2, c = 3, d = 4$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.3 Operations on Matrices
+</summary>
+<p>
+Matrix algebra defines operations such as addition, scalar multiplication, subtraction, and matrix multiplication under specific dimensional constraints.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Matrix Addition &amp; Scalar Multiplication
+</summary>
+<ul>
+  <li>
+    <strong>
+    Addition ($A + B$):
+  </strong>
+  If $A = [a_{ij}]_{m \times n}$ and $B = [b_{ij}]_{m \times n}$ are of the same order, then their sum is $C = [c_{ij}]_{m \times n}$ where $c_{ij} = a_{ij} + b_{ij}$. If orders differ, $A + B$ is undefined.
+</li>
+<li>
+  <strong>
+  Scalar Multiplication ($kA$):
+</strong>
+Multiplying a matrix $A = [a_{ij}]$ by a scalar $k$ yields $kA = [k a_{ij}]$, where every element is scaled by $k$.
+</li>
+<li>
+  <strong>
+  Negative of a Matrix ($-A$):
+</strong>
+Defined as $-A = (-1)A = [-a_{ij}]$.
+</li>
+<li>
+  <strong>
+  Difference ($A - B$):
+</strong>
+Defined as $A - B = A + (-1)B = [a_{ij} - b_{ij}]$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Matrix Addition &amp; Scalar Multiplication
+</summary>
+<p>
+For matrices $A, B, C$ of the same order and scalars $k, l$:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Property Name
+    </th>
+    <th>
+    Mathematical Formulation
+  </th>
+  <th>
+  Description / Constraints
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Commutative Law
+    </strong>
+  </td>
+  <td>
+  $A + B = B + A$
+</td>
+<td>
+Order of addition does not affect the resulting matrix.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Associative Law
+  </strong>
+</td>
+<td>
+$(A + B) + C = A + (B + C)$
+</td>
+<td>
+Grouping of matrices during addition does not affect the result.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Existence of Additive Identity
+  </strong>
+</td>
+<td>
+$A + O = O + A = A$
+</td>
+<td>
+The zero matrix $O$ acts as the identity element for addition.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Existence of Additive Inverse
+  </strong>
+</td>
+<td>
+$A + (-A) = (-A) + A = O$
+</td>
+<td>
+$-A$ is the unique additive inverse of $A$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Distributive Law (Scalar)
+  </strong>
+</td>
+<td>
+$k(A + B) = kA + kB$
+</td>
+<td>
+Scalar multiplication distributes over matrix addition.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Distributive Law (Matrix)
+  </strong>
+</td>
+<td>
+$(k + l)A = kA + lA$
+</td>
+<td>
+Matrix multiplication distributes over scalar addition.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Matrix Multiplication
+</summary>
+<p>
+  The product $AB$ of two matrices $A$ and $B$ is defined if and only if the
+  <strong>
+  number of columns in $A$ is equal to the number of rows in $B$
+</strong>
+.
+</p>
+<p>
+If $A = [a_{ij}]_{m \times n}$ and $B = [b_{jk}]_{n \times p}$, then their product $C = AB$ is an $m \times p$ matrix where each entry $c_{ik}$ is computed as:
+</p>
+$$c_{ik} = \sum_{j=1}^{n} a_{ij}b_{jk} = a_{i1}b_{1k} + a_{i2}b_{2k} + \dots + a_{in}b_{nk}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Matrix Multiplication
+</summary>
+<ul>
+  <li>
+    <strong>
+    Non-Commutativity:
+  </strong>
+  In general, $AB \neq BA$, even if both products are defined and have the same order.
+</li>
+<li>
+  <strong>
+  Associative Law:
+</strong>
+$(AB)C = A(BC)$ whenever both sides are defined.
+</li>
+<li>
+  <strong>
+  Distributive Law:
+</strong>
+$A(B + C) = AB + AC$ and $(A + B)C = AC + BC$ whenever both sides are defined.
+</li>
+<li>
+  <strong>
+  Existence of Multiplicative Identity:
+</strong>
+For every square matrix $A$ of order $n$, $I_n A = A I_n = A$.
+</li>
+<li>
+  <strong>
+  Zero Product Rule Violation:
+</strong>
+The product of two non-zero matrices can be a zero matrix (e.g., $\begin{bmatrix} 0 & -1 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} 3 & 5 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.4 Transpose of a Matrix
+</summary>
+<p>
+The transpose of a matrix is formed by interchanging its rows and columns, altering its dimensions and structural properties.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition &amp; Properties
+</summary>
+<p>
+  If $A = [a_{ij}]_{m \times n}$, then the
+  <span class="keyword">
+  transpose of A
+</span>
+, denoted by $A\'$ or $A^T$, is defined as $A\' = [a_{ji}]_{n \times m}$.
+</p>
+<p>
+The transpose operation satisfies the following properties for any matrices $A$ and $B$ of suitable orders:
+</p>
+<ol>
+  <li>
+  $(A\')\' = A$
+</li>
+<li>
+$(kA)\' = kA\'$ (where $k$ is a constant)
+</li>
+<li>
+$(A + B)\' = A\' + B\'$
+</li>
+<li>
+  <strong>
+  Reversal Law of Transpose:
+</strong>
+$(AB)\' = B\'A\'$
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.5 Symmetric &amp; Skew-Symmetric Matrices
+</summary>
+<p>
+Square matrices exhibit unique properties under transpose operations, leading to symmetric and skew-symmetric classifications.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Symmetric Matrix
+</summary>
+<p>
+  A square matrix $A$ is said to be
+  <span class="keyword">
+  symmetric
+</span>
+if $A\' = A$ (i.e., $a_{ij} = a_{ji}$ for all $i, j$).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Skew-Symmetric Matrix
+</summary>
+<p>
+  A square matrix $A$ is said to be
+  <span class="keyword">
+  skew-symmetric
+</span>
+if $A\' = -A$ (i.e., $a_{ji} = -a_{ij}$ for all $i, j$).
+</p>
+<p>
+  Setting $i = j$ yields $a_{ii} = -a_{ii} \implies 2a_{ii} = 0 \implies a_{ii} = 0$. Thus,
+  <strong>
+  all diagonal elements of a skew-symmetric matrix are zero
+</strong>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Theorems
+</summary>
+<ul>
+  <li>
+    <strong>
+    Theorem 1:
+  </strong>
+  For any square matrix $A$ with real entries, $A + A\'$ is a symmetric matrix, and $A - A\'$ is a skew-symmetric matrix.
+</li>
+<li>
+  <strong>
+  Theorem 2:
+</strong>
+Any square matrix $A$ can be uniquely expressed as the sum of a symmetric matrix and a skew-symmetric matrix:$$A = \frac{1}{2}(A + A\') + \frac{1}{2}(A - A\')$$
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Express the matrix $B = \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix}$ as the sum of a symmetric and a skew-symmetric matrix.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compute the transpose of $B$: $B\' = \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix}$.
+</li>
+<li>
+Compute the symmetric part $P = \frac{1}{2}(B + B\')$:$$P = \frac{1}{2} \left( \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix} + \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix} \right) = \begin{bmatrix} 2 & -\frac{3}{2} & -\frac{3}{2} \\ -\frac{3}{2} & 3 & 1 \\ -\frac{3}{2} & 1 & -3 \end{bmatrix}$$Verify $P\' = P$ (Symmetric).
+</li>
+<li>
+Compute the skew-symmetric part $Q = \frac{1}{2}(B - B\')$:$$Q = \frac{1}{2} \left( \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix} - \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix} \right) = \begin{bmatrix} 0 & -\frac{1}{2} & -\frac{5}{2} \\ \frac{1}{2} & 0 & 3 \\ \frac{5}{2} & -3 & 0 \end{bmatrix}$$Verify $Q\' = -Q$ (Skew-Symmetric).
+</li>
+<li>
+Verify that $P + Q = B$:$$\begin{bmatrix} 2 & -\frac{3}{2} & -\frac{3}{2} \\ -\frac{3}{2} & 3 & 1 \\ -\frac{3}{2} & 1 & -3 \end{bmatrix} + \begin{bmatrix} 0 & -\frac{1}{2} & -\frac{5}{2} \\ \frac{1}{2} & 0 & 3 \\ \frac{5}{2} & -3 & 0 \end{bmatrix} = \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$B = P + Q$, where $P$ is symmetric and $Q$ is skew-symmetric as computed above.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.6 Invertible Matrices
+</summary>
+<p>
+Invertibility is a property of square matrices analogous to reciprocals in real number algebra.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition &amp; Uniqueness
+</summary>
+<p>
+  If $A$ is a square matrix of order $m$, and if there exists another square matrix $B$ of the same order $m$ such that
+  <strong>
+  $AB = BA = I$
+</strong>
+, then $B$ is called the
+<span class="keyword">
+inverse
+</span>
+of $A$ (denoted by $A^{-1}$). In this case, $A$ is said to be
+<span class="keyword">
+invertible
+</span>
+.
+</p>
+<p>
+  <strong>
+  Note:
+</strong>
+A rectangular matrix does not possess an inverse matrix because the products $AB$ and $BA$ cannot both be defined and equal.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Theorems on Inverses
+</summary>
+<ul>
+  <li>
+    <strong>
+    Theorem 3 (Uniqueness of Inverse):
+  </strong>
+  The inverse of a square matrix, if it exists, is unique.
+  <br>
+  <em>
+  Proof sketch:
+</em>
+If $B$ and $C$ are both inverses of $A$, then $AB = BA = I$ and $AC = CA = I$. Thus, $B = BI = B(AC) = (BA)C = IC = C$.
+</li>
+<li>
+  <strong>
+  Theorem 4 (Reversal Law of Inverses):
+</strong>
+If $A$ and $B$ are invertible matrices of the same order, then $(AB)^{-1} = B^{-1}A^{-1}$.
+<br>
+<em>
+Proof sketch:
+</em>
+By definition, $(AB)(AB)^{-1} = I$. Pre-multiplying by $A^{-1}$ gives $B(AB)^{-1} = A^{-1}$. Pre-multiplying by $B^{-1}$ yields $(AB)^{-1} = B^{-1}A^{-1}$.
+</li>
+</ul>
+</details>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle / Epigraph: Arthur Cayley &amp; Georg Cantor
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Arthur Cayley (1821–1895) systematically developed the theory of matrices in his 1858 memoir, treating them as independent algebraic entities rather than mere systems of coefficients. Georg Cantor (1845–1918) famously remarked on the creative freedom of mathematical structures, a philosophy reflected in the abstract generalization of matrix algebra.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+The evolution of matrix notation allowed compact representations of linear transformations, coordinate rotations, and multidimensional vector spaces, laying the groundwork for modern quantum mechanics and computer graphics.
+</li>
+</ul>
+</div>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-02-inverse-trigonometric-functions.html"; } else { window.location.href = "12-1-chapter-04-determinants.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
+, '
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 1) — Chapter 3: MATRICES
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.1 Introduction &amp; Basic Concepts
+</summary>
+<p>
+  The study of
+  <span class="keyword">
+  matrices
+</span>
+is a fundamental pillar of modern mathematics, providing compact methods for solving systems of linear equations and representing linear transformations. Matrices are widely utilized in computer graphics, cryptography, genetics, economics, and industrial management.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition and Notation
+</summary>
+<p>
+  A
+  <span class="keyword">
+  matrix
+</span>
+is an ordered rectangular array of numbers or functions. The numbers or functions are called the elements or the entries of the matrix. We denote matrices by capital letters (e.g., $A, B, C$).
+</p>
+<p>
+In general, an $m \times n$ matrix has the following rectangular array representation:
+</p>
+$$A = \begin{bmatrix} a_{11} & a_{12} & \dots & a_{1j} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2j} & \dots & a_{2n} \\ \vdots & \vdots & & \vdots & & \vdots \\ a_{i1} & a_{i2} & \dots & a_{ij} & \dots & a_{in} \\ \vdots & \vdots & & \vdots & & \vdots \\ a_{m1} & a_{m2} & \dots & a_{mj} & \dots & a_{mn} \end{bmatrix}_{m \times n}$$$$Or compactly as $A = [a_{ij}]_{m \times n}$, where $1 \le i \le m$ and $1 \le j \le n$ ($i, j \in \mathbb{N}$). Here, $a_{ij}$ represents the element lying in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Order of a Matrix
+</summary>
+<p>
+  A matrix having $m$ rows and $n$ columns is called a matrix of
+  <span class="keyword">
+  order
+</span>
+$m \times n$ (read as "m by n" matrix). The total number of elements in an $m \times n$ matrix is equal to the product $mn$.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Construct a $3 \times 2$ matrix whose elements are given by $a_{ij} = \frac{1}{2}|i - 3j|$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the general form of a $3 \times 2$ matrix: $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \end{bmatrix}$.
+</li>
+<li>
+  Compute each element using the formula $a_{ij} = \frac{1}{2}|i - 3j|$ for $i \in \{1, 2, 3\}$ and $j \in \{1, 2\}$:
+  <ul>
+    <li>
+    $a_{11} = \frac{1}{2}|1 - 3(1)| = \frac{1}{2}|-2| = 1$
+  </li>
+  <li>
+  $a_{12} = \frac{1}{2}|1 - 3(2)| = \frac{1}{2}|-5| = \frac{5}{2}$
+</li>
+<li>
+$a_{21} = \frac{1}{2}|2 - 3(1)| = \frac{1}{2}|-1| = \frac{1}{2}$
+</li>
+<li>
+$a_{22} = \frac{1}{2}|2 - 3(2)| = \frac{1}{2}|-4| = 2$
+</li>
+<li>
+$a_{31} = \frac{1}{2}|3 - 3(1)| = \frac{1}{2}|0| = 0$
+</li>
+<li>
+$a_{32} = \frac{1}{2}|3 - 3(2)| = \frac{1}{2}|-3| = \frac{3}{2}$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$A = \begin{bmatrix} 1 & \frac{5}{2} \\ \frac{1}{2} & 2 \\ 0 & \frac{3}{2} \end{bmatrix}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.2 Types of Matrices &amp; Equality
+</summary>
+<p>
+Matrices are classified into various types based on their structural configurations, dimensions, and element distributions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification Matrix
+</summary>
+<p>
+The following table outlines the primary classifications of matrices:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Matrix Type
+    </th>
+    <th>
+    Mathematical Definition / Structural Properties
+  </th>
+  <th>
+  Example Representation
+</th>
+<th>
+Systemic Role &amp; Constraints
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Column Matrix
+    </strong>
+  </td>
+  <td>
+  Has only one column: order $m \times 1$. Compact form: $A = [a_{ij}]_{m \times 1}$.
+</td>
+<td>
+$\begin{bmatrix} 0 \\ \sqrt{3} \\ -1 \end{bmatrix}$
+</td>
+<td>
+Used to represent vectors in coordinate spaces.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Row Matrix
+  </strong>
+</td>
+<td>
+Has only one row: order $1 \times n$. Compact form: $B = [b_{ij}]_{1 \times n}$.
+</td>
+<td>
+$\begin{bmatrix} -\frac{1}{2} & \sqrt{5} & 2 \end{bmatrix}$
+</td>
+<td>
+Represents row vectors or single-point coordinates.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Square Matrix
+  </strong>
+</td>
+<td>
+Number of rows equals number of columns: $m = n$. Order is simply referred to as $n$.
+</td>
+<td>
+$\begin{bmatrix} 3 & -1 \\ 2 & 5 \end{bmatrix}$
+</td>
+<td>
+Forms the basis for determinants, inverses, and eigenvalues. Diagonal elements are $a_{ii}$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Diagonal Matrix
+  </strong>
+</td>
+<td>
+A square matrix where all non-diagonal elements are zero: $b_{ij} = 0$ when $i \neq j$.
+</td>
+<td>
+$\begin{bmatrix} -1.1 & 0 \\ 0 & 2 \end{bmatrix}$
+</td>
+<td>
+Simplifies matrix multiplication and power computations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Scalar Matrix
+  </strong>
+</td>
+<td>
+A diagonal matrix whose diagonal elements are all equal: $b_{ij} = 0$ for $i \neq j$, and $b_{ii} = k$ (constant).
+</td>
+<td>
+$\begin{bmatrix} \sqrt{3} & 0 \\ 0 & \sqrt{3} \end{bmatrix}$
+</td>
+<td>
+Acts as a scalar multiplier within matrix algebra.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Identity Matrix
+  </strong>
+</td>
+<td>
+A square matrix where diagonal elements are all $1$ and rest are $0$: $a_{ij} = 1$ if $i = j$, and $a_{ij} = 0$ if $i \neq j$. Denoted by $I_n$.
+</td>
+<td>
+$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$
+</td>
+<td>
+Serves as the multiplicative identity element: $AI = IA = A$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Zero Matrix
+  </strong>
+</td>
+<td>
+All elements are zero. Denoted by $O$. Can be of any order $m \times n$.
+</td>
+<td>
+$\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$
+</td>
+<td>
+Serves as the additive identity element: $A + O = A$.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equality of Matrices
+</summary>
+<p>
+  Two matrices $A = [a_{ij}]$ and $B = [b_{ij}]$ are said to be
+  <span class="keyword">
+  equal
+</span>
+($A = B$) if and only if:
+</p>
+<ol>
+  <li>
+  They are of the same order.
+</li>
+<li>
+Each element of $A$ is equal to the corresponding element of $B$ (i.e., $a_{ij} = b_{ij}$ for all $i, j$).
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the values of $a, b, c,$ and $d$ from the equation: $\begin{bmatrix} 2a + b & a - 2b \\ 5c - d & 4c + 3d \end{bmatrix} = \begin{bmatrix} 4 & -3 \\ 11 & 24 \end{bmatrix}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Equate corresponding elements to set up a system of linear equations:
+    <ul>
+      <li>
+      $2a + b = 4 \quad \text{--- (1)}$
+    </li>
+    <li>
+    $a - 2b = -3 \quad \text{--- (2)}$
+  </li>
+  <li>
+  $5c - d = 11 \quad \text{--- (3)}$
+</li>
+<li>
+$4c + 3d = 24 \quad \text{--- (4)}$
+</li>
+</ul>
+</li>
+<li>
+  Solve equations (1) and (2) for $a$ and $b$:
+  <ul>
+    <li>
+    From (1), $b = 4 - 2a$. Substitute into (2): $a - 2(4 - 2a) = -3 \implies 5a - 8 = -3 \implies 5a = 5 \implies a = 1$.
+  </li>
+  <li>
+  Substitute $a = 1$ back: $b = 4 - 2(1) = 2$.
+</li>
+</ul>
+</li>
+<li>
+  Solve equations (3) and (4) for $c$ and $d$:
+  <ul>
+    <li>
+    From (3), $d = 5c - 11$. Substitute into (4): $4c + 3(5c - 11) = 24 \implies 19c - 33 = 24 \implies 19c = 57 \implies c = 3$.
+  </li>
+  <li>
+  Substitute $c = 3$ back: $d = 5(3) - 11 = 4$.
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$a = 1, b = 2, c = 3, d = 4$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.3 Operations on Matrices
+</summary>
+<p>
+Matrix algebra defines operations such as addition, scalar multiplication, subtraction, and matrix multiplication under specific dimensional constraints.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Matrix Addition &amp; Scalar Multiplication
+</summary>
+<ul>
+  <li>
+    <strong>
+    Addition ($A + B$):
+  </strong>
+  If $A = [a_{ij}]_{m \times n}$ and $B = [b_{ij}]_{m \times n}$ are of the same order, then their sum is $C = [c_{ij}]_{m \times n}$ where $c_{ij} = a_{ij} + b_{ij}$. If orders differ, $A + B$ is undefined.
+</li>
+<li>
+  <strong>
+  Scalar Multiplication ($kA$):
+</strong>
+Multiplying a matrix $A = [a_{ij}]$ by a scalar $k$ yields $kA = [k a_{ij}]$, where every element is scaled by $k$.
+</li>
+<li>
+  <strong>
+  Negative of a Matrix ($-A$):
+</strong>
+Defined as $-A = (-1)A = [-a_{ij}]$.
+</li>
+<li>
+  <strong>
+  Difference ($A - B$):
+</strong>
+Defined as $A - B = A + (-1)B = [a_{ij} - b_{ij}]$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Matrix Addition &amp; Scalar Multiplication
+</summary>
+<p>
+For matrices $A, B, C$ of the same order and scalars $k, l$:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Property Name
+    </th>
+    <th>
+    Mathematical Formulation
+  </th>
+  <th>
+  Description / Constraints
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Commutative Law
+    </strong>
+  </td>
+  <td>
+  $A + B = B + A$
+</td>
+<td>
+Order of addition does not affect the resulting matrix.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Associative Law
+  </strong>
+</td>
+<td>
+$(A + B) + C = A + (B + C)$
+</td>
+<td>
+Grouping of matrices during addition does not affect the result.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Existence of Additive Identity
+  </strong>
+</td>
+<td>
+$A + O = O + A = A$
+</td>
+<td>
+The zero matrix $O$ acts as the identity element for addition.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Existence of Additive Inverse
+  </strong>
+</td>
+<td>
+$A + (-A) = (-A) + A = O$
+</td>
+<td>
+$-A$ is the unique additive inverse of $A$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Distributive Law (Scalar)
+  </strong>
+</td>
+<td>
+$k(A + B) = kA + kB$
+</td>
+<td>
+Scalar multiplication distributes over matrix addition.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Distributive Law (Matrix)
+  </strong>
+</td>
+<td>
+$(k + l)A = kA + lA$
+</td>
+<td>
+Matrix multiplication distributes over scalar addition.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Matrix Multiplication
+</summary>
+<p>
+  The product $AB$ of two matrices $A$ and $B$ is defined if and only if the
+  <strong>
+  number of columns in $A$ is equal to the number of rows in $B$
+</strong>
+.
+</p>
+<p>
+If $A = [a_{ij}]_{m \times n}$ and $B = [b_{jk}]_{n \times p}$, then their product $C = AB$ is an $m \times p$ matrix where each entry $c_{ik}$ is computed as:
+</p>
+$$c_{ik} = \sum_{j=1}^{n} a_{ij}b_{jk} = a_{i1}b_{1k} + a_{i2}b_{2k} + \dots + a_{in}b_{nk}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Matrix Multiplication
+</summary>
+<ul>
+  <li>
+    <strong>
+    Non-Commutativity:
+  </strong>
+  In general, $AB \neq BA$, even if both products are defined and have the same order.
+</li>
+<li>
+  <strong>
+  Associative Law:
+</strong>
+$(AB)C = A(BC)$ whenever both sides are defined.
+</li>
+<li>
+  <strong>
+  Distributive Law:
+</strong>
+$A(B + C) = AB + AC$ and $(A + B)C = AC + BC$ whenever both sides are defined.
+</li>
+<li>
+  <strong>
+  Existence of Multiplicative Identity:
+</strong>
+For every square matrix $A$ of order $n$, $I_n A = A I_n = A$.
+</li>
+<li>
+  <strong>
+  Zero Product Rule Violation:
+</strong>
+The product of two non-zero matrices can be a zero matrix (e.g., $\begin{bmatrix} 0 & -1 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} 3 & 5 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.4 Transpose of a Matrix
+</summary>
+<p>
+The transpose of a matrix is formed by interchanging its rows and columns, altering its dimensions and structural properties.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition &amp; Properties
+</summary>
+<p>
+  If $A = [a_{ij}]_{m \times n}$, then the
+  <span class="keyword">
+  transpose of A
+</span>
+, denoted by $A\'$ or $A^T$, is defined as $A\' = [a_{ji}]_{n \times m}$.
+</p>
+<p>
+The transpose operation satisfies the following properties for any matrices $A$ and $B$ of suitable orders:
+</p>
+<ol>
+  <li>
+  $(A\')\' = A$
+</li>
+<li>
+$(kA)\' = kA\'$ (where $k$ is a constant)
+</li>
+<li>
+$(A + B)\' = A\' + B\'$
+</li>
+<li>
+  <strong>
+  Reversal Law of Transpose:
+</strong>
+$(AB)\' = B\'A\'$
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.5 Symmetric &amp; Skew-Symmetric Matrices
+</summary>
+<p>
+Square matrices exhibit unique properties under transpose operations, leading to symmetric and skew-symmetric classifications.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Symmetric Matrix
+</summary>
+<p>
+  A square matrix $A$ is said to be
+  <span class="keyword">
+  symmetric
+</span>
+if $A\' = A$ (i.e., $a_{ij} = a_{ji}$ for all $i, j$).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Skew-Symmetric Matrix
+</summary>
+<p>
+  A square matrix $A$ is said to be
+  <span class="keyword">
+  skew-symmetric
+</span>
+if $A\' = -A$ (i.e., $a_{ji} = -a_{ij}$ for all $i, j$).
+</p>
+<p>
+  Setting $i = j$ yields $a_{ii} = -a_{ii} \implies 2a_{ii} = 0 \implies a_{ii} = 0$. Thus,
+  <strong>
+  all diagonal elements of a skew-symmetric matrix are zero
+</strong>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Theorems
+</summary>
+<ul>
+  <li>
+    <strong>
+    Theorem 1:
+  </strong>
+  For any square matrix $A$ with real entries, $A + A\'$ is a symmetric matrix, and $A - A\'$ is a skew-symmetric matrix.
+</li>
+<li>
+  <strong>
+  Theorem 2:
+</strong>
+Any square matrix $A$ can be uniquely expressed as the sum of a symmetric matrix and a skew-symmetric matrix:$$A = \frac{1}{2}(A + A\') + \frac{1}{2}(A - A\')$$
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Express the matrix $B = \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix}$ as the sum of a symmetric and a skew-symmetric matrix.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compute the transpose of $B$: $B\' = \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix}$.
+</li>
+<li>
+Compute the symmetric part $P = \frac{1}{2}(B + B\')$:$$P = \frac{1}{2} \left( \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix} + \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix} \right) = \begin{bmatrix} 2 & -\frac{3}{2} & -\frac{3}{2} \\ -\frac{3}{2} & 3 & 1 \\ -\frac{3}{2} & 1 & -3 \end{bmatrix}$$Verify $P\' = P$ (Symmetric).
+</li>
+<li>
+Compute the skew-symmetric part $Q = \frac{1}{2}(B - B\')$:$$Q = \frac{1}{2} \left( \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix} - \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix} \right) = \begin{bmatrix} 0 & -\frac{1}{2} & -\frac{5}{2} \\ \frac{1}{2} & 0 & 3 \\ \frac{5}{2} & -3 & 0 \end{bmatrix}$$Verify $Q\' = -Q$ (Skew-Symmetric).
+</li>
+<li>
+Verify that $P + Q = B$:$$\begin{bmatrix} 2 & -\frac{3}{2} & -\frac{3}{2} \\ -\frac{3}{2} & 3 & 1 \\ -\frac{3}{2} & 1 & -3 \end{bmatrix} + \begin{bmatrix} 0 & -\frac{1}{2} & -\frac{5}{2} \\ \frac{1}{2} & 0 & 3 \\ \frac{5}{2} & -3 & 0 \end{bmatrix} = \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$B = P + Q$, where $P$ is symmetric and $Q$ is skew-symmetric as computed above.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.6 Invertible Matrices
+</summary>
+<p>
+Invertibility is a property of square matrices analogous to reciprocals in real number algebra.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition &amp; Uniqueness
+</summary>
+<p>
+  If $A$ is a square matrix of order $m$, and if there exists another square matrix $B$ of the same order $m$ such that
+  <strong>
+  $AB = BA = I$
+</strong>
+, then $B$ is called the
+<span class="keyword">
+inverse
+</span>
+of $A$ (denoted by $A^{-1}$). In this case, $A$ is said to be
+<span class="keyword">
+invertible
+</span>
+.
+</p>
+<p>
+  <strong>
+  Note:
+</strong>
+A rectangular matrix does not possess an inverse matrix because the products $AB$ and $BA$ cannot both be defined and equal.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Theorems on Inverses
+</summary>
+<ul>
+  <li>
+    <strong>
+    Theorem 3 (Uniqueness of Inverse):
+  </strong>
+  The inverse of a square matrix, if it exists, is unique.
+  <br>
+  <em>
+  Proof sketch:
+</em>
+If $B$ and $C$ are both inverses of $A$, then $AB = BA = I$ and $AC = CA = I$. Thus, $B = BI = B(AC) = (BA)C = IC = C$.
+</li>
+<li>
+  <strong>
+  Theorem 4 (Reversal Law of Inverses):
+</strong>
+If $A$ and $B$ are invertible matrices of the same order, then $(AB)^{-1} = B^{-1}A^{-1}$.
+<br>
+<em>
+Proof sketch:
+</em>
+By definition, $(AB)(AB)^{-1} = I$. Pre-multiplying by $A^{-1}$ gives $B(AB)^{-1} = A^{-1}$. Pre-multiplying by $B^{-1}$ yields $(AB)^{-1} = B^{-1}A^{-1}$.
+</li>
+</ul>
+</details>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle / Epigraph: Arthur Cayley &amp; Georg Cantor
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Arthur Cayley (1821–1895) systematically developed the theory of matrices in his 1858 memoir, treating them as independent algebraic entities rather than mere systems of coefficients. Georg Cantor (1845–1918) famously remarked on the creative freedom of mathematical structures, a philosophy reflected in the abstract generalization of matrix algebra.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+The evolution of matrix notation allowed compact representations of linear transformations, coordinate rotations, and multidimensional vector spaces, laying the groundwork for modern quantum mechanics and computer graphics.
+</li>
+</ul>
+</div>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-02-inverse-trigonometric-functions.html"; } else { window.location.href = "12-1-chapter-04-determinants.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
+, displayMath: [['$', '$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 1) — Chapter 3: MATRICES
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.1 Introduction &amp; Basic Concepts
+</summary>
+<p>
+  The study of
+  <span class="keyword">
+  matrices
+</span>
+is a fundamental pillar of modern mathematics, providing compact methods for solving systems of linear equations and representing linear transformations. Matrices are widely utilized in computer graphics, cryptography, genetics, economics, and industrial management.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition and Notation
+</summary>
+<p>
+  A
+  <span class="keyword">
+  matrix
+</span>
+is an ordered rectangular array of numbers or functions. The numbers or functions are called the elements or the entries of the matrix. We denote matrices by capital letters (e.g., $A, B, C$).
+</p>
+<p>
+In general, an $m \times n$ matrix has the following rectangular array representation:
+</p>
+$$A = \begin{bmatrix} a_{11} & a_{12} & \dots & a_{1j} & \dots & a_{1n} \\ a_{21} & a_{22} & \dots & a_{2j} & \dots & a_{2n} \\ \vdots & \vdots & & \vdots & & \vdots \\ a_{i1} & a_{i2} & \dots & a_{ij} & \dots & a_{in} \\ \vdots & \vdots & & \vdots & & \vdots \\ a_{m1} & a_{m2} & \dots & a_{mj} & \dots & a_{mn} \end{bmatrix}_{m \times n}$$$$Or compactly as $A = [a_{ij}]_{m \times n}$, where $1 \le i \le m$ and $1 \le j \le n$ ($i, j \in \mathbb{N}$). Here, $a_{ij}$ represents the element lying in the $i^{\text{th}}$ row and $j^{\text{th}}$ column.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Order of a Matrix
+</summary>
+<p>
+  A matrix having $m$ rows and $n$ columns is called a matrix of
+  <span class="keyword">
+  order
+</span>
+$m \times n$ (read as "m by n" matrix). The total number of elements in an $m \times n$ matrix is equal to the product $mn$.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Construct a $3 \times 2$ matrix whose elements are given by $a_{ij} = \frac{1}{2}|i - 3j|$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the general form of a $3 \times 2$ matrix: $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ a_{31} & a_{32} \end{bmatrix}$.
+</li>
+<li>
+  Compute each element using the formula $a_{ij} = \frac{1}{2}|i - 3j|$ for $i \in \{1, 2, 3\}$ and $j \in \{1, 2\}$:
+  <ul>
+    <li>
+    $a_{11} = \frac{1}{2}|1 - 3(1)| = \frac{1}{2}|-2| = 1$
+  </li>
+  <li>
+  $a_{12} = \frac{1}{2}|1 - 3(2)| = \frac{1}{2}|-5| = \frac{5}{2}$
+</li>
+<li>
+$a_{21} = \frac{1}{2}|2 - 3(1)| = \frac{1}{2}|-1| = \frac{1}{2}$
+</li>
+<li>
+$a_{22} = \frac{1}{2}|2 - 3(2)| = \frac{1}{2}|-4| = 2$
+</li>
+<li>
+$a_{31} = \frac{1}{2}|3 - 3(1)| = \frac{1}{2}|0| = 0$
+</li>
+<li>
+$a_{32} = \frac{1}{2}|3 - 3(2)| = \frac{1}{2}|-3| = \frac{3}{2}$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$A = \begin{bmatrix} 1 & \frac{5}{2} \\ \frac{1}{2} & 2 \\ 0 & \frac{3}{2} \end{bmatrix}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.2 Types of Matrices &amp; Equality
+</summary>
+<p>
+Matrices are classified into various types based on their structural configurations, dimensions, and element distributions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification Matrix
+</summary>
+<p>
+The following table outlines the primary classifications of matrices:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Matrix Type
+    </th>
+    <th>
+    Mathematical Definition / Structural Properties
+  </th>
+  <th>
+  Example Representation
+</th>
+<th>
+Systemic Role &amp; Constraints
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Column Matrix
+    </strong>
+  </td>
+  <td>
+  Has only one column: order $m \times 1$. Compact form: $A = [a_{ij}]_{m \times 1}$.
+</td>
+<td>
+$\begin{bmatrix} 0 \\ \sqrt{3} \\ -1 \end{bmatrix}$
+</td>
+<td>
+Used to represent vectors in coordinate spaces.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Row Matrix
+  </strong>
+</td>
+<td>
+Has only one row: order $1 \times n$. Compact form: $B = [b_{ij}]_{1 \times n}$.
+</td>
+<td>
+$\begin{bmatrix} -\frac{1}{2} & \sqrt{5} & 2 \end{bmatrix}$
+</td>
+<td>
+Represents row vectors or single-point coordinates.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Square Matrix
+  </strong>
+</td>
+<td>
+Number of rows equals number of columns: $m = n$. Order is simply referred to as $n$.
+</td>
+<td>
+$\begin{bmatrix} 3 & -1 \\ 2 & 5 \end{bmatrix}$
+</td>
+<td>
+Forms the basis for determinants, inverses, and eigenvalues. Diagonal elements are $a_{ii}$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Diagonal Matrix
+  </strong>
+</td>
+<td>
+A square matrix where all non-diagonal elements are zero: $b_{ij} = 0$ when $i \neq j$.
+</td>
+<td>
+$\begin{bmatrix} -1.1 & 0 \\ 0 & 2 \end{bmatrix}$
+</td>
+<td>
+Simplifies matrix multiplication and power computations.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Scalar Matrix
+  </strong>
+</td>
+<td>
+A diagonal matrix whose diagonal elements are all equal: $b_{ij} = 0$ for $i \neq j$, and $b_{ii} = k$ (constant).
+</td>
+<td>
+$\begin{bmatrix} \sqrt{3} & 0 \\ 0 & \sqrt{3} \end{bmatrix}$
+</td>
+<td>
+Acts as a scalar multiplier within matrix algebra.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Identity Matrix
+  </strong>
+</td>
+<td>
+A square matrix where diagonal elements are all $1$ and rest are $0$: $a_{ij} = 1$ if $i = j$, and $a_{ij} = 0$ if $i \neq j$. Denoted by $I_n$.
+</td>
+<td>
+$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$
+</td>
+<td>
+Serves as the multiplicative identity element: $AI = IA = A$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Zero Matrix
+  </strong>
+</td>
+<td>
+All elements are zero. Denoted by $O$. Can be of any order $m \times n$.
+</td>
+<td>
+$\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$
+</td>
+<td>
+Serves as the additive identity element: $A + O = A$.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equality of Matrices
+</summary>
+<p>
+  Two matrices $A = [a_{ij}]$ and $B = [b_{ij}]$ are said to be
+  <span class="keyword">
+  equal
+</span>
+($A = B$) if and only if:
+</p>
+<ol>
+  <li>
+  They are of the same order.
+</li>
+<li>
+Each element of $A$ is equal to the corresponding element of $B$ (i.e., $a_{ij} = b_{ij}$ for all $i, j$).
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the values of $a, b, c,$ and $d$ from the equation: $\begin{bmatrix} 2a + b & a - 2b \\ 5c - d & 4c + 3d \end{bmatrix} = \begin{bmatrix} 4 & -3 \\ 11 & 24 \end{bmatrix}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Equate corresponding elements to set up a system of linear equations:
+    <ul>
+      <li>
+      $2a + b = 4 \quad \text{--- (1)}$
+    </li>
+    <li>
+    $a - 2b = -3 \quad \text{--- (2)}$
+  </li>
+  <li>
+  $5c - d = 11 \quad \text{--- (3)}$
+</li>
+<li>
+$4c + 3d = 24 \quad \text{--- (4)}$
+</li>
+</ul>
+</li>
+<li>
+  Solve equations (1) and (2) for $a$ and $b$:
+  <ul>
+    <li>
+    From (1), $b = 4 - 2a$. Substitute into (2): $a - 2(4 - 2a) = -3 \implies 5a - 8 = -3 \implies 5a = 5 \implies a = 1$.
+  </li>
+  <li>
+  Substitute $a = 1$ back: $b = 4 - 2(1) = 2$.
+</li>
+</ul>
+</li>
+<li>
+  Solve equations (3) and (4) for $c$ and $d$:
+  <ul>
+    <li>
+    From (3), $d = 5c - 11$. Substitute into (4): $4c + 3(5c - 11) = 24 \implies 19c - 33 = 24 \implies 19c = 57 \implies c = 3$.
+  </li>
+  <li>
+  Substitute $c = 3$ back: $d = 5(3) - 11 = 4$.
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$a = 1, b = 2, c = 3, d = 4$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.3 Operations on Matrices
+</summary>
+<p>
+Matrix algebra defines operations such as addition, scalar multiplication, subtraction, and matrix multiplication under specific dimensional constraints.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Matrix Addition &amp; Scalar Multiplication
+</summary>
+<ul>
+  <li>
+    <strong>
+    Addition ($A + B$):
+  </strong>
+  If $A = [a_{ij}]_{m \times n}$ and $B = [b_{ij}]_{m \times n}$ are of the same order, then their sum is $C = [c_{ij}]_{m \times n}$ where $c_{ij} = a_{ij} + b_{ij}$. If orders differ, $A + B$ is undefined.
+</li>
+<li>
+  <strong>
+  Scalar Multiplication ($kA$):
+</strong>
+Multiplying a matrix $A = [a_{ij}]$ by a scalar $k$ yields $kA = [k a_{ij}]$, where every element is scaled by $k$.
+</li>
+<li>
+  <strong>
+  Negative of a Matrix ($-A$):
+</strong>
+Defined as $-A = (-1)A = [-a_{ij}]$.
+</li>
+<li>
+  <strong>
+  Difference ($A - B$):
+</strong>
+Defined as $A - B = A + (-1)B = [a_{ij} - b_{ij}]$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Matrix Addition &amp; Scalar Multiplication
+</summary>
+<p>
+For matrices $A, B, C$ of the same order and scalars $k, l$:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Property Name
+    </th>
+    <th>
+    Mathematical Formulation
+  </th>
+  <th>
+  Description / Constraints
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Commutative Law
+    </strong>
+  </td>
+  <td>
+  $A + B = B + A$
+</td>
+<td>
+Order of addition does not affect the resulting matrix.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Associative Law
+  </strong>
+</td>
+<td>
+$(A + B) + C = A + (B + C)$
+</td>
+<td>
+Grouping of matrices during addition does not affect the result.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Existence of Additive Identity
+  </strong>
+</td>
+<td>
+$A + O = O + A = A$
+</td>
+<td>
+The zero matrix $O$ acts as the identity element for addition.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Existence of Additive Inverse
+  </strong>
+</td>
+<td>
+$A + (-A) = (-A) + A = O$
+</td>
+<td>
+$-A$ is the unique additive inverse of $A$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Distributive Law (Scalar)
+  </strong>
+</td>
+<td>
+$k(A + B) = kA + kB$
+</td>
+<td>
+Scalar multiplication distributes over matrix addition.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Distributive Law (Matrix)
+  </strong>
+</td>
+<td>
+$(k + l)A = kA + lA$
+</td>
+<td>
+Matrix multiplication distributes over scalar addition.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Matrix Multiplication
+</summary>
+<p>
+  The product $AB$ of two matrices $A$ and $B$ is defined if and only if the
+  <strong>
+  number of columns in $A$ is equal to the number of rows in $B$
+</strong>
+.
+</p>
+<p>
+If $A = [a_{ij}]_{m \times n}$ and $B = [b_{jk}]_{n \times p}$, then their product $C = AB$ is an $m \times p$ matrix where each entry $c_{ik}$ is computed as:
+</p>
+$$c_{ik} = \sum_{j=1}^{n} a_{ij}b_{jk} = a_{i1}b_{1k} + a_{i2}b_{2k} + \dots + a_{in}b_{nk}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Matrix Multiplication
+</summary>
+<ul>
+  <li>
+    <strong>
+    Non-Commutativity:
+  </strong>
+  In general, $AB \neq BA$, even if both products are defined and have the same order.
+</li>
+<li>
+  <strong>
+  Associative Law:
+</strong>
+$(AB)C = A(BC)$ whenever both sides are defined.
+</li>
+<li>
+  <strong>
+  Distributive Law:
+</strong>
+$A(B + C) = AB + AC$ and $(A + B)C = AC + BC$ whenever both sides are defined.
+</li>
+<li>
+  <strong>
+  Existence of Multiplicative Identity:
+</strong>
+For every square matrix $A$ of order $n$, $I_n A = A I_n = A$.
+</li>
+<li>
+  <strong>
+  Zero Product Rule Violation:
+</strong>
+The product of two non-zero matrices can be a zero matrix (e.g., $\begin{bmatrix} 0 & -1 \\ 0 & 2 \end{bmatrix} \begin{bmatrix} 3 & 5 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.4 Transpose of a Matrix
+</summary>
+<p>
+The transpose of a matrix is formed by interchanging its rows and columns, altering its dimensions and structural properties.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition &amp; Properties
+</summary>
+<p>
+  If $A = [a_{ij}]_{m \times n}$, then the
+  <span class="keyword">
+  transpose of A
+</span>
+, denoted by $A\'$ or $A^T$, is defined as $A\' = [a_{ji}]_{n \times m}$.
+</p>
+<p>
+The transpose operation satisfies the following properties for any matrices $A$ and $B$ of suitable orders:
+</p>
+<ol>
+  <li>
+  $(A\')\' = A$
+</li>
+<li>
+$(kA)\' = kA\'$ (where $k$ is a constant)
+</li>
+<li>
+$(A + B)\' = A\' + B\'$
+</li>
+<li>
+  <strong>
+  Reversal Law of Transpose:
+</strong>
+$(AB)\' = B\'A\'$
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.5 Symmetric &amp; Skew-Symmetric Matrices
+</summary>
+<p>
+Square matrices exhibit unique properties under transpose operations, leading to symmetric and skew-symmetric classifications.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Symmetric Matrix
+</summary>
+<p>
+  A square matrix $A$ is said to be
+  <span class="keyword">
+  symmetric
+</span>
+if $A\' = A$ (i.e., $a_{ij} = a_{ji}$ for all $i, j$).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Skew-Symmetric Matrix
+</summary>
+<p>
+  A square matrix $A$ is said to be
+  <span class="keyword">
+  skew-symmetric
+</span>
+if $A\' = -A$ (i.e., $a_{ji} = -a_{ij}$ for all $i, j$).
+</p>
+<p>
+  Setting $i = j$ yields $a_{ii} = -a_{ii} \implies 2a_{ii} = 0 \implies a_{ii} = 0$. Thus,
+  <strong>
+  all diagonal elements of a skew-symmetric matrix are zero
+</strong>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Theorems
+</summary>
+<ul>
+  <li>
+    <strong>
+    Theorem 1:
+  </strong>
+  For any square matrix $A$ with real entries, $A + A\'$ is a symmetric matrix, and $A - A\'$ is a skew-symmetric matrix.
+</li>
+<li>
+  <strong>
+  Theorem 2:
+</strong>
+Any square matrix $A$ can be uniquely expressed as the sum of a symmetric matrix and a skew-symmetric matrix:$$A = \frac{1}{2}(A + A\') + \frac{1}{2}(A - A\')$$
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Express the matrix $B = \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix}$ as the sum of a symmetric and a skew-symmetric matrix.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compute the transpose of $B$: $B\' = \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix}$.
+</li>
+<li>
+Compute the symmetric part $P = \frac{1}{2}(B + B\')$:$$P = \frac{1}{2} \left( \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix} + \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix} \right) = \begin{bmatrix} 2 & -\frac{3}{2} & -\frac{3}{2} \\ -\frac{3}{2} & 3 & 1 \\ -\frac{3}{2} & 1 & -3 \end{bmatrix}$$Verify $P\' = P$ (Symmetric).
+</li>
+<li>
+Compute the skew-symmetric part $Q = \frac{1}{2}(B - B\')$:$$Q = \frac{1}{2} \left( \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix} - \begin{bmatrix} 2 & -1 & 1 \\ -2 & 3 & -2 \\ -4 & 4 & -3 \end{bmatrix} \right) = \begin{bmatrix} 0 & -\frac{1}{2} & -\frac{5}{2} \\ \frac{1}{2} & 0 & 3 \\ \frac{5}{2} & -3 & 0 \end{bmatrix}$$Verify $Q\' = -Q$ (Skew-Symmetric).
+</li>
+<li>
+Verify that $P + Q = B$:$$\begin{bmatrix} 2 & -\frac{3}{2} & -\frac{3}{2} \\ -\frac{3}{2} & 3 & 1 \\ -\frac{3}{2} & 1 & -3 \end{bmatrix} + \begin{bmatrix} 0 & -\frac{1}{2} & -\frac{5}{2} \\ \frac{1}{2} & 0 & 3 \\ \frac{5}{2} & -3 & 0 \end{bmatrix} = \begin{bmatrix} 2 & -2 & -4 \\ -1 & 3 & 4 \\ 1 & -2 & -3 \end{bmatrix}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$B = P + Q$, where $P$ is symmetric and $Q$ is skew-symmetric as computed above.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3.6 Invertible Matrices
+</summary>
+<p>
+Invertibility is a property of square matrices analogous to reciprocals in real number algebra.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition &amp; Uniqueness
+</summary>
+<p>
+  If $A$ is a square matrix of order $m$, and if there exists another square matrix $B$ of the same order $m$ such that
+  <strong>
+  $AB = BA = I$
+</strong>
+, then $B$ is called the
+<span class="keyword">
+inverse
+</span>
+of $A$ (denoted by $A^{-1}$). In this case, $A$ is said to be
+<span class="keyword">
+invertible
+</span>
+.
+</p>
+<p>
+  <strong>
+  Note:
+</strong>
+A rectangular matrix does not possess an inverse matrix because the products $AB$ and $BA$ cannot both be defined and equal.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Theorems on Inverses
+</summary>
+<ul>
+  <li>
+    <strong>
+    Theorem 3 (Uniqueness of Inverse):
+  </strong>
+  The inverse of a square matrix, if it exists, is unique.
+  <br>
+  <em>
+  Proof sketch:
+</em>
+If $B$ and $C$ are both inverses of $A$, then $AB = BA = I$ and $AC = CA = I$. Thus, $B = BI = B(AC) = (BA)C = IC = C$.
+</li>
+<li>
+  <strong>
+  Theorem 4 (Reversal Law of Inverses):
+</strong>
+If $A$ and $B$ are invertible matrices of the same order, then $(AB)^{-1} = B^{-1}A^{-1}$.
+<br>
+<em>
+Proof sketch:
+</em>
+By definition, $(AB)(AB)^{-1} = I$. Pre-multiplying by $A^{-1}$ gives $B(AB)^{-1} = A^{-1}$. Pre-multiplying by $B^{-1}$ yields $(AB)^{-1} = B^{-1}A^{-1}$.
+</li>
+</ul>
+</details>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle / Epigraph: Arthur Cayley &amp; Georg Cantor
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Arthur Cayley (1821–1895) systematically developed the theory of matrices in his 1858 memoir, treating them as independent algebraic entities rather than mere systems of coefficients. Georg Cantor (1845–1918) famously remarked on the creative freedom of mathematical structures, a philosophy reflected in the abstract generalization of matrix algebra.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+The evolution of matrix notation allowed compact representations of linear transformations, coordinate rotations, and multidimensional vector spaces, laying the groundwork for modern quantum mechanics and computer graphics.
+</li>
+</ul>
+</div>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-02-inverse-trigonometric-functions.html"; } else { window.location.href = "12-1-chapter-04-determinants.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
