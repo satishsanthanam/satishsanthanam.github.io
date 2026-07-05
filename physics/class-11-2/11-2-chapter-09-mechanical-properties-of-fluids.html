@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 2) — Chapter 9: Mechanical Properties of Fluids
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 2) — Chapter 9: Mechanical Properties of Fluids
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Fluids and Basic Properties
+</summary>
+<p>
+Fluids are substances that can flow and do not possess a fixed shape of their own. This category encompasses both liquids and gases. While solids and liquids have a nearly constant volume under standard conditions, gases expand to fill the entire volume of their container. The fundamental distinction lies in their response to shear stress and their relative compressibility.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Shear Stress and Compressibility
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Shear stress
+  </span>
+  : Fluids offer negligible resistance to shearing forces. A very small shear stress causes continuous deformation (flow). The shearing stress of fluids is approximately
+  <strong>
+  10⁶
+</strong>
+\times smaller than that of solids.
+</li>
+<li>
+  <span class="keyword">
+  Compressibility
+</span>
+: Solids and liquids exhibit low compressibility, meaning their volume changes very little under external pressure. Gases, conversely, are highly compressible and show large variations in density with pressure changes.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Fluid Pressure and Density
+</summary>
+<p>
+When an object is submerged in a fluid at rest, the fluid exerts a force perpendicular (normal) to the object's surface at every point. If there were a parallel component of force, the fluid would flow, violating the static equilibrium condition.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Definition of Pressure
+</summary>
+<p>
+The average pressure $P_{av}$ is defined as the normal force acting per unit area:
+</p>
+$$P_{av} = \frac{F}{A}$$
+<p>
+In a limiting sense, the pressure $P$ at a point is given by:
+</p>
+$$P = \lim_{\Delta A \to 0} \frac{\Delta F}{\Delta A}$$
+<ul>
+  <li>
+    Pressure is a
+    <span class="keyword">
+    scalar quantity
+  </span>
+  because the force in the definition is specifically the component normal to the area, not a vector force.
+</li>
+<li>
+  The SI unit of pressure is the
+  <span class="keyword">
+  pascal
+</span>
+(
+<strong>
+Pa
+</strong>
+), where
+<strong>
+1 Pa = 1 N m⁻²
+</strong>
+.
+</li>
+<li>
+  Another common unit is the atmosphere (
+  <strong>
+  atm
+</strong>
+), representing the atmospheric pressure at sea level:
+<strong>
+1 atm = 1.013 \times 10⁵ Pa
+</strong>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Fluid Density and Relative Density
+</summary>
+<p>
+The density $\rho$ of a fluid of mass $m$ occupying volume $V$ is defined as:
+</p>
+$$\rho = \frac{m}{V}$$
+<p>
+  The SI unit of density is
+  <strong>
+  kg m⁻³
+</strong>
+. For liquids, density is nearly constant across wide pressure ranges, whereas gas density varies significantly.
+</p>
+<p>
+  The
+  <span class="keyword">
+  relative density
+</span>
+of a substance is the dimensionless ratio of its density to the density of water at
+<strong>
+4 °C
+</strong>
+(which is
+<strong>
+1.0 \times 10³ kg m⁻³
+</strong>
+):
+</p>
+$$\text{Relative Density} = \frac{\rho_{\text{substance}}}{\rho_{\text{water at 4 °C}}}$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Estimate the average pressure sustained by the two femurs (thigh bones) of a human body of mass 40 kg, assuming each femur has a cross-sectional area of 10 cm². Take g = 10 m s⁻².
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the total cross-sectional area of both femurs: $A = 2 \times 10 \text{ cm}^2 = 20 \times 10^{-4} \text{ m}^2$.
+</li>
+<li>
+Determine the force acting on the femurs due to body weight: $F = m \times g = 40 \times 10 = 400 \text{ N}$.
+</li>
+<li>
+Compute the average pressure: $P_{av} = \frac{F}{A} = \frac{400}{20 \times 10^{-4}} = 2 \times 10^5 \text{ N m}^{-2}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$P_{av} = 2 \times 10^5 \text{ N m}^{-2}$
+</p>
+</blockquote>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Pascal's Law
+</summary>
+<p>
+  According to
+  <span class="keyword">
+  Pascal's law
+</span>
+, the pressure in a fluid at rest is identical at all points that lie at the same horizontal height. Furthermore, any change in pressure applied to an enclosed fluid is transmitted undiminished to every portion of the fluid and to the walls of the containing vessel.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Variation of Pressure with Depth
+</summary>
+<p>
+Consider a fluid element of area $A$ and height $h$ at rest. The pressure difference between two vertical points separated by height $h$ is given by:
+</p>
+$$P_2 - P_1 = \rho g h$$
+<p>
+If point 1 is shifted to the top surface of the liquid open to the atmosphere, then $P_1$ is replaced by atmospheric pressure $P_a$, and the absolute pressure $P$ at depth $h$ becomes:
+</p>
+$$P = P_a + \rho g h$$
+<p>
+  The excess pressure $P - P_a = \rho g h$ is defined as the
+  <span class="keyword">
+  gauge pressure
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Hydrostatic Paradox
+</summary>
+<p>
+  The pressure at a certain depth depends solely on the height of the liquid column above it, not on the cross-sectional area or shape of the container. This is demonstrated by the
+  <span class="keyword">
+  hydrostatic paradox
+</span>
+, where connected vessels of different shapes hold liquid up to the same height because the pressure at the base of each vessel is identical.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Hydraulic Machines
+</summary>
+<p>
+Hydraulic devices leverage Pascal's law to achieve mechanical advantage. In a hydraulic lift, two pistons of different cross-sectional areas $A_1$ and $A_2$ ($A_1 &lt; A_2$) are connected by an enclosed liquid. Applying a small force $F_1$ on the smaller piston produces a pressure $P = \frac{F_1}{A_1}$. This pressure is transmitted undiminished, resulting in an upward force $F_2$ on the larger piston:
+</p>
+$$F_2 = P \times A_2 = F_1 \left(\frac{A_2}{A_1}\right)$$
+<p>
+The factor $\frac{A_2}{A_1}$ represents the mechanical advantage of the system, allowing heavy loads to be lifted with minimal effort.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Fluid Dynamics and Flow Types
+</summary>
+<p>
+Fluid dynamics is the study of fluids in motion. The nature of fluid flow can be categorized based on velocity profiles and path consistency.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Streamline vs. Turbulent Flow
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Streamline flow
+  </span>
+  : A flow is steady if the velocity of each passing fluid particle at any given point remains constant over time. The path taken by a fluid particle in steady flow is called a
+  <span class="keyword">
+  streamline
+</span>
+. No two streamlines can ever cross.
+</li>
+<li>
+  <span class="keyword">
+  Turbulent flow
+</span>
+: When the fluid velocity exceeds a certain limit called the
+<span class="keyword">
+critical speed
+</span>
+, the flow loses its steady character and becomes chaotic, forming whirlpool-like structures called rapids or eddies.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equation of Continuity
+</summary>
+<p>
+  For the steady flow of an incompressible fluid through a pipe of varying cross-section, the mass of fluid entering one end must equal the mass leaving the other end. This leads to the
+  <span class="keyword">
+  equation of continuity
+</span>
+:
+</p>
+$$A v = \text{constant}$$
+<p>
+Where $A$ is the cross-sectional area and $v$ is the fluid speed. Consequently, fluid speed increases at narrower constrictions and decreases in wider regions.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Bernoulli's Principle and Applications
+</summary>
+<p>
+  <span class="keyword">
+  Bernoulli's principle
+</span>
+is a statement of the conservation of energy applied to steady, non-viscous, incompressible fluid flow.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Bernoulli's Equation
+</summary>
+<p>
+Along any streamline, the sum of the pressure, kinetic energy per unit volume, and potential energy per unit volume remains constant:
+</p>
+$$P + \frac{1}{2}\rho v^2 + \rho g h = \text{constant}$$
+<p>
+This principle \implies that an increase in the speed of a fluid occurs simultaneously with a decrease in static pressure or a decrease in the fluid's potential energy.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Torricelli's Law (Speed of Efflux)
+</summary>
+<p>
+  The speed of efflux $v_1$ of a liquid from a small hole in an open tank at a depth $h$ below the liquid surface is given by
+  <span class="keyword">
+  Torricelli's law
+</span>
+:
+</p>
+$$v_1 = \sqrt{2gh}$$
+<p>
+This speed is identical to the speed acquired by a freely falling body dropped from rest through a height $h$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Dynamic Lift and the Magnus Effect
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Magnus effect
+  </span>
+  : A spinning ball drags air along with its surface. This creates a difference in air speeds above and below the ball, resulting in a pressure difference that exerts a net upward or downward force, causing the ball to deviate from its normal parabolic path.
+</li>
+<li>
+  <span class="keyword">
+  Aerofoil (Aircraft Wing)
+</span>
+: The wing is shaped so that air flows faster over the top surface than underneath it. According to Bernoulli's principle, this speed difference creates a lower pressure on top and a higher pressure below, generating the dynamic lift necessary to support the aircraft.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Viscosity and Stokes' Law
+</summary>
+<p>
+Viscosity represents the internal friction within a fluid that opposes relative motion between its adjacent layers.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Coefficient of Viscosity
+</summary>
+<p>
+  When a fluid layer is sandwiched between a fixed plate and a plate moving with velocity $v$, the fluid experiences a velocity gradient. The
+  <span class="keyword">
+  coefficient of viscosity
+</span>
+$\eta$ is defined as the ratio of shearing stress to strain rate:
+</p>
+$$\eta = \frac{F/A}{v/l} = \frac{F l}{v A}$$
+<ul>
+  <li>
+    The SI unit of viscosity is the
+    <span class="keyword">
+    poiseuille
+  </span>
+  (
+  <strong>
+  Pl
+</strong>
+), equivalent to
+<strong>
+N s m⁻²
+</strong>
+or
+<strong>
+Pa s
+</strong>
+.
+</li>
+<li>
+Viscosity of liquids decreases with increasing temperature, whereas the viscosity of gases increases with temperature.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Stokes' Law and Terminal Velocity
+</summary>
+<p>
+  According to
+  <span class="keyword">
+  Stokes' law
+</span>
+, the viscous drag force $F$ acting on a small spherical body of radius $a$ moving with velocity $v$ through a fluid of viscosity $\eta$ is:
+</p>
+$$F = 6 \pi \eta a v$$
+<p>
+  When a sphere falls through a viscous medium, it eventually reaches a constant velocity called the
+  <span class="keyword">
+  terminal velocity
+</span>
+$v_t$, where the downward gravitational force is perfectly balanced by the sum of the upward buoyant force and the viscous drag force:
+</p>
+$$v_t = \frac{2 a^2 (\rho - \sigma) g}{9 \eta}$$
+<p>
+Where $\rho$ is the density of the sphere and $\sigma$ is the density of the fluid.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Surface Tension and Capillarity
+</summary>
+<p>
+Surface tension is a membrane-like behavior exhibited by liquid surfaces, arising from intermolecular attractive forces.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Surface Energy and Surface Tension
+</summary>
+<p>
+  Molecules inside a liquid are attracted equally in all directions, whereas molecules at the surface experience a net inward cohesive force. Consequently, surface molecules possess extra potential energy. The work required to increase the surface area of a liquid film by an amount $\Delta A$ is stored as
+  <span class="keyword">
+  surface energy
+</span>
+:
+</p>
+$$S = \frac{W}{\Delta A}$$
+<p>
+  Alternatively,
+  <span class="keyword">
+  surface tension
+</span>
+$S$ is defined as the force per unit length acting in the plane of the interface along a line of unit length:
+</p>
+$$S = \frac{F}{2l}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Angle of Contact
+</summary>
+<p>
+  The
+  <span class="keyword">
+  angle of contact
+</span>
+$\theta$ is the angle between the tangent to the liquid surface at the point of contact and the solid surface inside the liquid. It determines whether a liquid will wet a solid surface or form droplets:
+</p>
+<ul>
+  <li>
+  If adhesive forces exceed cohesive forces, $\theta$ is acute (e.g., water on glass), and the liquid wets the surface.
+</li>
+<li>
+If cohesive forces exceed adhesive forces, $\theta$ is obtuse (e.g., mercury on glass), and the liquid forms droplets.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Excess Pressure in Drops and Bubbles
+</summary>
+<p>
+Due to surface tension, the pressure inside a curved liquid interface is always greater than the pressure outside. The excess pressure is given by:
+</p>
+<ul>
+  <li>
+  For a spherical liquid drop (one interface): $$P_i - P_o = \frac{2S}{r}$$
+</li>
+<li>
+For a spherical soap bubble (two interfaces): $$P_i - P_o = \frac{4S}{r}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Capillary Rise
+</summary>
+<p>
+  When a narrow tube (capillary) is dipped in a liquid, the liquid rises or falls in the tube. The height $h$ of the
+  <span class="keyword">
+  capillary rise
+</span>
+is given by:
+</p>
+$$h = \frac{2 S \cos\theta}{\rho g a}$$
+<p>
+Where $a$ is the radius of the capillary tube and $\theta$ is the contact angle. If $\theta$ is acute, the liquid rises ($h &gt; 0$); if $\theta$ is obtuse, the liquid is depressed ($h &lt; 0$).
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Physical Properties and Dimensions Matrix
+</summary>
+<p>
+The following matrix summarizes the key physical quantities associated with the mechanical properties of fluids:
+</p>
+<table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Dimensions
+</th>
+<th>
+SI Unit
+</th>
+<th>
+Remarks
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Pressure
+  </td>
+  <td>
+  $P$
+</td>
+<td>
+$[ML^{-1}T^{-2}]$
+</td>
+<td>
+Pa (N m⁻²)
+</td>
+<td>
+Scalar quantity; force normal to area.
+</td>
+</tr>
+<tr>
+  <td>
+  Density
+</td>
+<td>
+$\rho$
+</td>
+<td>
+$[ML^{-3}]$
+</td>
+<td>
+kg m⁻³
+</td>
+<td>
+Nearly constant for liquids; varies for gases.
+</td>
+</tr>
+<tr>
+  <td>
+  Relative Density
+</td>
+<td>
+-
+</td>
+<td>
+Dimensionless
+</td>
+<td>
+None
+</td>
+<td>
+Ratio of substance density to water density at 4 °C.
+</td>
+</tr>
+<tr>
+  <td>
+  Coefficient of Viscosity
+</td>
+<td>
+$\eta$
+</td>
+<td>
+$[ML^{-1}T^{-1}]$
+</td>
+<td>
+Pl (Pa s)
+</td>
+<td>
+Measures internal fluid friction.
+</td>
+</tr>
+<tr>
+  <td>
+  Surface Tension
+</td>
+<td>
+$S$
+</td>
+<td>
+$[MT^{-2}]$
+</td>
+<td>
+N m⁻¹
+</td>
+<td>
+Equivalent to surface energy per unit area.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Blaise Pascal & Daniel Bernoulli
+  </strong>
+</p>
+<ul style=
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 9
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-2-chapter-08-mechanical-properties-of-solids.html"; } else { window.location.href = "11-2-chapter-10-thermal-properties-of-matter.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
