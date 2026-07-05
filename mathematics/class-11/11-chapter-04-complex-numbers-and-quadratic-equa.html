@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 11 — Chapter 4: Complex Numbers and Quadratic Equations
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$', displayMath: [['$$', '$$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 4: Complex Numbers and Quadratic Equations
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Complex Numbers
+</summary>
+<p>
+  The system of real numbers is insufficient to solve quadratic equations of the form $ax^2 + bx + c = 0$ where the discriminant $D = b^2 - 4ac &lt; 0$. For instance, the simple equation $x^2 + 1 = 0$ has no real solution because the square of any real number is non-negative. To overcome this limitation, the real number system is extended to a larger system called the
+  <span class="keyword">
+  complex number system
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition and Basic Representation
+</summary>
+<p>
+We denote the square root of negative unity, $\sqrt{-1}$, by the symbol $i$ (iota), such that $i^2 = -1$. This means $i$ is a solution to the equation $x^2 + 1 = 0$.
+</p>
+<p>
+  A number of the form $z = a + ib$, where $a$ and $b$ are real numbers, is defined to be a
+  <span class="keyword">
+  complex number
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Real Part:
+  </strong>
+  The real number $a$ is called the real part of $z$, denoted by $\text{Re } z$.
+</li>
+<li>
+  <strong>
+  Imaginary Part:
+</strong>
+The real number $b$ is called the imaginary part of $z$, denoted by $\text{Im } z$.
+</li>
+</ul>
+<p>
+For example, if $z = 2 + i5$, then $\text{Re } z = 2$ and $\text{Im } z = 5$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equality of Complex Numbers
+</summary>
+<p>
+Two complex numbers $z_1 = a + ib$ and $z_2 = c + id$ are defined to be equal if and only if their corresponding real and imaginary parts are equal:
+</p>
+<p>
+$$z_1 = z_2 \iff a = c \text{ and } b = d$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Algebra of Complex Numbers
+</summary>
+<p>
+We define fundamental algebraic operations—addition, subtraction, multiplication, and division—on the set of complex numbers.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Addition and Subtraction
+</summary>
+<p>
+Let $z_1 = a + ib$ and $z_2 = c + id$ be two complex numbers.
+</p>
+<ul>
+  <li>
+    <strong>
+    Addition:
+  </strong>
+  $z_1 + z_2 = (a + c) + i(b + d)$
+</li>
+<li>
+  <strong>
+  Difference:
+</strong>
+$z_1 - z_2 = z_1 + (-z_2) = (a - c) + i(b - d)$
+</li>
+</ul>
+<p>
+The addition of complex numbers satisfies the following properties:
+</p>
+<ol>
+  <li>
+    <strong>
+    Closure Law:
+  </strong>
+  The sum of two complex numbers is always a complex number.
+</li>
+<li>
+  <strong>
+  Commutative Law:
+</strong>
+$z_1 + z_2 = z_2 + z_1$
+</li>
+<li>
+  <strong>
+  Associative Law:
+</strong>
+$(z_1 + z_2) + z_3 = z_1 + (z_2 + z_3)$
+</li>
+<li>
+  <strong>
+  Existence of Additive Identity:
+</strong>
+The complex number $0 + i0$ (denoted as $0$) acts as the identity, such that $z + 0 = z$.
+</li>
+<li>
+  <strong>
+  Existence of Additive Inverse:
+</strong>
+For any $z = a + ib$, there exists $-z = -a + i(-b)$ such that $z + (-z) = 0$.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Multiplication and Division
+</summary>
+<p>
+Let $z_1 = a + ib$ and $z_2 = c + id$.
+</p>
+<ul>
+  <li>
+    <strong>
+    Multiplication:
+  </strong>
+  $z_1 z_2 = (ac - bd) + i(ad + bc)$
+</li>
+<li>
+  <strong>
+  Division:
+</strong>
+For $z_2 \neq 0$, $\frac{z_1}{z_2} = z_1 \times \frac{1}{z_2}$
+</li>
+</ul>
+<p>
+Multiplication satisfies the following properties:
+</p>
+<ol>
+  <li>
+    <strong>
+    Closure Law:
+  </strong>
+  The product of two complex numbers is a complex number.
+</li>
+<li>
+  <strong>
+  Commutative Law:
+</strong>
+$z_1 z_2 = z_2 z_1$
+</li>
+<li>
+  <strong>
+  Associative Law:
+</strong>
+$(z_1 z_2) z_3 = z_1 (z_2 z_3)$
+</li>
+<li>
+  <strong>
+  Existence of Multiplicative Identity:
+</strong>
+The complex number $1 + i0$ (denoted as $1$) satisfies $z \times 1 = z$.
+</li>
+<li>
+  <strong>
+  Existence of Multiplicative Inverse:
+</strong>
+For any non-zero complex number $z = a + ib$, there exists a unique complex number $z^{-1}$ or $\frac{1}{z}$ given by:$$z^{-1} = \frac{a}{a^2 + b^2} + i \frac{-b}{a^2 + b^2}$$such that $z \times z^{-1} = 1$.
+</li>
+<li>
+  <strong>
+  Distributive Law:
+</strong>
+$z_1(z_2 + z_3) = z_1 z_2 + z_1 z_3$ and $(z_1 + z_2)z_3 = z_1 z_3 + z_2 z_3$.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Powers of $i$ and Square Roots of Negative Numbers
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Integral Powers of $i$
+</summary>
+<p>
+The powers of $i$ exhibit a cyclic pattern of length 4:
+</p>
+<ul>
+  <li>
+  $i^1 = i$
+</li>
+<li>
+$i^2 = -1$
+</li>
+<li>
+$i^3 = i^2 \times i = -i$
+</li>
+<li>
+$i^4 = (i^2)^2 = 1$
+</li>
+</ul>
+<p>
+In general, for any integer $k$:
+</p>
+<p>
+$$i^{4k} = 1, \quad i^{4k+1} = i, \quad i^{4k+2} = -1, \quad i^{4k+3} = -i$$
+</p>
+<p>
+Negative powers of $i$ can be computed similarly, e.g., $i^{-1} = \frac{1}{i} = -i$, $i^{-2} = -1$, $i^{-3} = i$, $i^{-4} = 1$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Square Roots of Negative Real Numbers
+</summary>
+<p>
+For any positive real number $a$, the square roots of $-a$ are $\sqrt{a}i$ and $-\sqrt{a}i$. The symbol $\sqrt{-a}$ is defined to represent $\sqrt{a}i$ only.
+</p>
+<p>
+  <strong>
+  Critical Caveat:
+</strong>
+The identity $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$ holds true when at least one of $a$ or $b$ is non-negative. However, if both $a &lt; 0$ and $b &lt; 0$, then:
+</p>
+<p>
+$$\sqrt{a} \times \sqrt{b} = (\sqrt{|a|}i) \times (\sqrt{|b|}i) = \sqrt{|ab|}i^2 = -\sqrt{ab} \neq \sqrt{ab}$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Modulus, Conjugate, and Identities
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Modulus and Conjugate Definitions
+</summary>
+<p>
+Let $z = a + ib$ be a complex number.
+</p>
+<ul>
+  <li>
+    <strong>
+    Modulus:
+  </strong>
+  The modulus of $z$, denoted by $|z|$, is the non-negative real number defined by:$$|z| = \sqrt{a^2 + b^2}$$
+</li>
+<li>
+  <strong>
+  Conjugate:
+</strong>
+The conjugate of $z$, denoted by $\bar{z}$, is the complex number defined by:$$\bar{z} = a - ib$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Modulus and Conjugate
+</summary>
+<p>
+For any complex numbers $z, z_1, z_2$:
+</p>
+<table border="1" cellpadding="6" style="border-collapse: collapse; margin: 10px 0; width: 100%;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Property Type
+    </th>
+    <th>
+    Mathematical Identity / Formula
+  </th>
+  <th>
+  Operational Meaning
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Inverse Relation
+  </td>
+  <td>
+  $z \bar{z} = |z|^2$ or $z^{-1} = \frac{\bar{z}}{|z|^2}$
+</td>
+<td>
+Relates a complex number, its conjugate, and its modulus square.
+</td>
+</tr>
+<tr>
+  <td>
+  Product Modulus
+</td>
+<td>
+$|z_1 z_2| = |z_1| |z_2|$
+</td>
+<td>
+The modulus of a product is the product of the moduli.
+</td>
+</tr>
+<tr>
+  <td>
+  Quotient Modulus
+</td>
+<td>
+$\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}$ (for $z_2 \neq 0$)
+</td>
+<td>
+The modulus of a quotient is the quotient of the moduli.
+</td>
+</tr>
+<tr>
+  <td>
+  Product Conjugate
+</td>
+<td>
+$\overline{z_1 z_2} = \bar{z}_1 \bar{z}_2$
+</td>
+<td>
+The conjugate of a product is the product of the conjugates.
+</td>
+</tr>
+<tr>
+  <td>
+  Sum/Difference Conjugate
+</td>
+<td>
+$\overline{z_1 \pm z_2} = \bar{z}_1 \pm \bar{z}_2$
+</td>
+<td>
+The conjugate distributes over addition and subtraction.
+</td>
+</tr>
+<tr>
+  <td>
+  Quotient Conjugate
+</td>
+<td>
+$\overline{\left(\frac{z_1}{z_2}\right)} = \frac{\bar{z}_1}{\bar{z}_2}$ (for $z_2 \neq 0$)
+</td>
+<td>
+The conjugate distributes over division.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algebraic Identities
+</summary>
+<p>
+Standard algebraic identities hold true for all complex numbers $z_1$ and $z_2$:
+</p>
+<ul>
+  <li>
+  $(z_1 + z_2)^2 = z_1^2 + 2z_1z_2 + z_2^2$
+</li>
+<li>
+$(z_1 - z_2)^2 = z_1^2 - 2z_1z_2 + z_2^2$
+</li>
+<li>
+$(z_1 + z_2)^3 = z_1^3 + 3z_1^2z_2 + 3z_1z_2^2 + z_2^3$
+</li>
+<li>
+$(z_1 - z_2)^3 = z_1^3 - 3z_1^2z_2 + 3z_1z_2^2 - z_2^3$
+</li>
+<li>
+$z_1^2 - z_2^2 = (z_1 + z_2)(z_1 - z_2)$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Argand Plane
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Argand plane
+</span>
+(or complex plane) is a geometric representation where each complex number $z = x + iy$ is uniquely mapped to an ordered pair $(x, y)$ and plotted as a point $P(x, y)$ in a two-dimensional Cartesian coordinate system.
+</p>
+<ul>
+  <li>
+    <strong>
+    Real Axis:
+  </strong>
+  The $x$-axis represents the real part of the complex number ($y = 0$).
+</li>
+<li>
+  <strong>
+  Imaginary Axis:
+</strong>
+The $y$-axis represents the imaginary part of the complex number ($x = 0$).
+</li>
+<li>
+  <strong>
+  Geometric Modulus:
+</strong>
+The modulus $|z| = \sqrt{x^2 + y^2}$ represents the straight-line distance of the point $P(x, y)$ from the origin $O(0, 0)$.
+</li>
+<li>
+  <strong>
+  Geometric Conjugate:
+</strong>
+The conjugate $\bar{z} = x - iy$ corresponds to the point $Q(x, -y)$, which is the mirror image of $P(x, y)$ across the real axis ($x$-axis).
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the real values of $x$ and $y$ if $4x + i(3x - y) = 3 + i(-6)$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Equate the real parts on both sides of the equation:$$4x = 3 \implies x = \frac{3}{4}$$
+</li>
+<li>
+Equate the imaginary parts on both sides of the equation:$$3x - y = -6$$
+</li>
+<li>
+Substitute the value of $x$ into the imaginary equation:$$3\left(\frac{3}{4}\right) - y = -6 \implies \frac{9}{4} - y = -6$$
+</li>
+<li>
+Solve for $y$:$$y = \frac{9}{4} + 6 = \frac{9 + 24}{4} = \frac{33}{4}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$x = \frac{3}{4}, \quad y = \frac{33}{4}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the multiplicative inverse of $z = 2 - 3i$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the real and imaginary parts: $a = 2$, $b = -3$.
+</li>
+<li>
+Compute the modulus squared $|z|^2$:$$|z|^2 = a^2 + b^2 = 2^2 + (-3)^2 = 4 + 9 = 13$$
+</li>
+<li>
+Find the conjugate $\bar{z}$:$$\bar{z} = 2 + 3i$$
+</li>
+<li>
+Apply the multiplicative inverse formula $z^{-1} = \frac{\bar{z}}{|z|^2}$:$$z^{-1} = \frac{2 + 3i}{13} = \frac{2}{13} + i\frac{3}{13}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$z^{-1} = \frac{2}{13} + i\frac{3}{13}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+If $x + iy = \frac{a + ib}{a - ib}$, prove that $x^2 + y^2 = 1$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Take the modulus on both sides of the given equation:$$|x + iy| = \left|\frac{a + ib}{a - ib}\right|$$
+</li>
+<li>
+Use the quotient property of modulus $|\frac{z_1}{z_2}| = \frac{|z_1|}{|z_2|}$:$$|x + iy| = \frac{|a + ib|}{|a - ib|}$$
+</li>
+<li>
+Calculate the moduli:$$\sqrt{x^2 + y^2} = \frac{\sqrt{a^2 + b^2}}{\sqrt{a^2 + (-b)^2}} = \frac{\sqrt{a^2 + b^2}}{\sqrt{a^2 + b^2}} = 1$$
+</li>
+<li>
+Square both sides to obtain the final result:$$x^2 + y^2 = 1$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$x^2 + y^2 = 1$ (Proved)
+</p>
+</blockquote>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle / Epigraph: Evolution of Imaginary Numbers
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context & Milestones:
+  </strong>
+  The impossibility of square roots of negative numbers was recognized by early Greek mathematicians. Indian mathematician Mahavira (850 AD) explicitly stated in
+  <em>
+  Ganitasara Sangraha
+</em>
+that a negative quantity is not a square and thus has no square root. Bhaskara (1150 AD) reiterated this in
+<em>
+Bijaganita
+</em>
+. Cardan (1545 AD) attempted to solve $x + y = 10, xy = 40$, obtaining $5 + \sqrt{-15}$ and $5 - \sqrt{-15}$, but dismissed them as "useless".
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Albert Girard (1625 AD) accepted negative roots to match the degree of polynomial equations. Leonhard Euler was the first to introduce the symbol $i$ for $\sqrt{-1}$. William Rowan Hamilton (1830 AD) formalized complex numbers as ordered pairs of real numbers $(a, b)$, providing a rigorous algebraic foundation.
+</li>
+</ul>
+</div>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 4
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-03-trigonometric-functions.html"; } else { window.location.href = "11-chapter-05-linear-inequalities.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
