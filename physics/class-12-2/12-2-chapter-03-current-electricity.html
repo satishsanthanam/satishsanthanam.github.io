@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 2) — Chapter 3: Dual Nature of Radiation and Matter
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 2) — Chapter 3: Dual Nature of Radiation and Matter
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction &amp; Historical Milestones
+</summary>
+<p>
+The late 19th century marked a transition in physics, moving from classical wave theories of electromagnetism to the discovery of discrete atomic constituents. While Maxwell's equations and Hertz's experiments confirmed the wave nature of light, investigations into electrical discharge through gases at low pressures revealed the particulate nature of electricity.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Thomson &amp; Millikan
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In 1897, J. J. Thomson determined the specific charge (charge-to-mass ratio) of cathode rays using mutually perpendicular electric and magnetic fields, establishing their universal nature. In 1913, R. A. Millikan's oil-drop experiment precisely measured the elementary charge, proving that electric charge is quantized.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+The specific charge of an electron was determined to be $e/m \approx 1.76 \times 10^{11}$ C/kg, independent of the cathode material or gas used, confirming the electron as a fundamental constituent of matter.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Electron Emission &amp; Work Function
+</summary>
+<p>
+Metals contain free electrons responsible for electrical conductivity, but these electrons cannot spontaneously escape the metal surface due to an attractive electrostatic pull from positive ions. To escape, an electron must acquire a minimum threshold energy.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Work Function ($\phi_0$)
+</summary>
+<p>
+  The minimum energy required by an electron to escape from a metal surface is called the
+  <span class="keyword">
+  work function
+</span>
+, denoted by $\phi_0$. It is measured in electron-volts (eV), where
+<strong>
+1 eV = 1.602 &&times; 10
+<sup>
+-19
+</sup>
+J
+</strong>
+. The work function depends on the properties of the metal and its surface cleanliness.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mechanisms of Electron Emission
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Emission Type
+    </th>
+    <th>
+    Energy Source
+  </th>
+  <th>
+  Physical Mechanism
+</th>
+<th>
+Typical Application / Limits
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Thermionic Emission
+    </strong>
+  </td>
+  <td>
+  Thermal Energy
+</td>
+<td>
+Heating the metal imparts sufficient thermal kinetic energy to free electrons to overcome the surface barrier.
+</td>
+<td>
+Vacuum tubes, cathode ray filaments.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Field Emission
+  </strong>
+</td>
+<td>
+Strong Electric Field
+</td>
+<td>
+Applying a very high electric field ($\approx 10^8$ V/m) pulls electrons out of the metal.
+</td>
+<td>
+Spark plugs, field emission microscopes.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Photoelectric Emission
+  </strong>
+</td>
+<td>
+Electromagnetic Radiation
+</td>
+<td>
+Illuminating the metal surface with light of suitable frequency causes immediate electron ejection.
+</td>
+<td>
+Phototubes, solar cells, light sensors.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Photoelectric Effect
+</summary>
+<p>
+  The
+  <span class="keyword">
+  photoelectric effect
+</span>
+is the emission of electrons (called photoelectrons) when light of a sufficiently high frequency falls on a photosensitive metal surface.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Historical Observations
+</summary>
+<ul>
+  <li>
+    <strong>
+    Hertz's Observations (1887):
+  </strong>
+  Discovered that high-voltage sparks across a detector loop were enhanced when the emitter plate was illuminated by ultraviolet light.
+</li>
+<li>
+  <strong>
+  Hallwachs' and Lenard's Observations (1886-1902):
+</strong>
+Observed that current flows in an evacuated tube containing two electrodes when the emitter is exposed to UV light. Hallwachs showed that an uncharged zinc plate becomes positively charged under UV light, indicating the loss of negative charges.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Experimental Study of Photoelectric Effect
+</summary>
+<p>
+Using an evacuated glass/quartz tube containing a photosensitive plate (emitter C) and a collector plate (A), researchers analyzed how the photoelectric current varies with light intensity, potential difference, and frequency.
+</p>
+<ul>
+  <li>
+    <strong>
+    Effect of Intensity:
+  </strong>
+  For a fixed frequency above the threshold, the photoelectric current increases linearly with the intensity of incident light, meaning the number of photoelectrons emitted per second is directly proportional to light intensity.
+</li>
+<li>
+  <strong>
+  Effect of Potential:
+</strong>
+As the positive potential of plate A increases, the current rises to a maximum value called the
+<span class="keyword">
+saturation current
+</span>
+. When a negative (retarding) potential is applied, the current drops. The minimum negative potential for which the current becomes zero is the
+<span class="keyword">
+stopping potential
+</span>
+($V_0$).
+</li>
+<li>
+  <strong>
+  Maximum Kinetic Energy:
+</strong>
+The stopping potential is directly related to the maximum kinetic energy of the emitted electrons: $$K_{\text{max}} = e V_0$$
+</li>
+<li>
+  <strong>
+  Effect of Frequency:
+</strong>
+The stopping potential $V_0$ varies linearly with the frequency of incident light. Below a specific minimum frequency, called the
+<span class="keyword">
+threshold frequency
+</span>
+($\nu_0$), no emission occurs, regardless of light intensity.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Failure of Wave Theory
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Experimental Observation
+    </th>
+    <th>
+    Wave Theory Prediction
+  </th>
+  <th>
+  Quantum Reality
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Instantaneous Emission
+    </strong>
+  </td>
+  <td>
+  Significant time lag (hours) as energy distributes over the wavefront.
+</td>
+<td>
+Instantaneous emission ($&lt; 10^{-9}$ s) via one-to-one photon-electron collisions.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Existence of Threshold Frequency ($\nu_0$)
+  </strong>
+</td>
+<td>
+Light of any frequency should cause emission if intensity is high enough.
+</td>
+<td>
+No emission occurs if the photon energy $h\nu$ is less than the work function $\phi_0$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Kinetic Energy Independence of Intensity
+  </strong>
+</td>
+<td>
+Higher intensity (larger wave amplitude) should yield higher kinetic energy.
+</td>
+<td>
+Maximum kinetic energy depends linearly on frequency, not on intensity.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Einstein's Photoelectric Equation
+</summary>
+<p>
+In 1905, Albert Einstein resolved the contradictions of wave theory by proposing a particle-like description of light, where electromagnetic radiation is quantized into packets of energy.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Albert Einstein
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Einstein proposed the light quantum hypothesis in 1905, which was later verified experimentally by Millikan in 1916. Einstein was awarded the Nobel Prize in Physics in 1921 for his services to theoretical physics, especially for his discovery of the law of the photoelectric effect.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Light energy is not continuously distributed but localized in packets called quanta (photons), each carrying energy $E = h\nu$.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation
+</summary>
+<p>
+When a photon of energy $h\nu$ strikes an electron in a metal, the energy is absorbed. Part of this energy is used to overcome the work function $\phi_0$, and the remainder becomes the maximum kinetic energy of the emitted electron:
+</p>
+$$K_{\text{max}} = h\nu - \phi_0$$
+<p>
+Using the stopping potential relation $K_{\text{max}} = e V_0$, the equation can be rewritten as:
+</p>
+$$V_0 = \left(\frac{h}{e}\right)\nu - \frac{\phi_0}{e}$$
+<p>
+This predicts a straight-line graph of $V_0$ versus $\nu$ with a slope of $h/e$, which is universal for all metals.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A monochromatic laser of frequency
+<strong>
+6.0 &&times; 10
+<sup>
+14
+</sup>
+Hz
+</strong>
+produces a power of
+<strong>
+2.0 &&times; 10
+<sup>
+-3
+</sup>
+W
+</strong>
+. Find (a) the energy of a photon in the beam, and (b) the average number of photons emitted per second.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate photon energy using $E = h\nu$:$$E = (6.63 \times 10^{-34} \text{ J s}) \times (6.0 \times 10^{14} \text{ Hz}) = 3.98 \times 10^{-19} \text{ J}$$
+</li>
+<li>
+Determine the photon emission rate $N$ from power $P = N E$:$$N = \frac{P}{E} = \frac{2.0 \times 10^{-3} \text{ W}}{3.98 \times 10^{-19} \text{ J}} \approx 5.0 \times 10^{15} \text{ photons/s}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Photon energy is $3.98 \times 10^{-19}$
+<strong>
+J
+</strong>
+and emission rate is $5.0 \times 10^{15}$
+<strong>
+photons/s
+</strong>
+.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+The work function of caesium is
+<strong>
+2.14 eV
+</strong>
+. Find (a) its threshold frequency, and (b) the wavelength of incident light if the photocurrent is brought to zero by a stopping potential of
+<strong>
+0.60 V
+</strong>
+.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Convert work function to Joules: $\phi_0 = 2.14 \times 1.6 \times 10^{-19}$ J = $3.424 \times 10^{-19}$ J. Calculate threshold frequency $\nu_0 = \phi_0 / h$:$$\nu_0 = \frac{3.424 \times 10^{-19} \text{ J}}{6.63 \times 10^{-34} \text{ J s}} \approx 5.16 \times 10^{14} \text{ Hz}$$
+</li>
+<li>
+Use Einstein's equation $e V_0 = \frac{hc}{\lambda} - \phi_0$ to isolate wavelength $\lambda$:$$\lambda = \frac{hc}{e V_0 + \phi_0} = \frac{(6.63 \times 10^{-34}) \times (3 \times 10^8)}{0.60 \text{ eV} + 2.14 \text{ eV}} = \frac{1.989 \times 10^{-25} \text{ J m}}{2.74 \times 1.6 \times 10^{-19} \text{ J}} \approx 454 \times 10^{-9} \text{ m}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Threshold frequency is $5.16 \times 10^{14}$
+<strong>
+Hz
+</strong>
+and incident wavelength is $454$
+<strong>
+nm
+</strong>
+.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Particle Nature of Light: The Photon
+</summary>
+<p>
+  The photoelectric effect and Compton scattering provide definitive proof that light behaves as a stream of localized packets of energy and momentum called
+  <span class="keyword">
+  photons
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Properties of Photons
+</summary>
+<ul>
+  <li>
+    <strong>
+    Energy and Momentum:
+  </strong>
+  Each photon has energy $E = h\nu$ and momentum $p = h\nu / c = h / \lambda$.
+</li>
+<li>
+  <strong>
+  Velocity:
+</strong>
+Photons travel at the speed of light $c$ in a vacuum, independent of the frame of reference.
+</li>
+<li>
+  <strong>
+  Intensity Independence:
+</strong>
+Increasing the intensity of light increases the number of photons per second but does not change the energy of individual photons.
+</li>
+<li>
+  <strong>
+  Neutrality:
+</strong>
+Photons are electrically neutral and are unaffected by electric and magnetic fields.
+</li>
+<li>
+  <strong>
+  Collisions:
+</strong>
+In photon-particle collisions, total energy and momentum are conserved, though the total number of photons may change due to absorption or emission.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Wave Nature of Matter
+</summary>
+<p>
+If electromagnetic waves exhibit particle-like properties, then material particles should, by symmetry, exhibit wave-like properties under appropriate conditions.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Louis de Broglie
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In 1924, French physicist Louis de Broglie proposed that moving matter possesses wave properties. This hypothesis was confirmed experimentally by electron diffraction experiments, earning him the Nobel Prize in Physics in 1929.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+The dualism of nature suggests that matter and energy must share symmetrical properties.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The de Broglie Wavelength
+</summary>
+<p>
+  The wavelength $\lambda$ associated with a particle of mass $m$ moving with velocity $v$ (momentum $p$) is given by the
+  <span class="keyword">
+  de Broglie relation
+</span>
+:
+</p>
+$$\lambda = \frac{h}{p} = \frac{h}{mv}$$
+<p>
+For macroscopic objects, the mass is large, making the de Broglie wavelength extremely small and undetectable. For subatomic particles like electrons, the wavelength is comparable to atomic spacings and is highly significant.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Calculate the de Broglie wavelength associated with (a) an electron moving at
+<strong>
+5.4 &&times; 10
+<sup>
+6
+</sup>
+m/s
+</strong>
+, and (b) a ball of mass
+<strong>
+150 g
+</strong>
+traveling at
+<strong>
+30.0 m/s
+</strong>
+.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  For the electron ($m = 9.11 \times 10^{-31}$ kg):$$\lambda_e = \frac{h}{m_e v_e} = \frac{6.63 \times 10^{-34} \text{ J s}}{(9.11 \times 10^{-31} \text{ kg}) \times (5.4 \times 10^6 \text{ m/s})} \approx 1.35 \times 10^{-10} \text{ m} = 0.135 \text{ nm}$$
+</li>
+<li>
+For the ball ($m = 0.150$ kg):$$\lambda_b = \frac{h}{m_b v_b} = \frac{6.63 \times 10^{-34} \text{ J s}}{(0.150 \text{ kg}) \times (30.0 \text{ m/s})} \approx 1.47 \times 10^{-34} \text{ m}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The electron's wavelength is $0.135$
+<strong>
+nm
+</strong>
+(measurable), while the ball's wavelength is $1.47 \times 10^{-34}$
+<strong>
+m
+</strong>
+(undetectably small).
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Summary of Physical Quantities
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Dimensions
+</th>
+<th>
+SI Unit
+</th>
+<th>
+Key Formula / Remarks
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Planck's Constant
+    </strong>
+  </td>
+  <td>
+  $h$
+</td>
+<td>
+$[ML^2T^{-1}]$
+</td>
+<td>
+J s
+</td>
+<td>
+$E = h\nu$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Stopping Potential
+  </strong>
+</td>
+<td>
+$V_0$
+</td>
+<td>
+$[ML^2T^{-3}A^{-1}]$
+</td>
+<td>
+V
+</td>
+<td>
+$e V_0 = K_{\text{max}}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Work Function
+  </strong>
+</td>
+<td>
+$\phi_0$
+</td>
+<td>
+$[ML^2T^{-2}]$
+</td>
+<td>
+J or eV
+</td>
+<td>
+$\phi_0 = h\nu_0$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Threshold Frequency
+  </strong>
+</td>
+<td>
+$\nu_0$
+</td>
+<td>
+$[T^{-1}]$
+</td>
+<td>
+Hz
+</td>
+<td>
+$\nu_0 = \phi_0 / h$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    de Broglie Wavelength
+  </strong>
+</td>
+<td>
+$\lambda$
+</td>
+<td>
+$[L]$
+</td>
+<td>
+m
+</td>
+<td>
+$\lambda = h / p$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-02-electrostatic-potential-and-capaci.html"; } else { window.location.href = "12-2-chapter-04-moving-charges-and-magnetism.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

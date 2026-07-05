@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 6: Electromagnetic Induction
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 6: Electromagnetic Induction
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction &amp; Experimental Foundations
+</summary>
+<p>
+  For a long time, electricity and magnetism were treated as separate, unrelated phenomena. In the early 19th century, Oersted and Ampere established that moving electric charges produce magnetic fields. This discovery led to the natural converse question: Can moving magnets or changing magnetic fields produce electric currents? The discovery of
+  <span class="keyword">
+  electromagnetic induction
+</span>
+by Michael Faraday and Joseph Henry around 1830 proved conclusively that electric currents are indeed induced in closed coils when subjected to changing magnetic fields.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Joseph Henry (1797–1878)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  American experimental physicist, professor at Princeton University, and first director of the Smithsonian Institution. He made key improvements in electromagnets by winding insulated wire around iron cores, and invented an electromagnetic motor and an efficient telegraph.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Discovered self-induction independently of Faraday and investigated mutual induction between separate circuits.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Experiments of Faraday and Henry
+</summary>
+<p>
+The discovery of electromagnetic induction was based on three seminal experiments:
+</p>
+<ul>
+  <li>
+    <strong>
+    Experiment 6.1 (Coil and Magnet):
+  </strong>
+  A coil $C_1$ is connected to a sensitive galvanometer $G$. When the North pole of a bar magnet is pushed towards the coil, the galvanometer pointer deflects, indicating the induction of an electric current. The deflection lasts only as long as the magnet is in motion. Pulling the magnet away reverses the deflection. Moving the South pole produces opposite deflections. Faster motion yields larger deflections. Moving the coil while keeping the magnet stationary produces identical effects, proving that
+  <span class="keyword">
+  relative motion
+</span>
+is the key driver.
+</li>
+<li>
+  <strong>
+  Experiment 6.2 (Coil and Coil with Relative Motion):
+</strong>
+The bar magnet is replaced by a second coil $C_2$ connected to a battery. The steady current in $C_2$ produces a steady magnetic field. When $C_2$ is moved towards or away from $C_1$, a current is induced in $C_1$, indicated by momentary galvanometer deflections.
+</li>
+<li>
+  <strong>
+  Experiment 6.3 (Coil and Coil with Stationary Setup):
+</strong>
+Coils $C_1$ and $C_2$ are both held stationary. $C_2$ is connected to a battery through a tapping key $K$. When $K$ is pressed, a momentary deflection is observed in $C_1$. When $K$ is held continuously, there is no deflection. When $K$ is released, a momentary deflection in the opposite direction occurs. Inserting an iron rod along the axis dramatically increases the deflection.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Magnetic Flux &amp; Faraday's Law of Induction
+</summary>
+<p>
+  To mathematically formulate these experimental observations, Faraday introduced the concept of
+  <span class="keyword">
+  magnetic flux
+</span>
+, which is defined analogously to electric flux.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation of Magnetic Flux
+</summary>
+<p>
+For a plane area $A$ placed in a uniform magnetic field $\mathbf{B}$, the magnetic flux $\Phi_B$ is defined as:
+</p>
+<p>
+$$\Phi_B = \mathbf{B} \cdot \mathbf{A} = BA \cos \theta$$
+</p>
+<p>
+where $\theta$ is the angle between the magnetic field vector $\mathbf{B}$ and the area vector $\mathbf{A}$. For non-uniform fields or curved surfaces, the flux is summed over all infinitesimal area elements $d\mathbf{A}_i$:
+</p>
+<p>
+$$\Phi_B = \sum_{\text{all}} \mathbf{B}_i \cdot d\mathbf{A}_i$$
+</p>
+<ul>
+  <li>
+    <strong>
+    SI Unit:
+  </strong>
+  <span class="keyword">
+  weber
+</span>
+($\text{Wb}$) or tesla meter squared ($\text{T m}^2$).
+</li>
+<li>
+  <strong>
+  Physical Nature:
+</strong>
+Scalar quantity.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Faraday's Law of Electromagnetic Induction
+</summary>
+<p>
+Faraday's law states that:
+</p>
+<p>
+  <em>
+  The magnitude of the induced electromotive force (emf) in a circuit is equal to the time rate of change of magnetic flux through the circuit.
+</em>
+</p>
+<p>
+$$\epsilon = -\frac{d\Phi_B}{dt}$$
+</p>
+<p>
+For a closely wound coil consisting of $N$ turns, the total induced emf is given by:
+</p>
+<p>
+$$\epsilon = -N \frac{d\Phi_B}{dt}$$
+</p>
+<p>
+The negative sign indicates the direction of the induced emf (and current), which is determined by Lenz's Law.
+</p>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Michael Faraday (1791–1867)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  British experimentalist who made monumental contributions to electromagnetism and electrochemistry. He discovered electromagnetic induction, formulated the laws of electrolysis, discovered benzene, and invented the electric motor, generator, and transformer.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Introduced the concept of lines of force to visualize electric and magnetic fields, laying the groundwork for Maxwell's electromagnetic theory.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Methods of Varying Magnetic Flux
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Structural Concept / Function Type
+    </th>
+    <th>
+    Exact Mathematical Domain / Sign Properties
+  </th>
+  <th>
+  Active Operation Formulas / Identities
+</th>
+<th>
+Systemic Role &amp; Evaluation Limits
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Varying Magnetic Field ($B$)
+  </td>
+  <td>
+  Time-dependent field $B(t)$
+</td>
+<td>
+$$\epsilon = -A \cos \theta \frac{dB}{dt}$$
+</td>
+<td>
+Used in stationary coils with moving magnets or changing primary currents (e.g., transformers).
+</td>
+</tr>
+<tr>
+  <td>
+  Varying Area ($A$)
+</td>
+<td>
+Time-dependent area $A(t)$
+</td>
+<td>
+$$\epsilon = -B \cos \theta \frac{dA}{dt}$$
+</td>
+<td>
+Motional emf where loop boundaries expand, contract, or slide through a uniform field.
+</td>
+</tr>
+<tr>
+  <td>
+  Varying Orientation ($\theta$)
+</td>
+<td>
+Rotational motion $\theta = \omega t$
+</td>
+<td>
+$$\epsilon = NBA\omega \sin(\omega t)$$
+</td>
+<td>
+Fundamental operating mechanism of AC generators and alternators.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 6.2):
+</strong>
+A square loop of side
+<strong>
+10 cm
+</strong>
+and resistance
+<strong>
+0.5 &Omega;
+</strong>
+is placed vertically in the east-west plane. A uniform magnetic field of
+<strong>
+0.10 T
+</strong>
+is set up across the plane in the north-east direction. The magnetic field is decreased to zero in
+<strong>
+0.70 s
+</strong>
+at a steady rate. Determine the magnitudes of induced emf and current during this time-interval.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the area of the square loop: $A = (0.10\text{ m})^2 = 10^{-2}\text{ m}^2$.
+</li>
+<li>
+Identify the angle $\theta$ between the area vector (pointing North or South) and the magnetic field (pointing North-East): $\theta = 45^\circ$.
+</li>
+<li>
+  Calculate the initial magnetic flux $\Phi_{B\text{ (initial)}}$:
+  $$\Phi_{B\text{ (initial)}} = BA \cos \theta = 0.10 \times 10^{-2} \times \cos 45^\circ = \frac{10^{-3}}{\sqrt{2}}\text{ Wb} \approx 0.707 \times 10^{-3}\text{ Wb}$$
+</li>
+<li>
+The final flux is $\Phi_{B\text{ (final)}} = 0$.
+</li>
+<li>
+  Calculate the magnitude of the induced emf using Faraday's Law:
+  $$\epsilon = \frac{|\Delta \Phi_B|}{\Delta t} = \frac{0.707 \times 10^{-3}\text{ Wb}}{0.70\text{ s}} \approx 1.0 \times 10^{-3}\text{ V} = 1.0\text{ mV}$$
+</li>
+<li>
+  Calculate the induced current using Ohm's Law:
+  $$I = \frac{\epsilon}{R} = \frac{1.0 \times 10^{-3}\text{ V}}{0.5\ \Omega} = 2.0 \times 10^{-3}\text{ A} = 2.0\text{ mA}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Induced emf =
+<strong>
+1.0 mV
+</strong>
+, Induced current =
+<strong>
+2.0 mA
+</strong>
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 6.3):
+</strong>
+A circular coil of radius
+<strong>
+10 cm
+</strong>
+,
+<strong>
+500 turns
+</strong>
+and resistance
+<strong>
+2 &Omega;
+</strong>
+is placed with its plane perpendicular to the horizontal component of the earth's magnetic field. It is rotated about its vertical diameter through $180^\circ$ in
+<strong>
+0.25 s
+</strong>
+. Estimate the magnitudes of the emf and current induced in the coil. Horizontal component of the earth's magnetic field at the place is $3.0 \times 10^{-5}\text{ T}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the area of the circular coil: $A = \pi r^2 = \pi \times (0.1\text{ m})^2 = \pi \times 10^{-2}\text{ m}^2$.
+</li>
+<li>
+Calculate the initial flux: $\Phi_{B\text{ (initial)}} = BA \cos 0^\circ = 3.0 \times 10^{-5} \times \pi \times 10^{-2} = 3\pi \times 10^{-7}\text{ Wb}$.
+</li>
+<li>
+Calculate the final flux after $180^\circ$ rotation: $\Phi_{B\text{ (final)}} = BA \cos 180^\circ = -3\pi \times 10^{-7}\text{ Wb}$.
+</li>
+<li>
+Calculate the change in flux: $\Delta \Phi_B = \Phi_{B\text{ (final)}} - \Phi_{B\text{ (initial)}} = -6\pi \times 10^{-7}\text{ Wb}$.
+</li>
+<li>
+  Calculate the induced emf for $N = 500$ turns:
+  $$\epsilon = N \frac{|\Delta \Phi_B|}{\Delta t} = 500 \times \frac{6\pi \times 10^{-7}}{0.25} = 2000 \times 6\pi \times 10^{-7} \approx 3.8 \times 10^{-3}\text{ V}$$
+</li>
+<li>
+  Calculate the induced current:
+  $$I = \frac{\epsilon}{R} = \frac{3.8 \times 10^{-3}\text{ V}}{2\ \Omega} = 1.9 \times 10^{-3}\text{ A}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Induced emf =
+<strong>
+3.8 mV
+</strong>
+, Induced current =
+<strong>
+1.9 mA
+</strong>
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Lenz's Law &amp; Conservation of Energy
+</summary>
+<p>
+In 1834, German physicist Heinrich Friedrich Lenz formulated a rule to determine the polarity of the induced emf.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Statement of Lenz's Law
+</summary>
+<p>
+  <em>
+  The polarity of the induced emf is such that it tends to produce a current which opposes the change in magnetic flux that produced it.
+</em>
+</p>
+<p>
+This law explains the negative sign in Faraday's equation: $\epsilon = -\frac{d\Phi_B}{dt}$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Lenz's Law and the Law of Conservation of Energy
+</summary>
+<p>
+Lenz's law is a direct consequence of the law of conservation of energy:
+</p>
+<ul>
+  <li>
+  When the North pole of a magnet is pushed towards a coil, the induced current flows in a counter-clockwise direction (viewed from the magnet side), creating a North pole that repels the incoming magnet.
+</li>
+<li>
+To keep moving the magnet, an external agent must perform mechanical work to overcome this repulsive force.
+</li>
+<li>
+  This mechanical work is converted into electrical energy, which is then dissipated as heat via
+  <span class="keyword">
+  Joule heating
+</span>
+($I^2 R$).
+</li>
+<li>
+If the induced current flowed in the opposite direction (attracting the magnet), a gentle push would cause the magnet to accelerate indefinitely, continuously increasing its kinetic energy and electrical energy without any external work, violating the law of conservation of energy.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Motional Electromotive Force
+</summary>
+<p>
+  When a conducting rod moves through a stationary magnetic field, an emf is induced across its ends. This is known as
+  <span class="keyword">
+  motional emf
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation via Flux Change
+</summary>
+<p>
+Consider a rectangular conductor $PQRS$ in a uniform magnetic field $\mathbf{B}$ perpendicular to the plane of the system. Let the arm $PQ$ of length $l$ slide to the left with velocity $v$.
+</p>
+<ol>
+  <li>
+  The area enclosed by the loop is $A = lx$, where $x$ is the width of the loop.
+</li>
+<li>
+The magnetic flux enclosed is: $\Phi_B = Blx$.
+</li>
+<li>
+  Since $x$ changes with time, the rate of change of flux is:
+  $$\epsilon = -\frac{d\Phi_B}{dt} = -\frac{d}{dt}(Blx) = -Bl\frac{dx}{dt}$$
+</li>
+<li>
+  Since the rod moves to the left, its speed is $v = -\frac{dx}{dt}$. Substituting this yields:
+  $$\epsilon = Blv$$
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation via Lorentz Force
+</summary>
+<p>
+The same expression can be derived by considering the Lorentz force acting on the free charge carriers (charge $q$) inside the moving conductor $PQ$:
+</p>
+<ol>
+  <li>
+  As the rod moves with velocity $v$ in a magnetic field $B$, each charge experiences a magnetic force: $F = qvB$.
+</li>
+<li>
+The work done in moving a charge from end $P$ to $Q$ is: $W = F \cdot l = qvBl$.
+</li>
+<li>
+  Since emf is defined as work done per unit charge:
+  $$\epsilon = \frac{W}{q} = Blv$$
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 6.6):
+</strong>
+A metallic rod of
+<strong>
+1 m
+</strong>
+length is rotated with a frequency of
+<strong>
+50 rev/s
+</strong>
+, with one end hinged at the centre and the other end at the circumference of a circular metallic ring of radius
+<strong>
+1 m
+</strong>
+, about an axis passing through the centre and perpendicular to the plane of the ring. A constant and uniform magnetic field of
+<strong>
+1 T
+</strong>
+parallel to the axis is present everywhere. What is the emf between the centre and the metallic ring?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given parameters: length $R = 1\text{ m}$, frequency $\nu = 50\text{ Hz}$, magnetic field $B = 1\text{ T}$.
+</li>
+<li>
+  Calculate the angular velocity $\omega$:
+  $$\omega = 2\pi \nu = 2\pi \times 50 = 100\pi\text{ rad/s}$$
+</li>
+<li>
+The linear velocity of an infinitesimal element $dr$ at distance $r$ from the center is $v = \omega r$.
+</li>
+<li>
+  Integrate the motional emf $d\epsilon = Bv\,dr$ from $r = 0$ to $r = R$:
+  $$\epsilon = \int_0^R B(\omega r)\,dr = B\omega \left[ \frac{r^2}{2} \right]_0^R = \frac{1}{2} B\omega R^2$$
+</li>
+<li>
+  Substitute the values:
+  $$\epsilon = \frac{1}{2} \times 1\text{ T} \times 100\pi\text{ rad/s} \times (1\text{ m})^2 = 50\pi\text{ V} \approx 50 \times 3.14 = 157\text{ V}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Induced emf =
+<strong>
+157 V
+</strong>
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Inductance (Self &amp; Mutual)
+</summary>
+<p>
+  An electric current can be induced in a coil by a changing magnetic flux. This flux change can be caused by a changing current in a neighboring coil (
+  <span class="keyword">
+  mutual induction
+</span>
+) or by a changing current in the same coil (
+<span class="keyword">
+self-induction
+</span>
+).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mutual Inductance
+</summary>
+<p>
+When two coils are placed close to each other, the magnetic flux linked with coil 1 ($\Phi_1$) is proportional to the current in coil 2 ($I_2$):
+</p>
+<p>
+$$N_1\Phi_1 = M_{12} I_2$$
+</p>
+<p>
+where $M_{12}$ is the mutual inductance of coil 1 with respect to coil 2. By reciprocity, $M_{12} = M_{21} = M$.
+</p>
+<p>
+For two long coaxial solenoids of length $l$, inner radius $r_1$, and turn densities $n_1, n_2$:
+</p>
+<p>
+$$M = \mu_0 n_1 n_2 \pi r_1^2 l$$
+</p>
+<p>
+The induced emf in coil 1 due to a changing current in coil 2 is:
+</p>
+<p>
+$$\epsilon_1 = -M \frac{dI_2}{dt}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Self-Inductance
+</summary>
+<p>
+When the current in a single isolated coil changes, the flux linked with the coil itself changes, inducing a back emf. The flux linkage is proportional to the current:
+</p>
+<p>
+$$N\Phi_B = L I$$
+</p>
+<p>
+  where $L$ is the
+  <span class="keyword">
+  self-inductance
+</span>
+of the coil. The induced back emf is:
+</p>
+<p>
+$$\epsilon = -L \frac{dI}{dt}$$
+</p>
+<p>
+For a long solenoid of cross-sectional area $A$, length $l$, and turn density $n$:
+</p>
+<p>
+$$L = \mu_0 n^2 A l$$
+</p>
+<p>
+If filled with a material of relative permeability $\mu_r$:
+</p>
+<p>
+$$L = \mu_r \mu_0 n^2 A l$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Energy Stored in an Inductor
+</summary>
+<p>
+Work must be done against the back emf to establish a current $I$ in an inductor. This work is stored as magnetic potential energy:
+</p>
+<p>
+$$W = \frac{1}{2} L I^2$$
+</p>
+<p>
+The magnetic energy stored per unit volume (magnetic energy density $u_B$) inside a solenoid is:
+</p>
+<p>
+$$u_B = \frac{B^2}{2\mu_0}$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  AC Generator
+</summary>
+<p>
+  The
+  <span class="keyword">
+  AC generator
+</span>
+is a machine that converts mechanical energy into electrical energy using electromagnetic induction.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Working Principle &amp; Mathematical Derivation
+</summary>
+<p>
+An armature coil of $N$ turns and area $A$ is rotated with a constant angular speed $\omega$ in a uniform magnetic field $\mathbf{B}$.
+</p>
+<ol>
+  <li>
+  The angle between the magnetic field vector $\mathbf{B}$ and the area vector $\mathbf{A}$ at any instant $t$ is $\theta = \omega t$.
+</li>
+<li>
+  The magnetic flux linked with the coil at time $t$ is:
+  $$\Phi_B = BA \cos(\omega t)$$
+</li>
+<li>
+  According to Faraday's Law, the induced emf is:
+  $$\epsilon = -N \frac{d\Phi_B}{dt} = -N \frac{d}{dt}[BA \cos(\omega t)] = NBA\omega \sin(\omega t)$$
+</li>
+<li>
+  The maximum (peak) emf is $\epsilon_0 = NBA\omega$. Thus, the instantaneous emf is:
+  $$\epsilon = \epsilon_0 \sin(\omega t)$$
+</li>
+</ol>
+<p>
+The induced emf varies sinusoidally with time, producing an alternating current.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 6.10):
+</strong>
+Kamla peddles a stationary bicycle. The pedals of the bicycle are attached to a
+<strong>
+100 turn
+</strong>
+coil of area
+<strong>
+0.10 m²
+</strong>
+. The coil rotates at half a revolution per second and it is placed in a uniform magnetic field of
+<strong>
+0.01 T
+</strong>
+perpendicular to the axis of rotation of the coil. What is the maximum voltage generated in the coil?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given parameters: $N = 100$, $A = 0.10\text{ m}^2$, $B = 0.01\text{ T}$, frequency $\nu = 0.5\text{ Hz}$.
+</li>
+<li>
+  Calculate the angular frequency $\omega$:
+  $$\omega = 2\pi \nu = 2\pi \times 0.5 = \pi\text{ rad/s} \approx 3.14\text{ rad/s}$$
+</li>
+<li>
+  Calculate the maximum voltage $\epsilon_0$:
+  $$\epsilon_0 = NBA\omega = 100 \times 0.01 \times 0.10 \times 3.14 = 0.314\text{ V}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Maximum voltage =
+<strong>
+0.314 V
+</strong>
+</p>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 6
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-05-magnetism-and-matter.html"; } else { window.location.href = "12-1-chapter-07-alternating-current.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

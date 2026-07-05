@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 7: Alternating Current
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 7: Alternating Current
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.1 Introduction to Alternating Current
+</summary>
+<p>
+  Most of the electrical energy generated and distributed today is in the form of
+  <span class="keyword">
+  alternating current
+</span>
+(ac). Unlike
+<span class="keyword">
+direct current
+</span>
+(dc) which flows continuously in one direction, alternating current periodically reverses its direction and varies continuously in magnitude with time.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Advantages of AC over DC
+</summary>
+<ul>
+  <li>
+    <strong>
+    Efficient Voltage Transformation:
+  </strong>
+  Alternating voltages can be easily and efficiently stepped up or stepped down using
+  <span class="keyword">
+  transformers
+</span>
+.
+</li>
+<li>
+  <strong>
+  Economical Transmission:
+</strong>
+By stepping up the voltage, electrical energy can be transmitted over long distances at high voltage and low current, significantly reducing $I^2 R$ power losses in transmission lines.
+</li>
+<li>
+  <strong>
+  Widespread Device Compatibility:
+</strong>
+Most modern industrial and household appliances are designed to operate directly on ac voltage.
+</li>
+</ul>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Nicola Tesla (1856 – 1943)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Serbian-American scientist, inventor, and genius who conceived the rotating magnetic field, which is the foundation of modern alternating current machinery.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Developed the polyphase system of ac power, the induction motor, and the high-frequency induction coil (Tesla coil). The SI unit of magnetic field is named the Tesla ($T$) in his honour.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: George Westinghouse (1846 – 1914)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  A pioneer and leading proponent of alternating current technology over direct current, putting him in direct conflict with Thomas Edison.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Founded the Westinghouse Electric Company, championing the commercialization of ac power systems and hiring Nicola Tesla to develop ac motors and transmission systems.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.2 AC Voltage Applied to a Resistor
+</summary>
+<p>
+Consider a pure resistor of resistance $R$ connected to an ac source that produces a sinusoidally varying potential difference across its terminals.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Derivation of Current
+</summary>
+<p>
+The instantaneous ac voltage is given by:
+</p>
+<p>
+$$v = v_m \sin \omega t$$
+</p>
+<p>
+where $v_m$ is the amplitude of the oscillating potential difference and $\omega$ is its angular frequency.
+</p>
+<p>
+Applying Kirchhoff's loop rule ($\sum \epsilon(t) = 0$) to the circuit:
+</p>
+<p>
+$$v_m \sin \omega t = i R$$
+</p>
+<p>
+$$i = \frac{v_m}{R} \sin \omega t$$
+</p>
+<p>
+Since $R$ is constant, we can write:
+</p>
+<p>
+$$i = i_m \sin \omega t$$
+</p>
+<p>
+  where the current amplitude $i_m$ is given by
+  <span class="keyword">
+  Ohm's law
+</span>
+:
+</p>
+<p>
+$$i_m = \frac{v_m}{R}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Phase Relationship and Power Dissipation
+</summary>
+<ul>
+  <li>
+    <strong>
+    Phase:
+  </strong>
+  Comparing the equations for $v$ and $i$, we see that both reach their zero, minimum, and maximum values at the same time. Therefore, the voltage and current in a pure resistor are
+  <span class="keyword">
+  in phase
+</span>
+with each other.
+</li>
+<li>
+  <strong>
+  Average Current:
+</strong>
+The average value of current over one complete cycle is zero because the positive and negative half-cycles cancel out.
+</li>
+<li>
+  <strong>
+  Joule Heating:
+</strong>
+Although the average current is zero, the average power dissipated is not zero because heating depends on $i^2$, which is always positive.
+</li>
+<li>
+  <strong>
+  Instantaneous Power:
+</strong>
+$$p = i^2 R = i_m^2 R \sin^2 \omega t$$
+</li>
+<li>
+  <strong>
+  Average Power:
+</strong>
+Since the average value of $\sin^2 \omega t$ over a complete cycle is $\frac{1}{2}$, the average power is:
+</li>
+<li>
+$$P = \bar{p} = \frac{1}{2} i_m^2 R$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Root Mean Square (RMS) Values
+</summary>
+<p>
+  To express ac power in the same mathematical form as dc power ($P = I^2 R$), we define the
+  <span class="keyword">
+  root mean square current
+</span>
+($I$ or $I_{rms}$):
+</p>
+<p>
+$$I = \sqrt{\bar{i^2}} = \frac{i_m}{\sqrt{2}} \approx 0.707 i_m$$
+</p>
+<p>
+  Similarly, the
+  <span class="keyword">
+  rms voltage
+</span>
+($V$ or $V_{rms}$) is defined as:
+</p>
+<p>
+$$V = \frac{v_m}{\sqrt{2}} \approx 0.707 v_m$$
+</p>
+<p>
+Using these rms values, the average power can be written as:
+</p>
+<p>
+$$P = I^2 R = V I = \frac{V^2}{R}$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A light bulb is rated at
+<strong>
+100 W
+</strong>
+for a
+<strong>
+220 V
+</strong>
+supply. Find (a) the resistance of the bulb; (b) the peak voltage of the source; and (c) the rms current through the bulb.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify given values: $P = 100\text{ W}$, $V = 220\text{ V}$ (rms voltage).
+</li>
+<li>
+Calculate resistance $R$ using $R = \frac{V^2}{P}$:$$R = \frac{(220)^2}{100} = \frac{48400}{100} = 484\\ \Omega$$
+</li>
+<li>
+Calculate peak voltage $v_m$ using $v_m = \sqrt{2} V$:$$v_m = 1.414 \times 220 = 311\text{ V}$$
+</li>
+<li>
+Calculate rms current $I$ using $I = \frac{P}{V}$:$$I = \frac{100}{220} = 0.454\text{ A}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Resistance $R = 484\\ \Omega$, Peak Voltage $v_m = 311\text{ V}$, RMS Current $I = 0.454\text{ A}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.3 Representation of AC Current and Voltage by Rotating Vectors — Phasors
+</summary>
+<p>
+  To analyze phase relationships between voltage and current in ac circuits containing inductors, capacitors, or their combinations, we use the concept of
+  <span class="keyword">
+  phasors
+</span>
+.
+</p>
+<ul>
+  <li>
+    A
+    <strong>
+    phasor
+  </strong>
+  is a vector that rotates about the origin in a counter-clockwise direction with an angular speed $\omega$.
+</li>
+<li>
+The length of the phasor represents the amplitude (peak value) of the quantity ($v_m$ or $i_m$).
+</li>
+<li>
+The projection of the phasor on the vertical axis represents the instantaneous value of the quantity ($v_m \sin \omega t$ or $i_m \sin \omega t$).
+</li>
+<li>
+The angle between the phasor and the horizontal axis represents its phase at that instant.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.4 AC Voltage Applied to an Inductor
+</summary>
+<p>
+Consider a pure inductor of self-inductance $L$ and negligible resistance connected to an ac source.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Derivation of Current
+</summary>
+<p>
+Let the applied voltage be $v = v_m \sin \omega t$. Applying Kirchhoff's loop rule:
+</p>
+<p>
+$$v - L \frac{di}{dt} = 0 \implies \frac{di}{dt} = \frac{v_m}{L} \sin \omega t$$
+</p>
+<p>
+Integrating both sides with respect to time $t$:
+</p>
+<p>
+$$\int \frac{di}{dt} dt = \frac{v_m}{L} \int \sin(\omega t) dt$$
+</p>
+<p>
+$$i = -\frac{v_m}{\omega L} \cos(\omega t) + \text{constant}$$
+</p>
+<p>
+Since the source voltage oscillates symmetrically about zero, the current must also oscillate symmetrically about zero, meaning the integration constant is zero.
+</p>
+<p>
+Using the trigonometric identity $-\cos(\omega t) = \sin\left(\omega t - \frac{\pi}{2}\right)$:
+</p>
+<p>
+$$i = i_m \sin\left(\omega t - \frac{\pi}{2}\right)$$
+</p>
+<p>
+where the current amplitude $i_m$ is:
+</p>
+<p>
+$$i_m = \frac{v_m}{\omega L}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Inductive Reactance and Phase Relationship
+</summary>
+<ul>
+  <li>
+    <strong>
+    Inductive Reactance ($X_L$):
+  </strong>
+  The quantity $\omega L$ acts as the effective resistance of the inductor and is called
+  <span class="keyword">
+  inductive reactance
+</span>
+:$$X_L = \omega L = 2\pi \nu L$$Its SI unit is the ohm ($\Omega$). It is directly proportional to both the inductance and the frequency of the ac source.
+</li>
+<li>
+  <strong>
+  Phase Relationship:
+</strong>
+Comparing $v = v_m \sin \omega t$ and $i = i_m \sin\left(\omega t - \frac{\pi}{2}\right)$, we see that the current
+<span class="keyword">
+lags
+</span>
+the voltage by $\frac{\pi}{2}$ radians (or $90^\circ$, which is one-quarter of a period).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Power Dissipation in an Inductor
+</summary>
+<p>
+The instantaneous power supplied to the inductor is:
+</p>
+<p>
+$$p_L = i v = \left[i_m \sin\left(\omega t - \frac{\pi}{2}\right)\right] \times [v_m \sin \omega t] = -i_m v_m \cos(\omega t) \sin(\omega t) = -\frac{i_m v_m}{2} \sin(2\omega t)$$
+</p>
+<p>
+The average power over a complete cycle is:
+</p>
+<p>
+$$P_L = -\frac{i_m v_m}{2} \langle\sin(2\omega t)\rangle = 0$$
+</p>
+<p>
+  Thus, the average power supplied to an inductor over a complete cycle is
+  <strong>
+  zero
+</strong>
+. No electrical energy is dissipated as heat in a pure inductor.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A pure inductor of
+<strong>
+25.0 mH
+</strong>
+is connected to a source of
+<strong>
+220 V
+</strong>
+. Find the inductive reactance and rms current in the circuit if the frequency of the source is
+<strong>
+50 Hz
+</strong>
+.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify given values: $L = 25.0 \times 10^{-3}\text{ H}$, $V = 220\text{ V}$, $\nu = 50\text{ Hz}$.
+</li>
+<li>
+Calculate inductive reactance $X_L = 2\pi \nu L$:$$X_L = 2 \times 3.14 \times 50 \times 25.0 \times 10^{-3} = 7.85\\ \Omega$$
+</li>
+<li>
+Calculate rms current $I = \frac{V}{X_L}$:$$I = \frac{220}{7.85} \approx 28\text{ A}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Inductive Reactance $X_L = 7.85\\ \Omega$, RMS Current $I = 28\text{ A}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.5 AC Voltage Applied to a Capacitor
+</summary>
+<p>
+Consider a capacitor of capacitance $C$ connected to an ac source.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Derivation of Current
+</summary>
+<p>
+Let the applied voltage be $v = v_m \sin \omega t$. The instantaneous charge $q$ on the capacitor is:
+</p>
+<p>
+$$q = C v = C v_m \sin \omega t$$
+</p>
+<p>
+The current $i$ in the circuit is the rate of flow of charge:
+</p>
+<p>
+$$i = \frac{dq}{dt} = \frac{d}{dt}(C v_m \sin \omega t) = \omega C v_m \cos(\omega t)$$
+</p>
+<p>
+Using the trigonometric identity $\cos(\omega t) = \sin\left(\omega t + \frac{\pi}{2}\right)$:
+</p>
+<p>
+$$i = i_m \sin\left(\omega t + \frac{\pi}{2}\right)$$
+</p>
+<p>
+where the current amplitude $i_m$ is:
+</p>
+<p>
+$$i_m = \omega C v_m = \frac{v_m}{1/(\omega C)}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Capacitive Reactance and Phase Relationship
+</summary>
+<ul>
+  <li>
+    <strong>
+    Capacitive Reactance ($X_C$):
+  </strong>
+  The quantity $\frac{1}{\omega C}$ acts as the effective resistance of the capacitor and is called
+  <span class="keyword">
+  capacitive reactance
+</span>
+:$$X_C = \frac{1}{\omega C} = \frac{1}{2\pi \nu C}$$Its SI unit is the ohm ($\Omega$). It is inversely proportional to both the frequency and the capacitance.
+</li>
+<li>
+  <strong>
+  Phase Relationship:
+</strong>
+Comparing $v = v_m \sin \omega t$ and $i = i_m \sin\left(\omega t + \frac{\pi}{2}\right)$, we see that the current
+<span class="keyword">
+leads
+</span>
+the voltage by $\frac{\pi}{2}$ radians (or $90^\circ$, which is one-quarter of a period).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Power Dissipation in a Capacitor
+</summary>
+<p>
+The instantaneous power supplied to the capacitor is:
+</p>
+<p>
+$$p_C = i v = \left[i_m \cos(\omega t)\right] \times [v_m \sin \omega t] = \frac{i_m v_m}{2} \sin(2\omega t)$$
+</p>
+<p>
+The average power over a complete cycle is:
+</p>
+<p>
+$$P_C = \frac{i_m v_m}{2} \langle\sin(2\omega t)\rangle = 0$$
+</p>
+<p>
+  Thus, the average power supplied to a capacitor over a complete cycle is
+  <strong>
+  zero
+</strong>
+.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A
+<strong>
+15.0 \mu F
+</strong>
+capacitor is connected to a
+<strong>
+220 V
+</strong>
+,
+<strong>
+50 Hz
+</strong>
+source. Find the capacitive reactance and the current (rms and peak) in the circuit. If the frequency is doubled, what happens to the capacitive reactance and the current?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify given values: $C = 15.0 \times 10^{-6}\text{ F}$, $V = 220\text{ V}$, $\nu = 50\text{ Hz}$.
+</li>
+<li>
+Calculate capacitive reactance $X_C = \frac{1}{2\pi \nu C}$:$$X_C = \frac{1}{2 \times 3.14 \times 50 \times 15.0 \times 10^{-6}} = \frac{1}{0.00471} \approx 212\\ \Omega$$
+</li>
+<li>
+Calculate rms current $I = \frac{V}{X_C}$:$$I = \frac{220}{212} = 1.04\text{ A}$$
+</li>
+<li>
+Calculate peak current $i_m = \sqrt{2} I$:$$i_m = 1.414 \times 1.04 = 1.47\text{ A}$$
+</li>
+<li>
+If frequency is doubled, $X_C$ is halved ($106\\ \Omega$) and the current is doubled ($I = 2.08\text{ A}$, $i_m = 2.94\text{ A}$).
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$X_C = 212\\ \Omega$, $I = 1.04\text{ A}$, $i_m = 1.47\text{ A}$. Doubling frequency halves $X_C$ and doubles current.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.6 AC Voltage Applied to a Series LCR Circuit
+</summary>
+<p>
+Consider a circuit containing a resistor $R$, an inductor $L$, and a capacitor $C$ connected in series across an ac source of voltage $v = v_m \sin \omega t$.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Phasor-Diagram Solution
+</summary>
+<p>
+Since the elements are in series, the instantaneous current $i$ is the same at any point in the circuit. Let it be:
+</p>
+<p>
+$$i = i_m \sin(\omega t + \phi)$$
+</p>
+<p>
+where $\phi$ is the phase difference between the voltage of the source and the current in the circuit.
+</p>
+<p>
+Let $\mathbf{V}_R$, $\mathbf{V}_L$, $\mathbf{V}_C$, and $\mathbf{V}$ be the phasors representing the voltages across the resistor, inductor, capacitor, and source respectively. Their amplitudes are:
+</p>
+<ul>
+  <li>
+  $v_{Rm} = i_m R$ (in phase with current phasor $\mathbf{I}$)
+</li>
+<li>
+$v_{Lm} = i_m X_L$ (leads $\mathbf{I}$ by $\frac{\pi}{2}$)
+</li>
+<li>
+$v_{Cm} = i_m X_C$ (lags $\mathbf{I}$ by $\frac{\pi}{2}$)
+</li>
+</ul>
+<p>
+The phasor relation is:
+</p>
+<p>
+$$\mathbf{V}_L + \mathbf{V}_R + \mathbf{V}_C = \mathbf{V}$$
+</p>
+<p>
+Since $\mathbf{V}_C$ and $\mathbf{V}_L$ are along the same line but in opposite directions, they combine to form a single phasor of magnitude $|v_{Cm} - v_{Lm}|$. Using the Pythagorean theorem on the right-triangle formed by $\mathbf{V}_R$, $(\mathbf{V}_C + \mathbf{V}_L)$, and $\mathbf{V}$:
+</p>
+<p>
+$$v_m^2 = v_{Rm}^2 + (v_{Cm} - v_{Lm})^2$$
+</p>
+<p>
+$$v_m^2 = (i_m R)^2 + (i_m X_C - i_m X_L)^2 = i_m^2 [R^2 + (X_C - X_L)^2]$$
+</p>
+<p>
+$$i_m = \frac{v_m}{\sqrt{R^2 + (X_C - X_L)^2}} = \frac{v_m}{Z}$$
+</p>
+<p>
+  where $Z$ is the
+  <span class="keyword">
+  impedance
+</span>
+of the circuit:
+</p>
+<p>
+$$Z = \sqrt{R^2 + (X_C - X_L)^2}$$
+</p>
+<p>
+The phase angle $\phi$ is given by:
+</p>
+<p>
+$$\tan \phi = \frac{v_{Cm} - v_{Lm}}{v_{Rm}} = \frac{X_C - X_L}{R}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Resonance in Series LCR Circuits
+</summary>
+<p>
+  An interesting characteristic of a series $RLC$ circuit is the phenomenon of
+  <span class="keyword">
+  resonance
+</span>
+, where the current amplitude is maximized at a specific frequency.
+</p>
+<ul>
+  <li>
+    <strong>
+    Resonance Condition:
+  </strong>
+  The current amplitude $i_m = \frac{v_m}{Z}$ is maximum when the impedance $Z$ is minimum. This occurs when:$$X_C = X_L \implies \frac{1}{\omega_0 C} = \omega_0 L$$
+</li>
+<li>
+  <strong>
+  Resonant Frequency ($\omega_0$):
+</strong>
+$$\omega_0 = \frac{1}{\sqrt{LC}}$$
+</li>
+<li>
+  <strong>
+  Impedance at Resonance:
+</strong>
+At $\omega_0$, $Z = R$, which is purely resistive. The current amplitude is at its maximum value:$$i_{m,\text{max}} = \frac{v_m}{R}$$
+</li>
+<li>
+  <strong>
+  Requirement for Resonance:
+</strong>
+Resonance can only occur if both $L$ and $C$ are present in the circuit. In $RL$ or $RC$ circuits, the voltages across the reactive elements cannot cancel each other out, so resonance is impossible.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A resistor of $200\\ \Omega$ and a capacitor of $15.0\\ \mu\text{F}$ are connected in series to a $220\text{ V}$, $50\text{ Hz}$ ac source. (a) Calculate the current in the circuit; (b) Calculate the voltage (rms) across the resistor and the capacitor. Is the algebraic sum of these voltages more than the source voltage? If yes, resolve the paradox.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify given values: $R = 200\\ \Omega$, $C = 15.0 \times 10^{-6}\text{ F}$, $V = 220\text{ V}$, $\nu = 50\text{ Hz}$.
+</li>
+<li>
+Calculate capacitive reactance $X_C$:$$X_C = \frac{1}{2\pi \nu C} = \frac{1}{2 \times 3.14 \times 50 \times 15.0 \times 10^{-6}} \approx 212.3\\ \Omega$$
+</li>
+<li>
+Calculate impedance $Z = \sqrt{R^2 + X_C^2}$:$$Z = \sqrt{200^2 + 212.3^2} = \sqrt{40000 + 45071} = \sqrt{85071} \approx 291.7\\ \Omega$$
+</li>
+<li>
+Calculate current $I = \frac{V}{Z}$:$$I = \frac{220}{291.7} \approx 0.755\text{ A}$$
+</li>
+<li>
+Calculate rms voltage across resistor $V_R = I R$:$$V_R = 0.755 \times 200 = 151\text{ V}$$
+</li>
+<li>
+Calculate rms voltage across capacitor $V_C = I X_C$:$$V_C = 0.755 \times 212.3 \approx 160.3\text{ V}$$
+</li>
+<li>
+The algebraic sum of $V_R$ and $V_C$ is $151 + 160.3 = 311.3\text{ V}$, which is greater than the source voltage of $220\text{ V}$. This is because the two voltages are not in phase (they are $90^\circ$ out of phase). The total voltage must be calculated using the Pythagorean theorem:$$V = \sqrt{V_R^2 + V_C^2} = \sqrt{151^2 + 160.3^2} \approx 220\text{ V}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Current $I = 0.755\text{ A}$, $V_R = 151\text{ V}$, $V_C = 160.3\text{ V}$. The paradox is resolved by vector addition of out-of-phase voltages.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.7 Power in AC Circuit: The Power Factor
+</summary>
+<p>
+The average power $P$ over a complete cycle is:
+</p>
+<p>
+$$P = V I \cos \phi$$
+</p>
+<p>
+  where $\cos \phi$ is called the
+  <span class="keyword">
+  power factor
+</span>
+of the circuit.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Analysis of Power Factor in Different Circuits
+</summary>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Circuit Type
+    </th>
+    <th>
+    Phase Angle ($\phi$)
+  </th>
+  <th>
+  Power Factor ($\cos \phi$)
+</th>
+<th>
+Average Power ($P$)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Purely Resistive
+    </strong>
+  </td>
+  <td>
+  $\phi = 0$
+</td>
+<td>
+$\cos \phi = 1$
+</td>
+<td>
+$P = V I$ (Maximum power dissipation)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Purely Inductive / Capacitive
+  </strong>
+</td>
+<td>
+$\phi = \pm \frac{\pi}{2}$
+</td>
+<td>
+$\cos \phi = 0$
+</td>
+<td>
+  $P = 0$ (Zero power dissipation,
+  <span class="keyword">
+  wattless current
+</span>
+)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Series LCR Circuit
+  </strong>
+</td>
+<td>
+$\tan \phi = \frac{X_C - X_L}{R}$
+</td>
+<td>
+$\cos \phi = \frac{R}{Z}$
+</td>
+<td>
+$P = V I \cos \phi$ (Power dissipated only in resistor)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    LCR Circuit at Resonance
+  </strong>
+</td>
+<td>
+$\phi = 0$
+</td>
+<td>
+$\cos \phi = 1$
+</td>
+<td>
+$P = I^2 R$ (Maximum power dissipation)
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7.8 Transformers
+</summary>
+<p>
+  A
+  <span class="keyword">
+  transformer
+</span>
+is a static electrical device used to increase or decrease alternating voltage based on the principle of
+<span class="keyword">
+mutual induction
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Construction and Working Principle
+</summary>
+<ul>
+  <li>
+    <strong>
+    Coils:
+  </strong>
+  It consists of two coils wound on a laminated soft-iron core:
+  <ul>
+    <li>
+      <strong>
+      Primary Coil:
+    </strong>
+    Connected to the input ac voltage source, having $N_p$ turns.
+  </li>
+  <li>
+    <strong>
+    Secondary Coil:
+  </strong>
+  Connected to the output load, having $N_s$ turns.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Working:
+</strong>
+An alternating current in the primary coil creates a continuously changing magnetic flux in the iron core, which passes through the secondary coil and induces an alternating electromotive force (emf) in it.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Equations
+</summary>
+<p>
+Assuming an ideal transformer with zero flux leakage and negligible coil resistance, the induced emfs are:
+</p>
+<p>
+$$\epsilon_s = -N_s \frac{d\phi}{dt}$$
+</p>
+<p>
+$$\epsilon_p = -N_p \frac{d\phi}{dt}$$
+</p>
+<p>
+Since $\epsilon_s = v_s$ and $\epsilon_p = v_p$ (where $v_s$ and $v_p$ are terminal voltages):
+</p>
+<p>
+$$\frac{v_s}{v_p} = \frac{N_s}{N_p}$$
+</p>
+<p>
+For an ideal 100% efficient transformer, input power equals output power ($i_p v_p = i_s v_s$):
+</p>
+<p>
+$$\frac{i_p}{i_s} = \frac{v_s}{v_p} = \frac{N_s}{N_p}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Types of Transformers
+</summary>
+<ul>
+  <li>
+    <strong>
+    Step-up Transformer:
+  </strong>
+  Increases voltage ($V_s &gt; V_p$) by having more turns in the secondary coil ($N_s &gt; N_p$). Consequently, the secondary current is lower than the primary current ($I_s &lt; I_p$).
+</li>
+<li>
+  <strong>
+  Step-down Transformer:
+</strong>
+Decreases voltage ($V_s &lt; V_p$) by having fewer turns in the secondary coil ($N_s &lt; N_p$). Consequently, the secondary current is higher than the primary current ($I_s &gt; I_p$).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Energy Losses in Real Transformers
+</summary>
+<ol>
+  <li>
+    <strong>
+    Flux Leakage:
+  </strong>
+  Not all magnetic flux from the primary coil passes through the secondary coil. Minimized by winding the primary and secondary coils over one another.
+</li>
+<li>
+  <strong>
+  Copper Loss (Resistance of Windings):
+</strong>
+Heat produced ($I^2 R$) due to the resistance of the copper wire. Minimized by using thick wires for high-current windings.
+</li>
+<li>
+  <strong>
+  Iron Loss (Eddy Currents):
+</strong>
+Alternating magnetic flux induces circulating currents (eddy currents) in the iron core, causing heating. Minimized by using a laminated iron core.
+</li>
+<li>
+  <strong>
+  Hysteresis Loss:
+</strong>
+Energy lost as heat during the continuous magnetization and demagnetization of the core. Minimized by using a core material with low hysteresis loss, such as soft iron.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Summary of Physical Quantities in AC Circuits
+</summary>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Dimensions
+</th>
+<th>
+SI Unit
+</th>
+<th>
+Formula / Remarks
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      RMS Voltage
+    </strong>
+  </td>
+  <td>
+  $V$
+</td>
+<td>
+$[M L^2 T^{-3} A^{-1}]$
+</td>
+<td>
+$\text{V}$
+</td>
+<td>
+$V = \frac{v_m}{\sqrt{2}}$, where $v_m$ is peak voltage.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    RMS Current
+  </strong>
+</td>
+<td>
+$I$
+</td>
+<td>
+$[A]$
+</td>
+<td>
+$\text{A}$
+</td>
+<td>
+$I = \frac{i_m}{\sqrt{2}}$, where $i_m$ is peak current.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Inductive Reactance
+  </strong>
+</td>
+<td>
+$X_L$
+</td>
+<td>
+$[M L^2 T^{-3} A^{-2}]$
+</td>
+<td>
+$\Omega$
+</td>
+<td>
+$X_L = \omega L = 2\pi \nu L$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Capacitive Reactance
+  </strong>
+</td>
+<td>
+$X_C$
+</td>
+<td>
+$[M L^2 T^{-3} A^{-2}]$
+</td>
+<td>
+$\Omega$
+</td>
+<td>
+$X_C = \frac{1}{\omega C} = \frac{1}{2\pi \nu C}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Impedance
+  </strong>
+</td>
+<td>
+$Z$
+</td>
+<td>
+$[M L^2 T^{-3} A^{-2}]$
+</td>
+<td>
+$\Omega$
+</td>
+<td>
+$Z = \sqrt{R^2 + (X_C - X_L)^2}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Resonant Frequency
+  </strong>
+</td>
+<td>
+$\omega_0$
+</td>
+<td>
+$[T^{-1}]$
+</td>
+<td>
+$\text{rad/s}$
+</td>
+<td>
+$\omega_0 = \frac{1}{\sqrt{LC}}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Power Factor
+  </strong>
+</td>
+<td>
+$\cos \phi$
+</td>
+<td>
+Dimensionless
+</td>
+<td>
+-
+</td>
+<td>
+$\cos \phi = \frac{R}{Z}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 7
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-06-electromagnetic-induction.html"; } else { window.location.href = "12-1-chapter-08-electromagnetic-waves.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

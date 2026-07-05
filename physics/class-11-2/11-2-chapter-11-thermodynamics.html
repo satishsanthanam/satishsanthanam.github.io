@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 2) — Chapter 11: Thermodynamics
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 2) — Chapter 11: Thermodynamics
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.1 Introduction &amp; Historical Foundations
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Caloric Theory vs. Modern Kinetic View
+</summary>
+<p>
+  Historically, heat was viewed as a weightless, invisible fluid called
+  <span class="keyword">
+  caloric
+</span>
+that resided in the pores of matter. It was believed to flow spontaneously from hotter bodies to colder bodies until their caloric levels (temperatures) equalized. This view was eventually replaced by the modern kinetic concept of heat as a form of energy transfer associated with the random motion of microscopic constituents.
+</p>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Benjamin Thomson (Count Rumford)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In 1798, Count Rumford observed the boring of brass cannons. He noticed that the process generated an immense amount of heat, enough to boil water, and that the heat generation was continuous as long as mechanical work was performed.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+This experiment disproved the caloric theory because a blunt drill generated more heat than a sharp one (which should have released more caloric fluid by creating more surface area). It established that heat is a form of energy converted directly from mechanical work.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.2 Thermal Equilibrium &amp; The Zeroth Law
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Thermodynamic vs. Mechanical Equilibrium
+</summary>
+<p>
+  While mechanical equilibrium requires the net external force and torque on a system to be zero,
+  <span class="keyword">
+  thermodynamic equilibrium
+</span>
+requires that the macroscopic state variables characterizing the system (such as pressure, volume, temperature, mass, and composition) do not change with time. A system is in thermodynamic equilibrium when it simultaneously satisfies thermal, mechanical, and chemical equilibrium conditions.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Adiabatic vs. Diathermic Walls
+</summary>
+<ul>
+  <li>
+    <strong>
+    Adiabatic Wall:
+  </strong>
+  An insulating wall that does not allow the flow of heat energy between systems. If two systems are separated by an adiabatic wall, their state variables $(P, V)$ can remain completely independent.
+</li>
+<li>
+  <strong>
+  Diathermic Wall:
+</strong>
+A conducting wall that allows heat energy to flow between systems. When two systems are separated by a diathermic wall, heat flows until they reach a state of mutual thermal equilibrium.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Zeroth Law of Thermodynamics
+</summary>
+<p>
+  Formulated by
+  <span class="keyword">
+  R.H. Fowler
+</span>
+in 1931, the
+<span class="keyword">
+Zeroth Law of Thermodynamics
+</span>
+states:
+<em>
+"If two systems A and B are separately in thermal equilibrium with a third system C, then they must be in thermal equilibrium with each other."
+</em>
+</p>
+<p>
+  This law provides the physical basis for defining
+  <span class="keyword">
+  temperature
+</span>
+($T$). It \implies that there exists a scalar state variable called temperature such that systems in thermal equilibrium have equal temperatures: if $T_A = T_C$ and $T_B = T_C$, then $T_A = T_B$.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.3 Heat, Internal Energy, and Work
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Internal Energy ($U$) as a State Function
+</summary>
+<p>
+  The
+  <span class="keyword">
+  internal energy
+</span>
+($U$) of a system is the sum of the kinetic and potential energies of its molecular constituents in a frame of reference where the center of mass of the system is at rest. It is a thermodynamic
+<span class="keyword">
+state variable
+</span>
+, meaning its value depends solely on the current state of the system and is independent of the path taken to reach that state.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Heat ($Q$) and Work ($W$) as Path Functions
+</summary>
+<p>
+  Unlike internal energy,
+  <span class="keyword">
+  heat
+</span>
+($Q$) and
+<span class="keyword">
+work
+</span>
+($W$) are not state variables; they are modes of energy transfer in transit. A system does not "possess" heat or work. Heat is energy transfer driven by a temperature difference, whereas work is energy transfer driven by mechanical means (such as a moving piston) not involving a temperature difference.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.4 The First Law of Thermodynamics
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation
+</summary>
+<p>
+  The
+  <span class="keyword">
+  First Law of Thermodynamics
+</span>
+is a statement of the general law of conservation of energy applied to thermodynamic systems. Mathematically, it is expressed as:
+</p>
+$$\Delta Q = \Delta U + \Delta W$$
+<p>
+Where:
+</p>
+<ul>
+  <li>
+  $\Delta Q$ is the heat supplied to the system by the surroundings.
+</li>
+<li>
+$\Delta U$ is the change in the internal energy of the system.
+</li>
+<li>
+$\Delta W$ is the work done by the system on the surroundings.
+</li>
+</ul>
+<p>
+Alternatively, it can be written as:
+</p>
+$$\Delta Q - \Delta W = \Delta U$$
+<p>
+This highlights that while $\Delta Q$ and $\Delta W$ depend on the path taken, their difference $(\Delta Q - \Delta W)$ is path-independent and equals the change in the state variable $\Delta U$.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.5 Specific Heat Capacity
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definitions and Formulations
+</summary>
+<ul>
+  <li>
+    <strong>
+    Heat Capacity ($S$):
+  </strong>
+  The amount of heat required to raise the temperature of a substance by $\Delta T$: $$S = \frac{\Delta Q}{\Delta T}$$
+</li>
+<li>
+  <strong>
+  Specific Heat Capacity ($s$):
+</strong>
+The heat capacity per unit mass of a substance: $$s = \frac{1}{m} \frac{\Delta Q}{\Delta T}$$ The SI unit of specific heat capacity is
+<strong>
+J kg
+<sup>
+-1
+</sup>
+K
+<sup>
+-1
+</sup>
+</strong>
+.
+</li>
+<li>
+  <strong>
+  Molar Specific Heat Capacity ($C$):
+</strong>
+The heat capacity per mole of a substance: $$C = \frac{1}{\mu} \frac{\Delta Q}{\Delta T}$$ The SI unit of molar specific heat capacity is
+<strong>
+J mol
+<sup>
+-1
+</sup>
+K
+<sup>
+-1
+</sup>
+</strong>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Molar Specific Heat of Solids (Dulong-Petit Law)
+</summary>
+<p>
+For a solid consisting of $N$ atoms, each atom vibrates about its mean position in three dimensions. According to the law of equipartition of energy, each 1D harmonic oscillator has an average energy of $k_B T$. In three dimensions, the average energy per atom is $3 k_B T$. For one mole of solid ($N_A$ atoms), the total internal energy is:
+</p>
+$$U = 3 k_B T \times N_A = 3 R T$$
+<p>
+At constant pressure, since the volume change of a solid is negligible, $\Delta Q \approx \Delta U$. Therefore, the molar specific heat capacity of a solid is:
+</p>
+$$C = \frac{\Delta U}{\Delta T} = 3R$$
+<p>
+  This theoretical value of $3R$ (\approx.
+  <strong>
+  24.9 J mol
+  <sup>
+  -1
+</sup>
+K
+<sup>
+-1
+</sup>
+</strong>
+) agrees well with experimental values for many solids at room temperature.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mayer's Formula Derivation ($C_p - C_v = R$)
+</summary>
+<p>
+For an ideal gas, we define two molar specific heats:
+</p>
+<ol>
+  <li>
+    <strong>
+    Molar Specific Heat at Constant Volume ($C_v$):
+  </strong>
+  From the first law, with $dV = 0 \implies dW = 0$: $$C_v = \left(\frac{\Delta Q}{\Delta T}\right)_v = \frac{\Delta U}{\Delta T}$$
+</li>
+<li>
+  <strong>
+  Molar Specific Heat at Constant Pressure ($C_p$):
+</strong>
+With $dW = P dV$: $$C_p = \left(\frac{\Delta Q}{\Delta T}\right)_p = \frac{\Delta U}{\Delta T} + P \left(\frac{\Delta V}{\Delta T}\right)_p$$
+</li>
+</ol>
+<p>
+Since $U$ of an ideal gas depends only on temperature, the term $\frac{\Delta U}{\Delta T}$ is identical in both cases. Substituting $C_v$ into the expression for $C_p$ gives:
+</p>
+$$C_p = C_v + P \left(\frac{\Delta V}{\Delta T}\right)_p$$
+<p>
+From the ideal gas equation for 1 mole ($PV = RT$), differentiating with respect to $T$ at constant pressure yields:
+</p>
+$$P \left(\frac{\Delta V}{\Delta T}\right)_p = R$$
+<p>
+  Substituting this back gives
+  <span class="keyword">
+  Mayer's formula
+</span>
+:
+</p>
+$$C_p - C_v = R$$
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.6 Thermodynamic State Variables &amp; Processes
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Extensive vs. Intensive Variables
+</summary>
+<ul>
+  <li>
+    <strong>
+    Extensive Variables:
+  </strong>
+  Variables that depend on the size or mass of the system (e.g., volume $V$, internal energy $U$, mass $M$). If a system is divided into two equal parts, these variables are halved.
+</li>
+<li>
+  <strong>
+  Intensive Variables:
+</strong>
+Variables that are independent of the size or mass of the system (e.g., pressure $P$, temperature $T$, density $\rho$). If a system is divided, these variables remain unchanged.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Quasi-Static Process
+</summary>
+<p>
+  A
+  <span class="keyword">
+  quasi-static process
+</span>
+is an idealized, infinitely slow process in which the system remains in thermal and mechanical equilibrium with its surroundings at every stage. The pressure and temperature of the system differ from those of the surroundings only by infinitesimal amounts.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Isothermal Process
+</summary>
+<p>
+A process occurring at a constant temperature ($T = \text{constant}$). For an ideal gas, the equation of state is $PV = \text{constant}$.
+</p>
+<p>
+  <strong>
+  Work Done in an Isothermal Expansion:
+</strong>
+</p>
+$$W = \int_{V_1}^{V_2} P dV = \int_{V_1}^{V_2} \frac{\mu RT}{V} dV = \mu RT \ln\left(\frac{V_2}{V_1}\right)$$
+<p>
+Since $\Delta U = 0$ for an isothermal process of an ideal gas, the first law \implies $\Delta Q = \Delta W$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Adiabatic Process
+</summary>
+<p>
+A process in which there is no heat exchange between the system and the surroundings ($\Delta Q = 0$). The equation of state is:
+</p>
+$$PV^{\gamma} = \text{constant}$$
+<p>
+Where $\gamma = C_p / C_v$ is the adiabatic index.
+</p>
+<p>
+  <strong>
+  Work Done in an Adiabatic Process:
+</strong>
+</p>
+$$W = \int_{V_1}^{V_2} P dV = K \int_{V_1}^{V_2} V^{-\gamma} dV = \frac{P_2 V_2 - P_1 V_1}{1 - \gamma} = \frac{\mu R(T_1 - T_2)}{\gamma - 1}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Thermodynamic Process Matrix
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Process Type
+    </th>
+    <th>
+    Constant Parameter
+  </th>
+  <th>
+  Equation of State / Path
+</th>
+<th>
+Work Done Formula
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Isothermal
+    </strong>
+  </td>
+  <td>
+  Temperature ($T$)
+</td>
+<td>
+$PV = \text{constant}$
+</td>
+<td>
+$W = \mu RT \ln\left(\frac{V_2}{V_1}\right)$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Adiabatic
+  </strong>
+</td>
+<td>
+Heat ($Q$)
+</td>
+<td>
+$PV^{\gamma} = \text{constant}$
+</td>
+<td>
+$W = \frac{\mu R(T_1 - T_2)}{\gamma - 1}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Isochoric
+  </strong>
+</td>
+<td>
+Volume ($V$)
+</td>
+<td>
+$V = \text{constant} \implies dV = 0$
+</td>
+<td>
+$W = 0$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Isobaric
+  </strong>
+</td>
+<td>
+Pressure ($P$)
+</td>
+<td>
+$P = \text{constant}$
+</td>
+<td>
+$W = P(V_2 - V_1) = \mu R(T_2 - T_1)$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Cyclic
+  </strong>
+</td>
+<td>
+Initial State = Final State
+</td>
+<td>
+Closed loop on $P\text{-}V$ diagram
+</td>
+<td>
+$W = \text{Area enclosed by the loop}$ ($\Delta U = 0$)
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.7 The Second Law of Thermodynamics
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Limits of the First Law
+</summary>
+<p>
+  The First Law of Thermodynamics asserts the conservation of energy but does not specify the direction of heat flow or whether a spontaneous process is possible. For instance, it does not forbid heat from flowing spontaneously from a cold body to a hot body, which is never observed in nature. The
+  <span class="keyword">
+  Second Law of Thermodynamics
+</span>
+addresses these limitations.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Statements
+</summary>
+<ul>
+  <li>
+    <strong>
+    Kelvin-Planck Statement:
+  </strong>
+  <em>
+  "No process is possible whose sole result is the absorption of heat from a reservoir and the complete conversion of the heat into work."
+</em>
+(This rules out a 100% efficient heat engine).
+</li>
+<li>
+  <strong>
+  Clausius Statement:
+</strong>
+<em>
+"No process is possible whose sole result is the transfer of heat from a colder object to a hotter object."
+</em>
+(This rules out a self-sustaining refrigerator without external work input).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.8 Reversible Processes &amp; The Carnot Engine
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Reversible vs. Irreversible Processes
+</summary>
+<p>
+  A process is
+  <span class="keyword">
+  reversible
+</span>
+if it can be turned back such that both the system and its surroundings return to their exact initial states with no other changes in the universe. Reversibility requires the process to be quasi-static and completely free of dissipative forces (like friction or viscosity). Real processes are always
+<span class="keyword">
+irreversible
+</span>
+due to dissipative effects and non-equilibrium intermediate states.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Carnot Cycle
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Carnot engine
+</span>
+is an idealized, reversible thermodynamic engine operating between a hot reservoir at temperature $T_1$ and a cold reservoir at $T_2$. The cycle consists of four sequential steps:
+</p>
+<ol>
+  <li>
+    <strong>
+    Step 1 $\rightarrow$ 2: Isothermal Expansion:
+  </strong>
+  The gas expands at constant temperature $T_1$, absorbing heat $Q_1$ from the source. $$W_{1 \rightarrow 2} = Q_1 = \mu R T_1 \ln\left(\frac{V_2}{V_1}\right)$$
+</li>
+<li>
+  <strong>
+  Step 2 $\rightarrow$ 3: Adiabatic Expansion:
+</strong>
+The gas expands adiabatically, cooling from $T_1$ to $T_2$. $$W_{2 \rightarrow 3} = \frac{\mu R(T_1 - T_2)}{\gamma - 1}$$
+</li>
+<li>
+  <strong>
+  Step 3 $\rightarrow$ 4: Isothermal Compression:
+</strong>
+The gas is compressed at constant temperature $T_2$, releasing heat $Q_2$ to the sink. $$W_{3 \rightarrow 4} = -Q_2 = -\mu R T_2 \ln\left(\frac{V_3}{V_4}ight)$$
+</li>
+<li>
+  <strong>
+  Step 4 $\rightarrow$ 1: Adiabatic Compression:
+</strong>
+The gas is compressed adiabatically, heating back from $T_2$ to $T_1$. $$W_{4 \rightarrow 1} = -\frac{\mu R(T_1 - T_2)}{\gamma - 1}$$
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Carnot Efficiency &amp; Theorem
+</summary>
+<p>
+The net work done in one cycle is $W = Q_1 - Q_2$. The efficiency $\eta$ of the Carnot engine is:
+</p>
+$$\eta = \frac{W}{Q_1} = 1 - \frac{Q_2}{Q_1}$$
+<p>
+Since steps 2 $\rightarrow$ 3 and 4 $\rightarrow$ 1 are adiabatic, we have $T_1 V_2^{\gamma-1} = T_2 V_3^{\gamma-1}$ and $T_1 V_1^{\gamma-1} = T_2 V_4^{\gamma-1}$, which yields $\frac{V_2}{V_1} = \frac{V_3}{V_4}$. Thus:
+</p>
+$$\frac{Q_2}{Q_1} = \frac{T_2}{T_1} \implies \eta = 1 - \frac{T_2}{T_1}$$
+<p>
+  <strong>
+  Carnot's Theorem:
+</strong>
+</p>
+<ul>
+  <li>
+  No engine working between two given temperatures can be more efficient than a reversible Carnot engine operating between the same temperatures.
+</li>
+<li>
+The efficiency of a Carnot engine is independent of the nature of the working substance.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.9 Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Calculate the change in internal energy when
+<strong>
+1 g
+</strong>
+of water at
+<strong>
+100 °C
+</strong>
+is converted into steam at the same temperature and at normal atmospheric pressure (
+<strong>
+1.013 &&times; 10
+<sup>
+5
+</sup>
+N m
+<sup>
+-2
+</sup>
+</strong>
+). The latent heat of vaporization of water is
+<strong>
+2256 J g
+<sup>
+-1
+</sup>
+</strong>
+. The volume of 1 g of water is
+<strong>
+1 cm³
+</strong>
+and the volume of 1 g of steam is
+<strong>
+1671 cm³
+</strong>
+.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Identify the given parameters:
+    <ul>
+      <li>
+      Mass of water, $m = 1\text{ g}$
+    </li>
+    <li>
+    Heat supplied, $\Delta Q = m \times L = 1\text{ g} \times 2256\text{ J g}^{-1} = 2256\text{ J}$
+  </li>
+  <li>
+  Pressure, $P = 1.013 \times 10^5\text{ N m}^{-2}$
+</li>
+<li>
+Initial volume, $V_1 = 1\text{ cm}^3 = 1 \times 10^{-6}\text{ m}^3$
+</li>
+<li>
+Final volume, $V_2 = 1671\text{ cm}^3 = 1671 \times 10^{-6}\text{ m}^3$
+</li>
+</ul>
+</li>
+<li>
+Calculate the work done ($\Delta W$) during expansion:$$\Delta W = P(V_2 - V_1) = 1.013 \times 10^5 \times (1671 - 1) \times 10^{-6}$$$$\Delta W = 1.013 \times 10^5 \times 1670 \times 10^{-6} = 169.2\text{ J}$$
+</li>
+<li>
+Apply the First Law of Thermodynamics to find the change in internal energy ($\Delta U$):$$\Delta U = \Delta Q - \Delta W = 2256\text{ J} - 169.2\text{ J} = 2086.8\text{ J}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The change in internal energy of the system is $\Delta U = 2086.8\text{ J}$.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A Carnot engine operates between a hot reservoir at
+<strong>
+500 K
+</strong>
+and a cold reservoir at
+<strong>
+300 K
+</strong>
+. Determine the efficiency of the engine and the work output per cycle if it absorbs
+<strong>
+1000 J
+</strong>
+of heat from the hot reservoir.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Identify the given parameters:
+    <ul>
+      <li>
+      Source temperature, $T_1 = 500\text{ K}$
+    </li>
+    <li>
+    Sink temperature, $T_2 = 300\text{ K}$
+  </li>
+  <li>
+  Heat absorbed, $Q_1 = 1000\text{ J}$
+</li>
+</ul>
+</li>
+<li>
+Calculate the efficiency ($\eta$):$$\eta = 1 - \frac{T_2}{T_1} = 1 - \frac{300}{500} = 1 - 0.6 = 0.4\text{ (or 40\%)}$$
+</li>
+<li>
+Calculate the work output ($W$):$$W = \eta \times Q_1 = 0.4 \times 1000\text{ J} = 400\text{ J}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The efficiency of the engine is
+<strong>
+40%
+</strong>
+and the work output per cycle is $400\text{ J}$.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 11
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-2-chapter-10-thermal-properties-of-matter.html"; } else { window.location.href = "11-2-chapter-12-kinetic-theory.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

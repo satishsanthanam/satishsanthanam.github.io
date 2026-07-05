@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 5: Magnetism and Matter
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 5: Magnetism and Matter
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.1 Introduction &amp; Basic Concepts of Magnetism
+</summary>
+<p>
+  Magnetism is a universal phenomenon permeating cosmic scales, from vast galaxies to subatomic particles. The earth's magnetic field predates human evolution, and the term
+  <span class="keyword">
+  magnet
+</span>
+originates from the Greek island of
+<em>
+Magnesia
+</em>
+, where magnetic ore deposits (lodestone) were discovered as early as 600 BC.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Commonly Known Ideas of Magnetism
+</summary>
+<ul>
+  <li>
+  The earth behaves as a giant magnetic dipole, with its magnetic field pointing approximately from the geographic south to the geographic north.
+</li>
+<li>
+  When a bar magnet is freely suspended, it aligns itself along the geographic north-south direction. The tip pointing north is designated the
+  <span class="keyword">
+  north pole
+</span>
+, and the tip pointing south is the
+<span class="keyword">
+south pole
+</span>
+.
+</li>
+<li>
+Like magnetic poles repel each other, whereas unlike magnetic poles attract each other.
+</li>
+<li>
+  Isolated magnetic poles (
+  <span class="keyword">
+  magnetic monopoles
+</span>
+) do not exist. Slicing a bar magnet in half yields two smaller, complete bar magnets, each possessing its own north and south poles.
+</li>
+<li>
+It is possible to artificially magnetise iron and its various alloys.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.2 The Bar Magnet &amp; Dipole Dynamics
+</summary>
+<p>
+A bar magnet behaves as a magnetic dipole, closely resembling the magnetic field configuration of a current-carrying finite solenoid.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2.1 Properties of Magnetic Field Lines
+</summary>
+<p>
+Magnetic field lines are visual representations used to map the strength and direction of a magnetic field. Their fundamental properties include:
+</p>
+<ol>
+  <li>
+    <strong>
+    Continuous Closed Loops:
+  </strong>
+  Unlike electric field lines which begin on positive charges and terminate on negative charges, magnetic field lines form continuous closed loops, running from the north pole to the south pole outside the magnet, and from the south pole to the north pole inside.
+</li>
+<li>
+  <strong>
+  Direction of Field Vector:
+</strong>
+The tangent drawn to a magnetic field line at any given point represents the direction of the net magnetic field vector $\vec{B}$ at that point.
+</li>
+<li>
+  <strong>
+  Field Density:
+</strong>
+The number of field lines crossing a unit area perpendicular to the field is proportional to the magnitude of the magnetic field $\vec{B}$. The field is stronger near the poles where the lines are highly concentrated.
+</li>
+<li>
+  <strong>
+  Non-intersection:
+</strong>
+Magnetic field lines never intersect. If they did, the magnetic field vector would point in two different directions at the intersection point, which is physically impossible.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2.2 Bar Magnet as an Equivalent Solenoid
+</summary>
+<p>
+A bar magnet can be modeled as a large number of circulating atomic currents, analogous to a finite solenoid. The axial magnetic field of a finite solenoid of length $2l$, radius $a$, and having $n$ turns per unit length carrying current $I$, at a far axial distance $r$ ($r \gg a$ and $r \gg l$), is given by:
+</p>
+<p>
+$$B = \frac{\mu_0}{4\pi} \frac{2m}{r^3}$$
+</p>
+<p>
+where $m = (N I) A = (n \cdot 2l) I (\pi a^2)$ is the total magnetic moment of the solenoid. This expression is mathematically identical to the far axial magnetic field of a bar magnet, establishing their physical equivalence.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2.3 Dipole in a Uniform Magnetic Field
+</summary>
+<p>
+When a magnetic dipole of magnetic moment $\vec{m}$ is placed in a uniform magnetic field $\vec{B}$ at an angle $\theta$, it experiences a restoring torque $\vec{\tau}$:
+</p>
+<p>
+$$\vec{\tau} = \vec{m} \times \vec{B}$$
+</p>
+<p>
+The magnitude of this torque is:
+</p>
+<p>
+$$\tau = mB \sin\theta$$
+</p>
+<p>
+The work done by an external agent in rotating the dipole is stored as magnetic potential energy $U_m$:
+</p>
+<p>
+$$U_m = \int \tau(\theta) d\theta = \int mB \sin\theta d\theta = -mB \cos\theta = -\vec{m} \cdot \vec{B}$$
+</p>
+<ul>
+  <li>
+    <strong>
+    Stable Equilibrium:
+  </strong>
+  Occurs at $\theta = 0^\circ$, where $U_m = -mB$ (minimum potential energy).
+</li>
+<li>
+  <strong>
+  Unstable Equilibrium:
+</strong>
+Occurs at $\theta = 180^\circ$, where $U_m = +mB$ (maximum potential energy).
+</li>
+<li>
+  <strong>
+  Zero Reference:
+</strong>
+Typically chosen at $\theta = 90^\circ$, where $U_m = 0$.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A short bar magnet placed with its axis at
+<strong>
+30&deg;
+</strong>
+with a uniform external magnetic field of
+<strong>
+0.25 T
+</strong>
+experiences a torque of magnitude equal to $4.5 \times 10^{-2}\text{ J}$. What is the magnitude of the magnetic moment of the magnet?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given parameters: torque $\tau = 4.5 \times 10^{-2}\text{ J}$, magnetic field $B = 0.25\text{ T}$, and angle $\theta = 30^\circ$.
+</li>
+<li>
+Use the torque formula: $\tau = mB \sin\theta$.
+</li>
+<li>
+  Isolate the magnetic moment $m$:
+  $$m = \frac{\tau}{B \sin\theta}$$
+</li>
+<li>
+  Substitute the values into the equation:
+  $$m = \frac{4.5 \times 10^{-2}}{0.25 \times \sin(30^\circ)} = \frac{4.5 \times 10^{-2}}{0.25 \times 0.5} = \frac{4.5 \times 10^{-2}}{0.125}$$
+</li>
+<li>
+Calculate the final value: $m = 0.36\text{ J T}^{-1}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$m = \mathbf{0.36\text{ J T}^{-1}}$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.2.4 The Electrostatic Analog
+</summary>
+<p>
+The mathematical formulations for magnetic dipoles are directly analogous to those of electric dipoles under specific variable transformations:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Electrostatics
+  </th>
+  <th>
+  Magnetism
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Constant Factor
+    </strong>
+  </td>
+  <td>
+  $\frac{1}{\varepsilon_0}$
+</td>
+<td>
+$\mu_0$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Dipole Moment
+  </strong>
+</td>
+<td>
+$\vec{p}$
+</td>
+<td>
+$\vec{m}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Equatorial Field ($r \gg l$)
+  </strong>
+</td>
+<td>
+$\vec{E}_E = -\frac{\vec{p}}{4\pi\varepsilon_0 r^3}$
+</td>
+<td>
+$\vec{B}_E = -\frac{\mu_0 \vec{m}}{4\pi r^3}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Axial Field ($r \gg l$)
+  </strong>
+</td>
+<td>
+$\vec{E}_A = \frac{2\vec{p}}{4\pi\varepsilon_0 r^3}$
+</td>
+<td>
+$\vec{B}_A = \frac{\mu_0 2\vec{m}}{4\pi r^3}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Torque
+  </strong>
+</td>
+<td>
+$\vec{\tau} = \vec{p} \times \vec{E}$
+</td>
+<td>
+$\vec{\tau} = \vec{m} \times \vec{B}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Potential Energy
+  </strong>
+</td>
+<td>
+$U_e = -\vec{p} \cdot \vec{E}$
+</td>
+<td>
+$U_m = -\vec{m} \cdot \vec{B}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.3 Magnetism and Gauss's Law
+</summary>
+<p>
+Gauss's law for magnetism states that the net magnetic flux $\phi_B$ through any closed surface is always zero. This is a direct consequence of the non-existence of isolated magnetic poles (monopoles).
+</p>
+<p>
+$$\phi_B = \oint \vec{B} \cdot d\vec{S} = 0$$
+</p>
+<p>
+In contrast, Gauss's law for electrostatics states that $\oint \vec{E} \cdot d\vec{S} = \frac{q}{\varepsilon_0}$, because isolated electric charges (monopoles) exist. For any closed surface, the number of magnetic field lines entering the surface must exactly equal the number of lines leaving it.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Karl Friedrich Gauss (1777 &ndash; 1855)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  A legendary German mathematician and physicist, Gauss made foundational contributions to electromagnetism, number theory, and geodesy. In 1833, along with Wilhelm Weber, he constructed the first practical electromagnetic telegraph.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Formulated Gauss's Law for both electric fields and magnetic fields, establishing two of the four pillars of classical electrodynamics (later synthesized in Maxwell's equations).
+</li>
+</ul>
+</div>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Conceptual Problem Statement:
+</strong>
+If magnetic monopoles existed, how would Gauss's law of magnetism be modified?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Recall the standard Gauss's law for magnetism: $\oint \vec{B} \cdot d\vec{S} = 0$, which assumes zero net magnetic charge inside any closed surface.
+</li>
+<li>
+If magnetic monopoles of magnetic charge $q_m$ existed, they would act as sources or sinks of the magnetic field, analogous to electric charges.
+</li>
+<li>
+By direct mathematical analogy to Gauss's law for electrostatics ($\oint \vec{E} \cdot d\vec{S} = \frac{q}{\varepsilon_0}$), the surface integral of the magnetic field would be proportional to the enclosed net magnetic charge.
+</li>
+<li>
+  Using the magnetic constant $\mu_0$, the modified law would be written as:
+  $$\oint \vec{B} \cdot d\vec{S} = \mu_0 q_m$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\oint \vec{B} \cdot d\vec{S} = \mu_0 q_m$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.4 Magnetisation and Magnetic Intensity
+</summary>
+<p>
+To understand the magnetic behavior of bulk matter, we define several vector fields and parameters:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Definitions &amp; Mathematical Formulations
+</summary>
+<ul>
+  <li>
+    <strong>
+    Magnetisation ($\vec{M}$):
+  </strong>
+  Defined as the net magnetic dipole moment per unit volume of the material:
+  $$\vec{M} = \frac{\vec{m}_{\text{net}}}{V}$$
+  Units: $\text{A m}^{-1}$, Dimensions: $[L^{-1} A]$.
+</li>
+<li>
+  <strong>
+  Magnetic Intensity ($\vec{H}$):
+</strong>
+Represents the external magnetic field contribution, defined as:
+$$\vec{H} = \frac{\vec{B}}{\mu_0} - \vec{M}$$
+Units: $\text{A m}^{-1}$.
+</li>
+<li>
+  <strong>
+  Total Magnetic Field ($\vec{B}$):
+</strong>
+The total magnetic field inside a material is the vector sum of the field due to external currents ($\mu_0 \vec{H}$) and the field due to the material's magnetisation ($\mu_0 \vec{M}$):
+$$\vec{B} = \mu_0 (\vec{H} + \vec{M})$$
+</li>
+<li>
+  <strong>
+  Magnetic Susceptibility ($\chi$):
+</strong>
+A dimensionless parameter measuring how easily a material magnetises in response to an external field:
+$$\vec{M} = \chi \vec{H}$$
+</li>
+<li>
+  <strong>
+  Permeability Relations:
+</strong>
+$$\vec{B} = \mu_0 (1 + \chi) \vec{H} = \mu_0 \mu_r \vec{H} = \mu \vec{H}$$
+where $\mu_r = 1 + \chi$ is the
+<span class="keyword">
+relative magnetic permeability
+</span>
+, and $\mu = \mu_0 \mu_r$ is the absolute
+<span class="keyword">
+magnetic permeability
+</span>
+of the medium.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A solenoid has a core of a material with relative permeability
+<strong>
+400
+</strong>
+. The windings carry a current of
+<strong>
+2 A
+</strong>
+. If the number of turns is
+<strong>
+1000 per metre
+</strong>
+, calculate: (a) $H$, (b) $M$, and (c) $B$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given values: $\mu_r = 400$, $I = 2\text{ A}$, $n = 1000\text{ turns/m}$.
+</li>
+<li>
+  Calculate the magnetic intensity $H$:
+  $$H = nI = 1000 \times 2 = 2 \times 10^3\text{ A m}^{-1}$$
+</li>
+<li>
+  Calculate the total magnetic field $B$:
+  $$B = \mu_r \mu_0 H = 400 \times (4\pi \times 10^{-7}) \times (2 \times 10^3)$$
+  $$B = 400 \times 1.257 \times 10^{-6} \times 2000 \approx 1.0\text{ T}$$
+</li>
+<li>
+  Calculate the magnetisation $M$ using $M = (\mu_r - 1)H$:
+  $$M = (400 - 1) \times (2 \times 10^3) = 399 \times 2000 = 7.98 \times 10^5\text{ A m}^{-1} \approx 8 \times 10^5\text{ A m}^{-1}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$H = \mathbf{2 \times 10^3\text{ A m}^{-1}}$, $B = \mathbf{1.0\text{ T}}$, $M = \mathbf{8 \times 10^5\text{ A m}^{-1}}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.5 Magnetic Properties of Materials
+</summary>
+<p>
+Materials are classified into three primary categories based on their response to external magnetic fields and their magnetic susceptibility $\chi$:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; margin-bottom: 15px;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Property / Class
+    </th>
+    <th>
+    Diamagnetic
+  </th>
+  <th>
+  Paramagnetic
+</th>
+<th>
+Ferromagnetic
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Susceptibility ($\chi$)
+    </strong>
+  </td>
+  <td>
+  $-1 \le \chi &lt; 0$ (small, negative)
+</td>
+<td>
+$0 &lt; \chi &lt; \varepsilon$ (small, positive)
+</td>
+<td>
+$\chi \gg 1$ (large, positive)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Relative Permeability ($\mu_r$)
+  </strong>
+</td>
+<td>
+$0 \le \mu_r &lt; 1$
+</td>
+<td>
+$1 &lt; \mu_r &lt; 1 + \varepsilon$
+</td>
+<td>
+$\mu_r \gg 1$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Permeability ($\mu$)
+  </strong>
+</td>
+<td>
+$\mu &lt; \mu_0$
+</td>
+<td>
+$\mu &gt; \mu_0$
+</td>
+<td>
+$\mu \gg \mu_0$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Behavior in Field
+  </strong>
+</td>
+<td>
+Repelled weakly; moves to weaker field regions.
+</td>
+<td>
+Attracted weakly; moves to stronger field regions.
+</td>
+<td>
+Attracted strongly; aligns strongly with field.
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.5.1 Diamagnetism
+</summary>
+<p>
+  <span class="keyword">
+  Diamagnetic substances
+</span>
+are repelled by magnets. When placed in an external magnetic field, the field lines are expelled from the material, reducing the internal magnetic field.
+</p>
+<ul>
+  <li>
+    <strong>
+    Mechanism:
+  </strong>
+  Orbiting electrons speed up or slow down to induce a magnetic moment opposite to the applied field (in accordance with Lenz's law).
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+Bismuth, copper, lead, silicon, nitrogen (at STP), water, and sodium chloride.
+</li>
+<li>
+  <strong>
+  Superconductors:
+</strong>
+Exhibit perfect diamagnetism ($\chi = -1$, $\mu_r = 0$). They completely expel magnetic field lines, a phenomenon known as the
+<span class="keyword">
+Meissner effect
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.5.2 Paramagnetism
+</summary>
+<p>
+  <span class="keyword">
+  Paramagnetic substances
+</span>
+get weakly magnetised in the direction of the external magnetic field. Field lines are concentrated inside the material.
+</p>
+<ul>
+  <li>
+    <strong>
+    Mechanism:
+  </strong>
+  Individual atoms possess permanent magnetic dipole moments, which align with the external field against the randomising effect of thermal motion.
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+Aluminium, sodium, calcium, oxygen (at STP), and copper chloride.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  5.5.3 Ferromagnetism
+</summary>
+<p>
+  <span class="keyword">
+  Ferromagnetic substances
+</span>
+get strongly magnetised in an external magnetic field and are strongly attracted to magnets.
+</p>
+<ul>
+  <li>
+    <strong>
+    Mechanism:
+  </strong>
+  Atomic dipoles spontaneously align in macroscopic regions called
+  <span class="keyword">
+  domains
+</span>
+(typically 1 mm in size containing $\sim 10^{11}$ atoms). Under an external field, these domains grow and align collectively.
+</li>
+<li>
+  <strong>
+  Hard Ferromagnets:
+</strong>
+Retain magnetisation even after the external field is removed (e.g., Alnico, lodestone). Used to make permanent magnets.
+</li>
+<li>
+  <strong>
+  Soft Ferromagnets:
+</strong>
+Lose magnetisation quickly when the external field is removed (e.g., soft iron). Used in electromagnets and transformer cores.
+</li>
+<li>
+  <strong>
+  Temperature Dependence:
+</strong>
+At high temperatures, thermal agitation disintegrates the domain structure, and a ferromagnet transitions into a paramagnet.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.6 Summary &amp; Physical Quantity Reference
+</summary>
+<p>
+A comprehensive reference of the physical quantities, symbols, dimensions, and SI units introduced in this chapter:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Nature
+</th>
+<th>
+Dimensions
+</th>
+<th>
+SI Units
+</th>
+<th>
+Key Formula / Remarks
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Permeability of free space
+    </strong>
+  </td>
+  <td>
+  $\mu_0$
+</td>
+<td>
+Scalar
+</td>
+<td>
+$[MLT^{-2}A^{-2}]$
+</td>
+<td>
+$\text{T m A}^{-1}$
+</td>
+<td>
+$\mu_0 / 4\pi = 10^{-7}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Magnetic Field
+  </strong>
+</td>
+<td>
+$\vec{B}$
+</td>
+<td>
+Vector
+</td>
+<td>
+$[MT^{-2}A^{-1}]$
+</td>
+<td>
+$\text{T (tesla)}$
+</td>
+<td>
+$1\text{ T} = 10^4\text{ gauss}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Magnetic Moment
+  </strong>
+</td>
+<td>
+$\vec{m}$
+</td>
+<td>
+Vector
+</td>
+<td>
+$[L^2 A]$
+</td>
+<td>
+$\text{A m}^2$ or $\text{J T}^{-1}$
+</td>
+<td>
+$\vec{\tau} = \vec{m} \times \vec{B}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Magnetic Flux
+  </strong>
+</td>
+<td>
+$\phi_B$
+</td>
+<td>
+Scalar
+</td>
+<td>
+$[ML^2T^{-2}A^{-1}]$
+</td>
+<td>
+$\text{W (weber)}$
+</td>
+<td>
+$1\text{ W} = 1\text{ T m}^2$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Magnetisation
+  </strong>
+</td>
+<td>
+$\vec{M}$
+</td>
+<td>
+Vector
+</td>
+<td>
+$[L^{-1}A]$
+</td>
+<td>
+$\text{A m}^{-1}$
+</td>
+<td>
+$\vec{M} = \vec{m}_{\text{net}} / V$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Magnetic Intensity
+  </strong>
+</td>
+<td>
+$\vec{H}$
+</td>
+<td>
+Vector
+</td>
+<td>
+$[L^{-1}A]$
+</td>
+<td>
+$\text{A m}^{-1}$
+</td>
+<td>
+$\vec{B} = \mu_0(\vec{H} + \vec{M})$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Magnetic Susceptibility
+  </strong>
+</td>
+<td>
+$\chi$
+</td>
+<td>
+Scalar
+</td>
+<td>
+Dimensionless
+</td>
+<td>
+None
+</td>
+<td>
+$\vec{M} = \chi \vec{H}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Relative Permeability
+  </strong>
+</td>
+<td>
+$\mu_r$
+</td>
+<td>
+Scalar
+</td>
+<td>
+Dimensionless
+</td>
+<td>
+None
+</td>
+<td>
+$\mu_r = 1 + \chi$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-04-moving-charges-and-magnetism.html"; } else { window.location.href = "12-1-chapter-06-electromagnetic-induction.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

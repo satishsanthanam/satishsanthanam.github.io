@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 2) — Chapter 5: Nuclei
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 2) — Chapter 5: Nuclei
+</h1>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  13.1 &amp; 13.2 Introduction and Atomic Composition
+</summary>
+<p>
+  In every atom, the positive charge and mass are densely concentrated at the center, forming the
+  <span class='keyword'>
+  nucleus
+</span>
+. The volume of a nucleus is about
+<strong>
+10
+<sup>
+-12
+</sup>
+</strong>
+\times the volume of the atom, meaning an atom is almost empty space. Nevertheless, the nucleus contains more than
+<strong>
+99.9%
+</strong>
+of the mass of an atom.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Atomic Mass Unit (u)
+</summary>
+<p>
+  The mass of an atom is extremely small. To measure atomic masses, the
+  <span class='keyword'>
+  atomic mass unit
+</span>
+($u$) is defined as
+<strong>
+1/12th
+</strong>
+of the mass of a carbon-12 ($^{12}\text{C}$) atom.
+</p>
+<p>
+$$1\text{ u} = \frac{\text{mass of one }^{12}\text{C atom}}{12} = \frac{1.992647 \times 10^{-26}\text{ kg}}{12} \approx 1.660539 \times 10^{-27}\text{ kg}$$
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Nuclear Constituents: Protons and Neutrons
+</summary>
+<ul>
+  <li>
+    <span class='keyword'>
+    Proton
+  </span>
+  : Carries one unit of fundamental positive charge ($+e$). It is stable, with mass $m_p = 1.00727\text{ u} = 1.67262 \times 10^{-27}\text{ kg}$.
+</li>
+<li>
+  <span class='keyword'>
+  Neutron
+</span>
+: A neutral particle discovered by James Chadwick in 1932. Its mass is $m_n = 1.00866\text{ u} = 1.6749 \times 10^{-27}\text{ kg}$. A free neutron is unstable and decays into a proton, an electron, and an antineutrino with a mean life of about
+<strong>
+1000 s
+</strong>
+. It is stable inside the nucleus.
+</li>
+</ul>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Historical Chronicle: Discovery of the Neutron
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In 1932, James Chadwick observed the emission of highly penetrating neutral radiation when beryllium nuclei were bombarded with \alpha particles. This radiation could knock out protons from light nuclei (helium, carbon, nitrogen).
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+By applying the conservation of energy and momentum, Chadwick proved that this neutral radiation consisted of a new neutral particle, the
+<span class='keyword'>
+neutron
+</span>
+, with a mass nearly equal to that of a proton. He was awarded the Nobel Prize in Physics in 1935.
+</li>
+</ul>
+</div>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Nuclear Nomenclature and Classification
+</summary>
+<p>
+  A nuclear species or
+  <span class='keyword'>
+  nuclide
+</span>
+is represented as $_Z^A\text{X}$, where $X$ is the chemical symbol, $Z$ is the
+<span class='keyword'>
+atomic number
+</span>
+(number of protons), and $A$ is the
+<span class='keyword'>
+mass number
+</span>
+(total number of protons and neutrons, also called
+<span class='keyword'>
+nucleons
+</span>
+). The neutron number is $N = A - Z$.
+</p>
+<table border='1' style='border-collapse: collapse; width: 100%; margin: 10px 0;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Classification Type
+    </th>
+    <th>
+    Definition &amp; Properties
+  </th>
+  <th>
+  Examples
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <span class='keyword'>
+      Isotopes
+    </span>
+  </td>
+  <td>
+  Nuclides with the same atomic number $Z$ but different mass numbers $A$ (same proton count, different neutron count). They exhibit identical chemical properties.
+</td>
+<td>
+$_1^1\text{H}$, $_1^2\text{H}$ (Deuterium), $_1^3\text{H}$ (Tritium); $_{17}^{35}\text{Cl}$, $_{17}^{37}\text{Cl}$
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    Isobars
+  </span>
+</td>
+<td>
+Nuclides with the same mass number $A$ but different atomic numbers $Z$.
+</td>
+<td>
+$_1^3\text{H}$ and $_2^3\text{He}$
+</td>
+</tr>
+<tr>
+  <td>
+    <span class='keyword'>
+    Isotones
+  </span>
+</td>
+<td>
+Nuclides with the same neutron number $N = A - Z$ but different atomic numbers $Z$.
+</td>
+<td>
+$_{80}^{198}\text{Hg}$ and $_{79}^{197}\text{Au}$ ($N = 118$)
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  13.3 Size and Density of the Nucleus
+</summary>
+<p>
+By performing scattering experiments using fast electrons as projectiles, the sizes of nuclei of various elements have been accurately measured.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Nuclear Radius Formula
+</summary>
+<p>
+The radius $R$ of a nucleus of mass number $A$ is given by the empirical relation:
+</p>
+<p>
+$$R = R_0 A^{1/3}$$
+</p>
+<p>
+where $R_0 \approx 1.2 \times 10^{-15}\text{ m} = 1.2\text{ fm}$ (femtometer).
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Constant Nuclear Density
+</summary>
+<p>
+Since the volume of a sphere is $V = \frac{4}{3}\pi R^3$, substituting the radius formula gives:
+</p>
+<p>
+$$V = \frac{4}{3}\pi (R_0 A^{1/3})^3 = \frac{4}{3}\pi R_0^3 A$$
+</p>
+<p>
+  This shows that the volume $V$ is directly proportional to the mass number $A$. Consequently, the
+  <span class='keyword'>
+  nuclear density
+</span>
+($\rho$), which is mass divided by volume, is constant and independent of $A$ for all nuclei:
+</p>
+<p>
+$$\rho = \frac{A \times m_u}{\frac{4}{3}\pi R_0^3 A} = \frac{3 m_u}{4 \pi R_0^3} \approx 2.3 \times 10^{17}\text{ kg m}^{-3}$$
+</p>
+<p>
+  This density is extremely large compared to ordinary matter (e.g., water is
+  <strong>
+  10
+  <sup>
+  3
+</sup>
+kg m
+<sup>
+-3
+</sup>
+</strong>
+) and is comparable to the density of matter in neutron stars.
+</p>
+</details>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Given the mass of an iron nucleus as
+<strong>
+55.85 u
+</strong>
+and $A = 56$, find the nuclear density.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify given values: Mass $m = 55.85\text{ u} = 55.85 \times 1.66 \times 10^{-27}\text{ kg} \approx 9.27 \times 10^{-26}\text{ kg}$, and $A = 56$.
+</li>
+<li>
+Calculate nuclear volume: $V = \frac{4}{3}\pi R^3 = \frac{4}{3}\pi (R_0 A^{1/3})^3 = \frac{4}{3}\pi (1.2 \times 10^{-15}\text{ m})^3 \times 56 \approx 4.05 \times 10^{-43}	ext{ m}^3$.
+</li>
+<li>
+Compute density: $\rho = \frac{\text{mass}}{\text{volume}} = \frac{9.27 \times 10^{-26}\text{ kg}}{4.05 \times 10^{-43}\text{ m}^3} \approx 2.29 \times 10^{17}\text{ kg m}^{-3}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\rho \approx 2.29 \times 10^{17}\text{ kg m}^{-3}$
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  13.4 Mass-Energy and Nuclear Binding Energy
+</summary>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Einstein's Mass-Energy Equivalence
+</summary>
+<p>
+Einstein showed that mass is another form of energy, related by the famous equivalence relation:
+</p>
+<p>
+$$E = m c^2$$
+</p>
+<p>
+where $c \approx 3 \times 10^8\text{ m s}^{-1}$ is the velocity of light in vacuum.
+</p>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Calculate the energy equivalent of
+<strong>
+1 g
+</strong>
+of substance.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Convert mass to SI units: $m = 1\text{ g} = 10^{-3}\text{ kg}$.
+</li>
+<li>
+Apply Einstein's relation: $E = m c^2 = 10^{-3}\text{ kg} \times (3 \times 10^8\text{ m s}^{-1})^2$.
+</li>
+<li>
+Perform arithmetic: $E = 10^{-3} \times 9 \times 10^{16} = 9 \times 10^{13}\text{ J}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$E = 9 \times 10^{13}\text{ J}$
+</p>
+</blockquote>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Mass Defect and Binding Energy
+</summary>
+<p>
+  The mass of a stable nucleus $M$ is always less than the sum of the individual masses of its constituent protons and neutrons. This difference is called the
+  <span class='keyword'>
+  mass defect
+</span>
+($\Delta M$):
+</p>
+<p>
+$$\Delta M = [Z m_p + (A - Z) m_n] - M$$
+</p>
+<p>
+  The energy equivalent of this mass defect is the
+  <span class='keyword'>
+  nuclear binding energy
+</span>
+($E_b$), which is the energy required to separate a nucleus into its individual nucleons:
+</p>
+<p>
+$$E_b = \Delta M c^2$$
+</p>
+<p>
+  A more useful measure of nuclear stability is the
+  <span class='keyword'>
+  binding energy per nucleon
+</span>
+($E_{bn}$):
+</p>
+<p>
+$$E_{bn} = \frac{E_b}{A}$$
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  The Binding Energy Curve and Its Features
+</summary>
+<p>
+The plot of $E_{bn}$ versus mass number $A$ reveals critical features of nuclear forces:
+</p>
+<ul>
+  <li>
+    <strong>
+    Constancy in Middle Range:
+  </strong>
+  For $30 &lt; A &lt; 170$, $E_{bn}$ is practically constant at approximately
+  <strong>
+  8.0 MeV
+</strong>
+. The maximum is about
+<strong>
+8.75 MeV
+</strong>
+for $A = 56$ ($^{56}\text{Fe}$).
+</li>
+<li>
+  <strong>
+  Lower Values at Extremes:
+</strong>
+$E_{bn}$ is lower for light nuclei ($A &lt; 30$) and heavy nuclei ($A &gt; 170$), reaching about
+<strong>
+7.6 MeV
+</strong>
+for $A = 238$ ($^{238}\text{U}$).
+</li>
+<li>
+  <strong>
+  Implications for Energy Release:
+</strong>
+<ul>
+  <li>
+    <span class='keyword'>
+    Fission
+  </span>
+  : When a very heavy nucleus ($A \approx 240$) splits into two medium-sized nuclei, the nucleons become more tightly bound, releasing a large amount of energy.
+</li>
+<li>
+  <span class='keyword'>
+  Fusion
+</span>
+: When two very light nuclei ($A \le 10$) join to form a heavier nucleus, the binding energy per nucleon increases, releasing energy.
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the energy equivalent of
+<strong>
+1 u
+</strong>
+in Joules and MeV, and express the mass defect of $^{16}_8\text{O}$ ($\Delta M = 0.13691\text{ u}$) in $\text{MeV/c}^2$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Convert $1\text{ u}$ to energy in Joules: $E = 1.6605 \times 10^{-27}\text{ kg} \times (2.9979 \times 10^8\text{ m/s})^2 \approx 1.4924 \times 10^{-10}\text{ J}$.
+</li>
+<li>
+Convert Joules to eV: $E = \frac{1.4924 \times 10^{-10}\text{ J}}{1.602 \times 10^{-19}\text{ J/eV}} \approx 9.315 \times 10^8\text{ eV} = 931.5\text{ MeV}$. Thus, $1\text{ u} = 931.5\text{ MeV/c}^2$.
+</li>
+<li>
+Calculate binding energy of $^{16}_8\text{O}$: $E_b = 0.13691\text{ u} \times 931.5\text{ MeV/u} \approx 127.5\text{ MeV}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$1\text{ u} = 931.5\text{ MeV/c}^2$, and $E_b(^{16}_8\text{O}) = 127.5\text{ MeV}$
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  13.5 The Nuclear Force
+</summary>
+<p>
+  The
+  <span class='keyword'>
+  nuclear force
+</span>
+is the strong attractive force that binds protons and neutrons together inside the tiny volume of a nucleus, overcoming the strong electrostatic Coulomb repulsion between protons.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Key Properties of the Nuclear Force
+</summary>
+<ul>
+  <li>
+    <strong>
+    Extremely Strong:
+  </strong>
+  Much stronger than the Coulomb force and gravitational force (dominates at short distances).
+</li>
+<li>
+  <strong>
+  Short-Ranged:
+</strong>
+It is active only over distances of a few femtometers ($10^{-15}\text{ m}$) and falls rapidly to zero at larger distances.
+</li>
+<li>
+  <strong>
+  Charge-Independent:
+</strong>
+The nuclear force between neutron-neutron, proton-neutron, and proton-proton is approximately the same.
+</li>
+<li>
+  <strong>
+  Saturation Property:
+</strong>
+A nucleon influences only its immediate neighbors, leading to the constancy of binding energy per nucleon in medium-mass nuclei.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Potential Energy Curve of Nucleon-Nucleon Interaction
+</summary>
+<p>
+The potential energy between two nucleons as a function of their separation distance $r$ shows:
+</p>
+<ul>
+  <li>
+  A minimum potential energy at a distance $r_0 \approx 0.8\text{ fm}$.
+</li>
+<li>
+For $r &gt; r_0$, the force is attractive.
+</li>
+<li>
+For $r &lt; r_0$, the force becomes strongly repulsive, preventing the nucleus from collapsing.
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  13.6 Radioactivity
+</summary>
+<p>
+  <span class='keyword'>
+  Radioactivity
+</span>
+is a nuclear phenomenon in which an unstable nucleus spontaneously undergoes decay to achieve stability.
+</p>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Historical Chronicle: Discovery of Radioactivity
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Discovered accidentally by A. H. Becquerel in 1896 while studying the phosphorescence of uranium-potassium sulphate. He observed that the compound emitted a highly penetrating radiation that blackened photographic plates even when wrapped in black paper.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+This established that radioactivity is a spontaneous nuclear emission process independent of external physical conditions.
+</li>
+</ul>
+</div>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Types of Radioactive Decay
+</summary>
+<ol>
+  <li>
+    <strong>
+    $\alpha$-decay:
+  </strong>
+  Emission of a helium nucleus ($^4_2\text{He}$).
+</li>
+<li>
+  <strong>
+  $\beta$-decay:
+</strong>
+Emission of electrons ($\beta^-$) or positrons ($\beta^+$).
+</li>
+<li>
+  <strong>
+  $\gamma$-decay:
+</strong>
+Emission of high-energy photons (gamma rays) with energies of hundreds of keV or more.
+</li>
+</ol>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  13.7 Nuclear Energy: Fission and Fusion
+</summary>
+<p>
+Nuclear reactions release energy on the order of millions of electron volts ($\text{MeV}$), which is about a million \times greater than conventional chemical reactions (which release energy on the order of $\text{eV}$).
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  13.7.1 Nuclear Fission
+</summary>
+<p>
+  <span class='keyword'>
+  Nuclear fission
+</span>
+is the splitting of a heavy nucleus into two lighter nuclei of intermediate mass when bombarded with neutrons.
+</p>
+<p>
+Example reaction for Uranium-235:
+</p>
+<p>
+$$_0^1\text{n} + _{92}^{235}\text{U} \rightarrow _{92}^{236}\text{U} \rightarrow _{56}^{144}\text{Ba} + _{36}^{89}\text{Kr} + 3 _0^1\text{n}$$
+</p>
+<p>
+  The average energy released per fission event is approximately
+  <strong>
+  200 MeV
+</strong>
+, primarily appearing as the kinetic energy of the fragments and neutrons, which is subsequently converted into heat.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  13.7.2 Nuclear Fusion &amp; Stellar Energy
+</summary>
+<p>
+  <span class='keyword'>
+  Nuclear fusion
+</span>
+is the process where two or more light nuclei combine to form a single heavier nucleus, releasing enormous energy.
+</p>
+<p>
+  To overcome the electrostatic Coulomb barrier ($\approx 400\text{ keV}$ for two protons), the nuclei must have extremely high kinetic energy, requiring temperatures of about
+  <strong>
+  3 &&times; 10
+  <sup>
+  9
+</sup>
+K
+</strong>
+(thermonuclear fusion).
+</p>
+<p>
+  In the Sun, fusion occurs via the multi-step
+  <span class='keyword'>
+  proton-proton cycle
+</span>
+at a core temperature of
+<strong>
+1.5 &&times; 10
+<sup>
+7
+</sup>
+K
+</strong>
+due to high-energy tail distributions and quantum tunneling:
+</p>
+<p>
+$$4 _1^1\text{H} + 2e^- \rightarrow _2^4\text{He} + 2\nu + 6\gamma + 26.7\text{ MeV}$$
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  13.7.3 Controlled Thermonuclear Fusion
+</summary>
+<p>
+  Replicating stellar fusion on Earth requires confining a high-temperature mixture of positive ions and electrons (
+  <span class='keyword'>
+  plasma
+</span>
+) at temperatures around
+<strong>
+10
+<sup>
+8
+</sup>
+K
+</strong>
+. Since no physical container can withstand such temperatures, magnetic confinement techniques (such as Tokamaks) are being developed globally.
+</p>
+</details>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+If both the number of protons and neutrons are conserved in a nuclear reaction, how is mass converted into energy?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Note that the total number of protons and neutrons is conserved, meaning the sum of their individual rest masses remains constant.
+</li>
+<li>
+However, the total binding energy of the reactant nuclei is different from that of the product nuclei.
+</li>
+<li>
+The difference in total binding energy ($\Delta E_b$) corresponds to a difference in the actual nuclear masses (mass defect). This mass difference is released as kinetic energy or radiation according to $\Delta E = \Delta M c^2$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Energy is released due to the difference in nuclear binding energies, which manifests as a change in the total rest mass of the system.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-04-moving-charges-and-magnetism.html"; } else { window.location.href = "12-2-chapter-06-electromagnetic-induction.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

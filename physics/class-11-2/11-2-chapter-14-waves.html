@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 2) — Chapter 14: Waves
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 2) — Chapter 14: Waves
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  14.1 Introduction to Waves
+</summary>
+<p>
+  A
+  <span class="keyword">
+  wave
+</span>
+is a physical disturbance that propagates through a medium or space without the actual physical transfer of matter as a whole. Waves transport both energy and information from one point to another.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Christiaan Huygens, Robert Hooke, and Isaac Newton
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  The scientific study of wave motion began in the 17th century. Christiaan Huygens proposed the wave theory of light, while Isaac Newton investigated the speed of sound in air.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Newton formulated the first theoretical expression for the speed of sound based on isothermal pressure variations, which was later corrected by Pierre-Simon Laplace using adiabatic assumptions.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Waves
+</summary>
+<ul>
+  <li>
+    <strong>
+    Mechanical Waves:
+  </strong>
+  Require a material medium for propagation (e.g., sound waves, water waves, waves on a string). They depend on the elastic and inertial properties of the medium.
+</li>
+<li>
+  <strong>
+  Electromagnetic Waves:
+</strong>
+Do not require a material medium and can propagate through a vacuum (e.g., light, X-rays, radio waves). In a vacuum, all electromagnetic waves travel at the speed of light $c = 299,792,458\text{ m s}^{-1}$.
+</li>
+<li>
+  <strong>
+  Matter Waves:
+</strong>
+Associated with moving fundamental particles like electrons, protons, and neutrons, governed by quantum mechanics.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  14.2 Transverse and Longitudinal Waves
+</summary>
+<p>
+Waves are classified based on the direction of oscillation of the medium particles relative to the direction of wave propagation.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Transverse Waves
+</summary>
+<p>
+  In a
+  <span class="keyword">
+  transverse wave
+</span>
+, the particles of the medium oscillate perpendicular to the direction of wave propagation. These waves can only propagate in media that can sustain shearing stress, such as solids.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Longitudinal Waves
+</summary>
+<p>
+  In a
+  <span class="keyword">
+  longitudinal wave
+</span>
+, the particles of the medium oscillate parallel to the direction of wave propagation. These waves can propagate in all elastic media (solids, liquids, and gases) because all states of matter can sustain compressive strain.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Water Waves: A Hybrid Phenomenon
+</summary>
+<p>
+Waves on the surface of water are a combination of both longitudinal and transverse motions. They are categorized into:
+</p>
+<ul>
+  <li>
+    <strong>
+    Capillary Waves:
+  </strong>
+  Short-wavelength ripples (less than a few centimeters) where the restoring force is dominated by surface tension.
+</li>
+<li>
+  <strong>
+  Gravity Waves:
+</strong>
+Longer-wavelength waves where the restoring force is dominated by gravity.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  14.3 Displacement Relation in a Progressive Wave
+</summary>
+<p>
+  A
+  <span class="keyword">
+  progressive wave
+</span>
+is a wave that travels continuously through a medium. Mathematically, a sinusoidal progressive wave travelling along the positive x-axis is represented by:
+</p>
+$$y(x, t) = a \sin(kx - \omega t + \phi)$$
+<p>
+Where:
+</p>
+<ul>
+  <li>
+  $y(x, t)$ is the displacement of the particle at position $x$ and time $t$.
+</li>
+<li>
+  $a$ is the
+  <span class="keyword">
+  amplitude
+</span>
+, representing the maximum displacement.
+</li>
+<li>
+  $kx - \omega t + \phi$ is the
+  <span class="keyword">
+  phase
+</span>
+of the wave.
+</li>
+<li>
+$\phi$ is the initial phase angle.
+</li>
+</ul>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Wavelength and Wave Number
+</summary>
+<p>
+  The
+  <span class="keyword">
+  wavelength
+</span>
+($\lambda$) is the minimum distance between two points having the same phase. The
+<span class="keyword">
+angular wave number
+</span>
+($k$) is defined as:
+</p>
+$$k = \frac{2\pi}{\lambda}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Period, Frequency, and Angular Frequency
+</summary>
+<p>
+  The
+  <span class="keyword">
+  period
+</span>
+($T$) is the time taken for a particle to complete one full oscillation. The
+<span class="keyword">
+frequency
+</span>
+($\nu$) and
+<span class="keyword">
+angular frequency
+</span>
+($\omega$) are given by:
+</p>
+$$\omega = \frac{2\pi}{T} = 2\pi\nu$$
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  14.4 The Speed of a Travelling Wave
+</summary>
+<p>
+The speed of propagation of a wave is determined by the properties of the medium through which it travels.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Speed of a Transverse Wave on a Stretched String
+</summary>
+<p>
+The speed ($v$) depends on the tension ($T$) in the string and its linear mass density ($\mu$):
+</p>
+$$v = \sqrt{\frac{T}{\mu}}$$
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A steel wire
+<strong>
+0.72 m
+</strong>
+long has a mass of
+<strong>
+5.0 &&times; 10
+<sup>
+-3
+</sup>
+kg
+</strong>
+. If the wire is under a tension of
+<strong>
+60 N
+</strong>
+, what is the speed of transverse waves on the wire?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the linear mass density ($\mu$):$$\mu = \frac{m}{L} = \frac{5.0 \times 10^{-3}\text{ kg}}{0.72\text{ m}} \approx 6.9 \times 10^{-3}\text{ kg m}^{-1}$$
+</li>
+<li>
+Substitute $T = 60\text{ N}$ and $\mu$ into the speed formula:$$v = \sqrt{\frac{60}{6.9 \times 10^{-3}}} \approx 93\text{ m s}^{-1}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$v = 93\text{ m s}^{-1}$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Speed of a Longitudinal Wave (Speed of Sound)
+</summary>
+<p>
+The speed of a longitudinal wave in a medium depends on its bulk modulus ($B$) and mass density ($\rho$):
+</p>
+$$v = \sqrt{\frac{B}{\rho}}$$
+<p>
+For a solid bar, the bulk modulus is replaced by Young's modulus ($Y$):
+</p>
+$$v = \sqrt{\frac{Y}{\rho}}$$
+<p>
+For an ideal gas, Newton assumed the process to be isothermal ($B = P$), leading to Newton's formula:
+</p>
+$$v = \sqrt{\frac{P}{\rho}}$$
+<p>
+Laplace corrected this by noting that pressure variations occur too rapidly for heat exchange, making the process adiabatic ($B = \gamma P$):
+</p>
+$$v = \sqrt{\frac{\gamma P}{\rho}}$$
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Estimate the speed of sound in air at standard temperature and pressure (STP) using both Newton's formula and Laplace's correction. (Mass of 1 mole of air =
+<strong>
+29.0 &&times; 10
+<sup>
+-3
+</sup>
+kg
+</strong>
+, $\gamma = 1.4$).
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the density of air ($\rho$) at STP:$$\rho = \frac{\text{mass of 1 mole}}{\text{volume of 1 mole}} = \frac{29.0 \times 10^{-3}\text{ kg}}{22.4 \times 10^{-3}\text{ m}^3} = 1.29\text{ kg m}^{-3}$$
+</li>
+<li>
+Calculate speed using Newton's formula ($P = 1.01 \times 10^5\text{ N m}^{-2}$):$$v = \sqrt{\frac{1.01 \times 10^5}{1.29}} \approx 280\text{ m s}^{-1}$$
+</li>
+<li>
+Calculate speed using Laplace's correction:$$v = \sqrt{\frac{1.4 \times 1.01 \times 10^5}{1.29}} \approx 331.3\text{ m s}^{-1}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Newton's Speed = $280\text{ m s}^{-1}$, Laplace's Speed = $331.3\text{ m s}^{-1}$
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  14.5 The Principle of Superposition of Waves
+</summary>
+<p>
+  The
+  <span class="keyword">
+  principle of superposition
+</span>
+states that when two or more wave disturbances overlap in a medium, the resultant displacement is the algebraic sum of the displacements of the individual waves:
+</p>
+$$y(x, t) = y_1(x, t) + y_2(x, t)$$
+<details class="sub-topic">
+  <summary class="sub-title">
+  Interference of Waves
+</summary>
+<p>
+When two sinusoidal waves of equal amplitude and frequency but differing in phase by $\phi$ overlap, the resultant wave is:
+</p>
+$$y(x, t) = \left[2a \cos\left(\frac{\phi}{2}\right)\right] \sin\left(kx - \omega t + \frac{\phi}{2}ight)$$
+<ul>
+  <li>
+    <strong>
+    Constructive Interference:
+  </strong>
+  Occurs when $\phi = 0, 2\pi, 4\pi, \dots$, resulting in maximum amplitude $2a$.
+</li>
+<li>
+  <strong>
+  Destructive Interference:
+</strong>
+Occurs when $\phi = \pi, 3\pi, 5\pi, \dots$, resulting in zero amplitude.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  14.6 Reflection of Waves and Standing Waves
+</summary>
+<p>
+When a wave encounters a boundary, it undergoes reflection.
+</p>
+<ul>
+  <li>
+    <strong>
+    Rigid Boundary:
+  </strong>
+  The reflected wave suffers a phase change of $\pi$ (or $180^\circ$).
+</li>
+<li>
+  <strong>
+  Open Boundary:
+</strong>
+The reflected wave undergoes no phase change.
+</li>
+</ul>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standing Waves
+</summary>
+<p>
+  The superposition of two identical waves travelling in opposite directions produces a
+  <span class="keyword">
+  standing wave
+</span>
+:
+</p>
+$$y(x, t) = [2a \sin(kx)] \cos(\omega t)$$
+<ul>
+  <li>
+    <strong>
+    Nodes:
+  </strong>
+  Points of zero amplitude, occurring where $x = n\frac{\lambda}{2}$ ($n = 0, 1, 2, \dots$).
+</li>
+<li>
+  <strong>
+  Antinodes:
+</strong>
+Points of maximum amplitude, occurring where $x = \left(n + \frac{1}{2}\right)\frac{\lambda}{2}$ ($n = 0, 1, 2, \dots$).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Normal Modes of a Stretched String
+</summary>
+<p>
+For a string of length $L$ fixed at both ends, the boundary conditions require nodes at both ends, leading to quantized wavelengths and frequencies:
+</p>
+$$\lambda = \frac{2L}{n}, \quad \nu = \frac{nv}{2L} \quad (n = 1, 2, 3, \dots)$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Normal Modes of Air Columns
+</summary>
+<ul>
+  <li>
+    <strong>
+    Closed Pipe (One end closed, one open):
+  </strong>
+  Generates only odd harmonics:$$\nu = \left(n + \frac{1}{2}ight)\frac{v}{2L} \quad (n = 0, 1, 2, \dots)$$
+</li>
+<li>
+  <strong>
+  Open Pipe (Both ends open):
+</strong>
+Generates all harmonics:$$\nu = \frac{nv}{2L} \quad (n = 1, 2, 3, \dots)$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  14.7 Beats
+</summary>
+<p>
+  The phenomenon of
+  <span class="keyword">
+  beats
+</span>
+occurs when two harmonic sound waves of nearly equal frequencies $\nu_1$ and $\nu_2$ propagate in the same direction, causing a periodic waxing and waning of sound intensity.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Beat Frequency
+</summary>
+<p>
+The number of beats heard per second is equal to the difference between the two frequencies:
+</p>
+$$\nu_{\text{beat}} = |\nu_1 - \nu_2|$$
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 14
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-2-chapter-13-oscillations.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

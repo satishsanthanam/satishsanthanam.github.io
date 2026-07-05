@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 7: Gravitation
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 7: Gravitation
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction &amp; Historical Models of Planetary Motion
+</summary>
+<p>
+  The study of
+  <span class="keyword">
+  gravitation
+</span>
+began with the observation of everyday phenomena, such as objects falling towards the Earth and the motion of celestial bodies. Historically, different models were proposed to explain these observations.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Geocentric vs. Heliocentric Models
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Geocentric Model:
+  </strong>
+  Proposed by Ptolemy nearly 2000 years ago, this model placed the Earth at the center of the universe, with all celestial bodies revolving around it in complex circular paths called epicycles.
+</li>
+<li>
+  <strong>
+  Heliocentric Model:
+</strong>
+A more elegant model placing the Sun at the center was mentioned by Indian astronomer Aryabhatta in the 5th century A.D. and later developed by Nicolas Copernicus. Galileo Galilei supported this model, facing prosecution for his beliefs.
+</li>
+<li>
+  <strong>
+  Tycho Brahe &amp; Johannes Kepler:
+</strong>
+Tycho Brahe spent his lifetime recording precise planetary observations with the naked eye. His assistant, Johannes Kepler, analyzed this data to formulate three elegant laws of planetary motion.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Kepler's Laws of Planetary Motion
+</summary>
+<p>
+Johannes Kepler formulated three laws that describe the motion of planets around the Sun. These laws laid the foundation for Newton's law of universal gravitation.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Law of Orbits
+</summary>
+<p>
+  All planets move in elliptical orbits with the Sun situated at one of the two foci of the ellipse. An ellipse is a closed curve where the sum of the distances from any point on the curve to the two foci is constant. The closest point to the Sun is called the
+  <span class="keyword">
+  perihelion
+</span>
+, and the farthest point is the
+<span class="keyword">
+aphelion
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Law of Areas
+</summary>
+<p>
+The line joining any planet to the Sun sweeps out equal areas in equal intervals of time. This \implies that the areal velocity of a planet is constant, meaning planets move faster when they are closer to the Sun and slower when farther away.
+</p>
+<p>
+  <strong>
+  Derivation from Conservation of Angular Momentum:
+</strong>
+</p>
+<p>
+The area swept out by a planet of mass $m$ in a small time interval $\Delta t$ is given by:
+</p>
+<p>
+$$\Delta A = \frac{1}{2} |\mathbf{r} \times \mathbf{v} \Delta t|$$
+</p>
+<p>
+Dividing by $\Delta t$ and substituting linear momentum $\mathbf{p} = m\mathbf{v}$:
+</p>
+<p>
+$$\frac{\Delta A}{\Delta t} = \frac{1}{2m} |\mathbf{r} \times \mathbf{p}| = \frac{L}{2m}$$
+</p>
+<p>
+  Since gravity is a central force, the torque acting on the planet is zero, meaning its
+  <span class="keyword">
+  angular momentum
+</span>
+($L$) is conserved. Thus, the areal velocity $\frac{\Delta A}{\Delta t}$ is constant.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Law of Periods
+</summary>
+<p>
+The square of the time period of revolution ($T$) of a planet is directly proportional to the cube of the semi-major axis ($a$) of its elliptical orbit:
+</p>
+<p>
+$$T^2 \propto a^3$$
+</p>
+<p>
+This law is confirmed by observational data for all planets in the solar system, where the ratio $T^2/a^3$ remains remarkably constant.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Let the speed of a planet at the perihelion be $v_P$ and the Sun-planet distance be $r_P$. Relate these to the corresponding quantities $v_A$ and $r_A$ at the aphelion. Will the planet take equal \times to traverse the two halves of the ellipse divided by the minor axis?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Apply the conservation of angular momentum at the perihelion and aphelion, where the velocity vectors are perpendicular to the position vectors: $$L_P = m r_P v_P \quad \text{and} \quad L_A = m r_A v_A$$
+</li>
+<li>
+Equate the angular momenta: $$m r_P v_P = m r_A v_A \implies \frac{v_P}{v_A} = \frac{r_A}{r_P}$$
+</li>
+<li>
+Since $r_A &gt; r_P$, it follows that $v_P &gt; v_A$.
+</li>
+<li>
+The area of the half containing the aphelion is larger than the half containing the perihelion. Since equal areas are swept in equal \times, the planet takes longer to traverse the half containing the aphelion.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\frac{v_P}{v_A} = \frac{r_A}{r_P}$ and the planet takes longer to traverse the aphelion half.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Newton's Universal Law of Gravitation
+</summary>
+<p>
+Newton's law states that every particle in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation
+</summary>
+<p>
+The magnitude of the gravitational force $F$ between two point masses $m_1$ and $m_2$ separated by a distance $r$ is:
+</p>
+<p>
+$$F = G \frac{m_1 m_2}{r^2}$$
+</p>
+<p>
+In vector form, the force $\mathbf{F}_{12}$ exerted on body 1 by body 2 is:
+</p>
+<p>
+$$\mathbf{F}_{12} = -G \frac{m_1 m_2}{r^2} \hat{\mathbf{r}}_{12}$$
+</p>
+<p>
+  where $G$ is the
+  <span class="keyword">
+  universal gravitational constant
+</span>
+, and $\hat{\mathbf{r}}_{12}$ is the unit vector pointing from body 1 to body 2.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Principle of Superposition
+</summary>
+<p>
+For a system of multiple point masses, the net gravitational force on any single mass is the vector sum of the individual gravitational forces exerted on it by all other masses:
+</p>
+<p>
+$$\mathbf{F}_1 = \sum_{i=2}^{n} \mathbf{F}_{1i} = G m_1 \sum_{i=2}^{n} \frac{m_i}{r_{i1}^2} \hat{\mathbf{r}}_{i1}$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Three equal masses of $m$ kg each are fixed at the vertices of an equilateral triangle ABC. What is the force acting on a mass $2m$ placed at the centroid G of the triangle? What is the force if the mass at vertex A is doubled? (Take $AG = BG = CG = 1$ m).
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  By symmetry, the gravitational forces exerted by the three equal masses at the vertices on the central mass $2m$ are equal in magnitude: $$F_{GA} = F_{GB} = F_{GC} = \frac{G(2m)(m)}{1^2} = 2Gm^2$$
+</li>
+<li>
+  Resolve the forces into components. The forces along the x-axis cancel out, and the forces along the y-axis also sum to zero due to symmetric angular separation of
+  <strong>
+  120&deg;
+</strong>
+: $$\mathbf{F}_R = \mathbf{F}_{GA} + \mathbf{F}_{GB} + \mathbf{F}_{GC} = 0$$
+</li>
+<li>
+If the mass at vertex A is doubled to $2m$, the force $\mathbf{F}_{GA}$ doubles to $4Gm^2 \hat{\mathbf{j}}$. The other forces remain unchanged.
+</li>
+<li>
+The new resultant force is: $$\mathbf{F}_R' = 2Gm^2 \hat{\mathbf{j}}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Net force at centroid is $0$ initially, and becomes $2Gm^2 \hat{\mathbf{j}}$ when mass at A is doubled.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  The Gravitational Constant (G)
+</summary>
+<p>
+The value of the universal gravitational constant $G$ was first determined experimentally by Henry Cavendish in 1798.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Cavendish's Experiment
+</summary>
+<p>
+The apparatus consisted of a light rigid bar with two small lead spheres of mass $m$ at its ends, suspended by a fine wire. Two large lead spheres of mass $M$ were brought close to the small spheres on opposite sides. The gravitational attraction produced a torque that twisted the suspension wire through an angle $\theta$.
+</p>
+<p>
+At equilibrium, the gravitational torque equals the restoring torque of the wire:
+</p>
+<p>
+$$G \frac{M m}{d^2} L = \tau \theta$$
+</p>
+<p>
+where $L$ is the length of the bar, $d$ is the separation between the spheres, and $\tau$ is the restoring couple per unit angle of twist. The currently accepted value of $G$ is:
+</p>
+<p>
+$$G = 6.67 \times 10^{-11} \text{ N m}^2/\text{kg}^2$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Acceleration due to Gravity (g)
+</summary>
+<p>
+The acceleration experienced by a body due to the Earth's gravitational pull is denoted by $g$. It varies depending on the position relative to the Earth's surface.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Acceleration due to Gravity on Earth's Surface
+</summary>
+<p>
+Assuming the Earth is a uniform sphere of mass $M_E$ and radius $R_E$, the gravitational force on a mass $m$ on its surface is:
+</p>
+<p>
+$$F = G \frac{M_E m}{R_E^2}$$
+</p>
+<p>
+By Newton's second law, $F = mg$, which gives:
+</p>
+<p>
+$$g = \frac{G M_E}{R_E^2}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Variation of g with Altitude (Height)
+</summary>
+<p>
+At a height $h$ above the Earth's surface, the acceleration due to gravity $g(h)$ is:
+</p>
+<p>
+$$g(h) = \frac{G M_E}{(R_E + h)^2} = g \left(1 + \frac{h}{R_E}\right)^{-2}$$
+</p>
+<p>
+For $h \ll R_E$, using the binomial approximation:
+</p>
+<p>
+$$g(h) \approx g \left(1 - \frac{2h}{R_E}\right)$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Variation of g with Depth
+</summary>
+<p>
+At a depth $d$ below the Earth's surface, only the inner sphere of radius $(R_E - d)$ contributes to the gravitational force. The acceleration due to gravity $g(d)$ is:
+</p>
+<p>
+$$g(d) = g \left(1 - \frac{d}{R_E}\right)$$
+</p>
+<p>
+Thus, $g$ is maximum at the surface of the Earth and decreases whether one goes upwards or downwards, becoming zero at the center of the Earth.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Gravitational Potential Energy
+</summary>
+<p>
+  The
+  <span class="keyword">
+  gravitational potential energy
+</span>
+of a system is the energy stored in it due to its configuration under the influence of gravitational forces.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of Potential Energy Function
+</summary>
+<p>
+The work done in lifting a mass $m$ from a distance $r_1$ to $r_2$ from the center of the Earth is:
+</p>
+<p>
+$$W_{12} = \int_{r_1}^{r_2} \frac{G M_E m}{r^2} dr = -G M_E m \left(\frac{1}{r_2} - \frac{1}{r_1}\right)$$
+</p>
+<p>
+We define the potential energy $W(r)$ at a distance $r$ by setting the potential energy at infinity to zero ($W(\infty) = 0$):
+</p>
+<p>
+$$W(r) = -\frac{G M_E m}{r}$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Find the potential energy of a system of four particles, each of mass $m$, placed at the vertices of a square of side $l$. Also obtain the potential at the center of the square.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify all pairs of particles. For 4 particles, there are $\frac{4 \times 3}{2} = 6$ pairs.
+</li>
+<li>
+Four pairs are along the sides of the square (distance $l$), and two pairs are along the diagonals (distance $\sqrt{2}l$).
+</li>
+<li>
+Sum the potential energies of all pairs: $$W(r) = -4 \frac{G m^2}{l} - 2 \frac{G m^2}{\sqrt{2}l} = -\frac{G m^2}{l} \left(4 + \sqrt{2}\right) \approx -5.41 \frac{G m^2}{l}$$
+</li>
+<li>
+The gravitational potential $U(r)$ at the center of the square (distance $r = \frac{l}{\sqrt{2}}$ from each vertex) is: $$U(r) = -4 \frac{G m}{l / \sqrt{2}} = -4\sqrt{2} \frac{G m}{l}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Total potential energy is $-5.41 \frac{G m^2}{l}$ and potential at the center is $-4\sqrt{2} \frac{G m}{l}$.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Escape Speed
+</summary>
+<p>
+  The
+  <span class="keyword">
+  escape speed
+</span>
+is the minimum speed required for a projectile to escape the gravitational influence of a celestial body and reach infinity.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of Escape Velocity
+</summary>
+<p>
+Using the principle of conservation of mechanical energy, the total energy of a projectile of mass $m$ projected with speed $v_i$ from the surface of the Earth must be greater than or equal to its energy at infinity (where potential energy is zero and kinetic energy is non-negative):
+</p>
+<p>
+$$\frac{1}{2} m v_i^2 - \frac{G M_E m}{R_E} \ge 0$$
+</p>
+<p>
+The minimum speed required corresponds to the equality:
+</p>
+<p>
+$$v_e = \sqrt{\frac{2 G M_E}{R_E}} = \sqrt{2 g R_E}$$
+</p>
+<p>
+For Earth, substituting $g = 9.8 \text{ m/s}^2$ and $R_E = 6400$ km gives:
+</p>
+<p>
+$$v_e \approx 11.2 \text{ km/s}$$
+</p>
+<p>
+  For the Moon, the escape speed is only about
+  <strong>
+  2.3 km/s
+</strong>
+, which is why gas molecules easily escape and the Moon has no atmosphere.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Earth Satellites &amp; Orbital Mechanics
+</summary>
+<p>
+Satellites are natural or artificial bodies revolving around a planet. Their motion is governed by gravitational attraction acting as the necessary centripetal force.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Orbital Speed and Time Period
+</summary>
+<p>
+For a satellite of mass $m$ in a circular orbit at a height $h$ above the Earth's surface:
+</p>
+<p>
+$$\frac{m V^2}{R_E + h} = \frac{G M_E m}{(R_E + h)^2} \implies V = \sqrt{\frac{G M_E}{R_E + h}}$$
+</p>
+<p>
+The time period $T$ for one complete revolution is:
+</p>
+<p>
+$$T = \frac{2\pi(R_E + h)}{V} = \frac{2\pi(R_E + h)^{3/2}}{\sqrt{G M_E}}$$
+</p>
+<p>
+Squaring both sides yields Kepler's third law for satellites: $T^2 = k(R_E + h)^3$. For a satellite close to the Earth's surface ($h \approx 0$):
+</p>
+<p>
+$$T_0 = 2\pi\sqrt{\frac{R_E}{g}} \approx 85 \text{ minutes}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Energy of an Orbiting Satellite
+</summary>
+<p>
+The total mechanical energy $E$ of a satellite is the sum of its kinetic and potential energies:
+</p>
+<ul>
+  <li>
+    <strong>
+    Kinetic Energy:
+  </strong>
+  $K.E. = \frac{1}{2} m V^2 = \frac{G M_E m}{2(R_E + h)}$
+</li>
+<li>
+  <strong>
+  Potential Energy:
+</strong>
+$P.E. = -\frac{G M_E m}{R_E + h}$
+</li>
+<li>
+  <strong>
+  Total Energy:
+</strong>
+$E = K.E. + P.E. = -\frac{G M_E m}{2(R_E + h)}$
+</li>
+</ul>
+<p>
+The total energy is negative, indicating that the satellite is in a bound state. To escape, it must be supplied with energy equal to $+|E|$.
+</p>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 7
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-1-chapter-06-system-of-particles-and-rotational.html"; } else { window.location.href = "11-1-chapter-08-appendix.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

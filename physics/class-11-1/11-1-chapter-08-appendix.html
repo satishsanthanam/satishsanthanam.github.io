@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 8: Appendices
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 8: Appendices
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Appendix A 1 &amp; A 2: The Greek Alphabet and Common SI Prefixes
+</summary>
+<p>
+Reference tables for the Greek alphabet symbols used throughout physics equations, and the standard SI prefixes for multiples and sub-multiples.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Greek Alphabet
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>
+      Name
+    </th>
+    <th>
+    Uppercase
+  </th>
+  <th>
+  Lowercase
+</th>
+<th>
+Name
+</th>
+<th>
+Uppercase
+</th>
+<th>
+Lowercase
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Alpha
+  </td>
+  <td>
+  A
+</td>
+<td>
+$\alpha$
+</td>
+<td>
+Iota
+</td>
+<td>
+I
+</td>
+<td>
+$\iota$
+</td>
+</tr>
+<tr>
+  <td>
+  Beta
+</td>
+<td>
+B
+</td>
+<td>
+$\beta$
+</td>
+<td>
+Kappa
+</td>
+<td>
+K
+</td>
+<td>
+$\kappa$
+</td>
+</tr>
+<tr>
+  <td>
+  Gamma
+</td>
+<td>
+$\Gamma$
+</td>
+<td>
+$\gamma$
+</td>
+<td>
+Lambda
+</td>
+<td>
+$\Lambda$
+</td>
+<td>
+$\lambda$
+</td>
+</tr>
+<tr>
+  <td>
+  Delta
+</td>
+<td>
+$\Delta$
+</td>
+<td>
+$\delta$
+</td>
+<td>
+Mu
+</td>
+<td>
+M
+</td>
+<td>
+$\mu$
+</td>
+</tr>
+<tr>
+  <td>
+  Epsilon
+</td>
+<td>
+E
+</td>
+<td>
+$\varepsilon$
+</td>
+<td>
+Nu
+</td>
+<td>
+N
+</td>
+<td>
+$\nu$
+</td>
+</tr>
+<tr>
+  <td>
+  Zeta
+</td>
+<td>
+Z
+</td>
+<td>
+$\zeta$
+</td>
+<td>
+Xi
+</td>
+<td>
+$\Xi$
+</td>
+<td>
+$\xi$
+</td>
+</tr>
+<tr>
+  <td>
+  Eta
+</td>
+<td>
+H
+</td>
+<td>
+$\eta$
+</td>
+<td>
+Omicron
+</td>
+<td>
+O
+</td>
+<td>
+o
+</td>
+</tr>
+<tr>
+  <td>
+  Theta
+</td>
+<td>
+$\Theta$
+</td>
+<td>
+$\theta$
+</td>
+<td>
+Pi
+</td>
+<td>
+$\Pi$
+</td>
+<td>
+$\pi$
+</td>
+</tr>
+<tr>
+  <td>
+  Rho
+</td>
+<td>
+P
+</td>
+<td>
+$\rho$
+</td>
+<td>
+Sigma
+</td>
+<td>
+$\Sigma$
+</td>
+<td>
+$\sigma$
+</td>
+</tr>
+<tr>
+  <td>
+  Tau
+</td>
+<td>
+T
+</td>
+<td>
+$\tau$
+</td>
+<td>
+Upsilon
+</td>
+<td>
+Y
+</td>
+<td>
+$\upsilon$
+</td>
+</tr>
+<tr>
+  <td>
+  Phi
+</td>
+<td>
+$\Phi$
+</td>
+<td>
+$\phi$, $\varphi$
+</td>
+<td>
+Chi
+</td>
+<td>
+X
+</td>
+<td>
+$\chi$
+</td>
+</tr>
+<tr>
+  <td>
+  Psi
+</td>
+<td>
+$\Psi$
+</td>
+<td>
+$\psi$
+</td>
+<td>
+Omega
+</td>
+<td>
+$\Omega$
+</td>
+<td>
+$\omega$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Common SI Prefixes for Multiples and Sub-multiples
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th colspan="3">
+      Multiples
+    </th>
+    <th colspan="3">
+    Sub-Multiples
+  </th>
+</tr>
+<tr>
+  <th>
+  Factor
+</th>
+<th>
+Prefix
+</th>
+<th>
+Symbol
+</th>
+<th>
+Factor
+</th>
+<th>
+Prefix
+</th>
+<th>
+Symbol
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $10^{18}$
+  </td>
+  <td>
+  exa
+</td>
+<td>
+E
+</td>
+<td>
+$10^{-18}$
+</td>
+<td>
+atto
+</td>
+<td>
+a
+</td>
+</tr>
+<tr>
+  <td>
+  $10^{15}$
+</td>
+<td>
+peta
+</td>
+<td>
+P
+</td>
+<td>
+$10^{-15}$
+</td>
+<td>
+femto
+</td>
+<td>
+f
+</td>
+</tr>
+<tr>
+  <td>
+  $10^{12}$
+</td>
+<td>
+tera
+</td>
+<td>
+T
+</td>
+<td>
+$10^{-12}$
+</td>
+<td>
+pico
+</td>
+<td>
+p
+</td>
+</tr>
+<tr>
+  <td>
+  $10^{9}$
+</td>
+<td>
+giga
+</td>
+<td>
+G
+</td>
+<td>
+$10^{-9}$
+</td>
+<td>
+nano
+</td>
+<td>
+n
+</td>
+</tr>
+<tr>
+  <td>
+  $10^{6}$
+</td>
+<td>
+mega
+</td>
+<td>
+M
+</td>
+<td>
+$10^{-6}$
+</td>
+<td>
+micro
+</td>
+<td>
+$\mu$
+</td>
+</tr>
+<tr>
+  <td>
+  $10^{3}$
+</td>
+<td>
+kilo
+</td>
+<td>
+k
+</td>
+<td>
+$10^{-3}$
+</td>
+<td>
+milli
+</td>
+<td>
+m
+</td>
+</tr>
+<tr>
+  <td>
+  $10^{2}$
+</td>
+<td>
+hecto
+</td>
+<td>
+h
+</td>
+<td>
+$10^{-2}$
+</td>
+<td>
+centi
+</td>
+<td>
+c
+</td>
+</tr>
+<tr>
+  <td>
+  $10^{1}$
+</td>
+<td>
+deca
+</td>
+<td>
+da
+</td>
+<td>
+$10^{-1}$
+</td>
+<td>
+deci
+</td>
+<td>
+d
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Appendix A 3: Some Important Physical Constants
+</summary>
+<p>
+A comprehensive compilation of fundamental physical constants and other useful numerical values used in physical calculations.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>
+      Constant Name
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Standard Value &amp; Units
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Speed of light in vacuum
+  </td>
+  <td>
+  $c$
+</td>
+<td>
+  <strong>
+  2.9979 \times 10^{8} m s^{-1}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Charge of electron
+</td>
+<td>
+$e$
+</td>
+<td>
+  <strong>
+  1.602 \times 10^{-19} C
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Gravitational constant
+</td>
+<td>
+$G$
+</td>
+<td>
+  <strong>
+  6.673 \times 10^{-11} N m^{2} kg^{-2}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Planck constant
+</td>
+<td>
+$h$
+</td>
+<td>
+  <strong>
+  6.626 \times 10^{-34} J s
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Boltzmann constant
+</td>
+<td>
+$k$
+</td>
+<td>
+  <strong>
+  1.381 \times 10^{-23} J K^{-1}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Avogadro number
+</td>
+<td>
+$N_A$
+</td>
+<td>
+  <strong>
+  6.022 \times 10^{23} mol^{-1}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Universal gas constant
+</td>
+<td>
+$R$
+</td>
+<td>
+  <strong>
+  8.314 J mol^{-1} K^{-1}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Mass of electron
+</td>
+<td>
+$m_e$
+</td>
+<td>
+  <strong>
+  9.110 \times 10^{-31} kg
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Mass of neutron
+</td>
+<td>
+$m_n$
+</td>
+<td>
+  <strong>
+  1.675 \times 10^{-27} kg
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Mass of proton
+</td>
+<td>
+$m_p$
+</td>
+<td>
+  <strong>
+  1.673 \times 10^{-27} kg
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Electron-charge to mass ratio
+</td>
+<td>
+$e/m_e$
+</td>
+<td>
+  <strong>
+  1.759 \times 10^{11} C/kg
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Faraday constant
+</td>
+<td>
+$F$
+</td>
+<td>
+  <strong>
+  9.648 \times 10^{4} C/mol
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Rydberg constant
+</td>
+<td>
+$R$
+</td>
+<td>
+  <strong>
+  1.097 \times 10^{7} m^{-1}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Bohr radius
+</td>
+<td>
+$a_0$
+</td>
+<td>
+  <strong>
+  5.292 \times 10^{-11} m
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Stefan-Boltzmann constant
+</td>
+<td>
+$\sigma$
+</td>
+<td>
+  <strong>
+  5.670 \times 10^{-8} W m^{-2} K^{-4}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Wien's Constant
+</td>
+<td>
+$b$
+</td>
+<td>
+  <strong>
+  2.898 \times 10^{-3} m K
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Permittivity of free space
+</td>
+<td>
+$\varepsilon_0$
+</td>
+<td>
+  <strong>
+  8.854 \times 10^{-12} C^{2} N^{-1} m^{-2}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Permeability of free space
+</td>
+<td>
+$\mu_0$
+</td>
+<td>
+  <strong>
+  4\pi \times 10^{-7} T m A^{-1} \approx 1.257 \times 10^{-6} Wb A^{-1} m^{-1}
+</strong>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Other Useful Constants
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>
+      Constant Name
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Value
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Mechanical equivalent of heat
+  </td>
+  <td>
+  $J$
+</td>
+<td>
+  <strong>
+  4.186 J cal^{-1}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Standard atmospheric pressure
+</td>
+<td>
+$1\text{ atm}$
+</td>
+<td>
+  <strong>
+  1.013 \times 10^{5} Pa
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Absolute zero
+</td>
+<td>
+$0\text{ K}$
+</td>
+<td>
+  <strong>
+  -273.15 &deg;C
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Electron volt
+</td>
+<td>
+$1\text{ eV}$
+</td>
+<td>
+  <strong>
+  1.602 \times 10^{-19} J
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Unified Atomic mass unit
+</td>
+<td>
+$1\text{ u}$
+</td>
+<td>
+  <strong>
+  1.661 \times 10^{-27} kg
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Electron rest energy
+</td>
+<td>
+$m_e c^2$
+</td>
+<td>
+  <strong>
+  0.511 MeV
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Energy equivalent of 1 u
+</td>
+<td>
+$1\text{ u } c^2$
+</td>
+<td>
+  <strong>
+  931.5 MeV
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Volume of ideal gas ($0\text{ &deg;C}$ and $1\text{ atm}$)
+</td>
+<td>
+$V$
+</td>
+<td>
+  <strong>
+  22.4 L mol^{-1}
+</strong>
+</td>
+</tr>
+<tr>
+  <td>
+  Acceleration due to gravity (sea level, at equator)
+</td>
+<td>
+$g$
+</td>
+<td>
+  <strong>
+  9.78049 m s^{-2}
+</strong>
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Appendix A 4: Conversion Factors
+</summary>
+<p>
+Conversion factors written as equations for simplicity across various physical dimensions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Length, Area, and Volume
+</summary>
+<ul>
+  <li>
+    <strong>
+    Length:
+  </strong>
+  <ul>
+    <li>
+      <strong>
+      1 km
+    </strong>
+    = 0.6215 mi
+  </li>
+  <li>
+    <strong>
+    1 mi
+  </strong>
+  = 1.609 km
+</li>
+<li>
+  <strong>
+  1 m
+</strong>
+= 1.0936 yd = 3.281 ft = 39.37 in
+</li>
+<li>
+  <strong>
+  1 in
+</strong>
+= 2.54 cm
+</li>
+<li>
+  <strong>
+  1 ft
+</strong>
+= 12 in = 30.48 cm
+</li>
+<li>
+  <strong>
+  1 lightyear (ly)
+</strong>
+= $9.461 \times 10^{15}$ m
+</li>
+<li>
+  <strong>
+  1 &Aring;
+</strong>
+= 0.1 nm = $10^{-10}$ m
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Area:
+</strong>
+<ul>
+  <li>
+    <strong>
+    1 m&sup2;
+  </strong>
+  = $10^{4}$ cm&sup2;
+</li>
+<li>
+  <strong>
+  1 km&sup2;
+</strong>
+= 0.3861 mi&sup2; = 247.1 acres
+</li>
+<li>
+  <strong>
+  1 in&sup2;
+</strong>
+= 6.4516 cm&sup2;
+</li>
+<li>
+  <strong>
+  1 ft&sup2;
+</strong>
+= $9.29 \times 10^{-2}$ m&sup2;
+</li>
+<li>
+  <strong>
+  1 acre
+</strong>
+= 43,560 ft&sup2;
+</li>
+<li>
+  <strong>
+  1 mi&sup2;
+</strong>
+= 460 acres = 2.590 km&sup2;
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Volume:
+</strong>
+<ul>
+  <li>
+    <strong>
+    1 m&sup3;
+  </strong>
+  = $10^{6}$ cm&sup3;
+</li>
+<li>
+  <strong>
+  1 L
+</strong>
+= 1000 cm&sup3; = $10^{-3}$ m&sup3;
+</li>
+<li>
+  <strong>
+  1 gal
+</strong>
+= 3.786 L
+</li>
+<li>
+  <strong>
+  1 gal
+</strong>
+= 4 qt = 8 pt = 128 oz = 231 in&sup3;
+</li>
+<li>
+  <strong>
+  1 in&sup3;
+</strong>
+= 16.39 cm&sup3;
+</li>
+<li>
+  <strong>
+  1 ft&sup3;
+</strong>
+= 1728 in&sup3; = 28.32 L = $2.832 \times 10^{4}$ cm&sup3;
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mechanics, Thermodynamics, and Electromagnetism
+</summary>
+<ul>
+  <li>
+    <strong>
+    Mass &amp; Density:
+  </strong>
+  <ul>
+    <li>
+      <strong>
+      1 kg
+    </strong>
+    = 1000 g
+  </li>
+  <li>
+    <strong>
+    1 tonne
+  </strong>
+  = 1000 kg = 1 Mg
+</li>
+<li>
+  <strong>
+  1 u
+</strong>
+= $1.6606 \times 10^{-27}$ kg
+</li>
+<li>
+  <strong>
+  1 slug
+</strong>
+= 14.59 kg
+</li>
+<li>
+  <strong>
+  1 g cm&sup3;
+</strong>
+= 1000 kg m&sup3; = 1 kg L
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Force &amp; Pressure:
+</strong>
+<ul>
+  <li>
+    <strong>
+    1 N
+  </strong>
+  = 0.2248 lbf = $10^{5}$ dyn
+</li>
+<li>
+  <strong>
+  1 lbf
+</strong>
+= 4.4482 N
+</li>
+<li>
+  <strong>
+  1 kgf
+</strong>
+= 2.2046 lbf
+</li>
+<li>
+  <strong>
+  1 Pa
+</strong>
+= 1 N m&sup2;
+</li>
+<li>
+  <strong>
+  1 bar
+</strong>
+= 100 kPa
+</li>
+<li>
+  <strong>
+  1 atm
+</strong>
+= 101.325 kPa = 1.01325 bar = 14.7 lbf/in&sup2; = 760 mm Hg = 29.9 in Hg = 33.8 ft H&sub2;O
+</li>
+<li>
+  <strong>
+  1 torr
+</strong>
+= 1 mm Hg = 133.32 Pa
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Energy &amp; Power:
+</strong>
+<ul>
+  <li>
+    <strong>
+    1 kW h
+  </strong>
+  = 3.6 MJ
+</li>
+<li>
+  <strong>
+  1 cal
+</strong>
+= 4.186 J
+</li>
+<li>
+  <strong>
+  1 ft lbf
+</strong>
+= 1.356 J = $1.286 \times 10^{-3}$ Btu
+</li>
+<li>
+  <strong>
+  1 eV
+</strong>
+= $1.602 \times 10^{-19}$ J
+</li>
+<li>
+  <strong>
+  1 horsepower (hp)
+</strong>
+= 550 ft lbf/s = 745.7 W
+</li>
+<li>
+  <strong>
+  1 Btu min&sup1;
+</strong>
+= 17.58 W
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Magnetic Field:
+</strong>
+<ul>
+  <li>
+    <strong>
+    1 G
+  </strong>
+  = $10^{-4}$ T
+</li>
+<li>
+  <strong>
+  1 T
+</strong>
+= 1 Wb m&sup2; = $10^{4}$ G
+</li>
+</ul>
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Appendix A 5: Mathematical Formulae
+</summary>
+<p>
+Essential mathematical relations spanning geometry, quadratic equations, trigonometry, expansions, and vector algebra.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Geometry and Trigonometry
+</summary>
+<ul>
+  <li>
+    <strong>
+    Circle of radius $r$:
+  </strong>
+  Circumference = $2\pi r$, Area = $\pi r^2$
+</li>
+<li>
+  <strong>
+  Sphere of radius $r$:
+</strong>
+Area = $4\pi r^2$, Volume = $\frac{4}{3}\pi r^3$
+</li>
+<li>
+  <strong>
+  Right circular cylinder of radius $r$ and height $h$:
+</strong>
+Area = $2\pi r^2 + 2\pi r h$, Volume = $\pi r^2 h$
+</li>
+<li>
+  <strong>
+  Trigonometric Functions:
+</strong>
+$$\sin \theta = \frac{y}{r}, \quad \cos \theta = \frac{x}{r}, \quad \tan \theta = \frac{y}{x}$$$$\csc \theta = \frac{r}{y}, \quad \sec \theta = \frac{r}{x}, \quad \cot \theta = \frac{x}{y}$$
+</li>
+<li>
+  <strong>
+  Trigonometric Identities:
+</strong>
+<ul>
+  <li>
+  $\sin^2 \theta + \cos^2 \theta = 1$
+</li>
+<li>
+$\sec^2 \theta - \tan^2 \theta = 1$
+</li>
+<li>
+$\csc^2 \theta - \cot^2 \theta = 1$
+</li>
+<li>
+$\sin 2\theta = 2 \sin \theta \cos \theta$
+</li>
+<li>
+$\cos 2\theta = \cos^2 \theta - \sin^2 \theta = 2\cos^2 \theta - 1 = 1 - 2\sin^2 \theta$
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Vector Products and Operations
+</summary>
+<p>
+Let $\mathbf{a}$, $\mathbf{b}$, and $\mathbf{c}$ be arbitrary vectors with magnitudes $a$, $b$, and $c$.
+</p>
+<ul>
+  <li>
+    <strong>
+    Scalar (Dot) Product:
+  </strong>
+  $$\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a} = a_x b_x + a_y b_y + a_z b_z = ab \cos \theta$$
+</li>
+<li>
+  <strong>
+  Vector (Cross) Product:
+</strong>
+$$\mathbf{a} \times \mathbf{b} = -\mathbf{b} \times \mathbf{a} = \det \begin{pmatrix} \mathbf{\hat{i}} &amp; \mathbf{\hat{j}} &amp; \mathbf{\hat{k}} \\ a_x &amp; a_y &amp; a_z \\ b_x &amp; b_y &amp; b_z \end{pmatrix}$$$$|\mathbf{a} \times \mathbf{b}| = ab \sin \theta$$
+</li>
+<li>
+  <strong>
+  Vector Triple Products:
+</strong>
+$$\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = \mathbf{b} \cdot (\mathbf{c} \times \mathbf{a}) = \mathbf{c} \cdot (\mathbf{a} \times \mathbf{b})$$$$$\mathbf{a} \times (\mathbf{b} \times \mathbf{c}) = (\mathbf{a} \cdot \mathbf{c})\mathbf{b} - (\mathbf{a} \cdot \mathbf{b})\mathbf{c}$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Appendix A 6: SI Derived Units
+</summary>
+<p>
+Tables of SI derived units expressed in terms of base units, units with special names, and combinations thereof.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  SI Derived Units with Special Names
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Unit Name
+  </th>
+  <th>
+  Symbol
+</th>
+<th>
+Expression in terms of other units
+</th>
+<th>
+Expression in terms of SI base units
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Frequency
+  </td>
+  <td>
+  hertz
+</td>
+<td>
+Hz
+</td>
+<td>
+-
+</td>
+<td>
+$s^{-1}$
+</td>
+</tr>
+<tr>
+  <td>
+  Force
+</td>
+<td>
+newton
+</td>
+<td>
+N
+</td>
+<td>
+-
+</td>
+<td>
+$kg\cdot m\cdot s^{-2}$
+</td>
+</tr>
+<tr>
+  <td>
+  Pressure, stress
+</td>
+<td>
+pascal
+</td>
+<td>
+Pa
+</td>
+<td>
+$N/m^2$
+</td>
+<td>
+$kg\cdot m^{-1}\cdot s^{-2}$
+</td>
+</tr>
+<tr>
+  <td>
+  Energy, work, heat
+</td>
+<td>
+joule
+</td>
+<td>
+J
+</td>
+<td>
+$N\cdot m$
+</td>
+<td>
+$kg\cdot m^2\cdot s^{-2}$
+</td>
+</tr>
+<tr>
+  <td>
+  Power, radiant flux
+</td>
+<td>
+watt
+</td>
+<td>
+W
+</td>
+<td>
+$J/s$
+</td>
+<td>
+$kg\cdot m^2\cdot s^{-3}$
+</td>
+</tr>
+<tr>
+  <td>
+  Electric charge
+</td>
+<td>
+coulomb
+</td>
+<td>
+C
+</td>
+<td>
+-
+</td>
+<td>
+$A\cdot s$
+</td>
+</tr>
+<tr>
+  <td>
+  Electric potential, EMF
+</td>
+<td>
+volt
+</td>
+<td>
+V
+</td>
+<td>
+$W/A$
+</td>
+<td>
+$kg\cdot m^2\cdot s^{-3}\cdot A^{-1}$
+</td>
+</tr>
+<tr>
+  <td>
+  Capacitance
+</td>
+<td>
+farad
+</td>
+<td>
+F
+</td>
+<td>
+$C/V$
+</td>
+<td>
+$A^2\cdot s^4\cdot kg^{-1}\cdot m^{-2}$
+</td>
+</tr>
+<tr>
+  <td>
+  Electric resistance
+</td>
+<td>
+ohm
+</td>
+<td>
+$\Omega$
+</td>
+<td>
+$V/A$
+</td>
+<td>
+$kg\cdot m^2\cdot s^{-3}\cdot A^{-2}$
+</td>
+</tr>
+<tr>
+  <td>
+  Magnetic flux
+</td>
+<td>
+weber
+</td>
+<td>
+Wb
+</td>
+<td>
+$V\cdot s$
+</td>
+<td>
+$kg\cdot m^2\cdot s^{-2}\cdot A^{-1}$
+</td>
+</tr>
+<tr>
+  <td>
+  Magnetic field strength
+</td>
+<td>
+tesla
+</td>
+<td>
+T
+</td>
+<td>
+$Wb/m^2$
+</td>
+<td>
+$kg\cdot s^{-2}\cdot A^{-1}$
+</td>
+</tr>
+<tr>
+  <td>
+  Inductance
+</td>
+<td>
+henry
+</td>
+<td>
+H
+</td>
+<td>
+$Wb/A$
+</td>
+<td>
+$kg\cdot m^2\cdot s^{-2}\cdot A^{-2}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Appendix A 9: Dimensional Formulae of Physical Quantities
+</summary>
+<p>
+A comprehensive reference of physical quantities, their defining relationships, and their dimensional formulas.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr>
+      <th>
+      S.No
+    </th>
+    <th>
+    Physical Quantity
+  </th>
+  <th>
+  Relationship with other quantities
+</th>
+<th>
+Dimensions
+</th>
+<th>
+Dimensional Formula
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    1.
+  </td>
+  <td>
+  Area
+</td>
+<td>
+Length $\times$ breadth
+</td>
+<td>
+$[L^2]$
+</td>
+<td>
+$[M^0 L^2 T^0]$
+</td>
+</tr>
+<tr>
+  <td>
+  2.
+</td>
+<td>
+Volume
+</td>
+<td>
+Length $\times$ breadth $\times$ height
+</td>
+<td>
+$[L^3]$
+</td>
+<td>
+$[M^0 L^3 T^0]$
+</td>
+</tr>
+<tr>
+  <td>
+  3.
+</td>
+<td>
+Mass density
+</td>
+<td>
+Mass / volume
+</td>
+<td>
+$[M]/[L^3]$
+</td>
+<td>
+$[M L^{-3} T^0]$
+</td>
+</tr>
+<tr>
+  <td>
+  4.
+</td>
+<td>
+Frequency
+</td>
+<td>
+1 / time period
+</td>
+<td>
+$1/[T]$
+</td>
+<td>
+$[M^0 L^0 T^{-1}]$
+</td>
+</tr>
+<tr>
+  <td>
+  5.
+</td>
+<td>
+Velocity, speed
+</td>
+<td>
+Displacement / time
+</td>
+<td>
+$[L]/[T]$
+</td>
+<td>
+$[M^0 L T^{-1}]$
+</td>
+</tr>
+<tr>
+  <td>
+  6.
+</td>
+<td>
+Acceleration
+</td>
+<td>
+Velocity / time
+</td>
+<td>
+$[LT^{-1}]/[T]$
+</td>
+<td>
+$[M^0 L T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  7.
+</td>
+<td>
+Force
+</td>
+<td>
+Mass $\times$ acceleration
+</td>
+<td>
+$[M][LT^{-2}]$
+</td>
+<td>
+$[M L T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  8.
+</td>
+<td>
+Impulse
+</td>
+<td>
+Force $\times$ time
+</td>
+<td>
+$[M L T^{-2}][T]$
+</td>
+<td>
+$[M L T^{-1}]$
+</td>
+</tr>
+<tr>
+  <td>
+  9.
+</td>
+<td>
+Work, Energy
+</td>
+<td>
+Force $\times$ distance
+</td>
+<td>
+$[M L T^{-2}][L]$
+</td>
+<td>
+$[M L^2 T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  10.
+</td>
+<td>
+Power
+</td>
+<td>
+Work / time
+</td>
+<td>
+$[M L^2 T^{-2}]/[T]$
+</td>
+<td>
+$[M L^2 T^{-3}]$
+</td>
+</tr>
+<tr>
+  <td>
+  11.
+</td>
+<td>
+Momentum
+</td>
+<td>
+Mass $\times$ velocity
+</td>
+<td>
+$[M][LT^{-1}]$
+</td>
+<td>
+$[M L T^{-1}]$
+</td>
+</tr>
+<tr>
+  <td>
+  12.
+</td>
+<td>
+Pressure, stress
+</td>
+<td>
+Force / area
+</td>
+<td>
+$[M L T^{-2}]/[L^2]$
+</td>
+<td>
+$[M L^{-1} T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  13.
+</td>
+<td>
+Strain
+</td>
+<td>
+Change in dimension / Original dimension
+</td>
+<td>
+$[L]/[L]$
+</td>
+<td>
+$[M^0 L^0 T^0]$
+</td>
+</tr>
+<tr>
+  <td>
+  14.
+</td>
+<td>
+Modulus of elasticity
+</td>
+<td>
+Stress / strain
+</td>
+<td>
+$[M L^{-1} T^{-2}]/[M^0 L^0 T^0]$
+</td>
+<td>
+$[M L^{-1} T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  15.
+</td>
+<td>
+Surface tension
+</td>
+<td>
+Force / length
+</td>
+<td>
+$[M L T^{-2}]/[L]$
+</td>
+<td>
+$[M L^0 T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  16.
+</td>
+<td>
+Surface energy
+</td>
+<td>
+Energy / area
+</td>
+<td>
+$[M L^2 T^{-2}]/[L^2]$
+</td>
+<td>
+$[M L^0 T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  17.
+</td>
+<td>
+Velocity gradient
+</td>
+<td>
+Velocity / distance
+</td>
+<td>
+$[LT^{-1}]/[L]$
+</td>
+<td>
+$[M^0 L^0 T^{-1}]$
+</td>
+</tr>
+<tr>
+  <td>
+  18.
+</td>
+<td>
+Pressure gradient
+</td>
+<td>
+Pressure / distance
+</td>
+<td>
+$[M L^{-1} T^{-2}]/[L]$
+</td>
+<td>
+$[M L^{-2} T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  19.
+</td>
+<td>
+Pressure energy
+</td>
+<td>
+Pressure $\times$ volume
+</td>
+<td>
+$[M L^{-1} T^{-2}][L^3]$
+</td>
+<td>
+$[M L^2 T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  20.
+</td>
+<td>
+Coefficient of viscosity
+</td>
+<td>
+Force / (area $\times$ velocity gradient)
+</td>
+<td>
+$[M L T^{-2}] / [L^2][T^{-1}]$
+</td>
+<td>
+$[M L^{-1} T^{-1}]$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 8
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-1-chapter-07-gravitation.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

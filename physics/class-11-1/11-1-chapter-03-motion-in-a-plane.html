@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 3: Motion in a Plane
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 3: Motion in a Plane
+</h1>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  Scalars and Vectors
+</summary>
+<p>
+  In physics, physical quantities are classified into two categories based on their directional properties:
+  <span class='keyword'>
+  scalars
+</span>
+and
+<span class='keyword'>
+vectors
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Scalars:
+  </strong>
+  Quantities specified completely by a single number representing magnitude along with appropriate units. Examples include mass, temperature, time, and distance. They combine using ordinary rules of algebra.
+</li>
+<li>
+  <strong>
+  Vectors:
+</strong>
+Quantities possessing both magnitude and direction that obey the triangle or parallelogram laws of addition. Examples include displacement, velocity, acceleration, and force.
+</li>
+</ul>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Position and Displacement Vectors
+</summary>
+<p>
+To describe motion in a plane, a reference point $O$ (origin) is chosen.
+</p>
+<ul>
+  <li>
+    <strong>
+    Position Vector:
+  </strong>
+  A vector $\vec{r}$ representing the straight-line position of an object from the origin $O$ to its location $P$ at time $t$.
+</li>
+<li>
+  <strong>
+  Displacement Vector:
+</strong>
+The vector $\Delta \vec{r} = \vec{r}^\prime - \vec{r}$ representing the change in position from $P$ at time $t$ to $P^\prime$ at time $t^\prime$. It is independent of the actual path taken between the two points.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Equality of Vectors
+</summary>
+<p>
+Two vectors $\vec{A}$ and $\vec{B}$ are equal if and only if they have the same magnitude and the same direction. Graphically, if vector $\vec{B}$ is shifted parallel to itself until its tail coincides with the tail of $\vec{A}$, their tips must also coincide.
+</p>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  Vector Arithmetic and Graphical Methods
+</summary>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Multiplication of Vectors by Real Numbers
+</summary>
+<p>
+Multiplying a vector $\vec{A}$ by a positive real number $\lambda$ yields a vector whose magnitude is scaled by $\lambda$ while maintaining the same direction: $|\lambda \vec{A}| = \lambda |\vec{A}|$ for $\lambda &gt; 0$. Multiplying by a negative number $-\lambda$ reverses the direction of the vector while scaling its magnitude by $\lambda$.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Graphical Addition: Triangle and Parallelogram Laws
+</summary>
+<p>
+Vectors do not follow ordinary algebraic addition. Instead, they are added geometrically:
+</p>
+<ul>
+  <li>
+    <strong>
+    Triangle Law (Head-to-Tail Method):
+  </strong>
+  To add $\vec{A}$ and $\vec{B}$, place the tail of $\vec{B}$ at the head of $\vec{A}$. The resultant vector $\vec{R} = \vec{A} + \vec{B}$ is drawn from the tail of $\vec{A}$ to the head of $\vec{B}$.
+</li>
+<li>
+  <strong>
+  Parallelogram Law:
+</strong>
+When two vectors $\vec{A}$ and $\vec{B}$ are joined at their tails, they form two adjacent sides of a parallelogram. The diagonal drawn from their common origin represents the resultant vector $\vec{R}$.
+</li>
+</ul>
+<p>
+  Vector addition is both
+  <strong>
+  commutative
+</strong>
+($\vec{A} + \vec{B} = \vec{B} + \vec{A}$) and
+<strong>
+associative
+</strong>
+($(\vec{A} + \vec{B}) + \vec{C} = \vec{A} + (\vec{B} + \vec{C})$).
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Subtraction of Vectors
+</summary>
+<p>
+The difference between two vectors $\vec{A}$ and $\vec{B}$ is defined as the sum of $\vec{A}$ and the negative of $\vec{B}$:
+</p>
+<p>
+$$\vec{A} - \vec{B} = \vec{A} + (-\vec{B})$$
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  The Null Vector (Zero Vector)
+</summary>
+<p>
+  A
+  <span class='keyword'>
+  null vector
+</span>
+(or zero vector) $\vec{0}$ is a vector with zero magnitude and an unspecified direction. It arises when subtracting a vector from itself ($\vec{A} - \vec{A} = \vec{0}$) or multiplying any vector by the scalar zero ($0 \vec{A} = \vec{0}$).
+</p>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  Resolution of Vectors and Analytical Addition
+</summary>
+<p>
+  To simplify vector operations, vectors are resolved into perpendicular components along coordinate axes using
+  <span class='keyword'>
+  unit vectors
+</span>
+.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Unit Vectors
+</summary>
+<p>
+Unit vectors are dimensionless vectors of magnitude 1 pointing along specific coordinate axes. In a right-handed Cartesian system, they are denoted by $\hat{i}$, $\hat{j}$, and $\hat{k}$ along the $x$, $y$, and $z$ axes respectively, where $|\hat{i}| = |\hat{j}| = |\hat{k}| = 1$.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Resolution in a Plane
+</summary>
+<p>
+Any vector $\vec{A}$ in the $x$-$y$ plane can be uniquely resolved into component vectors along the axes:
+</p>
+<p>
+$$\vec{A} = A_x \hat{i} + A_y \hat{j}$$
+</p>
+<p>
+Using trigonometry, the components are related to the magnitude $A$ and angle $\theta$ with the $x$-axis by:
+</p>
+<ul>
+  <li>
+  $A_x = A \cos \theta$
+</li>
+<li>
+$A_y = A \sin \theta$
+</li>
+<li>
+$A = \sqrt{A_x^2 + A_y^2}$
+</li>
+<li>
+$\theta = \tan^{-1}\left(\frac{A_y}{A_x}\right)$
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Analytical Vector Addition
+</summary>
+<p>
+Analytical addition is highly accurate and involves summing the respective components of the vectors. For $\vec{R} = \vec{A} + \vec{B}$:
+</p>
+<ul>
+  <li>
+  $R_x = A_x + B_x$
+</li>
+<li>
+$R_y = A_y + B_y$
+</li>
+<li>
+$\vec{R} = (A_x + B_x)\hat{i} + (A_y + B_y)\hat{j}$
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  Kinematics in a Two-Dimensional Plane
+</summary>
+<p>
+Motion in a plane involves position, velocity, and acceleration vectors varying with time.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Position, Velocity, and Acceleration Formulations
+</summary>
+<table border='1' style='width:100%; border-collapse:collapse; margin:10px 0;'>
+  <thead>
+    <tr style='background-color:#f1f5f9;'>
+      <th>
+      Kinematic Variable
+    </th>
+    <th>
+    Vector Definition
+  </th>
+  <th>
+  Component Form
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Position
+    </strong>
+  </td>
+  <td>
+  $\vec{r}(t)$
+</td>
+<td>
+$x(t)\hat{i} + y(t)\hat{j}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Velocity
+  </strong>
+</td>
+<td>
+$\vec{v} = \frac{d\vec{r}}{dt}$
+</td>
+<td>
+$v_x \hat{i} + v_y \hat{j} = \frac{dx}{dt}\hat{i} + \frac{dy}{dt}\hat{j}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Acceleration
+  </strong>
+</td>
+<td>
+$\vec{a} = \frac{d\vec{v}}{dt}$
+</td>
+<td>
+$a_x \hat{i} + a_y \hat{j} = \frac{dv_x}{dt}\hat{i} + \frac{dv_y}{dt}\hat{j}$
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+The direction of the instantaneous velocity vector $\vec{v}$ at any point on the path of an object is always tangential to the path at that point.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Motion with Constant Acceleration
+</summary>
+<p>
+When acceleration $\vec{a}$ is constant, the equations of motion along perpendicular axes are completely independent. Thus, 2D motion can be treated as two simultaneous, independent 1D motions:
+</p>
+<ul>
+  <li>
+  Velocity: $\vec{v}(t) = \vec{v}_0 + \vec{a}t$
+</li>
+<li>
+Position: $\vec{r}(t) = \vec{r}_0 + \vec{v}_0 t + \frac{1}{2}\vec{a}t^2$
+</li>
+</ul>
+</details>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A particle starts from the origin at $t = 0$ with an initial velocity of $5.0 \hat{i}$ m/s and moves in the $x$-$y$ plane under a force producing a constant acceleration of $(3.0\hat{i} + 2.0\hat{j})$ m/s². Find the $y$-coordinate of the particle at the instant its $x$-coordinate is 84 m, and determine its speed at this time.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Using the position equation $\vec{r}(t) = \vec{v}_0 t + \frac{1}{2}\vec{a}t^2$, resolve into components: $x(t) = 5.0t + 1.5t^2$ and $y(t) = 1.0t^2$.
+</li>
+<li>
+Set $x(t) = 84$ m: $1.5t^2 + 5.0t - 84 = 0$. Solving the quadratic equation yields $t = 6$ s.
+</li>
+<li>
+Substitute $t = 6$ s into the $y$-coordinate equation: $y(6) = 1.0(6)^2 = 36$ m.
+</li>
+<li>
+Differentiate position to find velocity: $\vec{v}(t) = (5.0 + 3.0t)\hat{i} + 2.0t\hat{j}$. At $t = 6$ s, $\vec{v} = 23.0\hat{i} + 12.0\hat{j}$ m/s.
+</li>
+<li>
+Calculate speed: $v = \sqrt{23.0^2 + 12.0^2} \approx 26$ m/s.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$y = 36$
+<strong>
+m
+</strong>
+, $v \approx 26$
+<strong>
+m/s
+</strong>
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  Projectile Motion
+</summary>
+<p>
+  A
+  <span class='keyword'>
+  projectile
+</span>
+is an object in flight after being projected into the air. Its motion is a combination of horizontal motion with constant velocity (zero acceleration) and vertical motion with constant downward acceleration due to gravity ($a_y = -g$).
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Trajectory Equation
+</summary>
+<p>
+By eliminating time $t$ from the horizontal and vertical position equations, we obtain the equation of the path (trajectory):
+</p>
+<p>
+$$y = (\tan \theta_0) x - \frac{g}{2(v_0 \cos \theta_0)^2} x^2$$
+</p>
+<p>
+  Since this equation is of the form $y = ax + bx^2$, the path of a projectile is a
+  <strong>
+  parabola
+</strong>
+.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Key Projectile Parameters
+</summary>
+<table border='1' style='width:100%; border-collapse:collapse; margin:10px 0;'>
+  <thead>
+    <tr style='background-color:#f1f5f9;'>
+      <th>
+      Parameter
+    </th>
+    <th>
+    Physical Meaning
+  </th>
+  <th>
+  Mathematical Formula
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Time of Maximum Height ($t_m$)
+    </strong>
+  </td>
+  <td>
+  Time taken to reach the peak where $v_y = 0$
+</td>
+<td>
+$t_m = \frac{v_0 \sin \theta_0}{g}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Time of Flight ($T_f$)
+  </strong>
+</td>
+<td>
+Total time the projectile remains in the air
+</td>
+<td>
+$T_f = \frac{2 v_0 \sin \theta_0}{g}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Maximum Height ($h_m$)
+  </strong>
+</td>
+<td>
+The peak vertical displacement reached
+</td>
+<td>
+$h_m = \frac{(v_0 \sin \theta_0)^2}{2g}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Horizontal Range ($R$)
+  </strong>
+</td>
+<td>
+Total horizontal distance covered when $y = 0$
+</td>
+<td>
+$R = \frac{v_0^2 \sin 2\theta_0}{g}$
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+The horizontal range is maximum when $\theta_0 = 45^\circ$, giving $R_{max} = \frac{v_0^2}{g}$. For any two complementary angles of projection ($\theta_0$ and $90^\circ - \theta_0$), the horizontal ranges are equal.
+</p>
+</details>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Historical Chronicle: Galileo Galilei
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In his seminal work
+  <em>
+  Dialogue on the Great World Systems
+</em>
+(1632), Galileo formulated the independence of the horizontal and vertical components of projectile motion.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+He proved that uniform horizontal motion and uniformly accelerated vertical motion combine to produce a parabolic trajectory, laying the groundwork for classical mechanics.
+</li>
+</ul>
+</div>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A cricket ball is thrown at a speed of 28 m/s in a direction 30° above the horizontal. Calculate (a) the maximum height, (b) the time taken to return to the same level, and (c) the horizontal distance from the thrower to the point where the ball returns to the same level.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify given values: $v_0 = 28$ m/s, $\theta_0 = 30^\circ$, $g = 9.8$ m/s².
+</li>
+<li>
+Calculate maximum height: $h_m = \frac{(28 \sin 30^\circ)^2}{2 \times 9.8} = \frac{14^2}{19.6} = 10.0$ m.
+</li>
+<li>
+Calculate time of flight: $T_f = \frac{2 \times 28 \times \sin 30^\circ}{9.8} = \frac{28}{9.8} \approx 2.9$ s.
+</li>
+<li>
+Calculate horizontal range: $R = \frac{28^2 \sin 60^\circ}{9.8} = \frac{784 \times 0.866}{9.8} \approx 69$ m.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$h_m = 10.0$
+<strong>
+m
+</strong>
+, $T_f = 2.9$
+<strong>
+s
+</strong>
+, $R = 69$
+<strong>
+m
+</strong>
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  Uniform Circular Motion
+</summary>
+<p>
+  When an object follows a circular path at a constant speed, its motion is called
+  <span class='keyword'>
+  uniform circular motion
+</span>
+. Although speed is constant, the velocity vector continuously changes direction, resulting in an acceleration directed towards the center of the circle.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Centripetal Acceleration
+</summary>
+<p>
+  The acceleration of an object in uniform circular motion is always directed towards the center of the circular path and is called
+  <span class='keyword'>
+  centripetal acceleration
+</span>
+($a_c$):
+</p>
+<p>
+$$a_c = \frac{v^2}{R}$$
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Angular Speed and Frequency Relations
+</summary>
+<p>
+  Let the object turn through an angle $\Delta \theta$ in time $\Delta t$. The rate of change of angular displacement is the
+  <span class='keyword'>
+  angular speed
+</span>
+($\omega$):
+</p>
+<p>
+$$\omega = \frac{\Delta \theta}{\Delta t}$$
+</p>
+<p>
+The linear speed $v$ is related to angular speed by $v = \omega R$. Thus, centripetal acceleration can also be expressed as:
+</p>
+<p>
+$$a_c = \omega^2 R$$
+</p>
+<p>
+If $T$ is the time period of one complete revolution and $\nu$ is the frequency ($\nu = 1/T$), then:
+</p>
+<ul>
+  <li>
+  $v = \frac{2\pi R}{T} = 2\pi R\nu$
+</li>
+<li>
+$\omega = 2\pi\nu$
+</li>
+<li>
+$a_c = 4\pi^2\nu^2 R$
+</li>
+</ul>
+</details>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Historical Chronicle: Christiaan Huygens
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  The Dutch physicist Christiaan Huygens published the first rigorous mathematical analysis of centripetal acceleration in 1673 in his work
+  <em>
+  Horologium Oscillatorium
+</em>
+.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Huygens derived the relation $a_c = v^2/R$, which was crucial for Isaac Newton's formulation of the inverse-square law of universal gravitation.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-1-chapter-02-motion-in-a-straight-line.html"; } else { window.location.href = "11-1-chapter-04-laws-of-motion.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

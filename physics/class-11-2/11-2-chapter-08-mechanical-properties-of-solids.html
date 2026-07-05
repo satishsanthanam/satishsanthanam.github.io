@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 2) — Chapter 8: Mechanical Properties of Solids
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 2) — Chapter 8: Mechanical Properties of Solids
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.1 Introduction &amp; Elastic Behaviour
+</summary>
+<p>
+In real-world physics, perfectly rigid bodies do not exist. While solid objects have a definite shape and size, they can be stretched, compressed, bent, or otherwise deformed when subjected to external forces.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Concepts of Elasticity and Plasticity
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    elasticity
+  </span>
+  : The property of a body by virtue of which it tends to regain its original size and shape when the applied deforming force is removed.
+</li>
+<li>
+  <span class="keyword">
+  elastic deformation
+</span>
+: The temporary change in shape or size of a body that disappears completely once the deforming forces are removed.
+</li>
+<li>
+  <span class="keyword">
+  plasticity
+</span>
+: The property of a body by which it gets permanently deformed and shows no tendency to regain its original shape and size after the deforming force is removed.
+</li>
+<li>
+  <span class="keyword">
+  plastic deformation
+</span>
+: The permanent change in shape or size of a body. Materials like putty and mud are close to ideal plastics.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.2 Stress and Strain
+</summary>
+<p>
+When an external deforming force is applied to a body, an internal restoring force is developed within the body. This restoring force is equal in magnitude but opposite in direction to the applied force.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Stress
+</summary>
+<p>
+  The restoring force per unit area is defined as
+  <span class="keyword">
+  stress
+</span>
+.
+</p>
+<p>
+$$\text{Stress} = \frac{F}{A}$$
+</p>
+<ul>
+  <li>
+    <strong>
+    SI Unit:
+  </strong>
+  <strong>
+  N m⁻²
+</strong>
+or
+<strong>
+pascal (Pa)
+</strong>
+</li>
+<li>
+  <strong>
+  Dimensional Formula:
+</strong>
+$[ML^{-1}T^{-2}]$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Three Modes of Stress and Strain
+</summary>
+<ol>
+  <li>
+    <strong>
+    Longitudinal Stress and Strain:
+  </strong>
+  <p>
+  When deforming forces act normal to the cross-sectional area of a cylinder, changing its length:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    tensile stress
+  </span>
+  : Restoring force per unit area when the cylinder is stretched.
+</li>
+<li>
+  <span class="keyword">
+  compressive stress
+</span>
+: Restoring force per unit area when the cylinder is compressed.
+</li>
+<li>
+  <span class="keyword">
+  longitudinal strain
+</span>
+: The ratio of change in length ($\Delta L$) to the original length ($L$).
+</li>
+</ul>
+<p>
+$$\text{Longitudinal strain} = \frac{\Delta L}{L}$$
+</p>
+</li>
+<li>
+  <strong>
+  Shearing (Tangential) Stress and Strain:
+</strong>
+<p>
+When equal and opposite deforming forces are applied parallel to the cross-sectional area, causing relative displacement between opposite faces:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    shearing stress
+  </span>
+  : Restoring force per unit area developed due to applied tangential force.
+</li>
+<li>
+  <span class="keyword">
+  shearing strain
+</span>
+: The ratio of relative displacement of the faces ($\Delta x$) to the length ($L$).
+</li>
+</ul>
+<p>
+$$\text{Shearing strain} = \frac{\Delta x}{L} = \tan \theta \approx \theta$$
+</p>
+<p>
+where $\theta$ is the angular displacement of the cylinder from its original vertical position.
+</p>
+</li>
+<li>
+  <strong>
+  Hydraulic Stress and Volume Strain:
+</strong>
+<p>
+When a solid body is submerged in a fluid, it experiences uniform high pressure on all sides, leading to a decrease in volume without changing its geometrical shape:
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    hydraulic stress
+  </span>
+  : The internal restoring force per unit area, equal in magnitude to the hydraulic pressure ($p$).
+</li>
+<li>
+  <span class="keyword">
+  volume strain
+</span>
+: The ratio of change in volume ($\Delta V$) to the original volume ($V$).
+</li>
+</ul>
+<p>
+$$\text{Volume strain} = \frac{\Delta V}{V}$$
+</p>
+<p>
+Since strain is a ratio of similar physical quantities, it is dimensionless and has no units.
+</p>
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.3 Hooke's Law &amp; The Stress-Strain Curve
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Hooke's Law
+</summary>
+<p>
+  For small deformations, stress and strain are directly proportional to each other. This empirical relation is known as
+  <span class="keyword">
+  Hooke's law
+</span>
+:
+</p>
+<p>
+$$\text{stress} \propto \text{strain}$$
+</p>
+<p>
+$$\text{stress} = k \times \text{strain}$$
+</p>
+<p>
+  where $k$ is the constant of proportionality, known as the
+  <span class="keyword">
+  modulus of elasticity
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Stress-Strain Curve Analysis
+</summary>
+<p>
+A typical stress-strain curve for a metal under tensile load exhibits several distinct regions:
+</p>
+<ul>
+  <li>
+    <strong>
+    Region O to A (Proportional Limit):
+  </strong>
+  The curve is linear. Hooke's law is strictly obeyed. The body behaves as a perfectly elastic body and regains its original dimensions when the load is removed.
+</li>
+<li>
+  <strong>
+  Region A to B (Yield Point / Elastic Limit):
+</strong>
+Stress and strain are not proportional, but the body still returns to its original dimensions when the load is removed. Point B is the
+<span class="keyword">
+yield point
+</span>
+(or
+<span class="keyword">
+elastic limit
+</span>
+), and the corresponding stress is the
+<span class="keyword">
+yield strength
+</span>
+($\sigma_y$).
+</li>
+<li>
+  <strong>
+  Region B to D (Plastic Deformation):
+</strong>
+If the load is increased further, stress exceeds the yield strength, and strain increases rapidly. If the load is removed at a point C between B and D, the material does not regain its original length and retains a
+<span class="keyword">
+permanent set
+</span>
+(residual strain).
+</li>
+<li>
+  <strong>
+  Point D (Ultimate Tensile Strength):
+</strong>
+This represents the maximum stress the material can withstand, denoted as
+<span class="keyword">
+ultimate tensile strength
+</span>
+($\sigma_u$).
+</li>
+<li>
+  <strong>
+  Point E (Fracture Point):
+</strong>
+Beyond point D, additional strain is produced even by a reduced force, and the material breaks at the fracture point E.
+</li>
+<li>
+  <strong>
+  Brittle vs. Ductile:
+</strong>
+If points D and E are close, the material is
+<span class="keyword">
+brittle
+</span>
+(e.g., glass). If they are far apart, the material is
+<span class="keyword">
+ductile
+</span>
+(e.g., copper, steel).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Elastomers
+</summary>
+<p>
+  Substances like rubber or the elastic tissue of the aorta can be stretched to undergo very large strains but do not obey Hooke's law even for small deformations. They do not have a well-defined plastic region and are called
+  <span class="keyword">
+  elastomers
+</span>
+.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.4 Elastic Moduli
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  8.4.1 Young's Modulus ($Y$)
+</summary>
+<p>
+  The ratio of tensile (or compressive) stress ($\sigma$) to longitudinal strain ($\epsilon$) is defined as
+  <span class="keyword">
+  Young's modulus
+</span>
+:
+</p>
+<p>
+$$Y = \frac{\sigma}{\epsilon} = \frac{F/A}{\Delta L/L} = \frac{F \times L}{A \times \Delta L}$$
+</p>
+<p>
+  Since strain is dimensionless, the unit of Young's modulus is the same as that of stress:
+  <strong>
+  N m⁻²
+</strong>
+or
+<strong>
+Pa
+</strong>
+.
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A structural steel rod has a radius of
+<strong>
+10 mm
+</strong>
+and a length of
+<strong>
+1.0 m
+</strong>
+. A
+<strong>
+100 kN
+</strong>
+force stretches it along its length. Calculate (a) stress, (b) elongation, and (c) strain on the rod. (Young's modulus of structural steel is $2.0 \times 10^{11}\text{ N m}^{-2}$)
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Calculate the cross-sectional area of the rod:
+    $$A = \pi r^2 = 3.14 \times (10 \times 10^{-3}\text{ m})^2 = 3.14 \times 10^{-4}\text{ m}^2$$
+  </li>
+  <li>
+    Calculate the stress:
+    $$\text{Stress} = \frac{F}{A} = \frac{100 \times 10^3\text{ N}}{3.14 \times 10^{-4}\text{ m}^2} = 3.18 \times 10^8\text{ N m}^{-2}$$
+  </li>
+  <li>
+    Calculate the elongation ($\Delta L$):
+    $$\Delta L = \frac{(F/A)L}{Y} = \frac{(3.18 \times 10^8\text{ N m}^{-2})(1.0\text{ m})}{2.0 \times 10^{11}\text{ N m}^{-2}} = 1.59 \times 10^{-3}\text{ m} = 1.59\text{ mm}$$
+  </li>
+  <li>
+    Calculate the strain:
+    $$\text{Strain} = \frac{\Delta L}{L} = \frac{1.59 \times 10^{-3}\text{ m}}{1.0\text{ m}} = 1.59 \times 10^{-3} = 0.16\%$$
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Stress = $3.18 \times 10^8\text{ N m}^{-2}$, Elongation =
+<strong>
+1.59 mm
+</strong>
+, Strain =
+<strong>
+0.16%
+</strong>
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  8.4.2 Shear Modulus ($G$)
+</summary>
+<p>
+  The ratio of shearing stress to shearing strain is called the
+  <span class="keyword">
+  shear modulus
+</span>
+(or
+<span class="keyword">
+modulus of rigidity
+</span>
+), represented by $G$:
+</p>
+<p>
+$$G = \frac{\text{shearing stress (}\sigma_s\text{)}}{\text{shearing strain}} = \frac{F/A}{\Delta x/L} = \frac{F \times L}{A \times \Delta x}$$
+</p>
+<p>
+Alternatively, using angular deformation $\theta$:
+</p>
+<p>
+$$G = \frac{F/A}{\theta} = \frac{F}{A \times \theta}$$
+</p>
+<p>
+For most materials, the shear modulus is related to Young's modulus by $G \approx Y/3$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  8.4.3 Bulk Modulus ($B$)
+</summary>
+<p>
+  The ratio of hydraulic stress to the corresponding volume strain is called the
+  <span class="keyword">
+  bulk modulus
+</span>
+, represented by $B$:
+</p>
+<p>
+$$B = -\frac{p}{\Delta V/V}$$
+</p>
+<p>
+The negative sign indicates that an increase in pressure results in a decrease in volume. For a system in equilibrium, $B$ is always positive.
+</p>
+<p>
+  The reciprocal of the bulk modulus is called
+  <span class="keyword">
+  compressibility
+</span>
+($k$):
+</p>
+<p>
+  $$k = \frac{1}{B} = -\frac{1}{\Delta p} \left(\frac{\Delta V}{V}\right)$$
+  <p>
+  Solids have very high bulk moduli (least compressible), liquids have intermediate values, and gases have very low bulk moduli (highly compressible).
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+The average depth of the Indian Ocean is about
+<strong>
+3000 m
+</strong>
+. Calculate the fractional compression, $\Delta V/V$, of water at the bottom of the ocean, given that the bulk modulus of water is $2.2 \times 10^9\text{ N m}^{-2}$ and $g = 10\text{ m s}^{-2}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Calculate the hydrostatic pressure ($p$) at depth $h = 3000\text{ m}$:
+    $$p = h \rho g = 3000\text{ m} \times 1000\text{ kg m}^{-3} \times 10\text{ m s}^{-2} = 3 \times 10^7\text{ N m}^{-2}$$
+  </li>
+  <li>
+    Calculate the fractional compression ($\Delta V/V$):
+    $$\frac{\Delta V}{V} = \frac{p}{B} = \frac{3 \times 10^7\text{ N m}^{-2}}{2.2 \times 10^9\text{ N m}^{-2}} = 1.36 \times 10^{-2} = 1.36\%$$
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Fractional compression $\Delta V/V = 1.36\%$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  8.4.4 Poisson's Ratio ($\sigma$)
+</summary>
+<p>
+When a wire is stretched, its length increases while its diameter contracts. The strain perpendicular to the applied force is called lateral strain.
+</p>
+<p>
+  The ratio of lateral strain to longitudinal strain is called
+  <span class="keyword">
+  Poisson's ratio
+</span>
+($\sigma$):
+</p>
+<p>
+$$\sigma = \frac{\text{Lateral strain}}{\text{Longitudinal strain}} = \frac{\Delta d/d}{\Delta L/L} = \frac{\Delta d}{\Delta L} \times \frac{L}{d}$$
+</p>
+<p>
+  Poisson's ratio is a dimensionless pure number. For steel, its value lies between
+  <strong>
+  0.28
+</strong>
+and
+<strong>
+0.30
+</strong>
+, and for aluminium alloys, it is about
+<strong>
+0.33
+</strong>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  8.4.5 Elastic Potential Energy in a Stretched Wire
+</summary>
+<p>
+Work done against inter-atomic forces during tensile deformation is stored in the wire as elastic potential energy ($W$):
+</p>
+<p>
+$$W = \frac{1}{2} \times \text{stress} \times \text{strain} \times \text{volume of the wire}$$
+</p>
+<p>
+The elastic potential energy per unit volume ($u$) is given by:
+</p>
+<p>
+$$u = \frac{1}{2} \sigma \epsilon$$
+</p>
+<p>
+where $\sigma$ is stress and $\epsilon$ is strain.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  8.5 Practical Applications of Elastic Behaviour
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Design of Metallic Ropes in Cranes
+</summary>
+<p>
+To lift a load of mass $M = 10\text{ tonnes} = 10^4\text{ kg}$ without exceeding the elastic limit of steel (yield strength $\sigma_y \approx 300 \times 10^6\text{ N m}^{-2}$):
+</p>
+<p>
+$$A \ge \frac{W}{\sigma_y} = \frac{Mg}{\sigma_y} = \frac{10^4\text{ kg} \times 9.8\text{ m s}^{-2}}{300 \times 10^6\text{ N m}^{-2}} = 3.3 \times 10^{-4}\text{ m}^2$$
+</p>
+<p>
+  This corresponds to a single solid wire of radius $r \approx 1\text{ cm}$. To ensure a safety factor of 10, a thicker rope of radius
+  <strong>
+  3 cm
+</strong>
+is recommended. Ropes are made of multiple braided thin wires to ensure flexibility and strength.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Bending of Beams and Structural Buckling
+</summary>
+<p>
+A beam of length $l$, breadth $b$, and depth $d$, supported at its ends and loaded at the centre with a load $W$, sags by an amount $\delta$:
+</p>
+<p>
+$$\delta = \frac{W l^3}{4 b d^3 Y}$$
+</p>
+<p>
+To minimize sagging ($\delta$):
+</p>
+<ul>
+  <li>
+  Use a material with a large Young's modulus ($Y$).
+</li>
+<li>
+Increasing depth ($d$) is highly effective since $\delta \propto d^{-3}$.
+</li>
+<li>
+  However, deep narrow beams can bend sideways under load, a failure mode known as
+  <span class="keyword">
+  buckling
+</span>
+.
+</li>
+<li>
+  To prevent buckling while minimizing weight and cost, beams are designed with an
+  <strong>
+  I-shaped cross-section
+</strong>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Maximum Height of Mountains on Earth
+</summary>
+<p>
+The maximum height of a mountain on Earth is limited by the elastic properties of rocks at its base. The shear stress at the bottom of a mountain of height $h$ and density $\rho$ is approximately $h \rho g$.
+</p>
+<p>
+For typical rock, the elastic limit is $30 \times 10^7\text{ N m}^{-2}$ and density $\rho \approx 3 \times 10^3\text{ kg m}^{-3}$:
+</p>
+<p>
+$$h \rho g \le 30 \times 10^7\text{ N m}^{-2}$$
+</p>
+<p>
+$$h \le \frac{30 \times 10^7\text{ N m}^{-2}}{3 \times 10^3\text{ kg m}^{-3} \times 10\text{ m s}^{-2}} = 10\text{ km}$$
+</p>
+<p>
+  This explains why the height of Mt. Everest (~8.8 km) is close to the theoretical limit of
+  <strong>
+  10 km
+</strong>
+.
+</p>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 8
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "11-2-chapter-09-mechanical-properties-of-fluids.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
