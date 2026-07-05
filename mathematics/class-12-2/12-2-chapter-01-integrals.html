@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 12 (Book 2) — Chapter 1: INTEGRALS
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 2) — Chapter 1: INTEGRALS
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Integral Calculus
+</summary>
+<p>
+  Differential Calculus is centered on the concept of the derivative, which was originally motivated by the problem of defining tangent lines to the graphs of functions and calculating their slopes. Conversely,
+  <span class="keyword">
+  Integral Calculus
+</span>
+is motivated by the problem of defining and calculating the area of the region bounded by the graph of functions.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Gottfried Wilhelm Leibniz (1646 - 1716)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Co-inventor of Calculus alongside Sir Isaac Newton. He introduced the modern integral symbol $\int$ (representing a long 'S' for
+  <em>
+  summa
+</em>
+) and the $dx$ notation for differentials in 1675.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Developed the systematic notation and rules of calculus, including the product rule (Leibniz's rule) and the concept of integration as the inverse of differentiation.
+</li>
+</ul>
+</div>
+<p>
+The development of integral calculus arises out of the efforts of solving two primary types of problems:
+</p>
+<ul>
+  <li>
+    The problem of finding a function whenever its derivative is given. This leads to the
+    <span class="keyword">
+    indefinite integral
+  </span>
+  .
+</li>
+<li>
+  The problem of finding the area bounded by the graph of a function under certain conditions. This leads to the
+  <span class="keyword">
+  definite integral
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Integration as an Inverse Process of Differentiation
+</summary>
+<p>
+  Integration is the inverse process of differentiation. Instead of differentiating a function, we are given the derivative of a function and asked to find its primitive, i.e., the original function. This process is called
+  <span class="keyword">
+  integration
+</span>
+or
+<span class="keyword">
+anti-differentiation
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Definition &amp; Notation
+</summary>
+<p>
+  If there is a function $F$ such that $\frac{d}{dx} F(x) = f(x)$, $\forall x \in I$, then for any arbitrary real number $C$ (called the
+  <span class="keyword">
+  constant of integration
+</span>
+):
+</p>
+$$\frac{d}{dx} [F(x) + C] = f(x), x \in I$$
+<p>
+We introduce the symbol $\int f(x) dx$ to represent the entire class of anti-derivatives, read as the indefinite integral of $f$ with respect to $x$. Symbolically, we write:
+</p>
+$$\int f(x) dx = F(x) + C$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Terminology and Symbols
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Symbols/Terms/Phrases
+    </th>
+    <th>
+    Meaning
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\int f(x) dx$
+  </td>
+  <td>
+  Integral of $f$ with respect to $x$
+</td>
+</tr>
+<tr>
+  <td>
+  $f(x)$ in $\int f(x) dx$
+</td>
+<td>
+Integrand
+</td>
+</tr>
+<tr>
+  <td>
+  $x$ in $\int f(x) dx$
+</td>
+<td>
+Variable of integration
+</td>
+</tr>
+<tr>
+  <td>
+  Integrate
+</td>
+<td>
+Find the integral
+</td>
+</tr>
+<tr>
+  <td>
+  An integral of $f$
+</td>
+<td>
+A function $F$ such that $F'(x) = f(x)$
+</td>
+</tr>
+<tr>
+  <td>
+  Integration
+</td>
+<td>
+The process of finding the integral
+</td>
+</tr>
+<tr>
+  <td>
+  Constant of Integration
+</td>
+<td>
+Any real number $C$, considered as a constant function
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Formulae
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Derivatives
+    </th>
+    <th>
+    Integrals (Anti-derivatives)
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\frac{d}{dx}\left(\frac{x^{n+1}}{n+1}\right) = x^n$
+  </td>
+  <td>
+  $\int x^n dx = \frac{x^{n+1}}{n+1} + C$, $n \neq -1$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(x) = 1$
+</td>
+<td>
+$\int dx = x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(\sin x) = \cos x$
+</td>
+<td>
+$\int \cos x dx = \sin x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(-\cos x) = \sin x$
+</td>
+<td>
+$\int \sin x dx = -\cos x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(\tan x) = \sec^2 x$
+</td>
+<td>
+$\int \sec^2 x dx = \tan x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(-\cot x) = \csc^2 x$
+</td>
+<td>
+$\int \csc^2 x dx = -\cot x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(\sec x) = \sec x \tan x$
+</td>
+<td>
+$\int \sec x \tan x dx = \sec x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(-\csc x) = \csc x \cot x$
+</td>
+<td>
+$\int \csc x \cot x dx = -\csc x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(\sin^{-1} x) = \frac{1}{\sqrt{1-x^2}}$
+</td>
+<td>
+$\int \frac{dx}{\sqrt{1-x^2}} = \sin^{-1} x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(-\cos^{-1} x) = \frac{1}{\sqrt{1-x^2}}$
+</td>
+<td>
+$\int \frac{dx}{\sqrt{1-x^2}} = -\cos^{-1} x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(\tan^{-1} x) = \frac{1}{1+x^2}$
+</td>
+<td>
+$\int \frac{dx}{1+x^2} = \tan^{-1} x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(e^x) = e^x$
+</td>
+<td>
+$\int e^x dx = e^x + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}(\log |x|) = \frac{1}{x}$
+</td>
+<td>
+$\int \frac{1}{x} dx = \log |x| + C$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{d}{dx}\left(\frac{a^x}{\log a}\right) = a^x$
+</td>
+<td>
+$\int a^x dx = \frac{a^x}{\log a} + C$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Indefinite Integrals
+</summary>
+<ol>
+  <li>
+    <strong>
+    Property I:
+  </strong>
+  The process of differentiation and integration are inverses of each other:$$\frac{d}{dx} \int f(x) dx = f(x) \quad \text{and} \quad \int f'(x) dx = f(x) + C$$
+</li>
+<li>
+  <strong>
+  Property II:
+</strong>
+Two indefinite integrals with the same derivative lead to the same family of curves and are equivalent.
+</li>
+<li>
+  <strong>
+  Property III:
+</strong>
+The integral of the sum of two functions is equal to the sum of their integrals:$$\int [f(x) + g(x)] dx = \int f(x) dx + \int g(x) dx$$
+</li>
+<li>
+  <strong>
+  Property IV:
+</strong>
+For any real number $k$:$$\int k f(x) dx = k \int f(x) dx$$
+</li>
+<li>
+  <strong>
+  Property V:
+</strong>
+Generalization to a finite number of functions:$$\int [k_1 f_1(x) + k_2 f_2(x) + \dots + k_n f_n(x)] dx = k_1 \int f_1(x) dx + k_2 \int f_2(x) dx + \dots + k_n \int f_n(x) dx$$
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the integral $\int \frac{x^3 - 1}{x^2} dx$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Split the integrand into separate terms:$$\int \frac{x^3 - 1}{x^2} dx = \int \left( \frac{x^3}{x^2} - \frac{1}{x^2} \right) dx = \int (x - x^{-2}) dx$$
+</li>
+<li>
+Apply Property III to integrate term by term:$$\int x dx - \int x^{-2} dx$$
+</li>
+<li>
+Use the power rule $\int x^n dx = \frac{x^{n+1}}{n+1}$ for each term:$$\int x dx = \frac{x^2}{2} + C_1 \quad \text{and} \quad \int x^{-2} dx = \frac{x^{-1}}{-1} + C_2 = -\frac{1}{x} + C_2$$
+</li>
+<li>
+Combine the constants of integration into a single constant $C = C_1 - C_2$:$$\frac{x^2}{2} + \frac{1}{x} + C$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\frac{x^2}{2} + \frac{1}{x} + C$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Methods of Integration: Substitution &amp; Trigonometric Identities
+</summary>
+<p>
+  When integrals are not in standard forms, we use three prominent techniques to reduce them to standard forms:
+  <span class="keyword">
+  Integration by Substitution
+</span>
+,
+<span class="keyword">
+Integration using Partial Fractions
+</span>
+, and
+<span class="keyword">
+Integration by Parts
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Integration by Substitution
+</summary>
+<p>
+The given integral $\int f(x) dx$ can be transformed into another form by changing the independent variable $x$ to $t$ using the substitution $x = g(t)$:
+</p>
+$$dx = g'(t) dt \implies \int f(x) dx = \int f(g(t)) g'(t) dt$$
+<p>
+This method is highly effective when the integrand contains a function and its derivative.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Trigonometric Integrals Derived by Substitution
+</summary>
+<ul>
+  <li>
+    <strong>
+    Tangent:
+  </strong>
+  $\int \tan x dx = \log |\sec x| + C$
+</li>
+<li>
+  <strong>
+  Cotangent:
+</strong>
+$\int \cot x dx = \log |\sin x| + C$
+</li>
+<li>
+  <strong>
+  Secant:
+</strong>
+$\int \sec x dx = \log |\sec x + \tan x| + C$
+</li>
+<li>
+  <strong>
+  Cosecant:
+</strong>
+$\int \csc x dx = \log |\csc x - \cot x| + C$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Integration using Trigonometric Identities
+</summary>
+<p>
+When the integrand involves trigonometric functions, we use standard trigonometric identities to simplify the expression into integrable forms:
+</p>
+<ul>
+  <li>
+  $\cos^2 x = \frac{1 + \cos 2x}{2}$
+</li>
+<li>
+$\sin^2 x = \frac{1 - \cos 2x}{2}$
+</li>
+<li>
+$\sin x \cos y = \frac{1}{2} [\sin(x+y) + \sin(x-y)]$
+</li>
+<li>
+$\cos x \cos y = \frac{1}{2} [\cos(x+y) + \cos(x-y)]$
+</li>
+<li>
+$\sin x \sin y = \frac{1}{2} [\cos(x-y) - \cos(x+y)]$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Integrals of Some Particular Functions
+</summary>
+<p>
+We establish standard formulae for several rational and irrational integrands that frequently appear in calculus applications:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Formulae List
+</summary>
+<ol>
+  <li>
+  $$\int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \log \left| \frac{x-a}{x+a} \right| + C$$
+</li>
+<li>
+$$\int \frac{dx}{a^2 - x^2} = \frac{1}{2a} \log \left| \frac{a+x}{a-x} \right| + C$$
+</li>
+<li>
+$$\int \frac{dx}{x^2 + a^2} = \frac{1}{a} \tan^{-1} \frac{x}{a} + C$$
+</li>
+<li>
+$$\int \frac{dx}{\sqrt{x^2 - a^2}} = \log \left| x + \sqrt{x^2 - a^2} \right| + C$$
+</li>
+<li>
+$$\int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1} \frac{x}{a} + C$$
+</li>
+<li>
+$$\int \frac{dx}{\sqrt{x^2 + a^2}} = \log \left| x + \sqrt{x^2 + a^2} \right| + C$$
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Methods for Quadratic Forms
+</summary>
+<p>
+To evaluate integrals of the form $\int \frac{dx}{ax^2 + bx + c}$ or $\int \frac{dx}{\sqrt{ax^2 + bx + c}}$, we express the quadratic polynomial as a sum or difference of squares by completing the square:
+</p>
+$$ax^2 + bx + c = a \left[ \left( x + \frac{b}{2a} \right)^2 + \left( \frac{c}{a} - \frac{b^2}{4a^2} \right) \right]$$
+<p>
+For integrals of the form $\int \frac{px+q}{ax^2 + bx + c} dx$, we express the numerator as a linear combination of the derivative of the denominator and a constant:
+</p>
+$$px + q = A \frac{d}{dx}(ax^2 + bx + c) + B = A(2ax + b) + B$$
+</details>
+</blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the integral $\int \frac{dx}{x^2 - 6x + 13}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Complete the square for the denominator:$$x^2 - 6x + 13 = (x^2 - 6x + 9) + 4 = (x - 3)^2 + 2^2$$
+</li>
+<li>
+Substitute $t = x - 3 \implies dt = dx$:$$\int \frac{dx}{x^2 - 6x + 13} = \int \frac{dt}{t^2 + 2^2}$$
+</li>
+<li>
+Apply the standard formula $\int \frac{dt}{t^2 + a^2} = \frac{1}{a} \tan^{-1} \frac{t}{a} + C$ with $a = 2$:$$\frac{1}{2} \tan^{-1} \frac{t}{2} + C$$
+</li>
+<li>
+Substitute back $t = x - 3$:$$\frac{1}{2} \tan^{-1} \left( \frac{x-3}{2} \right) + C$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\frac{1}{2} \tan^{-1} \left( \frac{x-3}{2} \right) + C$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Integration by Partial Fractions
+</summary>
+<p>
+  A rational function is defined as the ratio of two polynomials: $\frac{P(x)}{Q(x)}$, where $Q(x) \neq 0$. If the degree of $P(x)$ is less than the degree of $Q(x)$, it is a
+  <span class="keyword">
+  proper rational function
+</span>
+; otherwise, it is
+<span class="keyword">
+improper
+</span>
+and must be reduced by long division.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Decomposition Templates
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Form of the Rational Function
+    </th>
+    <th>
+    Form of the Partial Fraction
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\frac{px+q}{(x-a)(x-b)}, a \neq b$
+  </td>
+  <td>
+  $\frac{A}{x-a} + \frac{B}{x-b}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{px+q}{(x-a)^2}$
+</td>
+<td>
+$\frac{A}{x-a} + \frac{B}{(x-a)^2}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{px^2+qx+r}{(x-a)(x-b)(x-c)}$
+</td>
+<td>
+$\frac{A}{x-a} + \frac{B}{x-b} + \frac{C}{x-c}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{px^2+qx+r}{(x-a)^2(x-b)}$
+</td>
+<td>
+$\frac{A}{x-a} + \frac{B}{(x-a)^2} + \frac{C}{x-b}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\frac{px^2+qx+r}{(x-a)(x^2+bx+c)}$
+</td>
+<td>
+$\frac{A}{x-a} + \frac{Bx+C}{x^2+bx+c}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Integration by Parts
+</summary>
+<p>
+  The method of
+  <span class="keyword">
+  Integration by Parts
+</span>
+is used to integrate the product of two functions. It is derived directly from the product rule of differentiation.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Integration by Parts Formula
+</summary>
+<p>
+For two differentiable functions $u$ and $v$ of a single variable $x$:
+</p>
+$$\int u v dx = u \int v dx - \int \left[ \frac{du}{dx} \int v dx \right] dx$$
+<p>
+  To choose the first function $u$, we generally follow the
+  <strong>
+  ILATE
+</strong>
+priority rule:
+</p>
+<ol>
+  <li>
+    <strong>
+    I:
+  </strong>
+  Inverse Trigonometric functions (e.g., $\sin^{-1} x$)
+</li>
+<li>
+  <strong>
+  L:
+</strong>
+Logarithmic functions (e.g., $\log x$)
+</li>
+<li>
+  <strong>
+  A:
+</strong>
+Algebraic functions (e.g., $x^n$)
+</li>
+<li>
+  <strong>
+  T:
+</strong>
+Trigonometric functions (e.g., $\sin x$)
+</li>
+<li>
+  <strong>
+  E:
+</strong>
+Exponential functions (e.g., $e^x$)
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Special Integrals of the Type $\int e^x [f(x) + f'(x)] dx$
+</summary>
+<p>
+A highly useful theorem states that:
+</p>
+$$\int e^x [f(x) + f'(x)] dx = e^x f(x) + C$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Three More Special Irrational Integrals
+</summary>
+<ul>
+  <li>
+  $$\int \sqrt{x^2 - a^2} dx = \frac{x}{2}\sqrt{x^2 - a^2} - \frac{a^2}{2}\log|x + \sqrt{x^2 - a^2}| + C$$
+</li>
+<li>
+$$\int \sqrt{x^2 + a^2} dx = \frac{x}{2}\sqrt{x^2 + a^2} + \frac{a^2}{2}\log|x + \sqrt{x^2 + a^2}| + C$$
+</li>
+<li>
+$$\int \sqrt{a^2 - x^2} dx = \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\frac{x}{a} + C$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Definite Integrals &amp; Fundamental Theorem of Calculus
+</summary>
+<p>
+  A
+  <span class="keyword">
+  definite integral
+</span>
+is denoted by $\int_a^b f(x) dx$, where $a$ is the lower limit and $b$ is the upper limit. Unlike indefinite integrals, a definite integral has a unique numerical value.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Area Function
+</summary>
+<p>
+  If $f$ is a continuous non-negative function on $[a, b]$, then the integral $\int_a^x f(t) dt$ represents the area of the region bounded by the curve $y = f(x)$, the ordinates $t = a$ and $t = x$, and the $x$-axis. This is called the
+  <span class="keyword">
+  area function
+</span>
+$A(x)$:
+</p>
+$$A(x) = \int_a^x f(t) dt$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  First Fundamental Theorem of Integral Calculus
+</summary>
+<p>
+Let $f$ be a continuous function on the closed interval $[a, b]$ and let $A(x)$ be the area function. Then:
+</p>
+$$A'(x) = f(x), \quad \forall x \in [a, b]$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Second Fundamental Theorem of Integral Calculus
+</summary>
+<p>
+Let $f$ be a continuous function defined on the closed interval $[a, b]$ and let $F$ be any anti-derivative of $f$ (i.e., $F'(x) = f(x)$). Then:
+</p>
+$$\int_a^b f(x) dx = [F(x)]_a^b = F(b) - F(a)$$
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Properties of Definite Integrals
+</summary>
+<p>
+These properties are essential for simplifying and evaluating complex definite integrals:
+</p>
+<ul>
+  <li>
+    <strong>
+    $P_0$:
+  </strong>
+  $\int_a^b f(x) dx = \int_a^b f(t) dt$ (Change of variable does not affect the value)
+</li>
+<li>
+  <strong>
+  $P_1$:
+</strong>
+$\int_a^b f(x) dx = -\int_b^a f(x) dx$; in particular, $\int_a^a f(x) dx = 0$
+</li>
+<li>
+  <strong>
+  $P_2$:
+</strong>
+$\int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx$ (Interval splitting property)
+</li>
+<li>
+  <strong>
+  $P_3$:
+</strong>
+$\int_a^b f(x) dx = \int_a^b f(a+b-x) dx$
+</li>
+<li>
+  <strong>
+  $P_4$:
+</strong>
+$\int_0^a f(x) dx = \int_0^a f(a-x) dx$ (A special case of $P_3$)
+</li>
+<li>
+  <strong>
+  $P_5$:
+</strong>
+$\int_0^{2a} f(x) dx = \int_0^a f(x) dx + \int_0^a f(2a-x) dx$
+</li>
+<li>
+  <strong>
+  $P_6$:
+</strong>
+$\int_0^{2a} f(x) dx = 2\int_0^a f(x) dx$ if $f(2a-x) = f(x)$, and $0$ if $f(2a-x) = -f(x)$
+</li>
+<li>
+  <strong>
+  $P_7$:
+</strong>
+For symmetric intervals $[-a, a]$:
+<ul>
+  <li>
+    $\int_{-a}^a f(x) dx = 2\int_0^a f(x) dx$ if $f$ is an
+    <span class="keyword">
+    even function
+  </span>
+  (i.e., $f(-x) = f(x)$)
+</li>
+<li>
+  $\int_{-a}^a f(x) dx = 0$ if $f$ is an
+  <span class="keyword">
+  odd function
+</span>
+(i.e., $f(-x) = -f(x)$)
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "12-2-chapter-02-application-of-integrals.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

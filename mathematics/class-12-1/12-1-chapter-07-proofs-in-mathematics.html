@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 12 (Book 1) — Chapter 7: Proofs in Mathematics</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 12 (Book 1) — Chapter 7: Proofs in Mathematics</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">Proofs in Mathematics: Introduction &amp; Foundations</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle / Epigraph: Vladimir Arnold</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> Vladimir Arnold (1937–2010) was one of the most influential mathematicians of the 20th century, making major contributions to dynamical systems theory, catastrophe theory, classical mechanics, and singularity theory.</li>
+        <li><strong>Theoretical Foundations:</strong> He famously remarked: <em>"Proofs are to Mathematics what calligraphy is to poetry. Mathematical works do consist of proofs just as poems do consist of characters."</em> This highlights the aesthetic and structural necessity of rigorous proof in mathematical discourse.</li>
+      </ul>
+    </div>
+    <p>In mathematical logic, we build upon concepts of a <span class="keyword">statement</span>, <span class="keyword">compound statement</span>, <span class="keyword">negation</span>, <span class="keyword">converse</span>, <span class="keyword">contrapositive</span>, <span class="keyword">axioms</span>, <span class="keyword">conjectures</span>, <span class="keyword">theorems</span>, and <span class="keyword">deductive reasoning</span>. Here, we systematically analyze the various methods of proving mathematical propositions.</p>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">What is a Proof?</summary>
+    <p>A <span class="keyword">proof</span> of a mathematical statement consists of a sequence of statements, each being justified by a definition, an axiom, or a previously established proposition, using only allowed logical rules of deduction.</p>
+    <p>Each proof is a chain of deductive arguments, each having its premises and conclusions. Proofs are broadly classified into two categories:</p>
+    <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+      <table border="1" style="width:100%; border-collapse: collapse; margin: 10px 0;">
+        <thead>
+          <tr style="background-color: #f1f5f9;">
+            <th style="padding: 8px;">Proof Category</th>
+            <th style="padding: 8px;">Core Methodology</th>
+            <th style="padding: 8px;">Sub-types / Approaches</th>
+            <th style="padding: 8px;">Systemic Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 8px;"><strong>Direct Proof</strong></td>
+            <td style="padding: 8px;">Directly starts with the given hypothesis and deductively arrives at the conclusion.</td>
+            <td style="padding: 8px;">
+              <ul>
+                <li>Straightforward approach</li>
+                <li>Mathematical Induction</li>
+                <li>Proof by cases / exhaustion</li>
+              </ul>
+            </td>
+            <td style="padding: 8px;">Establishes truth directly from known premises.</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>Indirect Proof</strong></td>
+            <td style="padding: 8px;">Establishes truth by proving an equivalent proposition or disproving the negation.</td>
+            <td style="padding: 8px;">
+              <ul>
+                <li>Proof by contradiction</li>
+                <li>Proof by contrapositive</li>
+                <li>Proof by counterexample</li>
+              </ul>
+            </td>
+            <td style="padding: 8px;">Useful when direct derivation is complex or intractable.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Direct Proof Methods</summary>
+    <details class="sub-topic">
+      <summary class="sub-title">1. Straightforward Approach</summary>
+      <p>A chain of arguments leading directly from what is given or assumed, with the help of axioms, definitions, or already proved theorems, to what is to be proved using rules of logic ($p \Rightarrow r \Rightarrow s \Rightarrow \dots \Rightarrow q$).</p>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Show that if $x^2 - 5x + 6 = 0$, then $x = 3$ or $x = 2$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Given: $x^2 - 5x + 6 = 0$.</li>
+          <li>Factorize the quadratic expression: $(x - 3)(x - 2) = 0$ (replacing an expression by an equivalent expression).</li>
+          <li>Apply the zero-product property: $x - 3 = 0$ or $x - 2 = 0$ (from the established theorem $ab = 0 \Rightarrow a = 0$ or $b = 0$ for $a, b \in \mathbf{R}$).</li>
+          <li>Add equal quantities to both sides: $x - 3 + 3 = 0 + 3$ or $x - 2 + 2 = 0 + 2$.</li>
+          <li>Simplify using additive identity: $x = 3$ or $x = 2$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $x = 3$ or $x = 2$</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Prove that the function $f : \mathbf{R} \to \mathbf{R}$ defined by $f(x) = 2x + 5$ is one-one.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Assume $f(x_1) = f(x_2)$ for $x_1, x_2 \in \mathbf{R}$.</li>
+          <li>Substitute the function definition: $2x_1 + 5 = 2x_2 + 5$.</li>
+          <li>Subtract $5$ from both sides: $2x_1 + 5 - 5 = 2x_2 + 5 - 5 \Rightarrow 2x_1 = 2x_2$.</li>
+          <li>Divide both sides by $2$: $\frac{2}{2}x_1 = \frac{2}{2}x_2 \Rightarrow x_1 = x_2$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Since $f(x_1) = f(x_2) \Rightarrow x_1 = x_2$, the function $f$ is one-one.</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">2. Principle of Mathematical Induction</summary>
+      <p>A deductive strategy based on the following axiom for a subset $S \subset \mathbf{N}$:</p>
+      <ul>
+        <li>The natural number $1 \in S$.</li>
+        <li>If $k \in S \Rightarrow k + 1 \in S$, then $S = \mathbf{N}$.</li>
+      </ul>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> If $A = \begin{bmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{bmatrix}$, then prove that $A^n = \begin{bmatrix} \cos n\theta & \sin n\theta \\ -\sin n\theta & \cos n\theta \end{bmatrix}$ for all $n \in \mathbf{N}$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Base Case ($n = 1$):</strong> $P(1): A^1 = \begin{bmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{bmatrix}$, which is true.</li>
+          <li><strong>Inductive Step:</strong> Assume $P(k)$ is true for some $k \in \mathbf{N}$:$$A^k = \begin{bmatrix} \cos k\theta & \sin k\theta \\ -\sin k\theta & \cos k\theta \end{bmatrix}$$</li>
+          <li>Prove $P(k+1)$ is true:$$A^{k+1} = A^k \cdot A = \begin{bmatrix} \cos k\theta & \sin k\theta \\ -\sin k\theta & \cos k\theta \end{bmatrix} \begin{bmatrix} \cos \theta & \sin \theta \\ -\sin \theta & \cos \theta \end{bmatrix}$$</li>
+          <li>Apply matrix multiplication and trigonometric identities ($\cos A \cos B - \sin A \sin B = \cos(A+B)$):$$A^{k+1} = \begin{bmatrix} \cos k\theta \cos \theta - \sin k\theta \sin \theta & \cos k\theta \sin \theta + \sin k\theta \cos \theta \\ -\sin k\theta \cos \theta - \cos k\theta \sin \theta & -\sin k\theta \sin \theta + \cos k\theta \cos \theta \end{bmatrix}$$$$A^{k+1} = \begin{bmatrix} \cos(k+1)\theta & \sin(k+1)\theta \\ -\sin(k+1)\theta & \cos(k+1)\theta \end{bmatrix}$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> By the principle of mathematical induction, $P(n)$ is true for all $n \ge 1$.</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">3. Proof by Cases / Exhaustion</summary>
+      <p>This method is used when a statement $p \Rightarrow q$ can be split into several mutually exclusive and exhaustive cases $r, s, t$ such that $p = r \lor s \lor t$. If $r \Rightarrow q$, $s \Rightarrow q$, and $t \Rightarrow q$ are all proved, then $p \Rightarrow q$ is proved.</p>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Show that in any triangle $ABC$, $a = b \cos C + c \cos B$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Let $p$ be "ABC is any triangle" and $q$ be "$a = b \cos C + c \cos B$". We split $p$ into three cases based on the nature of $\angle C$:</li>
+          <li><strong>Case (i): $\angle C$ is acute.</strong> Draw perpendicular $AD \perp BC$. In right-angled $\triangle ADB$, $BD = c \cos B$. In right-angled $\triangle ADC$, $CD = b \cos C$. Since $D$ lies on $BC$, $a = BD + CD = c \cos B + b \cos C$.</li>
+          <li><strong>Case (ii): $\angle C$ is obtuse.</strong> Draw perpendicular $AD \perp BC$ produced. In right-angled $\triangle ADB$, $BD = c \cos B$. In right-angled $\triangle ADC$, $CD = b \cos(\angle ACD) = b \cos(180^\circ - C) = -b \cos C$. Since $C$ lies between $B$ and $D$, $a = BC = BD - CD = c \cos B - (-b \cos C) = c \cos B + b \cos C$.</li>
+          <li><strong>Case (iii): $\angle C$ is a right angle.</strong> Here, $C = 90^\circ$. Thus, $b \cos C = b \cos 90^\circ = 0$. In right-angled $\triangle ACB$, $a = BC = c \cos B$. Thus, $a = 0 + c \cos B = b \cos C + c \cos B$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> In all three cases, $a = b \cos C + c \cos B$ holds true.</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Indirect Proof Methods</summary>
+    <details class="sub-topic">
+      <summary class="sub-title">1. Proof by Contradiction</summary>
+      <p>To prove a statement $p$ is true, we start by assuming its negation $\sim p$ is true. We then logically deduce a conclusion that contradicts an established fact or our initial assumption. This forces the realization that $\sim p$ is false, hence $p$ must be true.</p>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Prove that the set of all prime numbers is infinite.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Assume the negation: The set of all prime numbers is finite, say $P = \{P_1, P_2, P_3, \dots, P_k\}$.</li>
+          <li>Construct a new integer: $N = (P_1 P_2 P_3 \dots P_k) + 1$.</li>
+          <li>Analyze $N$: Since $N &gt; P_i$ for all $i$, $N$ is not in the list of primes. If $N$ is prime, we have found a prime not in our finite list, which is a contradiction.</li>
+          <li>If $N$ is composite, it must have a prime factor $p$. If $p$ belongs to our list, then $p$ divides the product $P_1 P_2 \dots P_k$. Since $p$ also divides $N$, it must divide their difference $N - (P_1 P_2 \dots P_k) = 1$, which is impossible.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Our assumption is false; the set of prime numbers is infinite.</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">2. Proof by Contrapositive</summary>
+      <p>Instead of proving $p \Rightarrow q$, we prove its logically equivalent contrapositive statement: $\sim q \Rightarrow \sim p$.</p>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Prove that if $f(x) = 2x + 5$ is one-one, then $x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2)$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>We want to prove $p \Rightarrow q$, where $p: f(x_1) = f(x_2) \Rightarrow x_1 = x_2$.</li>
+          <li>The contrapositive is $\sim q \Rightarrow \sim p$, which is: "If $x_1 \neq x_2$, then $f(x_1) \neq f(x_2)$".</li>
+          <li>Start with $x_1 \neq x_2$. Multiply by $2$: $2x_1 \neq 2x_2$. Add $5$: $2x_1 + 5 \neq 2x_2 + 5$. This yields $f(x_1) \neq f(x_2)$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Since $\sim q \Rightarrow \sim p$ is proved, the equivalent statement $p \Rightarrow q$ is true.</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Show that "if a matrix $A$ is invertible, then $A$ is non-singular".</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Let $p$: "$A$ is invertible" and $q$: "$A$ is non-singular".</li>
+          <li>We prove the contrapositive: $\sim q \Rightarrow \sim p$ ("If $A$ is singular, then $A$ is not invertible").</li>
+          <li>Assume $A$ is singular, which means $|A| = 0$. The inverse formula is $A^{-1} = \frac{\text{adj } A}{|A|}$.</li>
+          <li>Since $|A| = 0$, the division is undefined, and $A^{-1}$ does not exist. Thus, $A$ is not invertible.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> The contrapositive is true; hence, if $A$ is invertible, then $A$ is non-singular.</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">3. Proof by Counterexample</summary>
+      <p>To disprove a universal mathematical conjecture or statement (e.g., "All $X$ have property $Y$"), finding a single specific instance where the statement fails is mathematically sufficient. This single instance is called a <span class="keyword">counterexample</span>.</p>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Disprove the conjecture: "For each $n \in \mathbf{N}$, $2^{2^n} + 1$ is a prime."</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Test $n = 1$: $2^{2^1} + 1 = 5$ (Prime).</li>
+          <li>Test $n = 2$: $2^{2^2} + 1 = 17$ (Prime).</li>
+          <li>Test $n = 3$: $2^{2^3} + 1 = 257$ (Prime).</li>
+          <li>Test $n = 5$: $2^{2^5} + 1 = 2^{32} + 1 = 4294967297$.</li>
+          <li>Factorize: $4294967297 = 641 \times 6700417$. Since it has factors other than $1$ and itself, it is composite.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> The value $n = 5$ serves as a counterexample, disproving the general statement.</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Disprove the statement: "Every continuous function is differentiable."</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Consider the absolute value function $\phi(x) = |x|$.</li>
+          <li>This function is continuous everywhere, including at $x = 0$.</li>
+          <li>Evaluate differentiability at $x=0$: Left-hand derivative is $-1$, right-hand derivative is $+1$. Since they do not match, the function is not differentiable at $x=0$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> The function $\phi(x) = |x|$ is a counterexample that disproves the statement.</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 12 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-06-application-of-derivatives.html"; } else { window.location.href = "12-1-chapter-08-mathematical-modelling.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

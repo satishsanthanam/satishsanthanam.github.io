@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 9: Straight Lines</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 9: Straight Lines</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">Introduction &amp; Historical Foundations</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: René Descartes (1596 - 1650)</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> Descartes published his landmark book <span class="keyword">La Géométrie</span> in 1637, introducing the systematic study of geometry using algebra.</li>
+        <li><strong>Theoretical Foundations:</strong> This work established the concept of the equation of a curve and analytical methods, giving rise to what is now known as <span class="keyword">analytical geometry</span> or coordinate geometry.</li>
+      </ul>
+    </div>
+    <p>Coordinate geometry combines algebra and geometry to study geometric figures in a two-dimensional coordinate plane. In earlier classes, basic concepts such as coordinate axes, coordinate planes, plotting points, and basic formulas were introduced.</p>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Recall of Basic Coordinate Geometry Formulas</summary>
+    <p>The following fundamental formulas form the basis of two-dimensional coordinate geometry:</p>
+    
+    <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+      <table border="1" style="width: 100%; min-width: 600px; border-collapse: collapse; margin: 10px 0;">
+        <thead>
+          <tr style="background-color: #f1f5f9;">
+            <th style="padding: 8px; text-align: left;">Formula Type</th>
+            <th style="padding: 8px; text-align: left;">Mathematical Expression</th>
+            <th style="padding: 8px; text-align: left;">Description &amp; Application Limits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 8px;"><strong>Distance Formula</strong></td>
+            <td style="padding: 8px;">$$PQ = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</td>
+            <td style="padding: 8px;">Calculates the straight-line distance between two points $P(x_1, y_1)$ and $Q(x_2, y_2)$.</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>Section Formula (Internal)</strong></td>
+            <td style="padding: 8px;">$$\left(\frac{mx_2 + nx_1}{m+n}, \frac{my_2 + ny_1}{m+n}\right)$$</td>
+            <td style="padding: 8px;">Finds the coordinates of a point dividing the line segment joining $P(x_1, y_1)$ and $Q(x_2, y_2)$ internally in the ratio $m:n$.</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>Mid-point Formula</strong></td>
+            <td style="padding: 8px;">$$\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$</td>
+            <td style="padding: 8px;">A special case of the section formula where the ratio $m = n$.</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>Area of a Triangle</strong></td>
+            <td style="padding: 8px;">$$\frac{1}{2} |x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)|$$</td>
+            <td style="padding: 8px;">Computes the area of a triangle with vertices $(x_1, y_1)$, $(x_2, y_2)$, and $(x_3, y_3)$.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Collinearity Condition</summary>
+      <p>Three points $A$, $B$, and $C$ are said to be <span class="keyword">collinear</span> (lying on the same straight line) if and only if the area of the triangle formed by them is zero:</p>
+      $$x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2) = 0$$
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Slope of a Line</summary>
+    <p>The <span class="keyword">slope</span> or <span class="keyword">gradient</span> of a non-vertical line is a measure of its steepness and direction.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Definition &amp; Inclination</summary>
+      <p>The angle $\theta$ ($0^\circ \le \theta \le 180^\circ$) made by a line $l$ with the positive direction of the $x$-axis, measured anticlockwise, is called the <span class="keyword">inclination</span> of the line.</p>
+      <ul>
+        <li>The slope $m$ of a line with inclination $\theta$ is defined as: $$m = \tan \theta, \quad \theta \neq 90^\circ$$</li>
+        <li>The slope of a horizontal line (parallel to or coinciding with the $x$-axis) is $0$ (since $\theta = 0^\circ$).</li>
+        <li>The slope of a vertical line (parallel to or coinciding with the $y$-axis) is undefined (since $\theta = 90^\circ$).</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Slope of a Line through Two Given Points</summary>
+      <p>If a non-vertical line passes through two distinct points $P(x_1, y_1)$ and $Q(x_2, y_2)$, its slope $m$ is given by:</p>
+      $$m = \frac{y_2 - y_1}{x_2 - x_1}$$
+      <p>This formula holds true whether the inclination angle $\theta$ is acute or obtuse.</p>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Parallelism and Perpendicularity Conditions</summary>
+      <ul>
+        <li><strong>Parallelism:</strong> Two non-vertical lines $l_1$ and $l_2$ with slopes $m_1$ and $m_2$ are parallel if and only if their slopes are equal: $$m_1 = m_2$$</li>
+        <li><strong>Perpendicularity:</strong> Two non-vertical lines $l_1$ and $l_2$ with slopes $m_1$ and $m_2$ are perpendicular if and only if their slopes are negative reciprocals of each other: $$m_1 m_2 = -1 \quad \text{or} \quad m_2 = -\frac{1}{m_1}$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Angle Between Two Lines</summary>
+      <p>The acute angle $\theta$ between two non-vertical intersecting lines $L_1$ and $L_2$ with slopes $m_1$ and $m_2$ is given by:</p>
+      $$\tan \theta = \left| \frac{m_2 - m_1}{1 + m_1 m_2} \right|, \quad 1 + m_1 m_2 \neq 0$$
+      <p>The obtuse angle $\phi$ between the lines can be found using $\phi = 180^\circ - \theta$.</p>
+    </details>
+
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Find the slope of the line passing through the points $(3, -2)$ and $(-1, 4)$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Identify the coordinates: $(x_1, y_1) = (3, -2)$ and $(x_2, y_2) = (-1, 4)$.</li>
+        <li>Apply the two-point slope formula: $m = \frac{y_2 - y_1}{x_2 - x_1}$.</li>
+        <li>Substitute the values: $m = \frac{4 - (-2)}{-1 - 3} = \frac{6}{-4} = -\frac{3}{2}$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $m = -\frac{3}{2}$</p>
+    </blockquote>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Various Forms of the Equation of a Line</summary>
+    <p>Depending on the given geometric conditions, the equation of a straight line can be expressed in several standard algebraic forms:</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">1. Horizontal and Vertical Lines</summary>
+      <ul>
+        <li><strong>Horizontal Line:</strong> A line parallel to the $x$-axis at a distance $a$ has the equation: $$y = a \quad \text{or} \quad y = -a$$</li>
+        <li><strong>Vertical Line:</strong> A line parallel to the $y$-axis at a distance $b$ has the equation: $$x = b \quad \text{or} \quad x = -b$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">2. Point-Slope Form</summary>
+      <p>The equation of a non-vertical line with slope $m$ passing through a fixed point $(x_0, y_0)$ is:</p>
+      $$y - y_0 = m(x - x_0)$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">3. Two-Point Form</summary>
+      <p>The equation of a non-vertical line passing through two given points $(x_1, y_1)$ and $(x_2, y_2)$ is:</p>
+      $$y - y_1 = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1)$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">4. Slope-Intercept Form</summary>
+      <ul>
+        <li><strong>With $y$-intercept $c$:</strong> If a line with slope $m$ cuts the $y$-axis at a distance $c$ from the origin (i.e., at $(0, c)$), its equation is: $$y = mx + c$$</li>
+        <li><strong>With $x$-intercept $d$:</strong> If a line with slope $m$ cuts the $x$-axis at a distance $d$ from the origin (i.e., at $(d, 0)$), its equation is: $$y = m(x - d)$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">5. Intercept Form</summary>
+      <p>If a line makes non-zero intercepts $a$ and $b$ on the $x$-axis and $y$-axis respectively, its equation is:</p>
+      $$\frac{x}{a} + \frac{y}{b} = 1$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">6. General Equation of a Line</summary>
+      <p>Any first-degree polynomial equation in two variables $x$ and $y$ represents a straight line. The <span class="keyword">general linear equation</span> is written as:</p>
+      $$Ax + By + C = 0$$
+      <p>where $A$ and $B$ are not zero simultaneously.</p>
+    </details>
+
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Find the equation of the line passing through the points $(1, -1)$ and $(3, 5)$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Identify the points: $(x_1, y_1) = (1, -1)$ and $(x_2, y_2) = (3, 5)$.</li>
+        <li>Use the two-point form: $y - y_1 = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1)$.</li>
+        <li>Substitute the coordinates: $y - (-1) = \frac{5 - (-1)}{3 - 1}(x - 1)$.</li>
+        <li>Simplify the slope: $\frac{6}{2} = 3$.</li>
+        <li>Write the equation: $y + 1 = 3(x - 1) \implies y + 1 = 3x - 3$.</li>
+        <li>Rearrange into general form: $3x - y - 4 = 0$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $3x - y - 4 = 0$</p>
+    </blockquote>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Distance of a Point From a Line</summary>
+    <p>This section covers the formulas for finding the perpendicular distance from a point to a line and the distance between two parallel lines.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Perpendicular Distance of a Point from a Line</summary>
+      <p>The perpendicular distance $d$ of a point $P(x_1, y_1)$ from a line $Ax + By + C = 0$ is given by:</p>
+      $$d = \frac{|Ax_1 + By_1 + C|}{\sqrt{A^2 + B^2}}$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Distance Between Two Parallel Lines</summary>
+      <p>Since parallel lines have the same slope, they can be represented in two ways:</p>
+      <ul>
+        <li><strong>Slope-intercept form:</strong> For lines $y = mx + c_1$ and $y = mx + c_2$: $$d = \frac{|c_1 - c_2|}{\sqrt{1 + m^2}}$$</li>
+        <li><strong>General form:</strong> For lines $Ax + By + C_1 = 0$ and $Ax + By + C_2 = 0$: $$d = \frac{|C_1 - C_2|}{\sqrt{A^2 + B^2}}$$</li>
+      </ul>
+    </details>
+
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Find the distance of the point $(3, -5)$ from the line $3x - 4y - 26 = 0$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Identify the parameters: $A = 3$, $B = -4$, $C = -26$, and $(x_1, y_1) = (3, -5)$.</li>
+        <li>Apply the perpendicular distance formula: $d = \frac{|Ax_1 + By_1 + C|}{\sqrt{A^2 + B^2}}$.</li>
+        <li>Substitute the values: $d = \frac{|3(3) + (-4)(-5) - 26|}{\sqrt{3^2 + (-4)^2}}$.</li>
+        <li>Calculate the numerator: $|9 + 20 - 26| = |3| = 3$.</li>
+        <li>Calculate the denominator: $\sqrt{9 + 16} = \sqrt{25} = 5$.</li>
+        <li>Compute the final distance: $d = \frac{3}{5}$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $d = \frac{3}{5}$</p>
+    </blockquote>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-08-sequences-and-series.html"; } else { window.location.href = "11-chapter-10-conic-sections.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

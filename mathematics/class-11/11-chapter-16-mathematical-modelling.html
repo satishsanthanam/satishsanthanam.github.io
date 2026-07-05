@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 16: Mathematical Modelling</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 16: Mathematical Modelling</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">Introduction &amp; Preliminaries</summary>
+    <p>Much of our progress in the last few centuries has made it necessary to apply mathematical methods to real-life problems arising from different fields such as Science, Finance, and Management. The process of translating a real-life problem into a mathematical form is called <span class="keyword">Mathematical Modelling</span>.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">The Core Concept of Mathematical Modelling</summary>
+      <p>A <span class="keyword">mathematical model</span> is a simplified representation of a real-world situation using mathematical symbols, equations, or geometric structures. It allows us to analyze, understand, and predict the behavior of complex systems.</p>
+      <ul>
+        <li><strong>Real-world Problem:</strong> The initial situation or question identified in the physical world.</li>
+        <li><strong>Mathematical Formulation:</strong> Translating the real-world parameters into mathematical variables, equations, or inequalities.</li>
+        <li><strong>Mathematical Solution:</strong> Solving the formulated mathematical equations.</li>
+        <li><strong>Interpretation &amp; Validation:</strong> Translating the mathematical solution back into the real-world context and testing its accuracy against observed data.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Illustrative Example: Measuring the Height of a Tower</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> The angle of elevation of the top of a tower from a point $O$ on the ground, which is $450\text{ m}$ away from the foot of the tower, is $40^\circ$. Find the height of the tower.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Step 1 (Understand the Problem):</strong> Let $h$ denote the height of the tower, $d$ denote the horizontal distance from point $O$ to the foot of the tower ($d = 450\text{ m}$), and $\theta$ denote the angle of elevation ($\theta = 40^\circ$).</li>
+          <li><strong>Step 2 (Formulation):</strong> Express the relationship geometrically using a right-angled triangle. The trigonometric ratio connecting height, distance, and angle of elevation is:$$\tan \theta = \frac{h}{d} \implies h = d \tan \theta$$</li>
+          <li><strong>Step 3 (Solution):</strong> Substitute the known values into the equation:$$h = 450 \times \tan 40^\circ \approx 450 \times 0.839 = 377.6\text{ m}$$</li>
+          <li><strong>Step 4 (Interpretation):</strong> The height of the tower is approximately $378\text{ m}$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Height of the tower $\approx 378\text{ m}$</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Historical Chronicle: The Seven Bridges of Königsberg</summary>
+      <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+        <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Leonhard Euler &amp; Graph Theory (1736)</strong></p>
+        <ul style="margin: 0; padding-left: 20px;">
+          <li><strong>Historical Context &amp; Milestones:</strong> Königsberg was a town on the Pregel River with two islands connected to the banks by seven bridges. Citizens tried to find a route that crossed each bridge exactly once. In 1736, Swiss mathematician Leonhard Euler proved that such a walk was impossible.</li>
+          <li><strong>Theoretical Foundations:</strong> Euler modeled the landmasses as <span class="keyword">vertices</span> (dots) and the bridges as <span class="keyword">arcs</span> (lines), creating a network. He defined <span class="keyword">odd vertices</span> (vertices with an odd number of connecting arcs). He proved that to trace a network without lifting the pen and crossing each arc exactly once, there can be at most two odd vertices (representing the start and end points). Since Königsberg had four odd vertices, the walk was mathematically impossible. This laid the foundation for modern <span class="keyword">graph theory</span>.</li>
+        </ul>
+      </div>
+      <p>In 1875, an extra bridge was built joining land areas A and B, changing the degree of these vertices to even. This left only two odd vertices (C and D), making it possible to traverse the town crossing each bridge exactly once.</p>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">What is Mathematical Modelling?</summary>
+    <p>Mathematical modelling is an attempt to study some part (or form) of a real-life problem in mathematical terms. It is a cyclic process involving four major steps: Understanding the problem, Formulation, Finding the solution, and Interpretation/Validation.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">The Four Steps of the Modelling Process</summary>
+      <ol>
+        <li><strong>Understanding the Problem:</strong> Clearly defining the real-world system, its boundaries, and the specific question to be answered.</li>
+        <li><strong>Formulation:</strong>
+          <ul>
+            <li><em>Identifying Relevant Factors:</em> Distinguishing between essential parameters and non-essential variables.</li>
+            <li><em>Mathematical Description:</em> Establishing equations, inequalities, or geometric relations between the chosen parameters.</li>
+          </ul>
+        </li>
+        <li><strong>Finding the Solution:</strong> Solving the mathematical equations using algebraic, calculus, or graphical methods.</li>
+        <li><strong>Interpretation and Validation:</strong> Translating the mathematical solution back to the physical context and comparing it with experimental data to measure the error.</li>
+      </ol>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Case Study 1: Period of Oscillation of a Simple Pendulum</summary>
+      <p>We model the motion of a simple pendulum consisting of a mass (bob) attached to a string of length $l$ under gravity $g$.</p>
+      <ul>
+        <li><strong>Formulation:</strong>
+          <ul>
+            <li>Through experimentation, we observe that the mass $m$ of the bob does not affect the period of oscillation $T$, whereas the length $l$ does.</li>
+            <li>Plotting experimental values of $T$ against $l$ yields a parabolic curve, suggesting the relation:$$T^2 = kl$$</li>
+            <li>The constant of proportionality is found to be $k = \frac{4\pi^2}{g}$, leading to the classical formula:$$T = 2\pi\sqrt{\frac{l}{g}}$$</li>
+          </ul>
+        </li>
+        <li><strong>Validation:</strong>
+          <p>We compare calculated values with experimental measurements:</p>
+          <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+            <table border="1" style="border-collapse: collapse; width: 100%; min-width: 500px; text-align: center; margin: 10px 0;">
+              <thead>
+                <tr style="background-color: #f2f2f2;">
+                  <th style="padding: 6px;">Length ($l$)</th>
+                  <th style="padding: 6px;">Calculated Period ($T$)</th>
+                  <th style="padding: 6px;">Experimental Period ($T$) [Mass = 385g]</th>
+                  <th style="padding: 6px;">Absolute Error</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 6px;">$225\text{ cm}$</td>
+                  <td style="padding: 6px;">$3.04\text{ s}$</td>
+                  <td style="padding: 6px;">$3.056\text{ s}$</td>
+                  <td style="padding: 6px;">$0.016\text{ s}$</td>
+                </tr>
+                <tr>
+                  <td style="padding: 6px;">$275\text{ cm}$</td>
+                  <td style="padding: 6px;">$3.36\text{ s}$</td>
+                  <td style="padding: 6px;">$3.371\text{ s}$</td>
+                  <td style="padding: 6px;">$0.011\text{ s}$</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The small error validates the model. The minor discrepancy arises from neglecting air resistance and the mass of the string.</p>
+        </li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Case Study 2: Linear Programming (Diet Optimization Problem)</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> A farmhouse uses at least $800\text{ kg}$ of special food daily, which is a mixture of corn and soyabean. The compositions and costs are given below:</p>
+        <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+          <table border="1" style="border-collapse: collapse; width: 100%; min-width: 500px; text-align: center; margin: 10px 0;">
+            <thead>
+              <tr style="background-color: #f2f2f2;">
+                <th style="padding: 6px;">Material</th>
+                <th style="padding: 6px;">Protein per Kg</th>
+                <th style="padding: 6px;">Fibre per Kg</th>
+                <th style="padding: 6px;">Cost per Kg</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 6px;">Corn</td>
+                <td style="padding: 6px;">$0.09$</td>
+                <td style="padding: 6px;">$0.02$</td>
+                <td style="padding: 6px;">Rs 10</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px;">Soyabean</td>
+                <td style="padding: 6px;">$0.60$</td>
+                <td style="padding: 6px;">$0.06$</td>
+                <td style="padding: 6px;">Rs 20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The dietary requirements stipulate at least 30% protein and at most 5% fibre. Determine the daily minimum cost of the food mix.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Step 1 (Identify Variables):</strong> Let $x$ be the amount of corn (in kg), $y$ be the amount of soyabean (in kg), and $z$ be the total cost.</li>
+          <li><strong>Step 2 (Formulate Objective Function &amp; Constraints):</strong>
+            <ul>
+              <li>Objective Function: Minimize $z = 10x + 20y$</li>
+              <li>Total food constraint: $x + y \ge 800$</li>
+              <li>Protein constraint (at least 30%):$$0.09x + 0.60y \ge 0.30(x + y) \implies 0.21x - 0.30y \le 0$$</li>
+              <li>Fibre constraint (at most 5%):$$0.02x + 0.06y \le 0.05(x + y) \implies 0.03x - 0.01y \ge 0$$</li>
+            </ul>
+          </li>
+          <li><strong>Step 3 (Solve Graphically):</strong> Plotting the inequalities on a coordinate plane, the feasible region is bounded, and the minimum value of $z$ occurs at the intersection point of the boundary lines:$$x = 470.6\text{ kg},\quad y = 329.4\text{ kg}$$$$z = 10(470.6) + 20(329.4) = 11294$$</li>
+          <li><strong>Step 4 (Interpretation):</strong> The minimum daily cost is Rs 11,294, achieved by mixing $470.6\text{ kg}$ of corn and $329.4\text{ kg}$ of soyabean.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Minimum Cost = Rs 11,294 at $(470.6, 329.4)$</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Case Study 3: Population Growth Model (Malthusian Model)</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Model the population of a country over time and predict the population after 10 years, given an initial population of $250,000,000$, a constant birth rate $b = 0.02$, and a constant death rate $d = 0.01$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Step 1 (Formulation):</strong> Let $P(t)$ be the population at year $t$. The population at year $t+1$ is given by:$$P(t+1) = P(t) + B(t) - D(t)$$where $B(t)$ is the number of births and $D(t)$ is the number of deaths.</li>
+          <li><strong>Step 2 (Introduce Rates):</strong> Define birth rate $b = \frac{B(t)}{P(t)}$ and death rate $d = \frac{D(t)}{P(t)}$. Substituting these:$$P(t+1) = P(t) + bP(t) - dP(t) = (1 + b - d)P(t)$$</li>
+          <li><strong>Step 3 (Derive General Solution):</strong> By induction:$$P(1) = (1 + b - d)P(0)$$$$P(2) = (1 + b - d)^2 P(0)$$$$P(t) = (1 + b - d)^t P(0) = P(0)r^t$$where $r = 1 + b - d$ is the <span class="keyword">growth rate</span> (or <span class="keyword">Malthusian parameter</span>).</li>
+          <li><strong>Step 4 (Calculate Solution):</strong> For $P(0) = 250,000,000$, $b = 0.02$, $d = 0.01 \implies r = 1.01$:$$P(10) = 250,000,000 \times (1.01)^{10} \approx 276,155,531.25$$</li>
+          <li><strong>Step 5 (Interpretation &amp; Validation):</strong> Since a fractional person ($0.25$) is physically impossible, we approximate the population to $276,155,531$. The model assumes constant rates and no migration, which are simplifications of real-world dynamics.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Predicted Population $\approx 276,155,531$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">The Mathematical Modelling Cycle</summary>
+    <p>Because real-world systems are highly complex, mathematical models are iterative. If a model's predictions do not match observed reality within acceptable limits, the cycle repeats with refined assumptions.</p>
+        <ul>
+      <li><strong>Start:</strong> Identify the real-world problem.</li>
+      <li><strong>Assumptions/Axioms:</strong> Simplify the situation by selecting key parameters and making reasonable assumptions.</li>
+      <li><strong>Formulation:</strong> Translate the simplified situation into mathematical equations or inequalities.</li>
+      <li><strong>Solution:</strong> Solve the mathematical equations.</li>
+      <li><strong>Interpretation:</strong> Translate the mathematical solution back into real-world terms.</li>
+      <li><strong>Validation:</strong> Test the interpreted solution against real-world observations.</li>
+      <li><strong>Decision (Satisfied?):</strong>
+        <ul>
+          <li>If <strong>Yes</strong>: Stop and use the model.</li>
+          <li>If <strong>No</strong>: Loop back to the Assumptions/Axioms step to refine the model.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 16</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-15-infinite-series.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

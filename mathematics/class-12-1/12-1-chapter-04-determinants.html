@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 12 (Book 1) — Chapter 4: Determinants</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 12 (Book 1) — Chapter 4: Determinants</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.1 &amp; 4.2 Introduction to Determinants</summary>
+    <p>To every square matrix $A = [a_{ij}]$ of order $n$, we can associate a unique number (real or complex) called the <span class="keyword">determinant</span> of the square matrix $A$. This function maps the set of square matrices $M$ to the set of numbers $K$ via $f(A) = k$, where $k = |A|$ or $\text{det } A$. Only <span class="keyword">square matrices</span> have determinants.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Determinant of Order 1 and Order 2</summary>
+      <ul>
+        <li><strong>Order 1:</strong> Let $A = [a]$ be a matrix of order 1. The determinant of $A$ is defined to be equal to $a$ (i.e., $|A| = a$).</li>
+        <li><strong>Order 2:</strong> Let $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}$ be a matrix of order $2 \times 2$. The determinant is defined as: $$\Delta = |A| = a_{11}a_{22} - a_{21}a_{12}$$</li>
+      </ul>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Evaluate the determinant $\Delta = \begin{vmatrix} x & x+1 \\ x-1 & x \end{vmatrix}$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Apply the $2 \times 2$ determinant formula: $\Delta = (x)(x) - (x+1)(x-1)$.</li>
+          <li>Expand the algebraic terms: $\Delta = x^2 - (x^2 - 1)$.</li>
+          <li>Simplify the expression: $\Delta = x^2 - x^2 + 1 = 1$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $\Delta = 1$</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Determinant of Order 3</summary>
+      <p>The determinant of a $3 \times 3$ matrix is evaluated by expanding it along any one of its three rows or three columns, reducing it to a linear combination of $2 \times 2$ determinants. The sign of each term is determined by the factor $(-1)^{i+j}$, where $i$ is the row index and $j$ is the column index.</p>
+      <p>Expansion along the first row ($R_1$):</p>
+      $$|A| = a_{11}(-1)^{1+1}\begin{vmatrix} a_{22} & a_{23} \\ a_{32} & a_{33} \end{vmatrix} + a_{12}(-1)^{1+2}\begin{vmatrix} a_{21} & a_{23} \\ a_{31} & a_{33} \end{vmatrix} + a_{13}(-1)^{1+3}\begin{vmatrix} a_{21} & a_{22} \\ a_{31} & a_{32} \end{vmatrix}$$
+      $$|A| = a_{11}(a_{22}a_{33} - a_{32}a_{23}) - a_{12}(a_{21}a_{33} - a_{31}a_{23}) + a_{13}(a_{21}a_{32} - a_{31}a_{22})$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Determinant Evaluation Reference Matrix</summary>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="border-collapse: collapse; width: 100%; min-width: 600px; text-align: left;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px;">Determinant Order</th>
+              <th style="padding: 8px;">Exact Mathematical Domain / Sign Properties</th>
+              <th style="padding: 8px;">Active Operation Formulas / Identities</th>
+              <th style="padding: 8px;">Systemic Role &amp; Evaluation Limits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;">Order $1 \times 1$</td>
+              <td style="padding: 8px;">Real or Complex scalar entries</td>
+              <td style="padding: 8px;">|A| = a_{11}</td>
+              <td style="padding: 8px;">Direct mapping of single element.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Order $2 \times 2$</td>
+              <td style="padding: 8px;">Real or Complex entries</td>
+              <td style="padding: 8px;">|A| = a_{11}a_{22} - a_{12}a_{21}</td>
+              <td style="padding: 8px;">Determines uniqueness of $2 \times 2$ linear systems.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Order $3 \times 3$</td>
+              <td style="padding: 8px;">Real or Complex entries; sign matrix: $\begin{bmatrix} + & - & + \\ - & + & - \\ + & - & + \end{bmatrix}$</td>
+              <td style="padding: 8px;">$|A| = \sum_{j=1}^3 (-1)^{i+j} a_{ij} M_{ij}$ (along row $i$)</td>
+              <td style="padding: 8px;">Evaluated along the row/column containing the maximum number of zeros for computational efficiency.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.3 Area of a Triangle</summary>
+    <p>The area of a triangle whose vertices are $(x_1, y_1)$, $(x_2, y_2)$, and $(x_3, y_3)$ can be expressed compactly as a determinant:</p>
+    $$\Delta = \frac{1}{2} \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix}$$
+    <details class="sub-topic">
+      <summary class="sub-title">Core Operational Rules</summary>
+      <ul>
+        <li>Since area is a positive quantity, we always take the absolute value of the determinant.</li>
+        <li>If the area is already given, use both positive and negative values of the determinant for calculations.</li>
+        <li>If the three points are collinear, the area of the triangle formed by them is $0$.</li>
+      </ul>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the equation of the line joining $A(1, 3)$ and $B(0, 0)$ using determinants, and find $k$ if $D(k, 0)$ is a point such that the area of triangle $ABD$ is $3$ square units.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Let $P(x, y)$ be any point on the line $AB$. Since $A, B, P$ are collinear, the area of triangle $ABP$ is zero: $$\frac{1}{2} \begin{vmatrix} x & y & 1 \\ 1 & 3 & 1 \\ 0 & 0 & 1 \end{vmatrix} = 0$$</li>
+          <li>Expand along $R_3$: $1(3x - y) = 0 \implies y = 3x$. This is the equation of line $AB$.</li>
+          <li>For point $D(k, 0)$, set the area of triangle $ABD$ to $\pm 3$: $$\frac{1}{2} \begin{vmatrix} 1 & 3 & 1 \\ 0 & 0 & 1 \\ k & 0 & 1 \end{vmatrix} = \pm 3$$</li>
+          <li>Expand along $R_2$: $-\frac{1}{2}(1)(0 - 3k) = \pm 3 \implies \frac{3k}{2} = \pm 3 \implies k = \pm 2$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Line equation: $y = 3x$; Parameter value: $k = \pm 2$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.4 Minors and Cofactors</summary>
+    <details class="sub-topic">
+      <summary class="sub-title">Definitions and Formulations</summary>
+      <ul>
+        <li><strong>Minor:</strong> The <span class="keyword">minor</span> $M_{ij}$ of an element $a_{ij}$ of a determinant is the determinant obtained by deleting its $i$-th row and $j$-th column. The minor of an element of a determinant of order $n$ ($n \ge 2$) is a determinant of order $n - 1$.</li>
+        <li><strong>Cofactor:</strong> The <span class="keyword">cofactor</span> $A_{ij}$ of an element $a_{ij}$ is defined as: $$A_{ij} = (-1)^{i+j} M_{ij}$$</li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary class="sub-title">Key Properties of Cofactors</summary>
+      <ul>
+        <li>The determinant of a matrix $A$ is the sum of the products of elements of any row (or column) with their corresponding cofactors: $$\Delta = a_{11}A_{11} + a_{12}A_{12} + a_{13}A_{13}$$</li>
+        <li>If elements of a row (or column) are multiplied with cofactors of any other row (or column), then their sum is zero: $$a_{11}A_{21} + a_{12}A_{22} + a_{13}A_{23} = 0$$</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.5 Adjoint and Inverse of a Matrix</summary>
+    <details class="sub-topic">
+      <summary class="sub-title">Adjoint of a Square Matrix</summary>
+      <p>The <span class="keyword">adjoint</span> of a square matrix $A = [a_{ij}]_{n \times n}$ is defined as the transpose of the cofactor matrix $[A_{ij}]_{n \times n}$, denoted by $\text{adj } A$.</p>
+      $$text{adj } A = \begin{bmatrix} A_{11} & A_{21} & A_{31} \\ A_{12} & A_{22} & A_{32} \\ A_{13} & A_{23} & A_{33} \end{bmatrix}$$
+      <p><em>Shortcut for $2 \times 2$ matrices:</em> Interchange the diagonal elements $a_{11}$ and $a_{22}$, and change the signs of the off-diagonal elements $a_{12}$ and $a_{21}$.</p>
+    </details>
+    <details class="sub-topic">
+      <summary class="sub-title">Singular and Non-Singular Matrices</summary>
+      <ul>
+        <li>A square matrix $A$ is said to be <span class="keyword">singular</span> if $|A| = 0$.</li>
+        <li>A square matrix $A$ is said to be <span class="keyword">non-singular</span> if $|A| \neq 0$.</li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary class="sub-title">Core Theorems</summary>
+      <ul>
+        <li><strong>Theorem 1:</strong> For any square matrix $A$ of order $n$, $A(\text{adj } A) = (\text{adj } A)A = |A|I$, where $I$ is the identity matrix of order $n$.</li>
+        <li><strong>Theorem 2:</strong> If $A$ and $B$ are non-singular matrices of the same order, then $AB$ and $BA$ are also non-singular matrices of the same order.</li>
+        <li><strong>Theorem 3:</strong> The determinant of the product of matrices is equal to the product of their respective determinants: $|AB| = |A||B|$.</li>
+        <li><strong>Theorem 4:</strong> A square matrix $A$ is invertible if and only if $A$ is a non-singular matrix. The inverse is given by: $$A^{-1} = \frac{1}{|A|} \text{adj } A$$</li>
+        <li><strong>Determinant of Adjoint:</strong> If $A$ is a square matrix of order $n$, then $|\text{adj } A| = |A|^{n-1}$.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.6 Applications of Determinants and Matrices</summary>
+    <p>Determinants and matrices are used to solve systems of linear equations in two or three variables and to check their consistency.</p>
+    <details class="sub-topic">
+      <summary class="sub-title">Consistency Criteria</summary>
+      <ul>
+        <li><strong>Consistent System:</strong> A system of equations is consistent if its solution (one or more) exists.</li>
+        <li><strong>Inconsistent System:</strong> A system of equations is inconsistent if its solution does not exist.</li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary class="sub-title">Matrix Method for Solving Systems of Equations</summary>
+      <p>Consider the system: $a_1x + b_1y + c_1z = d_1$, $a_2x + b_2y + c_2z = d_2$, $a_3x + b_3y + c_3z = d_3$. This can be written as $AX = B$, where:</p>
+      $$A = \begin{bmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{bmatrix}, \quad X = \begin{bmatrix} x \\ y \\ z \end{bmatrix}, \quad B = \begin{bmatrix} d_1 \\ d_2 \\ d_3 \end{bmatrix}$$
+      <ol>
+        <li><strong>Case I ($|A| \neq 0$):</strong> The system is consistent and has a unique solution given by: $$X = A^{-1}B$$</li>
+        <li><strong>Case II ($|A| = 0$):</strong> Calculate $(\text{adj } A)B$.
+          <ul>
+            <li>If $(\text{adj } A)B \neq O$, then the system has no solution and is inconsistent.</li>
+            <li>If $(\text{adj } A)B = O$, then the system is either consistent (infinitely many solutions) or inconsistent.</li>
+          </ul>
+        </li>
+      </ol>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Solve the system of equations using the matrix method: $2x + 5y = 1$, $3x + 2y = 7$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Write the system as $AX = B$: $$\begin{bmatrix} 2 & 5 \\ 3 & 2 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 1 \\ 7 \end{bmatrix}$$</li>
+          <li>Compute $|A| = (2)(2) - (5)(3) = 4 - 15 = -11$. Since $|A| \neq 0$, a unique solution exists.</li>
+          <li>Find $\text{adj } A$ by interchanging diagonal elements and changing signs of off-diagonals: $$\text{adj } A = \begin{bmatrix} 2 & -5 \\ -3 & 2 \end{bmatrix}$$</li>
+          <li>Calculate $A^{-1} = \frac{1}{|A|} \text{adj } A = -\frac{1}{11} \begin{bmatrix} 2 & -5 \\ -3 & 2 \end{bmatrix}$.</li>
+          <li>Solve for $X = A^{-1}B$: $$X = -\frac{1}{11} \begin{bmatrix} 2 & -5 \\ -3 & 2 \end{bmatrix} \begin{bmatrix} 1 \\ 7 \end{bmatrix} = -\frac{1}{11} \begin{bmatrix} 2(1) - 5(7) \\ -3(1) + 2(7) \end{bmatrix} = -\frac{1}{11} \begin{bmatrix} -33 \\ 11 \end{bmatrix} = \begin{bmatrix} 3 \\ -1 \end{bmatrix}$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $x = 3, y = -1$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Historical Chronicle &amp; Summary</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Evolution of Determinants</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> The concept of determinants arose from solving systems of linear equations. Seki Kowa (Japan, 1683) and Leibniz (Europe, 1693) independently developed early forms. Laplace (1772) formulated the general expansion method using complementary minors.</li>
+        <li><strong>Theoretical Foundations:</strong> Cauchy (1812) first used the word 'determinant' in its modern sense and proved the multiplication theorem. Jacobi later popularized the notation and finalized its modern mathematical acceptance.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 12 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-03-matrices.html"; } else { window.location.href = "12-1-chapter-05-continuity-and-differentiability.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

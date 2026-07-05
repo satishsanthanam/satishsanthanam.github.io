@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 13: Statistics</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 13: Statistics</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">Introduction &amp; Concept of Dispersion</summary>
+    <p>Statistics deals with the collection, analysis, interpretation, and presentation of numerical data. While <span class="keyword">measures of central tendency</span> (mean, median, and mode) provide a representative value around which data points cluster, they are insufficient to describe the spread or variability of the observations.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Limitations of Central Tendency</summary>
+      <p>Two datasets can have the exact same mean and median but completely different distributions. Consider the runs scored by two batsmen over ten matches:</p>
+      <ul>
+        <li><strong>Batsman A:</strong> $30, 91, 0, 64, 42, 80, 30, 5, 117, 71$ (Mean = $53$, Median = $53$)</li>
+        <li><strong>Batsman B:</strong> $53, 46, 48, 50, 53, 53, 58, 60, 57, 52$ (Mean = $53$, Median = $53$)</li>
+      </ul>
+      <p>Batsman B is highly consistent, with scores clustered tightly around the mean, whereas Batsman A is highly volatile, with scores widely scattered. To quantify this variability, we require <span class="keyword">measures of dispersion</span>.</p>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Range</summary>
+      <p>The simplest measure of dispersion is the <span class="keyword">Range</span>, defined as the difference between the maximum and minimum values in a dataset:</p>
+      $$\text{Range} = \text{Maximum value} - \text{Minimum value}$$
+      <ul>
+        <li><strong>Range of Batsman A:</strong> $117 - 0 = 117$</li>
+        <li><strong>Range of Batsman B:</strong> $60 - 46 = 14$</li>
+      </ul>
+      <p>While easy to calculate, the range is highly sensitive to outliers and does not reflect the dispersion of data points between the extremes.</p>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Mean Deviation</summary>
+    <p>The <span class="keyword">Mean Deviation</span> is the arithmetic mean of the absolute values of the deviations of observations from a measure of central tendency (usually the mean or median).</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Mean Deviation for Ungrouped Data</summary>
+      <p>Let $x_1, x_2, \dots, x_n$ be $n$ observations. The mean deviation about a central value $a$ is given by:</p>
+      $$\text{M.D.}(a) = \frac{1}{n} \sum_{i=1}^{n} |x_i - a|$$
+      <ul>
+        <li><strong>Mean Deviation about Mean ($\bar{x}$):</strong> $\text{M.D.}(\bar{x}) = \frac{1}{n} \sum_{i=1}^{n} |x_i - \bar{x}|$</li>
+        <li><strong>Mean Deviation about Median ($M$):</strong> $\text{M.D.}(M) = \frac{1}{n} \sum_{i=1}^{n} |x_i - M|$</li>
+      </ul>
+      
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the mean deviation about the mean for the data: $6, 7, 10, 12, 13, 4, 8, 12$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Calculate the mean ($\bar{x}$): $$\bar{x} = \frac{6 + 7 + 10 + 12 + 13 + 4 + 8 + 12}{8} = \frac{72}{8} = 9$$</li>
+          <li>Find the absolute deviations $|x_i - \bar{x}|$: $$|6-9|, |7-9|, |10-9|, |12-9|, |13-9|, |4-9|, |8-9|, |12-9| = 3, 2, 1, 3, 4, 5, 1, 3$$</li>
+          <li>Sum the absolute deviations: $$\sum_{i=1}^{8} |x_i - \bar{x}| = 3 + 2 + 1 + 3 + 4 + 5 + 1 + 3 = 22$$</li>
+          <li>Compute the Mean Deviation: $$\text{M.D.}(\bar{x}) = \frac{22}{8} = 2.75$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $\text{M.D.}(\bar{x}) = 2.75$</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Mean Deviation for Grouped Data</summary>
+      <p>For grouped data, observations $x_i$ occur with corresponding frequencies $f_i$.</p>
+      <ul>
+        <li><strong>Discrete Frequency Distribution:</strong> $$\text{M.D.}(\bar{x}) = \frac{1}{N} \sum_{i=1}^{n} f_i |x_i - \bar{x}|, \quad \text{where } N = \sum_{i=1}^{n} f_i$$ $$\text{M.D.}(M) = \frac{1}{N} \sum_{i=1}^{n} f_i |x_i - M|$$</li>
+        <li><strong>Continuous Frequency Distribution:</strong> Classes are converted to mid-points $x_i$, and the same discrete formulas are applied. The median $M$ is calculated using: $$M = l + \left(\frac{\frac{N}{2} - C}{f}\right) \times h$$ where $l$ is the lower limit of the median class, $C$ is the cumulative frequency of the preceding class, $f$ is the frequency of the median class, and $h$ is the class width.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Limitations of Mean Deviation</summary>
+      <ul>
+        <li>The absolute value mathematical operation $|x_i - a|$ is not easily subjected to further algebraic treatment.</li>
+        <li>If the degree of variability in a series is very high, the median may not remain a representative central tendency, making the mean deviation about the median unreliable.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Variance and Standard Deviation</summary>
+    <p>To overcome the algebraic limitations of absolute values, we square the deviations. The mean of the squared deviations is called the <span class="keyword">Variance</span>, and its positive square root is the <span class="keyword">Standard Deviation</span> ($\sigma$).</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Ungrouped Data Formulas</summary>
+      <ul>
+        <li><strong>Variance ($\sigma^2$):</strong> $$\sigma^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2$$</li>
+        <li><strong>Standard Deviation ($\sigma$):</strong> $$\sigma = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2}$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Grouped Data Formulas</summary>
+      <ul>
+        <li><strong>Variance ($\sigma^2$):</strong> $$\sigma^2 = \frac{1}{N} \sum_{i=1}^{n} f_i (x_i - \bar{x})^2$$</li>
+        <li><strong>Standard Deviation ($\sigma$):</strong> $$\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{n} f_i (x_i - \bar{x})^2}$$</li>
+        <li><strong>Alternative Computational Formula:</strong> $$\sigma = \frac{1}{N} \sqrt{N \sum f_i x_i^2 - \left(\sum f_i x_i\right)^2}$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Shortcut Method (Step-Deviation)</summary>
+      <p>When mid-points $x_i$ or frequencies $f_i$ are large, we use step-deviations $y_i = \frac{x_i - A}{h}$, where $A$ is an assumed mean and $h$ is the class width.</p>
+      <ul>
+        <li><strong>Mean:</strong> $\bar{x} = A + h \bar{y}$</li>
+        <li><strong>Variance ($\sigma_x^2$):</strong> $$\sigma_x^2 = \frac{h^2}{N^2} \left[ N \sum_{i=1}^{n} f_i y_i^2 - \left(\sum_{i=1}^{n} f_i y_i\right)^2 \right]$$</li>
+        <li><strong>Standard Deviation ($\sigma_x$):</strong> $$\sigma_x = \frac{h}{N} \sqrt{N \sum_{i=1}^{n} f_i y_i^2 - \left(\sum_{i=1}^{n} f_i y_i\right)^2}$$</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Formula Reference Matrix &amp; Historical Chronicle</summary>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Core Formula Reference Matrix</summary>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="width:100%; min-width: 600px; border-collapse:collapse; text-align:left;">
+          <thead>
+            <tr style="background-color:#f2f2f2;">
+              <th style="padding: 8px;">Measure Type</th>
+              <th style="padding: 8px;">Ungrouped Data Formula</th>
+              <th style="padding: 8px;">Grouped Data Formula</th>
+              <th style="padding: 8px;">Key Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;"><strong>Mean Deviation (Mean)</strong></td>
+              <td style="padding: 8px;">$\frac{1}{n} \sum |x_i - \bar{x}|$</td>
+              <td style="padding: 8px;">$\frac{1}{N} \sum f_i |x_i - \bar{x}|$</td>
+              <td style="padding: 8px;">Ignores negative signs; simple but algebraically rigid.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Variance ($\sigma^2$)</strong></td>
+              <td style="padding: 8px;">$\frac{1}{n} \sum (x_i - \bar{x})^2$</td>
+              <td style="padding: 8px;">$\frac{1}{N} \sum f_i (x_i - \bar{x})^2$</td>
+              <td style="padding: 8px;">Measured in squared units of the original data.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><strong>Standard Deviation ($\sigma$)</strong></td>
+              <td style="padding: 8px;">$\sqrt{\frac{1}{n} \sum (x_i - \bar{x})^2}$</td>
+              <td style="padding: 8px;">$\sqrt{\frac{1}{N} \sum f_i (x_i - \bar{x})^2}$</td>
+              <td style="padding: 8px;">Same unit as the original data; mathematically robust.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Historical Chronicle</summary>
+      <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+        <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Evolution of Statistics</strong></p>
+        <ul style="margin: 0; padding-left: 20px;">
+          <li><strong>Etymology:</strong> Derived from the Latin word <span class="keyword">status</span>, meaning a political state.</li>
+          <li><strong>John Graunt (1620-1674):</strong> Known as the father of vital statistics for his systematic study of births and deaths in London.</li>
+          <li><strong>Karl Pearson (1857-1936):</strong> Contributed significantly to mathematical statistics, introducing the Chi-square test and establishing the first university statistics department.</li>
+          <li><strong>Sir Ronald A. Fisher (1890-1962):</strong> Known as the "Father of modern statistics," he applied statistical methods to genetics, agriculture, and experimental design.</li>
+        </ul>
+      </div>
+    </details>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 13</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-12-limits-and-derivatives.html"; } else { window.location.href = "11-chapter-14-probability.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

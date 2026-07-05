@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 12 (Book 2) — Chapter 7: PROBABILITY
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 2) — Chapter 7: PROBABILITY
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.1 Introduction &amp; 13.2 Conditional Probability
+</summary>
+<p>
+  In earlier classes, probability was studied as a measure of uncertainty of events in a random experiment, using the axiomatic approach formulated by Russian mathematician
+  <span class="keyword">
+  A.N. Kolmogorov
+</span>
+. In this chapter, we extend these concepts to conditional scenarios where the occurrence of one event affects the probability of another.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition of Conditional Probability
+</summary>
+<p>
+  If $E$ and $F$ are two events associated with the same sample space $S$ of a random experiment, the
+  <span class="keyword">
+  conditional probability
+</span>
+of the event $E$ given that $F$ has occurred, denoted by $P(E|F)$, is defined as:
+</p>
+$$P(E|F) = \frac{P(E \cap F)}{P(F)}, \quad \text{provided } P(F) \neq 0$$
+<p>
+Alternatively, in terms of elementary events:
+</p>
+$$P(E|F) = \frac{n(E \cap F)}{n(F)}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Conditional Probability
+</summary>
+<ul>
+  <li>
+    <strong>
+    Property 1:
+  </strong>
+  Let $S$ be the sample space and $F$ be an event of $S$ such that $P(F) \neq 0$. Then:$$P(S|F) = P(F|F) = 1$$
+</li>
+<li>
+  <strong>
+  Property 2:
+</strong>
+If $A$ and $B$ are any two events of a sample space $S$ and $F$ is an event of $S$ such that $P(F) \neq 0$, then:$$P((A \cup B)|F) = P(A|F) + P(B|F) - P((A \cap B)|F)$$
+<p>
+In particular, if $A$ and $B$ are disjoint events, then:
+</p>
+$$P((A \cup B)|F) = P(A|F) + P(B|F)$$
+</li>
+<li>
+  <strong>
+  Property 3:
+</strong>
+For any event $E$ and $F$:$$P(E'|F) = 1 - P(E|F)$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.3 Multiplication Theorem on Probability
+</summary>
+<p>
+  The
+  <span class="keyword">
+  multiplication rule of probability
+</span>
+allows us to find the probability of the simultaneous occurrence of two or more events.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Multiplication Rule for Two Events
+</summary>
+<p>
+For any two events $E$ and $F$ associated with a sample space $S$:
+</p>
+$$P(E \cap F) = P(E) P(F|E) = P(F) P(E|F)$$
+<p>
+provided $P(E) \neq 0$ and $P(F) \neq 0$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Multiplication Rule for More than Two Events
+</summary>
+<p>
+If $E$, $F$, and $G$ are three events of a sample space, then:
+</p>
+$$P(E \cap F \cap G) = P(E) P(F|E) P(G|(E \cap F)) = P(E) P(F|E) P(G|EF)$$
+<p>
+This can be generalized analogously for $n$ events.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.4 Independent Events
+</summary>
+<p>
+  Two events are said to be
+  <span class="keyword">
+  independent events
+</span>
+if the occurrence or non-occurrence of one does not affect the probability of the occurrence of the other.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Definitions
+</summary>
+<ul>
+  <li>
+    <strong>
+    Definition 1:
+  </strong>
+  Two events $E$ and $F$ are independent if:$$P(F|E) = P(F) \quad \text{and} \quad P(E|F) = P(E)$$
+  <p>
+  provided $P(E) \neq 0$ and $P(F) \neq 0$.
+</p>
+</li>
+<li>
+  <strong>
+  Definition 2:
+</strong>
+Two events $E$ and $F$ associated with the same random experiment are independent if and only if:$$P(E \cap F) = P(E) P(F)$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mutual Independence of Three Events
+</summary>
+<p>
+  Three events $A$, $B$, and $C$ are said to be
+  <span class="keyword">
+  mutually independent
+</span>
+if all the following conditions hold simultaneously:
+</p>
+<ol>
+  <li>
+  $P(A \cap B) = P(A) P(B)$
+</li>
+<li>
+$P(A \cap C) = P(A) P(C)$
+</li>
+<li>
+$P(B \cap C) = P(B) P(C)$
+</li>
+<li>
+$P(A \cap B \cap C) = P(A) P(B) P(C)$
+</li>
+</ol>
+<p>
+If at least one of these is not true, the events are not independent.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Theorems &amp; Properties
+</summary>
+<ul>
+  <li>
+    If $E$ and $F$ are independent events, then so are:
+    <ol>
+      <li>
+      $E'$ and $F$
+    </li>
+    <li>
+    $E$ and $F'$
+  </li>
+  <li>
+  $E'$ and $F'$
+</li>
+</ol>
+</li>
+<li>
+If $A$ and $B$ are independent events, the probability of occurrence of at least one of $A$ and $B$ is given by:$$P(A \cup B) = 1 - P(A') P(B')$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.5 Bayes' Theorem &amp; Total Probability
+</summary>
+<p>
+This section covers the partition of sample spaces, the theorem of total probability, and the formulation of Bayes' Theorem for reverse probability calculations.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Partition of a Sample Space
+</summary>
+<p>
+  A set of events $E_1, E_2, \dots, E_n$ is said to represent a
+  <span class="keyword">
+  partition of the sample space
+</span>
+$S$ if:
+</p>
+<ol>
+  <li>
+  They are pairwise disjoint: $E_i \cap E_j = \emptyset$ for all $i \neq j$.
+</li>
+<li>
+They are exhaustive: $E_1 \cup E_2 \cup \dots \cup E_n = S$.
+</li>
+<li>
+They have non-zero probabilities: $P(E_i) &gt; 0$ for all $i = 1, 2, \dots, n$.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Theorem of Total Probability
+</summary>
+<p>
+Let $\{E_1, E_2, \dots, E_n\}$ be a partition of the sample space $S$, and suppose that each event $E_i$ has non-zero probability of occurrence. Let $A$ be any event associated with $S$, then:
+</p>
+$$P(A) = P(E_1) P(A|E_1) + P(E_2) P(A|E_2) + \dots + P(E_n) P(A|E_n) = \sum_{j=1}^{n} P(E_j) P(A|E_j)$$.
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Bayes' Theorem
+</summary>
+<p>
+  If $E_1, E_2, \dots, E_n$ are $n$ non-empty events which constitute a partition of a sample space $S$, and $A$ is any event of non-zero probability, then the
+  <span class="keyword">
+  posteriori probability
+</span>
+of the hypothesis $E_i$ given that event $A$ has occurred is:
+</p>
+$$P(E_i|A) = \frac{P(E_i) P(A|E_i)}{\sum_{j=1}^{n} P(E_j) P(A|E_j)}, \quad \text{for any } i = 1, 2, \dots, n$$
+<p>
+  Here, $P(E_i)$ are called the
+  <span class="keyword">
+  priori probabilities
+</span>
+, and $P(A|E_i)$ are the likelihoods.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Algorithmic Solved Examples
+</summary>
+<p>
+Below are step-by-step traces of key probability problems solved using the principles of conditional probability, total probability, and Bayes' Theorem.
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 4):
+</strong>
+In a school, there are 1000 students, out of which 430 are girls. It is known that out of 430, 10% of the girls study in class XII. What is the probability that a student chosen randomly studies in Class XII given that the chosen student is a girl?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Let $F$ be the event that the randomly chosen student is a girl, and $E$ be the event that the student studies in Class XII.
+</li>
+<li>
+Compute the probability of choosing a girl:$$P(F) = \frac{430}{1000} = 0.43$$
+</li>
+<li>
+Compute the probability of choosing a girl who studies in Class XII:$$P(E \cap F) = \frac{10\\% \text{ of } 430}{1000} = \frac{43}{1000} = 0.043$$
+</li>
+<li>
+Apply the conditional probability formula:$$P(E|F) = \frac{P(E \cap F)}{P(F)} = \frac{0.043}{0.43} = 0.1$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$P(E|F) = 0.1$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 16):
+</strong>
+Bag I contains 3 red and 4 black balls while another Bag II contains 5 red and 6 black balls. One ball is drawn at random from one of the bags and it is found to be red. Find the probability that it was drawn from Bag II.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Let $E_1$ be the event of choosing Bag I, $E_2$ be the event of choosing Bag II, and $A$ be the event of drawing a red ball.
+</li>
+<li>
+Since the bags are chosen at random:$$P(E_1) = P(E_2) = \frac{1}{2}$$
+</li>
+<li>
+Calculate the conditional probabilities of drawing a red ball from each bag:$$P(A|E_1) = \frac{3}{7}, \quad P(A|E_2) = \frac{5}{11}$$
+</li>
+<li>
+Apply Bayes' Theorem to find $P(E_2|A)$:$$P(E_2|A) = \frac{P(E_2) P(A|E_2)}{P(E_1) P(A|E_1) + P(E_2) P(A|E_2)}$$ $$P(E_2|A) = \frac{\frac{1}{2} \times \frac{5}{11}}{\frac{1}{2} \times \frac{3}{7} + \frac{1}{2} \times \frac{5}{11}} = \frac{\frac{5}{22}}{\frac{3}{14} + \frac{5}{22}} = \frac{35}{68}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$P(E_2|A) = \frac{35}{68}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 21):
+</strong>
+A man is known to speak truth 3 out of 4 \times. He throws a die and reports that it is a six. Find the probability that it is actually a six.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Let $S_1$ be the event that six occurs, and $S_2$ be the event that six does not occur. Let $E$ be the event that the man reports a six.
+</li>
+<li>
+Determine the prior probabilities:$$P(S_1) = \frac{1}{6}, \quad P(S_2) = \frac{5}{6}$$
+</li>
+<li>
+Determine the likelihoods based on the man's truthfulness:$$P(E|S_1) = P(\text{speaks truth}) = \frac{3}{4}$$ $$P(E|S_2) = P(\text{does not speak truth}) = 1 - \frac{3}{4} = \frac{1}{4}$$
+</li>
+<li>
+Apply Bayes' Theorem to find $P(S_1|E)$:$$P(S_1|E) = \frac{P(S_1) P(E|S_1)}{P(S_1) P(E|S_1) + P(S_2) P(E|S_2)}$$ $$P(S_1|E) = \frac{\frac{1}{6} \times \frac{3}{4}}{\frac{1}{6} \times \frac{3}{4} + \frac{5}{6} \times \frac{1}{4}} = \frac{\frac{3}{24}}{\frac{3}{24} + \frac{5}{24}} = \frac{3}{8}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$P(S_1|E) = \frac{3}{8}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Historical Chronicle &amp; Epigraph
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Evolution of Probability Theory
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  <ul>
+    <li>
+      <strong>
+      1477:
+    </strong>
+    Earliest indication of measuring chances in dice games appeared in a commentary on Dante's
+    <em>
+    Divine Comedy
+  </em>
+  .
+</li>
+<li>
+  <strong>
+  1654:
+</strong>
+The true origin of the science of probability lies in the correspondence between
+<span class="keyword">
+Blaise Pascal
+</span>
+(1623-1662) and
+<span class="keyword">
+Pierre de Fermat
+</span>
+(1601-1665) regarding a gambling contradiction posed by Chevalier de Méré.
+</li>
+<li>
+  <strong>
+  1663:
+</strong>
+Geronimo Carden (1501-1576) published
+<em>
+Liber de Ludo Alcae
+</em>
+posthumously, detailing favorable cases for dice throws.
+</li>
+<li>
+  <strong>
+  1713:
+</strong>
+Jacob Bernoulli's (1654-1705) seminal work
+<em>
+Ars Conjectandi
+</em>
+was published posthumously, introducing the Binomial distribution.
+</li>
+<li>
+  <strong>
+  1933:
+</strong>
+<span class="keyword">
+A.N. Kolmogorov
+</span>
+published
+<em>
+Foundations of Probability
+</em>
+, establishing the modern axiomatic framework.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+The transition of probability from empirical gambling observations to a rigorous mathematical discipline defined as a set function over sample spaces.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 7
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-06-linear-programming.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

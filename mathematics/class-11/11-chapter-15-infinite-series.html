@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 15: Infinite Series</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 15: Infinite Series</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">A.1.1 Introduction to Infinite Series</summary>
+    <p>An <span class="keyword">infinite sequence</span> is a sequence $a_1, a_2, a_3, \dots, a_n, \dots$ having an infinite number of terms. The indicated sum of its terms is called an <span class="keyword">infinite series</span> associated with the sequence:</p>
+    $$a_1 + a_2 + a_3 + \dots + a_n + \dots = \sum_{k=1}^{\infty} a_k$$
+    <p>In this chapter, we study special types of infinite series, including the Binomial Series, Infinite Geometric Series, Exponential Series, and Logarithmic Series.</p>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">A.1.2 Binomial Theorem for Any Index</summary>
+    <p>When the index $m$ is a negative integer or a fraction, the expansion of $(1+x)^m$ yields an infinite series called the <span class="keyword">Binomial Series</span>.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">The Binomial Theorem Statement</summary>
+      <p>The formula:</p>
+      $$(1+x)^m = 1 + mx + \frac{m(m-1)}{1 \cdot 2}x^2 + \frac{m(m-1)(m-2)}{1 \cdot 2 \cdot 3}x^3 + \dots$$
+      <p>holds if and only if $|x| &lt; 1$.</p>
+      <ul>
+        <li><strong>Convergence Condition:</strong> The condition $|x| &lt; 1$ (i.e., $-1 &lt; x &lt; 1$) is strictly necessary. For example, if we set $x = -2$ and $m = -2$ without this restriction, we would obtain the mathematically impossible statement $1 = 1 + 4 + 12 + \dots$.</li>
+        <li><strong>Number of Terms:</strong> Unlike the expansion for positive integer indices, there are an infinite number of terms when $m$ is negative or fractional.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Expansion of $(a+b)^m$</summary>
+      <p>To expand $(a+b)^m$ when $m$ is negative or fractional, we factor out $a^m$:</p>
+      $$(a+b)^m = a^m \left(1 + \frac{b}{a}\right)^m = a^m \left[ 1 + m\left(\frac{b}{a}\right) + \frac{m(m-1)}{1 \cdot 2}\left(\frac{b}{a}\right)^2 + \dots \right]$$
+      <p>This expansion is valid if and only if $\left|\frac{b}{a}\right| &lt; 1$, which is equivalent to $|b| &lt; |a|$.</p>
+      <p>The <strong>general term</strong> ($(r+1)$-th term) in the expansion of $(a+b)^m$ is given by:</p>
+      $$T_{r+1} = \frac{m(m-1)(m-2)\dots(m-r+1)}{1 \cdot 2 \cdot 3 \dots r} a^{m-r} b^r$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Particular Cases of Binomial Series</summary>
+      <p>Assuming $|x| &lt; 1$, the following standard expansions are highly useful:</p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; min-width: 500px; text-align: left;">
+          <thead>
+            <tr style="background-color: #f2f2f2;">
+              <th style="padding: 8px;">Binomial Expression</th>
+              <th style="padding: 8px;">Infinite Series Expansion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;">$(1+x)^{-1}$</td>
+              <td style="padding: 8px;">$1 - x + x^2 - x^3 + x^4 - \dots$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$(1-x)^{-1}$</td>
+              <td style="padding: 8px;">$1 + x + x^2 + x^3 + x^4 + \dots$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$(1+x)^{-2}$</td>
+              <td style="padding: 8px;">$1 - 2x + 3x^2 - 4x^3 + \dots$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$(1-x)^{-2}$</td>
+              <td style="padding: 8px;">$1 + 2x + 3x^2 + 4x^3 + \dots$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Solved Example</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Expand $\left(1 - \frac{x}{2}\right)^{-\frac{1}{2}}$ when $|x| &lt; 2$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Identify the parameters: let $y = -\frac{x}{2}$ and $m = -\frac{1}{2}$. Since $|x| &lt; 2$, we have $|y| = \left|-\frac{x}{2}\right| &lt; 1$, so the binomial expansion is valid.</li>
+          <li>Apply the binomial series formula:$$\left(1 - \frac{x}{2}\right)^{-\frac{1}{2}} = 1 + \left(-\frac{1}{2}\right)\left(-\frac{x}{2}\right) + \frac{\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)}{1 \cdot 2}\left(-\frac{x}{2}\right)^2 + \dots$$</li>
+          <li>Simplify each term:
+            <ul>
+              <li>First term: $1$</li>
+              <li>Second term: $\frac{x}{4}$</li>
+              <li>Third term: $\frac{3/4}{2} \cdot \frac{x^2}{4} = \frac{3x^2}{32}$</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $\left(1 - \frac{x}{2}\right)^{-\frac{1}{2}} = 1 + \frac{x}{4} + \frac{3x^2}{32} + \dots$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">A.1.3 Infinite Geometric Series</summary>
+    <p>An <span class="keyword">infinite geometric series</span> is of the form $a + ar + ar^2 + \dots + ar^{n-1} + \dots$, where $a$ is the first term and $r$ is the common ratio.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Sum to Infinity Derivation</summary>
+      <p>The sum of the first $n$ terms of a geometric progression (G.P.) is given by:</p>
+      $$S_n = \frac{a(1-r^n)}{1-r} = \frac{a}{1-r} - \frac{ar^n}{1-r}$$
+      <p>If the numerical value of the common ratio $r$ is less than 1 (i.e., $|r| &lt; 1$):</p>
+      <ol>
+        <li>As $n \to \infty$, the term $r^n \to 0$.</li>
+        <li>Consequently, the term $\frac{ar^n}{1-r} \to 0$.</li>
+        <li>Therefore, the sum $S_n$ approaches a finite limit $S$ as $n \to \infty$:</li>
+      </ol>
+      $$S = \frac{a}{1-r}$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Illustrative Examples</summary>
+      <ul>
+        <li><strong>Example (i):</strong> $1 + \frac{1}{2} + \frac{1}{2^2} + \frac{1}{2^3} + \dots = \frac{1}{1 - 1/2} = 2$</li>
+        <li><strong>Example (ii):</strong> $1 - \frac{1}{2} + \frac{1}{2^2} - \frac{1}{2^3} + \dots = \frac{1}{1 - (-1/2)} = \frac{2}{3}$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Solved Example</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the sum to infinity of the G.P.: $-\frac{5}{4}, \frac{5}{16}, -\frac{5}{64}, \dots$</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Identify the first term: $a = -\frac{5}{4}$.</li>
+          <li>Identify the common ratio: $r = \frac{5/16}{-5/4} = -\frac{1}{4}$.</li>
+          <li>Verify convergence: $|r| = \left|-\frac{1}{4}\right| = \frac{1}{4} &lt; 1$, so the sum to infinity exists.</li>
+          <li>Apply the infinite sum formula:$$S = \frac{a}{1-r} = \frac{-5/4}{1 - (-1/4)} = \frac{-5/4}{5/4} = -1$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $S = -1$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">A.1.4 Exponential Series</summary>
+    <p>The <span class="keyword">exponential series</span> is an infinite series of numbers whose sum defines the mathematical constant $e$.</p>
+    
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Leonhard Euler (1707 – 1783)</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> The great Swiss mathematician introduced the number $e$ in his calculus texts in 1748.</li>
+        <li><strong>Theoretical Foundations:</strong> The number $e$ is as fundamental to calculus as $\pi$ is to the study of geometry and circles.</li>
+      </ul>
+    </div>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Definition and Estimation of $e$</summary>
+      <p>The constant $e$ is defined by the infinite series:</p>
+      $$e = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \dots$$
+      <p>We can estimate the value of $e$ by comparing its terms with a geometric series:</p>
+      <ol>
+        <li>Since all terms are positive, $e &gt; 2$ (as the first two terms sum to 2).</li>
+        <li>For $n &gt; 2$, we have $\frac{1}{n!} &lt; \frac{1}{2^{n-1}}$. Thus:$$\left(\frac{1}{3!} + \frac{1}{4!} + \dots\right) &lt; \left(\frac{1}{2^2} + \frac{1}{2^3} + \dots\right)$$</li>
+        <li>Adding $1 + \frac{1}{1!} + \frac{1}{2!}$ to both sides shows that $e &lt; 1 + 1 + \frac{1}{2} + \frac{1}{2} = 3$.</li>
+        <li>Therefore, $e$ lies strictly between 2 and 3 ($2 &lt; e &lt; 3$).</li>
+      </ol>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">The General Exponential Series</summary>
+      <p>For any real variable $x$, the exponential function $e^x$ can be expanded as:</p>
+      $$e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots + \frac{x^n}{n!} + \dots$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the coefficient of $x^2$ in the expansion of $e^{2x+3}$ as a series in powers of $x$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Express $e^{2x+3}$ as a product: $e^{2x+3} = e^3 \cdot e^{2x}$.</li>
+          <li>Expand $e^{2x}$ using the general exponential series:$$e^{2x} = 1 + \frac{2x}{1!} + \frac{(2x)^2}{2!} + \frac{(2x)^3}{3!} + \dots$$</li>
+          <li>Multiply by $e^3$:$$e^{2x+3} = e^3 \left[ 1 + \frac{2x}{1!} + \frac{4x^2}{2!} + \frac{8x^3}{3!} + \dots \right]$$</li>
+          <li>Extract the coefficient of $x^2$:$$\text{Coefficient of } x^2 = e^3 \cdot \frac{4}{2!} = 2e^3$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $2e^3$</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the value of $e^2$, rounded off to one decimal place.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Substitute $x = 2$ into the exponential series:$$e^2 = 1 + \frac{2}{1!} + \frac{2^2}{2!} + \frac{2^3}{3!} + \frac{2^4}{4!} + \frac{2^5}{5!} + \frac{2^6}{6!} + \dots$$</li>
+          <li>Calculate the sum of the first seven terms:$$e^2 \ge 1 + 2 + 2 + \frac{4}{3} + \frac{2}{3} + \frac{4}{15} + \frac{4}{45} \approx 7.355$$</li>
+          <li>Establish an upper bound using a geometric progression for the tail terms:$$e^2 &lt; 7 + \frac{4}{15}\left(1 + \frac{1}{3} + \left(\frac{1}{3}\right)^2 + \dots\right) = 7 + \frac{4}{15}\left(\frac{1}{1 - 1/3}\right) = 7 + \frac{2}{5} = 7.4$$</li>
+          <li>Since $7.355 \le e^2 &lt; 7.4$, rounding to one decimal place yields 7.4.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $7.4$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">A.1.5 Logarithmic Series</summary>
+    <p>The <span class="keyword">logarithmic series</span> is an infinite series expansion for natural logarithms.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">The Logarithmic Theorem Statement</summary>
+      <p>If $|x| &lt; 1$, then:</p>
+      $$\log_e(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \dots$$
+      <p><strong>Special Case ($x = 1$):</strong> The expansion is also valid for $x = 1$, yielding:</p>
+      $$\log_e 2 = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Solved Example</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> If $\alpha, \beta$ are the roots of the quadratic equation $x^2 - px + q = 0$, prove that:$$\log_e(1 + px + qx^2) = (\alpha + \beta)x - \frac{\alpha^2 + \beta^2}{2}x^2 + \frac{\alpha^3 + \beta^3}{3}x^3 - \dots$$</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Recall the relations between roots and coefficients: $\alpha + \beta = p$ and $\alpha\beta = q$.</li>
+          <li>Express the quadratic term inside the logarithm in factored form:$$1 + px + qx^2 = 1 + (\alpha + \beta)x + \alpha\beta x^2 = (1 + \alpha x)(1 + \beta x)$$</li>
+          <li>Apply logarithmic properties:$$\log_e(1 + px + qx^2) = \log_e[(1 + \alpha x)(1 + \beta x)] = \log_e(1 + \alpha x) + \log_e(1 + \beta x)$$</li>
+          <li>Expand both terms using the logarithmic series (assuming $|\alpha x| &lt; 1$ and $|\beta x| &lt; 1$):$$\log_e(1 + \alpha x) = \alpha x - \frac{\alpha^2 x^2}{2} + \frac{\alpha^3 x^3}{3} - \dots$$$$\log_e(1 + \beta x) = \beta x - \frac{\beta^2 x^2}{2} + \frac{\beta^3 x^3}{3} - \dots$$</li>
+          <li>Group the terms by powers of $x$:$$\log_e(1 + px + qx^2) = (\alpha + \beta)x - \frac{\alpha^2 + \beta^2}{2}x^2 + \frac{\alpha^3 + \beta^3}{3}x^3 - \dots$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> The identity is proved.</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 15</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-14-probability.html"; } else { window.location.href = "11-chapter-16-mathematical-modelling.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
