@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 2) — Chapter 1: Ray Optics and Optical Instruments
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 2) — Chapter 1: Ray Optics and Optical Instruments
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.1 Introduction to Ray Optics
+</summary>
+<p>
+  Light is electromagnetic radiation belonging to the visible region of the spectrum, with wavelengths ranging from approximately
+  <strong>
+  400 nm
+</strong>
+to
+<strong>
+750 nm
+</strong>
+. It is the primary medium through which we perceive and interpret the physical world.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Properties of Light
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Rectilinear Propagation
+  </span>
+  : Light travels in a straight line in a homogeneous medium. This is an approximation valid when the wavelength of light is extremely small compared to the dimensions of ordinary obstacles or apertures.
+</li>
+<li>
+  <span class="keyword">
+  Speed of Light
+</span>
+: In a vacuum, light travels at its maximum speed, denoted by $c = 2.99792458 \times 10^8 \text{ m s}^{-1}$, which is commonly approximated as $3 \times 10^8 \text{ m s}^{-1}$ for practical calculations.
+</li>
+<li>
+  <span class="keyword">
+  Ray and Beam
+</span>
+: The straight-line path of light is called a
+<span class="keyword">
+ray of light
+</span>
+, and a bundle of such rays constitutes a
+<span class="keyword">
+beam of light
+</span>
+.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.2 Reflection of Light by Spherical Mirrors
+</summary>
+<p>
+Reflection is the phenomenon where light rays strike a boundary separating two different media and return to the medium from which they originated, obeying specific geometric laws.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Laws of Reflection
+</summary>
+<ol>
+  <li>
+  The angle of incidence ($i$) equals the angle of reflection ($r$).
+</li>
+<li>
+The incident ray, the reflected ray, and the normal to the reflecting surface at the point of incidence all lie in the same plane.
+</li>
+</ol>
+<p>
+These laws are universally valid at every point on any reflecting surface, whether plane or curved.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Cartesian Sign Convention
+</summary>
+<p>
+  To derive consistent formulas for spherical mirrors and lenses, the
+  <span class="keyword">
+  Cartesian sign convention
+</span>
+is adopted:
+</p>
+<ul>
+  <li>
+  All distances are measured from the pole ($P$) of the mirror or the optical centre of the lens.
+</li>
+<li>
+Distances measured in the direction of the incident light are taken as positive ($+$).
+</li>
+<li>
+Distances measured in the direction opposite to the incident light are taken as negative ($-$).
+</li>
+<li>
+Heights measured upwards, perpendicular to the principal axis, are positive ($+$).
+</li>
+<li>
+Heights measured downwards, perpendicular to the principal axis, are negative ($-$).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Focal Length of Spherical Mirrors
+</summary>
+<p>
+For paraxial rays (rays incident close to the pole making small angles with the principal axis), the relation between the focal length ($f$) and the radius of curvature ($R$) of a spherical mirror is given by:
+</p>
+$$f = \frac{R}{2}$$
+<p>
+  <strong>
+  Derivation Trace:
+</strong>
+Let a ray parallel to the principal axis strike a concave mirror at $M$. The normal $CM$ passes through the centre of curvature $C$. The angle of incidence is $\theta$, and the angle of reflection is also $\theta$. The reflected ray intersects the principal axis at the focus $F$. From geometry, $\angle MCP = \theta$ and $\angle MFP = 2\theta$. For small angles, $\tan \theta \approx \theta = \frac{MD}{CD}$ and $\tan 2\theta \approx 2\theta = \frac{MD}{FD}$. Thus, $2\left(\frac{MD}{CD}\right) = \frac{MD}{FD}$, which simplifies to $FD = \frac{CD}{2}$. Since $D$ is very close to $P$ for paraxial rays, $FD \approx f$ and $CD \approx R$, yielding $f = \frac{R}{2}$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Mirror Equation and Magnification
+</summary>
+<p>
+  The relation between the object distance ($u$), image distance ($v$), and focal length ($f$) of a spherical mirror is known as the
+  <span class="keyword">
+  mirror equation
+</span>
+:
+</p>
+$$\frac{1}{v} + \frac{1}{u} = \frac{1}{f}$$
+<p>
+  The
+  <span class="keyword">
+  linear magnification
+</span>
+($m$) is defined as the ratio of the height of the image ($h'$) to the height of the object ($h$):
+</p>
+$$m = \frac{h'}{h} = -\frac{v}{u}$$
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+An object is placed at (i)
+<strong>
+10 cm
+</strong>
+, (ii)
+<strong>
+5 cm
+</strong>
+in front of a concave mirror of radius of curvature
+<strong>
+15 cm
+</strong>
+. Find the position, nature, and magnification of the image in each case.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given parameters: Radius of curvature $R = -15 \text{ cm}$, so focal length $f = \frac{R}{2} = -7.5 \text{ cm}$.
+</li>
+<li>
+  <strong>
+  Case (i):
+</strong>
+Object distance $u = -10 \text{ cm}$. Use the mirror equation: $\frac{1}{v} + \frac{1}{-10} = \frac{1}{-7.5} \implies \frac{1}{v} = -\frac{1}{7.5} + \frac{1}{10} = \frac{-4 + 3}{30} = -\frac{1}{30} \implies v = -30 \text{ cm}$. Magnification $m = -\frac{v}{u} = -\frac{-30}{-10} = -3$. The image is real, inverted, and magnified.
+</li>
+<li>
+  <strong>
+  Case (ii):
+</strong>
+Object distance $u = -5 \text{ cm}$. Use the mirror equation: $\frac{1}{v} + \frac{1}{-5} = \frac{1}{-7.5} \implies \frac{1}{v} = -\frac{1}{7.5} + \frac{1}{5} = \frac{-2 + 3}{15} = \frac{1}{15} \implies v = +15 \text{ cm}$. Magnification $m = -\frac{v}{u} = -\frac{15}{-5} = +3$. The image is virtual, erect, and magnified.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Case (i): $v = -30 \text{ cm}$, $m = -3$ (Real, Inverted); Case (ii): $v = +15 \text{ cm}$, $m = +3$ (Virtual, Erect).
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.3 Refraction of Light
+</summary>
+<p>
+Refraction is the change in direction of propagation of a light ray when it passes obliquely from one transparent medium to another due to a change in its speed.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Laws of Refraction (Snell's Law)
+</summary>
+<ol>
+  <li>
+  The incident ray, the refracted ray, and the normal to the interface at the point of incidence all lie in the same plane.
+</li>
+<li>
+The ratio of the sine of the angle of incidence ($i$) to the sine of the angle of refraction ($r$) is constant for a given pair of media and a given wavelength of light:
+</li>
+$$\frac{\sin i}{\sin r} = n_{21}$$
+</ol>
+<p>
+  where $n_{21}$ is the
+  <span class="keyword">
+  refractive index
+</span>
+of medium 2 with respect to medium 1. If $n_{21} &gt; 1$, the refracted ray bends towards the normal (medium 2 is optically denser). If $n_{21} &lt; 1$, the ray bends away from the normal (medium 2 is optically rarer).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Optical Density vs. Mass Density
+</summary>
+<p>
+  <span class="keyword">
+  Optical density
+</span>
+is a measure of the speed of light in a medium (higher optical density means lower speed of light), whereas mass density is mass per unit volume. They are not directly proportional. For example, turpentine has a lower mass density than water but a higher optical density, meaning light travels slower in turpentine than in water.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Apparent Depth and Lateral Shift
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Lateral Shift
+  </span>
+  : When light passes through a parallel-sided glass slab, the emergent ray is parallel to the incident ray but suffers a lateral displacement.
+</li>
+<li>
+  <span class="keyword">
+  Apparent Depth
+</span>
+: Due to refraction, the bottom of a container filled with a liquid appears raised. For viewing near the normal direction, the relation is:
+</li>
+$$\text{Apparent Depth } (h_1) = \frac{\text{Real Depth } (h_2)}{n}$$
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.4 Total Internal Reflection (TIR)
+</summary>
+<p>
+  When a ray of light travels from an optically denser medium to an optically rarer medium, and the angle of incidence exceeds a specific threshold, the light is completely reflected back into the denser medium. This phenomenon is called
+  <span class="keyword">
+  total internal reflection
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Critical Angle
+</summary>
+<p>
+  The angle of incidence in the denser medium for which the angle of refraction in the rarer medium is $90^\circ$ is called the
+  <span class="keyword">
+  critical angle
+</span>
+($i_c$). From Snell's law:
+</p>
+$$\sin i_c = n_{21} = \frac{1}{n_{12}}$$
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Substance Medium
+    </th>
+    <th>
+    Refractive Index ($n$)
+  </th>
+  <th>
+  Critical Angle ($i_c$)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Water
+  </td>
+  <td>
+  1.33
+</td>
+<td>
+$48.75^\circ$
+</td>
+</tr>
+<tr>
+  <td>
+  Crown Glass
+</td>
+<td>
+1.52
+</td>
+<td>
+$41.14^\circ$
+</td>
+</tr>
+<tr>
+  <td>
+  Dense Flint Glass
+</td>
+<td>
+1.62
+</td>
+<td>
+$37.31^\circ$
+</td>
+</tr>
+<tr>
+  <td>
+  Diamond
+</td>
+<td>
+2.42
+</td>
+<td>
+$24.41^\circ$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Applications of Total Internal Reflection
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Prisms
+  </span>
+  : Right-angled isosceles prisms can bend light by $90^\circ$ or $180^\circ$, or invert images without changing their size, by utilizing total internal reflection. The critical angle of the glass must be less than $45^\circ$.
+</li>
+<li>
+  <span class="keyword">
+  Optical Fibres
+</span>
+: Extremely thin strands of high-quality composite glass or quartz. Each fibre consists of a high refractive index
+<span class="keyword">
+core
+</span>
+surrounded by a lower refractive index
+<span class="keyword">
+cladding
+</span>
+. Light entering one end at a suitable angle undergoes repeated total internal reflections along the length of the fibre, transmitting signals over long distances with minimal intensity loss.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.5 Refraction at Spherical Surfaces and Lenses
+</summary>
+<p>
+Refraction at curved boundaries forms the basis of image formation by lenses.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Refraction at a Single Spherical Surface
+</summary>
+<p>
+For a spherical interface of radius of curvature $R$ separating two media of refractive indices $n_1$ and $n_2$, the relation between object distance $u$ and image distance $v$ is:
+</p>
+$$\frac{n_2}{v} - \frac{n_1}{u} = \frac{n_2 - n_1}{R}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Lens Maker's Formula and Thin Lens Formula
+</summary>
+<p>
+  By applying the single spherical surface refraction formula successively to the two surfaces of a thin lens, we obtain the
+  <span class="keyword">
+  Lens Maker's Formula
+</span>
+:
+</p>
+$$\frac{1}{f} = \left(\frac{n_2}{n_1} - 1\right)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)$$
+<p>
+  where $R_1$ and $R_2$ are the radii of curvature of the two surfaces, and $f$ is the focal length. The
+  <span class="keyword">
+  Thin Lens Formula
+</span>
+relates $u$, $v$, and $f$ as:
+</p>
+$$\frac{1}{v} - \frac{1}{u} = \frac{1}{f}$$
+<p>
+The linear magnification ($m$) produced by a lens is:
+</p>
+$$m = \frac{h'}{h} = \frac{v}{u}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Power of a Lens
+</summary>
+<p>
+  The
+  <span class="keyword">
+  power of a lens
+</span>
+($P$) is a measure of its ability to converge or diverge light, defined as the reciprocal of its focal length (in metres):
+</p>
+$$P = \frac{1}{f}$$
+<p>
+  The SI unit of power is the
+  <span class="keyword">
+  dioptre
+</span>
+($D$), where $1 \text{ D} = 1 \text{ m}^{-1}$. Power is positive for converging (convex) lenses and negative for diverging (concave) lenses.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Combination of Thin Lenses in Contact
+</summary>
+<p>
+When several thin lenses of focal lengths $f_1, f_2, f_3, \dots$ are placed in contact, the effective focal length ($f$) of the combination is given by:
+</p>
+$$\frac{1}{f} = \frac{1}{f_1} + \frac{1}{f_2} + \frac{1}{f_3} + \dots$$
+<p>
+In terms of power, the net power ($P$) is the algebraic sum of individual powers:
+</p>
+$$P = P_1 + P_2 + P_3 + \dots$$
+<p>
+The total magnification ($m$) is the product of individual magnifications:
+</p>
+$$m = m_1 \times m_2 \times m_3 \times \dots$$
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.6 Refraction through a Prism
+</summary>
+<p>
+A prism is a wedge-shaped transparent medium bounded by two refracting surfaces inclined at an angle called the angle of the prism ($A$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Prism Formula and Minimum Deviation
+</summary>
+<p>
+When a ray of light passes through a triangular prism, it suffers deviation. The total angle of deviation ($\delta$) is given by:
+</p>
+$$\delta = i + e - A$$
+<p>
+  where $i$ is the angle of incidence, $e$ is the angle of emergence, and $A$ is the angle of the prism. At the position of
+  <span class="keyword">
+  minimum deviation
+</span>
+($\delta = D_m$), we have $i = e$ and $r_1 = r_2 = A/2$. The refractive index ($n_{21}$) of the prism material is given by:
+</p>
+$$n_{21} = \frac{\sin\left(\frac{A + D_m}{2}\right)}{\sin\left(\frac{A}{2}\right)}$$
+<p>
+For a thin prism (small angle $A$), the minimum deviation is simplified to:
+</p>
+$$D_m = (n_{21} - 1)A$$
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  9.7 Optical Instruments
+</summary>
+<p>
+Optical instruments utilize the principles of reflection and refraction to enhance human vision or capture images.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Simple Microscope
+</summary>
+<p>
+A simple microscope is a converging lens of short focal length. The magnifying power ($m$) is:
+</p>
+<ul>
+  <li>
+  When the image is formed at the near point ($D \approx 25 \text{ cm}$):
+</li>
+$$m = 1 + \frac{D}{f}$$
+<li>
+When the image is formed at infinity (relaxed eye):
+</li>
+$$m = \frac{D}{f}$$
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Compound Microscope
+</summary>
+<p>
+  To achieve much higher magnification, a
+  <span class="keyword">
+  compound microscope
+</span>
+uses two converging lenses: the
+<span class="keyword">
+objective
+</span>
+(near the object, short focal length $f_o$) and the
+<span class="keyword">
+eyepiece
+</span>
+(near the eye, short focal length $f_e$). The total magnification ($m$) when the final image is at infinity is:
+</p>
+$$m = m_o \times m_e \approx \left(\frac{L}{f_o}\right)\left(\frac{D}{f_e}\right)$$
+<p>
+where $L$ is the tube length (distance between the second focal point of the objective and the first focal point of the eyepiece).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Telescopes
+</summary>
+<p>
+Telescopes are used to provide angular magnification of distant objects.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Refracting Telescope
+  </span>
+  : Consists of an objective lens of large focal length ($f_o$) and large aperture, and an eyepiece of short focal length ($f_e$). The magnifying power ($m$) is:
+</li>
+$$m = \frac{f_o}{f_e}$$
+<p>
+The length of the telescope tube is $f_o + f_e$.
+</p>
+<li>
+  <span class="keyword">
+  Reflecting Telescope
+</span>
+: Uses a concave mirror as the objective instead of a lens. This eliminates chromatic aberration and reduces spherical aberration. The
+<span class="keyword">
+Cassegrain telescope
+</span>
+configuration uses a primary concave mirror with a hole at its centre and a secondary convex mirror to focus light to the eyepiece.
+</li>
+</ul>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "12-2-chapter-02-electrostatic-potential-and-capaci.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
