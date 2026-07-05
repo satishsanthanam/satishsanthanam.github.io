@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 11 — Chapter 1: SETS
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 1: SETS
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1. Introduction &amp; Historical Foundations
+</summary>
+<p>
+  The concept of a
+  <span class="keyword">
+  set
+</span>
+serves as a fundamental part of present-day mathematics. Today, this concept is used in almost every branch of mathematics, particularly to define the concepts of relations, functions, geometry, sequences, and probability.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Georg Cantor (1845-1918)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  German mathematician who developed the theory of sets. He first encountered sets while working on "problems on trigonometric series" between 1874 and 1897.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Introduced the concept of one-to-one correspondence, proved that real numbers are uncountable, and established the properties of transfinite numbers, laying the groundwork for modern mathematical analysis.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #0284c7; background-color: #f0f9ff;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Epigraph: G.H. Hardy on Mathematics
+  </strong>
+</p>
+<p style="margin: 0; font-style: italic;">
+"In these days of conflict between ancient and modern studies; there must surely be something to be said for a study which did not begin with Pythagoras and will not end with Einstein; but is the oldest and the youngest."
+</p>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2. Sets and their Representations
+</summary>
+<p>
+  A
+  <span class="keyword">
+  set
+</span>
+is a well-defined collection of objects. "Well-defined" means that we can definitely decide whether a given particular object belongs to the collection or not.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Notation and Membership Rules
+</summary>
+<ul>
+  <li>
+  Objects, elements, and members of a set are synonymous terms.
+</li>
+<li>
+Sets are usually denoted by capital letters: $A, B, C, X, Y, Z$, etc.
+</li>
+<li>
+The elements of a set are represented by small letters: $a, b, c, x, y, z$, etc.
+</li>
+<li>
+If $a$ is an element of a set $A$, we say that "$a$ belongs to $A$" and write $a \\in A$.
+</li>
+<li>
+If $b$ is not an element of a set $A$, we write $b \\notin A$ (read as "$b$ does not belong to $A$").
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Mathematical Sets
+</summary>
+<p>
+The following symbols are standard representations for specific sets of numbers:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Symbol
+    </th>
+    <th>
+    Description
+  </th>
+  <th>
+  Mathematical Definition / Elements
+</th>
+<th>
+Systemic Role
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\\mathbf{N}$
+  </td>
+  <td>
+  Set of all natural numbers
+</td>
+<td>
+$\\{1, 2, 3, 4, \\dots\\}$
+</td>
+<td>
+Fundamental counting numbers
+</td>
+</tr>
+<tr>
+  <td>
+  $\\mathbf{Z}$
+</td>
+<td>
+Set of all integers
+</td>
+<td>
+$\\{\\dots, -3, -2, -1, 0, 1, 2, 3, \\dots\\}$
+</td>
+<td>
+Closed under subtraction
+</td>
+</tr>
+<tr>
+  <td>
+  $\\mathbf{Q}$
+</td>
+<td>
+Set of all rational numbers
+</td>
+<td>
+$\\{x : x = \\frac{p}{q}, p, q \\in \\mathbf{Z}, q \\neq 0\\}$
+</td>
+<td>
+Closed under division (except by zero)
+</td>
+</tr>
+<tr>
+  <td>
+  $\\mathbf{R}$
+</td>
+<td>
+Set of all real numbers
+</td>
+<td>
+Union of rational and irrational numbers
+</td>
+<td>
+Continuous number line
+</td>
+</tr>
+<tr>
+  <td>
+  $\\mathbf{Z}^+$
+</td>
+<td>
+Set of positive integers
+</td>
+<td>
+$\\{1, 2, 3, \\dots\\}$
+</td>
+<td>
+Equivalent to $\\mathbf{N}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\\mathbf{Q}^+$
+</td>
+<td>
+Set of positive rational numbers
+</td>
+<td>
+$\\{x \\in \\mathbf{Q} : x &gt; 0\\}$
+</td>
+<td>
+Positive fractional values
+</td>
+</tr>
+<tr>
+  <td>
+  $\\mathbf{R}^+$
+</td>
+<td>
+Set of positive real numbers
+</td>
+<td>
+$\\{x \\in \\mathbf{R} : x &gt; 0\\}$
+</td>
+<td>
+Positive continuous domain
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Methods of Representing a Set
+</summary>
+<p>
+There are two primary methods of representing a set:
+</p>
+<ol>
+  <li>
+    <strong>
+    Roster or Tabular Form:
+  </strong>
+  All the elements of the set are listed, separated by commas, and enclosed within braces $\\{\\}$.
+  <ul>
+    <li>
+      <em>
+      Rule of Order:
+    </em>
+    The order in which elements are listed is immaterial. For example, $\\{1, 3, 7\\}$ is the same as $\\{3, 7, 1\\}$.
+  </li>
+  <li>
+    <em>
+    Rule of Repetition:
+  </em>
+  Elements are not generally repeated; all elements are taken as distinct. For example, the set of letters in "SCHOOL" is $\\{S, C, H, O, L\\}$.
+</li>
+</ul>
+</li>
+<li>
+  <strong>
+  Set-Builder Form:
+</strong>
+All elements of the set possess a single common property which is not possessed by any element outside the set.
+<ul>
+  <li>
+  We describe the element using a symbol (usually $x$), followed by a colon "$:$" (which stands for "such that"), and then write the characteristic property.
+</li>
+<li>
+Example: $V = \\{x : x \\text{ is a vowel in the English alphabet}\\}$.
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples: Representations
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Write the solution set of the equation $x^2 + x - 2 = 0$ in roster form.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Factorize the quadratic equation: $x^2 + x - 2 = 0 \\R\rightarrow (x - 1)(x + 2) = 0$.
+</li>
+<li>
+Solve for $x$: $x = 1$ or $x = -2$.
+</li>
+<li>
+Represent the solutions as elements of a set enclosed in braces.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\\{1, -2\\}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Write the set $\\{x : x \\text{ is a positive integer and } x^2 &lt; 40\\}$ in the roster form.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify positive integers: $1, 2, 3, 4, 5, 6, 7, \\dots$
+</li>
+<li>
+Evaluate their squares: $1^2=1, 2^2=4, 3^2=9, 4^2=16, 5^2=25, 6^2=36, 7^2=49$.
+</li>
+<li>
+Select those whose squares are strictly less than $40$: $1, 2, 3, 4, 5, 6$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\\{1, 2, 3, 4, 5, 6\\}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Write the set $\\left\\{\\frac{1}{2}, \\frac{2}{3}, \\frac{3}{4}, \\frac{4}{5}, \\frac{5}{6}, \\frac{6}{7}\\right\\}$ in the set-builder form.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Observe the pattern of the elements: each fraction has a numerator $n$ and a denominator $n+1$.
+</li>
+<li>
+Identify the domain of $n$: $n$ is a natural number starting from $1$ up to $6$ ($1 \\le n \\le 6$).
+</li>
+<li>
+Formulate the characteristic property: $x = \\frac{n}{n+1}$ where $n \\in \\mathbf{N}$ and $1 \\le n \\le 6$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\\left\\{x : x = \\frac{n}{n+1}, \\text{ where } n \\in \\mathbf{N} \\text{ and } 1 \\le n \\le 6\\right\\}$
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3. Types of Sets
+</summary>
+<p>
+Sets can be classified into various categories based on the number of elements they contain and their relationships with other sets.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Empty Set (Null or Void Set)
+</summary>
+<p>
+  A set which does not contain any element is called the
+  <span class="keyword">
+  empty set
+</span>
+,
+<span class="keyword">
+null set
+</span>
+, or
+<span class="keyword">
+void set
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Notation:
+  </strong>
+  Denoted by the Greek symbol $\\phi$ or empty braces $\\{\\}$.
+</li>
+<li>
+  <strong>
+  Examples:
+</strong>
+<ul>
+  <li>
+  $A = \\{x : 1 &lt; x &lt; 2, x \\text{ is a natural number}\\} = \\phi$
+</li>
+<li>
+$B = \\{x : x^2 - 2 = 0 \\text{ and } x \\text{ is a rational number}\\} = \\phi$
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Finite and Infinite Sets
+</summary>
+<ul>
+  <li>
+    A set which is empty or consists of a definite number of elements is called a
+    <span class="keyword">
+    finite set
+  </span>
+  .
+</li>
+<li>
+  Otherwise, the set is called an
+  <span class="keyword">
+  infinite set
+</span>
+.
+</li>
+<li>
+  <strong>
+  Cardinality:
+</strong>
+For a finite set $S$, the number of distinct elements is denoted by $n(S)$.
+</li>
+<li>
+  <strong>
+  Representation of Infinite Sets:
+</strong>
+Represented in roster form by writing a few elements to show the structure, followed by three dots (ellipsis). For example, the set of natural numbers is $\\{1, 2, 3, \\dots\\}$.
+</li>
+<li>
+  <em>
+  Note:
+</em>
+All infinite sets cannot be described in roster form. For example, the set of real numbers $\\mathbf{R}$ cannot be described this way because its elements do not follow any particular pattern.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Equal Sets
+</summary>
+<p>
+  Two sets $A$ and $B$ are said to be
+  <span class="keyword">
+  equal
+</span>
+if they have exactly the same elements, and we write $A = B$. Otherwise, they are unequal ($A \\neq B$).
+</p>
+<ul>
+  <li>
+    <strong>
+    Mathematical Definition:
+  </strong>
+  $A = B$ if every element of $A$ is in $B$ and every element of $B$ is in $A$.
+</li>
+<li>
+  <em>
+  Note:
+</em>
+Repetition or reordering of elements does not change a set. For example, $\\{1, 2, 3\\} = \\{2, 2, 1, 3, 3\\}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples: Types of Sets
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+State which of the following sets are finite or infinite:
+<br>
+(i) $\\{x : x \\in \\mathbf{N} \\text{ and } (x - 1)(x - 2) = 0\\}$
+<br>
+(ii) $\\{x : x \\in \\mathbf{N} \\text{ and } x^2 = 4\\}$
+<br>
+(iii) $\\{x : x \\in \\mathbf{N} \\text{ and } 2x - 1 = 0\\}$
+<br>
+(iv) $\\{x : x \\in \\mathbf{N} \\text{ and } x \\text{ is prime}\\}$
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    For (i), the solutions are $x = 1, 2$. Both are natural numbers. The set is $\\{1, 2\\}$, which is
+    <strong>
+    finite
+  </strong>
+  .
+</li>
+<li>
+  For (ii), $x^2 = 4 \\R\rightarrow x = 2$ (since $x \\in \\mathbf{N}$). The set is $\\{2\\}$, which is
+  <strong>
+  finite
+</strong>
+.
+</li>
+<li>
+  For (iii), $2x - 1 = 0 \\R\rightarrow x = 1/2$, which is not a natural number. The set is $\\phi$, which is
+  <strong>
+  finite
+</strong>
+.
+</li>
+<li>
+  For (iv), the set of prime numbers is $\\{2, 3, 5, 7, 11, \\dots\\}$, which is
+  <strong>
+  infinite
+</strong>
+.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(i) Finite, (ii) Finite, (iii) Finite, (iv) Infinite
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4. Subsets and Intervals of Real Numbers
+</summary>
+<p>
+Understanding how sets can be contained within other sets is a core concept in set theory, especially when dealing with real numbers.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Subsets: Definition and Notation
+</summary>
+<p>
+  A set $A$ is said to be a
+  <span class="keyword">
+  subset
+</span>
+of a set $B$ if every element of $A$ is also an element of $B$. We write $A \\subset B$.
+</p>
+<ul>
+  <li>
+    <strong>
+    Mathematical Definition:
+  </strong>
+  $A \\subset B \\iff (a \\in A \\R\rightarrow a \\in B)$.
+</li>
+<li>
+If $A$ is not a subset of $B$, we write $A \\not\\subset B$.
+</li>
+<li>
+  <strong>
+  Proper Subset &amp; Superset:
+</strong>
+If $A \\subset B$ and $A \\neq B$, then $A$ is called a
+<span class="keyword">
+proper subset
+</span>
+of $B$, and $B$ is called the
+<span class="keyword">
+superset
+</span>
+of $A$.
+</li>
+<li>
+  <strong>
+  Singleton Set:
+</strong>
+A set containing only a single element, denoted as $\\{a\\}$.
+</li>
+<li>
+  <em>
+  Important Theorems:
+</em>
+<ol>
+  <li>
+  Every set is a subset of itself: $A \\subset A$.
+</li>
+<li>
+The empty set is a subset of every set: $\\phi \\subset A$.
+</li>
+</ol>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Subsets of Real Numbers
+</summary>
+<p>
+The relationships between standard number systems can be expressed using subset notation:
+</p>
+<p>
+$$\\mathbf{N} \\subset \\mathbf{Z} \\subset \\mathbf{Q} \\subset \\mathbf{R}$$
+</p>
+<p>
+Additionally, if $\\mathbf{T}$ is the set of all irrational numbers, then:
+</p>
+<p>
+$$\\mathbf{T} \\subset \\mathbf{R}, \\quad \\mathbf{N} \\not\\subset \\mathbf{T}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Intervals as Subsets of $\\mathbf{R}$
+</summary>
+<p>
+Let $a, b \\in \\mathbf{R}$ and $a &lt; b$. We define the following types of intervals:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Interval Type
+    </th>
+    <th>
+    Notation
+  </th>
+  <th>
+  Set-Builder Definition
+</th>
+<th>
+Boundary Inclusion
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Open Interval
+    </strong>
+  </td>
+  <td>
+  $(a, b)$
+</td>
+<td>
+$\\{x \\in \\mathbf{R} : a &lt; x &lt; b\\}$
+</td>
+<td>
+Excludes both endpoints $a$ and $b$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Closed Interval
+  </strong>
+</td>
+<td>
+$[a, b]$
+</td>
+<td>
+$\\{x \\in \\mathbf{R} : a \\le x \\le b\\}$
+</td>
+<td>
+Includes both endpoints $a$ and $b$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Semi-Open (Right-Open)
+  </strong>
+</td>
+<td>
+$[a, b)$
+</td>
+<td>
+$\\{x \\in \\mathbf{R} : a \\le x &lt; b\\}$
+</td>
+<td>
+Includes $a$, excludes $b$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Semi-Closed (Left-Open)
+  </strong>
+</td>
+<td>
+$(a, b]$
+</td>
+<td>
+$\\{x \\in \\mathbf{R} : a &lt; x \\le b\\}$
+</td>
+<td>
+Excludes $a$, includes $b$.
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  The number $(b - a)$ is called the
+  <strong>
+  length
+</strong>
+of any of these intervals.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5. Universal Set &amp; Venn Diagrams
+</summary>
+<p>
+Visualizing sets and defining the context of discussion are essential for solving complex set-theoretic problems.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Universal Set
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Universal Set
+</span>
+is a basic set containing all possible objects under consideration for a particular context. It is denoted by $U$, and all other sets are treated as its subsets.
+</p>
+<ul>
+  <li>
+  Example: In the study of number systems, the universal set can be the set of real numbers $\\mathbf{R}$.
+</li>
+<li>
+Example: In human population studies, the universal set consists of all the people in the world.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Venn Diagrams
+</summary>
+<p>
+  Relationships between sets can be represented geometrically using
+  <span class="keyword">
+  Venn diagrams
+</span>
+, named after the English logician John Venn (1834-1883).
+</p>
+<ul>
+  <li>
+    The universal set $U$ is represented by a
+    <strong>
+    rectangle
+  </strong>
+  .
+</li>
+<li>
+  Subsets of $U$ are represented by
+  <strong>
+  closed curves
+</strong>
+, usually circles, inside the rectangle.
+</li>
+<li>
+Elements of the sets are written inside their respective geometric shapes.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  6. Operations on Sets
+</summary>
+<p>
+Just as arithmetic operations exist for numbers, algebraic operations exist for sets to combine, intersect, or subtract them.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Union of Sets
+</summary>
+<p>
+  The
+  <span class="keyword">
+  union
+</span>
+of two sets $A$ and $B$ is the set which consists of all elements of $A$ and all elements of $B$, with common elements taken only once. Denoted by $A \\cup B$.
+</p>
+<p>
+$$A \\cup B = \\{x : x \\in A \\text{ or } x \\in B\\}$$
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $A = \\{2, 4, 6, 8\\}$ and $B = \\{6, 8, 10, 12\\}$. Find $A \\cup B$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  List all elements of $A$: $2, 4, 6, 8$.
+</li>
+<li>
+List all elements of $B$: $6, 8, 10, 12$.
+</li>
+<li>
+Combine the lists, ensuring common elements ($6, 8$) are written only once.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\\{2, 4, 6, 8, 10, 12\\}$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Intersection of Sets
+</summary>
+<p>
+  The
+  <span class="keyword">
+  intersection
+</span>
+of two sets $A$ and $B$ is the set of all elements which are common to both $A$ and $B$. Denoted by $A \\cap B$.
+</p>
+<p>
+$$A \\cap B = \\{x : x \\in A \\text{ and } x \\in B\\}$$
+</p>
+<ul>
+  <li>
+    <strong>
+    Disjoint Sets:
+  </strong>
+  If $A$ and $B$ have no common elements, i.e., $A \\cap B = \\phi$, they are called
+  <span class="keyword">
+  disjoint sets
+</span>
+.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $A = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$ and $B = \\{2, 3, 5, 7\\}$. Find $A \\cap B$ and show that $A \\cap B = B$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify elements common to both $A$ and $B$: $2, 3, 5, 7$.
+</li>
+<li>
+Construct the intersection set: $A \\cap B = \\{2, 3, 5, 7\\}$.
+</li>
+<li>
+Observe that this set is identical to $B$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$A \\cap B = \\{2, 3, 5, 7\\} = B$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Difference of Sets
+</summary>
+<p>
+  The
+  <span class="keyword">
+  difference
+</span>
+of two sets $A$ and $B$ (written as $A - B$) is the set of elements which belong to $A$ but not to $B$.
+</p>
+<p>
+$$A - B = \\{x : x \\in A \\text{ and } x \\notin B\\}$$
+</p>
+<ul>
+  <li>
+    <em>
+    Note:
+  </em>
+  $A - B \\neq B - A$ in general.
+</li>
+<li>
+  <em>
+  Disjoint Property:
+</em>
+The three sets $(A - B)$, $(A \\cap B)$, and $(B - A)$ are mutually disjoint sets.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $A = \\{1, 2, 3, 4, 5, 6\\}$ and $B = \\{2, 4, 6, 8\\}$. Find $A - B$ and $B - A$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  To find $A - B$, remove all elements of $B$ from $A$: remove $2, 4, 6$ from $\\{1, 2, 3, 4, 5, 6\\} \\R\rightarrow \\{1, 3, 5\\}$.
+</li>
+<li>
+To find $B - A$, remove all elements of $A$ from $B$: remove $2, 4, 6$ from $\\{2, 4, 6, 8\\} \\R\rightarrow \\{8\\}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$A - B = \\{1, 3, 5\\}$ and $B - A = \\{8\\}$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algebraic Properties of Set Operations
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Property / Law
+    </th>
+    <th>
+    Union ($\\cup$) Formulation
+  </th>
+  <th>
+  Intersection ($\\cap$) Formulation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Commutative Law
+    </strong>
+  </td>
+  <td>
+  $A \\cup B = B \\cup A$
+</td>
+<td>
+$A \\cap B = B \\cap A$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Associative Law
+  </strong>
+</td>
+<td>
+$(A \\cup B) \\cup C = A \\cup (B \\cup C)$
+</td>
+<td>
+$(A \\cap B) \\cap C = A \\cap (B \\cap C)$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Identity Law
+  </strong>
+</td>
+<td>
+$A \\cup \\phi = A$
+</td>
+<td>
+$A \\cap U = A$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Idempotent Law
+  </strong>
+</td>
+<td>
+$A \\cup A = A$
+</td>
+<td>
+$A \\cap A = A$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Distributive Law
+  </strong>
+</td>
+<td>
+$A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)$
+</td>
+<td>
+$A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  7. Complement of a Set &amp; De Morgan's Laws
+</summary>
+<p>
+The complement of a set represents everything outside that set within the boundaries of the universal set.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition of Complement
+</summary>
+<p>
+  Let $U$ be the universal set and $A$ be a subset of $U$. The
+  <span class="keyword">
+  complement of A
+</span>
+(denoted by $A'$) is the set of all elements of $U$ which are not elements of $A$.
+</p>
+<p>
+$$A' = U - A = \\{x : x \\in U \\text{ and } x \\notin A\\}$$
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $U = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$ and $A = \\{1, 3, 5, 7, 9\\}$. Find $A'$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify elements in $U$ that are not in $A$.
+</li>
+<li>
+The elements are $2, 4, 6, 8, 10$.
+</li>
+<li>
+Construct the complement set: $A' = \\{2, 4, 6, 8, 10\\}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$A' = \\{2, 4, 6, 8, 10\\}$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Properties of Complement Sets
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Property Name
+    </th>
+    <th>
+    Mathematical Formulation
+  </th>
+  <th>
+  Description
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Complement Laws
+    </strong>
+  </td>
+  <td>
+    $A \\cup A' = U$
+    <br>
+    $A \\cap A' = \\phi$
+  </td>
+  <td>
+  A set and its complement partition the universal set and share no elements.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    De Morgan's Laws
+  </strong>
+</td>
+<td>
+  $(A \\cup B)' = A' \\cap B'$
+  <br>
+  $(A \\cap B)' = A' \\cup B'$
+</td>
+<td>
+The complement of a union is the intersection of complements; the complement of an intersection is the union of complements.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Double Complementation
+  </strong>
+</td>
+<td>
+$(A')' = A$
+</td>
+<td>
+Complementing a complement returns the original set.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Laws of Empty &amp; Universal Sets
+  </strong>
+</td>
+<td>
+  $\\phi' = U$
+  <br>
+  $U' = \\phi$
+</td>
+<td>
+The complement of the empty set is the universal set, and vice versa.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples: De Morgan's Laws
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $U = \\{1, 2, 3, 4, 5, 6\\}$, $A = \\{2, 3\\}$ and $B = \\{3, 4, 5\\}$. Verify that $(A \\cup B)' = A' \\cap B'$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compute $A \\cup B = \\{2, 3, 4, 5\\}$.
+</li>
+<li>
+Find the complement of $A \\cup B$: $(A \\cup B)' = U - \\{2, 3, 4, 5\\} = \\{1, 6\\}$.
+</li>
+<li>
+Compute $A' = U - A = \\{1, 4, 5, 6\\}$.
+</li>
+<li>
+Compute $B' = U - B = \\{1, 2, 6\\}$.
+</li>
+<li>
+Find the intersection of $A'$ and $B'$: $A' \\cap B' = \\{1, 4, 5, 6\\} \\cap \\{1, 2, 6\\} = \\{1, 6\\}$.
+</li>
+<li>
+Compare the results: $(A \\cup B)' = A' \\cap B' = \\{1, 6\\}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Verified that $(A \\cup B)' = A' \\cap B' = \\{1, 6\\}$
+</p>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &\times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "11-chapter-02-relations-and-functions.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
