@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 11 — Chapter 2: Relations and Functions
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$', displayMath: [['$$', '$$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 2: Relations and Functions
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Relations and Functions
+</summary>
+<p>
+  This chapter establishes the foundational concepts of
+  <span class="keyword">
+  relations
+</span>
+and
+<span class="keyword">
+functions
+</span>
+, which serve as the bedrock for calculus and modern mathematical analysis. It introduces the Cartesian product of sets, defines relations as subsets of these products, and refines them into functions under specific uniqueness conditions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Cartesian Products of Sets
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Cartesian product
+</span>
+of two non-empty sets is the set of all ordered pairs of elements from those sets.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Formal Definition &amp; Notation
+</summary>
+<p>
+Given two non-empty sets $P$ and $Q$, the Cartesian product $P \times Q$ is defined as:
+</p>
+$$P \times Q = \\{(p, q) : p \in P, q \in Q\\}$$
+<p>
+If either $P$ or $Q$ is the null set $\phi$, then their Cartesian product is also the null set:
+</p>
+$$P \times Q = \phi$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Key Algebraic Properties
+</summary>
+<ul>
+  <li>
+    <strong>
+    Equality of Ordered Pairs:
+  </strong>
+  Two ordered pairs $(a_1, b_1)$ and $(a_2, b_2)$ are equal if and only if their corresponding elements are equal: $$(a_1, b_1) = (a_2, b_2) \iff a_1 = a_2 \text{ and } b_1 = b_2$$
+</li>
+<li>
+  <strong>
+  Cardinality of Product Set:
+</strong>
+If set $A$ has $p$ elements and set $B$ has $q$ elements, the Cartesian product $A \times B$ has $pq$ elements: $s(A) = p, n(B) = q \implies n(A \times B) = pq$
+</li>
+<li>
+  <strong>
+  Infinite Products:
+</strong>
+If $A$ and $B$ are non-empty sets and at least one of them is an infinite set, then $A \times B$ is also an infinite set.
+</li>
+<li>
+  <strong>
+  Ordered Triplet:
+</strong>
+The Cartesian product of three sets $A \times A \times A$ forms ordered triplets: $$A \times A \times A = \\{(a, b, c) : a, b, c \in A\\}$$ Here, $(a, b, c)$ is called an
+<span class="keyword">
+ordered triplet
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Algorithmic Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+If $(x + 1, y - 2) = (3, 1)$, find the values of $x$ and $y$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Equate the corresponding elements of the equal ordered pairs: $$x + 1 = 3$$ $$y - 2 = 1$$
+</li>
+<li>
+Solve the linear equations independently: $$x = 3 - 1 = 2$$ $$y = 1 + 2 = 3$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$x = 2, y = 3$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $A = \\{1, 2, 3\\}$, $B = \\{3, 4\\}$, and $C = \\{4, 5, 6\\}$. Find $A \times (B \cap C)$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Find the intersection of sets $B$ and $C$: $$B \cap C = \\{3, 4\\} \cap \\{4, 5, 6\\} = \\{4\\}$$
+</li>
+<li>
+Compute the Cartesian product of $A$ with the resulting set: $$A \times (B \cap C) = \\{1, 2, 3\\} \times \\{4\\}$$ $$A \times (B \cap C) = \\{(1, 4), (2, 4), (3, 4)\\}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\\{(1, 4), (2, 4), (3, 4)\\}$
+</p>
+</blockquote>
+</details>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Relations
+</summary>
+<p>
+  A
+  <span class="keyword">
+  relation
+</span>
+establishes a mathematical link between elements of two sets.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definitions &amp; Structural Components
+</summary>
+<ul>
+  <li>
+    <strong>
+    Relation ($R$):
+  </strong>
+  A relation $R$ from a non-empty set $A$ to a non-empty set $B$ is a subset of the Cartesian product $A \times B$. It is derived by describing a relationship between the first element $x$ and the second element $y$ of the ordered pairs in $A \times B$. $$R \subseteq A \times B$$
+</li>
+<li>
+  <strong>
+  Image:
+</strong>
+If $(x, y) \in R$, then $y$ is called the
+<span class="keyword">
+image
+</span>
+of $x$ under the relation $R$.
+</li>
+<li>
+  <strong>
+  Domain:
+</strong>
+The set of all first elements of the ordered pairs in a relation $R$ from $A$ to $B$: $$\text{Domain}(R) = \\{x \in A : (x, y) \in R \text{ for some } y \in B\\}$$
+</li>
+<li>
+  <strong>
+  Range:
+</strong>
+The set of all second elements of the ordered pairs in a relation $R$ from $A$ to $B$: $$\text{Range}(R) = \\{y \in B : (x, y) \in R \text{ for some } x \in A\\}$$
+</li>
+<li>
+  <strong>
+  Codomain:
+</strong>
+The entire set $B$ is called the
+<span class="keyword">
+codomain
+</span>
+of the relation $R$. Note that: $$\text{Range}(R) \subseteq \text{Codomain}(R)$$
+</li>
+<li>
+  <strong>
+  Total Number of Relations:
+</strong>
+If $n(A) = p$ and $n(B) = q$, then $n(A \times B) = pq$. The total number of possible subsets of $A \times B$ is $2^{pq}$. Thus, the total number of relations that can be defined from $A$ to $B$ is: $$\text{Total Relations} = 2^{pq}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Representation Methods
+</summary>
+<p>
+Relations can be represented in three primary ways:
+</p>
+<ol>
+  <li>
+    <strong>
+    Roster Form:
+  </strong>
+  Explicitly listing all ordered pairs belonging to the relation, e.g., $R = \\{(1, 2), (2, 3), (3, 4)\\}$.
+</li>
+<li>
+  <strong>
+  Set-builder Form:
+</strong>
+Defining the algebraic rule or condition that the elements must satisfy, e.g., $R = \\{(x, y) : y = x + 1, x, y \in A\\}$.
+</li>
+<li>
+  <strong>
+  Arrow Diagram:
+</strong>
+A visual representation where arrows are drawn from elements of the domain to their corresponding images in the codomain.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Algorithmic Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $A = \\{1, 2, 3, 4, 5, 6\\}$. Define a relation $R$ from $A$ to $A$ by $R = \\{(x, y) : y = x + 1\\}$. Depict this using roster form and find its domain, codomain, and range.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Evaluate $y = x + 1$ for each $x \in A$:
+    <ul>
+      <li>
+      For $x = 1 \implies y = 2 \in A \implies (1, 2) \in R$
+    </li>
+    <li>
+    For $x = 2 \implies y = 3 \in A \implies (2, 3) \in R$
+  </li>
+  <li>
+  For $x = 3 \implies y = 4 \in A \implies (3, 4) \in R$
+</li>
+<li>
+For $x = 4 \implies y = 5 \in A \implies (4, 5) \in R$
+</li>
+<li>
+For $x = 5 \implies y = 6 \in A \implies (5, 6) \in R$
+</li>
+<li>
+For $x = 6 \implies y = 7 \notin A \implies$ No pair formed.
+</li>
+</ul>
+</li>
+<li>
+Write the relation in roster form: $$R = \\{(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)\\}$$
+</li>
+<li>
+Extract the domain (first elements): $$\text{Domain} = \\{1, 2, 3, 4, 5\\}$$
+</li>
+<li>
+Extract the range (second elements): $$\text{Range} = \\{2, 3, 4, 5, 6\\}$$
+</li>
+<li>
+Identify the codomain (entire target set): $$\text{Codomain} = A = \\{1, 2, 3, 4, 5, 6\\}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$R = \\{(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)\\}$, $\text{Domain} = \\{1, 2, 3, 4, 5\\}$, $\text{Range} = \\{2, 3, 4, 5, 6\\}$
+</p>
+</blockquote>
+</details>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Functions
+</summary>
+<p>
+  A
+  <span class="keyword">
+  function
+</span>
+is a special type of relation where every element of the domain is mapped to a unique element in the codomain.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Formal Definition
+</summary>
+<p>
+  A relation $f$ from a set $A$ to a set $B$ is said to be a
+  <strong>
+  function
+</strong>
+if every element of set $A$ has one and only one image in set $B$.
+</p>
+<p>
+In other words, a relation $f$ is a function if:
+</p>
+<ol>
+  <li>
+  The domain of $f$ is the entire set $A$.
+</li>
+<li>
+No two distinct ordered pairs in $f$ have the same first element. That is, if $(a, b) \in f$ and $(a, c) \in f$, then $b = c$.
+</li>
+</ol>
+<p>
+  We write this as $f : A \to B$, where $f(a) = b$. Here, $b$ is the
+  <strong>
+  image
+</strong>
+of $a$ under $f$, and $a$ is the
+<strong>
+preimage
+</strong>
+of $b$ under $f$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Real Valued Functions vs. Real Functions
+</summary>
+<ul>
+  <li>
+    <strong>
+    Real Valued Function:
+  </strong>
+  A function whose range is either the set of real numbers $\mathbb{R}$ or a subset of $\mathbb{R}$.
+</li>
+<li>
+  <strong>
+  Real Function:
+</strong>
+A function whose domain and range are both either the set of real numbers $\mathbb{R}$ or subsets of $\mathbb{R}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Real Functions Reference Matrix
+</summary>
+<p>
+The following table outlines the core real functions, their mathematical definitions, domains, and ranges:
+</p>
+<table border="1" cellpadding="6" style="border-collapse: collapse; width: 100%; \text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Function Type
+    </th>
+    <th>
+    Mathematical Definition
+  </th>
+  <th>
+  Domain
+</th>
+<th>
+Range
+</th>
+<th>
+Graphical Characteristics
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Identity Function
+    </strong>
+  </td>
+  <td>
+  $f(x) = x$
+</td>
+<td>
+$\mathbb{R}$
+</td>
+<td>
+$\mathbb{R}$
+</td>
+<td>
+Straight line passing through the origin at a $45^\circ$ angle.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Constant Function
+  </strong>
+</td>
+<td>
+$f(x) = c$ (where $c$ is a constant)
+</td>
+<td>
+$\mathbb{R}$
+</td>
+<td>
+$\\{c\\}$
+</td>
+<td>
+Straight line parallel to the $x$-axis.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Polynomial Function
+  </strong>
+</td>
+<td>
+$f(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n$
+</td>
+<td>
+$\mathbb{R}$
+</td>
+<td>
+Depends on the polynomial degree and coefficients.
+</td>
+<td>
+Continuous smooth curves (e.g., parabolas for quadratic functions).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Rational Function
+  </strong>
+</td>
+<td>
+$f(x) = \frac{g(x)}{h(x)}$, where $h(x) \neq 0$
+</td>
+<td>
+$\\{x \in \mathbb{R} : h(x) \neq 0\\}$
+</td>
+<td>
+Depends on $g(x)$ and $h(x)$.
+</td>
+<td>
+May contain asymptotes and discontinuities (e.g., hyperbola for $1/x$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Modulus Function
+  </strong>
+</td>
+<td>
+$f(x) = |x| = \begin{cases} x, &amp; x \ge 0 \\\\ -x, &amp; x &lt; 0 \end{cases}$
+</td>
+<td>
+$\mathbb{R}$
+</td>
+<td>
+$[0, \infty)$
+</td>
+<td>
+V-shaped curve symmetric about the $y$-axis with vertex at $(0,0)$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Signum Function
+  </strong>
+</td>
+<td>
+$f(x) = \begin{cases} 1, &amp; x &gt; 0 \\\\ 0, &amp; x = 0 \\\\ -1, &amp; x &lt; 0 \end{cases}$
+</td>
+<td>
+$\mathbb{R}$
+</td>
+<td>
+$\\{-1, 0, 1\\}$
+</td>
+<td>
+Step-like horizontal segments with a point at the origin.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Greatest Integer Function
+  </strong>
+</td>
+<td>
+$f(x) = [x]$ (greatest integer less than or equal to $x$)
+</td>
+<td>
+$\mathbb{R}$
+</td>
+<td>
+$\mathbb{Z}$ (Integers)
+</td>
+<td>
+Step-like discontinuous graph (staircase pattern).
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Algorithmic Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Examine the relation $R = \\{(2,1), (3,1), (4,2)\\}$ and state whether it is a function or not, giving reasons.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the domain elements: $\text{Domain} = \\{2, 3, 4\\}$.
+</li>
+<li>
+  Check if each domain element is mapped to a unique image:
+  <ul>
+    <li>
+    $2$ is mapped to $1$ (unique).
+  </li>
+  <li>
+  $3$ is mapped to $1$ (unique).
+</li>
+<li>
+$4$ is mapped to $2$ (unique).
+</li>
+</ul>
+</li>
+<li>
+Since no domain element is associated with more than one image, the uniqueness condition is satisfied.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The relation $R$ is a function.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the domain of the real function $f(x) = \frac{x^2 + 3x + 5}{x^2 - 5x + 4}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the condition for a rational function to be defined: The denominator must not be zero. $$x^2 - 5x + 4 \neq 0$$
+</li>
+<li>
+Factorize the quadratic expression in the denominator: $$x^2 - 5x + 4 = (x - 4)(x - 1)$$
+</li>
+<li>
+Find the roots where the denominator becomes zero: $$(x - 4)(x - 1) = 0 \implies x = 4 \text{ or } x = 1$$
+</li>
+<li>
+Exclude these points from the set of real numbers $\mathbb{R}$ to obtain the domain: $$\text{Domain}(f) = \mathbb{R} - \\{1, 4\\}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\text{Domain}(f) = \mathbb{R} - \\{1, 4\\}$
+</p>
+</blockquote>
+</details>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4. Algebra of Real Functions
+</summary>
+<p>
+Operations on real functions are defined pointwise over their common domains.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Operations &amp; Formulas
+</summary>
+<p>
+Let $f : X \to \mathbb{R}$ and $g : X \to \mathbb{R}$ be two real functions, where $X \subseteq \mathbb{R}$:
+</p>
+<ul>
+  <li>
+    <strong>
+    Addition:
+  </strong>
+  $$(f + g)(x) = f(x) + g(x), \quad \forall x \in X$$
+</li>
+<li>
+  <strong>
+  Subtraction:
+</strong>
+$$(f - g)(x) = f(x) - g(x), \quad \forall x \in X$$
+</li>
+<li>
+  <strong>
+  Multiplication by a Scalar:
+</strong>
+For any scalar $\alpha \in \mathbb{R}$: $$(\alpha f)(x) = \alpha f(x), \quad \forall x \in X$$
+</li>
+<li>
+  <strong>
+  Multiplication (Pointwise Product):
+</strong>
+$$(fg)(x) = f(x)g(x), \quad \forall x \in X$$
+</li>
+<li>
+  <strong>
+  Quotient:
+</strong>
+$$\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}, \quad \forall x \in X \text{ such that } g(x) \neq 0$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Algorithmic Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Let $f(x) = x^2$ and $g(x) = 2x + 1$ be two real functions. Find $(f + g)(x)$, $(f - g)(x)$, $(fg)(x)$, and $\left(\frac{f}{g}\right)(x)$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compute addition: $$(f + g)(x) = f(x) + g(x) = x^2 + 2x + 1$$
+</li>
+<li>
+Compute subtraction: $$(f - g)(x) = f(x) - g(x) = x^2 - (2x + 1) = x^2 - 2x - 1$$
+</li>
+<li>
+Compute multiplication: $$(fg)(x) = f(x) \cdot g(x) = x^2(2x + 1) = 2x^3 + x^2$$
+</li>
+<li>
+Compute quotient and specify the domain restriction: $$\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)} = \frac{x^2}{2x + 1}$$ The denominator must not be zero: $$2x + 1 \neq 0 \implies x \neq -\frac{1}{2}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$(f+g)(x) = x^2+2x+1$, $(f-g)(x) = x^2-2x-1$, $(fg)(x) = 2x^3+x^2$, $\left(\frac{f}{g}\right)(x) = \frac{x^2}{2x+1}$ (where $x \neq -\frac{1}{2}$)
+</p>
+</blockquote>
+</details>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Evolution of the Function Concept
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  The term
+  <span class="keyword">
+  function
+</span>
+was first introduced by Gottfried Wilhelm Leibnitz in 1673 in his Latin manuscript
+<em>
+"Methodus tangentium inversa, seu de fuctionibus"
+</em>
+to describe quantities varying from point to point on a curve.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+In 1698, Johan Bernoulli deliberately assigned a specialized analytical meaning to the term in his correspondence with Leibnitz. By 1779, the term was fully integrated into algebraic systems, defined as analytical expressions compounded of variables and constants.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 2
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-01-sets.html"; } else { window.location.href = "11-chapter-03-trigonometric-functions.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
