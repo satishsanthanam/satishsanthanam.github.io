@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 3: Current Electricity
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 3: Current Electricity
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction &amp; Electric Current
+</summary>
+<p>
+  In electrostatics, all charges are considered to be at rest. Charges in motion constitute an
+  <span class="keyword">
+  electric current
+</span>
+. Such currents occur naturally in many situations, such as lightning, or in steady-state devices like a torch or a cell-driven clock.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition of Electric Current
+</summary>
+<p>
+Imagine a small area held normal to the direction of flow of charges. Let $q_+$ be the net positive charge flowing in the forward direction, and $q_-$ be the net negative charge flowing in the forward direction. The net charge flowing across the area in time interval $t$ is:
+</p>
+<p>
+$$q = q_+ - q_-$$
+</p>
+<p>
+For a steady flow of charge, the current $I$ is defined as:
+</p>
+<p>
+$$I = \frac{q}{t}$$
+</p>
+<p>
+If the rate of flow of charge varies with time, we define the instantaneous current $I(t)$ as:
+</p>
+<p>
+$$I(t) = \lim_{\Delta t \to 0} \frac{\Delta Q}{\Delta t} = \frac{dQ}{dt}$$
+</p>
+<p>
+  The SI unit of current is the
+  <span class="keyword">
+  ampere
+</span>
+(
+<strong>
+A
+</strong>
+). Typical current magnitudes include:
+</p>
+<ul>
+  <li>
+    Domestic appliances: ~
+    <strong>
+    1 A
+  </strong>
+</li>
+<li>
+  Average lightning: ~
+  <strong>
+  10,000 A
+</strong>
+</li>
+<li>
+  Nerves in the human body: ~
+  <strong>
+  1 &\mu;A
+</strong>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Electric Currents in Conductors
+</summary>
+<p>
+  In solid conductors (metals), atoms are tightly bound, and the current is carried by negatively charged
+  <span class="keyword">
+  electrons
+</span>
+moving in the background of fixed positive ions. In electrolytic solutions, both positive and negative ions can move.
+</p>
+<p>
+In the absence of an electric field, electrons undergo random thermal motion, colliding with fixed ions. The direction of velocity after collision is completely random, resulting in a net average velocity of zero:
+</p>
+<p>
+$$\frac{1}{N} \sum_{i=1}^{N} \mathbf{v}_i = 0$$
+</p>
+<p>
+When an electric field $\mathbf{E}$ is applied, electrons experience an electric force and begin to drift, establishing a current.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Ohm's Law &amp; Resistivity
+</summary>
+<p>
+  Discovered by G.S. Ohm in 1828,
+  <span class="keyword">
+  Ohm's law
+</span>
+states that the current $I$ flowing through a conductor is directly proportional to the potential difference $V$ across its ends, provided physical conditions like temperature remain constant.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation
+</summary>
+<p>
+$$V \propto I \implies V = R I$$
+</p>
+<p>
+  where $R$ is the
+  <span class="keyword">
+  resistance
+</span>
+of the conductor. The SI unit of resistance is the
+<span class="keyword">
+ohm
+</span>
+($\Omega$).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Dependence of Resistance on Dimensions
+</summary>
+<p>
+For a conductor of length $l$ and cross-sectional area $A$:
+</p>
+<ul>
+  <li>
+  Resistance is directly proportional to length: $R \propto l$
+</li>
+<li>
+Resistance is inversely proportional to cross-sectional area: $R \propto \frac{1}{A}$
+</li>
+</ul>
+<p>
+Combining these relations gives:
+</p>
+<p>
+$$R = \rho \frac{l}{A}$$
+</p>
+<p>
+  where $\rho$ is the
+  <span class="keyword">
+  resistivity
+</span>
+of the material. Resistivity depends on the material type and temperature, but not on its dimensions.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Vector Form of Ohm's Law
+</summary>
+<p>
+  Define
+  <span class="keyword">
+  current density
+</span>
+$j$ as the current per unit area normal to the flow:
+</p>
+<p>
+$$j = \frac{I}{A}$$
+</p>
+<p>
+  The SI unit of current density is
+  <strong>
+  A/m&sup2;
+</strong>
+. If $E$ is the uniform electric field in a conductor of length $l$, then $V = El$. Substituting these into Ohm's law:
+</p>
+<p>
+$$El = I R = I \left(\rho \frac{l}{A}\right) = \left(\frac{I}{A}\right) \rho l = j \rho l$$
+</p>
+<p>
+$$E = j \rho \implies \mathbf{E} = \mathbf{j} \rho$$
+</p>
+<p>
+  Alternatively, in terms of
+  <span class="keyword">
+  conductivity
+</span>
+$\sigma = 1/\rho$:
+</p>
+<p>
+$$\mathbf{j} = \sigma \mathbf{E}$$
+</p>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Georg Simon Ohm (1787–1854)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  German physicist and professor at Munich. He formulated his famous law in 1828 by drawing an analogy between electrical conduction and heat conduction.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+He established that electric field is analogous to temperature gradient, and electric current is analogous to heat flow, leading to the definition of electrical resistance.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Drift of Electrons &amp; Origin of Resistivity
+</summary>
+<p>
+  Under an applied electric field $\mathbf{E}$, electrons experience an acceleration $\mathbf{a} = -\frac{e\mathbf{E}}{m}$. However, due to continuous random collisions with ions, they do not accelerate indefinitely but acquire a steady average velocity called
+  <span class="keyword">
+  drift velocity
+</span>
+($\mathbf{v}_d$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of Drift Velocity
+</summary>
+<p>
+  Let $\tau$ be the
+  <span class="keyword">
+  relaxation time
+</span>
+(the average time between successive collisions). The velocity of the $i$-th electron at time $t$ is:
+</p>
+<p>
+$$\mathbf{V}_i = \mathbf{v}_i - \frac{e\mathbf{E}}{m} t_i$$
+</p>
+<p>
+Averaging over all $N$ electrons, the average initial thermal velocity $\langle \mathbf{v}_i \rangle = 0$, and the average time elapsed since the last collision is $\tau$:
+</p>
+<p>
+$$\mathbf{v}_d = -\frac{e\mathbf{E}}{m} \tau$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Relation between Current and Drift Velocity
+</summary>
+<p>
+Consider a conductor of cross-sectional area $A$. Let $n$ be the number density of free electrons. In a time interval $\Delta t$, the electrons drift a distance $|v_d| \Delta t$. The total charge crossing the area $A$ in time $\Delta t$ is:
+</p>
+<p>
+$$\Delta Q = n e A |v_d| \Delta t$$
+</p>
+<p>
+The current $I$ is therefore:
+</p>
+<p>
+$$I = n e A v_d$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Microscopic Origin of Conductivity and Resistivity
+</summary>
+<p>
+Substituting the expression for $v_d$ into the current equation:
+</p>
+<p>
+$$I = n e A \left(\frac{e E \tau}{m}\right) = \frac{n e^2 A \tau}{m} E$$
+</p>
+<p>
+Since $j = I/A$ and $E = V/l$:
+</p>
+<p>
+$$j = \left(\frac{n e^2 \tau}{m}\right) E$$
+</p>
+<p>
+Comparing this with $\mathbf{j} = \sigma \mathbf{E}$, we get the microscopic expressions for conductivity ($\sigma$) and resistivity ($\rho$):
+</p>
+<p>
+$$\sigma = \frac{n e^2 \tau}{m}$$
+</p>
+<p>
+$$\rho = \frac{m}{n e^2 \tau}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mobility
+</summary>
+<p>
+  <span class="keyword">
+  Mobility
+</span>
+($\mu$) is defined as the magnitude of drift velocity per unit electric field:
+</p>
+<p>
+$$\mu = \frac{|v_d|}{E} = \frac{e \tau}{m}$$
+</p>
+<p>
+  The SI unit of mobility is
+  <strong>
+  m&sup2; V&sup1; s&sup1;
+</strong>
+.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Estimate the average drift speed of conduction electrons in a copper wire of cross-sectional area
+<strong>
+1.0 &&times; 10&sup7; m&sup2;
+</strong>
+carrying a current of
+<strong>
+1.5 A
+</strong>
+. Assume each copper atom contributes one conduction electron. Density of copper is
+<strong>
+9.0 &&times; 10&sup3; kg/m&sup3;
+</strong>
+, atomic mass is
+<strong>
+63.5 u
+</strong>
+.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the number density $n$ of conduction electrons:$$n = \frac{6.0 \times 10^{23}}{63.5 \text{ g}} \times 9.0 \times 10^6 \text{ g/m}^3 = 8.5 \times 10^{28} \text{ m}^{-3}$$
+</li>
+<li>
+Use the drift velocity formula $v_d = \frac{I}{neA}$:$$v_d = \frac{1.5}{(8.5 \times 10^{28}) \times (1.6 \times 10^{-19}) \times (1.0 \times 10^{-7})} = 1.1 \times 10^{-3} \text{ m/s}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$v_d = 1.1 \text{ mm/s}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Limitations of Ohm's Law &amp; Temperature Dependence
+</summary>
+<p>
+Ohm's law is not a fundamental law of nature. Many materials and devices show deviations from linear behavior.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Limitations of Ohm's Law
+</summary>
+<ul>
+  <li>
+    <strong>
+    Non-linear $V-I$ relation:
+  </strong>
+  At high currents, heating effects cause resistance to increase, making the $V-I$ curve non-linear.
+</li>
+<li>
+  <strong>
+  Directional dependence:
+</strong>
+In devices like semiconductor diodes, the current magnitude depends on the sign of the applied voltage.
+</li>
+<li>
+  <strong>
+  Non-unique relation:
+</strong>
+In materials like Gallium Arsenide (GaAs), there can be more than one value of voltage for the same current, exhibiting negative resistance regions.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Temperature Dependence of Resistivity
+</summary>
+<p>
+Over a limited temperature range, the resistivity of a metallic conductor is given by:
+</p>
+<p>
+$$\rho_T = \rho_0 [1 + \alpha(T - T_0)]$$
+</p>
+<p>
+  where $\alpha$ is the
+  <span class="keyword">
+  temperature coefficient of resistivity
+</span>
+, measured in
+<strong>
+&deg;C&sup1;
+</strong>
+or
+<strong>
+K&sup1;
+</strong>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Metals:
+  </strong>
+  $\alpha$ is positive. Resistivity increases with temperature because thermal vibrations increase, decreasing the relaxation time $\tau$.
+</li>
+<li>
+  <strong>
+  Semiconductors &amp; Insulators:
+</strong>
+Resistivity decreases exponentially with temperature because the carrier concentration $n$ increases rapidly, overcoming the slight decrease in $\tau$.
+</li>
+<li>
+  <strong>
+  Alloys (Nichrome, Manganin, Constantan):
+</strong>
+Exhibit very weak temperature dependence, making them ideal for standard wire-bound resistors.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+An electric toaster uses nichrome for its heating element. At room temperature (
+<strong>
+27.0 &deg;C
+</strong>
+), its resistance is
+<strong>
+75.3 &Omega;
+</strong>
+. When connected to a
+<strong>
+230 V
+</strong>
+supply, the current settles to
+<strong>
+2.68 A
+</strong>
+. Find the steady temperature of the element if $\alpha = 1.70 \times 10^{-4} \text{ &deg;C}^{-1}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Calculate the resistance $R_2$ at the steady temperature $T_2$:$$R_2 = \frac{V}{I} = \frac{230}{2.68} = 85.8 \text{ }\Omega$$
+</li>
+<li>
+Use the temperature dependence formula $R_2 = R_1[1 + \alpha(T_2 - T_1)]$:$$T_2 - T_1 = \frac{R_2 - R_1}{\alpha R_1} = \frac{85.8 - 75.3}{(1.70 \times 10^{-4}) \times 75.3} = 820 \text{ &deg;C}$$
+</li>
+<li>
+Find $T_2$:$$T_2 = 820 + 27.0 = 847 \text{ &deg;C}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$T_2 = 847 \text{ &deg;C}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Electrical Energy, Power &amp; Cells
+</summary>
+<p>
+When charge carriers move through a conductor under a potential difference, they lose potential energy through collisions, which is dissipated as heat.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Electrical Power
+</summary>
+<p>
+The energy dissipated as heat in a conductor of resistance $R$ in time interval $\Delta t$ is:
+</p>
+<p>
+$$\Delta W = I V \Delta t$$
+</p>
+<p>
+The power $P$ dissipated is:
+</p>
+<p>
+$$P = I V = I^2 R = \frac{V^2}{R}$$
+</p>
+<p>
+In power transmission, to minimize power loss $P_c$ in transmission lines of resistance $R_c$, electricity is transmitted at very high voltage $V$:
+</p>
+<p>
+$$P_c = \frac{P^2 R_c}{V^2}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Cells, EMF, and Internal Resistance
+</summary>
+<p>
+An electrolytic cell maintains a steady current by converting chemical energy. It consists of two electrodes immersed in an electrolyte.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Electromotive Force
+  </span>
+  (emf, $\varepsilon$): The potential difference between the positive and negative electrodes in an open circuit (when no current flows).
+</li>
+<li>
+  <span class="keyword">
+  Internal Resistance
+</span>
+($r$): The resistance offered by the electrolyte to the flow of current inside the cell.
+</li>
+<li>
+  <strong>
+  Terminal Voltage ($V$):
+</strong>
+The potential difference across the terminals of the cell when current $I$ is flowing:$$V = \varepsilon - I r$$
+</li>
+<li>
+  <strong>
+  Maximum Current:
+</strong>
+The maximum current that can be drawn from a cell (when external resistance $R = 0$) is:$$I_{max} = \frac{\varepsilon}{r}$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Combination of Cells
+</summary>
+<p>
+Cells can be combined in series or parallel to obtain desired voltages and currents in a circuit.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Cells in Series
+</summary>
+<p>
+For two cells of emfs $\varepsilon_1, \varepsilon_2$ and internal resistances $r_1, r_2$ connected in series:
+</p>
+<p>
+$$V_{AC} = V_A - V_C = (\varepsilon_1 + \varepsilon_2) - I(r_1 + r_2)$$
+</p>
+<p>
+The equivalent emf and internal resistance are:
+</p>
+<p>
+$$\varepsilon_{eq} = \varepsilon_1 + \varepsilon_2$$
+</p>
+<p>
+$$r_{eq} = r_1 + r_2$$
+</p>
+<p>
+If one cell is connected with reverse polarity:
+</p>
+<p>
+$$\varepsilon_{eq} = \varepsilon_1 - \varepsilon_2 \quad (\text{for } \varepsilon_1 &gt; \varepsilon_2)$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Cells in Parallel
+</summary>
+<p>
+For two cells connected in parallel:
+</p>
+<p>
+$$\varepsilon_{eq} = \frac{\varepsilon_1 r_2 + \varepsilon_2 r_1}{r_1 + r_2}$$
+</p>
+<p>
+$$r_{eq} = \frac{r_1 r_2}{r_1 + r_2}$$
+</p>
+<p>
+In a simpler form:
+</p>
+<p>
+$$\frac{\varepsilon_{eq}}{r_{eq}} = \frac{\varepsilon_1}{r_1} + \frac{\varepsilon_2}{r_2}$$
+</p>
+<p>
+$$\frac{1}{r_{eq}} = \frac{1}{r_1} + \frac{1}{r_2}$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Kirchhoff's Rules &amp; Wheatstone Bridge
+</summary>
+<p>
+For complex circuits where simple series-parallel rules fail, Kirchhoff's rules are used.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Kirchhoff's Rules
+</summary>
+<ol>
+  <li>
+    <strong>
+    Junction Rule (First Rule):
+  </strong>
+  At any junction, the sum of currents entering the junction must equal the sum of currents leaving it. This is based on the
+  <span class="keyword">
+  conservation of charge
+</span>
+.$$\sum I_{in} = \sum I_{out}$$
+</li>
+<li>
+  <strong>
+  Loop Rule (Second Rule):
+</strong>
+The algebraic sum of changes in potential around any closed loop involving resistors and cells must be zero. This is based on the
+<span class="keyword">
+conservation of energy
+</span>
+.$$\sum \Delta V = 0$$
+</li>
+</ol>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Gustav Robert Kirchhoff (1824–1887)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  German physicist, professor at Heidelberg and Berlin. He is famous for his contributions to circuit theory, spectroscopy, and blackbody radiation.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+He formulated the junction and loop rules in 1845 while still a student, providing a systematic method to analyze complex electrical networks.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Wheatstone Bridge
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Wheatstone bridge
+</span>
+is an arrangement of four resistors $R_1, R_2, R_3, R_4$ in a loop with a galvanometer $G$ connected across one diagonal and a source across the other.
+</p>
+<p>
+Under the balanced condition, no current flows through the galvanometer ($I_g = 0$). Applying Kirchhoff's rules yields the balance condition:
+</p>
+<p>
+$$\frac{R_2}{R_1} = \frac{R_4}{R_3}$$
+</p>
+<p>
+  This principle is used in practical devices like the
+  <span class="keyword">
+  meter bridge
+</span>
+to measure unknown resistances.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A cubical network of 12 resistors, each of resistance
+<strong>
+1 &Omega;
+</strong>
+, is connected across diagonally opposite corners to a
+<strong>
+10 V
+</strong>
+battery of negligible internal resistance. Determine the equivalent resistance of the network.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  By symmetry, let the total current entering the cube be $3I$. It splits equally into three branches at the entrance corner, so current in each of these three edges is $I$.
+</li>
+<li>
+At the next corners, each current $I$ splits into two equal parts of $I/2$.
+</li>
+<li>
+Applying Kirchhoff's loop rule to a closed loop containing the battery:$$-I R - \frac{1}{2} I R - I R + \varepsilon = 0 \implies \varepsilon = \frac{5}{2} I R$$
+</li>
+<li>
+The equivalent resistance $R_{eq}$ is defined by $\varepsilon = (3I) R_{eq}$:$$R_{eq} = \frac{\varepsilon}{3I} = \frac{5}{6} R$$
+</li>
+<li>
+For $R = 1 \text{ }\Omega$:$$R_{eq} = \frac{5}{6} \text{ }\Omega$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$R_{eq} = \frac{5}{6} \text{ }\Omega$
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 3
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-02-electrostatic-potential-and-capaci.html"; } else { window.location.href = "12-1-chapter-04-moving-charges-and-magnetism.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

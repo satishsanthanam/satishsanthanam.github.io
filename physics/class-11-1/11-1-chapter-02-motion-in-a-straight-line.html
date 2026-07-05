@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 2: Motion in a Straight Line
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 2: Motion in a Straight Line
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1. Introduction to Kinematics &amp; Rectilinear Motion
+</summary>
+<p>
+Motion is a fundamental characteristic of all matter in the universe, spanning from the microscopic flow of blood in veins to the macroscopic orbits of celestial bodies. In physics, motion is defined as a change in the position of an object over time relative to a given frame of reference.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Concepts of Motion Description
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Kinematics
+  </span>
+  : The branch of mechanics that describes the motion of objects without considering the forces or causes that produce the motion.
+</li>
+<li>
+  <span class="keyword">
+  Rectilinear Motion
+</span>
+: Motion along a straight line path. It represents the simplest form of one-dimensional motion.
+</li>
+<li>
+  <span class="keyword">
+  Point Object Approximation
+</span>
+: An approximation where an object's size is neglected, treating it as a mathematical point. This is valid when the distance moved by the object is much larger than its linear dimensions.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Physical Parameter Matrix
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Structural Concept
+    </th>
+    <th>
+    Exact Mathematical Domain / Sign Properties
+  </th>
+  <th>
+  Active Operation Formulas
+</th>
+<th>
+Systemic Role &amp; Evaluation Limits
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Path Length (Distance)
+    </strong>
+  </td>
+  <td>
+  Always positive ($s \ge 0$)
+</td>
+<td>
+$s = \int |v| dt$
+</td>
+<td>
+Total length of the path traversed; scalar quantity.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Displacement
+  </strong>
+</td>
+<td>
+Can be positive, negative, or zero
+</td>
+<td>
+$\Delta x = x_2 - x_1$
+</td>
+<td>
+Vector quantity representing the shortest distance between initial and final positions.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2. Instantaneous Velocity and Speed
+</summary>
+<p>
+While average velocity describes the overall rate of displacement over a finite time interval, it fails to capture the details of motion at specific moments. To address this, we define instantaneous velocity.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Definition &amp; Limiting Process
+</summary>
+<p>
+  The
+  <span class="keyword">
+  instantaneous velocity
+</span>
+$v$ at any instant $t$ is defined as the limit of the average velocity as the time interval $\Delta t$ becomes infinitesimally small:
+</p>
+$$v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt}$$
+<p>
+In calculus, $\frac{dx}{dt}$ is the differential coefficient of position $x$ with respect to time $t$, representing the instantaneous rate of change of position.
+</p>
+<ul>
+  <li>
+    <span class="keyword">
+    Instantaneous Speed
+  </span>
+  : The magnitude of instantaneous velocity at any given instant. Unlike average speed, which can exceed the magnitude of average velocity, instantaneous speed is always exactly equal to the magnitude of instantaneous velocity.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+The position of an object moving along the x-axis is given by $x = a + bt^2$, where $a = 8.5\text{ m}$, $b = 2.5\text{ m/s}^2$, and $t$ is in seconds. Find its velocity at $t = 0\text{ s}$ and $t = 2.0\text{ s}$. What is the average velocity between $t = 2.0\text{ s}$ and $t = 4.0\text{ s}$?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Differentiate the position function to find the instantaneous velocity function:$$v = \frac{dx}{dt} = \frac{d}{dt}(a + bt^2) = 2bt$$
+</li>
+<li>
+  Substitute $t = 0\text{ s}$ and $t = 2.0\text{ s}$ into the velocity equation:
+  <ul>
+    <li>
+    At $t = 0\text{ s}$: $v = 2(2.5)(0) = 0\text{ m/s}$
+  </li>
+  <li>
+  At $t = 2.0\text{ s}$: $v = 2(2.5)(2.0) = 10\text{ m/s}$
+</li>
+</ul>
+</li>
+<li>
+  Calculate the positions at $t = 2.0\text{ s}$ and $t = 4.0\text{ s}$ to find the average velocity:
+  <ul>
+    <li>
+    $x(2.0) = 8.5 + 2.5(2.0)^2 = 18.5\text{ m}$
+  </li>
+  <li>
+  $x(4.0) = 8.5 + 2.5(4.0)^2 = 48.5\text{ m}$
+</li>
+</ul>
+</li>
+<li>
+Compute the average velocity over the interval:$$v_{\text{avg}} = \frac{x(4.0) - x(2.0)}{4.0 - 2.0} = \frac{48.5 - 18.5}{2.0} = 15\text{ m/s}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Instantaneous velocities are $0\text{ m/s}$ at $t = 0\text{ s}$ and $10\text{ m/s}$ at $t = 2.0\text{ s}$. The average velocity is $15\text{ m/s}$.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3. Acceleration
+</summary>
+<p>
+Acceleration describes how rapidly the velocity of an object changes with time. Like velocity, acceleration is a vector quantity that can be positive, negative, or zero.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Average and Instantaneous Acceleration
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Average Acceleration
+  </span>
+  : The change in velocity divided by the time interval:$$\bar{a} = \frac{v_2 - v_1}{t_2 - t_1} = \frac{\Delta v}{\Delta t}$$
+</li>
+<li>
+  <span class="keyword">
+  Instantaneous Acceleration
+</span>
+: The limit of average acceleration as the time interval $\Delta t$ approaches zero:$$a = \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \frac{dv}{dt}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Graphical Interpretations
+</summary>
+<ul>
+  <li>
+    <strong>
+    Slope of $v-t$ Graph
+  </strong>
+  : The slope of the tangent to the velocity-time curve at any instant gives the instantaneous acceleration.
+</li>
+<li>
+  <strong>
+  Area under $v-t$ Graph
+</strong>
+: The area under the velocity-time curve over a given time interval represents the displacement of the object during that interval.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4. Kinematic Equations for Uniformly Accelerated Motion
+</summary>
+<p>
+For motion along a straight line with constant acceleration, we can derive a set of simple algebraic relations connecting displacement ($x$), time ($t$), initial velocity ($v_0$), final velocity ($v$), and acceleration ($a$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Three Fundamental Kinematic Equations
+</summary>
+<ol>
+  <li>
+    <strong>
+    First Equation (Velocity-Time Relation):
+  </strong>
+  $$v = v_0 + at$$
+</li>
+<li>
+  <strong>
+  Second Equation (Position-Time Relation):
+</strong>
+$$x = x_0 + v_0 t + \frac{1}{2} at^2$$
+</li>
+<li>
+  <strong>
+  Third Equation (Velocity-Position Relation):
+</strong>
+$$v^2 = v_0^2 + 2a(x - x_0)$$
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Calculus-Based Derivation Trace
+</summary>
+<p>
+Using the definitions of acceleration and velocity, we can derive these equations rigorously:
+</p>
+<ol>
+  <li>
+  Start with $a = \frac{dv}{dt} \implies dv = a \, dt$. Integrating both sides from $t = 0$ (where velocity is $v_0$) to $t$ (where velocity is $v$):$$\int_{v_0}^{v} dv = \int_{0}^{t} a \, dt \implies v - v_0 = at \implies v = v_0 + at$$
+</li>
+<li>
+Next, use $v = \frac{dx}{dt} \implies dx = v \, dt = (v_0 + at) \, dt$. Integrating both sides from $t = 0$ (where position is $x_0$) to $t$ (where position is $x$):$$\int_{x_0}^{x} dx = \int_{0}^{t} (v_0 + at) \, dt \implies x - x_0 = v_0 t + \frac{1}{2} at^2$$
+</li>
+<li>
+Finally, write acceleration as $a = \frac{dv}{dt} = \frac{dv}{dx} \frac{dx}{dt} = v \frac{dv}{dx} \implies v \, dv = a \, dx$. Integrating both sides:$$\int_{v_0}^{v} v \, dv = \int_{x_0}^{x} a \, dx \implies \frac{v^2 - v_0^2}{2} = a(x - x_0) \implies v^2 = v_0^2 + 2a(x - x_0)$$
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5. Practical Applications &amp; Special Cases
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Free Fall under Gravity
+</summary>
+<p>
+An object released near the Earth's surface experiences a constant downward acceleration due to gravity, denoted by $g \approx 9.8\text{ m/s}^2$ (neglecting air resistance). Taking the upward direction as positive, $a = -g$.
+</p>
+<ul>
+  <li>
+  Velocity: $v = -gt$
+</li>
+<li>
+Displacement: $y = -\frac{1}{2} gt^2$
+</li>
+<li>
+Velocity-displacement: $v^2 = -2gy$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Galileo's Law of Odd Numbers
+</summary>
+<p>
+The distances traversed by a freely falling body starting from rest during equal successive intervals of time stand to one another in the same ratio as the odd numbers beginning with unity: $1 : 3 : 5 : 7 : \dots$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Stopping Distance of Vehicles
+</summary>
+<p>
+  The distance a vehicle travels before coming to rest after brakes are applied is called the
+  <span class="keyword">
+  stopping distance
+</span>
+($d_s$). It depends on the initial velocity $v_0$ and the deceleration $-a$:
+</p>
+$$d_s = -\frac{v_0^2}{2a}$$
+<p>
+Thus, stopping distance is directly proportional to the square of the initial velocity ($d_s \propto v_0^2$).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Reaction Time
+</summary>
+<p>
+  <span class="keyword">
+  Reaction time
+</span>
+($t_r$) is the time a person takes to observe, think, and act. It can be measured using a simple ruler-drop experiment where a ruler is caught after being dropped from rest:
+</p>
+$$t_r = \sqrt{\frac{2d}{g}}$$
+<p>
+where $d$ is the distance the ruler falls before being caught.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A ball is thrown vertically upwards with a velocity of $20\text{ m/s}$ from the top of a building $25.0\text{ m}$ high. Find (a) how high the ball will rise, and (b) how long it takes to hit the ground. (Take $g = 10\text{ m/s}^2$).
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify given parameters: $y_0 = 25\text{ m}$, $v_0 = +20\text{ m/s}$, $a = -10\text{ m/s}^2$. At maximum height, final velocity $v = 0\text{ m/s}$.
+</li>
+<li>
+Calculate maximum height rise ($y - y_0$) using $v^2 = v_0^2 + 2a(y - y_0)$:$$0 = (20)^2 + 2(-10)(y - y_0) \implies 20(y - y_0) = 400 \implies y - y_0 = 20\text{ m}$$The ball rises $20\text{ m}$ above the launch point (total height of $45\text{ m}$ from the ground).
+</li>
+<li>
+Find total time to hit the ground ($y = 0\text{ m}$) using $y = y_0 + v_0 t + \frac{1}{2} at^2$:$$0 = 25 + 20t - 5t^2 \implies t^2 - 4t - 5 = 0$$Solving the quadratic equation: $(t - 5)(t + 1) = 0 \implies t = 5\text{ s}$ (since time must be positive).
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The ball rises to a height of $20\text{ m}$ above the building, and takes $5\text{ s}$ to hit the ground.
+</p>
+</blockquote>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Galileo Galilei (1564-1642)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Conducted pioneering systematic studies of motion, challenging Aristotelian physics. He designed experiments with inclined planes to slow down motion, allowing precise time measurements before the invention of accurate clocks.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Established that all bodies fall with the same constant acceleration in a vacuum, formulated the law of odd numbers for falling bodies, and laid the groundwork for the modern scientific method by combining quantitative experiments with mathematical analysis.
+</li>
+</ul>
+</div>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 2
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-1-chapter-01-units-and-measurements.html"; } else { window.location.href = "11-1-chapter-03-motion-in-a-plane.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

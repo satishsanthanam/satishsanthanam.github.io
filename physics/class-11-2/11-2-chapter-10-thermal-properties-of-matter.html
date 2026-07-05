@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 2) — Chapter 10: Thermal Properties of Matter
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 2) — Chapter 10: Thermal Properties of Matter
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.1 &amp; 10.2 Foundations of Temperature and Heat
+</summary>
+<p>
+  The study of thermal properties begins with distinguishing between the concepts of
+  <span class="keyword">
+  temperature
+</span>
+and
+<span class="keyword">
+heat
+</span>
+. While temperature is a macroscopic measure of the relative hotness or coldness of a system, heat represents the energy transferred across a boundary due to a temperature gradient.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Thermal Equilibrium and Heat Transfer
+</summary>
+<p>
+When two bodies of different temperatures are brought into contact, energy transfer occurs until they reach a state of thermal equilibrium, where their temperatures equalize.
+</p>
+<ul>
+  <li>
+    <strong>
+    Heat ($Q$):
+  </strong>
+  Energy in transit. SI Unit:
+  <strong>
+  Joule (J)
+</strong>
+.
+</li>
+<li>
+  <strong>
+  Temperature ($T$):
+</strong>
+State variable determining the direction of spontaneous heat flow. SI Unit:
+<strong>
+Kelvin (K)
+</strong>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Core Thermodynamic Parameters
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Structural Concept / Function Type
+    </th>
+    <th>
+    Exact Mathematical Domain / Sign Properties
+  </th>
+  <th>
+  Active Operation Formulas / Identities
+</th>
+<th>
+Systemic Role &amp; Evaluation Limits
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Heat Exchange ($Q$)
+    </strong>
+  </td>
+  <td>
+  $Q &gt; 0$ for heat absorption; $Q &lt; 0$ for heat rejection.
+</td>
+<td>
+$Q = m s \Delta T$
+</td>
+<td>
+Quantifies thermal energy transfer; limited to non-phase-change regimes.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Temperature ($T$)
+  </strong>
+</td>
+<td>
+$T \ge 0\text{ K}$ (Absolute scale limit)
+</td>
+<td>
+$T = t_C + 273.15$
+</td>
+<td>
+Determines thermal state and direction of spontaneous heat flow.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.3 &amp; 10.4 Thermometry and the Ideal Gas State
+</summary>
+<p>
+  Temperature measurement relies on
+  <span class="keyword">
+  thermometric properties
+</span>
+—physical characteristics of materials that vary linearly or predictably with temperature, such as liquid volume, electrical resistance, or gas pressure.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Temperature Scales and Calibration
+</summary>
+<p>
+Standard scales are defined using two fixed reference points: the ice point ($0^\circ\text{C}$ or $32^\circ\text{F}$) and the steam point ($100^\circ\text{C}$ or $212^\circ\text{F}$).
+</p>
+<p>
+The conversion formula between the Celsius ($t_C$) and Fahrenheit ($t_F$) scales is derived from their linear relationship:
+</p>
+<p style="text-align: center;">
+$$\frac{t_F - 32}{180} = \frac{t_C}{100}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Ideal Gas Equation and Absolute Zero
+</summary>
+<p>
+  Gas thermometers provide highly consistent readings because low-density gases exhibit uniform expansion behavior regardless of their chemical composition. This behavior is governed by the
+  <span class="keyword">
+  ideal-gas equation
+</span>
+:
+</p>
+<p style="text-align: center;">
+$$PV = \mu R T$$
+</p>
+<p>
+  Where $\mu$ is the number of moles and $R = 8.31\text{ J mol}^{-1}\text{ K}^{-1}$ is the
+  <span class="keyword">
+  universal gas constant
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Boyle's Law:
+  </strong>
+  $PV = \text{constant}$ (at constant temperature $T$).
+</li>
+<li>
+  <strong>
+  Charles's Law:
+</strong>
+$\frac{V}{T} = \text{constant}$ (at constant pressure $P$).
+</li>
+<li>
+  <strong>
+  Absolute Zero:
+</strong>
+Extrapolating the pressure-temperature curve of any low-density gas to zero pressure yields a minimum temperature of $-273.15^\circ\text{C}$, defined as $0\text{ K}$ on the Kelvin scale.
+</li>
+</ul>
+</details>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Boyle and Charles
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Robert Boyle (1627–1691) and Jacques Charles (1747–1823) systematically investigated gas behaviors, laying the empirical foundation for thermodynamics using early barometers and gas-volume tubes.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Their combined observations led to the formulation of the absolute temperature scale by Lord Kelvin, establishing a universal zero-point based on molecular motion cessation.
+</li>
+</ul>
+</div>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.5 Thermal Expansion and Thermal Stress
+</summary>
+<p>
+Most substances expand when heated and contract when cooled due to changes in intermolecular spacing. This phenomenon is categorized into linear, area, and volume expansion.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulations of Expansion
+</summary>
+<ul>
+  <li>
+    <strong>
+    Linear Expansion:
+  </strong>
+  For a solid rod of length $l$, the fractional change in length is proportional to the temperature change $\Delta T$:
+  <p style="text-align: center;">
+  $$\frac{\Delta l}{l} = \alpha_l \Delta T$$
+</p>
+where $\alpha_l$ is the
+<span class="keyword">
+coefficient of linear expansion
+</span>
+.
+</li>
+<li>
+  <strong>
+  Area Expansion:
+</strong>
+The fractional change in surface area $A$:
+<p style="text-align: center;">
+$$\frac{\Delta A}{A} = \alpha_a \Delta T = 2\alpha_l \Delta T$$
+</p>
+</li>
+<li>
+  <strong>
+  Volume Expansion:
+</strong>
+The fractional change in volume $V$:
+<p style="text-align: center;">
+$$\frac{\Delta V}{V} = \alpha_v \Delta T = 3\alpha_l \Delta T$$
+</p>
+where $\alpha_v$ is the
+<span class="keyword">
+coefficient of volume expansion
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Anomalous Expansion of Water
+</summary>
+<p>
+  Water exhibits a unique, anomalous behavior: it contracts when heated from $0^\circ\text{C}$ to $4^\circ\text{C}$. Consequently, water reaches its maximum density at exactly $4^\circ\text{C}$ (
+  <strong>
+  1000 kg/m³
+</strong>
+).
+</p>
+<p>
+This property is ecologically vital, as it prevents lakes and ponds from freezing solid from the bottom up, preserving aquatic life during winters.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Thermal Stress
+</summary>
+<p>
+  If a structural member (like a steel rail or beam) is prevented from expanding or contracting by rigid supports, internal forces develop, creating
+  <span class="keyword">
+  thermal stress
+</span>
+:
+</p>
+<p style="text-align: center;">
+$$\text{Thermal Stress} = \frac{F}{A} = Y \alpha_l \Delta T$$
+</p>
+<p>
+Where $Y$ is the Young's modulus of the material.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+An iron ring of diameter 5.231 m at 27 °C is to be fitted onto a wooden wheel rim of diameter 5.243 m. To what temperature must the ring be heated? (Take $\alpha_l = 1.20 \times 10^{-5}\text{ K}^{-1}$ for iron)
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify initial parameters: $L_{T1} = 5.231\text{ m}$, $L_{T2} = 5.243\text{ m}$, $T_1 = 27^\circ\text{C}$.
+</li>
+<li>
+Apply the linear expansion formula: $L_{T2} = L_{T1} [1 + \alpha_l (T_2 - T_1)]$.
+</li>
+<li>
+Isolate the temperature difference: $T_2 - T_1 = \frac{L_{T2} - L_{T1}}{L_{T1} \alpha_l} = \frac{5.243 - 5.231}{5.231 \times 1.20 \times 10^{-5}} \approx 191^\circ\text{C}$.
+</li>
+<li>
+Calculate final temperature: $T_2 = 191 + 27 = 218^\circ\text{C}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$T_2 = 218^\circ\text{C}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.6 &amp; 10.7 Heat Capacity and Calorimetry
+</summary>
+<p>
+The thermal response of a substance to heat absorption depends on its mass, temperature change, and intrinsic material properties.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Heat Capacity Formulations
+</summary>
+<ul>
+  <li>
+    <strong>
+    Heat Capacity ($S$):
+  </strong>
+  The heat required to raise the temperature of a body by one unit:
+  <p style="text-align: center;">
+  $$S = \frac{\Delta Q}{\Delta T}$$
+</p>
+</li>
+<li>
+  <strong>
+  Specific Heat Capacity ($s$):
+</strong>
+The heat capacity per unit mass:
+<p style="text-align: center;">
+$$s = \frac{1}{m}\frac{\Delta Q}{\Delta T}$$
+</p>
+SI Unit:
+<strong>
+J kg⁻¹ K⁻¹
+</strong>
+. Water has an exceptionally high specific heat capacity (
+<strong>
+4186 J kg⁻¹ K⁻¹
+</strong>
+), making it an excellent coolant.
+</li>
+<li>
+  <strong>
+  Molar Specific Heat Capacity ($C$):
+</strong>
+The heat capacity per mole of substance:
+<p style="text-align: center;">
+$$C = \frac{1}{\mu}\frac{\Delta Q}{\Delta T}$$
+</p>
+For gases, this is defined under constant pressure ($C_p$) or constant volume ($C_v$).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Calorimetry and Energy Conservation
+</summary>
+<p>
+  <span class="keyword">
+  Calorimetry
+</span>
+is the quantitative measurement of heat exchange. In an isolated system, the law of conservation of energy dictates:
+</p>
+<p style="text-align: center;">
+$$\text{Heat Lost} = \text{Heat Gained}$$
+</p>
+<p>
+Measurements are performed in a calorimeter, a vessel insulated from the environment to minimize heat leakage.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.8 Change of State and Latent Heat
+</summary>
+<p>
+Matter transitions between solid, liquid, and gaseous phases when heat is exchanged. During a phase transition, the temperature of the system remains constant despite continuous heat input or output.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Phase Transitions and Key Phenomena
+</summary>
+<ul>
+  <li>
+    <strong>
+    Melting/Fusion &amp; Freezing:
+  </strong>
+  Transition between solid and liquid. The temperature at which solid and liquid phases coexist in thermal equilibrium is the
+  <span class="keyword">
+  melting point
+</span>
+.
+</li>
+<li>
+  <strong>
+  Regelation:
+</strong>
+The phenomenon where ice melts under increased pressure and refreezes when the pressure is reduced. This allows ice skating and glacier movement.
+</li>
+<li>
+  <strong>
+  Vaporisation &amp; Condensation:
+</strong>
+Transition between liquid and gas. The equilibrium temperature is the
+<span class="keyword">
+boiling point
+</span>
+, which increases with pressure.
+</li>
+<li>
+  <strong>
+  Sublimation:
+</strong>
+Direct transition from solid to gas (e.g., dry ice, iodine) without passing through the liquid state.
+</li>
+<li>
+  <strong>
+  Triple Point:
+</strong>
+The unique temperature and pressure at which solid, liquid, and vapor phases of a substance coexist in thermodynamic equilibrium. For water, this occurs at $273.16\text{ K}$ and $6.11 \times 10^{-3}\text{ Pa}$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Latent Heat
+</summary>
+<p>
+  The heat energy absorbed or released per unit mass during a phase change is called
+  <span class="keyword">
+  latent heat
+</span>
+($L$):
+</p>
+<p style="text-align: center;">
+$$Q = m L$$
+</p>
+<ul>
+  <li>
+    <strong>
+    Latent Heat of Fusion ($L_f$):
+  </strong>
+  Heat required to change a unit mass from solid to liquid at its melting point. For water, $L_f \approx 3.33 \times 10^5\text{ J kg}^{-1}$.
+</li>
+<li>
+  <strong>
+  Latent Heat of Vaporisation ($L_v$):
+</strong>
+Heat required to change a unit mass from liquid to gas at its boiling point. For water, $L_v \approx 2.26 \times 10^6\text{ J kg}^{-1}$.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.9 Mechanisms of Heat Transfer
+</summary>
+<p>
+Heat energy transfers spontaneously from regions of higher temperature to regions of lower temperature via three distinct physical mechanisms: conduction, convection, and radiation.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Conduction
+</summary>
+<p>
+  <span class="keyword">
+  Conduction
+</span>
+is the transfer of heat through molecular collisions without bulk motion of the material. In a steady state, the rate of heat flow $H$ through a bar of length $L$ and cross-sectional area $A$ is:
+</p>
+<p style="text-align: center;">
+$$H = KA \frac{T_C - T_D}{L}$$
+</p>
+<p>
+  Where $K$ is the
+  <span class="keyword">
+  thermal conductivity
+</span>
+of the material (SI Unit:
+<strong>
+W m⁻¹ K⁻¹
+</strong>
+).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Convection
+</summary>
+<p>
+  <span class="keyword">
+  Convection
+</span>
+is heat transfer by the actual movement of fluid matter. It can be natural (driven by buoyancy forces due to density differences, e.g., sea breezes, trade winds) or forced (driven by pumps or fans, e.g., blood circulation by the heart).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Radiation and Blackbody Physics
+</summary>
+<p>
+  <span class="keyword">
+  Radiation
+</span>
+is heat transfer via electromagnetic waves, requiring no material medium.
+</p>
+<ul>
+  <li>
+    <strong>
+    Wien's Displacement Law:
+  </strong>
+  The wavelength $\lambda_m$ corresponding to peak emission intensity is inversely proportional to the absolute temperature $T$:
+  <p style="text-align: center;">
+  $$\lambda_m T = \text{constant} \approx 2.9 \times 10^{-3}\text{ m K}$$
+</p>
+</li>
+<li>
+  <strong>
+  Stefan-Boltzmann Law:
+</strong>
+The total energy radiated per unit time $H$ by a blackbody of area $A$ at temperature $T$ is:
+<p style="text-align: center;">
+$$H = A \sigma T^4$$
+</p>
+For a real body with emissivity $e$ ($0 &lt; e &lt; 1$):
+<p style="text-align: center;">
+$$H = e \sigma A T^4$$
+</p>
+Where $\sigma = 5.67 \times 10^{-8}\text{ W m}^{-2}\text{ K}^{-4}$ is the Stefan-Boltzmann constant.
+</li>
+<li>
+  <strong>
+  Net Heat Loss:
+</strong>
+If a body at temperature $T$ is placed in surroundings at temperature $T_s$, the net rate of heat loss is:
+<p style="text-align: center;">
+$$H_{\text{net}} = e \sigma A (T^4 - T_s^4)$$
+</p>
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.10 Newton's Law of Cooling
+</summary>
+<p>
+  According to
+  <span class="keyword">
+  Newton's law of cooling
+</span>
+, the rate of loss of heat of a hot body is directly proportional to the difference in temperature between the body and its surroundings, provided the temperature difference is small.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Derivation
+</summary>
+<p>
+Let a body of mass $m$ and specific heat capacity $s$ be at temperature $T_2$, and its surroundings be at temperature $T_1$. The rate of heat loss is:
+</p>
+<p style="text-align: center;">
+$$-\frac{dQ}{dt} = k(T_2 - T_1)$$
+</p>
+<p>
+Since $dQ = m s dT_2$, we can write:
+</p>
+<p style="text-align: center;">
+$$-m s \frac{dT_2}{dt} = k(T_2 - T_1)$$
+</p>
+<p style="text-align: center;">
+$$\frac{dT_2}{T_2 - T_1} = -\frac{k}{ms} dt = -K dt$$
+</p>
+<p>
+Integrating both sides yields:
+</p>
+<p style="text-align: center;">
+$$\ln(T_2 - T_1) = -Kt + C$$
+</p>
+<p style="text-align: center;">
+$$T_2 = T_1 + C' e^{-Kt}$$
+</p>
+<p>
+This exponential decay indicates that the cooling rate is initially rapid and slows down asymptotically as the body's temperature approaches that of its surroundings.
+</p>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 10
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-2-chapter-09-mechanical-properties-of-fluids.html"; } else { window.location.href = "11-2-chapter-11-thermodynamics.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 2) — Chapter 13: Oscillations
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 2) — Chapter 13: Oscillations
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.1 Introduction to Oscillatory Motion
+</summary>
+<p>
+  In physical systems, motion can be broadly classified into repetitive and non-repetitive categories. While rectilinear and projectile motions are non-repetitive, orbital and circular motions repeat at regular intervals. A special class of repetitive motion is
+  <span class="keyword">
+  oscillatory motion
+</span>
+, where an object moves to and fro about a stable equilibrium position.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Periodic vs. Oscillatory Motion
+</summary>
+<ul>
+  <li>
+    <strong>
+    Periodic Motion:
+  </strong>
+  Any motion that repeats itself at regular, equal intervals of time (e.g., the orbital revolution of planets).
+</li>
+<li>
+  <strong>
+  Oscillatory Motion:
+</strong>
+A periodic motion in which the system moves back and forth about a central mean position (e.g., a swinging pendulum, a vibrating violin string).
+</li>
+<li>
+  <strong>
+  Key Distinction:
+</strong>
+Every oscillatory motion is periodic, but not every periodic motion is oscillatory (e.g., uniform circular motion is periodic but not to-and-fro).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Oscillations vs. Vibrations
+</summary>
+<p>
+While there is no strict physical boundary between the two terms, they are generally distinguished by their frequency scales:
+</p>
+<ul>
+  <li>
+    <strong>
+    Oscillation:
+  </strong>
+  Typically refers to low-frequency macroscopic movements, such as the swaying of a tree branch or the motion of a swing.
+</li>
+<li>
+  <strong>
+  Vibration:
+</strong>
+Typically refers to high-frequency microscopic movements, such as the rapid motion of atoms in a crystal lattice or a musical instrument string.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.2 Period, Frequency, and Displacement
+</summary>
+<p>
+To quantitatively describe periodic and oscillatory systems, we define fundamental physical parameters that characterize their temporal and spatial behavior.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Period and Frequency
+</summary>
+<p>
+The temporal characteristics of periodic motion are defined by the time interval of repetition and its rate:
+</p>
+<ul>
+  <li>
+    <strong>
+    Period ($T$):
+  </strong>
+  The smallest interval of time after which the motion repeats itself. The SI unit of period is the second (
+  <strong>
+  s
+</strong>
+).
+</li>
+<li>
+  <strong>
+  Frequency ($\nu$):
+</strong>
+The number of repetitions or cycles that occur per unit time. It is mathematically defined as the reciprocal of the period:$$\nu = \frac{1}{T}$$The SI unit of frequency is the hertz (
+<strong>
+Hz
+</strong>
+), where $1 \text{ Hz} = 1 \text{ s}^{-1}$.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+On average, a human heart is found to beat 75 \times in a minute. Calculate its frequency and period.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the total number of cycles ($N = 75$) and the total time interval ($t = 60 \text{ s}$).
+</li>
+<li>
+Calculate the frequency ($\nu$) as the number of cycles per second:$$\nu = \frac{75}{60 \text{ s}} = 1.25 \text{ Hz}$$
+</li>
+<li>
+Calculate the time period ($T$) as the reciprocal of the frequency:$$T = \frac{1}{\nu} = \frac{1}{1.25 \text{ s}^{-1}} = 0.8 \text{ s}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Frequency $\nu = 1.25 \text{ Hz}$, Time Period $T = 0.8 \text{ s}$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Generalized Displacement
+</summary>
+<p>
+  In the context of oscillations,
+  <span class="keyword">
+  displacement
+</span>
+is generalized beyond spatial coordinates to represent the change in any physical property over time:
+</p>
+<ul>
+  <li>
+    <strong>
+    Mechanical Systems:
+  </strong>
+  Position coordinates ($x(t)$) or angular position ($\theta(t)$) for a simple pendulum.
+</li>
+<li>
+  <strong>
+  Electrical Systems:
+</strong>
+The time-varying voltage across a capacitor in an AC circuit.
+</li>
+<li>
+  <strong>
+  Electromagnetic Systems:
+</strong>
+The oscillating electric ($E$) and magnetic ($B$) field vectors in a propagating light wave.
+</li>
+<li>
+  <strong>
+  Acoustic Systems:
+</strong>
+Pressure variations in a medium during sound propagation.
+</li>
+</ul>
+</p>
+<p>
+  Mathematically, the simplest periodic displacement function is represented by a sinusoidal function of time:$$f(t) = A \cos \omega t$$By the
+  <span class="keyword">
+  Fourier theorem
+</span>
+, any complex periodic function can be expressed as a linear superposition of sine and cosine functions of different periods with appropriate coefficients:$$f(t) = A \sin \omega t + B \cos \omega t = D \sin(\omega t + \phi)$$where $D = \sqrt{A^2 + B^2}$ and $\phi = \tan^{-1}(B/A)$.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.3 Simple Harmonic Motion (SHM)
+</summary>
+<p>
+  <span class="keyword">
+  Simple Harmonic Motion
+</span>
+is the fundamental building block of oscillatory systems. It is defined as a periodic motion where the displacement is a sinusoidal function of time.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation
+</summary>
+<p>
+  The instantaneous displacement $x(t)$ of a particle executing SHM along the x-axis is given by:$$x(t) = A \cos(\omega t + \phi)$$Where the parameters are defined as follows:
+  <ul>
+    <li>
+      <strong>
+      Amplitude ($A$):
+    </strong>
+    The magnitude of the maximum displacement of the particle from its mean position.
+  </li>
+  <li>
+    <strong>
+    Angular Frequency ($\omega$):
+  </strong>
+  The rate of change of phase, related to the period $T$ by:$$\omega = \frac{2\pi}{T}$$The SI unit of angular frequency is radians per second (
+  <strong>
+  rad/s
+</strong>
+).
+</li>
+<li>
+  <strong>
+  Phase ($ \omega t + \phi $):
+</strong>
+The time-dependent argument of the cosine function that determines the state of motion (position and velocity) at any instant $t$.
+</li>
+<li>
+  <strong>
+  Phase Constant ($\phi$):
+</strong>
+The initial phase angle at $t = 0$, determined by the initial position and velocity of the particle.
+</li>
+</ul>
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.4 Simple Harmonic Motion and Uniform Circular Motion
+</summary>
+<p>
+  There is a direct geometric relationship between simple harmonic motion and uniform circular motion. The projection of a particle moving uniformly on a circle (called the
+  <span class="keyword">
+  reference circle
+</span>
+) onto any of its diameters executes simple harmonic motion.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Geometric Projection Proof
+</summary>
+<ol>
+  <li>
+  Consider a reference particle $P$ moving with constant angular speed $\omega$ on a circle of radius $A$.
+</li>
+<li>
+Let the initial position vector $\vec{OP}$ at $t = 0$ make an angle $\phi$ with the positive x-axis.
+</li>
+<li>
+At any time $t$, the position vector $\vec{OP}$ makes an angle $(\omega t + \phi)$ with the positive x-axis.
+</li>
+<li>
+The projection of $P$ onto the x-axis (point $P'$) has a position coordinate given by:$$x(t) = A \cos(\omega t + \phi)$$
+</li>
+<li>
+The projection of $P$ onto the y-axis (point $P''$) has a position coordinate given by:$$y(t) = A \sin(\omega t + \phi)$$
+</li>
+</ol>
+<p>
+This proves that the projection of uniform circular motion on any diameter is mathematically identical to linear simple harmonic motion.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.5 Velocity and Acceleration in Simple Harmonic Motion
+</summary>
+<p>
+The kinematic variables of a particle executing SHM can be derived directly by differentiating the displacement function with respect to time.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of Velocity
+</summary>
+<p>
+  The instantaneous velocity $v(t)$ is the time derivative of displacement:$$v(t) = \frac{d}{dt}[A \cos(\omega t + \phi)] = -\omega A \sin(\omega t + \phi)$$
+  <ul>
+    <li>
+    The maximum speed (velocity amplitude) is $v_m = \omega A$, occurring at the mean position ($x = 0$).
+  </li>
+  <li>
+  The velocity is zero at the extreme positions ($x = \pm A$).
+</li>
+<li>
+The velocity function has a phase difference of $\pi/2$ relative to the displacement function.
+</li>
+</ul>
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of Acceleration
+</summary>
+<p>
+  The instantaneous acceleration $a(t)$ is the time derivative of velocity:$$a(t) = \frac{d}{dt}[-\omega A \sin(\omega t + \phi)] = -\omega^2 A \cos(\omega t + \phi)$$Substituting the displacement equation $x(t) = A \cos(\omega t + \phi)$ yields:$$a(t) = -\omega^2 x(t)$$
+  <ul>
+    <li>
+    The acceleration is directly proportional to the displacement but opposite in direction (always directed towards the mean position).
+  </li>
+  <li>
+  The maximum acceleration amplitude is $a_m = \omega^2 A$, occurring at the extreme positions ($x = \pm A$).
+</li>
+<li>
+The acceleration is zero at the mean position ($x = 0$).
+</li>
+<li>
+The acceleration function has a phase difference of $\pi$ relative to the displacement function.
+</li>
+</ul>
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A body oscillates with SHM according to the equation $x = 5 \cos[2\pi t + \pi/4]$ in SI units. At $t = 1.5 \text{ s}$, calculate the (a) displacement, (b) speed, and (c) acceleration of the body.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the parameters from the given equation: Amplitude $A = 5 \text{ m}$, angular frequency $\omega = 2\pi \text{ s}^{-1}$, phase constant $\phi = \pi/4$.
+</li>
+<li>
+Calculate displacement at $t = 1.5 \text{ s}$:$$x(1.5) = 5 \cos[2\pi(1.5) + \pi/4] = 5 \cos[3\pi + \pi/4] = -5 \cos(\pi/4) = -5 \times 0.707 \text{ m} = -3.535 \text{ m}$$
+</li>
+<li>
+Calculate velocity at $t = 1.5 \text{ s}$:$$v(1.5) = -\omega A \sin(\omega t + \phi) = -(2\pi)(5) \sin[3\pi + \pi/4] = 10\pi \sin(\pi/4) = 10\pi \times 0.707 \text{ m/s} \approx 22 \text{ m/s}$$
+</li>
+<li>
+Calculate acceleration at $t = 1.5 \text{ s}$:$$a(1.5) = -\omega^2 x(1.5) = -(2\pi)^2 (-3.535 \text{ m}) = 4\pi^2 \times 3.535 \text{ m/s}^2 \approx 140 \text{ m/s}^2$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Displacement $x = -3.535 \text{ m}$, Speed $v = 22 \text{ m/s}$, Acceleration $a = 140 \text{ m/s}^2$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.6 Force Law for Simple Harmonic Motion
+</summary>
+<p>
+Using Newton's second law of motion ($F = ma$) and the kinematic expression for acceleration in SHM, we can establish the dynamic condition for simple harmonic motion.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of the Restoring Force
+</summary>
+<p>
+  The force acting on a particle of mass $m$ executing SHM is:$$F(t) = ma(t) = -m\omega^2 x(t)$$Defining the
+  <span class="keyword">
+  force constant
+</span>
+(or spring constant) as $k = m\omega^2$, the force law becomes:$$F(t) = -kx(t)$$
+<ul>
+  <li>
+  This is a linear restoring force, directly proportional to the displacement and directed opposite to it.
+</li>
+<li>
+The angular frequency of the system is determined by its inertia ($m$) and stiffness ($k$):$$\omega = \sqrt{\frac{k}{m}}$$
+</li>
+<li>
+The time period of the linear harmonic oscillator is:$$T = 2\pi\sqrt{\frac{m}{k}}$$
+</li>
+</ul>
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.7 Energy in Simple Harmonic Motion
+</summary>
+<p>
+A particle executing SHM possesses both kinetic energy ($K$) due to its motion and potential energy ($U$) due to its displacement against the restoring force.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Kinetic Energy (K)
+</summary>
+<p>
+The kinetic energy of the particle at any instant $t$ is:$$K = \frac{1}{2}mv^2 = \frac{1}{2}m\omega^2 A^2 \sin^2(\omega t + \phi) = \frac{1}{2}kA^2 \sin^2(\omega t + \phi)$$Kinetic energy is maximum at the mean position ($x = 0$) and zero at the extreme positions ($x = \pm A$).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Potential Energy (U)
+</summary>
+<p>
+The potential energy of the particle, associated with the conservative restoring force $F = -kx$, is:$$U = \frac{1}{2}kx^2 = \frac{1}{2}kA^2 \cos^2(\omega t + \phi)$$Potential energy is zero at the mean position ($x = 0$) and maximum at the extreme positions ($x = \pm A$).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Total Mechanical Energy (E)
+</summary>
+<p>
+  The total mechanical energy of the system is the sum of its kinetic and potential energies:$$E = K + U = \frac{1}{2}kA^2 [\sin^2(\omega t + \phi) + \cos^2(\omega t + \phi)]$$Using the trigonometric identity $\sin^2\theta + \cos^2\theta = 1$, we get:$$E = \frac{1}{2}kA^2$$
+  <ul>
+    <li>
+    The total mechanical energy of a harmonic oscillator is constant and independent of time.
+  </li>
+  <li>
+  Energy continuously transforms between kinetic and potential forms during the cycle.
+</li>
+<li>
+Both $K$ and $U$ oscillate with a frequency of $2\nu$ (period $T/2$).
+</li>
+</ul>
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+A block of mass 1 kg is fastened to a spring with spring constant $k = 50 \text{ N/m}$. The block is pulled to a distance $x = 10 \text{ cm}$ from its equilibrium position on a frictionless surface and released from rest at $t = 0$. Calculate the kinetic, potential, and total energies of the block when it is 5 cm away from the mean position.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given parameters: Mass $m = 1 \text{ kg}$, spring constant $k = 50 \text{ N/m}$, amplitude $A = 0.1 \text{ m}$, and intermediate displacement $x = 0.05 \text{ m}$.
+</li>
+<li>
+Calculate the total mechanical energy ($E$):$$E = \frac{1}{2}kA^2 = \frac{1}{2}(50)(0.1)^2 = 0.25 \text{ J}$$
+</li>
+<li>
+Calculate the potential energy ($U$) at $x = 0.05 \text{ m}$:$$U = \frac{1}{2}kx^2 = \frac{1}{2}(50)(0.05)^2 = 0.0625 \text{ J}$$
+</li>
+<li>
+Calculate the kinetic energy ($K$) using conservation of energy ($K = E - U$):$$K = 0.25 \text{ J} - 0.0625 \text{ J} = 0.1875 \text{ J} \approx 0.19 \text{ J}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Potential Energy $U = 0.0625 \text{ J}$, Kinetic Energy $K = 0.19 \text{ J}$, Total Energy $E = 0.25 \text{ J}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.8 The Simple Pendulum
+</summary>
+<p>
+  A
+  <span class="keyword">
+  simple pendulum
+</span>
+consists of a small bob of mass $m$ suspended by a light, inextensible string of length $L$ from a rigid support.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of the Time Period
+</summary>
+<ol>
+  <li>
+  Let the pendulum be displaced by a small angle $\theta$ from the vertical.
+</li>
+<li>
+  The forces acting on the bob are:
+  <ul>
+    <li>
+    Tension $\vec{T}$ along the string.
+  </li>
+  <li>
+  Gravitational force $m\vec{g}$ acting vertically downwards.
+</li>
+</ul>
+</li>
+<li>
+Resolve $mg$ into two components: $mg \cos\theta$ along the string (balanced by tension) and $mg \sin\theta$ perpendicular to the string (providing the restoring force).
+</li>
+<li>
+The restoring torque $\tau$ about the support point is:$$\tau = -L(mg \sin\theta)$$
+</li>
+<li>
+Using Newton's rotational law $\tau = I\alpha$, where $I = mL^2$ is the moment of inertia:$$mL^2 \alpha = -mgL \sin\theta \implies \alpha = -\frac{g}{L} \sin\theta$$
+</li>
+<li>
+For small angular displacements ($\theta \ll 1$ radian), we apply the small-angle approximation $\sin\theta \approx \theta$:$$\alpha \approx -\frac{g}{L} \theta$$
+</li>
+<li>
+Comparing this with the SHM angular acceleration equation $\alpha = -\omega^2 \theta$, we find:$$\omega = \sqrt{\frac{g}{L}}$$
+</li>
+<li>
+The time period of a simple pendulum is:$$T = 2\pi\sqrt{\frac{L}{g}}$$
+</li>
+</ol>
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+What is the length of a simple pendulum that ticks seconds (has a time period of exactly 2 s) at a location where $g = 9.8 \text{ m/s}^2$?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given parameters: Time period $T = 2 \text{ s}$, acceleration due to gravity $g = 9.8 \text{ m/s}^2$.
+</li>
+<li>
+Rearrange the pendulum period formula to solve for length $L$:$$T = 2\pi\sqrt{\frac{L}{g}} \implies T^2 = 4\pi^2 \frac{L}{g} \implies L = \frac{gT^2}{4\pi^2}$$
+</li>
+<li>
+Substitute the values into the equation:$$L = \frac{9.8 \times 2^2}{4\pi^2} = \frac{9.8 \times 4}{4\pi^2} = \frac{9.8}{\pi^2} \approx 0.993 \text{ m} \approx 1 \text{ m}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Length of the seconds pendulum $L \approx 1 \text{ m}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  13.9 Summary of Physical Quantities in Oscillations
+</summary>
+<p>
+The following table summarizes the key physical quantities, mathematical domains, and active formulas governing simple harmonic motion.
+</p>
+<table border="1" style="width:100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Structural Concept / Function Type
+    </th>
+    <th>
+    Exact Mathematical Domain / Sign Properties
+  </th>
+  <th>
+  Active Operation Formulas / Identities
+</th>
+<th>
+Systemic Role &amp; Evaluation Limits
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Displacement
+    </strong>
+  </td>
+  <td>
+  $[-A, A]$
+</td>
+<td>
+$x(t) = A \cos(\omega t + \phi)$
+</td>
+<td>
+Defines the instantaneous position relative to equilibrium.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Velocity
+  </strong>
+</td>
+<td>
+$[-\omega A, \omega A]$
+</td>
+<td>
+$v(t) = -\omega A \sin(\omega t + \phi)$
+</td>
+<td>
+Measures rate of change of position; maximum at equilibrium ($x = 0$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Acceleration
+  </strong>
+</td>
+<td>
+$[-\omega^2 A, \omega^2 A]$
+</td>
+<td>
+$a(t) = -\omega^2 x(t)$
+</td>
+<td>
+Proportional and opposite to displacement; maximum at extremes ($x = \pm A$).
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Restoring Force
+  </strong>
+</td>
+<td>
+$[-kA, kA]$
+</td>
+<td>
+$F(t) = -kx(t)$
+</td>
+<td>
+Dynamic driver of SHM; always directed towards equilibrium.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Kinetic Energy
+  </strong>
+</td>
+<td>
+$[0, \frac{1}{2}kA^2]$
+</td>
+<td>
+$K = \frac{1}{2}kA^2 \sin^2(\omega t + \phi)$
+</td>
+<td>
+Energy of motion; peaks twice per period at $x = 0$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Potential Energy
+  </strong>
+</td>
+<td>
+$[0, \frac{1}{2}kA^2]$
+</td>
+<td>
+$U = \frac{1}{2}kx^2$
+</td>
+<td>
+Stored elastic energy; peaks twice per period at $x = \pm A$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Total Energy
+  </strong>
+</td>
+<td>
+Constant: $\frac{1}{2}kA^2$
+</td>
+<td>
+$E = K + U = \frac{1}{2}kA^2$
+</td>
+<td>
+Conserved quantity; independent of time and position.
+</td>
+</tr>
+</tbody>
+</table>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle / Epigraph: Galileo Galilei &amp; Heinrich Hertz
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Galileo Galilei (1564–1642) observed the isochronism of a swinging chandelier in the Cathedral of Pisa, using his pulse as a timer. Heinrich Rudolf Hertz (1857–1894) discovered radio waves, establishing the physical reality of electromagnetic oscillations.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+The SI unit of frequency, the hertz (
+<strong>
+Hz
+</strong>
+), is named in honor of Hertz, representing one cycle per second ($1 \text{ Hz} = 1 \text{ s}^{-1}$). Galileo's work laid the foundation for the pendulum clock, later engineered by Christiaan Huygens.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 13
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-2-chapter-12-kinetic-theory.html"; } else { window.location.href = "11-2-chapter-14-waves.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

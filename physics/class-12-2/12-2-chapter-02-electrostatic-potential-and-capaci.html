@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 2) — Chapter 2: Wave Optics
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 2) — Chapter 2: Wave Optics
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.1 Introduction to Wave Optics
+</summary>
+<p>
+  The study of light has historically transitioned between two competing frameworks: the
+  <span class="keyword">
+  corpuscular model
+</span>
+and the
+<span class="keyword">
+wave model
+</span>
+. In 1637, Descartes proposed the corpuscular model, which was later championed by Isaac Newton in his treatise
+<em>
+OPTICKS
+</em>
+. This model predicted that light travels faster in denser media. In 1678, Christiaan Huygens proposed the wave theory of light, which predicted the opposite: that the speed of light is slower in denser media. This was experimentally verified by Foucault in 1850, establishing the superiority of the wave model.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Christiaan Huygens (1629–1695)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  A Dutch physicist, astronomer, and mathematician who founded the wave theory of light. He published his groundbreaking work in
+  <em>
+  Treatise on Light
+</em>
+, explaining reflection, refraction, and double refraction in calcite.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Introduced the concept of wavefronts and secondary wavelets, laying the foundation for physical optics.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Thomas Young (1773–1829)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  An English polymath who performed the famous double-slit interference experiment in 1801, providing definitive proof of the wave nature of light.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Measured the wavelength of visible light for the first time and established the principle of superposition.
+</li>
+</ul>
+</div>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 14px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Model of Light
+    </th>
+    <th>
+    Key Proponents
+  </th>
+  <th>
+  Speed in Denser Medium
+</th>
+<th>
+Primary Phenomena Explained
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Corpuscular Model
+    </strong>
+  </td>
+  <td>
+  Descartes, Newton
+</td>
+<td>
+Greater than in vacuum/air ($v_{denser} &gt; v_{rarer}$)
+</td>
+<td>
+Rectilinear propagation, reflection, refraction
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Wave Model
+  </strong>
+</td>
+<td>
+Huygens, Young, Fresnel, Maxwell
+</td>
+<td>
+Less than in vacuum/air ($v_{denser} &lt; v_{rarer}$)
+</td>
+<td>
+Reflection, refraction, interference, diffraction, polarisation
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.2 Huygens Principle and Wavefronts
+</summary>
+<p>
+  Huygens' principle is a geometrical construction used to determine the shape and position of a
+  <span class="keyword">
+  wavefront
+</span>
+at a later time, given its shape at an initial instant.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition of a Wavefront
+</summary>
+<p>
+  A
+  <span class="keyword">
+  wavefront
+</span>
+is defined as the locus of all points in a medium that oscillate in the same phase. It is a surface of constant phase.
+</p>
+<ul>
+  <li>
+    <strong>
+    Spherical Wavefront:
+  </strong>
+  Produced by a point source emitting waves uniformly in all directions. The wavefronts are concentric spheres.
+</li>
+<li>
+  <strong>
+  Plane Wavefront:
+</strong>
+At a very large distance from a point or line source, a small portion of the spherical or cylindrical wavefront can be approximated as a plane.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Huygens' Postulates
+</summary>
+<ol>
+  <li>
+    Each point on a primary wavefront acts as a source of secondary disturbance, emitting spherical wavelets called
+    <span class="keyword">
+    secondary wavelets
+  </span>
+  that spread out in all directions with the speed of the wave in that medium.
+</li>
+<li>
+The envelope or common tangent surface to these secondary wavelets in the forward direction at any later time $t = \tau$ gives the new position of the wavefront.
+</li>
+<li>
+The amplitude of the secondary wavelets is maximum in the forward direction and zero in the backward direction, explaining the absence of a backwave.
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.3 Refraction and Reflection of Plane Waves
+</summary>
+<p>
+Using Huygens' geometrical construction, we can rigorously derive the fundamental laws of reflection and refraction.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Refraction of a Plane Wave (Snell's Law Derivation)
+</summary>
+<p>
+Let a plane wavefront $AB$ be incident at an angle $i$ on a plane interface separating medium 1 (speed $v_1$) and medium 2 (speed $v_2$). Let $\tau$ be the time taken by the wavefront to travel from $B$ to $C$. Thus, $BC = v_1 \tau$.
+</p>
+<p>
+To find the refracted wavefront, we draw a sphere of radius $v_2 \tau$ from point $A$ in medium 2. The tangent plane $CE$ drawn from $C$ to this sphere represents the refracted wavefront, where $AE = v_2 \tau$.
+</p>
+<p>
+From the geometry of the triangles $\triangle ABC$ and $\triangle AEC$:
+</p>
+<p>
+$$\sin i = \frac{BC}{AC} = \frac{v_1 \tau}{AC}$$
+</p>
+<p>
+$$\sin r = \frac{AE}{AC} = \frac{v_2 \tau}{AC}$$
+</p>
+<p>
+Dividing these equations yields:
+</p>
+<p>
+$$\frac{\sin i}{\sin r} = \frac{v_1}{v_2}$$
+</p>
+<p>
+  Defining the refractive indices $n_1 = c/v_1$ and $n_2 = c/v_2$, we obtain
+  <span class="keyword">
+  Snell's law of refraction
+</span>
+:
+</p>
+<p>
+$$n_1 \sin i = n_2 \sin r$$
+</p>
+<p>
+During refraction, the wavelength changes such that $\frac{\lambda_1}{\lambda_2} = \frac{v_1}{v_2}$, but the frequency $\nu = \frac{v}{\lambda}$ remains constant.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Reflection of a Plane Wave
+</summary>
+<p>
+Let a plane wavefront $AB$ be incident at an angle $i$ on a reflecting surface $MN$. Let $v$ be the speed of the wave. The time taken for the wavefront to advance from $B$ to $C$ is $\tau$, so $BC = v\tau$.
+</p>
+<p>
+To construct the reflected wavefront, we draw a sphere of radius $v\tau$ from $A$. The tangent plane $CE$ from $C$ to this sphere represents the reflected wavefront, where $AE = v\tau$.
+</p>
+<p>
+Since $BC = AE = v\tau$ and $AC$ is common, the right-angled triangles $\triangle EAC$ and $\triangle BAC$ are congruent. Therefore, the angle of incidence equals the angle of reflection:
+</p>
+<p>
+$$i = r$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Monochromatic light of wavelength 589 nm is incident from air onto a water surface of refractive index 1.33. Calculate the wavelength, frequency, and speed of the refracted light. (Speed of light in vacuum $c = 3.0 \times 10^8\text{ m s}^{-1}$)
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the given parameters: $\lambda_0 = 589\text{ nm} = 589 \times 10^{-9}\text{ m}$, $n = 1.33$, $c = 3.0 \times 10^8\text{ m s}^{-1}$.
+</li>
+<li>
+  Calculate the frequency of light in air (which remains unchanged in water):
+  <br>
+  $$\nu = \frac{c}{\lambda_0} = \frac{3.0 \times 10^8}{589 \times 10^{-9}} \approx 5.09 \times 10^{14}\text{ Hz}$$
+</li>
+<li>
+  Calculate the speed of light in water:
+  <br>
+  $$v = \frac{c}{n} = \frac{3.0 \times 10^8}{1.33} \approx 2.26 \times 10^8\text{ m s}^{-1}$$
+</li>
+<li>
+  Calculate the wavelength of light in water:
+  <br>
+  $$\lambda = \frac{\lambda_0}{n} = \frac{589\text{ nm}}{1.33} \approx 443\text{ nm}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Frequency: $5.09 \times 10^{14}\text{ Hz}$, Speed: $2.26 \times 10^8\text{ m s}^{-1}$, Wavelength: $443\text{ nm}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.4 Coherent and Incoherent Addition of Waves
+</summary>
+<p>
+  The phenomenon of
+  <span class="keyword">
+  interference
+</span>
+is based on the
+<span class="keyword">
+superposition principle
+</span>
+, which states that the resultant displacement produced by multiple waves at a point is the vector sum of the individual displacements.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Derivation of Interference
+</summary>
+<p>
+Consider two waves from sources $S_1$ and $S_2$ arriving at a point $P$ with displacements:
+</p>
+<p>
+$$y_1 = a_1 \cos(\omega t)$$
+</p>
+<p>
+$$y_2 = a_2 \cos(\omega t + \phi)$$
+</p>
+<p>
+where $\phi$ is the constant phase difference between them. The resultant displacement is:
+</p>
+<p>
+$$y = y_1 + y_2 = a_1 \cos(\omega t) + a_2 \cos(\omega t + \phi)$$
+</p>
+<p>
+Using trigonometric identities, the amplitude $A$ of the resultant wave is given by:
+</p>
+<p>
+$$A^2 = a_1^2 + a_2^2 + 2a_1 a_2 \cos\phi$$
+</p>
+<p>
+Since intensity $I$ is proportional to the square of the amplitude ($I \propto A^2$), the resultant intensity is:
+</p>
+<p>
+$$I = I_1 + I_2 + 2\sqrt{I_1 I_2} \cos\phi$$
+</p>
+<p>
+For identical sources where $I_1 = I_2 = I_0$:
+</p>
+<p>
+$$I = 4I_0 \cos^2\left(\frac{\phi}{2}\right)$$
+</p>
+</details>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 14px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Type of Interference
+    </th>
+    <th>
+    Phase Difference ($\phi$)
+  </th>
+  <th>
+  Path Difference ($\Delta$)
+</th>
+<th>
+Resultant Intensity ($I$)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Constructive
+    </strong>
+  </td>
+  <td>
+  $\phi = 2n\pi$ ($n = 0, 1, 2, \dots$)
+</td>
+<td>
+$\Delta = n\lambda$
+</td>
+<td>
+$I_{max} = 4I_0$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Destructive
+  </strong>
+</td>
+<td>
+$\phi = (2n+1)\pi$ ($n = 0, 1, 2, \dots$)
+</td>
+<td>
+$\Delta = (n + \frac{1}{2})\lambda$
+</td>
+<td>
+$I_{min} = 0$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.5 Young's Double-Slit Experiment (YDSE)
+</summary>
+<p>
+Thomas Young experimentally demonstrated the interference of light waves using two coherent pinholes $S_1$ and $S_2$ derived from a single primary source $S$.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Fringe Position Derivation
+</summary>
+<p>
+Let $d$ be the distance between the two coherent sources $S_1$ and $S_2$, and $D$ be the distance from the slits to the screen. The path difference between the waves reaching an arbitrary point $P$ at a distance $x$ from the central maximum is:
+</p>
+<p>
+$$\Delta = S_2P - S_1P \approx \frac{xd}{D}$$
+</p>
+<ul>
+  <li>
+    <strong>
+    Bright Fringes (Maxima):
+  </strong>
+  Occur when the path difference is an integral multiple of the wavelength:
+  <br>
+  $$\frac{xd}{D} = n\lambda \implies x_n = \frac{n\lambda D}{d}, \quad n = 0, \pm 1, \pm 2, \dots$$
+</li>
+<li>
+  <strong>
+  Dark Fringes (Minima):
+</strong>
+Occur when the path difference is an odd half-integral multiple of the wavelength:
+<br>
+$$\frac{xd}{D} = (n + \frac{1}{2})\lambda \implies x_n = (n + \frac{1}{2})\frac{\lambda D}{d}, \quad n = 0, \pm 1, \pm 2, \dots$$
+</li>
+<li>
+  <strong>
+  Fringe Width ($\beta$):
+</strong>
+The distance between two consecutive bright or dark fringes is constant:
+<br>
+$$\beta = x_{n+1} - x_n = \frac{\lambda D}{d}$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.6 Diffraction of Light
+</summary>
+<p>
+  <span class="keyword">
+  Diffraction
+</span>
+is the bending of light waves around the edges of obstacles or apertures into the region of geometrical shadow.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Single-Slit Diffraction Analysis
+</summary>
+<p>
+When a parallel beam of monochromatic light falls normally on a single narrow slit of width $a$, a diffraction pattern is formed on a screen placed at a distance $D$.
+</p>
+<ul>
+  <li>
+    <strong>
+    Central Maximum:
+  </strong>
+  Located at the center ($\theta = 0$) where all secondary wavelets arrive in phase.
+</li>
+<li>
+  <strong>
+  Minima:
+</strong>
+Occur at angles $\theta$ satisfying:
+<br>
+$$a \sin\theta \approx a\theta = n\lambda \implies \theta_n = \frac{n\lambda}{a}, \quad n = \pm 1, \pm 2, \dots$$
+</li>
+<li>
+  <strong>
+  Secondary Maxima:
+</strong>
+Occur approximately midway between the minima:
+<br>
+$$\theta_n \approx (n + \frac{1}{2})\frac{\lambda}{a}, \quad n = \pm 1, \pm 2, \dots$$
+</li>
+</ul>
+</p>
+<p>
+  In both interference and diffraction, light energy is redistributed in accordance with the
+  <strong>
+  law of conservation of energy
+</strong>
+; no energy is created or destroyed.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.7 Polarisation of Light
+</summary>
+<p>
+  <span class="keyword">
+  Polarisation
+</span>
+is a phenomenon unique to transverse waves, where the vibrations of the wave are restricted to a single plane perpendicular to the direction of propagation.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Malus' Law
+</summary>
+<p>
+When completely plane-polarised light of intensity $I_0$ is incident on an analyzer, the intensity $I$ of the light transmitted through the analyzer varies as the square of the cosine of the angle $\theta$ between the transmission axes of the polariser and the analyzer:
+</p>
+<p>
+$$I = I_0 \cos^2\theta$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+Discuss the intensity of transmitted light when a polaroid sheet is rotated between two crossed polaroids.
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Let the first polariser be $P_1$ and the third be $P_3$. Since they are crossed, the angle between their pass-axes is $\pi/2$.
+</li>
+<li>
+Let the intermediate polaroid $P_2$ make an angle $\theta$ with the pass-axis of $P_1$.
+</li>
+<li>
+  The intensity of light transmitted through $P_2$ is:
+  <br>
+  $$I_1 = I_0 \cos^2\theta$$
+</li>
+<li>
+  The angle between the pass-axes of $P_2$ and $P_3$ is $(\pi/2 - \theta)$. The intensity of light emerging from $P_3$ is:
+  <br>
+  $$I = I_1 \cos^2\left(\frac{\pi}{2} - \theta\right) = I_0 \cos^2\theta \sin^2\theta$$
+</li>
+<li>
+  Simplify using the double-angle identity $\sin(2\theta) = 2\sin\theta\cos\theta$:
+  <br>
+  $$I = \frac{I_0}{4} \sin^2(2\theta)$$
+</li>
+<li>
+The transmitted intensity is maximum when $\sin^2(2\theta) = 1$, which occurs at $2\theta = \pi/2 \implies \theta = \pi/4$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The transmitted intensity is given by $I = \frac{I_0}{4} \sin^2(2\theta)$, which reaches a maximum value of $\frac{I_0}{4}$ at $\theta = 45^\circ$.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 2
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-01-electric-charges-and-fields.html"; } else { window.location.href = "12-2-chapter-03-current-electricity.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

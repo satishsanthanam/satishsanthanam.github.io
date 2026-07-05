@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 6: Systems of Particles and Rotational Motion
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 6: Systems of Particles and Rotational Motion
+</h1>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.1 Introduction &amp; The Concept of a Rigid Body
+</summary>
+<p>
+  In classical mechanics, real-world objects are often modeled as systems of particles. While a single particle is idealized as a point mass with no spatial dimensions, real extended bodies have finite sizes and complex internal structures. To analyze their motion, we introduce the idealized concept of a
+  <span class='keyword'>
+  rigid body
+</span>
+.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Definition and Physical Reality
+</summary>
+<ul>
+  <li>
+    An ideal
+    <span class='keyword'>
+    rigid body
+  </span>
+  is defined as a system of particles in which the distance between any two constituent particles remains perfectly constant and unchanging over time, regardless of the external forces applied to it.
+</li>
+<li>
+In reality, no macroscopic body is perfectly rigid, as all materials undergo some degree of deformation under external loads. However, for many practical engineering and physical systems (such as wheels, steel beams, planets, and spinning tops), these deformations are negligible, allowing us to treat them as rigid.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Types of Motion of a Rigid Body
+</summary>
+<ol>
+  <li>
+    <strong>
+    Pure Translational Motion:
+  </strong>
+  At any given instant of time, every particle of the body moves with the exact same velocity vector. An example is a rectangular block sliding down a frictionless inclined plane without rotating.
+</li>
+<li>
+  <strong>
+  Pure Rotational Motion:
+</strong>
+The body is constrained such that it rotates about a fixed line called the
+<span class='keyword'>
+axis of rotation
+</span>
+. Every constituent particle moves in a circular path that lies in a plane perpendicular to this axis, with the center of each circle lying on the axis itself. Particles located directly on the axis remain stationary.
+</li>
+<li>
+  <strong>
+  Combined Translational and Rotational Motion:
+</strong>
+The body simultaneously translates and rotates. A classic example is a cylinder rolling down an inclined plane; while the center of mass translates down the slope, the individual particles exhibit varying velocities due to simultaneous rotation.
+</li>
+</ol>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.2 Centre of Mass (COM)
+</summary>
+<p>
+  The
+  <span class='keyword'>
+  centre of mass
+</span>
+is a unique point associated with a system of particles that behaves as if the entire mass of the system were concentrated there, and all external forces were applied directly at this point.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Mathematical Formulation for Discrete Systems
+</summary>
+<p>
+For a system of $n$ discrete particles, the position of the centre of mass is calculated as a mass-weighted average of the individual particle positions:
+</p>
+<ul>
+  <li>
+    <strong>
+    Two-Particle System along the x-axis:
+  </strong>
+  $$X = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}$$
+</li>
+<li>
+  <strong>
+  Multi-Particle System in Three Dimensions:
+</strong>
+$$X = \frac{\sum_{i=1}^{n} m_i x_i}{M}, \quad Y = \frac{\sum_{i=1}^{n} m_i y_i}{M}, \quad Z = \frac{\sum_{i=1}^{n} m_i z_i}{M}$$where $M = \sum_{i=1}^{n} m_i$ is the total mass of the system.
+</li>
+<li>
+  <strong>
+  Vector Notation:
+</strong>
+$$\vec{R} = \frac{\sum_{i=1}^{n} m_i \vec{r}_i}{M}$$
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Continuous Mass Distributions
+</summary>
+<p>
+For continuous rigid bodies, the discrete summations are replaced by integrals over the volume of the body:
+</p>
+$$\vec{R} = \frac{1}{M} \int \vec{r} \\, dm$$
+<p>
+By utilizing geometric symmetry, we can locate the centre of mass of homogeneous bodies (bodies with uniform mass density):
+</p>
+<ul>
+  <li>
+  For a homogeneous thin rod, the centre of mass lies at its geometric midpoint.
+</li>
+<li>
+For homogeneous rings, discs, spheres, and cylinders, the centre of mass coincides with their respective geometric centers.
+</li>
+</ul>
+</details>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the centre of mass of three particles located at the vertices of an equilateral triangle of side length
+<strong>
+0.5 m
+</strong>
+. The masses of the particles are
+<strong>
+100 g
+</strong>
+,
+<strong>
+150 g
+</strong>
+, and
+<strong>
+200 g
+</strong>
+respectively.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Set the origin $(0,0)$ at the position of the
+    <strong>
+    100 g
+  </strong>
+  mass ($m_1$).
+</li>
+<li>
+  The
+  <strong>
+  150 g
+</strong>
+mass ($m_2$) lies on the x-axis at $(0.5, 0)$.
+</li>
+<li>
+  The
+  <strong>
+  200 g
+</strong>
+mass ($m_3$) lies at the third vertex. Its coordinates are calculated using trigonometry:$$x_3 = 0.5 \times \cos(60^\circ) = 0.25 \text{ m}$$$$y_3 = 0.5 \times \sin(60^\circ) = 0.25\sqrt{3} \text{ m}$$
+</li>
+<li>
+Calculate the total mass: $M = 100 + 150 + 200 = 450 \text{ g}$.
+</li>
+<li>
+Compute the x-coordinate of the COM ($X$):$$X = \frac{100(0) + 150(0.5) + 200(0.25)}{450} = \frac{75 + 50}{450} = \frac{125}{450} = \frac{5}{18} \text{ m} \approx 0.28 \text{ m}$$
+</li>
+<li>
+Compute the y-coordinate of the COM ($Y$):$$Y = \frac{100(0) + 150(0) + 200(0.25\sqrt{3})}{450} = \frac{50\sqrt{3}}{450} = \frac{1}{3\sqrt{3}} \text{ m} \approx 0.19 \text{ m}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The coordinates of the centre of mass are $(\frac{5}{18} \text{ m}, \frac{1}{3\sqrt{3}} \text{ m})$.
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.3 Motion of the Centre of Mass &amp; Linear Momentum
+</summary>
+<p>
+The physical significance of the centre of mass becomes clear when we analyze its kinematics and dynamics under the influence of external forces.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Velocity and Acceleration of the COM
+</summary>
+<p>
+Differentiating the position vector of the centre of mass with respect to time yields:
+</p>
+<ol>
+  <li>
+    <strong>
+    Velocity of the Centre of Mass:
+  </strong>
+  $$\vec{V} = \frac{d\vec{R}}{dt} = \frac{\sum m_i \vec{v}_i}{M}$$
+</li>
+<li>
+  <strong>
+  Acceleration of the Centre of Mass:
+</strong>
+$$\vec{A} = \frac{d\vec{V}}{dt} = \frac{\sum m_i \vec{a}_i}{M}$$
+</li>
+</ol>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Newton's Second Law for a System of Particles
+</summary>
+<p>
+Multiplying the acceleration equation by the total mass $M$ gives:
+</p>
+$$M\vec{A} = \sum m_i \vec{a}_i = \sum \vec{F}_i$$
+<p>
+According to Newton's third law, internal forces between the particles of the system occur in equal and opposite pairs and cancel out in the summation. Thus, only external forces contribute to the acceleration of the centre of mass:
+</p>
+$$M\vec{A} = \vec{F}_{ext}$$
+<p>
+  This fundamental result states that the
+  <span class='keyword'>
+  centre of mass
+</span>
+of a system of particles moves as if the entire mass of the system were concentrated at that point, and all external forces were applied directly to it.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Linear Momentum and its Conservation
+</summary>
+<p>
+The total linear momentum $\vec{P}$ of a system of particles is the vector sum of the individual momenta of its constituent particles:
+</p>
+$$\vec{P} = \sum m_i \vec{v}_i = M\vec{V}$$
+<p>
+Differentiating this with respect to time yields the system-wide extension of Newton's second law:
+</p>
+$$\frac{d\vec{P}}{dt} = \vec{F}_{ext}$$
+<p>
+If the net external force acting on the system is zero ($\vec{F}_{ext} = 0$), the total linear momentum remains constant:
+</p>
+$$\vec{P} = \text{constant} \implies \vec{V} = \text{constant}$$
+<p>
+  This is the
+  <span class='keyword'>
+  law of conservation of linear momentum
+</span>
+for a system of particles. It \implies that in the absence of external forces, the velocity of the centre of mass remains completely unaffected by internal interactions (such as radioactive decay or internal explosions).
+</p>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.4 Vector Product of Two Vectors (Cross Product)
+</summary>
+<p>
+Rotational dynamics relies heavily on the vector product to define directional rotational quantities such as torque and angular momentum.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Definition and Properties
+</summary>
+<p>
+  The vector product (or
+  <span class='keyword'>
+  cross product
+</span>
+) of two vectors $\vec{a}$ and $\vec{b}$ is a vector $\vec{c}$ defined as:
+</p>
+$$\vec{c} = \vec{a} \times \vec{b} = (ab \sin\theta) \hat{n}$$where $\theta$ is the angle between the two vectors ($0 \le \theta \le 180^\circ$) and $\hat{n}$ is a unit vector perpendicular to the plane containing $\vec{a}$ and $\vec{b}$, with its direction determined by the right-hand rule.
+<ul>
+  <li>
+    <strong>
+    Non-commutativity:
+  </strong>
+  $\vec{a} \times \vec{b} = -(\vec{b} \times \vec{a})$
+</li>
+<li>
+  <strong>
+  Distributive Property:
+</strong>
+$\vec{a} \times (\vec{b} + \vec{c}) = \vec{a} \times \vec{b} + \vec{a} \times \vec{c}$
+</li>
+<li>
+  <strong>
+  Self-Product:
+</strong>
+$\vec{a} \times \vec{a} = 0$ (since $\sin 0^\circ = 0$)
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Orthogonal Unit Vectors
+</summary>
+<p>
+For the standard Cartesian unit vectors $\hat{i}$, $\hat{j}$, and $\hat{k}$:
+</p>
+$$\hat{i} \times \hat{i} = \hat{j} \times \hat{j} = \hat{k} \times \hat{k} = 0$$$$\hat{i} \times \hat{j} = \hat{k}, \quad \hat{j} \times \hat{k} = \hat{i}, \quad \hat{k} \times \hat{i} = \hat{j}$$$$\hat{j} \times \hat{i} = -\hat{k}, \quad \hat{k} \times \hat{j} = -\hat{i}, \quad \hat{i} \times \hat{k} = -\hat{j}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Determinant Representation
+</summary>
+<p>
+The cross product can be computed systematically using a $3 \times 3$ determinant:
+</p>
+$$\vec{a} \times \vec{b} = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ a_x &amp; a_y &amp; a_z \\ b_x &amp; b_y &amp; b_z \end{vmatrix} = \hat{i}(a_y b_z - a_z b_y) - \hat{j}(a_x b_z - a_z b_x) + \hat{k}(a_x b_y - a_y b_x)$$
+</details>
+</blockquote class='example-block'>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the vector product $\vec{a} \times \vec{b}$ of the vectors $\vec{a} = 3\hat{i} - 4\hat{j} + 5\hat{k}$ and $\vec{b} = -2\hat{i} + \hat{j} - 3\hat{k}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Set up the determinant:$$\vec{a} \times \vec{b} = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ 3 &amp; -4 &amp; 5 \\ -2 &amp; 1 &amp; -3 \end{vmatrix}$$
+</li>
+<li>
+Expand along the first row:$$\vec{a} \times \vec{b} = \hat{i}[(-4)(-3) - (5)(1)] - \hat{j}[(3)(-3) - (5)(-2)] + \hat{k}[(3)(1) - (-4)(-2)]$$
+</li>
+<li>
+Simplify the components:$$\text{x-component: } 12 - 5 = 7$$$$\text{y-component: } -[-9 - (-10)] = -[-9 + 10] = -1$$$$\text{z-component: } 3 - 8 = -5$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\vec{a} \times \vec{b} = 7\hat{i} - \hat{j} - 5\hat{k}$.
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.5 Angular Velocity and its Relation with Linear Velocity
+</summary>
+<p>
+To describe the rotational kinematics of a rigid body, we define angular variables that apply to the body as a whole.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Angular Velocity ($\vec{\omega}$)
+</summary>
+<ul>
+  <li>
+  As a rigid body rotates about a fixed axis, any particle $P$ describes a circular path of radius $r_\perp$ perpendicular to the axis.
+</li>
+<li>
+  The rate of change of the angular displacement $\theta$ is the
+  <span class='keyword'>
+  angular velocity
+</span>
+:$$\omega = \frac{d\theta}{dt}$$
+</li>
+<li>
+For a rigid body, $\omega$ is identical for all constituent particles at any given instant. Thus, we refer to $\omega$ as the angular velocity of the entire body.
+</li>
+<li>
+Vectorially, $\vec{\omega}$ lies along the axis of rotation, with its direction given by the right-hand screw rule.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Vector Relation: $\vec{v} = \vec{\omega} \times \vec{r}$
+</summary>
+<p>
+The linear velocity $\vec{v}$ of a particle at position vector $\vec{r}$ relative to an origin on the axis of rotation is given by the cross product:
+</p>
+$$\vec{v} = \vec{\omega} \times \vec{r}$$
+<p>
+This vector is perpendicular to both $\vec{\omega}$ and $\vec{r}$, pointing along the tangent to the circular path of the particle.
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Angular Acceleration ($\vec{\alpha}$)
+</summary>
+<p>
+  The rate of change of angular velocity is defined as the
+  <span class='keyword'>
+  angular acceleration
+</span>
+:
+</p>
+$$\vec{\alpha} = \frac{d\vec{\omega}}{dt}$$
+<p>
+For rotation about a fixed axis, the direction of $\vec{\omega}$ is constant, so the vector equation simplifies to the scalar relation:
+</p>
+$$\alpha = \frac{d\omega}{dt}$$
+</</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.6 Torque and Angular Momentum
+</summary>
+<p>
+These two vector quantities form the dynamic foundation of rotational mechanics, acting as the rotational analogues of force and linear momentum.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Torque (Moment of Force)
+</summary>
+<p>
+  The rotational effectiveness of a force $\vec{F}$ acting on a particle at position $\vec{r}$ relative to an origin is defined as the
+  <span class='keyword'>
+  torque
+</span>
+$\vec{\tau}$:
+</p>
+$$\vec{\tau} = \vec{r} \times \vec{F}$$
+<ul>
+  <li>
+    <strong>
+    Magnitude:
+  </strong>
+  $\tau = r F \sin\theta = r_\perp F = r F_\perp$ (where $r_\perp$ is the perpendicular distance from the origin to the line of action of the force).
+</li>
+<li>
+  <strong>
+  SI Unit:
+</strong>
+Newton-meter (
+<strong>
+N m
+</strong>
+).
+</li>
+<li>
+  <strong>
+  Dimensional Formula:
+</strong>
+$[M L^2 T^{-2}]$ (same as work/energy, but torque is a vector while work is a scalar).
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Angular Momentum of a Particle
+</summary>
+<p>
+  The rotational analogue of linear momentum for a particle with momentum $\vec{p}$ at position $\vec{r}$ is the
+  <span class='keyword'>
+  angular momentum
+</span>
+$\vec{l}$:
+</p>
+$$\vec{l} = \vec{r} \times \vec{p}$$
+<ul>
+  <li>
+    <strong>
+    Magnitude:
+  </strong>
+  $l = r p \sin\theta = r_\perp p$
+</li>
+<li>
+  <strong>
+  Relation to Torque:
+</strong>
+Differentiating $\vec{l}$ with respect to time yields:$$\frac{d\vec{l}}{dt} = \frac{d\vec{r}}{dt} \times \vec{p} + \vec{r} \times \frac{d\vec{p}}{dt} = \vec{v} \times (m\vec{v}) + \vec{r} \times \vec{F} = 0 + \vec{\tau} = \vec{\tau}$$
+</li>
+<li>
+Thus, the time rate of change of angular momentum is equal to the torque acting on the particle:$$\vec{\tau} = \frac{d\vec{l}}{dt}$$
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  System of Particles and Conservation of Angular Momentum
+</summary>
+<p>
+For a system of particles, the total angular momentum is $\vec{L} = \sum \vec{l}_i$. Summing the individual torques and canceling internal torque contributions (assuming central internal forces) yields:
+</p>
+$$\vec{\tau}_{ext} = \frac{d\vec{L}}{dt}$$
+<p>
+If the net external torque acting on the system is zero ($\vec{\tau}_{ext} = 0$), the total angular momentum is conserved:
+</p>
+$$\vec{L} = \text{constant}$$
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.7 Equilibrium of a Rigid Body
+</summary>
+<p>
+A rigid body is in mechanical equilibrium if its state of motion does not change over time.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Conditions for Mechanical Equilibrium
+</summary>
+<p>
+A rigid body is in complete mechanical equilibrium if it satisfies two independent conditions:
+</p>
+<ol>
+  <li>
+    <strong>
+    Translational Equilibrium:
+  </strong>
+  The vector sum of all external forces acting on the body must be zero:$$\sum \vec{F}_i = 0$$
+</li>
+<li>
+  <strong>
+  Rotational Equilibrium:
+</strong>
+The vector sum of all external torques acting on the body about any arbitrary origin must be zero:$$\sum \vec{\tau}_i = 0$$
+</li>
+</ol>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  The Concept of a Couple
+</summary>
+<ul>
+  <li>
+    A
+    <span class='keyword'>
+    couple
+  </span>
+  is defined as a pair of equal and opposite forces acting on a body along different parallel lines of action.
+</li>
+<li>
+A couple produces pure rotational motion without any translational motion, as the net force is zero ($\sum \vec{F} = 0$), but the net torque is non-zero ($\sum \vec{\tau} \neq 0$).
+</li>
+<li>
+The moment of a couple is independent of the choice of origin and is equal to the product of the magnitude of one of the forces and the perpendicular distance between their lines of action.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Principle of Moments (The Lever)
+</summary>
+<p>
+  An ideal lever is a light rod pivoted at a point called the
+  <span class='keyword'>
+  fulcrum
+</span>
+. When a load $F_1$ is placed at a distance $d_1$ (load arm) and an effort $F_2$ is applied at a distance $d_2$ (effort arm), rotational equilibrium about the fulcrum requires:
+</p>
+$$F_1 d_1 = F_2 d_2$$
+<p>
+  The
+  <span class='keyword'>
+  mechanical advantage
+</span>
+(M.A.) is defined as:
+</p>
+$$\text{M.A.} = \frac{F_1}{F_2} = \frac{d_2}{d_1}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Centre of Gravity (CG)
+</summary>
+<ul>
+  <li>
+    The
+    <span class='keyword'>
+    centre of gravity
+  </span>
+  of a body is the point where the net gravitational torque on the body is zero.
+</li>
+<li>
+In a uniform gravitational field, the centre of gravity coincides exactly with the centre of mass of the body.
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.8 Moment of Inertia &amp; Radius of Gyration
+</summary>
+<p>
+The rotational analogue of mass is the moment of inertia, which measures a body's resistance to rotational acceleration.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Moment of Inertia ($I$)
+</summary>
+<p>
+For a rigid body rotating about a fixed axis, the total kinetic energy of rotation is the sum of the kinetic energies of its individual particles:
+</p>
+$$K = \sum \frac{1}{2} m_i v_i^2 = \sum \frac{1}{2} m_i (r_i \omega)^2 = \frac{1}{2} \left( \sum m_i r_i^2 \right) \omega^2$$
+<p>
+  We define the
+  <span class='keyword'>
+  moment of inertia
+</span>
+$I$ as:
+</p>
+$$I = \sum_{i=1}^{n} m_i r_i^2$$
+<p>
+This allows us to write the rotational kinetic energy in a form analogous to translational kinetic energy ($K = \frac{1}{2} m v^2$):
+</p>
+$$K = \frac{1}{2} I \omega^2$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Radius of Gyration ($k$)
+</summary>
+<p>
+  The
+  <span class='keyword'>
+  radius of gyration
+</span>
+$k$ of a body about a given axis is the radial distance from the axis to a point where the entire mass of the body could be concentrated to yield the same moment of inertia:
+</p>
+$$I = M k^2 \implies k = \sqrt{\frac{I}{M}}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Moments of Inertia of Regular Homogeneous Bodies
+</summary>
+<table border='1' style='border-collapse: collapse; width: 100%; text-align: left; margin: 10px 0;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Body Shape
+    </th>
+    <th>
+    Axis of Rotation
+  </th>
+  <th>
+  Moment of Inertia ($I$)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Thin Circular Ring (Radius $R$)
+  </td>
+  <td>
+  Perpendicular to plane, through center
+</td>
+<td>
+$M R^2$
+</td>
+</tr>
+<tr>
+  <td>
+  Thin Circular Ring (Radius $R$)
+</td>
+<td>
+Along any diameter
+</td>
+<td>
+$\frac{1}{2} M R^2$
+</td>
+</tr>
+<tr>
+  <td>
+  Thin Uniform Rod (Length $L$)
+</td>
+<td>
+Perpendicular to rod, through midpoint
+</td>
+<td>
+$\frac{1}{12} M L^2$
+</td>
+</tr>
+<tr>
+  <td>
+  Circular Disc (Radius $R$)
+</td>
+<td>
+Perpendicular to disc, through center
+</td>
+<td>
+$\frac{1}{2} M R^2$
+</td>
+</tr>
+<tr>
+  <td>
+  Circular Disc (Radius $R$)
+</td>
+<td>
+Along any diameter
+</td>
+<td>
+$\frac{1}{4} M R^2$
+</td>
+</tr>
+<tr>
+  <td>
+  Solid Cylinder (Radius $R$)
+</td>
+<td>
+Axis of the cylinder
+</td>
+<td>
+$\frac{1}{2} M R^2$
+</td>
+</tr>
+<tr>
+  <td>
+  Hollow Cylinder (Radius $R$)
+</td>
+<td>
+Axis of the cylinder
+</td>
+<td>
+$M R^2$
+</td>
+</tr>
+<tr>
+  <td>
+  Solid Sphere (Radius $R$)
+</td>
+<td>
+Along any diameter
+</td>
+<td>
+$\frac{2}{5} M R^2$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  6.9 Kinematics and Dynamics of Rotational Motion
+</summary>
+<p>
+Rotational motion about a fixed axis can be described using equations analogous to those of linear motion.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Kinematic Equations for Constant Angular Acceleration
+</summary>
+<table border='1' style='border-collapse: collapse; width: 100%; text-align: left; margin: 10px 0;'>
+  <thead>
+    <tr style='background-color: #f2f2f2;'>
+      <th>
+      Linear Motion (Constant $a$)
+    </th>
+    <th>
+    Rotational Motion (Constant $\alpha$)
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $v = v_0 + at$
+  </td>
+  <td>
+  $\omega = \omega_0 + \alpha t$
+</td>
+</tr>
+<tr>
+  <td>
+  $x = x_0 + v_0 t + \frac{1}{2} at^2$
+</td>
+<td>
+$\theta = \theta_0 + \omega_0 t + \frac{1}{2} \alpha t^2$
+</td>
+</tr>
+<tr>
+  <td>
+  $v^2 = v_0^2 + 2a(x - x_0)$
+</td>
+<td>
+$\omega^2 = \omega_0^2 + 2\alpha(\theta - \theta_0)$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Dynamics of Rotational Motion
+</summary>
+<ul>
+  <li>
+    <strong>
+    Work Done by a Torque:
+  </strong>
+  $dW = \tau \\, d\theta$
+</li>
+<li>
+  <strong>
+  Rotational Power:
+</strong>
+$P = \tau \omega$
+</li>
+<li>
+  <strong>
+  Newton's Second Law for Rotation:
+</strong>
+$\tau = I \alpha$
+</li>
+<li>
+  <strong>
+  Angular Momentum about a Fixed Axis:
+</strong>
+$L = I \omega$
+</li>
+</ul>
+</details>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A flywheel of mass
+<strong>
+20 kg
+</strong>
+and radius
+<strong>
+20 cm
+</strong>
+is mounted on a frictionless horizontal axle. A steady pull of
+<strong>
+25 N
+</strong>
+is applied to a cord wound around its rim. Find the angular acceleration of the flywheel.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Convert the radius to standard SI units: $R = 20 \text{ cm} = 0.20 \text{ m}$.
+</li>
+<li>
+Calculate the torque ($\tau$) exerted by the pull:$$\tau = F \times R = 25 \text{ N} \times 0.20 \text{ m} = 5.0 \text{ N m}$$
+</li>
+<li>
+Model the flywheel as a solid disc to find its moment of inertia ($I$):$$I = \frac{1}{2} M R^2 = \frac{1}{2} (20 \text{ kg}) (0.20 \text{ m})^2 = 10 \times 0.04 = 0.4 \text{ kg m}^2$$
+</li>
+<li>
+Apply Newton's second law for rotation to find the angular acceleration ($\alpha$):$$\alpha = \frac{\tau}{I} = \frac{5.0 \text{ N m}}{0.4 \text{ kg m}^2} = 12.5 \text{ rad/s}^2$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The angular acceleration of the flywheel is
+<strong>
+12.5 rad/s²
+</strong>
+.
+</p>
+</blockquote>
+</details>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Historical Chronicle: Leonhard Euler and Rigid Body Dynamics
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  While Isaac Newton formulated the laws of motion for point masses, it was Swiss mathematician Leonhard Euler (1707–1783) who systematically extended these laws to rigid bodies. In 1750, Euler introduced the concept of resolving a rigid body's motion into the translation of its center of mass and rotation about that center.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Euler formulated the general equations of rotational motion (Euler's equations) and introduced the concept of principal moments of inertia, establishing the mathematical framework used today in aerospace engineering and robotics.
+</li>
+</ul>
+</div>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 6
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-1-chapter-05-work-energy-and-power.html"; } else { window.location.href = "11-1-chapter-07-gravitation.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

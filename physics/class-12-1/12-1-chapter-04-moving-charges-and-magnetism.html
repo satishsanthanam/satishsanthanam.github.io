@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 4: Moving Charges and Magnetism
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 4: Moving Charges and Magnetism
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.1 Introduction &amp; Historical Foundations
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Hans Christian Oersted (1777–1851)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In the summer of 1820, Danish physicist Hans Christian Oersted observed that an electric current flowing through a straight wire caused a noticeable deflection in a nearby magnetic compass needle. This was the first empirical evidence linking electricity and magnetism.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Oersted concluded that moving charges or currents produce a magnetic field in the surrounding space. This discovery initiated intense experimentation, culminating in James Clerk Maxwell's unification of electromagnetism in 1864.
+</li>
+</ul>
+</div>
+<p>
+The connection between electricity and magnetism was further solidified by the discovery of electromagnetic waves by Heinrich Hertz, and their subsequent production and transmission by J.C. Bose and Guglielmo Marconi by the end of the 19th century.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Directional Conventions for Fields and Currents
+</summary>
+<p>
+To represent three-dimensional vectors on a two-dimensional plane, the following standard conventions are adopted:
+</p>
+<ul>
+  <li>
+    <strong>
+    Dot ($\odot$):
+  </strong>
+  Represents a current or a magnetic/electric field emerging perpendicularly out of the plane of the paper (towards the observer). This resembles the tip of an arrow pointed at you.
+</li>
+<li>
+  <strong>
+  Cross ($\otimes$):
+</strong>
+Represents a current or a magnetic/electric field going perpendicularly into the plane of the paper (away from the observer). This resembles the feathered tail of an arrow moving away from you.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.2 Magnetic Force &amp; The Lorentz Force
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4.2.1 Sources and Fields
+</summary>
+<p>
+  Just as a static charge $Q$ acts as a source that produces an
+  <span class="keyword">
+  electric field
+</span>
+$\vec{E}$, moving charges or currents produce a
+<span class="keyword">
+magnetic field
+</span>
+$\vec{B}$. Both are vector fields and obey the
+<span class="keyword">
+principle of superposition
+</span>
+, meaning the net field due to multiple sources is the vector sum of the individual fields:
+</p>
+<p>
+$$\vec{B} = \vec{B}_1 + \vec{B}_2 + \vec{B}_3 + \dots = \sum \vec{B}_i$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4.2.2 The Lorentz Force Equation
+</summary>
+<p>
+  When a point charge $q$ moves with velocity $\vec{v}$ in the presence of both an electric field $\vec{E}$ and a magnetic field $\vec{B}$, the total electromagnetic force experienced by the charge is called the
+  <span class="keyword">
+  Lorentz force
+</span>
+:
+</p>
+<p>
+$$\vec{F} = \vec{F}_{\text{electric}} + \vec{F}_{\text{magnetic}} = q \left[ \vec{E}(\vec{r}) + \vec{v} \times \vec{B}(\vec{r}) \right]$$
+</p>
+<p>
+  <strong>
+  Key Features of the Magnetic Force ($\vec{F}_m = q [ \vec{v} \times \vec{B} ]$):
+</strong>
+</p>
+<ol>
+  <li>
+  It depends directly on the charge $q$, the velocity vector $\vec{v}$, and the magnetic field vector $\vec{B}$. The force on a negative charge is opposite in direction to that on a positive charge.
+</li>
+<li>
+The force is given by a vector cross product. Consequently, the magnetic force is always perpendicular to both the velocity $\vec{v}$ and the magnetic field $\vec{B}$. Its direction is determined by the right-hand screw rule.
+</li>
+<li>
+The magnitude of the magnetic force is:$$F_m = q v B \sin\theta$$where $\theta$ is the angle between $\vec{v}$ and $\vec{B}$. The force vanishes (becomes zero) if the velocity is parallel ($\theta = 0^\circ$) or anti-parallel ($\theta = 180^\circ$) to the magnetic field.
+</li>
+<li>
+The magnetic force is zero if the charge is stationary ($v = 0$). Only moving charges experience a magnetic force.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Units and Dimensions of Magnetic Field
+</summary>
+<p>
+  The SI unit of magnetic field $\vec{B}$ is the
+  <span class="keyword">
+  tesla
+</span>
+($T$), named after Nikola Tesla. Dimensionally, it is defined as:
+</p>
+<p>
+$$[B] = \left[ \frac{F}{q v} \right] = \frac{\text{N}}{\text{C} \cdot \text{m/s}} = \text{N} \cdot \text{s} \cdot \text{C}^{-1} \cdot \text{m}^{-1} = \text{T}$$
+</p>
+<p>
+  A smaller, non-SI unit called the
+  <span class="keyword">
+  gauss
+</span>
+($G$) is also commonly used, where:
+</p>
+<p>
+  <strong>
+  1 G = 10
+  <sup>
+  -4
+</sup>
+T
+</strong>
+</p>
+<p>
+  For reference, the Earth's magnetic field at the surface is approximately
+  <strong>
+  3.6 &&times; 10
+  <sup>
+  -5
+</sup>
+T
+</strong>
+(or
+<strong>
+0.36 G
+</strong>
+).
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4.2.3 Magnetic Force on a Current-Carrying Conductor
+</summary>
+<p>
+We can extend the single-charge force analysis to a straight conducting rod of length $l$ and uniform cross-sectional area $A$ carrying a steady current $I$ in an external magnetic field $\vec{B}$:
+</p>
+<ol>
+  <li>
+  Let $n$ be the number density of mobile charge carriers (electrons), each carrying charge $q$.
+</li>
+<li>
+The total number of charge carriers in the rod is $n A l$.
+</li>
+<li>
+  For a steady current, each carrier moves with an average
+  <span class="keyword">
+  drift velocity
+</span>
+$\vec{v}_d$.
+</li>
+<li>
+The total force on these carriers is:$$\vec{F} = (n A l) q \vec{v}_d \times \vec{B}$$
+</li>
+<li>
+Since the current density is $\vec{j} = n q \vec{v}_d$ and the total current is $I = |\vec{j}| A$, we can define a length vector $\vec{l}$ along the direction of the current:$$\vec{F} = I \vec{l} \times \vec{B}$$
+</li>
+</ol>
+<p>
+For a wire of arbitrary shape, the total force is found by dividing the wire into infinitesimal linear elements $d\vec{l}$ and integrating:
+</p>
+<p>
+$$\vec{F} = \int I d\vec{l} \times \vec{B}$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A straight wire of mass
+<strong>
+200 g
+</strong>
+and length
+<strong>
+1.5 m
+</strong>
+carries a current of
+<strong>
+2 A
+</strong>
+. It is suspended in mid-air by a uniform horizontal magnetic field $\vec{B}$. What is the magnitude of the magnetic field (ignoring Earth's magnetic field)?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Identify the given parameters and convert to standard SI units:
+    <ul>
+      <li>
+      Mass $m = 200\text{ g} = 0.2\text{ kg}$
+    </li>
+    <li>
+    Length $l = 1.5\text{ m}$
+  </li>
+  <li>
+  Current $I = 2\text{ A}$
+</li>
+<li>
+Acceleration due to gravity $g = 9.8\text{ m/s}^2$
+</li>
+</ul>
+</li>
+<li>
+For mid-air suspension, the upward magnetic force must balance the downward gravitational force:$$F_{\text{magnetic}} = F_{\text{gravity}} \implies I l B \sin(90^\circ) = m g \implies I l B = m g$$
+</li>
+<li>
+Isolate the magnetic field $B$:$$B = \frac{m g}{I l}$$
+</li>
+<li>
+Substitute the values and calculate:$$B = \frac{0.2 \times 9.8}{2 \times 1.5} = \frac{1.96}{3.0} \approx 0.653\text{ T}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$B \approx \mathbf{0.65\text{ T}}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.3 Motion of a Charged Particle in a Magnetic Field
+</summary>
+<p>
+Since the magnetic force $\vec{F} = q(\vec{v} \times \vec{B})$ is always perpendicular to the velocity $\vec{v}$, the work done by the magnetic force on the charge is identically zero:
+</p>
+<p>
+$$W = \int \vec{F} \cdot d\vec{r} = \int \vec{F} \cdot \vec{v} dt = 0$$
+</p>
+<p>
+Consequently, the kinetic energy and the magnitude of the velocity (speed) of the particle remain constant, though its direction of motion changes continuously.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Case 1: Velocity Perpendicular to Magnetic Field ($\vec{v} \perp \vec{B}$)
+</summary>
+<p>
+  When the velocity is perpendicular to the magnetic field, the magnetic force acts as a constant
+  <span class="keyword">
+  centripetal force
+</span>
+, forcing the particle into a circular path of radius $r$:
+</p>
+<p>
+$$\frac{m v^2}{r} = q v B \implies r = \frac{m v}{q B}$$
+</p>
+<p>
+  The angular frequency $\omega$ and frequency of rotation $\nu$ (often called the
+  <span class="keyword">
+  cyclotron frequency
+</span>
+) are given by:
+</p>
+<p>
+$$\omega = \frac{v}{r} = \frac{q B}{m}$$
+</p>
+<p>
+$$\nu = \frac{\omega}{2\pi} = \frac{q B}{2\pi m}$$
+</p>
+<p>
+The time period for one complete revolution is:
+</p>
+<p>
+$$T = \frac{1}{\nu} = \frac{2\pi m}{q B}$$
+</p>
+<p>
+  <strong>
+  Crucial Observation:
+</strong>
+The frequency $\nu$ and time period $T$ are completely independent of the particle's speed $v$ and radius $r$. This independence is the fundamental operating principle of the
+<span class="keyword">
+cyclotron
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Case 2: Velocity at an Arbitrary Angle (Helical Motion)
+</summary>
+<p>
+If the velocity $\vec{v}$ has a component parallel to the magnetic field ($\vec{v}_{\parallel} = v \cos\theta$) and a component perpendicular to the field ($\vec{v}_{\perp} = v \sin\theta$):
+</p>
+<ul>
+  <li>
+  The perpendicular component $\vec{v}_{\perp}$ produces circular motion in the plane perpendicular to $\vec{B}$, with radius:$$r = \frac{m v_{\perp}}{q B} = \frac{m v \sin\theta}{q B}$$
+</li>
+<li>
+The parallel component $\vec{v}_{\parallel}$ remains unaffected by the magnetic field and causes the particle to translate along the direction of the field.
+</li>
+<li>
+  The combined motion is a
+  <span class="keyword">
+  helical path
+</span>
+.
+</li>
+</ul>
+<p>
+  The linear distance traveled by the particle along the magnetic field direction during one period of revolution is called the
+  <span class="keyword">
+  pitch
+</span>
+($p$):
+</p>
+<p>
+$$p = v_{\parallel} T = v \cos\theta \left( \frac{2\pi m}{q B} \right) = \frac{2\pi m v_{\parallel}}{q B}$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.4 The Biot-Savart Law
+</summary>
+<p>
+  The
+  <span class="keyword">
+  Biot-Savart Law
+</span>
+describes the magnetic field $d\vec{B}$ produced at a point $P$ by an infinitesimal current element $I d\vec{l}$ of a conductor:
+</p>
+<p>
+$$d\vec{B} = \frac{\mu_0}{4\pi} \frac{I d\vec{l} \times \vec{r}}{r^3} = \frac{\mu_0}{4\pi} \frac{I d\vec{l} \times \hat{r}}{r^2}$$
+</p>
+<p>
+Where:
+</p>
+<ul>
+  <li>
+    $\mu_0$ is the
+    <span class="keyword">
+    permeability of free space
+  </span>
+  , defined exactly in SI units as:$$\mu_0 = 4\pi \times 10^{-7}\text{ T} \cdot \text{m} \cdot \text{A}^{-1}$$
+</li>
+<li>
+$\vec{r}$ is the displacement vector from the current element to the point $P$, and $r = |\vec{r}|$.
+</li>
+<li>
+The magnitude of the field is:$$dB = \frac{\mu_0}{4\pi} \frac{I dl \sin\theta}{r^2}$$where $\theta$ is the angle between the current element $d\vec{l}$ and the displacement vector $\vec{r}$.
+</li>
+</ul>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Comparison: Biot-Savart Law vs. Coulomb's Law
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Feature / Property
+    </th>
+    <th>
+    Coulomb's Law (Electrostatics)
+  </th>
+  <th>
+  Biot-Savart Law (Magnetism)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Source Type
+    </strong>
+  </td>
+  <td>
+  Scalar source: Electric charge ($dq$)
+</td>
+<td>
+Vector source: Current element ($I d\vec{l}$)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Range Dependency
+  </strong>
+</td>
+<td>
+Long-range; inversely proportional to square of distance ($1/r^2$)
+</td>
+<td>
+Long-range; inversely proportional to square of distance ($1/r^2$)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Superposition
+  </strong>
+</td>
+<td>
+Obeys the principle of superposition
+</td>
+<td>
+Obeys the principle of superposition
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Direction of Field
+  </strong>
+</td>
+<td>
+Along the displacement vector $\vec{r}$ joining source and point
+</td>
+<td>
+Perpendicular to the plane containing $d\vec{l}$ and $\vec{r}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Angular Dependence
+  </strong>
+</td>
+<td>
+No angular dependence
+</td>
+<td>
+Strong angular dependence ($dB \propto \sin\theta$); field is zero along the line of the current element ($\theta = 0$)
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Relation between Fundamental Constants
+</summary>
+<p>
+An elegant relation exists between the permittivity of free space $\epsilon_0$, the permeability of free space $\mu_0$, and the speed of light in vacuum $c$:
+</p>
+<p>
+$$\epsilon_0 \mu_0 = (4\pi \epsilon_0) \left( \frac{\mu_0}{4\pi} \right) = \left( \frac{1}{9 \times 10^9} \right) \times (10^{-7}) = \frac{1}{9 \times 10^{16}} = \frac{1}{c^2}$$
+</p>
+<p>
+$$\epsilon_0 \mu_0 = \frac{1}{c^2}$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.5 Magnetic Field on the Axis of a Circular Current Loop
+</summary>
+<p>
+Consider a circular loop of radius $R$ carrying a steady current $I$, placed in the $y-z$ plane with its center at the origin $O$. We wish to calculate the magnetic field $\vec{B}$ at an axial point $P$ at a distance $x$ from the center:
+</p>
+<ol>
+  <li>
+  An infinitesimal element $d\vec{l}$ at the top of the loop is perpendicular to the displacement vector $\vec{r}$ from the element to point $P$. Thus, the angle between $d\vec{l}$ and $\vec{r}$ is $90^\circ$.
+</li>
+<li>
+The distance $r$ is given by:$$r^2 = x^2 + R^2$$
+</li>
+<li>
+The magnitude of the magnetic field $d\vec{B}$ due to $d\vec{l}$ is:$$dB = \frac{\mu_0}{4\pi} \frac{I dl}{x^2 + R^2}$$
+</li>
+<li>
+The vector $d\vec{B}$ is perpendicular to the plane containing $d\vec{l}$ and $\vec{r}$. It can be resolved into an axial component $dB_x = dB \cos\theta$ and a perpendicular component $dB_{\perp} = dB \sin\theta$.
+</li>
+<li>
+By symmetry, when summing over the entire loop, the perpendicular components $dB_{\perp}$ due to diametrically opposite elements cancel out completely, leaving only the axial components:$$\cos\theta = \frac{R}{r} = \frac{R}{(x^2 + R^2)^{1/2}}$$
+</li>
+<li>
+Integrating the axial component over the entire circumference ($\int dl = 2\pi R$):$$B_x = \int dB_x = \int dB \cos\theta = \int \frac{\mu_0}{4\pi} \frac{I dl}{x^2 + R^2} \frac{R}{(x^2 + R^2)^{1/2}}$$$$B_x = \frac{\mu_0 I R}{4\pi (x^2 + R^2)^{3/2}} \int dl = \frac{\mu_0 I R}{4\pi (x^2 + R^2)^{3/2}} (2\pi R)$$$$\vec{B} = B_x \hat{i} = \frac{\mu_0 I R^2}{2(x^2 + R^2)^{3/2}} \hat{i}$$
+</li>
+</ol>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Special Case: Field at the Center of the Loop
+</summary>
+<p>
+At the center of the circular loop, the axial distance $x = 0$. Substituting this into the axial field equation yields:
+</p>
+<p>
+$$\vec{B}_0 = \frac{\mu_0 I}{2R} \hat{i}$$
+</p>
+<p>
+For a coil consisting of $N$ closely wound turns, the magnetic field is multiplied by $N$:
+</p>
+<p>
+$$\vec{B}_0 = \frac{\mu_0 N I}{2R} \hat{i}$$
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.6 Ampere's Circuital Law
+</summary>
+<p>
+  <span class="keyword">
+  Ampere's Circuital Law
+</span>
+provides an elegant alternative formulation of the relationship between electric currents and magnetic fields, analogous to Gauss's law in electrostatics. It states that the line integral of the magnetic field $\vec{B}$ around any closed loop (called an
+<span class="keyword">
+Amperian loop
+</span>
+) is equal to $\mu_0$ \times the total net current $I_e$ threaded or enclosed by the loop:
+</p>
+<p>
+$$\oint \vec{B} \cdot d\vec{l} = \mu_0 I_e$$
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: André-Marie Ampère (1775–1836)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  French physicist and mathematician who founded the science of electrodynamics. Following Oersted's discovery, Ampère performed extensive experiments between 1820 and 1825, culminating in his 1827 publication of the mathematical theory of electrodynamic phenomena.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Ampère hypothesized that all magnetic phenomena are due to circulating electric currents, laying the groundwork for modern electromagnetic theory.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Application: Magnetic Field of an Infinitely Long Straight Wire
+</summary>
+<p>
+Consider an infinitely long, straight wire carrying a steady current $I$. We choose a circular Amperian loop of radius $r$ centered on the wire and perpendicular to it:
+</p>
+<ol>
+  <li>
+  By symmetry, the magnetic field $\vec{B}$ is constant in magnitude at all points on the circle and is directed tangentially to the circle at every point.
+</li>
+<li>
+Therefore, the angle between $\vec{B}$ and $d\vec{l}$ is $0^\circ$:$$\oint \vec{B} \cdot d\vec{l} = \oint B dl \cos(0^\circ) = B \oint dl = B (2\pi r)$$
+</li>
+<li>
+Apply Ampere's law:$$B (2\pi r) = \mu_0 I \implies B = \frac{\mu_0 I}{2\pi r}$$
+</li>
+</ol>
+<p>
+  This result shows that the magnetic field possesses
+  <span class="keyword">
+  cylindrical symmetry
+</span>
+and decreases inversely with the distance $r$ from the wire.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Application: Magnetic Field Inside a Thick Wire (Radius $a$)
+</summary>
+<p>
+For a long straight wire of circular cross-section of radius $a$ carrying a uniform current $I$:
+</p>
+<ul>
+  <li>
+    <strong>
+    Region 1: Outside the wire ($r &gt; a$):
+  </strong>
+  The enclosed current is the total current $I$.$$B = \frac{\mu_0 I}{2\pi r} \implies B \propto \frac{1}{r}$$
+</li>
+<li>
+  <strong>
+  Region 2: Inside the wire ($r &lt; a$):
+</strong>
+Assuming uniform current density, the current enclosed by an Amperian loop of radius $r$ is:$$I_e = I \left( \frac{\pi r^2}{\pi a^2} \right) = I \frac{r^2}{a^2}$$Applying Ampere's law:$$B (2\pi r) = \mu_0 I_e = \mu_0 I \frac{r^2}{a^2} \implies B = \left( \frac{\mu_0 I}{2\pi a^2} \right) r \implies B \propto r$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.7 The Solenoid
+</summary>
+<p>
+  A
+  <span class="keyword">
+  solenoid
+</span>
+consists of a long wire wound closely in the form of a helix. When a current passes through it, the magnetic fields of the individual turns add vectorially to produce a strong, nearly uniform magnetic field inside, while the field outside is extremely weak and approaches zero for an infinitely long solenoid.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Derivation of Magnetic Field Inside an Infinite Solenoid
+</summary>
+<p>
+Consider a rectangular Amperian loop $abcd$ of length $h$ where side $ab$ lies inside the solenoid parallel to its axis, and side $cd$ lies outside:
+</p>
+<ol>
+  <li>
+  Evaluate the line integral $\oint \vec{B} \cdot d\vec{l}$ along the four segments:$$\oint \vec{B} \cdot d\vec{l} = \int_a^b \vec{B} \cdot d\vec{l} + \int_b^c \vec{B} \cdot d\vec{l} + \int_c^d \vec{B} \cdot d\vec{l} + \int_d^a \vec{B} \cdot d\vec{l}$$
+</li>
+<li>
+Outside the solenoid, the field is zero, so $\int_c^d \vec{B} \cdot d\vec{l} = 0$.
+</li>
+<li>
+Along the transverse segments $bc$ and $da$, the magnetic field is perpendicular to the path ($\vec{B} \perp d\vec{l}$), so $\vec{B} \cdot d\vec{l} = 0$.
+</li>
+<li>
+Inside the solenoid, the field is parallel to the axis, so:$$\int_a^b \vec{B} \cdot d\vec{l} = B h$$
+</li>
+<li>
+Let $n$ be the number of turns per unit length. The total number of turns enclosed by the loop of length $h$ is $n h$. The total enclosed current is:$$I_e = n h I$$
+</li>
+<li>
+Applying Ampere's law:$$B h = \mu_0 (n h I) \implies B = \mu_0 n I$$
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.8 Force Between Two Parallel Currents &amp; Definition of the Ampere
+</summary>
+<p>
+Consider two long, straight, parallel conductors $a$ and $b$ separated by a distance $d$ and carrying currents $I_a$ and $I_b$ respectively:
+</p>
+<ol>
+  <li>
+  Conductor $a$ produces a magnetic field $B_a$ at the position of conductor $b$:$$B_a = \frac{\mu_0 I_a}{2\pi d}$$The direction of this field is perpendicular to conductor $b$ (determined by the right-hand rule).
+</li>
+<li>
+Conductor $b$ experiences a magnetic force due to this external field $B_a$. The force $F_{ba}$ on a segment of length $L$ of conductor $b$ is:$$F_{ba} = I_b L B_a = I_b L \left( \frac{\mu_0 I_a}{2\pi d} \right) = \frac{\mu_0 I_a I_b L}{2\pi d}$$
+</li>
+<li>
+The force per unit length $f_{ba}$ is:$$f_{ba} = \frac{F_{ba}}{L} = \frac{\mu_0 I_a I_b}{2\pi d}$$
+</li>
+<li>
+By Newton's third law, conductor $a$ experiences an equal and opposite force due to the field of conductor $b$ ($\vec{F}_{ab} = -\vec{F}_{ba}$).
+</li>
+</ol>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Rules of Attraction and Repulsion
+</summary>
+<ul>
+  <li>
+    <strong>
+    Parallel currents (flowing in the same direction):
+  </strong>
+  Attract each other.
+</li>
+<li>
+  <strong>
+  Antiparallel currents (flowing in opposite directions):
+</strong>
+Repel each other.
+</li>
+</ul>
+<p>
+  <em>
+  Note: This is opposite to electrostatics, where like charges repel and unlike charges attract.
+</em>
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The SI Definition of the Ampere
+</summary>
+<p>
+  The force between parallel currents is used to define the base SI unit of current, the
+  <span class="keyword">
+  ampere
+</span>
+($A$):
+</p>
+<blockquote style="border-left: 3px solid #3b82f6; padding-left: 10px; margin-left: 10px; font-style: italic;">
+"The ampere is that steady current which, if maintained in two extremely long, straight, parallel conductors of negligible circular cross-section, and placed one metre apart in vacuum, would produce on each of these conductors a force equal to 2 &&times; 10
+<sup>
+-7
+</sup>
+newtons per metre of length."
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.9 Torque on a Current Loop &amp; Magnetic Dipole
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4.9.1 Torque on a Rectangular Loop in a Uniform Field
+</summary>
+<p>
+Consider a rectangular loop carrying a steady current $I$ placed in a uniform magnetic field $\vec{B}$:
+</p>
+<ol>
+  <li>
+  The net force on the loop in a uniform magnetic field is always zero ($\vec{F}_{\text{net}} = 0$).
+</li>
+<li>
+  However, the forces on opposite arms of the loop can create a couple, producing a net
+  <span class="keyword">
+  torque
+</span>
+($\vec{\tau}$).
+</li>
+<li>
+If the normal to the plane of the loop makes an angle $\theta$ with the magnetic field $\vec{B}$, the magnitude of the torque is:$$\tau = I A B \sin\theta$$where $A$ is the area of the loop.
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4.9.2 Magnetic Dipole Moment
+</summary>
+<p>
+  We define the
+  <span class="keyword">
+  magnetic dipole moment
+</span>
+($\vec{m}$) of a current loop as:
+</p>
+<p>
+$$\vec{m} = I \vec{A}$$
+</p>
+<p>
+For a coil with $N$ turns:
+</p>
+<p>
+$$\vec{m} = N I \vec{A}$$
+</p>
+<p>
+The direction of the area vector $\vec{A}$ (and thus $\vec{m}$) is given by the right-hand thumb rule: curl the fingers of your right hand in the direction of the current, and your thumb points in the direction of $\vec{m}$.
+</p>
+<p>
+Using this definition, the torque can be written compactly as a vector cross product:
+</p>
+<p>
+$$\vec{\tau} = \vec{m} \times \vec{B}$$
+</p>
+<p>
+This is directly analogous to the electrostatic torque on an electric dipole ($\vec{\tau} = \vec{p} \times \vec{E}$).
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4.10 The Moving Coil Galvanometer (MCG)
+</summary>
+<p>
+  The
+  <span class="keyword">
+  moving coil galvanometer
+</span>
+is an instrument used to detect and measure small electric currents. It operates on the principle that a current-carrying coil placed in a magnetic field experiences a torque.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Working Principle and Equations
+</summary>
+<p>
+The MCG consists of a coil with $N$ turns suspended in a uniform radial magnetic field produced by cylindrical pole pieces and a soft iron core. The radial field ensures that the plane of the coil is always parallel to the magnetic field lines ($\theta = 90^\circ$), making the deflecting torque maximum and constant:
+</p>
+<p>
+$$\tau_{\text{deflecting}} = N I A B$$
+</p>
+<p>
+This deflecting torque is balanced by the restoring torque of a suspension spring with torsional constant $k$:
+</p>
+<p>
+$$\tau_{\text{restoring}} = k \phi$$
+</p>
+<p>
+In equilibrium:
+</p>
+<p>
+$$k \phi = N I A B \implies \phi = \left( \frac{N A B}{k} \right) I$$
+</p>
+<p>
+where $\phi$ is the steady angular deflection of the pointer.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Sensitivity Parameters
+</summary>
+<ul>
+  <li>
+    <strong>
+    Current Sensitivity ($I_s$):
+  </strong>
+  Deflection per unit current.$$$I_s = \frac{\phi}{I} = \frac{N A B}{k}$$
+</li>
+<li>
+  <strong>
+  Voltage Sensitivity ($V_s$):
+</strong>
+Deflection per unit voltage.$$$V_s = \frac{\phi}{V} = \frac{\phi}{I R} = \frac{N A B}{k R}$$where $R$ is the resistance of the galvanometer coil.
+</li>
+</ul>
+<p>
+  <em>
+  Note: Doubling the number of turns ($N \to 2N$) doubles the current sensitivity, but since the resistance also doubles ($R \to 2R$), the voltage sensitivity remains unchanged.
+</em>
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Conversion of Galvanometer to Ammeter and Voltmeter
+</summary>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Conversion Target
+    </th>
+    <th>
+    Required Modification
+  </th>
+  <th>
+  Mathematical Formula
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Ammeter
+    </strong>
+    (To measure large currents)
+  </td>
+  <td>
+    Connect a very low resistance $r_s$ (called a
+    <span class="keyword">
+    shunt
+  </span>
+  ) in parallel with the galvanometer coil.
+</td>
+<td>
+$$r_s = \frac{I_g R_G}{I - I_g}$$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Voltmeter
+  </strong>
+  (To measure potential differences)
+</td>
+<td>
+Connect a very high resistance $R$ in series with the galvanometer coil.
+</td>
+<td>
+$$R = \frac{V}{I_g} - R_G$$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 4
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-03-current-electricity.html"; } else { window.location.href = "12-1-chapter-05-magnetism-and-matter.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

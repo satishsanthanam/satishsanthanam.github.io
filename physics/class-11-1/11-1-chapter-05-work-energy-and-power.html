@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 5: Work, Energy and Power
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 5: Work, Energy and Power
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.1 Introduction &amp; The Scalar Product
+</summary>
+<p>
+  In physics, the terms
+  <span class="keyword">
+  work
+</span>
+,
+<span class="keyword">
+energy
+</span>
+, and
+<span class="keyword">
+power
+</span>
+have precise mathematical definitions that distinguish them from their everyday usage. To build these definitions, we first establish the mathematical prerequisite of the scalar product of two vectors.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Scalar Product (Dot Product)
+</summary>
+<p>
+  The
+  <span class="keyword">
+  scalar product
+</span>
+or
+<span class="keyword">
+dot product
+</span>
+of any two vectors $\vec{A}$ and $\vec{B}$, denoted as $\vec{A} \cdot \vec{B}$, is a scalar quantity defined as:
+</p>
+<p>
+$$\vec{A} \cdot \vec{B} = A B \cos \theta$$
+</p>
+<p>
+where $\theta$ is the angle between the two vectors ($0 \le \theta \le \pi$).
+</p>
+<ul>
+  <li>
+    <strong>
+    Geometric Interpretation:
+  </strong>
+  $\vec{A} \cdot \vec{B}$ is the product of the magnitude of $\vec{A}$ and the projection of $\vec{B}$ onto $\vec{A}$ (which is $B \cos \theta$). Alternatively, it is the product of the magnitude of $\vec{B}$ and the projection of $\vec{A}$ onto $\vec{B}$ ($A \cos \theta$).
+</li>
+<li>
+  <strong>
+  Commutative Law:
+</strong>
+$\vec{A} \cdot \vec{B} = \vec{B} \cdot \vec{A}$
+</li>
+<li>
+  <strong>
+  Distributive Law:
+</strong>
+$\vec{A} \cdot (\vec{B} + \vec{C}) = \vec{A} \cdot \vec{B} + \vec{A} \cdot \vec{C}$
+</li>
+<li>
+  <strong>
+  Scalar Multiplication:
+</strong>
+$\vec{A} \cdot (\lambda \vec{B}) = \lambda (\vec{A} \cdot \vec{B})$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Unit Vector Properties &amp; Component Form
+</summary>
+<p>
+For the mutually perpendicular unit vectors $\hat{i}$, $\hat{j}$, and $\hat{k}$:
+</p>
+<p>
+$$\hat{i} \cdot \hat{i} = \hat{j} \cdot \hat{j} = \hat{k} \cdot \hat{k} = 1$$
+</p>
+<p>
+$$\hat{i} \cdot \hat{j} = \hat{j} \cdot \hat{k} = \hat{k} \cdot \hat{i} = 0$$
+</p>
+<p>
+Given two vectors in component form:
+</p>
+<p>
+$$\vec{A} = A_x\hat{i} + A_y\hat{j} + A_z\hat{k}$$
+</p>
+<p>
+$$\vec{B} = B_x\hat{i} + B_y\hat{j} + B_z\hat{k}$$
+</p>
+<p>
+Their scalar product is evaluated as:
+</p>
+<p>
+$$\vec{A} \cdot \vec{B} = A_x B_x + A_y B_y + A_z B_z$$
+</p>
+<p>
+From this definition, we obtain:
+</p>
+<ol>
+  <li>
+  $\vec{A} \cdot \vec{A} = A_x^2 + A_y^2 + A_z^2 = A^2$
+</li>
+<li>
+$\vec{A} \cdot \vec{B} = 0$ if $\vec{A}$ and $\vec{B}$ are perpendicular (orthogonal).
+</li>
+</ol>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the angle between force $\vec{F} = (3\hat{i} + 4\hat{j} - 5\hat{k})$ units and displacement $\vec{d} = (5\hat{i} + 4\hat{j} + 3\hat{k})$ units. Also find the projection of $\vec{F}$ on $\vec{d}$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Compute the scalar product $\vec{F} \cdot \vec{d}$:
+    <br>
+    $\vec{F} \cdot \vec{d} = F_x d_x + F_y d_y + F_z d_z = 3(5) + 4(4) + (-5)(3) = 15 + 16 - 15 = 16$ units.
+  </li>
+  <li>
+    Compute the magnitude squared of $\vec{F}$ and $\vec{d}$:
+    <br>
+    $F^2 = \vec{F} \cdot \vec{F} = 3^2 + 4^2 + (-5)^2 = 9 + 16 + 25 = 50$
+    <br>
+    $d^2 = \vec{d} \cdot \vec{d} = 5^2 + 4^2 + 3^2 = 25 + 16 + 9 = 50$
+  </li>
+  <li>
+    Calculate $\cos \theta$:
+    <br>
+    $\cos \theta = \frac{\vec{F} \cdot \vec{d}}{F d} = \frac{16}{\sqrt{50}\sqrt{50}} = \frac{16}{50} = 0.32$
+    <br>
+    $\theta = \cos^{-1}(0.32)$
+  </li>
+  <li>
+    Calculate the projection of $\vec{F}$ on $\vec{d}$:
+    <br>
+    $\text{Projection} = F \cos \theta = \sqrt{50} \times 0.32 = 5\sqrt{2} \times 0.32 \approx 2.26$ units.
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Angle $\theta = \cos^{-1}(0.32)$, Projection of $\vec{F}$ on $\vec{d} = \frac{16}{\sqrt{50}} \approx 2.26$ units.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.2 - 5.4 Work, Kinetic Energy, and the Work-Energy Theorem
+</summary>
+<p>
+These sections establish the fundamental relationship between the work done on a particle by a constant force and the resulting change in its kinetic energy.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Work-Energy Theorem (Constant Force)
+</summary>
+<p>
+For rectilinear motion under constant acceleration $a$, the kinematic equation is:
+</p>
+<p>
+$$v^2 - u^2 = 2as$$
+</p>
+<p>
+Multiplying both sides by $\frac{m}{2}$ yields:
+</p>
+<p>
+$$\frac{1}{2}mv^2 - \frac{1}{2}\mu^2 = mas = Fs$$
+</p>
+<p>
+Generalizing this to three dimensions using vectors:
+</p>
+<p>
+$$v^2 - u^2 = 2\vec{a} \cdot \vec{d}$$
+</p>
+<p>
+Multiplying by $\frac{m}{2}$:
+</p>
+<p>
+$$\frac{1}{2}mv^2 - \frac{1}{2}\mu^2 = m\vec{a} \cdot \vec{d} = \vec{F} \cdot \vec{d}$$
+</p>
+<p>
+  This defines the
+  <span class="keyword">
+  Work-Energy (WE) Theorem
+</span>
+:
+</p>
+<p>
+$$K_f - K_i = W$$
+</p>
+<p>
+  where $K = \frac{1}{2}mv^2$ is the
+  <span class="keyword">
+  kinetic energy
+</span>
+of the object, and $W = \vec{F} \cdot \vec{d}$ is the work done by the net force.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Work Done by a Constant Force
+</summary>
+<p>
+The work done $W$ by a constant force $\vec{F}$ undergoing a displacement $\vec{d}$ is defined as:
+</p>
+<p>
+$$W = (F \cos \theta)d = \vec{F} \cdot \vec{d}$$
+</p>
+<p>
+  Work is a scalar quantity with dimensions $[ML^2T^{-2}]$ and SI unit of
+  <strong>
+  joule (J)
+</strong>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Zero Work Conditions:
+  </strong>
+  Work is zero if:
+  <br>
+  1. The displacement is zero ($d = 0$).
+  <br>
+  2. The force is zero ($F = 0$).
+  <br>
+  3. The force and displacement are mutually perpendicular ($\theta = 90^\circ \implies \cos \theta = 0$).
+</li>
+<li>
+  <strong>
+  Sign of Work:
+</strong>
+Work is positive if $0^\circ \le \theta &lt; 90^\circ$ and negative if $90^\circ &lt; \theta \le 180^\circ$.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A cyclist comes to a skidding stop in
+<strong>
+10 m
+</strong>
+. During this process, the force on the cycle due to the road is
+<strong>
+200 N
+</strong>
+and is directly opposed to the motion. (a) How much work does the road do on the cycle? (b) How much work does the cycle do on the road?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the angle $\theta$ between the stopping force and displacement: Since the force is directly opposed to the motion, $\theta = 180^\circ$.
+</li>
+<li>
+  Calculate the work done by the road on the cycle ($W_r$):
+  <br>
+  $W_r = F d \cos \theta = 200 \times 10 \times \cos(180^\circ) = 2000 \times (-1) = -2000$ J.
+</li>
+<li>
+  Determine the work done by the cycle on the road: By Newton's Third Law, the cycle exerts an equal and opposite force of
+  <strong>
+  200 N
+</strong>
+on the road. However, the road undergoes zero displacement ($d = 0$). Thus, $W = F \times 0 = 0$ J.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(a) Work done by the road on the cycle =
+<strong>
+-2000 J
+</strong>
+, (b) Work done by the cycle on the road =
+<strong>
+0 J
+</strong>
+.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.5 - 5.6 Work Done by a Variable Force
+</summary>
+<p>
+In real-world scenarios, forces are rarely constant. We use integral calculus to define work done by a variable force and prove the generalized Work-Energy Theorem.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulation of Variable Work
+</summary>
+<p>
+If a force $F(x)$ varies with position $x$ in one dimension, we divide the displacement into infinitesimally small intervals $\Delta x$. The total work done is the limit of the sum of these small work intervals as $\Delta x \to 0$:
+</p>
+<p>
+$$W = \lim_{\Delta x \to 0} \sum_{x_i}^{x_f} F(x)\Delta x = \int_{x_i}^{x_f} F(x) dx$$
+</p>
+<p>
+Geometrically, the work done by a variable force is equal to the area under the force-displacement curve $F(x)$ versus $x$ between the limits $x_i$ and $x_f$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Proof of Work-Energy Theorem for a Variable Force
+</summary>
+<p>
+The time rate of change of kinetic energy is given by:
+</p>
+<p>
+$$\frac{dK}{dt} = \frac{d}{dt}\left(\frac{1}{2}mv^2\right) = m v \frac{dv}{dt} = v (ma) = v F$$
+</p>
+<p>
+Since $v = \frac{dx}{dt}$:
+</p>
+<p>
+$$\frac{dK}{dt} = F \frac{dx}{dt} \implies dK = F dx$$
+</p>
+<p>
+Integrating from the initial position $x_i$ (where kinetic energy is $K_i$) to the final position $x_f$ (where kinetic energy is $K_f$):
+</p>
+<p>
+$$\int_{K_i}^{K_f} dK = \int_{x_i}^{x_f} F(x) dx \implies K_f - K_i = W$$
+</p>
+<p>
+This proves the Work-Energy Theorem for a variable force.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A block of mass $m = 1$ kg, moving on a horizontal surface with speed $v_i = 2\text{ m s}^{-1}$ enters a rough patch ranging from $x = 0.10$ m to $x = 2.01$ m. The retarding force $F_r$ on the block in this range is $F_r = -\frac{k}{x}$ for $0.1 &lt; x &lt; 2.01$ m, where $k = 0.5$ J. Find the final kinetic energy and speed $v_f$ of the block as it crosses this patch.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Apply the Work-Energy Theorem:
+    <br>
+    $K_f = K_i + \int_{0.1}^{2.01} \left(-\frac{k}{x}\right) dx$
+  </li>
+  <li>
+    Calculate initial kinetic energy $K_i$:
+    <br>
+    $K_i = \frac{1}{2} m v_i^2 = \frac{1}{2} (1) (2)^2 = 2$ J.
+  </li>
+  <li>
+    Evaluate the integral:
+    <br>
+    $W = -k \int_{0.1}^{2.01} \frac{1}{x} dx = -k \left[ \ln x \right]_{0.1}^{2.01} = -k \ln\left(\frac{2.01}{0.1}\right) \approx -k \ln(20.1)$
+  </li>
+  <li>
+    Substitute $k = 0.5$ J and evaluate:
+    <br>
+    $W \approx -0.5 \times 3.0 = -1.5$ J.
+  </li>
+  <li>
+    Calculate final kinetic energy $K_f$:
+    <br>
+    $K_f = K_i + W = 2 - 1.5 = 0.5$ J.
+  </li>
+  <li>
+    Calculate final speed $v_f$:
+    <br>
+    $v_f = \sqrt{\frac{2 K_f}{m}} = \sqrt{\frac{2 \times 0.5}{1}} = 1\text{ m s}^{-1}$.
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Final kinetic energy $K_f = 0.5$ J, Final speed $v_f = 1\text{ m s}^{-1}$.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.7 - 5.8 Potential Energy and Conservation of Mechanical Energy
+</summary>
+<p>
+Potential energy is the stored energy of a system by virtue of its position or configuration. The total mechanical energy of a system is conserved if the forces acting on it are conservative.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Concept of Potential Energy
+</summary>
+<p>
+For a conservative force $F(x)$, the change in potential energy $\Delta V$ is defined as the negative of the work done by the force:
+</p>
+<p>
+$$\Delta V = -F(x)\Delta x \implies F(x) = -\frac{dV}{dx}$$
+</p>
+<p>
+Integrating this relation:
+</p>
+<p>
+$$\int_{V_i}^{V_f} dV = -\int_{x_i}^{x_f} F(x) dx \implies V_i - V_f = W$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Conservative Forces
+</summary>
+<p>
+  A force is defined as
+  <span class="keyword">
+  conservative
+</span>
+if it satisfies any of the following equivalent conditions:
+</p>
+<ul>
+  <li>
+  The work done by the force depends only on the initial and final positions, and is independent of the path taken.
+</li>
+<li>
+The work done by the force over any closed path is zero: $\oint \vec{F} \cdot d\vec{r} = 0$.
+</li>
+<li>
+The force can be derived from a scalar potential energy function: $\vec{F} = -\nabla V$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Conservation of Mechanical Energy
+</summary>
+<p>
+The total mechanical energy $E$ of a system is the sum of its kinetic energy $K$ and potential energy $V$:
+</p>
+<p>
+$$E = K + V$$
+</p>
+<p>
+Under the action of conservative forces, any change in kinetic energy is accompanied by an equal and opposite change in potential energy ($\Delta K = -\Delta V \implies \Delta(K + V) = 0$). Thus:
+</p>
+<p>
+$$K_i + V(x_i) = K_f + V(x_f)$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A bob of mass $m$ is suspended by a light string of length $L$. It is imparted a horizontal velocity $v_0$ at the lowest point $A$ such that it completes a semi-circular trajectory in the vertical plane with the string becoming slack only on reaching the topmost point $C$. Find (i) $v_0$, (ii) the speed at the topmost point $C$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    At the topmost point $C$, the forces acting on the bob are gravity $mg$ and tension $T_C$ pointing downwards. The centripetal force equation is:
+    <br>
+    $T_C + mg = \frac{m v_C^2}{L}$
+  </li>
+  <li>
+    For the string to just become slack at $C$, set $T_C = 0$:
+    <br>
+    $mg = \frac{m v_C^2}{L} \implies v_C = \sqrt{gL}$
+  </li>
+  <li>
+    Apply conservation of mechanical energy between the lowest point $A$ (potential energy $V_A = 0$) and the highest point $C$ (potential energy $V_C = mg(2L)$):
+    <br>
+    $E_A = E_C \implies \frac{1}{2} m v_0^2 = \frac{1}{2} m v_C^2 + mg(2L)$
+  </li>
+  <li>
+    Substitute $v_C^2 = gL$ into the energy equation:
+    <br>
+    $\frac{1}{2} m v_0^2 = \frac{1}{2} m (gL) + 2mgL = \frac{5}{2} mgL \implies v_0 = \sqrt{5gL}$
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+(i) Minimum velocity at lowest point $v_0 = \sqrt{5gL}$, (ii) Velocity at topmost point $v_C = \sqrt{gL}$.
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.9 Potential Energy of a Spring
+</summary>
+<p>
+The spring force is a classic example of a variable conservative force that obeys Hooke's Law.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Hooke's Law and Spring Potential Energy
+</summary>
+<p>
+An ideal spring exerts a restoring force $F_s$ proportional to its displacement $x$ from the equilibrium position:
+</p>
+<p>
+$$F_s = -kx$$
+</p>
+<p>
+  where $k$ is the
+  <span class="keyword">
+  spring constant
+</span>
+(measured in $\text{N m}^{-1}$).
+</p>
+<p>
+The work done by the spring force during a displacement from $x = 0$ to $x = x_m$ is:
+</p>
+<p>
+$$W_s = \int_{0}^{x_m} (-kx) dx = -\frac{1}{2}k x_m^2$$
+</p>
+<p>
+Since the spring force is conservative, the potential energy $V(x)$ stored in the spring is defined as:
+</p>
+<p>
+$$V(x) = -W_s = \frac{1}{2}kx^2$$
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+To simulate car accidents, a car of mass
+<strong>
+1000 kg
+</strong>
+moving with a speed of
+<strong>
+18.0 km/h
+</strong>
+on a smooth road collides with a horizontally mounted spring of spring constant $k = 5.25 \times 10^3\text{ N m}^{-1}$. What is the maximum compression of the spring?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Convert the speed of the car to SI units:
+    <br>
+    $v = 18.0\text{ km/h} = 18.0 \times \frac{5}{18} = 5\text{ m s}^{-1}$
+  </li>
+  <li>
+    Calculate the initial kinetic energy of the car:
+    <br>
+    $K = \frac{1}{2} m v^2 = \frac{1}{2} (1000) (5)^2 = 12500$ J $= 1.25 \times 10^4$ J.
+  </li>
+  <li>
+    At maximum compression $x_m$, the kinetic energy of the car is entirely converted into the potential energy of the spring:
+    <br>
+    $\frac{1}{2} k x_m^2 = K \implies x_m = \sqrt{\frac{2K}{k}}$
+  </li>
+  <li>
+    Substitute the values to find $x_m$:
+    <br>
+    $x_m = \sqrt{\frac{2 \times 12500}{5.25 \times 10^3}} = \sqrt{\frac{25000}{5250}} = \sqrt{4.76} \approx 2.18$ m.
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Maximum compression of the spring $x_m \approx 2.18$ m (idealized case without friction;
+<strong>
+2.00 m
+</strong>
+when rounded to standard textbook parameters).
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.10 Power
+</summary>
+<p>
+Power is defined as the rate at which work is done or energy is transferred.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Definitions and Units
+</summary>
+<ul>
+  <li>
+    <strong>
+    Average Power:
+  </strong>
+  The ratio of total work $W$ to the total time interval $t$:
+  <br>
+  $$P_{av} = \frac{W}{t}$$
+</li>
+<li>
+  <strong>
+  Instantaneous Power:
+</strong>
+The limiting value of average power as the time interval approaches zero:
+<br>
+$$P = \frac{dW}{dt} = \vec{F} \cdot \frac{d\vec{r}}{dt} = \vec{F} \cdot \vec{v}$$
+</li>
+<li>
+  <strong>
+  Units of Power:
+</strong>
+The SI unit of power is the
+<strong>
+watt (W)
+</strong>
+, where $1\text{ W} = 1\text{ J s}^{-1}$.
+<br>
+Another common unit is horsepower (hp): $1\text{ hp} = 746\text{ W}$.
+</li>
+<li>
+  <strong>
+  Energy Unit Connection:
+</strong>
+The kilowatt-hour (kWh) is a unit of energy:
+<br>
+$1\text{ kWh} = 10^3\text{ W} \times 3600\text{ s} = 3.6 \times 10^6\text{ J}$.
+</li>
+</ul>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+An elevator can carry a maximum load of
+<strong>
+1800 kg
+</strong>
+(elevator + passengers) and is moving up with a constant speed of
+<strong>
+2 m/s
+</strong>
+. A constant frictional force of
+<strong>
+4000 N
+</strong>
+opposes its motion. Determine the minimum power delivered by the motor to the elevator in watts and in horsepower.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Calculate the total downward force acting on the elevator:
+    <br>
+    $F = mg + F_f = (1800 \times 10) + 4000 = 18000 + 4000 = 22000$ N.
+  </li>
+  <li>
+    Calculate the power required to move the elevator at a constant speed $v = 2\text{ m/s}$:
+    <br>
+    $P = F \cdot v = 22000 \times 2 = 44000$ W.
+  </li>
+  <li>
+    Convert the power to horsepower:
+    <br>
+    $P_{\text{hp}} = \frac{44000}{746} \approx 59$ hp.
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Minimum power delivered =
+<strong>
+44000 W
+</strong>
+(or
+<strong>
+59 hp
+</strong>
+).
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.11 Collisions
+</summary>
+<p>
+Collisions represent intense interactions between bodies over a very short time interval, where external forces are negligible compared to the impulsive internal forces.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Collisions
+</summary>
+<table border="1" style="width:100%; border-collapse:collapse; margin:10px 0;">
+  <thead>
+    <tr style="background-color:#f1f5f9;">
+      <th>
+      Collision Type
+    </th>
+    <th>
+    Linear Momentum Conservation
+  </th>
+  <th>
+  Total Energy Conservation
+</th>
+<th>
+Kinetic Energy Conservation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Elastic Collision
+    </strong>
+  </td>
+  <td>
+  Conserved
+</td>
+<td>
+Conserved
+</td>
+<td>
+Conserved ($K_i = K_f$)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Inelastic Collision
+  </strong>
+</td>
+<td>
+Conserved
+</td>
+<td>
+Conserved
+</td>
+<td>
+Not Conserved ($K_f &lt; K_i$)
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Completely Inelastic
+  </strong>
+</td>
+<td>
+Conserved
+</td>
+<td>
+Conserved
+</td>
+<td>
+Maximum loss of Kinetic Energy (bodies stick together)
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Elastic Collisions in One Dimension
+</summary>
+<p>
+Consider two masses $m_1$ and $m_2$ moving along a straight line with initial velocities $v_{1i}$ and $v_{2i} = 0$ (target at rest). After an elastic collision, their velocities are $v_{1f}$ and $v_{2f}$.
+</p>
+<p>
+From conservation of momentum:
+</p>
+<p>
+$$m_1 v_{1i} = m_1 v_{1f} + m_2 v_{2f}$$
+</p>
+<p>
+From conservation of kinetic energy:
+</p>
+<p>
+$$\frac{1}{2} m_1 v_{1i}^2 = \frac{1}{2} m_1 v_{1f}^2 + \frac{1}{2} m_2 v_{2f}^2$$
+</p>
+<p>
+Solving these simultaneous equations yields the final velocities:
+</p>
+<p>
+$$v_{1f} = \frac{m_1 - m_2}{m_1 + m_2} v_{1i}$$
+</p>
+<p>
+$$v_{2f} = \frac{2 m_1}{m_1 + m_2} v_{1i}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Special Cases of 1D Elastic Collisions
+</summary>
+<ul>
+  <li>
+    <strong>
+    Case I: Equal Masses ($m_1 = m_2$):
+  </strong>
+  <br>
+  $$v_{1f} = 0, \quad v_{2f} = v_{1i}$$
+  <br>
+  The incoming particle comes to a complete rest, transferring all its momentum to the target particle.
+</li>
+<li>
+  <strong>
+  Case II: Heavy Target ($m_2 \gg m_1$):
+</strong>
+<br>
+$$v_{1f} \approx -v_{1i}, \quad v_{2f} \approx 0$$
+<br>
+The light projectile rebounds with nearly the same speed, while the heavy target remains virtually at rest.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Collisions in Two Dimensions
+</summary>
+<p>
+For a projectile $m_1$ colliding with a stationary target $m_2$ where the final velocities lie in a plane, we resolve momentum conservation along the $x$ and $y$ axes:
+</p>
+<p>
+$$m_1 v_{1i} = m_1 v_{1f} \cos \theta_1 + m_2 v_{2f} \cos \theta_2 \quad (x\text{-axis})$$
+</p>
+<p>
+$$0 = m_1 v_{1f} \sin \theta_1 - m_2 v_{2f} \sin \theta_2 \quad (y\text{-axis})$$
+</p>
+<p>
+If the collision is elastic, we have an additional scalar equation for kinetic energy:
+</p>
+<p>
+$$\frac{1}{2} m_1 v_{1i}^2 = \frac{1}{2} m_1 v_{1f}^2 + \frac{1}{2} m_2 v_{2f}^2$$
+</p>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-1-chapter-04-laws-of-motion.html"; } else { window.location.href = "11-1-chapter-06-system-of-particles-and-rotational.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 1: ELECTRIC CHARGES AND FIELDS
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 1: ELECTRIC CHARGES AND FIELDS
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.1 Introduction &amp; Historical Foundations
+</summary>
+<p>
+  The study of electric charges at rest, their forces, fields, and potentials is known as
+  <span class="keyword">
+  electrostatics
+</span>
+. Everyday phenomena such as hearing a crackle when taking off synthetic clothes, seeing lightning during a thunderstorm, or feeling a mild shock when opening a car door are all manifestations of static electricity discharge through the human body.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Discovery of Charge
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Thales of Miletus (600 BC):
+  </strong>
+  Discovered that amber rubbed with wool or silk cloth attracts light objects. The word "electricity" is derived from the Greek word
+  <span class="keyword">
+  elektron
+</span>
+, meaning amber.
+</li>
+<li>
+  <strong>
+  Benjamin Franklin:
+</strong>
+Introduced the convention of naming the two types of charges as
+<span class="keyword">
+positive
+</span>
+and
+<span class="keyword">
+negative
+</span>
+. By convention, the charge on a glass rod rubbed with silk is positive, while that on a plastic rod rubbed with cat's fur is negative.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Detection of Charge: The Gold-Leaf Electroscope
+</summary>
+<p>
+  The
+  <span class="keyword">
+  gold-leaf electroscope
+</span>
+is a simple apparatus used to detect the presence and estimate the magnitude of electric charge on a body. It consists of a vertical metal rod housed in a protective box, with two extremely thin gold leaves attached to its bottom end. When a charged object touches the metal knob at the top, charge flows down to the leaves, causing them to diverge due to mutual electrostatic repulsion. The degree of divergence serves as a qualitative indicator of the amount of charge.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.2 Conductors, Insulators, and Grounding
+</summary>
+<p>
+Substances are classified based on their ability to allow the passage of electric charge through them:
+</p>
+<ul>
+  <li>
+    <strong>
+    Conductors:
+  </strong>
+  Materials that readily allow electricity to pass through them because they possess mobile charge carriers (free electrons). Examples include metals, the human body, animal bodies, and the earth.
+</li>
+<li>
+  <strong>
+  Insulators:
+</strong>
+Materials that offer high resistance to the passage of electricity because their electrons are tightly bound to their parent atoms. Examples include glass, porcelain, plastic, nylon, and wood.
+</li>
+<li>
+  <strong>
+  Semiconductors:
+</strong>
+A third category of materials whose electrical resistance lies intermediate between that of conductors and insulators.
+</li>
+</ul>
+<p>
+When a charge is transferred to a conductor, it immediately distributes itself over the entire outer surface of the conductor. In contrast, if a charge is placed on an insulator, it remains localized at the point of contact.
+</p>
+<p>
+  The process of sharing excess electric charge with the earth is called
+  <span class="keyword">
+  grounding
+</span>
+or
+<span class="keyword">
+earthing
+</span>
+. It acts as a safety measure in electrical wiring to prevent shocks by diverting leakage currents safely into the ground.
+</p>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.3 Basic Properties of Electric Charge
+</summary>
+<p>
+Electric charge is a fundamental scalar property of matter. It exhibits three primary physical properties:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Additivity of Charges
+</summary>
+<p>
+If a system contains $n$ point charges $q_1, q_2, q_3, \dots, q_n$, the total charge of the system is obtained by their algebraic sum:
+</p>
+$$q_{\text{total}} = q_1 + q_2 + q_3 + \dots + q_n$$
+<p>
+  Unlike mass, which is always positive, electric charges must be added with their proper positive or negative signs. For example, a system containing charges of
+  <strong>
+  +1
+</strong>
+,
+<strong>
++2
+</strong>
+,
+<strong>
+-3
+</strong>
+,
+<strong>
++4
+</strong>
+, and
+<strong>
+-5
+</strong>
+units has a net charge of:
+</p>
+$$(+1) + (+2) + (-3) + (+4) + (-5) = -1 \text{ unit}$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Conservation of Charge
+</summary>
+<p>
+  Within an isolated system, charges can be transferred from one body to another, but the net charge of the system remains constant. Charges cannot be created or destroyed; they can only be redistributed. In high-energy physics, when a neutron decays into a proton and an electron, the net charge remains zero before and after the process, demonstrating the
+  <span class="keyword">
+  conservation of charge
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Quantisation of Charge
+</summary>
+<p>
+  All free charges in nature exist as integral multiples of a basic, indivisible unit of charge denoted by $e$. This property is called the
+  <span class="keyword">
+  quantisation of charge
+</span>
+:
+</p>
+$$q = n e$$
+<p>
+Where $n$ is any integer (positive or negative) and $e$ is the elementary charge carried by an electron or proton:
+</p>
+$$e \approx 1.602192 \times 10^{-19} \text{ C}$$
+<p>
+At the macroscopic level, where charges are of the order of microcoulombs ($\mu\text{C}$), the discrete, grainy nature of charge is imperceptible, and charge appears continuous. However, at the microscopic level, quantisation cannot be ignored.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+If $10^9$ electrons move out of a body to another body every second, how much time is required to get a total charge of
+<strong>
+1 C
+</strong>
+on the other body?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Calculate the charge transferred per second:
+    $$\frac{dq}{dt} = 10^9 \times e = 10^9 \times (1.6 \times 10^{-19} \text{ C}) = 1.6 \times 10^{-10} \text{ C/s}$$
+  </li>
+  <li>
+    Determine the total time $t$ required to accumulate
+    <strong>
+    1 C
+  </strong>
+  :
+  $$t = \frac{q}{dq/dt} = \frac{1 \text{ C}}{1.6 \times 10^{-10} \text{ C/s}} = 6.25 \times 10^9 \text{ s}$$
+</li>
+<li>
+  Convert the time from seconds to years:
+  $$t = \frac{6.25 \times 10^9}{365 \times 24 \times 3600} \approx 198 \text{ years}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$t \approx \mathbf{200 \text{ years}}$
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+How much positive and negative charge is there in a cup of water (assuming the mass of one cup of water is
+<strong>
+250 g
+</strong>
+)?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Find the molecular mass of water ($H_2O$):
+    $$M = 18 \text{ g/mol}$$
+  </li>
+  <li>
+    Calculate the number of molecules in
+    <strong>
+    250 g
+  </strong>
+  of water using Avogadro's number ($N_A = 6.02 \times 10^{23}$):
+  $$N = \frac{250}{18} \times 6.02 \times 10^{23} \approx 8.36 \times 10^{24} \text{ molecules}$$
+</li>
+<li>
+  Determine the number of electrons/protons per molecule of $H_2O$:
+  $$\text{Electrons} = 2(1) + 8 = 10$$
+</li>
+<li>
+  Compute the total positive (or negative) charge:
+  $$Q = N \times 10 \times e = (8.36 \times 10^{24}) \times 10 \times (1.6 \times 10^{-19} \text{ C}) \approx 1.34 \times 10^7 \text{ C}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$Q = \mathbf{1.34 \times 10^7 \text{ C}}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.4 Coulomb's Law
+</summary>
+<p>
+  <span class="keyword">
+  Coulomb's Law
+</span>
+states that the electrostatic force of attraction or repulsion between two stationary point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them. The force acts along the line joining the two charges.
+</p>
+$$F = k \frac{|q_1 q_2|}{r^2}$$
+<p>
+  Where $k$ is the electrostatic constant. In SI units, $k$ is expressed in terms of the
+  <span class="keyword">
+  permittivity of free space
+</span>
+($\epsilon_0$):
+</p>
+$$k = \frac{1}{4\pi\epsilon_0} \approx 8.987 \times 10^9 \text{ N m}^2\text{C}^{-2} \approx 9 \times 10^9 \text{ N m}^2\text{C}^{-2}$$
+$$\epsilon_0 \approx 8.854 \times 10^{-12} \text{ C}^2\text{N}^{-1}\text{m}^{-2}$$
+<details class="sub-topic">
+  <summary class="sub-title">
+  Vector Form of Coulomb's Law
+</summary>
+<p>
+Let $\vec{r}_1$ and $\vec{r}_2$ be the position vectors of charges $q_1$ and $q_2$. The vector leading from $q_1$ to $q_2$ is $\vec{r}_{21} = \vec{r}_2 - \vec{r}_1$, with magnitude $r_{21}$ and unit vector $\hat{r}_{21} = \vec{r}_{21}/r_{21}$. The force $\vec{F}_{21}$ exerted on $q_2$ by $q_1$ is:
+</p>
+$$\vec{F}_{21} = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r_{21}^2} \hat{r}_{21}$$
+<p>
+Similarly, the force $\vec{F}_{12}$ exerted on $q_1$ by $q_2$ is:
+</p>
+$$\vec{F}_{12} = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r_{12}^2} \hat{r}_{12} = -\vec{F}_{21}$$
+<p>
+This confirms that Coulomb's Law is fully consistent with Newton's Third Law of Motion.
+</p>
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Compare the electrostatic force $F_e$ and gravitational force $F_g$ between an electron and a proton separated by distance $r$. ($m_p = 1.67 \times 10^{-27} \text{ kg}$, $m_e = 9.11 \times 10^{-31} \text{ kg}$, $G = 6.67 \times 10^{-11} \text{ N m}^2\text{kg}^{-2}$)
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Write the expressions for both forces:
+    $$F_e = \frac{1}{4\pi\epsilon_0} \frac{e^2}{r^2}, \quad F_g = G \frac{m_p m_e}{r^2}$$
+  </li>
+  <li>
+    Take the ratio of the magnitudes:
+    $$\frac{F_e}{F_g} = \frac{e^2}{4\pi\epsilon_0 G m_p m_e}$$
+  </li>
+  <li>
+    Substitute the physical constants:
+    $$\frac{F_e}{F_g} = \frac{(9 \times 10^9) \times (1.6 \times 10^{-19})^2}{(6.67 \times 10^{-11}) \times (1.67 \times 10^{-27}) \times (9.11 \times 10^{-31})} \approx 2.4 \times 10^{39}$$
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\frac{F_e}{F_g} \approx \mathbf{2.4 \times 10^{39}}$ (Electrostatic forces are vastly stronger than gravitational forces).
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.5 Forces Between Multiple Charges: Superposition Principle
+</summary>
+<p>
+  For a system of $n$ stationary charges $q_1, q_2, \dots, q_n$, the net force on any single charge is calculated using the
+  <span class="keyword">
+  superposition principle
+</span>
+. It states that the total force on a given charge due to a number of other charges is the vector sum of the individual forces exerted on it by each of the other charges, taken one at a time. The individual forces between any two charges remain unaffected by the presence of other charges.
+</p>
+$$\vec{F}_1 = \vec{F}_{12} + \vec{F}_{13} + \dots + \vec{F}_{1n}$$
+$$\vec{F}_1 = \frac{q_1}{4\pi\epsilon_0} \sum_{i=2}^{n} \frac{q_i}{r_{1i}^2} \hat{r}_{1i}$$
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.6 The Electric Field
+</summary>
+<p>
+  An electric charge $Q$ modifies the surrounding space by creating an
+  <span class="keyword">
+  electric field
+</span>
+$\vec{E}$. When a test charge $q$ is placed at a point in this field, it experiences an electrostatic force $\vec{F}$:
+</p>
+$$\vec{E}(\vec{r}) = \lim_{q \to 0} \frac{\vec{F}}{q}$$
+<p>
+The test charge $q$ is kept infinitesimally small so that its presence does not alter the spatial distribution of the source charge $Q$.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Electric Field of a Point Charge
+</summary>
+<p>
+The electric field $\vec{E}$ at a distance $r$ from a single point charge $Q$ is given by:
+</p>
+$$\vec{E} = \frac{1}{4\pi\epsilon_0} \frac{Q}{r^2} \hat{r}$$
+<p>
+  The field is directed radially outwards if $Q > 0$, and radially inwards if $Q
+  < 0$. It exhibits spherical symmetry.</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Electric Field of a System of Charges
+</summary>
+<p>
+By the superposition principle, the net electric field $\vec{E}$ at a point $\vec{r}$ due to a system of $n$ point charges is the vector sum of the fields produced by each charge individually:
+</p>
+$$\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0} \sum_{i=1}^{n} \frac{q_i}{r_{iP}^2} \hat{r}_{iP}$$
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.7 Electric Field Lines
+</summary>
+<p>
+  An
+  <span class="keyword">
+  electric field line
+</span>
+is a spatial curve drawn such that the tangent to it at any point indicates the direction of the net electric field vector $\vec{E}$ at that point. The relative density of these lines in space is directly proportional to the local strength of the electric field.
+</p>
+<p>
+  <strong>
+  Fundamental Properties of Electric Field Lines:
+</strong>
+</p>
+<ol>
+  <li>
+  Field lines originate from positive charges and terminate on negative charges. For a single isolated charge, they start or end at infinity.
+</li>
+<li>
+In a charge-free region, electric field lines are continuous curves without any sudden breaks.
+</li>
+<li>
+Two field lines can never cross each other. If they did, the electric field at the point of intersection would point in two different directions simultaneously, which is physically impossible.
+</li>
+<li>
+Electrostatic field lines do not form closed loops. This is a direct consequence of the conservative nature of the electrostatic field.
+</li>
+</ol>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.8 Electric Flux
+</summary>
+<p>
+  <span class="keyword">
+  Electric flux
+</span>
+($\Delta\Phi$) is a mathematical measure of the number of electric field lines passing through a given surface area element $\Delta\vec{S}$:
+</p>
+$$\Delta\Phi = \vec{E} \cdot \Delta\vec{S} = E \Delta S \cos\theta$$
+<p>
+  Where $\theta$ is the angle between the electric field vector $\vec{E}$ and the outward-pointing normal vector of the area element $\Delta\vec{S}$. The SI unit of electric flux is
+  <strong>
+  N m² C⁻¹
+</strong>
+(or
+<strong>
+V m
+</strong>
+).
+</p>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.9 The Electric Dipole
+</summary>
+<p>
+  An
+  <span class="keyword">
+  electric dipole
+</span>
+consists of a pair of equal and opposite point charges, $+q$ and $-q$, separated by a small distance $2a$. The
+<span class="keyword">
+dipole moment vector
+</span>
+$\vec{p}$ is defined as:
+</p>
+$$\vec{p} = q \times (2a) \hat{p}$$
+<p>
+By convention, the vector $\vec{p}$ points along the dipole axis from the negative charge $-q$ to the positive charge $+q$.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Electric Field of a Dipole at Large Distances ($r \gg a$)
+</summary>
+<ul>
+  <li>
+    <strong>
+    On the Axial Line:
+  </strong>
+  At a point on the axis of the dipole at a distance $r$ from its center:
+  $$\vec{E}_{\text{axial}} \approx \frac{2\vec{p}}{4\pi\epsilon_0 r^3}$$
+</li>
+<li>
+  <strong>
+  On the Equatorial Plane:
+</strong>
+At a point on the equatorial plane of the dipole at a distance $r$ from its center:
+$$\vec{E}_{\text{equatorial}} \approx -\frac{\vec{p}}{4\pi\epsilon_0 r^3}$$
+</li>
+</ul>
+<p>
+At large distances, the dipole field falls off as $1/r^3$, which is faster than the $1/r^2$ dependence of a single point charge.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Dipole in a Uniform External Electric Field
+</summary>
+<p>
+When an electric dipole is placed in a uniform external electric field $\vec{E}$:
+</p>
+<ol>
+  <li>
+    The net translational force on the dipole is zero because the forces on $+q$ and $-q$ are equal and opposite ($q\vec{E}$ and $-q\vec{E}$):
+    $$\vec{F}_{\text{net}} = 0$$
+  </li>
+  <li>
+    Since the forces act at different points, they produce a net
+    <span class="keyword">
+    torque
+  </span>
+  $\vec{\tau}$:
+  $$\vec{\tau} = \vec{p} \times \vec{E}$$
+  $$\tau = p E \sin\theta$$
+</li>
+</ol>
+<p>
+This torque acts to align the dipole moment vector $\vec{p}$ parallel to the external electric field $\vec{E}$. In a non-uniform electric field, the dipole experiences both a net torque and a net translational force.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.10 Continuous Charge Distributions
+</summary>
+<p>
+When dealing with macroscopic systems containing a massive number of charges, it is practical to treat the charge distribution as continuous rather than discrete. We define three types of charge densities:
+</p>
+<table style="width:100%; border-collapse: collapse; margin: 12px 0; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+      <th style="padding: 8px; border: 1px solid #e2e8f0;">
+      Distribution Type
+    </th>
+    <th style="padding: 8px; border: 1px solid #e2e8f0;">
+    Density Symbol &amp; Definition
+  </th>
+  <th style="padding: 8px; border: 1px solid #e2e8f0;">
+  SI Unit
+</th>
+<th style="padding: 8px; border: 1px solid #e2e8f0;">
+Differential Charge Element ($dq$)
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px; border: 1px solid #e2e8f0;">
+      <strong>
+      Linear
+    </strong>
+    (along a wire)
+  </td>
+  <td style="padding: 8px; border: 1px solid #e2e8f0;">
+  $\lambda = \frac{dq}{dl}$
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+  <strong>
+  C m⁻¹
+</strong>
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+$dq = \lambda dl$
+</td>
+</tr>
+<tr style="background-color: #f8fafc;">
+  <td style="padding: 8px; border: 1px solid #e2e8f0;">
+    <strong>
+    Surface
+  </strong>
+  (over a sheet)
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+$\sigma = \frac{dq}{dS}$
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+  <strong>
+  C m⁻²
+</strong>
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+$dq = \sigma dS$
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px; border: 1px solid #e2e8f0;">
+    <strong>
+    Volume
+  </strong>
+  (inside a sphere)
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+$\rho = \frac{dq}{dV}$
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+  <strong>
+  C m⁻³
+</strong>
+</td>
+<td style="padding: 8px; border: 1px solid #e2e8f0;">
+$dq = \rho dV$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.11 Gauss's Law
+</summary>
+<p>
+  <span class="keyword">
+  Gauss's Law
+</span>
+states that the total electric flux $\Phi$ through any closed surface $S$ (referred to as a
+<span class="keyword">
+Gaussian surface
+</span>
+) is equal to $1/\epsilon_0$ \times the total net charge $q_{\text{enclosed}}$ enclosed within that surface:
+</p>
+$$\Phi = \oint_{S} \vec{E} \cdot d\vec{S} = \frac{q_{\text{enclosed}}}{\epsilon_0}$$
+<p>
+  <strong>
+  Key Insights Regarding Gauss's Law:
+</strong>
+</p>
+<ul>
+  <li>
+  The law is valid for any closed surface, regardless of its shape or size.
+</li>
+<li>
+The term $q$ on the right-hand side includes only the charges enclosed inside the Gaussian surface.
+</li>
+<li>
+The electric field $\vec{E}$ on the left-hand side is the vector sum of fields produced by all charges, both inside and outside the surface.
+</li>
+<li>
+It is highly useful for calculating the electric field of highly symmetric charge distributions.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+An electric field is uniform and given by $\vec{E} = 200 \hat{i} \text{ N/C}$ for $x > 0$ and $\vec{E} = -200 \hat{i} \text{ N/C}$ for $x
+< 0$. A cylinder of length <strong>
+20 cm
+</strong>
+and radius
+<strong>
+5 cm
+</strong>
+has its center at the origin and its axis along the x-axis. Find the net outward flux through the cylinder and the net charge inside.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Calculate the cross-sectional area of the flat faces:
+    $$A = \pi r^2 = \pi \times (0.05 \text{ m})^2 \approx 7.85 \times 10^{-3} \text{ m}^2$$
+  </li>
+  <li>
+    Determine the flux through the left flat face ($x = -10 \text{ cm}$):
+    $$\Phi_L = \vec{E}_L \cdot \vec{A}_L = (-200 \hat{i}) \cdot (-A \hat{i}) = 200 \times 7.85 \times 10^{-3} \approx +1.57 \text{ N m}^2\text{C}^{-1}$$
+  </li>
+  <li>
+    Determine the flux through the right flat face ($x = +10 \text{ cm}$):
+    $$\Phi_R = \vec{E}_R \cdot \vec{A}_R = (200 \hat{i}) \cdot (A \hat{i}) = 200 \times 7.85 \times 10^{-3} \approx +1.57 \text{ N m}^2\text{C}^{-1}$$
+  </li>
+  <li>
+    The flux through the curved side of the cylinder is zero because $\vec{E}$ is perpendicular to the area vector at all points:
+    $$\Phi_{\text{curved}} = 0$$
+  </li>
+  <li>
+    Calculate the total net outward flux:
+    $$\Phi_{\text{total}} = \Phi_L + \Phi_R + \Phi_{\text{curved}} = 1.57 + 1.57 + 0 = 3.14 \text{ N m}^2\text{C}^{-1}$$
+  </li>
+  <li>
+    Use Gauss's Law to find the enclosed charge:
+    $$q = \epsilon_0 \Phi_{\text{total}} = (8.854 \times 10^{-12} \text{ C}^2\text{N}^{-1}\text{m}^{-2}) \times 3.14 \text{ N m}^2\text{C}^{-1} \approx 2.78 \times 10^{-11} \text{ C}$$
+  </li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$\Phi_{\text{total}} = \mathbf{3.14 \text{ N m}^2\text{C}^{-1}}$, $q = \mathbf{2.78 \times 10^{-11} \text{ C}}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.12 Applications of Gauss's Law
+</summary>
+<p>
+Gauss's Law simplifies the derivation of electric fields for symmetric charge distributions:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1. Field Due to an Infinitely Long Straight Uniformly Charged Wire
+</summary>
+<p>
+For a thin, infinitely long straight wire with uniform linear charge density $\lambda$, we choose a cylindrical Gaussian surface of radius $r$ and length $l$ coaxial with the wire. The electric field is radial and its magnitude is:
+</p>
+$$E = \frac{\lambda}{2\pi\epsilon_0 r}$$
+<p>
+Vectorially, $\vec{E} = \frac{\lambda}{2\pi\epsilon_0 r} \hat{n}$, where $\hat{n}$ is the radial unit vector in the plane normal to the wire.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2. Field Due to a Uniformly Charged Infinite Plane Sheet
+</summary>
+<p>
+For an infinite plane sheet with uniform surface charge density $\sigma$, we choose a cylindrical Gaussian surface of cross-sectional area $A$ perpendicular to the sheet. The electric field is uniform, directed normal to the sheet, and independent of the distance from the sheet:
+</p>
+$$E = \frac{\sigma}{2\epsilon_0}$$
+<p>
+Vectorially, $\vec{E} = \frac{\sigma}{2\epsilon_0} \hat{n}$, where $\hat{n}$ is the unit vector normal to the plane pointing away from it.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3. Field Due to a Uniformly Charged Thin Spherical Shell
+</summary>
+<p>
+For a thin spherical shell of radius $R$ carrying a total charge $q$ with uniform surface charge density $\sigma$:
+</p>
+<ul>
+  <li>
+    <strong>
+    Outside the Shell ($r \ge R$):
+  </strong>
+  The electric field at any external point is calculated by choosing a spherical Gaussian surface of radius $r$:
+  $$E = \frac{q}{4\pi\epsilon_0 r^2}$$
+  <p>
+  This is identical to the field of a point charge $q$ concentrated at the center of the shell.
+</p>
+</li>
+<li>
+  <strong>
+  Inside the Shell ($r
+  < R$):</strong>
+  A spherical Gaussian surface of radius $r
+  < R$ encloses no charge ($q_{\text{enclosed}} = 0$):
+  $$E = 0$$
+</li>
+</ul>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "12-1-chapter-02-electrostatic-potential-and-capaci.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

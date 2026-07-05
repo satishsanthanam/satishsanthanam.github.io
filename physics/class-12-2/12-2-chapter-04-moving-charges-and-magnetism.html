@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 2) — Chapter 4: Atoms
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 2) — Chapter 4: Atoms
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.1 Introduction &amp; Early Atomic Models
+</summary>
+<p>
+  By the nineteenth century, substantial evidence supported the atomic hypothesis of matter. In 1897, J. J. Thomson discovered the
+  <span class="keyword">
+  electron
+</span>
+, proving that atoms contain identical negatively charged constituents. Since atoms are electrically neutral, they must also contain a neutralizing positive charge.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Thomson's Plum Pudding Model (1898)
+</summary>
+<p>
+  Thomson proposed that the positive charge of the atom is uniformly distributed throughout its volume, with negatively charged electrons embedded in it like seeds in a watermelon. This model is historically known as the
+  <span class="keyword">
+  plum pudding model
+</span>
+.
+</p>
+<ul>
+  <li>
+    <strong>
+    Key Feature:
+  </strong>
+  Uniform electrostatic sphere of positive charge.
+</li>
+<li>
+  <strong>
+  Limitation:
+</strong>
+Failed to explain the large-angle scattering of \alpha-particles observed in subsequent experiments.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.2 Alpha-Particle Scattering &amp; Rutherford's Nuclear Model
+</summary>
+<p>
+In 1911, H. Geiger and E. Marsden, under the direction of Ernst Rutherford, performed a landmark scattering experiment using \alpha-particles directed at a thin gold foil.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Ernst Rutherford (1871 &ndash; 1937)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Conducted pioneering work on radioactivity, discovered \alpha and \beta rays, and proposed the nuclear model of the atom by scattering \alpha-particles from thin metal foils.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Established the existence of the atomic nucleus and estimated its approximate size to be around 10
+<sup>
+-15
+</sup>
+m to 10
+<sup>
+-14
+</sup>
+m.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Geiger-Marsden Experiment
+</summary>
+<p>
+  A collimated beam of
+  <strong>
+  5.5 MeV
+</strong>
+\alpha-particles from a bismuth-214 source was directed at a thin gold foil of thickness
+<strong>
+2.1 &&times; 10
+<sup>
+-7
+</sup>
+m
+</strong>
+. The scattered particles were detected using a rotatable zinc sulphide screen and microscope.
+</p>
+<ul>
+  <li>
+    <strong>
+    Observations:
+  </strong>
+  Most \alpha-particles passed through the foil undeflected. Only about
+  <strong>
+  0.14%
+</strong>
+scattered by more than 1&deg;, and about 1 in 8000 deflected by more than 90&deg;.
+</li>
+<li>
+  <strong>
+  Deduction:
+</strong>
+To experience such a massive repulsive force, the entire positive charge and most of the mass of the atom must be concentrated in an extremely small volume at the center, called the
+<span class="keyword">
+nucleus
+</span>
+.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Alpha-Particle Trajectory &amp; Impact Parameter
+</summary>
+<p>
+  The trajectory of a scattered \alpha-particle depends on its
+  <span class="keyword">
+  impact parameter
+</span>
+($b$), which is the perpendicular distance of the initial velocity vector of the \alpha-particle from the center of the nucleus.
+</p>
+<ul>
+  <li>
+  For a small impact parameter ($b \approx 0$), a head-on collision occurs, and the \alpha-particle rebounds back ($\theta \approx \pi$).
+</li>
+<li>
+For a large impact parameter, the electrostatic force is weak, and the particle suffers negligible deflection ($\theta \approx 0$).
+</li>
+</ul>
+<p>
+The electrostatic repulsive force is governed by Coulomb's Law:
+</p>
+$$F = \frac{1}{4\pi\epsilon_0} \frac{(2e)(Ze)}{r^2}$$
+</details>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+In a Geiger-Marsden experiment, calculate the distance of closest approach to the nucleus of a
+<strong>
+7.7 MeV
+</strong>
+\alpha-particle before it momentarily comes to rest and reverses its direction (for Gold, $Z = 79$).
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify conservation of mechanical energy: Initial kinetic energy ($K$) equals final potential energy ($U$) at the distance of closest approach ($d$).$$K = 7.7 \text{ MeV} = 1.2 \times 10^{-12} \text{ J}$$
+</li>
+<li>
+Set up the potential energy equation:$$K = \frac{1}{4\pi\epsilon_0} \frac{2Ze^2}{d}$$
+</li>
+<li>
+Isolate the distance of closest approach ($d$):$$d = \frac{2Ze^2}{4\pi\epsilon_0 K}$$
+</li>
+<li>
+Substitute the values ($e = 1.6 \times 10^{-19} \text{ C}$, $Z = 79$, $\frac{1}{4\pi\epsilon_0} = 9.0 \times 10^9 \text{ N m}^2/\text{C}^2$):$$d = \frac{2 \times (9.0 \times 10^9) \times 79 \times (1.6 \times 10^{-19})^2}{1.2 \times 10^{-12}} \approx 3.0 \times 10^{-14} \text{ m} = 30 \text{ fm}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$d \approx 3.0 \times 10^{-14} \text{ m}$
+</p>
+</blockquote>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.3 Electron Orbits &amp; Classical Instability
+</summary>
+<p>
+Rutherford's nuclear model pictured the atom as a dynamically stable system where electrons revolve around the nucleus in circular orbits, balanced by electrostatic attraction.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Orbital Mechanics &amp; Energy Relations
+</summary>
+<p>
+The electrostatic force of attraction provides the necessary centripetal force for a stable orbit of radius $r$ and velocity $v$:
+</p>
+$$F_e = F_c \implies \frac{1}{4\pi\epsilon_0} \frac{e^2}{r^2} = \frac{mv^2}{r}$$
+<p>
+This yields the relation for the orbit radius:
+</p>
+$$r = \frac{e^2}{4\pi\epsilon_0 mv^2}$$
+<p>
+The total mechanical energy ($E$) of the electron is the sum of its kinetic energy ($K$) and potential energy ($U$):
+</p>
+$$K = \frac{1}{2}mv^2 = \frac{e^2}{8\pi\epsilon_0 r}$$$$U = -\frac{e^2}{4\pi\epsilon_0 r}$$$$E = K + U = -\frac{e^2}{8\pi\epsilon_0 r}$$
+<p>
+The negative sign of the total energy indicates that the electron is bound to the nucleus.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  The Classical Collapse Dilemma
+</summary>
+<p>
+According to classical electromagnetic theory, an accelerating charged particle (such as a revolving electron undergoing centripetal acceleration) must continuously emit electromagnetic radiation.
+</p>
+<ul>
+  <li>
+    <strong>
+    Instability:
+  </strong>
+  As the electron radiates energy, its orbital radius would continuously decrease, causing it to spiral inward and collapse into the nucleus.
+</li>
+<li>
+  <strong>
+  Continuous Spectrum Contradiction:
+</strong>
+The frequency of emitted light would change continuously, producing a continuous spectrum rather than the observed discrete line spectra.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.4 Bohr Model of the Hydrogen Atom
+</summary>
+<p>
+Niels Bohr combined classical mechanics with early quantum concepts to resolve the instability of Rutherford's model.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Niels Henrik David Bohr (1885 &ndash; 1962)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Developed the quantum model of the hydrogen atom in 1913, explaining its discrete spectral lines. He was awarded the Nobel Prize in Physics in 1922.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Introduced the concept of quantized stationary states and the quantization of orbital angular momentum.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Bohr's Three Postulates
+</summary>
+<ol>
+  <li>
+    <strong>
+    First Postulate:
+  </strong>
+  An electron can revolve in certain stable, non-radiating orbits called
+  <span class="keyword">
+  stationary states
+</span>
+without emitting radiant energy.
+</li>
+<li>
+  <strong>
+  Second Postulate:
+</strong>
+The electron revolves only in orbits where its orbital angular momentum ($L$) is an integral multiple of $\frac{h}{2\pi}$:$$L = m v r = \frac{nh}{2\pi} \quad (n = 1, 2, 3, \dots)$$where $h$ is Planck's constant ($6.6 \times 10^{-34} \text{ J s}$).
+</li>
+<li>
+  <strong>
+  Third Postulate:
+</strong>
+An electron can transition from a higher energy state ($E_i$) to a lower energy state ($E_f$) by emitting a single photon of frequency $\nu$ given by:$$h\nu = E_i - E_f$$
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Derivations for Hydrogen ($Z=1$)
+</summary>
+<p>
+By combining the quantization condition with orbital mechanics, we derive the radius of the $n$-th orbit ($r_n$):
+</p>
+$$r_n = \left(\frac{n^2}{m}\right) \left(\frac{h}{2\pi}\right)^2 \frac{4\pi\epsilon_0}{e^2} = \frac{n^2 h^2 \epsilon_0}{\pi m e^2}$$
+<p>
+The total energy of the electron in the $n$-th stationary state is:
+</p>
+$$E_n = -\frac{m e^4}{8 \epsilon_0^2 n^2 h^2}$$$$E_n = -\frac{2.18 \times 10^{-18}}{n^2} \text{ J} = -\frac{13.6}{n^2} \text{ eV}$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Energy Levels &amp; Spectral Transitions
+</summary>
+<ul>
+  <li>
+    <strong>
+    Ground State ($n=1$):
+  </strong>
+  The lowest energy state of the hydrogen atom, where $E_1 = -13.6 \text{ eV}$.
+</li>
+<li>
+  <strong>
+  Excited States ($n &gt; 1$):
+</strong>
+States of higher energy ($E_2 = -3.40 \text{ eV}$, $E_3 = -1.51 \text{ eV}$, etc.).
+</li>
+<li>
+  <strong>
+  Ionization Energy:
+</strong>
+The minimum energy required to free an electron from its ground state ($13.6 \text{ eV}$ for hydrogen).
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.5 De Broglie's Explanation of Bohr's Second Postulate
+</summary>
+<p>
+In 1923, Louis de Broglie explained Bohr's quantization of angular momentum by introducing the wave nature of electrons.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standing Waves on a Circular Orbit
+</summary>
+<p>
+An electron in a circular orbit behaves as a particle wave. For the wave to persist without destructive interference, it must form a standing wave. This requires the circumference of the orbit to be an integral multiple of the de Broglie wavelength ($\lambda$):
+</p>
+$$2\pi r_n = n\lambda \quad (n = 1, 2, 3, \dots)$$
+<p>
+Substituting the de Broglie relation $\lambda = \frac{h}{p} = \frac{h}{m v_n}$:
+</p>
+$$2\pi r_n = n \frac{h}{m v_n}$$$$m v_n r_n = \frac{nh}{2\pi}$$
+<p>
+This elegantly derives Bohr's second postulate from the wave-particle duality of matter.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  12.6 Limitations of the Bohr Model
+</summary>
+<p>
+Despite its success in explaining the hydrogen spectrum, the Bohr model has several critical limitations:
+</p>
+<ul>
+  <li>
+    <strong>
+    Applicability:
+  </strong>
+  It is restricted to
+  <span class="keyword">
+  hydrogenic atoms
+</span>
+(single-electron systems like H, He
+<sup>
++
+</sup>
+, Li
+<sup>
+2+
+</sup>
+) and fails for multi-electron atoms due to electron-electron interactions.
+</li>
+<li>
+  <strong>
+  Spectral Intensities:
+</strong>
+It cannot explain why some spectral lines are brighter (more intense) than others.
+</li>
+<li>
+  <strong>
+  Theoretical Inconsistency:
+</strong>
+It uses a semi-classical approach, mixing classical circular orbits with quantum conditions, violating the Heisenberg Uncertainty Principle.
+</li>
+</ul>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Core Atomic Models Comparison Matrix
+</summary>
+<table>
+  <thead>
+    <tr>
+      <th>
+      Atomic Model
+    </th>
+    <th>
+    Core Structural Concept
+  </th>
+  <th>
+  Mathematical/Physical Formulation
+</th>
+<th>
+Key Limitations
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Thomson's Model
+    </strong>
+  </td>
+  <td>
+  Plum pudding; uniform positive sphere with embedded electrons.
+</td>
+<td>
+Electrostatically neutral sphere.
+</td>
+<td>
+Failed to explain large-angle \alpha-particle scattering.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Rutherford's Model
+  </strong>
+</td>
+<td>
+Planetary model; tiny, massive positive nucleus with orbiting electrons.
+</td>
+<td>
+$F_e = F_c = \frac{mv^2}{r}$
+</td>
+<td>
+Electromagnetically unstable; predicts continuous spectrum collapse.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Bohr's Model
+  </strong>
+</td>
+<td>
+Quantized stationary orbits; transitions emit discrete photons.
+</td>
+<td>
+$m v r = \frac{nh}{2\pi}$, $E_n = -\frac{13.6}{n^2} \text{ eV}$
+</td>
+<td>
+Limited to single-electron systems; cannot predict line intensities.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 4
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-03-current-electricity.html"; } else { window.location.href = "12-2-chapter-05-magnetism-and-matter.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
