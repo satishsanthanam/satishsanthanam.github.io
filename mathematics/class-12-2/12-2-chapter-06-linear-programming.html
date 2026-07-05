@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 12 (Book 2) — Chapter 6: LINEAR PROGRAMMING
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 2) — Chapter 6: LINEAR PROGRAMMING
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1. Introduction &amp; Mathematical Formulation
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.1 Introduction &amp; Real-Life Optimization Problems
+</summary>
+<p>
+  In day-to-day life, we often encounter situations where we need to make decisions to maximize profit or minimize cost under limited resources. These are called
+  <span class="keyword">
+  optimisation problems
+</span>
+.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Epigraph: G. POLYA
+  </strong>
+</p>
+<p style="margin: 0; font-style: italic;">
+"The mathematical experience of the student is incomplete if he never had the opportunity to solve a problem invented by himself."
+</p>
+</div>
+<p>
+Consider a typical real-life scenario of a furniture dealer:
+</p>
+<ul>
+  <li>
+  The dealer invests in only two items: tables and chairs.
+</li>
+<li>
+Total investment capital available: Rs 50,000.
+</li>
+<li>
+Total storage capacity: at most 60 pieces.
+</li>
+<li>
+Cost of a table: Rs 2500; Cost of a chair: Rs 500.
+</li>
+<li>
+Estimated profit: Rs 250 per table; Rs 75 per chair.
+</li>
+<li>
+  <strong>
+  Objective:
+</strong>
+Determine the number of tables and chairs to buy to maximize total profit.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.2 Mathematical Formulation of the Problem
+</summary>
+<p>
+  To formulate this problem mathematically, we define the
+  <span class="keyword">
+  decision variables
+</span>
+:
+</p>
+<ul>
+  <li>
+  Let $x$ be the number of tables purchased.
+</li>
+<li>
+Let $y$ be the number of chairs purchased.
+</li>
+</ul>
+<p>
+  Since the number of items cannot be negative, we have the
+  <span class="keyword">
+  non-negative constraints
+</span>
+:
+</p>
+$$x \ge 0, \quad y \ge 0$$
+<p>
+The investment constraint is governed by the available capital of Rs 50,000:
+</p>
+$$2500x + 500y \le 50000 \implies 5x + y \le 100$$
+<p>
+The storage constraint is governed by the maximum capacity of 60 pieces:
+</p>
+$$x + y \le 60$$
+<p>
+The dealer's objective is to maximize the total profit, represented by the linear function $Z$:
+</p>
+$$\text{Maximise } Z = 250x + 75y$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.3 Key Definitions &amp; Terminology
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Objective Function
+  </span>
+  : A linear function $Z = ax + by$, where $a, b$ are constants, which has to be maximized or minimized.
+</li>
+<li>
+  <span class="keyword">
+  Decision Variables
+</span>
+: The variables $x$ and $y$ in the objective function.
+</li>
+<li>
+  <span class="keyword">
+  Constraints
+</span>
+: The linear inequalities or equations or restrictions on the variables of a linear programming problem.
+</li>
+<li>
+  <span class="keyword">
+  Non-negative Restrictions
+</span>
+: The conditions $x \ge 0, y \ge 0$ which ensure the physical viability of the decision variables.
+</li>
+<li>
+  <span class="keyword">
+  Linear Programming Problem (LPP)
+</span>
+: A problem concerned with finding the optimal value (maximum or minimum) of a linear objective function of several variables, subject to linear constraints.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  2. Graphical Method of Solving LPP
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.1 Feasible Region &amp; Solutions
+</summary>
+<ul>
+  <li>
+    <span class="keyword">
+    Feasible Region
+  </span>
+  : The common region determined by all the constraints, including non-negative constraints $x, y \ge 0$, of a linear programming problem. It is also called the solution region.
+</li>
+<li>
+  <span class="keyword">
+  Feasible Solutions
+</span>
+: Points within and on the boundary of the feasible region. Every point in this region represents a feasible choice.
+</li>
+<li>
+  <span class="keyword">
+  Infeasible Region
+</span>
+: The region other than the feasible region.
+</li>
+<li>
+  <span class="keyword">
+  Infeasible Solutions
+</span>
+: Any point outside the feasible region.
+</li>
+<li>
+  <span class="keyword">
+  Optimal Solution
+</span>
+: Any point in the feasible region that gives the optimal value (maximum or minimum) of the objective function.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.2 Fundamental Theorems of LPP
+</summary>
+<p>
+The graphical solution of linear programming problems is based on two fundamental theorems:
+</p>
+<ul>
+  <li>
+    <strong>
+    Theorem 1:
+  </strong>
+  Let $R$ be the feasible region (convex polygon) for a linear programming problem and let $Z = ax + by$ be the objective function. When $Z$ has an optimal value (maximum or minimum), where the variables $x$ and $y$ are subject to constraints described by linear inequalities, this optimal value must occur at a corner point (vertex) of the feasible region.
+</li>
+<li>
+  <strong>
+  Theorem 2:
+</strong>
+Let $R$ be the feasible region for a linear programming problem, and let $Z = ax + by$ be the objective function. If $R$ is
+<span class="keyword">
+bounded
+</span>
+, then the objective function $Z$ has both a maximum and a minimum value on $R$ and each of these occurs at a corner point (vertex) of $R$.
+</li>
+<li>
+  <strong>
+  Remark on Unbounded Regions:
+</strong>
+If the feasible region $R$ is
+<span class="keyword">
+unbounded
+</span>
+, then a maximum or a minimum value of the objective function may not exist. However, if it exists, it must occur at a corner point of $R$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  2.3 The Corner Point Method
+</summary>
+<p>
+This method comprises the following systematic steps:
+</p>
+<ol>
+  <li>
+  Find the feasible region of the linear programming problem and determine its corner points (vertices) either by inspection or by solving the two equations of the lines intersecting at that point.
+</li>
+<li>
+Evaluate the objective function $Z = ax + by$ at each corner point. Let $M$ and $m$, respectively, denote the largest and smallest values of these points.
+</li>
+<li>
+  <ul>
+    <li>
+      When the feasible region is
+      <strong>
+      bounded
+    </strong>
+    , $M$ and $m$ are the maximum and minimum values of $Z$.
+  </li>
+  <li>
+    When the feasible region is
+    <strong>
+    unbounded
+  </strong>
+  :
+  <ol>
+    <li>
+    $M$ is the maximum value of $Z$, if the open half plane determined by $ax + by &gt; M$ has no point in common with the feasible region. Otherwise, $Z$ has no maximum value.
+  </li>
+  <li>
+  $m$ is the minimum value of $Z$, if the open half plane determined by $ax + by &lt; m$ has no point in common with the feasible region. Otherwise, $Z$ has no minimum value.
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  3. Algorithmic Solved Examples
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.1 Bounded Feasible Region Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 1):
+</strong>
+</p>
+<p>
+Maximise $Z = 4x + y$ subject to the constraints:
+</p>
+$$x + y \le 50, \quad 3x + y \le 90, \quad x \ge 0, \quad y \ge 0$$
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Plot the boundary lines $x + y = 50$ and $3x + y = 90$.
+</li>
+<li>
+Identify the bounded feasible region $OABC$ determined by the inequalities.
+</li>
+<li>
+  Find the coordinates of the corner points:
+  <ul>
+    <li>
+    $O(0, 0)$
+  </li>
+  <li>
+  $A(30, 0)$ (intersection of $3x + y = 90$ with the x-axis)
+</li>
+<li>
+$B(20, 30)$ (intersection of $x + y = 50$ and $3x + y = 90$)
+</li>
+<li>
+$C(0, 50)$ (intersection of $x + y = 50$ with the y-axis)
+</li>
+</ul>
+</li>
+<li>
+  Evaluate $Z = 4x + y$ at each corner point:
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: center; margin-top: 10px;">
+    <thead>
+      <tr style="background-color: #f1f5f9;">
+        <th>
+        Corner Point
+      </th>
+      <th>
+      Corresponding Value of $Z = 4x + y$
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $O(0, 0)$
+  </td>
+  <td>
+  $0$
+</td>
+</tr>
+<tr>
+  <td>
+  $A(30, 0)$
+</td>
+<td>
+$120$ (Maximum)
+</td>
+</tr>
+<tr>
+  <td>
+  $B(20, 30)$
+</td>
+<td>
+$110$
+</td>
+</tr>
+<tr>
+  <td>
+  $C(0, 50)$
+</td>
+<td>
+$50$
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The maximum value of $Z$ is $120$ at the point $(30, 0)$.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 2):
+</strong>
+</p>
+<p>
+Minimise $Z = 200x + 500y$ subject to the constraints:
+</p>
+$$x + 2y \ge 10, \quad 3x + 4y \le 24, \quad x \ge 0, \quad y \ge 0$$
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Plot the boundary lines $x + 2y = 10$ and $3x + 4y = 24$.
+</li>
+<li>
+Identify the bounded feasible region $ABC$ determined by the inequalities.
+</li>
+<li>
+  Find the coordinates of the corner points:
+  <ul>
+    <li>
+    $A(0, 5)$
+  </li>
+  <li>
+  $B(4, 3)$ (intersection of $x + 2y = 10$ and $3x + 4y = 24$)
+</li>
+<li>
+$C(0, 6)$
+</li>
+</ul>
+</li>
+<li>
+  Evaluate $Z = 200x + 500y$ at each corner point:
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: center; margin-top: 10px;">
+    <thead>
+      <tr style="background-color: #f1f5f9;">
+        <th>
+        Corner Point
+      </th>
+      <th>
+      Corresponding Value of $Z = 200x + 500y$
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $A(0, 5)$
+  </td>
+  <td>
+  $2500$
+</td>
+</tr>
+<tr>
+  <td>
+  $B(4, 3)$
+</td>
+<td>
+$2300$ (Minimum)
+</td>
+</tr>
+<tr>
+  <td>
+  $C(0, 6)$
+</td>
+<td>
+$3000$
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The minimum value of $Z$ is $2300$ at the point $(4, 3)$.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 3 - Multiple Optimal Solutions):
+</strong>
+</p>
+<p>
+Minimise and Maximise $Z = 3x + 9y$ subject to the constraints:
+</p>
+$$x + 3y \le 60, \quad x + y \ge 10, \quad x \le y, \quad x \ge 0, \quad y \ge 0$$
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Plot the boundary lines $x + 3y = 60$, $x + y = 10$, and $x = y$.
+</li>
+<li>
+Identify the bounded feasible region $ABCD$.
+</li>
+<li>
+  Find the coordinates of the corner points:
+  <ul>
+    <li>
+    $A(0, 10)$
+  </li>
+  <li>
+  $B(5, 5)$
+</li>
+<li>
+$C(15, 15)$
+</li>
+<li>
+$D(0, 20)$
+</li>
+</ul>
+</li>
+<li>
+  Evaluate $Z = 3x + 9y$ at each corner point:
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: center; margin-top: 10px;">
+    <thead>
+      <tr style="background-color: #f1f5f9;">
+        <th>
+        Corner Point
+      </th>
+      <th>
+      Corresponding Value of $Z = 3x + 9y$
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $A(0, 10)$
+  </td>
+  <td>
+  $90$
+</td>
+</tr>
+<tr>
+  <td>
+  $B(5, 5)$
+</td>
+<td>
+$60$ (Minimum)
+</td>
+</tr>
+<tr>
+  <td>
+  $C(15, 15)$
+</td>
+<td>
+$180$ (Maximum)
+</td>
+</tr>
+<tr>
+  <td>
+  $D(0, 20)$
+</td>
+<td>
+$180$ (Maximum)
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The minimum value of $Z$ is $60$ at $(5, 5)$. The maximum value of $Z$ is $180$, which occurs at two corner points $C(15, 15)$ and $D(0, 20)$, and therefore at every point on the line segment joining $C$ and $D$.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.2 Unbounded Feasible Region Example
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 4):
+</strong>
+</p>
+<p>
+Determine graphically the minimum value of the objective function $Z = -50x + 20y$ subject to the constraints:
+</p>
+$$2x - y \ge -5, \quad 3x + y \ge 3, \quad 2x - 3y \le 12, \quad x \ge 0, \quad y \ge 0$$
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Plot the boundary lines $2x - y = -5$, $3x + y = 3$, and $2x - 3y = 12$.
+</li>
+<li>
+  Identify the feasible region, which is
+  <strong>
+  unbounded
+</strong>
+.
+</li>
+<li>
+  Find the coordinates of the corner points:
+  <ul>
+    <li>
+    $(0, 5)$
+  </li>
+  <li>
+  $(0, 3)$
+</li>
+<li>
+$(1, 0)$
+</li>
+<li>
+$(6, 0)$
+</li>
+</ul>
+</li>
+<li>
+  Evaluate $Z = -50x + 20y$ at each corner point:
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: center; margin-top: 10px;">
+    <thead>
+      <tr style="background-color: #f1f5f9;">
+        <th>
+        Corner Point
+      </th>
+      <th>
+      Corresponding Value of $Z = -50x + 20y$
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $(0, 5)$
+  </td>
+  <td>
+  $100$
+</td>
+</tr>
+<tr>
+  <td>
+  $(0, 3)$
+</td>
+<td>
+$60$
+</td>
+</tr>
+<tr>
+  <td>
+  $(1, 0)$
+</td>
+<td>
+$-50$
+</td>
+</tr>
+<tr>
+  <td>
+  $(6, 0)$
+</td>
+<td>
+$-300$ (Smallest)
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+  Since the feasible region is unbounded, we must check if the minimum value is indeed $-300$. We graph the inequality:
+  $$-50x + 20y &lt; -300 \implies -5x + 2y &lt; -30$$
+</li>
+<li>
+Check if the resulting open half plane has points in common with the feasible region. Since it has common points, the minimum value of $-300$ is not attained.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$Z = -50x + 20y$ has no minimum value subject to the given constraints.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  3.3 No Feasible Region Example
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement (Example 5):
+</strong>
+</p>
+<p>
+Minimise $Z = 3x + 2y$ subject to the constraints:
+</p>
+$$x + y \ge 8, \quad 3x + 5y \le 15, \quad x \ge 0, \quad y \ge 0$$
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Plot the boundary lines $x + y = 8$ and $3x + 5y = 15$.
+</li>
+<li>
+Observe that the half-plane $x + y \ge 8$ lies above the line, while $3x + 5y \le 15$ lies below the line.
+</li>
+<li>
+There is no common region satisfying all constraints simultaneously.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The problem has no feasible region and hence no feasible solution.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  4. Historical Chronicle &amp; Summary
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4.1 Historical Chronicle of Linear Programming
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Development of LPP
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    World War II Origins:
+  </strong>
+  Linear programming came to the forefront during World War II to plan war operations, economize expenditure, and maximize damage to the enemy.
+</li>
+<li>
+  <strong>
+  First Formulation (1941):
+</strong>
+Formulated independently by the Russian mathematician L. Kantorovich and the American economist F. L. Hitchcock as the famous
+<span class="keyword">
+transportation problem
+</span>
+.
+</li>
+<li>
+  <strong>
+  Optimal Diet Problem (1945):
+</strong>
+Described by English economist G. Stigler to determine an optimal diet.
+</li>
+<li>
+  <strong>
+  The Simplex Method (1947):
+</strong>
+Developed by American economist G. B. Dantzig as an efficient iterative procedure to solve any LPP in a finite number of steps.
+</li>
+<li>
+  <strong>
+  Nobel Prize (1975):
+</strong>
+L. Kantorovich and T. C. Koopmans were awarded the Nobel Prize in Economics for their pioneering work in linear programming.
+</li>
+</ul>
+</div>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  4.2 Summary of Key Concepts
+</summary>
+<ul>
+  <li>
+    An LPP seeks to find the optimal value of a linear
+    <span class="keyword">
+    objective function
+  </span>
+  subject to linear
+  <span class="keyword">
+  constraints
+</span>
+.
+</li>
+<li>
+  The
+  <span class="keyword">
+  feasible region
+</span>
+is always a convex region.
+</li>
+<li>
+The optimal solution always occurs at one of the corner points (vertices) of the feasible region.
+</li>
+<li>
+If two corner points produce the same optimal value, then every point on the line segment joining them also produces the same optimal value.
+</li>
+</ul>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 6
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-05-three-dimensional-geometry.html"; } else { window.location.href = "12-2-chapter-07-probability.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
