@@ -1,0 +1,2549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 11 — Chapter 10: Conic Sections
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [[' { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 10: Conic Sections
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.1 Introduction &amp; Sections of a Cone
+</summary>
+<p>
+Conic sections (or conics) are curves obtained by intersecting a double-napped right circular cone with a plane. These curves have extensive applications in planetary motion, telescope design, reflectors, and acoustics.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Geometric Generation of a Cone
+</summary>
+<p>
+  Let $l$ be a fixed vertical line (the
+  <span class="keyword">
+  axis
+</span>
+) and $m$ be another line (the
+<span class="keyword">
+generator
+</span>
+) intersecting $l$ at a fixed point $V$ (the
+<span class="keyword">
+vertex
+</span>
+) at an angle $\\alpha$ (the
+<span class="keyword">
+semi-vertical angle
+</span>
+). Rotating $m$ around $l$ while keeping $\\alpha$ constant generates a double-napped right circular hollow cone consisting of an
+<span class="keyword">
+upper nappe
+</span>
+and a
+<span class="keyword">
+lower nappe
+</span>
+meeting at $V$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Conic Sections
+</summary>
+<p>
+Let $\\beta$ be the angle made by the intersecting plane with the vertical axis $l$ of the cone. Depending on the value of $\\beta$, different curves are formed:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Section Type
+    </th>
+    <th>
+    Angle Condition
+  </th>
+  <th>
+  Geometric Description
+</th>
+<th>
+Standard Equation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Circle
+    </strong>
+  </td>
+  <td>
+  $\\beta = 90^\\\circ$
+</td>
+<td>
+The plane is perpendicular to the axis and cuts across a single nappe.
+</td>
+<td>
+$x^2 + y^2 = r^2$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Ellipse
+  </strong>
+</td>
+<td>
+$\\alpha &lt; \\beta &lt; 90^\\\circ$
+</td>
+<td>
+The plane cuts obliquely across one entire nappe.
+</td>
+<td>
+$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Parabola
+  </strong>
+</td>
+<td>
+$\\beta = \\alpha$
+</td>
+<td>
+The plane is parallel to the generator line and cuts only one nappe.
+</td>
+<td>
+$y^2 = 4ax$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Hyperbola
+  </strong>
+</td>
+<td>
+$0 \\\le \\beta &lt; \\alpha$
+</td>
+<td>
+The plane is parallel to the axis, cutting through both the upper and lower nappes.
+</td>
+<td>
+$\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Degenerate Conic Sections
+</summary>
+<p>
+  When the intersecting plane passes directly through the vertex $V$ of the cone, the resulting sections are called
+  <span class="keyword">
+  degenerate conics
+</span>
+:
+</p>
+<ul>
+  <li>
+    <strong>
+    Point:
+  </strong>
+  Formed when $\\alpha &lt; \\beta \\\le 90^\\\circ$.
+</li>
+<li>
+  <strong>
+  Single Straight Line:
+</strong>
+Formed when $\\beta = \\alpha$ (the plane contains a generator of the cone).
+</li>
+<li>
+  <strong>
+  Pair of Intersecting Lines:
+</strong>
+Formed when $0 \\\le \\beta &lt; \\alpha$.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.2 The Circle
+</summary>
+<p>
+  A
+  <span class="keyword">
+  circle
+</span>
+is the set of all points in a plane that are equidistant from a fixed point (the
+<span class="keyword">
+centre
+</span>
+) in the plane. The constant distance is called the
+<span class="keyword">
+radius
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equation of a Circle
+</summary>
+<p>
+The equation of a circle with centre $(h, k)$ and radius $r$ is derived using the distance formula:
+</p>
+<p style="text-align: center;">
+$$(x - h)^2 + (y - k)^2 = r^2$$
+</p>
+<p>
+If the centre is at the origin $(0, 0)$, the equation simplifies to:
+</p>
+<p style="text-align: center;">
+$$x^2 + y^2 = r^2$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the centre and radius of the circle given by the equation $x^2 + y^2 + 8x + 10y - 8 = 0$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Group the $x$ and $y$ terms: $(x^2 + 8x) + (y^2 + 10y) = 8$.
+</li>
+<li>
+Complete the square for $x$: add $(\\frac{8}{2})^2 = 16$ to both sides.
+</li>
+<li>
+Complete the square for $y$: add $(\\frac{10}{2})^2 = 25$ to both sides.
+</li>
+<li>
+Rewrite the equation: $(x^2 + 8x + 16) + (y^2 + 10y + 25) = 8 + 16 + 25$.
+</li>
+<li>
+Simplify: $(x + 4)^2 + (y + 5)^2 = 49$.
+</li>
+<li>
+Express in standard form: $(x - (-4))^2 + (y - (-5))^2 = 7^2$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Centre is $(-4, -5)$ and Radius is $7$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.3 The Parabola
+</summary>
+<p>
+  A
+  <span class="keyword">
+  parabola
+</span>
+is the set of all points in a plane that are equidistant from a fixed line (the
+<span class="keyword">
+directrix
+</span>
+) and a fixed point (the
+<span class="keyword">
+focus
+</span>
+) not on the line.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Properties
+</summary>
+<p>
+The simplest form of a parabola has its vertex at the origin $(0,0)$ and its axis along one of the coordinate axes. There are four standard orientations:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Equation
+    </th>
+    <th>
+    Focus
+  </th>
+  <th>
+  Directrix
+</th>
+<th>
+Axis of Symmetry
+</th>
+<th>
+Direction of Opening
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $y^2 = 4ax$
+  </td>
+  <td>
+  $(a, 0)$
+</td>
+<td>
+$x = -a$
+</td>
+<td>
+$y = 0$ ($x$-axis)
+</td>
+<td>
+Opens Right
+</td>
+</tr>
+<tr>
+  <td>
+  $y^2 = -4ax$
+</td>
+<td>
+$(-a, 0)$
+</td>
+<td>
+$x = a$
+</td>
+<td>
+$y = 0$ ($x$-axis)
+</td>
+<td>
+Opens Left
+</td>
+</tr>
+<tr>
+  <td>
+  $x^2 = 4ay$
+</td>
+<td>
+$(0, a)$
+</td>
+<td>
+$y = -a$
+</td>
+<td>
+$x = 0$ ($y$-axis)
+</td>
+<td>
+Opens Upward
+</td>
+</tr>
+<tr>
+  <td>
+  $x^2 = -4ay$
+</td>
+<td>
+$(0, -a)$
+</td>
+<td>
+$y = a$
+</td>
+<td>
+$x = 0$ ($y$-axis)
+</td>
+<td>
+Opens Downward
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Latus Rectum
+</summary>
+<p>
+  The
+  <span class="keyword">
+  latus rectum
+</span>
+of a parabola is a line segment perpendicular to the axis of the parabola, passing through the focus, with endpoints lying on the parabola. For any standard parabola, the length of the latus rectum is:
+</p>
+<p style="text-align: center;">
+$$\\text{Length} = 4a$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the focus, the equation of the directrix, and the length of the latus rectum for the parabola $y^2 = 8x$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compare the given equation $y^2 = 8x$ with the standard form $y^2 = 4ax$.
+</li>
+<li>
+Solve for $a$: $4a = 8 \\\implies a = 2$.
+</li>
+<li>
+Determine the focus: Since the axis is along the $x$-axis and $a &gt; 0$, the focus is $(a, 0) = (2, 0)$.
+</li>
+<li>
+Determine the directrix: The equation of the directrix is $x = -a \\\implies x = -2$.
+</li>
+<li>
+Calculate the length of the latus rectum: $\\text{Length} = 4a = 8$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Focus: $(2, 0)$, Directrix: $x = -2$, Latus Rectum Length: $8$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.4 The Ellipse
+</summary>
+<p>
+  An
+  <span class="keyword">
+  ellipse
+</span>
+is the set of all points in a plane, the sum of whose distances from two fixed points (the
+<span class="keyword">
+foci
+</span>
+) in the plane is a constant ($2a$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Key Parameters
+</summary>
+<p>
+Let $2a$ be the length of the major axis, $2b$ be the length of the minor axis, and $2c$ be the distance between the foci. The fundamental relationship between these parameters is:
+</p>
+<p style="text-align: center;">
+$$a^2 = b^2 + c^2 \\\implies c = \\sqrt{a^2 - b^2}$$
+</p>
+<p>
+  The
+  <span class="keyword">
+  eccentricity
+</span>
+($e$) of an ellipse is the ratio of the distance of a focus from the centre to the length of the semi-major axis:
+</p>
+<p style="text-align: center;">
+$$e = \\frac{c}{a} \\quad (0 &lt; e &lt; 1)$$
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Standard Equation
+    </th>
+    <th>
+    Major Axis Along
+  </th>
+  <th>
+  Foci Coordinates
+</th>
+<th>
+Vertices Coordinates
+</th>
+<th>
+Latus Rectum Length
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\quad (a &gt; b)$
+  </td>
+  <td>
+  $x$-axis
+</td>
+<td>
+$(\\\pm c, 0)$
+</td>
+<td>
+$(\\\pm a, 0)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1 \\quad (a &gt; b)$
+</td>
+<td>
+$y$-axis
+</td>
+<td>
+$(0, \\\pm c)$
+</td>
+<td>
+$(0, \\\pm a)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the foci, the vertices, the eccentricity, and the length of the latus rectum of the ellipse $\\frac{x^2}{25} + \\frac{y^2}{9} = 1$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify $a^2$ and $b^2$ by comparing with $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$: $a^2 = 25 \\\implies a = 5$, and $b^2 = 9 \\\implies b = 3$.
+</li>
+<li>
+Since $a^2 &gt; b^2$ is under $x^2$, the major axis is along the $x$-axis.
+</li>
+<li>
+Calculate $c$: $c = \\sqrt{a^2 - b^2} = \\sqrt{25 - 9} = \\sqrt{16} = 4$.
+</li>
+<li>
+Determine foci: $(\\\pm c, 0) = (\\\pm 4, 0)$.
+</li>
+<li>
+Determine vertices: $(\\\pm a, 0) = (\\\pm 5, 0)$.
+</li>
+<li>
+Calculate eccentricity: $e = \\frac{c}{a} = \\frac{4}{5} = 0.8$.
+</li>
+<li>
+Calculate latus rectum length: $\\frac{2b^2}{a} = \\frac{2(9)}{5} = \\frac{18}{5} = 3.6$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Foci: $(\\\pm 4, 0)$, Vertices: $(\\\pm 5, 0)$, Eccentricity: $0.8$, Latus Rectum Length: $3.6$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.5 The Hyperbola
+</summary>
+<p>
+  A
+  <span class="keyword">
+  hyperbola
+</span>
+is the set of all points in a plane, the difference of whose distances from two fixed points (the
+<span class="keyword">
+foci
+</span>
+) in the plane is a constant ($2a$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Key Parameters
+</summary>
+<p>
+Let $2a$ be the length of the transverse axis, $2b$ be the length of the conjugate axis, and $2c$ be the distance between the foci. The fundamental relationship is:
+</p>
+<p style="text-align: center;">
+$$c^2 = a^2 + b^2 \\\implies b = \\sqrt{c^2 - a^2}$$
+</p>
+<p>
+  The
+  <span class="keyword">
+  eccentricity
+</span>
+($e$) of a hyperbola is:
+</p>
+<p style="text-align: center;">
+$$e = \\frac{c}{a} \\quad (e &gt; 1)$$
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Standard Equation
+    </th>
+    <th>
+    Transverse Axis Along
+  </th>
+  <th>
+  Foci Coordinates
+</th>
+<th>
+Vertices Coordinates
+</th>
+<th>
+Latus Rectum Length
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$
+  </td>
+  <td>
+  $x$-axis
+</td>
+<td>
+$(\\\pm c, 0)$
+</td>
+<td>
+$(\\\pm a, 0)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1$
+</td>
+<td>
+$y$-axis
+</td>
+<td>
+$(0, \\\pm c)$
+</td>
+<td>
+$(0, \\\pm a)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  An
+  <span class="keyword">
+  equilateral hyperbola
+</span>
+is a special case where $a = b$, simplifying the equation to $x^2 - y^2 = a^2$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the foci, the vertices, the eccentricity, and the length of the latus rectum of the hyperbola $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compare with the standard form $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$: $a^2 = 9 \\\implies a = 3$, and $b^2 = 16 \\\implies b = 4$.
+</li>
+<li>
+Calculate $c$: $c = \\sqrt{a^2 + b^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.
+</li>
+<li>
+Determine foci: $(\\\pm c, 0) = (\\\pm 5, 0)$.
+</li>
+<li>
+Determine vertices: $(\\\pm a, 0) = (\\\pm 3, 0)$.
+</li>
+<li>
+Calculate eccentricity: $e = \\frac{c}{a} = \\frac{5}{3}$.
+</li>
+<li>
+Calculate latus rectum length: $\\frac{2b^2}{a} = \\frac{2(16)}{3} = \\frac{32}{3}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Foci: $(\\\pm 5, 0)$, Vertices: $(\\\pm 3, 0)$, Eccentricity: $\\frac{5}{3}$, Latus Rectum Length: $\\frac{32}{3}$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.6 Historical Chronicle &amp; Summary
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Apollonius of Perga (262 B.C. - 190 B.C.)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Known as the "Great Geometer," Apollonius wrote the definitive eight-volume treatise
+  <em>
+  Conics
+</em>
+, which introduced the terms parabola, ellipse, and hyperbola.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+He demonstrated that all three curves can be generated by intersecting a single double-napped cone with a plane at varying angles, replacing earlier methods that required different cones for each curve.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: René Descartes &amp; Pierre de Fermat
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In the 17th century, Descartes published
+  <em>
+  La Géométrie
+</em>
+(1637), establishing analytical geometry (Cartesian geometry) which allowed geometric curves to be studied using algebraic equations.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Fermat independently discovered the fundamental principles of analytical geometry, enabling the algebraic representation of conic sections as second-degree equations.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 10
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-09-straight-lines.html"; } else { window.location.href = "11-chapter-11-introduction-to-three-dimensional.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
+, ' { displayAlign: 'left', displayIndent: '1em' } };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 10: Conic Sections
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.1 Introduction &amp; Sections of a Cone
+</summary>
+<p>
+Conic sections (or conics) are curves obtained by intersecting a double-napped right circular cone with a plane. These curves have extensive applications in planetary motion, telescope design, reflectors, and acoustics.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Geometric Generation of a Cone
+</summary>
+<p>
+  Let $l$ be a fixed vertical line (the
+  <span class="keyword">
+  axis
+</span>
+) and $m$ be another line (the
+<span class="keyword">
+generator
+</span>
+) intersecting $l$ at a fixed point $V$ (the
+<span class="keyword">
+vertex
+</span>
+) at an angle $\\alpha$ (the
+<span class="keyword">
+semi-vertical angle
+</span>
+). Rotating $m$ around $l$ while keeping $\\alpha$ constant generates a double-napped right circular hollow cone consisting of an
+<span class="keyword">
+upper nappe
+</span>
+and a
+<span class="keyword">
+lower nappe
+</span>
+meeting at $V$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Conic Sections
+</summary>
+<p>
+Let $\\beta$ be the angle made by the intersecting plane with the vertical axis $l$ of the cone. Depending on the value of $\\beta$, different curves are formed:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Section Type
+    </th>
+    <th>
+    Angle Condition
+  </th>
+  <th>
+  Geometric Description
+</th>
+<th>
+Standard Equation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Circle
+    </strong>
+  </td>
+  <td>
+  $\\beta = 90^\\\circ$
+</td>
+<td>
+The plane is perpendicular to the axis and cuts across a single nappe.
+</td>
+<td>
+$x^2 + y^2 = r^2$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Ellipse
+  </strong>
+</td>
+<td>
+$\\alpha &lt; \\beta &lt; 90^\\\circ$
+</td>
+<td>
+The plane cuts obliquely across one entire nappe.
+</td>
+<td>
+$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Parabola
+  </strong>
+</td>
+<td>
+$\\beta = \\alpha$
+</td>
+<td>
+The plane is parallel to the generator line and cuts only one nappe.
+</td>
+<td>
+$y^2 = 4ax$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Hyperbola
+  </strong>
+</td>
+<td>
+$0 \\\le \\beta &lt; \\alpha$
+</td>
+<td>
+The plane is parallel to the axis, cutting through both the upper and lower nappes.
+</td>
+<td>
+$\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Degenerate Conic Sections
+</summary>
+<p>
+  When the intersecting plane passes directly through the vertex $V$ of the cone, the resulting sections are called
+  <span class="keyword">
+  degenerate conics
+</span>
+:
+</p>
+<ul>
+  <li>
+    <strong>
+    Point:
+  </strong>
+  Formed when $\\alpha &lt; \\beta \\\le 90^\\\circ$.
+</li>
+<li>
+  <strong>
+  Single Straight Line:
+</strong>
+Formed when $\\beta = \\alpha$ (the plane contains a generator of the cone).
+</li>
+<li>
+  <strong>
+  Pair of Intersecting Lines:
+</strong>
+Formed when $0 \\\le \\beta &lt; \\alpha$.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.2 The Circle
+</summary>
+<p>
+  A
+  <span class="keyword">
+  circle
+</span>
+is the set of all points in a plane that are equidistant from a fixed point (the
+<span class="keyword">
+centre
+</span>
+) in the plane. The constant distance is called the
+<span class="keyword">
+radius
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equation of a Circle
+</summary>
+<p>
+The equation of a circle with centre $(h, k)$ and radius $r$ is derived using the distance formula:
+</p>
+<p style="text-align: center;">
+$$(x - h)^2 + (y - k)^2 = r^2$$
+</p>
+<p>
+If the centre is at the origin $(0, 0)$, the equation simplifies to:
+</p>
+<p style="text-align: center;">
+$$x^2 + y^2 = r^2$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the centre and radius of the circle given by the equation $x^2 + y^2 + 8x + 10y - 8 = 0$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Group the $x$ and $y$ terms: $(x^2 + 8x) + (y^2 + 10y) = 8$.
+</li>
+<li>
+Complete the square for $x$: add $(\\frac{8}{2})^2 = 16$ to both sides.
+</li>
+<li>
+Complete the square for $y$: add $(\\frac{10}{2})^2 = 25$ to both sides.
+</li>
+<li>
+Rewrite the equation: $(x^2 + 8x + 16) + (y^2 + 10y + 25) = 8 + 16 + 25$.
+</li>
+<li>
+Simplify: $(x + 4)^2 + (y + 5)^2 = 49$.
+</li>
+<li>
+Express in standard form: $(x - (-4))^2 + (y - (-5))^2 = 7^2$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Centre is $(-4, -5)$ and Radius is $7$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.3 The Parabola
+</summary>
+<p>
+  A
+  <span class="keyword">
+  parabola
+</span>
+is the set of all points in a plane that are equidistant from a fixed line (the
+<span class="keyword">
+directrix
+</span>
+) and a fixed point (the
+<span class="keyword">
+focus
+</span>
+) not on the line.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Properties
+</summary>
+<p>
+The simplest form of a parabola has its vertex at the origin $(0,0)$ and its axis along one of the coordinate axes. There are four standard orientations:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Equation
+    </th>
+    <th>
+    Focus
+  </th>
+  <th>
+  Directrix
+</th>
+<th>
+Axis of Symmetry
+</th>
+<th>
+Direction of Opening
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $y^2 = 4ax$
+  </td>
+  <td>
+  $(a, 0)$
+</td>
+<td>
+$x = -a$
+</td>
+<td>
+$y = 0$ ($x$-axis)
+</td>
+<td>
+Opens Right
+</td>
+</tr>
+<tr>
+  <td>
+  $y^2 = -4ax$
+</td>
+<td>
+$(-a, 0)$
+</td>
+<td>
+$x = a$
+</td>
+<td>
+$y = 0$ ($x$-axis)
+</td>
+<td>
+Opens Left
+</td>
+</tr>
+<tr>
+  <td>
+  $x^2 = 4ay$
+</td>
+<td>
+$(0, a)$
+</td>
+<td>
+$y = -a$
+</td>
+<td>
+$x = 0$ ($y$-axis)
+</td>
+<td>
+Opens Upward
+</td>
+</tr>
+<tr>
+  <td>
+  $x^2 = -4ay$
+</td>
+<td>
+$(0, -a)$
+</td>
+<td>
+$y = a$
+</td>
+<td>
+$x = 0$ ($y$-axis)
+</td>
+<td>
+Opens Downward
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Latus Rectum
+</summary>
+<p>
+  The
+  <span class="keyword">
+  latus rectum
+</span>
+of a parabola is a line segment perpendicular to the axis of the parabola, passing through the focus, with endpoints lying on the parabola. For any standard parabola, the length of the latus rectum is:
+</p>
+<p style="text-align: center;">
+$$\\text{Length} = 4a$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the focus, the equation of the directrix, and the length of the latus rectum for the parabola $y^2 = 8x$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compare the given equation $y^2 = 8x$ with the standard form $y^2 = 4ax$.
+</li>
+<li>
+Solve for $a$: $4a = 8 \\\implies a = 2$.
+</li>
+<li>
+Determine the focus: Since the axis is along the $x$-axis and $a &gt; 0$, the focus is $(a, 0) = (2, 0)$.
+</li>
+<li>
+Determine the directrix: The equation of the directrix is $x = -a \\\implies x = -2$.
+</li>
+<li>
+Calculate the length of the latus rectum: $\\text{Length} = 4a = 8$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Focus: $(2, 0)$, Directrix: $x = -2$, Latus Rectum Length: $8$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.4 The Ellipse
+</summary>
+<p>
+  An
+  <span class="keyword">
+  ellipse
+</span>
+is the set of all points in a plane, the sum of whose distances from two fixed points (the
+<span class="keyword">
+foci
+</span>
+) in the plane is a constant ($2a$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Key Parameters
+</summary>
+<p>
+Let $2a$ be the length of the major axis, $2b$ be the length of the minor axis, and $2c$ be the distance between the foci. The fundamental relationship between these parameters is:
+</p>
+<p style="text-align: center;">
+$$a^2 = b^2 + c^2 \\\implies c = \\sqrt{a^2 - b^2}$$
+</p>
+<p>
+  The
+  <span class="keyword">
+  eccentricity
+</span>
+($e$) of an ellipse is the ratio of the distance of a focus from the centre to the length of the semi-major axis:
+</p>
+<p style="text-align: center;">
+$$e = \\frac{c}{a} \\quad (0 &lt; e &lt; 1)$$
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Standard Equation
+    </th>
+    <th>
+    Major Axis Along
+  </th>
+  <th>
+  Foci Coordinates
+</th>
+<th>
+Vertices Coordinates
+</th>
+<th>
+Latus Rectum Length
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\quad (a &gt; b)$
+  </td>
+  <td>
+  $x$-axis
+</td>
+<td>
+$(\\\pm c, 0)$
+</td>
+<td>
+$(\\\pm a, 0)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1 \\quad (a &gt; b)$
+</td>
+<td>
+$y$-axis
+</td>
+<td>
+$(0, \\\pm c)$
+</td>
+<td>
+$(0, \\\pm a)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the foci, the vertices, the eccentricity, and the length of the latus rectum of the ellipse $\\frac{x^2}{25} + \\frac{y^2}{9} = 1$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify $a^2$ and $b^2$ by comparing with $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$: $a^2 = 25 \\\implies a = 5$, and $b^2 = 9 \\\implies b = 3$.
+</li>
+<li>
+Since $a^2 &gt; b^2$ is under $x^2$, the major axis is along the $x$-axis.
+</li>
+<li>
+Calculate $c$: $c = \\sqrt{a^2 - b^2} = \\sqrt{25 - 9} = \\sqrt{16} = 4$.
+</li>
+<li>
+Determine foci: $(\\\pm c, 0) = (\\\pm 4, 0)$.
+</li>
+<li>
+Determine vertices: $(\\\pm a, 0) = (\\\pm 5, 0)$.
+</li>
+<li>
+Calculate eccentricity: $e = \\frac{c}{a} = \\frac{4}{5} = 0.8$.
+</li>
+<li>
+Calculate latus rectum length: $\\frac{2b^2}{a} = \\frac{2(9)}{5} = \\frac{18}{5} = 3.6$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Foci: $(\\\pm 4, 0)$, Vertices: $(\\\pm 5, 0)$, Eccentricity: $0.8$, Latus Rectum Length: $3.6$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.5 The Hyperbola
+</summary>
+<p>
+  A
+  <span class="keyword">
+  hyperbola
+</span>
+is the set of all points in a plane, the difference of whose distances from two fixed points (the
+<span class="keyword">
+foci
+</span>
+) in the plane is a constant ($2a$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Key Parameters
+</summary>
+<p>
+Let $2a$ be the length of the transverse axis, $2b$ be the length of the conjugate axis, and $2c$ be the distance between the foci. The fundamental relationship is:
+</p>
+<p style="text-align: center;">
+$$c^2 = a^2 + b^2 \\\implies b = \\sqrt{c^2 - a^2}$$
+</p>
+<p>
+  The
+  <span class="keyword">
+  eccentricity
+</span>
+($e$) of a hyperbola is:
+</p>
+<p style="text-align: center;">
+$$e = \\frac{c}{a} \\quad (e &gt; 1)$$
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Standard Equation
+    </th>
+    <th>
+    Transverse Axis Along
+  </th>
+  <th>
+  Foci Coordinates
+</th>
+<th>
+Vertices Coordinates
+</th>
+<th>
+Latus Rectum Length
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$
+  </td>
+  <td>
+  $x$-axis
+</td>
+<td>
+$(\\\pm c, 0)$
+</td>
+<td>
+$(\\\pm a, 0)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1$
+</td>
+<td>
+$y$-axis
+</td>
+<td>
+$(0, \\\pm c)$
+</td>
+<td>
+$(0, \\\pm a)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  An
+  <span class="keyword">
+  equilateral hyperbola
+</span>
+is a special case where $a = b$, simplifying the equation to $x^2 - y^2 = a^2$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the foci, the vertices, the eccentricity, and the length of the latus rectum of the hyperbola $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compare with the standard form $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$: $a^2 = 9 \\\implies a = 3$, and $b^2 = 16 \\\implies b = 4$.
+</li>
+<li>
+Calculate $c$: $c = \\sqrt{a^2 + b^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.
+</li>
+<li>
+Determine foci: $(\\\pm c, 0) = (\\\pm 5, 0)$.
+</li>
+<li>
+Determine vertices: $(\\\pm a, 0) = (\\\pm 3, 0)$.
+</li>
+<li>
+Calculate eccentricity: $e = \\frac{c}{a} = \\frac{5}{3}$.
+</li>
+<li>
+Calculate latus rectum length: $\\frac{2b^2}{a} = \\frac{2(16)}{3} = \\frac{32}{3}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Foci: $(\\\pm 5, 0)$, Vertices: $(\\\pm 3, 0)$, Eccentricity: $\\frac{5}{3}$, Latus Rectum Length: $\\frac{32}{3}$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.6 Historical Chronicle &amp; Summary
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Apollonius of Perga (262 B.C. - 190 B.C.)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Known as the "Great Geometer," Apollonius wrote the definitive eight-volume treatise
+  <em>
+  Conics
+</em>
+, which introduced the terms parabola, ellipse, and hyperbola.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+He demonstrated that all three curves can be generated by intersecting a single double-napped cone with a plane at varying angles, replacing earlier methods that required different cones for each curve.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: René Descartes &amp; Pierre de Fermat
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In the 17th century, Descartes published
+  <em>
+  La Géométrie
+</em>
+(1637), establishing analytical geometry (Cartesian geometry) which allowed geometric curves to be studied using algebraic equations.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Fermat independently discovered the fundamental principles of analytical geometry, enabling the algebraic representation of conic sections as second-degree equations.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 10
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-09-straight-lines.html"; } else { window.location.href = "11-chapter-11-introduction-to-three-dimensional.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
+, displayMath: [['$', '$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 10: Conic Sections
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.1 Introduction &amp; Sections of a Cone
+</summary>
+<p>
+Conic sections (or conics) are curves obtained by intersecting a double-napped right circular cone with a plane. These curves have extensive applications in planetary motion, telescope design, reflectors, and acoustics.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Geometric Generation of a Cone
+</summary>
+<p>
+  Let $l$ be a fixed vertical line (the
+  <span class="keyword">
+  axis
+</span>
+) and $m$ be another line (the
+<span class="keyword">
+generator
+</span>
+) intersecting $l$ at a fixed point $V$ (the
+<span class="keyword">
+vertex
+</span>
+) at an angle $\\alpha$ (the
+<span class="keyword">
+semi-vertical angle
+</span>
+). Rotating $m$ around $l$ while keeping $\\alpha$ constant generates a double-napped right circular hollow cone consisting of an
+<span class="keyword">
+upper nappe
+</span>
+and a
+<span class="keyword">
+lower nappe
+</span>
+meeting at $V$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Conic Sections
+</summary>
+<p>
+Let $\\beta$ be the angle made by the intersecting plane with the vertical axis $l$ of the cone. Depending on the value of $\\beta$, different curves are formed:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Section Type
+    </th>
+    <th>
+    Angle Condition
+  </th>
+  <th>
+  Geometric Description
+</th>
+<th>
+Standard Equation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Circle
+    </strong>
+  </td>
+  <td>
+  $\\beta = 90^\\\circ$
+</td>
+<td>
+The plane is perpendicular to the axis and cuts across a single nappe.
+</td>
+<td>
+$x^2 + y^2 = r^2$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Ellipse
+  </strong>
+</td>
+<td>
+$\\alpha &lt; \\beta &lt; 90^\\\circ$
+</td>
+<td>
+The plane cuts obliquely across one entire nappe.
+</td>
+<td>
+$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Parabola
+  </strong>
+</td>
+<td>
+$\\beta = \\alpha$
+</td>
+<td>
+The plane is parallel to the generator line and cuts only one nappe.
+</td>
+<td>
+$y^2 = 4ax$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Hyperbola
+  </strong>
+</td>
+<td>
+$0 \\\le \\beta &lt; \\alpha$
+</td>
+<td>
+The plane is parallel to the axis, cutting through both the upper and lower nappes.
+</td>
+<td>
+$\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Degenerate Conic Sections
+</summary>
+<p>
+  When the intersecting plane passes directly through the vertex $V$ of the cone, the resulting sections are called
+  <span class="keyword">
+  degenerate conics
+</span>
+:
+</p>
+<ul>
+  <li>
+    <strong>
+    Point:
+  </strong>
+  Formed when $\\alpha &lt; \\beta \\\le 90^\\\circ$.
+</li>
+<li>
+  <strong>
+  Single Straight Line:
+</strong>
+Formed when $\\beta = \\alpha$ (the plane contains a generator of the cone).
+</li>
+<li>
+  <strong>
+  Pair of Intersecting Lines:
+</strong>
+Formed when $0 \\\le \\beta &lt; \\alpha$.
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.2 The Circle
+</summary>
+<p>
+  A
+  <span class="keyword">
+  circle
+</span>
+is the set of all points in a plane that are equidistant from a fixed point (the
+<span class="keyword">
+centre
+</span>
+) in the plane. The constant distance is called the
+<span class="keyword">
+radius
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equation of a Circle
+</summary>
+<p>
+The equation of a circle with centre $(h, k)$ and radius $r$ is derived using the distance formula:
+</p>
+<p style="text-align: center;">
+$$(x - h)^2 + (y - k)^2 = r^2$$
+</p>
+<p>
+If the centre is at the origin $(0, 0)$, the equation simplifies to:
+</p>
+<p style="text-align: center;">
+$$x^2 + y^2 = r^2$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the centre and radius of the circle given by the equation $x^2 + y^2 + 8x + 10y - 8 = 0$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Group the $x$ and $y$ terms: $(x^2 + 8x) + (y^2 + 10y) = 8$.
+</li>
+<li>
+Complete the square for $x$: add $(\\frac{8}{2})^2 = 16$ to both sides.
+</li>
+<li>
+Complete the square for $y$: add $(\\frac{10}{2})^2 = 25$ to both sides.
+</li>
+<li>
+Rewrite the equation: $(x^2 + 8x + 16) + (y^2 + 10y + 25) = 8 + 16 + 25$.
+</li>
+<li>
+Simplify: $(x + 4)^2 + (y + 5)^2 = 49$.
+</li>
+<li>
+Express in standard form: $(x - (-4))^2 + (y - (-5))^2 = 7^2$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Centre is $(-4, -5)$ and Radius is $7$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.3 The Parabola
+</summary>
+<p>
+  A
+  <span class="keyword">
+  parabola
+</span>
+is the set of all points in a plane that are equidistant from a fixed line (the
+<span class="keyword">
+directrix
+</span>
+) and a fixed point (the
+<span class="keyword">
+focus
+</span>
+) not on the line.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Properties
+</summary>
+<p>
+The simplest form of a parabola has its vertex at the origin $(0,0)$ and its axis along one of the coordinate axes. There are four standard orientations:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Equation
+    </th>
+    <th>
+    Focus
+  </th>
+  <th>
+  Directrix
+</th>
+<th>
+Axis of Symmetry
+</th>
+<th>
+Direction of Opening
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $y^2 = 4ax$
+  </td>
+  <td>
+  $(a, 0)$
+</td>
+<td>
+$x = -a$
+</td>
+<td>
+$y = 0$ ($x$-axis)
+</td>
+<td>
+Opens Right
+</td>
+</tr>
+<tr>
+  <td>
+  $y^2 = -4ax$
+</td>
+<td>
+$(-a, 0)$
+</td>
+<td>
+$x = a$
+</td>
+<td>
+$y = 0$ ($x$-axis)
+</td>
+<td>
+Opens Left
+</td>
+</tr>
+<tr>
+  <td>
+  $x^2 = 4ay$
+</td>
+<td>
+$(0, a)$
+</td>
+<td>
+$y = -a$
+</td>
+<td>
+$x = 0$ ($y$-axis)
+</td>
+<td>
+Opens Upward
+</td>
+</tr>
+<tr>
+  <td>
+  $x^2 = -4ay$
+</td>
+<td>
+$(0, -a)$
+</td>
+<td>
+$y = a$
+</td>
+<td>
+$x = 0$ ($y$-axis)
+</td>
+<td>
+Opens Downward
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Latus Rectum
+</summary>
+<p>
+  The
+  <span class="keyword">
+  latus rectum
+</span>
+of a parabola is a line segment perpendicular to the axis of the parabola, passing through the focus, with endpoints lying on the parabola. For any standard parabola, the length of the latus rectum is:
+</p>
+<p style="text-align: center;">
+$$\\text{Length} = 4a$$
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the focus, the equation of the directrix, and the length of the latus rectum for the parabola $y^2 = 8x$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compare the given equation $y^2 = 8x$ with the standard form $y^2 = 4ax$.
+</li>
+<li>
+Solve for $a$: $4a = 8 \\\implies a = 2$.
+</li>
+<li>
+Determine the focus: Since the axis is along the $x$-axis and $a &gt; 0$, the focus is $(a, 0) = (2, 0)$.
+</li>
+<li>
+Determine the directrix: The equation of the directrix is $x = -a \\\implies x = -2$.
+</li>
+<li>
+Calculate the length of the latus rectum: $\\text{Length} = 4a = 8$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Focus: $(2, 0)$, Directrix: $x = -2$, Latus Rectum Length: $8$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.4 The Ellipse
+</summary>
+<p>
+  An
+  <span class="keyword">
+  ellipse
+</span>
+is the set of all points in a plane, the sum of whose distances from two fixed points (the
+<span class="keyword">
+foci
+</span>
+) in the plane is a constant ($2a$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Key Parameters
+</summary>
+<p>
+Let $2a$ be the length of the major axis, $2b$ be the length of the minor axis, and $2c$ be the distance between the foci. The fundamental relationship between these parameters is:
+</p>
+<p style="text-align: center;">
+$$a^2 = b^2 + c^2 \\\implies c = \\sqrt{a^2 - b^2}$$
+</p>
+<p>
+  The
+  <span class="keyword">
+  eccentricity
+</span>
+($e$) of an ellipse is the ratio of the distance of a focus from the centre to the length of the semi-major axis:
+</p>
+<p style="text-align: center;">
+$$e = \\frac{c}{a} \\quad (0 &lt; e &lt; 1)$$
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Standard Equation
+    </th>
+    <th>
+    Major Axis Along
+  </th>
+  <th>
+  Foci Coordinates
+</th>
+<th>
+Vertices Coordinates
+</th>
+<th>
+Latus Rectum Length
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\quad (a &gt; b)$
+  </td>
+  <td>
+  $x$-axis
+</td>
+<td>
+$(\\\pm c, 0)$
+</td>
+<td>
+$(\\\pm a, 0)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1 \\quad (a &gt; b)$
+</td>
+<td>
+$y$-axis
+</td>
+<td>
+$(0, \\\pm c)$
+</td>
+<td>
+$(0, \\\pm a)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the foci, the vertices, the eccentricity, and the length of the latus rectum of the ellipse $\\frac{x^2}{25} + \\frac{y^2}{9} = 1$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify $a^2$ and $b^2$ by comparing with $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$: $a^2 = 25 \\\implies a = 5$, and $b^2 = 9 \\\implies b = 3$.
+</li>
+<li>
+Since $a^2 &gt; b^2$ is under $x^2$, the major axis is along the $x$-axis.
+</li>
+<li>
+Calculate $c$: $c = \\sqrt{a^2 - b^2} = \\sqrt{25 - 9} = \\sqrt{16} = 4$.
+</li>
+<li>
+Determine foci: $(\\\pm c, 0) = (\\\pm 4, 0)$.
+</li>
+<li>
+Determine vertices: $(\\\pm a, 0) = (\\\pm 5, 0)$.
+</li>
+<li>
+Calculate eccentricity: $e = \\frac{c}{a} = \\frac{4}{5} = 0.8$.
+</li>
+<li>
+Calculate latus rectum length: $\\frac{2b^2}{a} = \\frac{2(9)}{5} = \\frac{18}{5} = 3.6$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Foci: $(\\\pm 4, 0)$, Vertices: $(\\\pm 5, 0)$, Eccentricity: $0.8$, Latus Rectum Length: $3.6$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.5 The Hyperbola
+</summary>
+<p>
+  A
+  <span class="keyword">
+  hyperbola
+</span>
+is the set of all points in a plane, the difference of whose distances from two fixed points (the
+<span class="keyword">
+foci
+</span>
+) in the plane is a constant ($2a$).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Standard Equations and Key Parameters
+</summary>
+<p>
+Let $2a$ be the length of the transverse axis, $2b$ be the length of the conjugate axis, and $2c$ be the distance between the foci. The fundamental relationship is:
+</p>
+<p style="text-align: center;">
+$$c^2 = a^2 + b^2 \\\implies b = \\sqrt{c^2 - a^2}$$
+</p>
+<p>
+  The
+  <span class="keyword">
+  eccentricity
+</span>
+($e$) of a hyperbola is:
+</p>
+<p style="text-align: center;">
+$$e = \\frac{c}{a} \\quad (e &gt; 1)$$
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Standard Equation
+    </th>
+    <th>
+    Transverse Axis Along
+  </th>
+  <th>
+  Foci Coordinates
+</th>
+<th>
+Vertices Coordinates
+</th>
+<th>
+Latus Rectum Length
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$
+  </td>
+  <td>
+  $x$-axis
+</td>
+<td>
+$(\\\pm c, 0)$
+</td>
+<td>
+$(\\\pm a, 0)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+<tr>
+  <td>
+  $\\frac{y^2}{a^2} - \\frac{x^2}{b^2} = 1$
+</td>
+<td>
+$y$-axis
+</td>
+<td>
+$(0, \\\pm c)$
+</td>
+<td>
+$(0, \\\pm a)$
+</td>
+<td>
+$\\frac{2b^2}{a}$
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+  An
+  <span class="keyword">
+  equilateral hyperbola
+</span>
+is a special case where $a = b$, simplifying the equation to $x^2 - y^2 = a^2$.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the coordinates of the foci, the vertices, the eccentricity, and the length of the latus rectum of the hyperbola $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Compare with the standard form $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$: $a^2 = 9 \\\implies a = 3$, and $b^2 = 16 \\\implies b = 4$.
+</li>
+<li>
+Calculate $c$: $c = \\sqrt{a^2 + b^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$.
+</li>
+<li>
+Determine foci: $(\\\pm c, 0) = (\\\pm 5, 0)$.
+</li>
+<li>
+Determine vertices: $(\\\pm a, 0) = (\\\pm 3, 0)$.
+</li>
+<li>
+Calculate eccentricity: $e = \\frac{c}{a} = \\frac{5}{3}$.
+</li>
+<li>
+Calculate latus rectum length: $\\frac{2b^2}{a} = \\frac{2(16)}{3} = \\frac{32}{3}$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Foci: $(\\\pm 5, 0)$, Vertices: $(\\\pm 3, 0)$, Eccentricity: $\\frac{5}{3}$, Latus Rectum Length: $\\frac{32}{3}$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  10.6 Historical Chronicle &amp; Summary
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Apollonius of Perga (262 B.C. - 190 B.C.)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Known as the "Great Geometer," Apollonius wrote the definitive eight-volume treatise
+  <em>
+  Conics
+</em>
+, which introduced the terms parabola, ellipse, and hyperbola.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+He demonstrated that all three curves can be generated by intersecting a single double-napped cone with a plane at varying angles, replacing earlier methods that required different cones for each curve.
+</li>
+</ul>
+</div>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: René Descartes &amp; Pierre de Fermat
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  In the 17th century, Descartes published
+  <em>
+  La Géométrie
+</em>
+(1637), establishing analytical geometry (Cartesian geometry) which allowed geometric curves to be studied using algebraic equations.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Fermat independently discovered the fundamental principles of analytical geometry, enabling the algebraic representation of conic sections as second-degree equations.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 10
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-09-straight-lines.html"; } else { window.location.href = "11-chapter-11-introduction-to-three-dimensional.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
