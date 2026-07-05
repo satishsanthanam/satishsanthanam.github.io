@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 12 (Book 1) — Chapter 2: Electrostatic Potential and Capacitance
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 12 (Book 1) — Chapter 2: Electrostatic Potential and Capacitance
+</h1>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.1 Introduction &amp; Electrostatic Potential Energy
+</summary>
+<p>
+  When an external force does work in taking a body from one point to another against a conservative force (like gravitational force or spring force), that work gets stored as the
+  <span class='keyword'>
+  potential energy
+</span>
+of the body. The Coulomb force between two stationary charges is also a
+<span class='keyword'>
+conservative force
+</span>
+, allowing us to define
+<span class='keyword'>
+electrostatic potential energy
+</span>
+.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Mathematical Formulation of Potential Energy Difference
+</summary>
+<p>
+The work done $W_{RP}$ by an external force $\mathbf{F}_{ext}$ in bringing a charge $q$ from point $R$ to point $P$ against the repulsive electric force $\mathbf{F}_E$ (where $\mathbf{F}_{ext} = -\mathbf{F}_E$) is given by:
+</p>
+$$W_{RP} = \int_{R}^{P} \mathbf{F}_{ext} \cdot d\mathbf{r} = -\int_{R}^{P} \mathbf{F}_E \cdot d\mathbf{r}$$
+<p>
+This work done increases the potential energy of the charge by:
+</p>
+$$\Delta U = U_P - U_R = W_{RP}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Key Characteristics of Electrostatic Potential Energy
+</summary>
+<ul>
+  <li>
+    The work done by an electrostatic field depends only on the initial and final positions of the charge, and is completely
+    <span class='keyword'>
+    path-independent
+  </span>
+  .
+</li>
+<li>
+The actual value of potential energy is not physically significant; only the difference $\Delta U$ is physically meaningful.
+</li>
+<li>
+By convention, the potential energy at infinity is chosen to be zero ($U_{\infty} = 0$). Thus, the potential energy of a charge $q$ at any point $P$ is the work done by an external force in bringing it from infinity to that point: $W_{\infty P} = U_P$.
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.2 Electrostatic Potential
+</summary>
+<p>
+  To obtain a quantity independent of the test charge $q$, we define the
+  <span class='keyword'>
+  electrostatic potential
+</span>
+($V$) as the potential energy per unit charge.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Definition and Equation
+</summary>
+<p>
+The potential difference between two points $P$ and $R$ is the work done per unit positive charge in bringing it from $R$ to $P$:
+</p>
+$$V_P - V_R = \frac{U_P - U_R}{q} = \frac{W_{RP}}{q}$$
+<p>
+Taking the potential at infinity to be zero ($V_{\infty} = 0$), the electrostatic potential at any point $P$ is defined as:
+</p>
+<p>
+  <em>
+  The work done by an external force in bringing a unit positive charge from infinity to that point without acceleration.
+</em>
+</p>
+</details>
+<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
+  <p style='margin: 0 0 6px 0;'>
+    <strong>
+    Historical Chronicle: Count Alessandro Volta (1745 &ndash; 1827)
+  </strong>
+</p>
+<ul style='margin: 0; padding-left: 20px;'>
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  Italian physicist and professor at Pavia. Volta established that the "animal electricity" observed by Luigi Galvani in frog muscles was actually generated by contact with dissimilar metals.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+Developed the first
+<em>
+voltaic pile
+</em>
+(battery), consisting of a stack of moist cardboard disks (electrolyte) sandwiched between metal disks (electrodes).
+</li>
+</ul>
+</div>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.3 Potential due to a Point Charge
+</summary>
+<p>
+Consider a point charge $Q$ placed at the origin. We wish to determine the potential at any point $P$ at a distance $r$ from the origin.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Derivation of the Potential Formula
+</summary>
+<ol>
+  <li>
+  The electrostatic force on a unit positive charge at an intermediate point $P'$ at distance $r'$ is: $$F = \frac{Q \times 1}{4\pi\epsilon_0 r'^2} \hat{\mathbf{r}}'$$
+</li>
+<li>
+The work done against this force for a small displacement $dr'$ is: $$dW = -\frac{Q}{4\pi\epsilon_0 r'^2} dr'$$
+</li>
+<li>
+Integrating from infinity ($r' = \infty$) to the point $P$ ($r' = r$): $$W = -\int_{\infty}^{r} \frac{Q}{4\pi\epsilon_0 r'^2} dr' = \frac{Q}{4\pi\epsilon_0 r}$$
+</li>
+<li>
+By definition, this work done is the potential $V(r)$ at distance $r$: $$V(r) = \frac{Q}{4\pi\epsilon_0 r}$$
+</li>
+</ol>
+</details>
+<blockquote class='example-block'>
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+<em>
+(a) Calculate the potential at a point P due to a charge of
+<strong>
+4 &&times; 10^{-7} C
+</strong>
+located
+<strong>
+9 cm
+</strong>
+away. (b) Hence obtain the work done in bringing a charge of
+<strong>
+2 &&times; 10^{-9} C
+</strong>
+from infinity to the point P. Does the answer depend on the path?
+</em>
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Identify given values: $Q = 4 \times 10^{-7}$
+    <strong>
+    C
+  </strong>
+  , $r = 9$
+  <strong>
+  cm
+</strong>
+$= 0.09$
+<strong>
+m
+</strong>
+, $q = 2 \times 10^{-9}$
+<strong>
+C
+</strong>
+.
+</li>
+<li>
+  Calculate potential $V$ at P using $V = \frac{1}{4\pi\epsilon_0} \frac{Q}{r}$:
+  <br>
+  $V = 9 \times 10^9 \times \frac{4 \times 10^{-7}}{0.09} = 4 \times 10^4$
+  <strong>
+  V
+</strong>
+.
+</li>
+<li>
+  Calculate work done $W = qV$:
+  <br>
+  $W = 2 \times 10^{-9} \times 4 \times 10^4 = 8 \times 10^{-5}$
+  <strong>
+  J
+</strong>
+.
+</li>
+<li>
+Path independence: The work done is independent of the path because the electrostatic force is a conservative force.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Potential $V = 4 \times 10^4$
+<strong>
+V
+</strong>
+, Work Done $W = 8 \times 10^{-5}$
+<strong>
+J
+</strong>
+(Path Independent)
+</p>
+</blockquote>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.4 Potential due to an Electric Dipole
+</summary>
+<p>
+An electric dipole consists of two charges $q$ and $-q$ separated by a small distance $2a$. The dipole moment is $\mathbf{p}$ with magnitude $p = q \times 2a$.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Derivation of Dipole Potential
+</summary>
+<p>
+The potential $V$ at a point $P$ at distance $r$ from the center of the dipole is the sum of potentials due to $+q$ and $-q$:
+</p>
+$$V = \frac{1}{4\pi\epsilon_0} \left( \frac{q}{r_1} - \frac{q}{r_2} \right)$$
+<p>
+Using geometry and the approximation $r \gg a$:
+</p>
+$$r_1^2 = r^2 + a^2 - 2ar\cos\theta \implies \frac{1}{r_1} \approx \frac{1}{r} \left( 1 + \frac{a\cos\theta}{r} \right)$$$$r_2^2 = r^2 + a^2 + 2ar\cos\theta \implies \frac{1}{r_2} \approx \frac{1}{r} \left( 1 - \frac{a\cos\theta}{r} \right)$$$$V = \frac{q}{4\pi\epsilon_0} \frac{2a\cos\theta}{r^2} = \frac{p\cos\theta}{4\pi\epsilon_0 r^2} = \frac{\mathbf{p} \cdot \hat{\mathbf{r}}}{4\pi\epsilon_0 r^2}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Special Cases
+</summary>
+<ul>
+  <li>
+    <strong>
+    On the dipole axis ($\theta = 0$ or $\theta = \pi$):
+  </strong>
+  $$V = \pm \frac{p}{4\pi\epsilon_0 r^2}$$
+</li>
+<li>
+  <strong>
+  On the equatorial plane ($\theta = \pi/2$):
+</strong>
+$$V = 0$$
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.5 Potential due to a System of Charges
+</summary>
+<p>
+  By the
+  <span class='keyword'>
+  superposition principle
+</span>
+, the potential $V$ at a point $P$ due to a system of charges $q_1, q_2, \dots, q_n$ is the algebraic sum of potentials due to individual charges:
+</p>
+$$V = V_1 + V_2 + \dots + V_n = \frac{1}{4\pi\epsilon_0} \sum_{i=1}^{n} \frac{q_i}{r_{iP}}$$
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Potential of a Uniformly Charged Spherical Shell
+</summary>
+<ul>
+  <li>
+    <strong>
+    Outside the shell ($r \ge R$):
+  </strong>
+  The potential is as if the entire charge $q$ is concentrated at the center: $$V = \frac{1}{4\pi\epsilon_0} \frac{q}{r}$$
+</li>
+<li>
+  <strong>
+  Inside the shell ($r &lt; R$):
+</strong>
+The electric field inside is zero, meaning the potential is constant and equal to its value at the surface: $$V = \frac{1}{4\pi\epsilon_0} \frac{q}{R}$$
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.6 Equipotential Surfaces
+</summary>
+<p>
+  An
+  <span class='keyword'>
+  equipotential surface
+</span>
+is a surface with a constant value of potential at all points on the surface.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Key Properties
+</summary>
+<ul>
+  <li>
+  No work is done in moving a test charge between any two points on an equipotential surface.
+</li>
+<li>
+The electric field $\mathbf{E}$ at any point is always normal to the equipotential surface passing through that point.
+</li>
+<li>
+For a uniform electric field along the $x$-axis, the equipotential surfaces are planes parallel to the $y$-$z$ plane.
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Relation between Field and Potential
+</summary>
+<p>
+The relation between the electric field $\mathbf{E}$ and potential gradient is given by:
+</p>
+$$|\mathbf{E}| = -\frac{\delta V}{\delta l} \quad \text{or} \quad E = \frac{|\delta V|}{\delta l}$$
+<p>
+This \implies:
+</p>
+<ol>
+  <li>
+  The electric field is in the direction in which the potential decreases steepest.
+</li>
+<li>
+Its magnitude is given by the change in potential per unit displacement normal to the equipotential surface.
+</li>
+</ol>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.7 Potential Energy of a System of Charges
+</summary>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  System of Two Charges (No External Field)
+</summary>
+<p>
+The potential energy $U$ of a system of two charges $q_1$ and $q_2$ separated by distance $r_{12}$ is the work done in assembling them from infinity:
+</p>
+$$U = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r_{12}}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  System of Three Charges
+</summary>
+<p>
+For three charges $q_1, q_2, q_3$ located at $\mathbf{r}_1, \mathbf{r}_2, \mathbf{r}_3$:
+</p>
+$$U = \frac{1}{4\pi\epsilon_0} \left( \frac{q_1 q_2}{r_{12}} + \frac{q_1 q_3}{r_{13}} + \frac{q_2 q_3}{r_{23}} \right)$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Potential Energy in an External Field
+</summary>
+<ul>
+  <li>
+    <strong>
+    Single charge $q$ in external potential $V(\mathbf{r})$:
+  </strong>
+  $$U = qV(\mathbf{r})$$
+</li>
+<li>
+  <strong>
+  Two charges $q_1, q_2$ in external potential $V(\mathbf{r})$:
+</strong>
+$$U = q_1 V(\mathbf{r}_1) + q_2 V(\mathbf{r}_2) + \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r_{12}}$$
+</li>
+<li>
+  <strong>
+  Dipole in a uniform external field $\mathbf{E}$:
+</strong>
+The potential energy $U(\theta)$ of a dipole with moment $\mathbf{p}$ at angle $\theta$ is: $$U(\theta) = -\mathbf{p} \cdot \mathbf{E} = -pE \cos\theta$$
+</li>
+</ul>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.8 Electrostatics of Conductors
+</summary>
+<p>
+Conductors contain mobile charge carriers (free electrons) that redistribute themselves in the presence of an electric field to establish electrostatic equilibrium.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  6 Key Electrostatic Properties of Conductors
+</summary>
+<ol>
+  <li>
+    <strong>
+    Inside a conductor, the electrostatic field is zero.
+  </strong>
+</li>
+<li>
+  <strong>
+  At the surface of a charged conductor, the electrostatic field must be normal to the surface at every point.
+</strong>
+</li>
+<li>
+  <strong>
+  The interior of a conductor can have no excess charge in the static situation.
+</strong>
+(All excess charge resides on the outer surface).
+</li>
+<li>
+  <strong>
+  Electrostatic potential is constant throughout the volume of the conductor and has the same value on its surface.
+</strong>
+</li>
+<li>
+  <strong>
+  Electric field at the surface of a charged conductor is:
+</strong>
+$$\mathbf{E} = \frac{\sigma}{\epsilon_0} \hat{\mathbf{n}}$$ where $\sigma$ is the local surface charge density.
+</li>
+<li>
+  <strong>
+  Electrostatic shielding:
+</strong>
+The electric field inside a cavity of any conductor is always zero, shielding the interior from external electrical influences.
+</li>
+</ol>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.9 Dielectrics and Polarisation
+</summary>
+<p>
+  <span class='keyword'>
+  Dielectrics
+</span>
+are non-conducting substances that do not have free charge carriers but develop a net dipole moment in an external electric field.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Polar vs Non-Polar Molecules
+</summary>
+<ul>
+  <li>
+    <strong>
+    Non-polar molecules:
+  </strong>
+  The centers of positive and negative charges coincide, resulting in zero intrinsic dipole moment (e.g., $O_2, H_2$).
+</li>
+<li>
+  <strong>
+  Polar molecules:
+</strong>
+The centers of positive and negative charges are separated, giving them a permanent dipole moment (e.g., $HCl, H_2O$).
+</li>
+</ul>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Polarisation Vector
+</summary>
+<p>
+  The dipole moment per unit volume is called
+  <span class='keyword'>
+  polarisation
+</span>
+($\mathbf{P}$). For linear isotropic dielectrics:
+</p>
+$$\mathbf{P} = \epsilon_0 \chi_e \mathbf{E}$$
+<p>
+  where $\chi_e$ is the
+  <span class='keyword'>
+  electric susceptibility
+</span>
+of the dielectric medium.
+</p>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.10 Capacitors and Capacitance
+</summary>
+<p>
+  A
+  <span class='keyword'>
+  capacitor
+</span>
+is a system of two conductors separated by an insulator. It is used to store electrical charge and energy.
+</p>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Capacitance Definition
+</summary>
+<p>
+The charge $Q$ on a capacitor is directly proportional to the potential difference $V$ between the conductors:
+</p>
+$$Q = C V \implies C = \frac{Q}{V}$$
+<p>
+  The constant $C$ is the
+  <span class='keyword'>
+  capacitance
+</span>
+. Its SI unit is the
+<strong>
+Farad (F)
+</strong>
+($1\text{ F} = 1\text{ C V}^{-1}$).
+</p>
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  The Parallel Plate Capacitor
+</summary>
+<p>
+For two parallel plates of area $A$ separated by a small distance $d$ in vacuum:
+</p>
+$$C_0 = \frac{\epsilon_0 A}{d}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Effect of Dielectric on Capacitance
+</summary>
+<p>
+  When the space between the plates is completely filled with a dielectric of
+  <span class='keyword'>
+  dielectric constant
+</span>
+$K$:
+</p>
+$$C = K C_0 = \frac{K \epsilon_0 A}{d} = \frac{\epsilon A}{d}$$
+<p>
+where $\epsilon = K \epsilon_0$ is the permittivity of the medium.
+</p>
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.11 Combination of Capacitors &amp; Energy Stored
+</summary>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Capacitors in Series
+</summary>
+<p>
+For $n$ capacitors connected in series, the charge $Q$ is the same on each, and the total potential drop is the sum of individual drops:
+</p>
+$$\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Capacitors in Parallel
+</summary>
+<p>
+For $n$ capacitors connected in parallel, the potential difference $V$ is the same across each, and the total charge is the sum of individual charges:
+</p>
+$$C_{eq} = C_1 + C_2 + \dots + C_n$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Energy Stored in a Capacitor
+</summary>
+<p>
+The work done in charging a capacitor is stored as electrostatic potential energy $U$:
+</p>
+$$U = \frac{1}{2} Q V = \frac{1}{2} C V^2 = \frac{Q^2}{2C}$$
+</details>
+<details class='sub-topic'>
+  <summary class='sub-title'>
+  Energy Density
+</summary>
+<p>
+  The energy stored per unit volume in the electric field between the plates is the
+  <span class='keyword'>
+  energy density
+</span>
+($u$):
+</p>
+$$u = \frac{1}{2} \epsilon_0 E^2$$
+</details>
+</details>
+<details class='topic-box'>
+  <summary class='topic-title'>
+  2.12 Summary of Physical Quantities
+</summary>
+<table border='1' style='border-collapse: collapse; width: 100%; margin: 10px 0;'>
+  <thead>
+    <tr>
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Dimensions
+</th>
+<th>
+Unit
+</th>
+<th>
+Remark
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Potential
+  </td>
+  <td>
+  $V$ or $\phi$
+</td>
+<td>
+$[M^1 L^2 T^{-3} A^{-1}]$
+</td>
+<td>
+  <strong>
+  V
+</strong>
+(Volt)
+</td>
+<td>
+Potential difference is physically significant
+</td>
+</tr>
+<tr>
+  <td>
+  Capacitance
+</td>
+<td>
+$C$
+</td>
+<td>
+$[M^{-1} L^{-2} T^4 A^2]$
+</td>
+<td>
+  <strong>
+  F
+</strong>
+(Farad)
+</td>
+<td>
+$C = Q/V$
+</td>
+</tr>
+<tr>
+  <td>
+  Polarisation
+</td>
+<td>
+$\mathbf{P}$
+</td>
+<td>
+$[L^{-2} A T]$
+</td>
+<td>
+  <strong>
+  C m^{-2}
+</strong>
+</td>
+<td>
+Dipole moment per unit volume
+</td>
+</tr>
+<tr>
+  <td>
+  Dielectric constant
+</td>
+<td>
+$K$
+</td>
+<td>
+Dimensionless
+</td>
+<td>
+None
+</td>
+<td>
+Ratio of capacitance with dielectric to vacuum
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 2
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-01-electric-charges-and-fields.html"; } else { window.location.href = "12-1-chapter-03-current-electricity.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
