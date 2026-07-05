@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 11 — Chapter 8: SEQUENCES AND SERIES
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$', displayMath: [['$$', '$$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 8: SEQUENCES AND SERIES
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  Introduction to Sequences and Series
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definitions and Basic Concepts
+</summary>
+<p>
+  A
+  <span class="keyword">
+  sequence
+</span>
+is an ordered collection of numbers arranged in a definite order according to a specific rule. Formally, a sequence can be regarded as a function whose domain is the set of natural numbers $ \mathbb{N} $ or a subset of the form $ \{1, 2, 3, \dots, k\} $.
+</p>
+<ul>
+  <li>
+    <strong>
+    Terms of a Sequence:
+  </strong>
+  The various numbers occurring in a sequence are called its
+  <span class="keyword">
+  terms
+</span>
+, denoted by $a_1, a_2, a_3, \dots, a_n, \dots$.
+</li>
+<li>
+  <strong>
+  General Term:
+</strong>
+The term $a_n$ at the $n$-th position is called the
+<span class="keyword">
+general term
+</span>
+of the sequence.
+</li>
+<li>
+  <strong>
+  Finite Sequence:
+</strong>
+A sequence containing a finite number of terms (e.g., the number of ancestors over a fixed generation span).
+</li>
+<li>
+  <strong>
+  Infinite Sequence:
+</strong>
+A sequence containing infinitely many terms (e.g., the successive quotients in the division of 10 by 3: $3, 3.3, 3.33, 3.333, \dots$).
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Fibonacci Sequence &amp; Recurrence Relations
+</summary>
+<p>
+  Some sequences do not have an obvious explicit algebraic formula for their $n$-th term but are instead generated by a
+  <span class="keyword">
+  recurrence relation
+</span>
+, where subsequent terms are defined using preceding terms.
+</p>
+<p>
+  The
+  <span class="keyword">
+  Fibonacci sequence
+</span>
+is a classic example defined by the recurrence relation:
+</p>
+$$a_1 = a_2 = 1$$$$a_n = a_{n-2} + a_{n-1} \text{ for } n &gt; 2$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Series and Sigma Notation
+</summary>
+<p>
+Let $a_1, a_2, a_3, \dots, a_n$ be a given sequence. The algebraic expression representing the sum of these terms:
+</p>
+$$a_1 + a_2 + a_3 + \dots + a_n + \dots$$
+<p>
+  is called the
+  <span class="keyword">
+  series
+</span>
+associated with the given sequence. A series is finite or infinite depending on whether the underlying sequence is finite or infinite.
+</p>
+<p>
+  Series are compactly represented using the Greek letter $ \sum $ (
+  <span class="keyword">
+  sigma notation
+</span>
+):
+</p>
+$$\sum_{k=1}^{n} a_k = a_1 + a_2 + a_3 + \dots + a_n$$
+<p>
+  <strong>
+  Remark:
+</strong>
+The term "series" refers to the indicated sum expression, whereas the "sum of a series" refers to the single numerical value resulting from the addition of those terms.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Geometric Progression (G.P.)
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Definition and General Form
+</summary>
+<p>
+  A sequence $a_1, a_2, a_3, \dots, a_n, \dots$ is called a
+  <span class="keyword">
+  geometric progression
+</span>
+(or
+<span class="keyword">
+G.P.
+</span>
+) if each term is non-zero and the ratio of any term to its immediately preceding term is a constant throughout the sequence.
+</p>
+<p>
+Mathematically, for all $k \ge 1$:
+</p>
+$$\frac{a_{k+1}}{a_k} = r \text{ (constant)}$$
+<p>
+Where:
+</p>
+<ul>
+  <li>
+    $a$ (or $a_1$) is the
+    <span class="keyword">
+    first term
+  </span>
+  of the G.P.
+</li>
+<li>
+  $r$ is the
+  <span class="keyword">
+  common ratio
+</span>
+of the G.P.
+</li>
+</ul>
+<p>
+The general form of a G.P. is written as:
+</p>
+$$a, ar, ar^2, ar^3, \dots, ar^{n-1}, \dots$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  General Term (n-th Term) of a G.P.
+</summary>
+<p>
+The $n$-th term ($a_n$) of a geometric progression is given by the formula:
+</p>
+$$a_n = a r^{n-1}$$
+<p>
+  This is also referred to as the
+  <span class="keyword">
+  general term
+</span>
+of the G.P.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Sum to n Terms of a G.P.
+</summary>
+<p>
+Let $S_n$ denote the sum of the first $n$ terms of a G.P. with first term $a$ and common ratio $r$. The sum is evaluated under two distinct cases:
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Condition on Common Ratio ($r$)
+    </th>
+    <th>
+    Sum Formula ($S_n$)
+  </th>
+  <th>
+  Derivation Methodology
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    $r = 1$
+  </td>
+  <td>
+  $S_n = na$
+</td>
+<td>
+Direct summation of $n$ identical terms: $a + a + \dots + a$.
+</td>
+</tr>
+<tr>
+  <td>
+  $r \neq 1$
+</td>
+<td>
+$S_n = \frac{a(r^n - 1)}{r - 1} = \frac{a(1 - r^n)}{1 - r}$
+</td>
+<td>
+Obtained by subtracting $r S_n$ from $S_n$ to eliminate intermediate terms.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Geometric Mean (G.M.) and Relationship with A.M.
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Geometric Mean of Two Numbers
+</summary>
+<p>
+  The
+  <span class="keyword">
+  geometric mean
+</span>
+(G.M.) of two positive real numbers $a$ and $b$ is defined as the positive square root of their product:
+</p>
+$$G = \sqrt{ab}$$
+<p>
+If $G$ is the geometric mean of $a$ and $b$, then the sequence $a, G, b$ forms a geometric progression because:
+</p>
+$$\frac{G}{a} = \frac{b}{G} \implies G^2 = ab$$
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Insertion of n Geometric Means
+</summary>
+<p>
+Given any two positive numbers $a$ and $b$, we can insert $n$ numbers $G_1, G_2, \dots, G_n$ between them such that the resulting sequence $a, G_1, G_2, \dots, G_n, b$ is a geometric progression.
+</p>
+<p>
+Since $b$ is the $(n+2)$-th term of this G.P., we have:
+</p>
+$$b = a r^{n+1} \implies r = \left(\frac{b}{a}\right)^{\frac{1}{n+1}}$$
+<p>
+The inserted geometric means are calculated as:
+</p>
+<ul>
+  <li>
+  $G_1 = ar = a \left(\frac{b}{a}\right)^{\frac{1}{n+1}}$
+</li>
+<li>
+$G_2 = ar^2 = a \left(\frac{b}{a}\right)^{\frac{2}{n+1}}$
+</li>
+<li>
+$G_n = ar^n = a \left(\frac{b}{a}\right)^{\frac{n}{n+1}}$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Relationship Between Arithmetic Mean (A.M.) and Geometric Mean (G.M.)
+</summary>
+<p>
+Let $A$ and $G$ be the Arithmetic Mean and Geometric Mean of two positive real numbers $a$ and $b$, respectively:
+</p>
+$$A = \frac{a + b}{2}, \quad G = \sqrt{ab}$$
+<p>
+  <strong>
+  Theorem:
+</strong>
+For any two positive real numbers $a$ and $b$, the Arithmetic Mean is always greater than or equal to the Geometric Mean:
+</p>
+$$A \ge G$$
+<p>
+  <strong>
+  Proof:
+</strong>
+</p>
+$$A - G = \frac{a + b}{2} - \sqrt{ab} = \frac{a + b - 2\sqrt{ab}}{2} = \frac{(\sqrt{a} - \sqrt{b})^2}{2}$$
+<p>
+Since the square of any real number is non-negative, we have:
+</p>
+$$\frac{(\sqrt{a} - \sqrt{b})^2}{2} \ge 0 \implies A - G \ge 0 \implies A \ge G$$
+<p>
+Equality holds if and only if $a = b$.
+</p>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Algorithmic Problem Solving &amp; Solved Examples
+</summary>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Example 9: Sum and Product of Three Terms of a G.P.
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+The sum of the first three terms of a G.P. is $\frac{13}{12}$ and their product is $-1$. Find the common ratio and the terms.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Let the first three terms of the G.P. be $\frac{a}{r}$, $a$, and $ar$. This choice simplifies the product calculation.
+</li>
+<li>
+Set up the product equation:$$\left(\frac{a}{r}\right)(a)(ar) = -1 \implies a^3 = -1$$Taking the real root, we find $a = -1$.
+</li>
+<li>
+Set up the sum equation:$$\frac{a}{r} + a + ar = \frac{13}{12}$$Substitute $a = -1$:$$-\frac{1}{r} - 1 - r = \frac{13}{12} \implies -\left(\frac{1 + r + r^2}{r}\right) = \frac{13}{12}$$
+</li>
+<li>
+Clear fractions to form a quadratic equation:$$-12(1 + r + r^2) = 13r \implies 12r^2 + 25r + 12 = 0$$
+</li>
+<li>
+Solve the quadratic equation using factorization:$$12r^2 + 16r + 9r + 12 = 0 \implies 4r(3r + 4) + 3(3r + 4) = 0 \implies (4r + 3)(3r + 4) = 0$$Thus, $r = -\frac{3}{4}$ or $r = -\frac{4}{3}$.
+</li>
+<li>
+  Calculate the terms for each value of $r$:
+  <ul>
+    <li>
+    For $r = -\frac{3}{4}$ and $a = -1$, the terms are: $\frac{4}{3}, -1, \frac{3}{4}$.
+  </li>
+  <li>
+  For $r = -\frac{4}{3}$ and $a = -1$, the terms are: $\frac{3}{4}, -1, \frac{4}{3}$.
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The common ratio is $r = -\frac{3}{4}$ or $r = -\frac{4}{3}$, and the three terms are $\frac{4}{3}, -1, \frac{3}{4}$ (or vice versa).
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Example 10: Summing the Non-G.P. Series $7, 77, 777, \dots$
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the sum of the sequence $7, 77, 777, 7777, \dots$ to $n$ terms.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Write the sum expression:$$S_n = 7 + 77 + 777 + 7777 + \dots \text{ to } n \text{ terms}$$
+</li>
+<li>
+Factor out $7$ to obtain a series of $1$s:$$S_n = 7(1 + 11 + 111 + 1111 + \dots \text{ to } n \text{ terms})$$
+</li>
+<li>
+Multiply and divide by $9$ to introduce powers of $10$:$$S_n = \frac{7}{9}(9 + 99 + 999 + 9999 + \dots \text{ to } n \text{ terms})$$
+</li>
+<li>
+Express each term as a power of $10$ minus $1$:$$S_n = \frac{7}{9}[(10 - 1) + (10^2 - 1) + (10^3 - 1) + \dots + (10^n - 1)]$$
+</li>
+<li>
+Regroup the terms into a geometric progression and a constant sum:$$S_n = \frac{7}{9}[(10 + 10^2 + 10^3 + \dots + 10^n) - (1 + 1 + 1 + \dots + n \text{ \times})]$$
+</li>
+<li>
+Apply the G.P. sum formula to the first part ($a = 10, r = 10$):$$S_n = \frac{7}{9}\left[\frac{10(10^n - 1)}{10 - 1} - n\right] = \frac{7}{9}\left[\frac{10(10^n - 1)}{9} - n\right]$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$S_n = \frac{70}{81}(10^n - 1) - \frac{7}{9}n$
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Example 14: Advanced Algebraic Proof of G.P. Condition
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+If $a, b, c, d$ and $p$ are different real numbers such that $(a^2 + b^2 + c^2)p^2 - 2(ab + bc + cd)p + (b^2 + c^2 + d^2) \le 0$, show that $a, b, c, d$ are in G.P.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Expand and regroup the given inequality:$$(a^2p^2 - 2abp + b^2) + (b^2p^2 - 2bcp + c^2) + (c^2p^2 - 2cdp + d^2) \le 0$$
+</li>
+<li>
+Express each grouped trinomial as a perfect square:$$(ap - b)^2 + (bp - c)^2 + (cp - d)^2 \le 0$$
+</li>
+<li>
+Since the sum of squares of real numbers is always non-negative, the only way the sum can be less than or equal to $0$ is if each individual square is exactly $0$:$$(ap - b)^2 = 0, \quad (bp - c)^2 = 0, \quad (cp - d)^2 = 0$$
+</li>
+<li>
+Solve for $p$ in each equation:$$ap - b = 0 \implies p = \frac{b}{a}$$$$bp - c = 0 \implies p = \frac{c}{b}$$$$cp - d = 0 \implies p = \frac{d}{c}$$
+</li>
+<li>
+Equate the expressions for $p$:$$\frac{b}{a} = \frac{c}{b} = \frac{d}{c} = p$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Since the consecutive ratios are equal ($\frac{b}{a} = \frac{c}{b} = \frac{d}{c}$), the numbers $a, b, c, d$ form a geometric progression (G.P.).
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Historical Chronicle &amp; Summary
+</summary>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle: Evolution of Sequences and Series
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Babylonian &amp; Greek Foundations:
+  </strong>
+  Evidence shows that Babylonians (\approx. 4000 years ago) were familiar with arithmetic and geometric sequences. Early Greek writers also documented these progressions, as noted by Boethius (510 AD).
+</li>
+<li>
+  <strong>
+  Indian Contributions:
+</strong>
+Aryabhata (476 AD) formulated the sum of squares and cubes of natural numbers in his seminal work
+<em>
+Aryabhatiyam
+</em>
+(499 AD), alongside formulas for arithmetic progressions starting from the $p$-th term. Brahmagupta (598 AD), Mahavira (850 AD), and Bhaskara (1114–1185 AD) expanded on these summations.
+</li>
+<li>
+  <strong>
+  The Fibonacci Sequence:
+</strong>
+Leonardo Fibonacci (1170–1250 AD) introduced his famous sequence to model biological growth patterns.
+</li>
+<li>
+  <strong>
+  Modern Rigor:
+</strong>
+In 1671, James Gregory introduced the term "infinite series". The rigorous formulation of sequences and series was achieved in the 19th century through set-theoretic and algebraic tools.
+</li>
+</ul>
+</div>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 8
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-07-binomial-theorem.html"; } else { window.location.href = "11-chapter-09-straight-lines.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
