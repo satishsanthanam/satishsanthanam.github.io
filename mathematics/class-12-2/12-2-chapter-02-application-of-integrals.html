@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>
-    Mathematics: Class 12 (Book 2) — Chapter 2: Application of Integrals
-  </title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 12 (Book 2) — Chapter 2: Application of Integrals</title>
   <link rel="stylesheet" href="../../style.css">
   <style>
     /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
@@ -32,464 +30,108 @@
   <script>
     window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
   </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <div class="chapter-container">
   <div class="nav-bar">
-    <a href="#" onclick="history.back(); return false;" class="btn-nav">
-    ← Back
-  </a>
-  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
-  📖 Quick Menu
-</button>
-<a href="../../index.html" class="btn-nav">
-🏠 Home
-</a>
-</div>
-<h1>
-Mathematics: Class 12 (Book 2) — Chapter 2: Application of Integrals
-</h1>
-<details class="topic-box">
-  <summary class="topic-title">
-  Introduction &amp; Fundamental Concepts
-</summary>
-<p>
-  In geometry, standard algebraic formulae are used to compute the areas of simple rectilinear figures such as triangles, rectangles, trapeziums, and circles. However, these classical formulae are insufficient for determining the areas enclosed by arbitrary curves.
-  <span class="keyword">
-  Integral Calculus
-</span>
-provides a systematic framework to evaluate these bounded regions using the concept of definite integration as the limit of a sum.
-</p>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Area under Simple Curves
-</summary>
-<p>
-The area bounded by a continuous curve $y = f(x)$, the $x$-axis, and the vertical ordinates $x = a$ and $x = b$ can be conceptualized as the sum of an infinite number of infinitesimally thin vertical strips. Each elementary strip has an arbitrary height $y$ and an infinitesimal width $dx$.
-</p>
-<ul>
-  <li>
-    <strong>
-    Elementary Area Element:
-  </strong>
-  $dA = y \\, dx = f(x) \\, dx$
-</li>
-<li>
-  <strong>
-  Total Area Formulation:
-</strong>
-The total area $A$ is obtained by integrating the elementary area $dA$ from the lower limit $a$ to the upper limit $b$:
-</li>
-</ul>
-$$A = \int_{a}^{b} dA = \int_{a}^{b} y \\, dx = \int_{a}^{b} f(x) \\, dx$$
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Area Bounded with Respect to the Y-Axis
-</summary>
-<p>
-Alternatively, if the area is bounded by a continuous curve $x = g(y)$, the $y$-axis, and the horizontal lines $y = c$ and $y = d$, we construct horizontal elementary strips of width $dy$ and length $x$.
-</p>
-<ul>
-  <li>
-    <strong>
-    Elementary Area Element:
-  </strong>
-  $dA = x \\, dy = g(y) \\, dy$
-</li>
-<li>
-  <strong>
-  Total Area Formulation:
-</strong>
-</li>
-</ul>
-$$A = \int_{c}^{d} x \\, dy = \int_{c}^{d} g(y) \\, dy$$
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Sign Conventions and Absolute Value Rule
-</summary>
-<p>
-Since area is a geometric measure, it must always be non-negative. However, definite integrals can yield negative values depending on the position of the curve relative to the coordinate axes.
-</p>
-<ul>
-  <li>
-    <strong>
-    Curves Below the X-Axis:
-  </strong>
-  If $f(x) &lt; 0$ for all $x \in [a, b]$, the definite integral $\int_{a}^{b} f(x) \\, dx$ will be negative. In such cases, we take the absolute value:
-</li>
-</ul>
-$$A = \left| \int_{a}^{b} f(x) \\, dx \right|$$
-<ul>
-  <li>
-    <strong>
-    Alternating Sign Curves:
-  </strong>
-  If a curve crosses the $x$-axis within the interval $[a, b]$ (e.g., $f(x) &lt; 0$ on $[a, c]$ and $f(x) &gt; 0$ on $[c, b]$), the total area is computed by splitting the integration interval and summing the absolute values of each sub-region:
-</li>
-</ul>
-$$A = |A_1| + A_2 = \left| \int_{a}^{c} f(x) \\, dx \right| + \int_{c}^{b} f(x) \\, dx$$
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Area Integration Configurations Matrix
-</summary>
-<p>
-The following table summarizes the integration setups for different boundary conditions:
-</p>
-<table border="1" cellpadding="6" style="border-collapse: collapse; width: 100%; margin-top: 10px;">
-  <thead>
-    <tr style="background-color: #f1f5f9;">
-      <th>
-      Boundary Curve
-    </th>
-    <th>
-    Reference Axis
-  </th>
-  <th>
-  Limits of Integration
-</th>
-<th>
-Area Formula
-</th>
-</tr>
-</thead>
-<tbody>
-  <tr>
-    <td>
-    $y = f(x) \ge 0$
-  </td>
-  <td>
-  $x$-axis
-</td>
-<td>
-$x = a$ to $x = b$
-</td>
-<td>
-$A = \int_{a}^{b} f(x) \\, dx$
-</td>
-</tr>
-<tr>
-  <td>
-  $x = g(y) \ge 0$
-</td>
-<td>
-$y$-axis
-</td>
-<td>
-$y = c$ to $y = d$
-</td>
-<td>
-$A = \int_{c}^{d} g(y) \\, dy$
-</td>
-</tr>
-<tr>
-  <td>
-  $y = f(x) &lt; 0$
-</td>
-<td>
-$x$-axis
-</td>
-<td>
-$x = a$ to $x = b$
-</td>
-<td>
-$A = \left| \int_{a}^{b} f(x) \\, dx \right|$
-</td>
-</tr>
-</tbody>
-</table>
-</details>
-</details>
-<details class="topic-box">
-  <summary class="topic-title">
-  Standard Geometric Enclosures &amp; Derivations
-</summary>
-<p>
-Using the principles of definite integration, we can derive the standard area formulas for symmetric closed curves such as circles and ellipses.
-</p>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Area of a Circle
-</summary>
-<p>
-The standard equation of a circle centered at the origin with radius $a$ is given by $x^2 + y^2 = a^2$. Due to symmetry across both coordinate axes, the total area is four \times the area of the region in the first quadrant.
-</p>
-<blockquote class="example-block">
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Find the area enclosed by the circle $x^2 + y^2 = a^2$.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-  Express $y$ in terms of $x$ for the first quadrant ($x \ge 0, y \ge 0$):$$y = \sqrt{a^2 - x^2}$$
-</li>
-<li>
-Set up the integral for the first quadrant region bounded by $x = 0$ and $x = a$:$$A_{quadrant} = \int_{0}^{a} \sqrt{a^2 - x^2} \\, dx$$
-</li>
-<li>
-Apply the standard integration formula $\int \sqrt{a^2 - x^2} \\, dx = \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\left(\frac{x}{a}\right)$:$$A = 4 \times \left[ \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\left(\frac{x}{a}\right) \right]_{0}^{a}$$
-</li>
-<li>
-  Evaluate the limits:
-  <ul>
-    <li>
-    At upper limit $x = a$: $\frac{a}{2}\sqrt{0} + \frac{a^2}{2}\sin^{-1}(1) = \frac{a^2}{2} \left(\frac{\pi}{2}\right) = \frac{\pi a^2}{4}$
-  </li>
-  <li>
-  At lower limit $x = 0$: $0 + 0 = 0$
-</li>
-</ul>
-</li>
-<li>
-Multiply by 4 to obtain the total area:$$A = 4 \times \frac{\pi a^2}{4} = \pi a^2$$
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-$A = \pi a^2$
-</p>
-</blockquote>
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Area of an Ellipse
-</summary>
-<p>
-The standard equation of an ellipse is $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$. Like the circle, it is symmetrical about both axes.
-</p>
-<blockquote class="example-block">
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Find the area enclosed by the ellipse $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-  Solve for $y$ in terms of $x$ for the first quadrant:$$y = \frac{b}{a}\sqrt{a^2 - x^2}$$
-</li>
-<li>
-Set up the integral for the total area using symmetry:$$A = 4 \int_{0}^{a} y \\, dx = 4 \int_{0}^{a} \frac{b}{a}\sqrt{a^2 - x^2} \\, dx$$
-</li>
-<li>
-Factor out the constants and integrate:$$A = \frac{4b}{a} \left[ \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\left(\frac{x}{a}\right) \right]_{0}^{a}$$
-</li>
-<li>
-Evaluate the limits:$$A = \frac{4b}{a} \left( \frac{a^2}{2} \cdot \frac{\pi}{2} - 0 \right) = \frac{4b}{a} \left( \frac{\pi a^2}{4} \right) = \pi ab$$
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-$A = \pi ab$
-</p>
-</blockquote>
-</details>
-</details>
-<details class="topic-box">
-  <summary class="topic-title">
-  Advanced Applications &amp; Piecewise Curves
-</summary>
-<p>
-When dealing with curves that cross the reference axis or are defined piecewise, we must partition the interval of integration to ensure that negative areas are correctly signed.
-</p>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Linear Boundaries with Sign Alternation
-</summary>
-<blockquote class="example-block">
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Find the area of the region bounded by the line $y = 3x + 2$, the $x$-axis, and the ordinates $x = -1$ and $x = 1$.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-  Determine the $x$-intercept of the line $y = 3x + 2$:$$3x + 2 = 0 \implies x = -\frac{2}{3}$$
-</li>
-<li>
-  Identify the sign of $y$ on the sub-intervals:
-  <ul>
-    <li>
-    For $x \in \left[-1, -\frac{2}{3}\right]$, $y \le 0$ (below the $x$-axis).
-  </li>
-  <li>
-  For $x \in \left[-\frac{2}{3}, 1\right]$, $y \ge 0$ (above the $x$-axis).
-</li>
-</ul>
-</li>
-<li>
-Set up the split definite integrals with absolute values:$$A = \left| \int_{-1}^{-2/3} (3x + 2) \\, dx \right| + \int_{-2/3}^{1} (3x + 2) \\, dx$$
-</li>
-<li>
-Find the antiderivative:$$F(x) = \frac{3x^2}{2} + 2x$$
-</li>
-<li>
-Evaluate the first integral:$$\int_{-1}^{-2/3} (3x + 2) \\, dx = \left[ \frac{3x^2}{2} + 2x \right]_{-1}^{-2/3} = \left( \frac{3(4/9)}{2} - \frac{4}{3} \right) - \left( \frac{3}{2} - 2 \right) = \left( \frac{2}{3} - \frac{4}{3} \right) - \left( -\frac{1}{2} \right) = -\frac{2}{3} + \frac{1}{2} = -\frac{1}{6}$$Taking the absolute value gives $\frac{1}{6}$.
-</li>
-<li>
-Evaluate the second integral:$$\int_{-2/3}^{1} (3x + 2) \\, dx = \left[ \frac{3x^2}{2} + 2x \right]_{-2/3}^{1} = \left( \frac{3}{2} + 2 \right) - \left( \frac{2}{3} - \frac{4}{3} \right) = \frac{7}{2} - \left( -\frac{2}{3} \right) = \frac{7}{2} + \frac{2}{3} = \frac{25}{6}$$
-</li>
-<li>
-Sum the two areas:$$A = \frac{1}{6} + \frac{25}{6} = \frac{26}{6} = \frac{13}{3}$$
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-$A = \frac{13}{3}$ square units
-</p>
-</blockquote>
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Trigonometric Wave Area Integration
-</summary>
-<blockquote class="example-block">
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Find the area bounded by the curve $y = \cos x$ between $x = 0$ and $x = 2\pi$.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-  Identify the roots of $y = \cos x$ in the interval $[0, 2\pi]$:$$x = \frac{\pi}{2}, \quad x = \frac{3\pi}{2}$$
-</li>
-<li>
-  Determine the sign of $\cos x$ in each sub-interval:
-  <ul>
-    <li>
-    $x \in \left[0, \frac{\pi}{2}\right]$: $\cos x \ge 0$
-  </li>
-  <li>
-  $x \in \left[\frac{\pi}{2}, \frac{3\pi}{2}\right]$: $\cos x \le 0$
-</li>
-<li>
-$x \in \left[\frac{3\pi}{2}, 2\pi\right]$: $\cos x \ge 0$
-</li>
-</ul>
-</li>
-<li>
-Set up the split integrals:$$A = \int_{0}^{\pi/2} \cos x \\, dx + \left| \int_{\pi/2}^{3\pi/2} \cos x \\, dx \right| + \int_{3\pi/2}^{2\pi} \cos x \\, dx$$
-</li>
-<li>
-  Integrate each term (antiderivative is $\sin x$):
-  <ul>
-    <li>
-    $\int_{0}^{\pi/2} \cos x \\, dx = [\sin x]_{0}^{\pi/2} = 1 - 0 = 1$
-  </li>
-  <li>
-  $\int_{\pi/2}^{3\pi/2} \cos x \\, dx = [\sin x]_{\pi/2}^{3\pi/2} = -1 - 1 = -2 \implies | -2 | = 2$
-</li>
-<li>
-$\int_{3\pi/2}^{2\pi} \cos x \\, dx = [\sin x]_{3\pi/2}^{2\pi} = 0 - (-1) = 1$
-</li>
-</ul>
-</li>
-<li>
-Sum the absolute values:$$A = 1 + 2 + 1 = 4$$
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-$A = 4$ square units
-</p>
-</blockquote>
-</details>
-</details>
-<details class="topic-box">
-  <summary class="topic-title">
-  Historical Evolution of Integral Calculus
-</summary>
-<p>
-The development of integral calculus is one of the greatest achievements in mathematical history, evolving from ancient geometric approximations to rigorous modern analysis.
-</p>
-<div class=
-<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close-modal" onclick="toggleModal(false)">
-    &times;
-  </span>
-  <h3 class="modal-title">
-  🧭 Navigation Assistant
-</h3>
-<p class="modal-desc">
-  You are currently viewing
-  <strong>
-  Chapter 2
-</strong>
-of the Class 12 curriculum modules.
-</p>
-<div class="modal-grid">
-  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
-  ← Previous Chapter
-</button>
-<button onclick="navigateChapterSequence(1)" class="modal-btn">
-Next Chapter →
-</button>
-<a href="../../index.html" class="modal-btn primary">
-🏠 Dashboard Main Menu
-</a>
-</div>
-<div class="accessibility-ctrl">
-  <span style="font-size: 0.9rem; color: #4a5568;">
-  Text Size:
-</span>
-<div style="display: flex; gap: 6px;">
-  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
-  A-
-</button>
-<button class="btn-scale" onclick="adjustTextSize(0.1)">
-A+
-</button>
-</div>
-</div>
-</div>
-</div>
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 12 (Book 2) — Chapter 2: Application of Integrals</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">Introduction &amp; Fundamental Concepts</summary>
+    <p>In the previous chapter, we explored methods to compute indefinite and definite integrals. In this chapter, we apply integral calculus to determine the geometric area bounded by simple curves, lines, and parabolas.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Area Under a Simple Curve</summary>
+      <p>Let $y = f(x)$ be a continuous function bounded on the interval $[a, b]$. The area $A$ enclosed between the curve, the $x$-axis, and the vertical ordinate lines $x = a$ and $x = b$ is given by the definite integral expression:</p>
+      $$A = \int_{a}^{b} f(x) \, dx = \int_{a}^{b} y \, dx$$
+      <p>Similarly, if the curve is defined as $x = g(y)$ and is bounded vertically by the horizontal abscissa lines $y = c$ and $y = d$, the enclosed area is computed as:</p>
+      $$A = \int_{c}^{d} g(y) \, dy = \int_{c}^{d} x \, dy$$
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Standard Geometric Integrals Matrix</summary>
+    <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+      <table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0; min-width: 600px;">
+        <thead>
+          <tr style="background-color: #f1f5f9;">
+            <th style="padding: 8px;">Geometric Profile</th>
+            <th style="padding: 8px;">Mathematical Equation Base</th>
+            <th style="padding: 8px;">Active Integration Formulation</th>
+            <th style="padding: 8px;">Evaluation System Limits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 8px;"><strong>Standard Circle</strong></td>
+            <td style="padding: 8px;">$x^2 + y^2 = a^2$</td>
+            <td style="padding: 8px;">$y = \sqrt{a^2 - x^2}$</td>
+            <td style="padding: 8px;">Total Area $= 4 \int_{0}^{a} \sqrt{a^2 - x^2} \, dx = \pi a^2$</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>Standard Ellipse</strong></td>
+            <td style="padding: 8px;">$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$</td>
+            <td style="padding: 8px;">$y = \frac{b}{a}\sqrt{a^2 - x^2}$</td>
+            <td style="padding: 8px;">Total Area $= 4 \frac{b}{a} \int_{0}^{a} \sqrt{a^2 - x^2} \, dx = \pi a b$</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>Vertical Parabola</strong></td>
+            <td style="padding: 8px;">$y^2 = 4ax$</td>
+            <td style="padding: 8px;">$y = 2\sqrt{a}\sqrt{x}$</td>
+            <td style="padding: 8px;">Area evaluated symmetrically along the coordinate axes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Algorithmic Solved Examples</summary>
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Find the area enclosed by the circle $x^2 + y^2 = a^2$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Express the equation in terms of $y$ for the first quadrant setup: $y = \sqrt{a^2 - x^2}$.</li>
+        <li>The region is symmetric across all four quadrants, so integrate from $x = 0$ to $x = a$ and scale by $4$:$$A = 4 \int_{0}^{a} \sqrt{a^2 - x^2} \, dx$$</li>
+        <li>Apply the standard integration formula $\int \sqrt{a^2 - x^2} \, dx = \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\left(\frac{x}{a}\right)$:$$A = 4 \left[ \frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\left(\frac{x}{a}\right) \right]_{0}^{a}$$</li>
+        <li>Substitute upper limit $a$ and lower limit $0$:$$A = 4 \left[ \left(0 + \frac{a^2}{2}\sin^{-1}(1)\right) - (0 + 0) \right] = 4 \left( \frac{a^2}{2} \cdot \frac{\pi}{2} \right) = \pi a^2$$</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> Total area $= \pi a^2$ square units.</p>
+    </blockquote>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 12 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
   function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
   function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-01-integrals.html"; } else { window.location.href = "12-2-chapter-03-differential-equations.html"; } }
   let currentScale = 1.0;
-  function adjustTextSize(delta) { currentScale += delta; if (currentScale
-  < 0.8) currentScale = 0.8; if (currentScale >
-  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
 </script>
 </body>
