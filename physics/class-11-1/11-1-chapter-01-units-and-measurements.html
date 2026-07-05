@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Physics: Class 11 (Book 1) — Chapter 1: Units and Measurement
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Physics: Class 11 (Book 1) — Chapter 1: Units and Measurement
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.1 Introduction to Units and Measurement
+</summary>
+<p>
+  Measurement of any physical quantity involves comparison with a certain basic, arbitrarily chosen, internationally accepted reference standard called
+  <span class="keyword">
+  unit
+</span>
+. The result of a measurement of a physical quantity is expressed by a number (or numerical measure) accompanied by a unit.
+</p>
+<p>
+Physical quantities are broadly classified into two categories:
+</p>
+<ul>
+  <li>
+    <strong>
+    Fundamental or Base Quantities:
+  </strong>
+  These are independent physical quantities that cannot be expressed in terms of other quantities. Their units are called
+  <span class="keyword">
+  fundamental or base units
+</span>
+.
+</li>
+<li>
+  <strong>
+  Derived Quantities:
+</strong>
+All other physical quantities whose units can be expressed as combinations of the base units. Their units are called
+<span class="keyword">
+derived units
+</span>
+.
+</li>
+</ul>
+<p>
+  A complete set of these units, both the base units and derived units, is known as the
+  <span class="keyword">
+  system of units
+</span>
+.
+</p>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.2 The International System of Units (SI)
+</summary>
+<p>
+Historically, three main systems of units were extensively used in different countries:
+</p>
+<ul>
+  <li>
+    <strong>
+    CGS System:
+  </strong>
+  Centimetre, gram, and second for length, mass, and time respectively.
+</li>
+<li>
+  <strong>
+  FPS System:
+</strong>
+Foot, pound, and second (British system) for length, mass, and time respectively.
+</li>
+<li>
+  <strong>
+  MKS System:
+</strong>
+Metre, kilogram, and second for length, mass, and time respectively.
+</li>
+</ul>
+<p>
+  The system of units which is at present internationally accepted for measurement is the
+  <span class="keyword">
+  Système International d’Unités
+</span>
+(French for International System of Units), abbreviated as
+<strong>
+SI
+</strong>
+. It was developed by the Bureau International des Poids et Mesures (BIPM) in 1971 and recently revised by the General Conference on Weights and Measures in November 2018.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  SI Base Quantities and Units
+</summary>
+<p>
+The SI is founded on seven base quantities, defined as follows:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Base Quantity
+    </th>
+    <th>
+    Unit Name
+  </th>
+  <th>
+  Symbol
+</th>
+<th>
+Definition and Constants
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Length
+    </strong>
+  </td>
+  <td>
+  metre
+</td>
+<td>
+m
+</td>
+<td>
+Defined by taking the fixed numerical value of the speed of light in vacuum $c$ to be **299792458** when expressed in the unit **m s⁻¹**, where the second is defined in terms of the caesium frequency $\Delta \nu_{Cs}$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Mass
+  </strong>
+</td>
+<td>
+kilogram
+</td>
+<td>
+kg
+</td>
+<td>
+Defined by taking the fixed numerical value of the Planck constant $h$ to be **6.62607015** $\times$ **10⁻³⁴** when expressed in the unit **J s**, which is equal to **kg m² s⁻¹**, where the metre and second are defined in terms of $c$ and $\Delta \nu_{Cs}$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Time
+  </strong>
+</td>
+<td>
+second
+</td>
+<td>
+s
+</td>
+<td>
+Defined by taking the fixed numerical value of the caesium frequency $\Delta \nu_{Cs}$, the unperturbed ground-state hyperfine transition frequency of the caesium-133 atom, to be **9192631770** when expressed in the unit **Hz**, which is equal to **s⁻¹**.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Electric Current
+  </strong>
+</td>
+<td>
+ampere
+</td>
+<td>
+A
+</td>
+<td>
+Defined by taking the fixed numerical value of the elementary charge $e$ to be **1.602176634** $\times$ **10⁻¹⁹** when expressed in the unit **C**, which is equal to **A s**, where the second is defined in terms of $\Delta \nu_{Cs}$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Thermodynamic Temperature
+  </strong>
+</td>
+<td>
+kelvin
+</td>
+<td>
+K
+</td>
+<td>
+Defined by taking the fixed numerical value of the Boltzmann constant $k$ to be **1.380649** $\times$ **10⁻²³** when expressed in the unit **J K⁻¹**, which is equal to **kg m² s⁻² K⁻¹**, where the kilogram, metre and second are defined in terms of $h$, $c$ and $\Delta \nu_{Cs}$.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Amount of Substance
+  </strong>
+</td>
+<td>
+mole
+</td>
+<td>
+mol
+</td>
+<td>
+One mole contains exactly **6.02214076** $\times$ **10²³** elementary entities. This number is the fixed numerical value of the Avogadro constant, $N_A$, when expressed in the unit **mol⁻¹** and is called the Avogadro number.
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Luminous Intensity
+  </strong>
+</td>
+<td>
+candela
+</td>
+<td>
+cd
+</td>
+<td>
+Defined by taking the fixed numerical value of the luminous efficacy of monochromatic radiation of frequency **540** $\times$ **10¹² Hz**, $K_{cd}$, to be **683** when expressed in the unit **lm W⁻¹**, which is equal to **cd sr W⁻¹**, or **cd sr kg⁻¹ m⁻² s³**, where the kilogram, metre and second are defined in terms of $h$, $c$ and $\Delta \nu_{Cs}$.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Supplementary Units: Plane Angle and Solid Angle
+</summary>
+<p>
+Besides the seven base units, there are two supplementary units defined for dimensionless geometric quantities:
+</p>
+<ul>
+  <li>
+    <strong>
+    Plane Angle ($d\theta$):
+  </strong>
+  Defined as the ratio of length of arc $ds$ to the radius $r$. The unit is
+  <span class="keyword">
+  radian
+</span>
+(symbol:
+<strong>
+rad
+</strong>
+). $$d\theta = \frac{ds}{r}$$
+</li>
+<li>
+  <strong>
+  Solid Angle ($d\Omega$):
+</strong>
+Defined as the ratio of the intercepted area $dA$ of the spherical surface, described about the apex $O$ as the centre, to the square of its radius $r$. The unit is
+<span class="keyword">
+steradian
+</span>
+(symbol:
+<strong>
+sr
+</strong>
+). $$d\Omega = \frac{dA}{r^2}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Units Retained for General Use
+</summary>
+<p>
+Several non-SI units are commonly used and retained for general use:
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Name
+    </th>
+    <th>
+    Symbol
+  </th>
+  <th>
+  Value in SI Unit
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    minute
+  </td>
+  <td>
+  min
+</td>
+<td>
+**60 s**
+</td>
+</tr>
+<tr>
+  <td>
+  hour
+</td>
+<td>
+h
+</td>
+<td>
+**3600 s**
+</td>
+</tr>
+<tr>
+  <td>
+  day
+</td>
+<td>
+d
+</td>
+<td>
+**86400 s**
+</td>
+</tr>
+<tr>
+  <td>
+  year
+</td>
+<td>
+y
+</td>
+<td>
+**3.156** $\times$ **10⁷ s**
+</td>
+</tr>
+<tr>
+  <td>
+  degree
+</td>
+<td>
+°
+</td>
+<td>
+**1° =** $\pi / 180$ **rad**
+</td>
+</tr>
+<tr>
+  <td>
+  litre
+</td>
+<td>
+L
+</td>
+<td>
+**1 dm³ = 10⁻³ m³**
+</td>
+</tr>
+<tr>
+  <td>
+  tonne
+</td>
+<td>
+t
+</td>
+<td>
+**10³ kg**
+</td>
+</tr>
+<tr>
+  <td>
+  carat
+</td>
+<td>
+c
+</td>
+<td>
+**200 mg**
+</td>
+</tr>
+<tr>
+  <td>
+  bar
+</td>
+<td>
+bar
+</td>
+<td>
+**0.1 MPa = 10⁵ Pa**
+</td>
+</tr>
+<tr>
+  <td>
+  curie
+</td>
+<td>
+Ci
+</td>
+<td>
+**3.7** $\times$ **10¹⁰ s⁻¹**
+</td>
+</tr>
+<tr>
+  <td>
+  roentgen
+</td>
+<td>
+R
+</td>
+<td>
+**2.58** $\times$ **10⁻⁴ C/kg**
+</td>
+</tr>
+<tr>
+  <td>
+  quintal
+</td>
+<td>
+q
+</td>
+<td>
+**100 kg**
+</td>
+</tr>
+<tr>
+  <td>
+  barn
+</td>
+<td>
+b
+</td>
+<td>
+**100 fm² = 10⁻²⁸ m²**
+</td>
+</tr>
+<tr>
+  <td>
+  are
+</td>
+<td>
+a
+</td>
+<td>
+**1 dam² = 10² m²**
+</td>
+</tr>
+<tr>
+  <td>
+  hectare
+</td>
+<td>
+ha
+</td>
+<td>
+**1 hm² = 10⁴ m²**
+</td>
+</tr>
+<tr>
+  <td>
+  standard atmospheric pressure
+</td>
+<td>
+atm
+</td>
+<td>
+**101325 Pa = 1.013** $\times$ **10⁵ Pa**
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.3 Significant Figures
+</summary>
+<p>
+  Every measurement involves errors. The reported result of a measurement is a number that includes all digits in the number that are known reliably plus the first digit that is uncertain. These reliable digits plus the first uncertain digit are known as
+  <span class="keyword">
+  significant figures
+</span>
+or significant digits.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Rules for Determining Significant Figures
+</summary>
+<ol>
+  <li>
+    <strong>
+    All non-zero digits are significant.
+  </strong>
+  (e.g., **287.5 cm** has four significant figures).
+</li>
+<li>
+  <strong>
+  All zeros between two non-zero digits are significant
+</strong>
+, no matter where the decimal point is, if at all. (e.g., **2.308 cm** has four significant figures).
+</li>
+<li>
+  <strong>
+  If the number is less than 1, the zero(s) on the right of decimal point but to the left of the first non-zero digit are not significant.
+</strong>
+(e.g., in **0.002308**, the underlined zeroes are not significant, leaving four significant figures).
+</li>
+<li>
+  <strong>
+  The terminal or trailing zero(s) in a number without a decimal point are not significant.
+</strong>
+(e.g., **123 m = 12300 cm = 123000 mm** has only three significant figures).
+</li>
+<li>
+  <strong>
+  The trailing zero(s) in a number with a decimal point are significant.
+</strong>
+(e.g., **3.500** or **0.06900** have four significant figures).
+</li>
+<li>
+  <strong>
+  Scientific Notation:
+</strong>
+To remove ambiguities, every measurement should be reported in scientific notation as $a \times 10^b$, where $a$ is a number between 1 and 10, and $b$ is any positive or negative exponent of 10. The power of 10 is irrelevant to significant figures, and all zeroes in $a$ are significant. (e.g., **4.700** $\times$ **10³ mm** has four significant figures).
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.3.1 Rules for Arithmetic Operations with Significant Figures
+</summary>
+<ul>
+  <li>
+    <strong>
+    Multiplication or Division:
+  </strong>
+  The final result should retain as many significant figures as are there in the original number with the least significant figures.
+  <blockquote class="example-block">
+  <p>
+    <strong>
+    Mathematical Problem Statement:
+  </strong>
+  Find the density of an object of mass **4.237 g** and volume **2.51 cm³** to appropriate significant figures.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the significant figures in the given values: Mass = **4.237 g** (4 significant figures), Volume = **2.51 cm³** (3 significant figures).
+</li>
+<li>
+The least number of significant figures is 3 (from the volume).
+</li>
+<li>
+Calculate the raw density: $$\text{Density} = \frac{4.237\text{ g}}{2.51\text{ cm}^3} \approx 1.6880478\text{ g cm}^{-3}$$
+</li>
+<li>
+Round off the result to 3 significant figures.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$1.69\text{ g cm}^{-3}$
+</p>
+</blockquote>
+</li>
+<li>
+  <strong>
+  Addition or Subtraction:
+</strong>
+The final result should retain as many decimal places as are there in the number with the least decimal places.
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Sum the numbers **436.32 g**, **227.2 g**, and **0.301 g**.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the decimal places: **436.32 g** (2 decimal places), **227.2 g** (1 decimal place), **0.301 g** (3 decimal places).
+</li>
+<li>
+The least precise measurement has 1 decimal place (**227.2 g**).
+</li>
+<li>
+Calculate the raw sum: $$436.32\text{ g} + 227.2\text{ g} + 0.301\text{ g} = 663.821\text{ g}$$
+</li>
+<li>
+Round off the sum to 1 decimal place.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$663.8\text{ g}$
+</p>
+</blockquote>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.3.2 Rounding off the Uncertain Digits
+</summary>
+<p>
+The rules for rounding off numbers to appropriate significant figures are:
+</p>
+<ol>
+  <li>
+  If the insignificant digit to be dropped is more than 5, the preceding digit is raised by 1. (e.g., **2.746** rounded to three significant figures is **2.75**).
+</li>
+<li>
+If the insignificant digit to be dropped is less than 5, the preceding digit is left unchanged. (e.g., **1.743** rounded to three significant figures is **1.74**).
+</li>
+<li>
+  If the insignificant digit to be dropped is exactly 5:
+  <ul>
+    <li>
+    If the preceding digit is even, the insignificant digit is simply dropped. (e.g., **2.745** becomes **2.74**).
+  </li>
+  <li>
+  If the preceding digit is odd, the preceding digit is raised by 1. (e.g., **2.735** becomes **2.74**).
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.3.3 Rules for Determining the Uncertainty in Arithmetic Calculations
+</summary>
+<p>
+When combining measurements with uncertainties, the following principles apply:
+</p>
+<ul>
+  <li>
+  If a set of experimental data is specified to $n$ significant figures, a result obtained by combining the data will also be valid to $n$ significant figures.
+</li>
+<li>
+When subtracting data, the number of significant figures can be reduced because uncertainties combine in a different fashion (based on decimal places).
+</li>
+<li>
+Intermediate results in a multi-step computation should be calculated to one more significant figure than the number of digits in the least precise measurement to avoid accumulation of rounding errors.
+</li>
+</ul>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Each side of a cube is measured to be **7.203 m**. Find the total surface area and the volume of the cube to appropriate significant figures.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  The measured length has 4 significant figures (**7.203 m**).
+</li>
+<li>
+Calculate the surface area: $$\text{Surface Area} = 6 \times (7.203\text{ m})^2 = 6 \times 51.883209\text{ m}^2 = 311.299254\text{ m}^2$$
+</li>
+<li>
+Round off the surface area to 4 significant figures: **311.3 m²**.
+</li>
+<li>
+Calculate the volume: $$\text{Volume} = (7.203\text{ m})^3 = 373.714754\text{ m}^3$$
+</li>
+<li>
+Round off the volume to 4 significant figures: **373.7 m³**.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Surface Area = $311.3\text{ m}^2$, Volume = $373.7\text{ m}^3$
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.4 Dimensions of Physical Quantities
+</summary>
+<p>
+  The nature of a physical quantity is described by its
+  <span class="keyword">
+  dimensions
+</span>
+. All physical quantities represented by derived units can be expressed in terms of some combination of seven fundamental or base quantities, denoted with square brackets $[ ]$:
+</p>
+<ul>
+  <li>
+  Length: $[L]$
+</li>
+<li>
+Mass: $[M]$
+</li>
+<li>
+Time: $[T]$
+</li>
+<li>
+Electric Current: $[A]$
+</li>
+<li>
+Thermodynamic Temperature: $[K]$
+</li>
+<li>
+Luminous Intensity: $[cd]$
+</li>
+<li>
+Amount of Substance: $[mol]$
+</li>
+</ul>
+<p>
+  The
+  <strong>
+  dimensions of a physical quantity
+</strong>
+are the powers (or exponents) to which the base quantities are raised to represent that quantity.
+</p>
+<p>
+For example, the dimensions of volume are $[L^3]$, which can be written as $[M^0 L^3 T^0]$. The dimensions of force are $[M L T^{-2}]$, meaning force has 1 dimension in mass, 1 dimension in length, and -2 dimensions in time.
+</p>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.5 Dimensional Formulae and Dimensional Equations
+</summary>
+<p>
+  The expression which shows how and which of the base quantities represent the dimensions of a physical quantity is called the
+  <span class="keyword">
+  dimensional formula
+</span>
+of the given physical quantity.
+</p>
+<p>
+  An equation obtained by equating a physical quantity with its dimensional formula is called the
+  <span class="keyword">
+  dimensional equation
+</span>
+of the physical quantity.
+</p>
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>
+      Physical Quantity
+    </th>
+    <th>
+    Dimensional Formula
+  </th>
+  <th>
+  Dimensional Equation
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+    Volume ($V$)
+  </td>
+  <td>
+  $[M^0 L^3 T^0]$
+</td>
+<td>
+$[V] = [M^0 L^3 T^0]$
+</td>
+</tr>
+<tr>
+  <td>
+  Speed or Velocity ($v$)
+</td>
+<td>
+$[M^0 L T^{-1}]$
+</td>
+<td>
+$[v] = [M^0 L T^{-1}]$
+</td>
+</tr>
+<tr>
+  <td>
+  Acceleration ($a$)
+</td>
+<td>
+$[M^0 L T^{-2}]$
+</td>
+<td>
+$[a] = [M^0 L T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  Force ($F$)
+</td>
+<td>
+$[M L T^{-2}]$
+</td>
+<td>
+$[F] = [M L T^{-2}]$
+</td>
+</tr>
+<tr>
+  <td>
+  Mass Density (${\rho}$)
+</td>
+<td>
+$[M L^{-3} T^0]$
+</td>
+<td>
+$[\rho] = [M L^{-3} T^0]$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  1.6 Dimensional Analysis and its Applications
+</summary>
+<p>
+  Dimensional analysis is a powerful tool used to check the correctness of mathematical expressions and to deduce relations among physical quantities. It is based on the
+  <span class="keyword">
+  principle of homogeneity of dimensions
+</span>
+, which states that physical quantities can be added or subtracted only if they have the same dimensions.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.6.1 Checking the Dimensional Consistency of Equations
+</summary>
+<p>
+If the dimensions of all terms on both sides of an equation are not the same, the equation is wrong. However, dimensional consistency does not guarantee that an equation is physically correct, as it cannot account for dimensionless constants or functions (like trigonometric, logarithmic, or exponential functions, which must be dimensionless).
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Check the dimensional consistency of the equation: $$x = x_0 + v_0 t + \frac{1}{2} a t^2$$ where $x$ and $x_0$ are distances, $v_0$ is velocity, $a$ is acceleration, and $t$ is time.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Write the dimensions of each term:
+    <ul>
+      <li>
+      $[x] = [L]$
+    </li>
+    <li>
+    $[x_0] = [L]$
+  </li>
+  <li>
+  $[v_0 t] = [L T^{-1}] [T] = [L]$
+</li>
+<li>
+$[\frac{1}{2} a t^2] = [L T^{-2}] [T^2] = [L]$
+</li>
+</ul>
+</li>
+<li>
+Since each term on both sides of the equation has the same dimension of length $[L]$, the equation is dimensionally correct.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The equation is dimensionally consistent.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  1.6.2 Deducing Relations among Physical Quantities
+</summary>
+<p>
+By knowing the dependence of a physical quantity on other quantities, we can derive its mathematical relation using the method of dimensions (up to three independent variables).
+</p>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Derive the expression for the time period $T$ of a simple pendulum, assuming it depends on the length of the string $l$, mass of the bob $m$, and acceleration due to gravity $g$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Express the dependence as a product: $$T = k l^x g^y m^z$$ where $k$ is a dimensionless constant.
+</li>
+<li>
+Substitute the dimensions of each quantity: $$[M^0 L^0 T^1] = [L]^x [L T^{-2}]^y [M]^z = [M^z L^{x+y} T^{-2y}]$$
+</li>
+<li>
+  Equate the exponents of $[M]$, $[L]$, and $[T]$ on both sides:
+  <ul>
+    <li>
+    For $[M]$: $z = 0$
+  </li>
+  <li>
+  For $[T]$: $-2y = 1 \implies y = -\frac{1}{2}$
+</li>
+<li>
+For $[L]$: $x + y = 0 \implies x = -y = \frac{1}{2}$
+</li>
+</ul>
+</li>
+<li>
+Substitute the values of $x$, $y$, and $z$ back into the equation: $$T = k l^{1/2} g^{-1/2} m^0 = k \sqrt{\frac{l}{g}}$$
+</li>
+<li>
+Using experimental analysis, the constant $k$ is found to be $2\pi$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+$T = 2\pi \sqrt{\frac{l}{g}}$
+</p>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 1
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "11-1-chapter-02-motion-in-a-straight-line.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
