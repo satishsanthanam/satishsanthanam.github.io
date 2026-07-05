@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 11: Introduction to Three Dimensional Geometry</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 11: Introduction to Three Dimensional Geometry</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">Introduction to Three Dimensional Geometry</summary>
+    
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Leonhard Euler (1707-1783) &amp; Analytical Solid Geometry</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> René Descartes (1596–1650) and Pierre Fermat (1601–1665) initiated analytical geometry in two dimensions. Johann Bernoulli (1715) introduced the three coordinate planes we use today. Antoine Parent (1700) gave the first systematic development of analytical solid geometry.</li>
+        <li><strong>Theoretical Foundations:</strong> Leonhard Euler systematically developed three-dimensional coordinate geometry in 1748 in his work <em>"Introduction to Geometry"</em>. Later, in the 19th century, geometry was extended to higher dimensions, finding critical applications in Einstein's Space-Time Continuum model.</li>
+      </ul>
+    </div>
+
+    <p>In real life, we often need to locate points in space rather than just on a flat plane. To locate a point in a plane, we use two intersecting mutually perpendicular lines (<span class="keyword">coordinate axes</span>). To locate a point in three-dimensional space, we require three mutually perpendicular planes, and the position is represented by three numbers representing the perpendicular distances from these planes.</p>
+
+    <details class="sub-topic">
+      <summary class="sub-title">11.2 Coordinate Axes, Planes, and Octants</summary>
+      <p>Consider three mutually perpendicular planes intersecting at a point $O$ (the <span class="keyword">origin</span>). These planes intersect along three mutually perpendicular lines $X'OX$, $Y'OY$, and $Z'OZ$, which are called the <span class="keyword">x-axis</span>, <span class="keyword">y-axis</span>, and <span class="keyword">z-axis</span> respectively.</p>
+      <ul>
+        <li><strong>Coordinate Planes:</strong> The planes $XOY$, $YOZ$, and $ZOX$ are called the <span class="keyword">XY-plane</span>, <span class="keyword">YZ-plane</span>, and <span class="keyword">ZX-plane</span> respectively.</li>
+        <li><strong>Octants:</strong> The three coordinate planes divide the space into eight parts, known as <span class="keyword">octants</span>, denoted by Roman numerals I to VIII.</li>
+      </ul>
+
+      <p><strong>Signs of Coordinates in Eight Octants:</strong></p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="border-collapse: collapse; width: 100%; min-width: 500px; text-align: center; margin: 10px 0;">
+          <thead>
+            <tr style="background-color: #f2f2f2;">
+              <th>Coordinate / Octant</th>
+              <th>I</th>
+              <th>II</th>
+              <th>III</th>
+              <th>IV</th>
+              <th>V</th>
+              <th>VI</th>
+              <th>VII</th>
+              <th>VIII</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>$x$</strong></td>
+              <td>$+$</td>
+              <td>$-$</td>
+              <td>$-$</td>
+              <td>$+$</td>
+              <td>$+$</td>
+              <td>$-$</td>
+              <td>$-$</td>
+              <td>$+$</td>
+            </tr>
+            <tr>
+              <td><strong>$y$</strong></td>
+              <td>$+$</td>
+              <td>$+$</td>
+              <td>$-$</td>
+              <td>$-$</td>
+              <td>$+$</td>
+              <td>$+$</td>
+              <td>$-$</td>
+              <td>$-$</td>
+            </tr>
+            <tr>
+              <td><strong>$z$</strong></td>
+              <td>$+$</td>
+              <td>$+$</td>
+              <td>$+$</td>
+              <td>$+$</td>
+              <td>$-$</td>
+              <td>$-$</td>
+              <td>$-$</td>
+              <td>$-$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Key Spatial Rules:</strong></p>
+      <ul>
+        <li>The coordinates of the origin $O$ are $(0, 0, 0)$.</li>
+        <li>Any point on the $x$-axis has coordinates of the form $(x, 0, 0)$.</li>
+        <li>Any point on the $y$-axis has coordinates of the form $(0, y, 0)$.</li>
+        <li>Any point on the $z$-axis has coordinates of the form $(0, 0, z)$.</li>
+        <li>Any point in the $XY$-plane has coordinates of the form $(x, y, 0)$.</li>
+        <li>Any point in the $YZ$-plane has coordinates of the form $(0, y, z)$.</li>
+        <li>Any point in the $ZX$-plane has coordinates of the form $(x, 0, z)$.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">11.3 Coordinates of a Point in Space</summary>
+      <p>To find the coordinates of any point $P$ in space:</p>
+      <ol>
+        <li>Drop a perpendicular $PM$ from $P$ to the $XY$-plane, where $M$ is the foot of the perpendicular.</li>
+        <li>From $M$, draw a perpendicular $ML$ to the $x$-axis, meeting it at $L$.</li>
+        <li>Let $OL = x$, $LM = y$, and $MP = z$. The ordered triplet $(x, y, z)$ represents the coordinates of point $P$.</li>
+      </ol>
+      <p>Alternatively, we can construct a rectangular parallelepiped through $P$ with faces parallel to the coordinate planes. The lengths of the edges along the $x$, $y$, and $z$ axes starting from the origin represent the coordinates.</p>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Distance Between Two Points in 3D Space</summary>
+    <p>The distance between two points in a three-dimensional rectangular coordinate system is a direct extension of the 2D Pythagorean distance formula.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Derivation of the Distance Formula</summary>
+      <p>Let $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$ be two points in space. Construct a rectangular parallelepiped with $PQ$ as its diagonal, such that its faces are parallel to the coordinate planes.</p>
+      <p>In the right-angled triangle $PAQ$ (where $\angle PAQ = 90^\circ$):</p>
+      $$PQ^2 = PA^2 + AQ^2 \quad \text{--- (1)}$$
+      <p>In the right-angled triangle $ANQ$ (where $\angle ANQ = 90^\circ$):</p>
+      $$AQ^2 = AN^2 + NQ^2 \quad \text{--- (2)}$$
+      <p>Substituting (2) into (1) yields:</p>
+      $$PQ^2 = PA^2 + AN^2 + NQ^2$$
+      <p>Since the edges of the parallelepiped are parallel to the coordinate axes, their lengths are:</p>
+      <ul>
+        <li>$AN = |x_2 - x_1|$</li>
+        <li>$PA = |y_2 - y_1|$</li>
+        <li>$NQ = |z_2 - z_1|$</li>
+      </ul>
+      <p>Thus, the distance $PQ$ is given by:</p>
+      $$PQ = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$
+      <p><strong>Distance from the Origin:</strong> If $P$ is the origin $O(0,0,0)$, the distance to any point $Q(x, y, z)$ is:</p>
+      $$OQ = \sqrt{x^2 + y^2 + z^2}$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the distance between the points $P(1, -3, 4)$ and $Q(-4, 1, 2)$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Identify coordinates: $(x_1, y_1, z_1) = (1, -3, 4)$ and $(x_2, y_2, z_2) = (-4, 1, 2)$.</li>
+          <li>Apply the 3D distance formula:$$PQ = \sqrt{(-4 - 1)^2 + (1 - (-3))^2 + (2 - 4)^2}$$</li>
+          <li>Simplify the terms inside the radical:$$PQ = \sqrt{(-5)^2 + (4)^2 + (-2)^2}$$$$PQ = \sqrt{25 + 16 + 4} = \sqrt{45}$$</li>
+          <li>Simplify the square root:$$PQ = 3\sqrt{5}$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $3\sqrt{5} \text{ units}$</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Show that the points $P(-2, 3, 5)$, $Q(1, 2, 3)$, and $R(7, 0, -1)$ are collinear.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Calculate distance $PQ$:$$PQ = \sqrt{(1 - (-2))^2 + (2 - 3)^2 + (3 - 5)^2} = \sqrt{3^2 + (-1)^2 + (-2)^2} = \sqrt{9 + 1 + 4} = \sqrt{14}$$</li>
+          <li>Calculate distance $QR$:$$QR = \sqrt{(7 - 1)^2 + (0 - 2)^2 + (-1 - 3)^2} = \sqrt{6^2 + (-2)^2 + (-4)^2} = \sqrt{36 + 4 + 16} = \sqrt{56} = 2\sqrt{14}$$</li>
+          <li>Calculate distance $PR$:$$PR = \sqrt{(7 - (-2))^2 + (0 - 3)^2 + (-1 - 5)^2} = \sqrt{9^2 + (-3)^2 + (-6)^2} = \sqrt{81 + 9 + 36} = \sqrt{126} = 3\sqrt{14}$$</li>
+          <li>Check the collinearity condition ($PQ + QR = PR$):$$\sqrt{14} + 2\sqrt{14} = 3\sqrt{14}$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Since $PQ + QR = PR$, the points $P$, $Q$, and $R$ are collinear.</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the equation of the set of points $P(x, y, z)$ such that $PA^2 + PB^2 = 2k^2$, where $A(3, 4, 5)$ and $B(-1, 3, -7)$ are given points.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Express $PA^2$ using the squared distance formula:$$PA^2 = (x - 3)^2 + (y - 4)^2 + (z - 5)^2$$</li>
+          <li>Express $PB^2$ using the squared distance formula:$$PB^2 = (x + 1)^2 + (y - 3)^2 + (z + 7)^2$$</li>
+          <li>Substitute these expressions into the given relation $PA^2 + PB^2 = 2k^2$:$$[(x - 3)^2 + (y - 4)^2 + (z - 5)^2] + [(x + 1)^2 + (y - 3)^2 + (z + 7)^2] = 2k^2$$</li>
+          <li>Expand each term:$$(x^2 - 6x + 9 + y^2 - 8y + 16 + z^2 - 10z + 25) + (x^2 + 2x + 1 + y^2 - 6y + 9 + z^2 + 14z + 49) = 2k^2$$</li>
+          <li>Combine like terms:$$2x^2 + 2y^2 + 2z^2 - 4x - 14y + 4z + 109 = 2k^2$$</li>
+          <li>Rearrange to standard form:$$2x^2 + 2y^2 + 2z^2 - 4x - 14y + 4z = 2k^2 - 109$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $2x^2 + 2y^2 + 2z^2 - 4x - 14y + 4z = 2k^2 - 109$</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the equation of the set of the points $P$ such that its distances from the points $A(3, 4, -5)$ and $B(-2, 1, 4)$ are equal.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Let the coordinates of point $P$ be $(x, y, z)$. The condition is $PA = PB$, which implies $PA^2 = PB^2$.</li>
+          <li>Write the squared distance from $P$ to $A(3, 4, -5)$:$$PA^2 = (x - 3)^2 + (y - 4)^2 + (z + 5)^2$$</li>
+          <li>Write the squared distance from $P$ to $B(-2, 1, 4)$:$$PB^2 = (x + 2)^2 + (y - 1)^2 + (z - 4)^2$$</li>
+          <li>Equate $PA^2$ and $PB^2$:$$(x - 3)^2 + (y - 4)^2 + (z + 5)^2 = (x + 2)^2 + (y - 1)^2 + (z - 4)^2$$</li>
+          <li>Expand both sides:$$(x^2 - 6x + 9) + (y^2 - 8y + 16) + (z^2 + 10z + 25) = (x^2 + 4x + 4) + (y^2 - 2y + 1) + (z^2 - 8z + 16)$$</li>
+          <li>Cancel $x^2$, $y^2$, and $z^2$ from both sides and simplify:$$-6x - 8y + 10z + 50 = 4x - 2y - 8z + 21$$</li>
+          <li>Group all terms on one side:$$10x + 6y - 18z - 29 = 0$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $10x + 6y - 18z - 29 = 0$</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> The centroid of a triangle $ABC$ is at the point $(1, 1, 1)$. If the coordinates of $A$ and $B$ are $(3, -5, 7)$ and $(-1, 7, -6)$, respectively, find the coordinates of the point $C$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Let the coordinates of $C$ be $(x, y, z)$.</li>
+          <li>The formula for the centroid $G(\bar{x}, \bar{y}, \bar{z})$ of a triangle with vertices $(x_1, y_1, z_1)$, $(x_2, y_2, z_2)$, and $(x_3, y_3, z_3)$ is:$$\bar{x} = \frac{x_1 + x_2 + x_3}{3}, \quad \bar{y} = \frac{y_1 + y_2 + y_3}{3}, \quad \bar{z} = \frac{z_1 + z_2 + z_3}{3}$$</li>
+          <li>Substitute the known values:$$\frac{3 - 1 + x}{3} = 1 \implies 2 + x = 3 \implies x = 1$$$$\frac{-5 + 7 + y}{3} = 1 \implies 2 + y = 3 \implies y = 1$$$$\frac{7 - 6 + z}{3} = 1 \implies 1 + z = 3 \implies z = 2$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> The coordinates of $C$ are $(1, 1, 2)$.</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-10-conic-sections.html"; } else { window.location.href = "11-chapter-12-limits-and-derivatives.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

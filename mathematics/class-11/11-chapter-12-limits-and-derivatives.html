@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 12: Limits and Derivatives</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 12: Limits and Derivatives</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">1. Introduction &amp; Intuitive Idea of Derivatives</summary>
+    <p>Calculus is the branch of mathematics that studies how the value of a function changes as the points in its domain change. It provides the mathematical framework to analyze dynamic systems, rates of change, and limiting behaviors.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Physical Motivation: The Falling Body Problem</summary>
+      <p>Consider a body dropped from a tall cliff. Physical experiments confirm that the distance $s$ (in meters) covered by the body as a function of time $t$ (in seconds) is given by:</p>
+      $$s(t) = 4.9t^2$$
+      <p>To find the velocity of the body at exactly $t = 2$ seconds, we analyze the average velocity over smaller and smaller time intervals ending or starting at $t = 2$.</p>
+      <ul>
+        <li><strong>Average Velocity</strong> between $t = t_1$ and $t = t_2$ is defined as: $$\text{Average Velocity} = \frac{\text{Distance travelled between } t_1 \text{ and } t_2}{\text{Time interval } (t_2 - t_1)} = \frac{s(t_2) - s(t_1)}{t_2 - t_1}$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Tabular Analysis of Average Velocity</summary>
+      <p>By calculating the average velocity over intervals ending at $t = 2$ (using $t_1$ values approaching 2 from the left) and starting at $t = 2$ (using $t_2$ values approaching 2 from the right), we observe the following limiting behavior:</p>
+      
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="width:100%; min-width: 600px; border-collapse: collapse; margin: 10px 0; text-align: left;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px;">Interval Type</th>
+              <th style="padding: 8px;">Time Parameter ($t$)</th>
+              <th style="padding: 8px;">Average Velocity Formula ($v$)</th>
+              <th style="padding: 8px;">Limiting Value (m/s)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;">Left-hand intervals ($t_1 \to 2^-$)</td>
+              <td style="padding: 8px;">$t_1 \in \{0, 1, 1.5, 1.8, 1.9, 1.95, 1.99\}$</td>
+              <td style="padding: 8px;">$v = \frac{s(2) - s(t_1)}{2 - t_1} = \frac{19.6 - 4.9t_1^2}{2 - t_1}$</td>
+              <td style="padding: 8px;">Approaches $19.6 \text{ m/s}$ from below ($19.551$ at $t_1 = 1.99$)</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Right-hand intervals ($t_2 \to 2^+$)</td>
+              <td style="padding: 8px;">$t_2 \in \{4, 3, 2.5, 2.2, 2.1, 2.05, 2.01\}$</td>
+              <td style="padding: 8px;">$v = \frac{s(t_2) - s(2)}{t_2 - 2} = \frac{4.9t_2^2 - 19.6}{t_2 - 2}$</td>
+              <td style="padding: 8px;">Approaches $19.6 \text{ m/s}$ from above ($19.649$ at $t_2 = 2.01$)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This limiting process indicates that the <span class="keyword">instantaneous velocity</span> at $t = 2$ is exactly 19.6 m/s. Geometrically, this corresponds to the slope of the tangent to the curve $s = 4.9t^2$ at the point $A(2, 19.6)$.</p>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2. Limits</summary>
+    <p>The concept of a limit describes the behavior of a function $f(x)$ as the independent variable $x$ approaches a specific value $a$, regardless of the value of the function at $a$ itself.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Left-Hand and Right-Hand Limits</summary>
+      <p>To understand limits comprehensively, we must analyze the behavior of $f(x)$ as $x$ approaches $a$ from both directions:</p>
+      <ul>
+        <li><strong>Left-Hand Limit (LHL):</strong> The expected value of $f(x)$ as $x$ approaches $a$ from values strictly less than $a$. $$\lim_{x \to a^-} f(x)$$</li>
+        <li><strong>Right-Hand Limit (RHL):</strong> The expected value of $f(x)$ as $x$ approaches $a$ from values strictly greater than $a$. $$\lim_{x \to a^+} f(x)$$</li>
+        <li><strong>Existence of a Limit:</strong> The limit of $f(x)$ as $x \to a$ exists if and only if both the left-hand and right-hand limits exist and are equal: $$\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = \lim_{x \to a} f(x) = l$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algebra of Limits</summary>
+      <p><strong>Theorem 1:</strong> Let $f$ and $g$ be two functions such that both $\lim_{x \to a} f(x)$ and $\lim_{x \to a} g(x)$ exist. Then the following algebraic properties hold:</p>
+      <ol>
+        <li><strong>Sum Rule:</strong> The limit of a sum is the sum of the limits. $$\lim_{x \to a} [f(x) + g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x)$$</li>
+        <li><strong>Difference Rule:</strong> The limit of a difference is the difference of the limits. $$\lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)$$</li>
+        <li><strong>Product Rule:</strong> The limit of a product is the product of the limits. $$\lim_{x \to a} [f(x) \cdot g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)$$</li>
+        <li><strong>Minus / Quotient Rule:</strong> The limit of a quotient is the quotient of the limits, provided the denominator's limit is non-zero. $$\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)} \quad \text{where } \lim_{x \to a} g(x) \neq 0$$</li>
+        <li><strong>Scalar Multiplication:</strong> For any real number $\lambda$: $$\lim_{x \to a} [\lambda \cdot f(x)] = \lambda \cdot \lim_{x \to a} f(x)$$</li>
+      </ol>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Limits of Polynomials and Rational Functions</summary>
+      <ul>
+        <li>For any <span class="keyword">polynomial function</span> $f(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n$, the limit at $x = a$ is simply the value of the polynomial at $a$: $$\lim_{x \to a} f(x) = f(a)$$</li>
+        <li>For a <span class="keyword">rational function</span> $f(x) = \frac{g(x)}{h(x)}$ where $g(x)$ and $h(x)$ are polynomials:
+          <ul>
+            <li>If $h(a) \neq 0$, then $\lim_{x \to a} f(x) = \frac{g(a)}{h(a)}$.</li>
+            <li>If $h(a) = 0$ and $g(a) \neq 0$, the limit does not exist.</li>
+            <li>If $h(a) = 0$ and $g(a) = 0$, we obtain the indeterminate form $\frac{0}{0}$. We must factor out common terms of $(x-a)$ from both numerator and denominator to evaluate the limit.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Theorem 2:</strong> For any positive integer $n$ (and indeed any rational number $n$ when $a &gt; 0$):</p>
+      $$\lim_{x \to a} \frac{x^n - a^n}{x - a} = n a^{n-1}$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Evaluate the limit: $\lim_{x \to 1} \frac{x^{15} - 1}{x^{10} - 1}$</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Divide both the numerator and the denominator by $(x - 1)$ to express the limit in the standard form of Theorem 2: $$\lim_{x \to 1} \frac{x^{15} - 1}{x^{10} - 1} = \lim_{x \to 1} \frac{\frac{x^{15} - 1}{x - 1}}{\frac{x^{10} - 1}{x - 1}}$$</li>
+          <li>Apply the quotient rule of limits: $$\lim_{x \to 1} \frac{x^{15} - 1}{x^{10} - 1} = \frac{\lim_{x \to 1} \frac{x^{15} - 1}{x - 1}}{\lim_{x \to 1} \frac{x^{10} - 1}{x - 1}}$$</li>
+          <li>Apply Theorem 2 ($\lim_{x \to a} \frac{x^n - a^n}{x - a} = n a^{n-1}$) to both numerator ($n=15, a=1$) and denominator ($n=10, a=1$): $$\text{Numerator Limit} = 15(1)^{14} = 15$$ $$\text{Denominator Limit} = 10(1)^9 = 10$$</li>
+          <li>Compute the final ratio: $$\text{Limit} = \frac{15}{10} = \frac{3}{2}$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $\frac{3}{2}$</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Evaluate the limit: $\lim_{x \to 2} \frac{x^3 - 4x^2 + 4x}{x^2 - 4}$</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Substitute $x = 2$ directly to check the form: $$\text{Numerator: } 2^3 - 4(2)^2 + 4(2) = 8 - 16 + 8 = 0$$ $$\text{Denominator: } 2^2 - 4 = 0$$ This is an indeterminate form of $\frac{0}{0}$.</li>
+          <li>Factorize the numerator and denominator to isolate the vanishing factor $(x - 2)$: $$\text{Numerator: } x^3 - 4x^2 + 4x = x(x^2 - 4x + 4) = x(x - 2)^2$$ $$\text{Denominator: } x^2 - 4 = (x - 2)(x + 2)$$</li>
+          <li>Rewrite the limit expression and cancel the common factor $(x - 2)$ (valid since $x \neq 2$): $$\lim_{x \to 2} \frac{x(x - 2)^2}{(x - 2)(x + 2)} = \lim_{x \to 2} \frac{x(x - 2)}{x + 2}$$</li>
+          <li>Substitute $x = 2$ into the simplified expression: $$\text{Limit} = \frac{2(2 - 2)}{2 + 2} = \frac{0}{4} = 0$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $0$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">3. Limits of Trigonometric Functions</summary>
+    <p>Evaluating limits of trigonometric functions requires specialized theorems to handle the oscillatory and transcendental nature of these functions near critical points.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">The Sandwich Theorem (Squeeze Theorem)</summary>
+      <p><strong>Theorem 4:</strong> Let $f$, $g$, and $h$ be real-valued functions such that:</p>
+      $$f(x) \le g(x) \le h(x)$$
+      <p>for all $x$ in a common domain of definition (except possibly at $x = a$). If:</p>
+      $$\lim_{x \to a} f(x) = \lim_{x \to a} h(x) = l$$
+      <p>then the limit of the middle function $g(x)$ is also forced to be $l$:</p>
+      $$\lim_{x \to a} g(x) = l$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Fundamental Trigonometric Limits</summary>
+      <p>Using geometric proofs and the Sandwich Theorem, we establish the following fundamental limits (where angles are measured in radians):</p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="width:100%; min-width: 500px; border-collapse: collapse; margin: 10px 0; text-align: left;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px;">Trigonometric Limit Identity</th>
+              <th style="padding: 8px;">Mathematical Condition</th>
+              <th style="padding: 8px;">Geometric/Algebraic Basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;">$$\lim_{x \to 0} \frac{\sin x}{x} = 1$$</td>
+              <td style="padding: 8px;">$x$ in radians, $x \neq 0$</td>
+              <td style="padding: 8px;">Sandwiched by the inequality: $\cos x &lt; \frac{\sin x}{x} &lt; 1$ for $0 &lt; |x| &lt; \frac{\pi}{2}$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$$\lim_{x \to 0} \frac{1 - \cos x}{x} = 0$$</td>
+              <td style="padding: 8px;">$x$ in radians, $x \neq 0$</td>
+              <td style="padding: 8px;">Derived using the identity $1 - \cos x = 2\sin^2\left(\frac{x}{2}\right)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Example</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Evaluate the limit: $\lim_{x \to 0} \frac{\sin 4x}{\sin 2x}$</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Express the limit by introducing the appropriate scaling factors in the numerator and denominator to match the standard form $\lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1$: $$\lim_{x \to 0} \frac{\sin 4x}{\sin 2x} = \lim_{x \to 0} \left[ \frac{\frac{\sin 4x}{4x} \cdot 4x}{\frac{\sin 2x}{2x} \cdot 2x} \right]$$</li>
+          <li>Simplify the algebraic terms outside the trigonometric functions: $$\lim_{x \to 0} \left[ \frac{\sin 4x}{4x} \cdot \frac{2x}{\sin 2x} \cdot \frac{4x}{2x} \right] = 2 \cdot \lim_{x \to 0} \left[ \frac{\frac{\sin 4x}{4x}}{\frac{\sin 2x}{2x}} \right]$$</li>
+          <li>Apply the quotient rule of limits. Note that as $x \to 0$, both $4x \to 0$ and $2x \to 0$: $$\text{Limit} = 2 \cdot \frac{\lim_{4x \to 0} \frac{\sin 4x}{4x}}{\lim_{2x \to 0} \frac{\sin 2x}{2x}}$$</li>
+          <li>Substitute the standard limit values: $$\text{Limit} = 2 \cdot \frac{1}{1} = 2$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $2$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4. Derivatives</summary>
+    <p>The derivative of a function represents its instantaneous rate of change with respect to the independent variable. Geometrically, it is the slope of the tangent line to the curve at a given point.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Definition and the First Principle of Derivative</summary>
+      <ul>
+        <li><strong>Derivative at a Point:</strong> Let $f$ be a real-valued function and $a$ be a point in its domain. The derivative of $f$ at $a$, denoted by $f'(a)$, is defined as: $$f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}$$ provided this limit exists.</li>
+        <li><strong>First Principle of Derivative:</strong> The derivative function $f'(x)$ at any general point $x$ is defined as: $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algebra of Derivatives</summary>
+      <p><strong>Theorem 5:</strong> Let $f$ and $g$ be two functions whose derivatives are defined in a common domain. Let $u = f(x)$ and $v = g(x)$. Then:</p>
+      <ol>
+        <li><strong>Sum Rule:</strong> $$\frac{d}{dx}[f(x) + g(x)] = \frac{d}{dx}f(x) + \frac{d}{dx}g(x)$$</li>
+        <li><strong>Difference Rule:</strong> $$\frac{d}{dx}[f(x) - g(x)] = \frac{d}{dx}f(x) - \frac{d}{dx}g(x)$$</li>
+        <li><strong>Product Rule (Leibnitz Rule):</strong> $$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x)g(x) + f(x)g'(x) \quad \text{or} \quad (uv)' = u'v + uv'$$</li>
+        <li><strong>Quotient Rule:</strong> $$\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2} \quad \text{or} \quad \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$$</li>
+      </ol>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Standard Derivatives Reference Matrix</summary>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="width:100%; min-width: 550px; border-collapse: collapse; margin: 10px 0; text-align: left;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px;">Function Type $f(x)$</th>
+              <th style="padding: 8px;">Derivative Formula $f'(x)$</th>
+              <th style="padding: 8px;">Domain Constraints / Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;">Constant Function: $a$</td>
+              <td style="padding: 8px;">$0$</td>
+              <td style="padding: 8px;">For any fixed real number $a$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Power Function: $x^n$</td>
+              <td style="padding: 8px;">$n x^{n-1}$</td>
+              <td style="padding: 8px;">For any real number $n$ (Theorem 6)</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Sine Function: $\sin x$</td>
+              <td style="padding: 8px;">$\cos x$</td>
+              <td style="padding: 8px;">$x$ in radians</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Cosine Function: $\cos x$</td>
+              <td style="padding: 8px;">$-\sin x$</td>
+              <td style="padding: 8px;">$x$ in radians</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Tangent Function: $\tan x$</td>
+              <td style="padding: 8px;">$\sec^2 x$</td>
+              <td style="padding: 8px;">$x \neq (2k+1)\frac{\pi}{2}$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">Cotangent Function: $\cot x$</td>
+              <td style="padding: 8px;">$-\csc^2 x$</td>
+              <td style="padding: 8px;">$x \neq k\pi$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the derivative of $f(x) = \frac{1}{x}$ using the First Principle.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Set up the limit using the First Principle definition: $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} = \lim_{h \to 0} \frac{\frac{1}{x+h} - \frac{1}{x}}{h}$$</li>
+          <li>Simplify the numerator by finding a common denominator: $$\frac{1}{x+h} - \frac{1}{x} = \frac{x - (x+h)}{x(x+h)} = \frac{-h}{x(x+h)}$$</li>
+          <li>Substitute this back into the limit expression: $$f'(x) = \lim_{h \to 0} \frac{\frac{-h}{x(x+h)}}{h} = \lim_{h \to 0} \left[ \frac{-h}{h \cdot x(x+h)} \right]$$</li>
+          <li>Cancel the common factor $h$ (valid since $h \neq 0$): $$f'(x) = \lim_{h \to 0} \frac{-1}{x(x+h)}$$</li>
+          <li>Evaluate the limit by direct substitution of $h = 0$: $$f'(x) = \frac{-1}{x(x+0)} = -\frac{1}{x^2}$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $-\frac{1}{x^2}$</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the derivative of $f(x) = \cot x$ using the Quotient Rule.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Express $\cot x$ as a quotient of cosine and sine: $$f(x) = \frac{\cos x}{\sin x}$$</li>
+          <li>Identify the numerator $u = \cos x$ and denominator $v = \sin x$. Compute their individual derivatives: $$u' = -\sin x$$ $$v' = \cos x$$</li>
+          <li>Apply the Quotient Rule formula $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$: $$f'(x) = \frac{(-\sin x)(\sin x) - (\cos x)(\cos x)}{(\sin x)^2}$$</li>
+          <li>Simplify the numerator using the fundamental Pythagorean identity $\sin^2 x + \cos^2 x = 1$: $$\text{Numerator} = -\sin^2 x - \cos^2 x = -(\sin^2 x + \cos^2 x) = -1$$</li>
+          <li>Write the final simplified expression: $$f'(x) = \frac{-1}{\sin^2 x} = -\csc^2 x$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $-\csc^2 x$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+    <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: The Invention of Calculus</strong></p>
+    <ul style="margin: 0; padding-left: 20px;">
+      <li><strong>Historical Context &amp; Milestones:</strong> Calculus was independently developed in the late 17th century by two intellectual giants: Sir Isaac Newton (1642–1727) of England and Gottfried Wilhelm Leibniz (1646–1716) of Germany. Newton approached calculus from a physical perspective (fluxions and rates of motion), while Leibniz approached it from a geometric and philosophical perspective (sums of infinitesimals).</li>
+      <li><strong>Theoretical Foundations:</strong> Leibniz introduced the highly intuitive and enduring notation $\frac{dy}{dx}$ and the integral symbol $\int$. In the 19th century, mathematicians like Augustin-Louis Cauchy, Joseph-Louis Lagrange, and Karl Weierstrass placed calculus on a rigorous logical foundation using the formal concept of limits, resolving the logical ambiguities surrounding infinitesimals.</li>
+    </ul>
+  </div>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 12</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-11-introduction-to-three-dimensional.html"; } else { window.location.href = "11-chapter-13-statistics.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

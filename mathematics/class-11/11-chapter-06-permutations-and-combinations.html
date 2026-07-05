@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 6: Permutations and Combinations</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 6: Permutations and Combinations</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">1. Introduction &amp; Fundamental Principles of Counting</summary>
+    <p>The study of <span class="keyword">permutations and combinations</span> is concerned with determining the number of different ways of arranging and selecting objects without actually listing them. This forms the mathematical basis for probability and discrete analysis.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">The Fundamental Principle of Counting (Multiplication Principle)</summary>
+      <p>The fundamental principle of counting is stated as follows:</p>
+      <blockquote style="border-left: 3px solid #3b82f6; padding-left: 10px; margin-left: 10px;">
+        "If an event can occur in $m$ different ways, following which another event can occur in $n$ different ways, then the total number of occurrence of the events in the given order is $m \times n$."
+      </blockquote>
+      <p><strong>Generalization to $k$ Events:</strong> If an event $E_1$ can occur in $n_1$ ways, followed by $E_2$ in $n_2$ ways, followed by $E_3$ in $n_3$ ways, and so on up to $E_k$ in $n_k$ ways, then the total number of ways the sequence of events can occur is:</p>
+      $$n_1 \times n_2 \times n_3 \times \dots \times n_k$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Mohan has $3$ pants and $2$ shirts. How many different pairs of a pant and a shirt can he dress up with?</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Identify the first event: Choosing a pant. There are $3$ available options, so $m = 3$.</li>
+          <li>Identify the second event: Choosing a shirt. There are $2$ available options, so $n = 2$.</li>
+          <li>Apply the multiplication principle: Total pairs = $m \times n = 3 \times 2$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $6$ pairs</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the number of $4$-letter words, with or without meaning, which can be formed out of the letters of the word <span class="keyword">ROSE</span>, where the repetition of the letters is not allowed.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>There are $4$ vacant places to be filled by the $4$ distinct letters: R, O, S, E.</li>
+          <li>The first place can be filled in $4$ different ways by any of the $4$ letters.</li>
+          <li>Since repetition is not allowed, the second place can be filled in $3$ different ways by any of the remaining $3$ letters.</li>
+          <li>The third place can be filled in $2$ different ways.</li>
+          <li>The fourth place can be filled in $1$ way.</li>
+          <li>By the multiplication principle, the total number of ways is $4 \times 3 \times 2 \times 1$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $24$ words</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> How many $2$-digit even numbers can be formed from the digits $1, 2, 3, 4, 5$ if the digits can be repeated?</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>A $2$-digit number has a unit's place and a ten's place.</li>
+          <li>For the number to be even, the unit's place must be filled with an even digit. From the set $\{1, 2, 3, 4, 5\}$, the even digits are $2$ and $4$. Thus, the unit's place can be filled in $2$ ways.</li>
+          <li>Since repetition of digits is allowed, the ten's place can be filled by any of the $5$ given digits in $5$ ways.</li>
+          <li>By the multiplication principle, the total number of even numbers is $5 \times 2$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $10$ even numbers</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2. Permutations</summary>
+    <p>A <span class="keyword">permutation</span> is an arrangement in a definite order of a number of objects taken some or all at a time. In permutations, the order of arrangement is critical.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Factorial Notation</summary>
+      <p>The notation $n!$ (read as <span class="keyword">n factorial</span>) represents the product of the first $n$ natural numbers:</p>
+      $$n! = 1 \times 2 \times 3 \times \dots \times (n-1) \times n$$
+      <p><strong>Core Properties of Factorials:</strong></p>
+      <ul>
+        <li>$0! = 1$ (by definition)</li>
+        <li>$1! = 1$</li>
+        <li>$n! = n \times (n-1)!$</li>
+        <li>$n! = n \times (n-1) \times (n-2)!$ for $n \ge 2$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Permutations of Distinct Objects ($^nP_r$)</summary>
+      <p><strong>Theorem 1:</strong> The number of permutations of $n$ different objects taken $r$ at a time, where $0 &lt; r \le n$ and the objects do not repeat, is denoted by $^nP_r$ and is given by:</p>
+      $$^nP_r = n(n-1)(n-2)\dots(n-r+1)$$
+      <p>Multiplying the numerator and denominator by $(n-r)!$, we obtain the standard factorial formula:</p>
+      $$^nP_r = \frac{n!}{(n-r)!}, \quad 0 \le r \le n$$
+      <p><strong>Theorem 2:</strong> The number of permutations of $n$ different objects taken $r$ at a time, where repetition is allowed, is:</p>
+      $$n^r$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Permutations of Objects Not All Distinct</summary>
+      <p><strong>Theorem 3:</strong> The number of permutations of $n$ objects, where $p$ objects are of the same kind and the rest are all different, is:</p>
+      $$\frac{n!}{p!}$$
+      <p><strong>Theorem 4:</strong> The number of permutations of $n$ objects, where $p_1$ objects are of one kind, $p_2$ are of a second kind, ..., $p_k$ are of a $k$-th kind, and the rest (if any) are of different kinds, is:</p>
+      $$\frac{n!}{p_1! p_2! \dots p_k!}$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the number of permutations of the letters of the word <span class="keyword">ALLAHABAD</span>.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Count the total number of letters in ALLAHABAD: $n = 9$.</li>
+          <li>Identify the repeating letters and their frequencies:
+            <ul>
+              <li>Letter 'A' appears $4$ times ($p_1 = 4$).</li>
+              <li>Letter 'L' appears $2$ times ($p_2 = 2$).</li>
+              <li>The remaining letters (H, B, D) are distinct and appear $1$ time each.</li>
+            </ul>
+          </li>
+          <li>Apply Theorem 4: Total arrangements = $\frac{9!}{4! \times 2!}$.</li>
+          <li>Calculate the value:$$\frac{9 \times 8 \times 7 \times 6 \times 5 \times 4!}{4! \times 2} = \frac{15120}{2} = 7560$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $7560$ arrangements</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> How many numbers lying between $100$ and $1000$ can be formed with the digits $0, 1, 2, 3, 4, 5$, if the repetition of the digits is not allowed?</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Every number between $100$ and $1000$ is a $3$-digit number.</li>
+          <li>The total number of permutations of $6$ distinct digits taken $3$ at a time is:$$^6P_3 = \frac{6!}{(6-3)!} = 6 \times 5 \times 4 = 120$$</li>
+          <li>However, this includes numbers where $0$ is at the $100$'s place (which makes them $2$-digit numbers).</li>
+          <li>To find the number of such invalid configurations, fix $0$ at the $100$'s place. The remaining $2$ places must be filled using the remaining $5$ digits:$$^5P_2 = \frac{5!}{(5-2)!} = 5 \times 4 = 20$$</li>
+          <li>Subtract the invalid configurations from the total permutations:$$\text{Required Numbers} = ^6P_3 - ^5P_2 = 120 - 20 = 100$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $100$ numbers</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">3. Combinations</summary>
+    <p>A <span class="keyword">combination</span> is a selection of some or all of a number of different objects where the order of selection does not matter.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Mathematical Definition &amp; Relation to Permutations</summary>
+      <p>The number of combinations of $n$ different objects taken $r$ at a time is denoted by $^nC_r$ and is given by:</p>
+      $$^nC_r = \frac{n!}{r!(n-r)!}, \quad 0 \le r \le n$$
+      <p><strong>Theorem 5 (Relation between $^nP_r$ and $^nC_r$):</strong></p>
+      $$^nP_r = ^nC_r \times r!, \quad 0 &lt; r \le n$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Core Properties &amp; Theorems of Combinations</summary>
+      <ul>
+        <li><strong>Symmetric Property:</strong> Selecting $r$ objects is equivalent to rejecting $(n-r)$ objects:$$^nC_r = ^nC_{n-r}$$</li>
+        <li><strong>Equality Condition:</strong> If $^nC_a = ^nC_b$, then either:$$a = b \quad \text{or} \quad n = a + b$$</li>
+        <li><strong>Theorem 6 (Pascal's Identity):</strong>$$^nC_r + ^nC_{r-1} = ^{n+1}C_r$$</li>
+        <li><strong>Boundary Values:</strong>$$^nC_0 = 1, \quad ^nC_n = 1$$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> If $^nC_9 = ^nC_8$, find $^nC_{17}$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Use the equality condition $^nC_a = ^nC_b \implies n = a + b$ (since $9 \neq 8$).</li>
+          <li>Calculate $n$:$$n = 9 + 8 = 17$$</li>
+          <li>Substitute $n = 17$ into the target expression $^nC_{17}$:$$^{17}C_{17} = 1$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $1</p>
+      </blockquote>
+
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> A committee of $3$ persons is to be constituted from a group of $2$ men and $3$ women. In how many ways can this be done? How many of these committees would consist of $1$ man and $2$ women?</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Part 1: Total ways to form the committee</strong>
+            <ul>
+              <li>Total number of people = $2 \text{ men} + 3 \text{ women} = 5$ people.</li>
+              <li>We need to select $3$ people out of $5$. Since order does not matter, use combinations:$$^5C_3 = \frac{5!}{3!2!} = \frac{5 \times 4}{2} = 10$$</li>
+            </ul>
+          </li>
+          <li><strong>Part 2: Committee with $1$ man and $2$ women</strong>
+            <ul>
+              <li>Select $1$ man from $2$ available men: $^2C_1 = 2$ ways.</li>
+              <li>Select $2$ women from $3$ available women: $^3C_2 = ^3C_1 = 3$ ways.</li>
+              <li>By the multiplication principle, the total number of such committees is:$$^2C_1 \times ^3C_2 = 2 \times 3 = 6$$</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Total committees = $10$; Committees with $1$ man and $2$ women = $6$</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4. Advanced Applications &amp; Seating Methods</summary>
+    <p>This section covers complex counting problems involving dictionary ordering, restricted permutations, and the gap method for seating arrangements.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Dictionary Order (Rank of a Word)</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the $50$-th word if all permutations of the letters of the word <span class="keyword">AGAIN</span> are arranged as in a dictionary.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>The letters of AGAIN in alphabetical order are: A, A, G, I, N.</li>
+          <li><strong>Words starting with A:</strong> Fix A at the first position. Arrange the remaining letters (A, G, I, N):$$\text{Number of words} = 4! = 24$$</li>
+          <li><strong>Words starting with G:</strong> Fix G at the first position. Arrange the remaining letters (A, A, I, N):$$\text{Number of words} = \frac{4!}{2!} = 12$$Cumulative total = $24 + 12 = 36$.</li>
+          <li><strong>Words starting with I:</strong> Fix I at the first position. Arrange the remaining letters (A, A, G, N):$$\text{Number of words} = \frac{4!}{2!} = 12$$Cumulative total = $36 + 12 = 48$.</li>
+          <li><strong>Words starting with N:</strong> The next words will start with N.
+            <ul>
+              <li>The $49$-th word (first word starting with N alphabetically): <span class="keyword">NAAGI</span></li>
+              <li>The $50$-th word (next alphabetical word): <span class="keyword">NAAIG</span></li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> NAAIG</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">The Gap Method (Restricted Seating)</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> In how many ways can $5$ girls and $3$ boys be seated in a row so that no two boys are together?</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>First, seat the $5$ girls in a row. This can be done in:$$5! = 120 \text{ ways}$$</li>
+          <li>This arrangement creates $6$ potential gaps (including the ends) where boys can be seated:$$\times \text{ G } \times \text{ G } \times \text{ G } \times \text{ G } \times \text{ G } \times$$</li>
+          <li>Select $3$ gaps out of the $6$ available gaps and arrange the $3$ boys in them:$$^6P_3 = \frac{6!}{(6-3)!} = 6 \times 5 \times 4 = 120 \text{ ways}$$</li>
+          <li>By the multiplication principle, the total number of seating arrangements is:$$\text{Total Ways} = 5! \times ^6P_3 = 120 \times 120 = 14400$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $14400$ ways</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">5. Historical Chronicle &amp; Reference Matrix</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Evolution of Combinatorial Mathematics</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Ancient Indian Contributions:</strong>
+          <ul>
+            <li>The concepts of permutations and combinations can be traced back to Jainism in India under the term <span class="keyword">Vikalpa</span>.</li>
+            <li><strong>Sushruta (6th Century B.C.):</strong> In his medical treatise <em>Sushruta Samhita</em>, he calculated that $63$ combinations can be made out of $6$ different tastes taken one at a time, two at a time, etc. ($2^6 - 1 = 63$).</li>
+            <li><strong>Mahavira (c. 850 A.D.):</strong> Credited with providing the first general algebraic formulae for permutations and combinations.</li>
+            <li><strong>Bhaskaracharya (b. 1114 A.D.):</strong> Treated the subject under the name <span class="keyword">Anka Pasha</span> in his famous work <em>Lilavati</em>.</li>
+          </ul>
+        </li>
+        <li><strong>Western Formalization:</strong>
+          <ul>
+            <li><strong>Levi Ben Gerson (1321 A.D.):</strong> Formulated explicit proofs for $^nP_r$, $^nP_n$, and $^nC_r$.</li>
+            <li><strong>Jacob Bernoulli (1654–1705):</strong> His posthumous work <em>Ars Conjectandi</em> (1713) provided the first complete, systematic treatment of the subject as known today.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Core Formula Reference Matrix</summary>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="width: 100%; min-width: 600px; border-collapse: collapse; text-align: left;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px; border: 1px solid #cbd5e1;">Concept / Operation</th>
+              <th style="padding: 8px; border: 1px solid #cbd5e1;">Mathematical Formula</th>
+              <th style="padding: 8px; border: 1px solid #cbd5e1;">Key Constraints / Conditions</th>
+              <th style="padding: 8px; border: 1px solid #cbd5e1;">Systemic Role &amp; Application</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;"><strong>Permutations (Distinct, No Repetition)</strong></td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$$^nP_r = \frac{n!}{(n-r)!}$$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$0 \le r \le n$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">Arranging distinct objects where order is critical.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;"><strong>Permutations (Distinct, Repetition Allowed)</strong></td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$$n^r$$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$n \ge 1, r \ge 0$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">Arranging objects when elements can be reused.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;"><strong>Permutations (Non-Distinct Objects)</strong></td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$$\frac{n!}{p_1! p_2! \dots p_k!}$$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$p_1 + p_2 + \dots + p_k \le n$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">Arranging words or sequences with repeating elements.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;"><strong>Combinations (No Repetition)</strong></td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$$^nC_r = \frac{n!}{r!(n-r)!}$$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$0 \le r \le n$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">Selecting groups or subsets where order is irrelevant.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;"><strong>Pascal's Identity</strong></td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$$^nC_r + ^nC_{r-1} = ^{n+1}C_r$$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">$1 \le r \le n$</td>
+              <td style="padding: 8px; border: 1px solid #cbd5e1;">Simplifying sum of combinations; binomial expansions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-05-linear-inequalities.html"; } else { window.location.href = "11-chapter-07-binomial-theorem.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

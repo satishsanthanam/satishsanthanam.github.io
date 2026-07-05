@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 12 (Book 2) — Chapter 5: Three Dimensional Geometry
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 12 (Book 2) — Chapter 5: Three Dimensional Geometry
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.1 Direction Cosines and Direction Ratios of a Line
+</summary>
+<p>
+In three-dimensional space, a directed line's orientation is uniquely determined by the angles it makes with the positive coordinate axes. These angles are fundamental to vector and Cartesian representations of spatial geometry.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Historical Chronicle / Epigraph: Leonhard Euler (1707-1783)
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Historical Context &amp; Milestones:
+  </strong>
+  One of the most prolific mathematicians in history, Euler made foundational contributions to mechanics, fluid dynamics, optics, astronomy, and geometry. He introduced much of the modern mathematical terminology and notation, including the concept of a mathematical function.
+</li>
+<li>
+  <strong>
+  Theoretical Foundations:
+</strong>
+His work laid the groundwork for analytical geometry in three dimensions, standardizing the use of coordinate systems and algebraic methods to solve spatial geometric problems.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Direction Angles and Direction Cosines
+</summary>
+<p>
+If a directed line $L$ passing through the origin makes angles $\alpha$, $\beta$, and $\gamma$ with the positive $x$, $y$, and $z$-axes respectively, then:
+</p>
+<ul>
+  <li>
+    The angles $\alpha, \beta, \gamma$ are called the
+    <span class="keyword">
+    direction angles
+  </span>
+  of the line.
+</li>
+<li>
+  The cosines of these angles, namely $\cos\alpha$, $\cos\beta$, and $\cos\gamma$, are called the
+  <span class="keyword">
+  direction cosines
+</span>
+(d.c.'s) of the line, typically denoted by $l$, $m$, and $n$:$$l = \cos\alpha, \quad m = \cos\beta, \quad n = \cos\gamma$$
+</li>
+<li>
+  <strong>
+  Fundamental Identity:
+</strong>
+The sum of the squares of the direction cosines of any line is always equal to unity:$$l^2 + m^2 + n^2 = 1$$
+</li>
+<li>
+  <strong>
+  Reversal of Direction:
+</strong>
+If the direction of the line is reversed, the direction angles are replaced by their supplements $(\pi - \alpha, \pi - \beta, \pi - \gamma)$, which reverses the signs of the direction cosines to $-l, -m, -n$.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Direction Ratios
+</summary>
+<p>
+  Any three numbers $a$, $b$, and $c$ that are proportional to the direction cosines $l$, $m$, and $n$ of a line are called the
+  <span class="keyword">
+  direction ratios
+</span>
+(d.r.'s) or direction numbers of the line.
+</p>
+<ul>
+  <li>
+  Thus, for some non-zero real number $\lambda$:$$a = \lambda l, \quad b = \lambda m, \quad c = \lambda n$$
+</li>
+<li>
+  <strong>
+  Relationship between d.c.'s and d.r.'s:
+</strong>
+$$l = \pm \frac{a}{\sqrt{a^2 + b^2 + c^2}}, \quad m = \pm \frac{b}{\sqrt{a^2 + b^2 + c^2}}, \quad n = \pm \frac{c}{\sqrt{a^2 + b^2 + c^2}}$$The sign (positive or negative) is chosen consistently depending on the desired direction of the line.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Direction Cosines of a Line Passing Through Two Points
+</summary>
+<p>
+For a unique line passing through two given points $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$:
+</p>
+<ul>
+  <li>
+  The distance $PQ$ is given by:$$PQ = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$
+</li>
+<li>
+The direction cosines of the line segment $PQ$ are:$$l = \frac{x_2 - x_1}{PQ}, \quad m = \frac{y_2 - y_1}{PQ}, \quad n = \frac{z_2 - z_1}{PQ}$$
+</li>
+<li>
+The direction ratios of the line segment joining $P$ and $Q$ can be taken simply as:$$x_2 - x_1, \quad y_2 - y_1, \quad z_2 - z_1$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.2 Equation of a Line in Space
+</summary>
+<p>
+A line in three-dimensional space can be uniquely determined under two primary geometric conditions: passing through a point parallel to a given vector, or passing through two distinct points.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Line Through a Given Point and Parallel to a Given Vector
+</summary>
+<p>
+Let the line pass through a point $A$ with position vector $\vec{a}$ and be parallel to a non-zero vector $\vec{b}$.
+</p>
+<ul>
+  <li>
+    <strong>
+    Vector Equation:
+  </strong>
+  $$\vec{r} = \vec{a} + \lambda \vec{b}$$where $\vec{r}$ is the position vector of any arbitrary point $P(x, y, z)$ on the line, and $\lambda$ is a real parameter.
+</li>
+<li>
+  <strong>
+  Cartesian Equation:
+</strong>
+If $A$ is $(x_1, y_1, z_1)$ and the direction ratios of the parallel vector $\vec{b}$ are $a, b, c$:$$\frac{x - x_1}{a} = \frac{y - y_1}{b} = \frac{z - z_1}{c}$$
+</li>
+<li>
+If the direction cosines $l, m, n$ of the line are known instead of direction ratios, the equation is:$$\frac{x - x_1}{l} = \frac{y - y_1}{m} = \frac{z - z_1}{n}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Line Passing Through Two Given Points
+</summary>
+<p>
+Let the line pass through two points $A$ and $B$ with position vectors $\vec{a}$ and $\vec{b}$ respectively.
+</p>
+<ul>
+  <li>
+    <strong>
+    Vector Equation:
+  </strong>
+  $$\vec{r} = \vec{a} + \lambda(\vec{b} - \vec{a})$$
+</li>
+<li>
+  <strong>
+  Cartesian Equation:
+</strong>
+If the points are $P(x_1, y_1, z_1)$ and $Q(x_2, y_2, z_2)$:$$\frac{x - x_1}{x_2 - x_1} = \frac{y - y_1}{y_2 - y_1} = \frac{z - z_1}{z_2 - z_1}$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.3 Angle Between Two Lines
+</summary>
+<p>
+The angle between two lines in space is defined as the angle between their parallel vectors passing through the origin.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Mathematical Formulations
+</summary>
+<ul>
+  <li>
+    <strong>
+    Vector Form:
+  </strong>
+  If the lines are parallel to vectors $\vec{b}_1$ and $\vec{b}_2$, the acute angle $\theta$ between them is:$$\cos\theta = \left| \frac{\vec{b}_1 \cdot \vec{b}_2}{|\vec{b}_1| |\vec{b}_2|} \right|$$
+</li>
+<li>
+  <strong>
+  Cartesian Form:
+</strong>
+If the direction ratios of the two lines are $a_1, b_1, c_1$ and $a_2, b_2, c_2$:$$\cos\theta = \left| \frac{a_1 a_2 + b_1 b_2 + c_1 c_2}{\sqrt{a_1^2 + b_1^2 + c_1^2}\sqrt{a_2^2 + b_2^2 + c_2^2}} \right|$$
+</li>
+<li>
+  <strong>
+  Using Direction Cosines:
+</strong>
+If the direction cosines are $l_1, m_1, n_1$ and $l_2, m_2, n_2$:$$\cos\theta = |l_1 l_2 + m_1 m_2 + n_1 n_2|$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Conditions for Perpendicularity and Parallelism
+</summary>
+<ul>
+  <li>
+    <strong>
+    Perpendicular Lines ($\theta = 90^\circ$):
+  </strong>
+  $$a_1 a_2 + b_1 b_2 + c_1 c_2 = 0 \quad \text{or} \quad l_1 l_2 + m_1 m_2 + n_1 n_2 = 0$$
+</li>
+<li>
+  <strong>
+  Parallel Lines ($\theta = 0^\circ$):
+</strong>
+$$\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2}$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  11.4 Shortest Distance Between Two Lines
+</summary>
+<p>
+  In three-dimensional space, lines can be intersecting, parallel, or skew.
+  <span class="keyword">
+  Skew lines
+</span>
+are lines that are neither parallel nor intersecting; they lie in different planes.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Shortest Distance Between Skew Lines
+</summary>
+<p>
+The shortest distance between two skew lines is the length of the common perpendicular segment joining them.
+</p>
+<ul>
+  <li>
+    <strong>
+    Vector Form:
+  </strong>
+  For lines $\vec{r} = \vec{a}_1 + \lambda \vec{b}_1$ and $\vec{r} = \vec{a}_2 + \mu \vec{b}_2$:$$d = \left| \frac{(\vec{b}_1 \times \vec{b}_2) \cdot (\vec{a}_2 - \vec{a}_1)}{|\vec{b}_1 \times \vec{b}_2|} \right|$$
+</li>
+<li>
+  <strong>
+  Cartesian Form:
+</strong>
+For lines $\frac{x-x_1}{a_1} = \frac{y-y_1}{b_1} = \frac{z-z_1}{c_1}$ and $\frac{x-x_2}{a_2} = \frac{y-y_2}{b_2} = \frac{z-z_2}{c_2}$:$$d = \frac{\begin{vmatrix} x_2 - x_1 & y_2 - y_1 & z_2 - z_1 \\ a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \end{vmatrix}}{\sqrt{(b_1 c_2 - b_2 c_1)^2 + (c_1 a_2 - c_2 a_1)^2 + (a_1 b_2 - a_2 b_1)^2}}$$
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Shortest Distance Between Parallel Lines
+</summary>
+<p>
+If two lines are parallel, they are coplanar and have the same direction vector $\vec{b}$.
+</p>
+<ul>
+  <li>
+    <strong>
+    Vector Form:
+  </strong>
+  For lines $\vec{r} = \vec{a}_1 + \lambda \vec{b}$ and $\vec{r} = \vec{a}_2 + \mu \vec{b}$:$$d = \left| \frac{\vec{b} \times (\vec{a}_2 - \vec{a}_1)}{|\vec{b}|} \right|$$
+</li>
+</ul>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Core Formulas &amp; Reference Matrix
+</summary>
+<table border="1" cellpadding="6" style="border-collapse: collapse; width: 100%; margin-top: 10px;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th>
+      Geometric Concept
+    </th>
+    <th>
+    Vector Representation
+  </th>
+  <th>
+  Cartesian Representation
+</th>
+<th>
+Key Conditions / Properties
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <strong>
+      Direction Cosines (d.c.'s)
+    </strong>
+  </td>
+  <td>
+  $\hat{u} = l\hat{i} + m\hat{j} + n\hat{k}$
+</td>
+<td>
+$l = \cos\alpha, m = \cos\beta, n = \cos\gamma$
+</td>
+<td>
+$l^2 + m^2 + n^2 = 1$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Line through $\vec{a}$ parallel to $\vec{b}$
+  </strong>
+</td>
+<td>
+$\vec{r} = \vec{a} + \lambda \vec{b}$
+</td>
+<td>
+$\frac{x-x_1}{a} = \frac{y-y_1}{b} = \frac{z-z_1}{c}$
+</td>
+<td>
+$\vec{b} = a\hat{i} + b\hat{j} + c\hat{k}$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Line through two points
+  </strong>
+</td>
+<td>
+$\vec{r} = \vec{a} + \lambda(\vec{b} - \vec{a})$
+</td>
+<td>
+$\frac{x-x_1}{x_2-x_1} = \frac{y-y_1}{y_2-y_1} = \frac{z-z_1}{z_2-z_1}$
+</td>
+<td>
+Direction ratios: $x_2-x_1, y_2-y_1, z_2-z_1$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Angle between two lines
+  </strong>
+</td>
+<td>
+$\cos\theta = \left|\frac{\vec{b}_1 \cdot \vec{b}_2}{|\vec{b}_1||\vec{b}_2|}\right|$
+</td>
+<td>
+$\cos\theta = \left|\frac{a_1 a_2 + b_1 b_2 + c_1 c_2}{\sqrt{\sum a_1^2}\sqrt{\sum a_2^2}}\right|$
+</td>
+<td>
+Perpendicular if $\vec{b}_1 \cdot \vec{b}_2 = 0$
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Shortest Distance (Skew Lines)
+  </strong>
+</td>
+<td>
+$d = \left|\frac{(\vec{b}_1 \times \vec{b}_2) \cdot (\vec{a}_2 - \vec{a}_1)}{|\vec{b}_1 \times \vec{b}_2|}\right|$
+</td>
+<td>
+Determinant ratio form
+</td>
+<td>
+$d = 0$ if lines intersect
+</td>
+</tr>
+<tr>
+  <td>
+    <strong>
+    Shortest Distance (Parallel Lines)
+  </strong>
+</td>
+<td>
+$d = \left|\frac{\vec{b} \times (\vec{a}_2 - \vec{a}_1)}{|\vec{b}|}\right|$
+</td>
+<td>
+N/A
+</td>
+<td>
+Lines share direction vector $\vec{b}$
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the direction cosines of the line passing through the two points $P(-2, 4, -5)$ and $Q(1, 2, 3)$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the coordinates of the given points:$$P(x_1, y_1, z_1) = (-2, 4, -5) \quad \text{and} \quad Q(x_2, y_2, z_2) = (1, 2, 3)$$
+</li>
+<li>
+Compute the direction ratios of the line segment $PQ$:$$x_2 - x_1 = 1 - (-2) = 3$$$$y_2 - y_1 = 2 - 4 = -2$$$$z_2 - z_1 = 3 - (-5) = 8$$
+</li>
+<li>
+Calculate the distance $PQ$ using the distance formula:$$PQ = \sqrt{(3)^2 + (-2)^2 + (8)^2} = \sqrt{9 + 4 + 64} = \sqrt{77}$$
+</li>
+<li>
+Determine the direction cosines ($l, m, n$) using the ratio of direction ratios to the distance $PQ$:$$l = \frac{3}{\sqrt{77}}, \quad m = \frac{-2}{\sqrt{77}}, \quad n = \frac{8}{\sqrt{77}}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The direction cosines of the line joining the two points are $\left(\frac{3}{\sqrt{77}}, \frac{-2}{\sqrt{77}}, \frac{8}{\sqrt{77}}\right)$.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find the shortest distance between the skew lines $l_1$ and $l_2$ whose vector equations are:$$\vec{r} = (\hat{i} + \hat{j}) + \lambda(2\hat{i} - \hat{j} + \hat{k})$$$$\vec{r} = (2\hat{i} + \hat{j} - \hat{k}) + \mu(3\hat{i} - 5\hat{j} + 2\hat{k})$$
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Identify the position vectors $\vec{a}_1, \vec{a}_2$ and direction vectors $\vec{b}_1, \vec{b}_2$:$$\vec{a}_1 = \hat{i} + \hat{j}, \quad \vec{b}_1 = 2\hat{i} - \hat{j} + \hat{k}$$$$\vec{a}_2 = 2\hat{i} + \hat{j} - \hat{k}, \quad \vec{b}_2 = 3\hat{i} - 5\hat{j} + 2\hat{k}$$
+</li>
+<li>
+Compute the difference vector $\vec{a}_2 - \vec{a}_1$:$$\vec{a}_2 - \vec{a}_1 = (2-1)\hat{i} + (1-1)\hat{j} + (-1-0)\hat{k} = \hat{i} - \hat{k}$$
+</li>
+<li>
+Calculate the cross product $\vec{b}_1 \times \vec{b}_2$:$$\vec{b}_1 \times \vec{b}_2 = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 2 & -1 & 1 \\ 3 & -5 & 2 \end{vmatrix}$$$$\vec{b}_1 \times \vec{b}_2 = \hat{i}(-2 - (-5)) - \hat{j}(4 - 3) + \hat{k}(-10 - (-3)) = 3\hat{i} - \hat{j} - 7\hat{k}$$
+</li>
+<li>
+Calculate the magnitude of the cross product $|\vec{b}_1 \times \vec{b}_2|$:$$|\vec{b}_1 \times \vec{b}_2| = \sqrt{3^2 + (-1)^2 + (-7)^2} = \sqrt{9 + 1 + 49} = \sqrt{59}$$
+</li>
+<li>
+Compute the dot product $(\vec{b}_1 \times \vec{b}_2) \cdot (\vec{a}_2 - \vec{a}_1)$:$$(\vec{b}_1 \times \vec{b}_2) \cdot (\vec{a}_2 - \vec{a}_1) = (3\hat{i} - \hat{j} - 7\hat{k}) \cdot (\hat{i} - \hat{k}) = 3(1) + (-1)(0) + (-7)(-1) = 3 + 7 = 10$$
+</li>
+<li>
+Apply the shortest distance formula:$$d = \left| \frac{(\vec{b}_1 \times \vec{b}_2) \cdot (\vec{a}_2 - \vec{a}_1)}{|\vec{b}_1 \times \vec{b}_2|} \right| = \frac{10}{\sqrt{59}}$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The shortest distance between the two lines is $\frac{10}{\sqrt{59}}$ units.
+</p>
+</blockquote>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &&times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 12 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-2-chapter-04-vector-algebra.html"; } else { window.location.href = "12-2-chapter-06-linear-programming.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

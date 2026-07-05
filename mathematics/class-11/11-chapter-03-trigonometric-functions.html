@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 3: Trigonometric Functions</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+  
+  <h1>Mathematics: Class 11 — Chapter 3: Trigonometric Functions</h1>
+  
+  <details class="topic-box">
+    <summary class="topic-title">3.1 &amp; 3.2 Introduction &amp; Angle Measurement</summary>
+    <p>Trigonometry, derived from the Greek words <span class="keyword">trigon</span> (triangle) and <span class="keyword">metron</span> (measure), originally focused on measuring the sides and angles of a triangle. Modern trigonometry has expanded into a foundational branch of mathematics with applications in seismology, electrical circuit design, atomic state description, oceanography, and acoustics.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Angles and Direction of Rotation</summary>
+      <p>An angle is a measure of rotation of a given ray about its initial point. The original ray is called the <span class="keyword">initial side</span>, and the final position of the ray after rotation is called the <span class="keyword">terminal side</span>. The point of rotation is the <span class="keyword">vertex</span>.</p>
+      <ul>
+        <li><strong>Positive Angle:</strong> Generated if the direction of rotation is anticlockwise.</li>
+        <li><strong>Negative Angle:</strong> Generated if the direction of rotation is clockwise.</li>
+      </ul>
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Units of Angle Measurement</summary>
+      <p>Angles are primarily measured in two systems: <span class="keyword">degree measure</span> and <span class="keyword">radian measure</span>.</p>
+      <ul>
+        <li><strong>Degree Measure:</strong> If a rotation from the initial side to the terminal side is $\frac{1}{360}$ of a revolution, the angle is said to have a measure of one degree ($1^\circ$).
+          <ul>
+            <li>A degree is divided into 60 minutes: $1^\circ = 60'$.</li>
+            <li>A minute is divided into 60 seconds: $1' = 60''$.</li>
+          </ul>
+        </li>
+        <li><strong>Radian Measure:</strong> The angle subtended at the centre of a unit circle (radius 1 unit) by an arc of length 1 unit is defined as 1 radian.
+          <ul>
+            <li>In a circle of radius $r$, an arc of length $l$ subtends an angle $\theta$ radians at the centre, given by: $$\theta = \frac{l}{r} \quad \text{or} \quad l = r\theta$$</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Relation Between Radian, Real Numbers, and Degrees</summary>
+      <p>Radian measures and real numbers can be considered as one and the same. By placing a real number line tangent to a unit circle at point $A(1,0)$, wrapping the positive line anticlockwise and the negative line clockwise associates every real number with a unique radian angle.</p>
+      <p>Since a complete revolution of a circle subtends $2\pi$ radians at the centre, we establish the fundamental equivalence:</p>
+      $$2\pi \text{ radians} = 360^\circ \implies \pi \text{ radians} = 180^\circ$$
+      <p>This yields the following conversion formulas:</p>
+      <ul>
+        <li><strong>Radian to Degree:</strong> $1 \text{ radian} = \frac{180^\circ}{\pi} \approx 57^\circ 16'$ approximately.</li>
+        <li><strong>Degree to Radian:</strong> $1^\circ = \frac{\pi}{180} \text{ radians} \approx 0.01746 \text{ radians}$ approximately.</li>
+      </ul>
+      <p>The table below lists the radian equivalents of common degree measures:</p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="border-collapse: collapse; width: 100%; min-width: 500px; text-align: center; margin: 10px 0;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 6px;">Degree Measure</th>
+              <th style="padding: 6px;">$30^\circ$</th>
+              <th style="padding: 6px;">$45^\circ$</th>
+              <th style="padding: 6px;">$60^\circ$</th>
+              <th style="padding: 6px;">$90^\circ$</th>
+              <th style="padding: 6px;">$180^\circ$</th>
+              <th style="padding: 6px;">$270^\circ$</th>
+              <th style="padding: 6px;">$360^\circ$</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 6px;"><strong>Radian Measure</strong></td>
+              <td style="padding: 6px;">$\frac{\pi}{6}$</td>
+              <td style="padding: 6px;">$\frac{\pi}{4}$</td>
+              <td style="padding: 6px;">$\frac{\pi}{3}$</td>
+              <td style="padding: 6px;">$\frac{\pi}{2}$</td>
+              <td style="padding: 6px;">$\pi$</td>
+              <td style="padding: 6px;">$\frac{3\pi}{2}$</td>
+              <td style="padding: 6px;">$2\pi$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </details>
+  
+  <details class="topic-box">
+    <summary class="topic-title">3.3 Trigonometric Functions &amp; Quadrant Behavior</summary>
+    <p>Trigonometric ratios are generalized to <span class="keyword">trigonometric functions</span> for any real angle using a unit circle coordinate system.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Unit Circle Definition</summary>
+      <p>Let $P(a, b)$ be any point on a unit circle centered at the origin $O(0,0)$ such that the angle $AOP = x$ radians. The arc length $AP = x$. We define:</p>
+      $$\cos x = a \quad \text{and} \quad \sin x = b$$
+      <p>Since $P(a,b)$ lies on the unit circle $a^2 + b^2 = 1$, we obtain the fundamental identity:</p>
+      $$\cos^2 x + \sin^2 x = 1$$
+      <p>Angles that are integral multiples of $\frac{\pi}{2}$ are called <span class="keyword">quadrantal angles</span>. Their coordinates yield:</p>
+      <ul>
+        <li>$\cos 0 = 1, \sin 0 = 0$</li>
+        <li>$\cos \frac{\pi}{2} = 0, \sin \frac{\pi}{2} = 1$</li>
+        <li>$\cos \pi = -1, \sin \pi = 0$</li>
+        <li>$\cos \frac{3\pi}{2} = 0, \sin \frac{3\pi}{2} = -1$</li>
+        <li>$\cos 2\pi = 1, \sin 2\pi = 0$</li>
+      </ul>
+      <p>Since a complete revolution returns to the same point, trigonometric functions are periodic with period $2\pi$:</p>
+      $$\sin(2n\pi + x) = \sin x, \quad \cos(2n\pi + x) = \cos x \quad (n \in \mathbb{Z})$$
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Domain, Range, and Signs in Quadrants</summary>
+      <p>The domain and range of the six trigonometric functions are defined as follows:</p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="border-collapse: collapse; width: 100%; min-width: 500px; text-align: left; margin: 10px 0;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 6px;">Function</th>
+              <th style="padding: 6px;">Domain</th>
+              <th style="padding: 6px;">Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 6px;">$\sin x$</td>
+              <td style="padding: 6px;">$\mathbb{R}$</td>
+              <td style="padding: 6px;">$[-1, 1]$</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;">$\cos x$</td>
+              <td style="padding: 6px;">$\mathbb{R}$</td>
+              <td style="padding: 6px;">$[-1, 1]$</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;">$\tan x$</td>
+              <td style="padding: 6px;">$\mathbb{R} \setminus \{(2n+1)\frac{\pi}{2} : n \in \mathbb{Z}\}$</td>
+              <td style="padding: 6px;">$\mathbb{R}$</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;">$\cot x$</td>
+              <td style="padding: 6px;">$\mathbb{R} \setminus \{n\pi : n \in \mathbb{Z}\}$</td>
+              <td style="padding: 6px;">$\mathbb{R}$</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;">$\sec x$</td>
+              <td style="padding: 6px;">$\mathbb{R} \setminus \{(2n+1)\frac{\pi}{2} : n \in \mathbb{Z}\}$</td>
+              <td style="padding: 6px;">$(-\infty, -1] \cup [1, \infty)$</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;">$\csc x$</td>
+              <td style="padding: 6px;">$\mathbb{R} \setminus \{n\pi : n \in \mathbb{Z}\}$</td>
+              <td style="padding: 6px;">$(-\infty, -1] \cup [1, \infty)$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The signs of the trigonometric functions depend on the quadrant of the terminal side:</p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="border-collapse: collapse; width: 100%; min-width: 500px; text-align: center; margin: 10px 0;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 6px;">Quadrant</th>
+              <th style="padding: 6px;">I ($0 &lt; x &lt; \frac{\pi}{2}$)</th>
+              <th style="padding: 6px;">II ($\frac{\pi}{2} &lt; x &lt; \pi$)</th>
+              <th style="padding: 6px;">III ($\pi &lt; x &lt; \frac{3\pi}{2}$)</th>
+              <th style="padding: 6px;">IV ($\frac{3\pi}{2} &lt; x &lt; 2\pi$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 6px;">$\sin x$, $\csc x$</td>
+              <td style="padding: 6px;">$+$</td>
+              <td style="padding: 6px;">$+$</td>
+              <td style="padding: 6px;">$-$</td>
+              <td style="padding: 6px;">$-$</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;">$\cos x$, $\sec x$</td>
+              <td style="padding: 6px;">$+$</td>
+              <td style="padding: 6px;">$-$</td>
+              <td style="padding: 6px;">$-$</td>
+              <td style="padding: 6px;">$+$</td>
+            </tr>
+            <tr>
+              <td style="padding: 6px;">$\tan x$, $\cot x$</td>
+              <td style="padding: 6px;">$+$</td>
+              <td style="padding: 6px;">$-$</td>
+              <td style="padding: 6px;">$+$</td>
+              <td style="padding: 6px;">$-$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </details>
+  
+  <details class="topic-box">
+    <summary class="topic-title">3.4 Trigonometric Identities &amp; Compound Angle Formulas</summary>
+    <p>Trigonometric identities establish relationships between functions for sums, differences, and multiples of angles.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Fundamental Pythagorean Identities</summary>
+      <ul>
+        <li>$\cos^2 x + \sin^2 x = 1$</li>
+        <li>$1 + \tan^2 x = \sec^2 x$</li>
+        <li>$1 + \cot^2 x = \csc^2 x$</li>
+      </ul>
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Sum and Difference of Two Angles (Compound Angles)</summary>
+      <ul>
+        <li>$\cos(x + y) = \cos x \cos y - \sin x \sin y$</li>
+        <li>$\cos(x - y) = \cos x \cos y + \sin x \sin y$</li>
+        <li>$\sin(x + y) = \sin x \cos y + \cos x \sin y$</li>
+        <li>$\sin(x - y) = \sin x \cos y - \cos x \sin y$</li>
+        <li>$\tan(x + y) = \frac{\tan x + \tan y}{1 - \tan x \tan y}$</li>
+        <li>$\tan(x - y) = \frac{\tan x - \tan y}{1 + \tan x \tan y}$</li>
+        <li>$\cot(x + y) = \frac{\cot x \cot y - 1}{\cot y + \cot x}$</li>
+        <li>$\cot(x - y) = \frac{\cot x \cot y + 1}{\cot y - \cot x}$</li>
+      </ul>
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Multiple Angle Formulas</summary>
+      <p><strong>Double Angle Formulas:</strong></p>
+      <ul>
+        <li>$\sin 2x = 2\sin x \cos x = \frac{2\tan x}{1 + \tan^2 x}$</li>
+        <li>$\cos 2x = \cos^2 x - \sin^2 x = 2\cos^2 x - 1 = 1 - 2\sin^2 x = \frac{1 - \tan^2 x}{1 + \tan^2 x}$</li>
+        <li>$\tan 2x = \frac{2\tan x}{1 - \tan^2 x}$</li>
+      </ul>
+      <p><strong>Triple Angle Formulas:</strong></p>
+      <ul>
+        <li>$\sin 3x = 3\sin x - 4\sin^3 x$</li>
+        <li>$\cos 3x = 4\cos^3 x - 3\cos x$</li>
+        <li>$\tan 3x = \frac{3\tan x - \tan^3 x}{1 - 3\tan^2 x}$</li>
+      </ul>
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Product-to-Sum and Sum-to-Product Formulas</summary>
+      <p><strong>Sum-to-Product Formulas:</strong></p>
+      <ul>
+        <li>$\sin x + \sin y = 2\sin\frac{x+y}{2}\cos\frac{x-y}{2}$</li>
+        <li>$\sin x - \sin y = 2\cos\frac{x+y}{2}\sin\frac{x-y}{2}$</li>
+        <li>$\cos x + \cos y = 2\cos\frac{x+y}{2}\cos\frac{x-y}{2}$</li>
+        <li>$\cos x - \cos y = -2\sin\frac{x+y}{2}\sin\frac{x-y}{2}$</li>
+      </ul>
+      <p><strong>Product-to-Sum Formulas:</strong></p>
+      <ul>
+        <li>$2\sin x \cos y = \sin(x + y) + \sin(x - y)$</li>
+        <li>$2\cos x \sin y = \sin(x + y) - \sin(x - y)$</li>
+        <li>$2\cos x \cos y = \cos(x + y) + \cos(x - y)$</li>
+        <li>$-2\sin x \sin y = \cos(x + y) - \cos(x - y)$</li>
+      </ul>
+    </details>
+  </details>
+  
+  <details class="topic-box">
+    <summary class="topic-title">Algorithmic Problem Solving &amp; Solved Examples</summary>
+    <details class="sub-topic">
+      <summary class="sub-title">Angle Conversion and Arc Length Problems</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Convert $40^\circ 20'$ into radian measure.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Convert minutes to degrees: $20' = \frac{20}{60}^\circ = \frac{1}{3}^\circ$.</li>
+          <li>Express total angle in degrees: $40^\circ 20' = 40\frac{1}{3}^\circ = \frac{121}{3}^\circ$.</li>
+          <li>Apply conversion factor (multiply by $\frac{\pi}{180}$): $$\text{Radian measure} = \frac{121}{3} \times \frac{\pi}{180} = \frac{121\pi}{540}$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $\frac{121\pi}{540}\text{ radians}$</p>
+      </blockquote>
+      
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Find the distance moved by the tip of a $1.5\text{ cm}$ long minute hand of a watch in $40\text{ minutes}$ (Use $\pi = 3.14$).</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Determine the fraction of a full revolution in 40 minutes: $\frac{40}{60} = \frac{2}{3}$ of a revolution.</li>
+          <li>Convert the revolution to radians: $\theta = \frac{2}{3} \times 2\pi = \frac{4\pi}{3}$ radians.</li>
+          <li>Use the arc length formula $l = r\theta$ with $r = 1.5\text{ cm}$: $$l = 1.5 \times \frac{4\pi}{3} = 2\pi \text{ cm}$$</li>
+          <li>Substitute $\pi \approx 3.14$: $l = 2 \times 3.14 = 6.28\text{ cm}$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $6.28\text{ cm}$</p>
+      </blockquote>
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Quadrant-Constrained Function Evaluation</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> If $\cos x = -\frac{3}{5}$ and $x$ lies in the third quadrant, find the values of the other five trigonometric functions.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Find $\sec x$ as the reciprocal of $\cos x$: $\sec x = -\frac{5}{3}$.</li>
+          <li>Use the identity $\sin^2 x = 1 - \cos^2 x$ to find $\sin x$: $$\sin^2 x = 1 - \left(-\frac{3}{5}\right)^2 = 1 - \frac{9}{25} = \frac{16}{25} \implies \sin x = \pm \frac{4}{5}$$</li>
+          <li>Since $x$ lies in the third quadrant, sine is negative: $\sin x = -\frac{4}{5}$.</li>
+          <li>Find $\csc x$ as the reciprocal of $\sin x$: $\csc x = -\frac{5}{4}$.</li>
+          <li>Calculate $\tan x = \frac{\sin x}{\cos x} = \frac{-4/5}{-3/5} = \frac{4}{3}$.</li>
+          <li>Calculate $\cot x = \frac{1}{\tan x} = \frac{3}{4}$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $\sin x = -\frac{4}{5}, \csc x = -\frac{5}{4}, \tan x = \frac{4}{3}, \cot x = \frac{3}{4}, \sec x = -\frac{5}{3}$</p>
+      </blockquote>
+    </details>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Compound and Multiple Angle Proofs</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Prove that $\frac{\sin 5x - 2\sin 3x + \sin x}{\cos 5x - \cos x} = \tan x$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Rearrange the numerator: $(\sin 5x + \sin x) - 2\sin 3x$.</li>
+          <li>Apply the sum-to-product formula to the numerator group: $$\sin 5x + \sin x = 2\sin\frac{5x+x}{2}\cos\frac{5x-x}{2} = 2\sin 3x \cos 2x$$</li>
+          <li>Substitute back into the numerator: $2\sin 3x \cos 2x - 2\sin 3x = 2\sin 3x(\cos 2x - 1)$.</li>
+          <li>Apply the sum-to-product formula to the denominator: $$\cos 5x - \cos x = -2\sin\frac{5x+x}{2}\sin\frac{5x-x}{2} = -2\sin 3x \sin 2x$$</li>
+          <li>Form the ratio: $$\frac{2\sin 3x(\cos 2x - 1)}{-2\sin 3x \sin 2x} = \frac{\cos 2x - 1}{-\sin 2x} = \frac{1 - \cos 2x}{\sin 2x}$$</li>
+          <li>Use double angle identities ($1 - \cos 2x = 2\sin^2 x$ and $\sin 2x = 2\sin x \cos x$): $$\frac{2\sin^2 x}{2\sin x \cos x} = \frac{\sin x}{\cos x} = \tan x$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> $\text{L.H.S.} = \text{R.H.S.} = \tan x$ (Proved)</p>
+      </blockquote>
+    </details>
+  </details>
+  
+  <details class="topic-box">
+    <summary class="topic-title">Historical Chronicles &amp; Mathematical Evolution</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Indian Origins of Trigonometry</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> Trigonometric studies originated in ancient India. Renowned mathematicians such as Aryabhata (476 CE), Brahmagupta (598 CE), Bhaskara I (600 CE), and Bhaskara II (1114 CE) formulated foundational principles. This knowledge was transmitted to the Middle East and subsequently to Europe.</li>
+        <li><strong>Theoretical Foundations:</strong> The predecessor of the modern sine function was known as <span class="keyword">jya</span> or <span class="keyword">ardha-jya</span> (half-chord) in Sanskrit astronomical texts (<span class="keyword">siddhantas</span>). Bhaskara I developed accurate approximation formulas for sine values of angles greater than $90^\circ$. The 16th-century Malayalam treatise <span class="keyword">Yuktibhasa</span> contains early proofs for the expansion of $\sin(A+B)$.</li>
+      </ul>
+    </div>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Greek and Western Developments</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> Early Greek mathematicians like Thales (circa 600 BCE) applied geometric similarity to solve height and distance problems, such as determining the height of Egyptian pyramids by comparing shadow lengths.</li>
+        <li><strong>Theoretical Foundations:</strong> The modern inverse trigonometric notation (such as $\sin^{-1} x$ and $\cos^{-1} x$) was introduced much later by astronomer Sir John F.W. Herschel in 1813.</li>
+      </ul>
+    </div>
+  </details>
+  
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-02-relations-and-functions.html"; } else { window.location.href = "11-chapter-04-complex-numbers-and-quadratic-equa.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

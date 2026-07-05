@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 12 (Book 1) — Chapter 8: Mathematical Modelling</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 12 (Book 1) — Chapter 8: Mathematical Modelling</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">8.1 Introduction &amp; Core Concept</summary>
+    <p>We encounter numerous problems in our daily lives, spanning disciplines like biology, economics, physics, and sociology. When these real-world problems are translated into mathematical terms to find a solution, the process is known as <span class="keyword">Mathematical Modelling</span>.</p>
+    
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: The Origins of Systemic Modelling</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> The concept of mathematical modelling dates back to early astronomers mapping planetary orbits and physicists like Newton developing calculus to model motion.</li>
+        <li><strong>Theoretical Foundations:</strong> A mathematical model acts as a bridge between the physical reality and mathematical abstraction, allowing us to simulate, predict, and optimize complex systems using algebraic and calculus-based operations.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">8.2 The Mathematical Modelling Cycle</summary>
+    <p>Mathematical modelling is a structured, iterative process. It involves four fundamental sequential phases:</p>
+
+    <details class="sub-topic">
+      <summary class="sub-title">1. Formulation</summary>
+      <p>This is the transition from a real-world problem to a mathematical abstraction.</p>
+      <ul>
+        <li><strong>Identify the Problem:</strong> Clearly define what needs to be solved.</li>
+        <li><strong>State Assumptions:</strong> Simplify the problem by keeping primary variables and discarding negligible ones.</li>
+        <li><strong>Define Variables &amp; Parameters:</strong> Assign mathematical symbols (e.g., $x, y, t, k$) to represent real-world quantities.</li>
+        <li><strong>Construct the Model:</strong> Build mathematical equations, inequalities, or graphs connecting these variables (e.g., $y = mx + c$ or $\frac{dy}{dx} = ky$).</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">2. Mathematical Solution</summary>
+      <p>Once the mathematical equations are formed, we use algebraic, geometric, or calculus-based methods to solve them.</p>
+      <ul>
+        <li>This phase operates entirely within the realm of mathematics, independent of the real-world context.</li>
+        <li>Techniques may involve solving matrices, integrating differential equations, or finding optimal points using derivatives.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">3. Interpretation</summary>
+      <p>The mathematical solutions obtained in Phase 2 must be translated back into the context of the original real-world problem.</p>
+      <ul>
+        <li>For example, if a quadratic equation yields $t = -5$ and $t = 5$ for a time-based problem, we discard $t = -5$ because time cannot be negative in classical contexts.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">4. Validation</summary>
+      <p>The interpreted results are compared with actual real-world data or observations.</p>
+      <ul>
+        <li><strong>If the model is accurate:</strong> The cycle concludes, and the model is accepted.</li>
+        <li><strong>If the model is inaccurate:</strong> We return to the Formulation phase to refine our assumptions or include previously discarded variables.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">8.3 Practical Applications and Examples</summary>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Application: Simple Interest vs Compound Interest</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Formulate a model to calculate the amount $A$ after $n$ years if a principal $P$ is invested at an annual interest rate $r$ (in percentage) compounded annually.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Formulation:</strong> Let the initial principal be $P$. The interest after the first year is $I_1 = P \times \frac{r}{100}$.</li>
+          <li>Amount after 1st year: $A_1 = P + P\left(\frac{r}{100}\right) = P\left(1 + \frac{r}{100}\right)$.</li>
+          <li>Amount after 2nd year: The new principal is $A_1$.$$A_2 = A_1 \left(1 + \frac{r}{100}\right) = P\left(1 + \frac{r}{100}\right)\left(1 + \frac{r}{100}\right) = P\left(1 + \frac{r}{100}\right)^2$$</li>
+          <li>Generalizing for $n$ years via inductive reasoning gives the model:$$A = P\left(1 + \frac{r}{100}\right)^n$$</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> The mathematical model for compound interest is $A = P\left(1 + \frac{r}{100}\right)^n$.</p>
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Application: Optimization in Manufacturing</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> A manufacturer wants to construct a cylindrical can to hold $1000\text{ cm}^3$ of oil. Find the dimensions that minimize the cost of the metal to construct the can.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Formulation:</strong> Let $r$ be the radius and $h$ be the height. Volume $V = \pi r^2 h = 1000$. Surface Area $S = 2\pi r^2 + 2\pi r h$.</li>
+          <li>Express $h$ in terms of $r$:$$h = \frac{1000}{\pi r^2}$$</li>
+          <li>Substitute $h$ into the Surface Area function to create a single-variable model:$$S(r) = 2\pi r^2 + 2\pi r \left(\frac{1000}{\pi r^2}\right) = 2\pi r^2 + \frac{2000}{r}$$</li>
+          <li><strong>Solution (Calculus):</strong> Differentiate $S$ with respect to $r$ to find the critical point:$$S'(r) = 4\pi r - \frac{2000}{r^2} = 0 \implies 4\pi r^3 = 2000 \implies r = \sqrt[3]{\frac{500}{\pi}} \approx 5.42\text{ cm}$$</li>
+          <li>Calculate $h$:$$h = \frac{1000}{\pi (5.42)^2} \approx 10.84\text{ cm}$$</li>
+          <li><strong>Interpretation &amp; Validation:</strong> The dimensions that minimize the surface area (and thus material cost) occur when the height is equal to the diameter ($h = 2r$).</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Optimal dimensions: $r \approx 5.42\text{ cm}$ and $h \approx 10.84\text{ cm}$.</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 12 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-07-proofs-in-mathematics.html"; } else { window.location.href = "../../index.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>

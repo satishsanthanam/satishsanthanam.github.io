@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 12 (Book 1) — Chapter 2: Inverse Trigonometric Functions</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 12 (Book 1) — Chapter 2: Inverse Trigonometric Functions</h1>
+  
+  <details class="topic-box">
+    <summary class="topic-title">Introduction &amp; Basic Concepts</summary>
+    <p>In Chapter 1, we studied that the inverse of a function $f$, denoted by $f^{-1}$, exists if and only if $f$ is <span class="keyword">one-one</span> and <span class="keyword">onto</span> (bijective). Trigonometric functions are periodic and thus not one-one and onto over their natural domains. However, by restricting their domains, we can define their inverse functions within specific intervals.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Domain and Range of Inverse Trigonometric Functions</summary>
+      <p>The following table summarizes the domains and ranges (principal value branches) of the inverse trigonometric functions:</p>
+      
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" cellpadding="5" style="border-collapse: collapse; width: 100%; min-width: 600px; text-align: left;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px;">Function</th>
+              <th style="padding: 8px;">Domain</th>
+              <th style="padding: 8px;">Range (Principal Value Branch)</th>
+              <th style="padding: 8px;">Key Properties &amp; Limits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;">$y = \sin^{-1} x$</td>
+              <td style="padding: 8px;">$[-1, 1]$</td>
+              <td style="padding: 8px;">$[-\frac{\pi}{2}, \frac{\pi}{2}]$</td>
+              <td style="padding: 8px;">$\sin(y) = x$ where $-\frac{\pi}{2} \le y \le \frac{\pi}{2}$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$y = \cos^{-1} x$</td>
+              <td style="padding: 8px;">$[-1, 1]$</td>
+              <td style="padding: 8px;">$[0, \pi]$</td>
+              <td style="padding: 8px;">$\cos(y) = x$ where $0 \le y \le \pi$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$y = \csc^{-1} x$</td>
+              <td style="padding: 8px;">$\mathbb{R} - (-1, 1)$</td>
+              <td style="padding: 8px;">$[-\frac{\pi}{2}, \frac{\pi}{2}] - \{0\}$</td>
+              <td style="padding: 8px;">$\csc(y) = x$ where $y \neq 0$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$y = \sec^{-1} x$</td>
+              <td style="padding: 8px;">$\mathbb{R} - (-1, 1)$</td>
+              <td style="padding: 8px;">$[0, \pi] - \{\frac{\pi}{2}\}$</td>
+              <td style="padding: 8px;">$\sec(y) = x$ where $y \neq \frac{\pi}{2}$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$y = \tan^{-1} x$</td>
+              <td style="padding: 8px;">$\mathbb{R}$</td>
+              <td style="padding: 8px;">$(-\frac{\pi}{2}, \frac{\pi}{2})$</td>
+              <td style="padding: 8px;">$\tan(y) = x$ where $-\frac{\pi}{2} &lt; y &lt; \frac{\pi}{2}$</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$y = \cot^{-1} x$</td>
+              <td style="padding: 8px;">$\mathbb{R}$</td>
+              <td style="padding: 8px;">$(0, \pi)$</td>
+              <td style="padding: 8px;">$\cot(y) = x$ where $0 &lt; y &lt; \pi$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Graphs of Inverse Trigonometric Functions</summary>
+    <p>The graph of an inverse function $y = f^{-1}(x)$ can be obtained from the graph of the original function $y = f(x)$ by interchanging the $x$ and $y$ axes. This is geometrically equivalent to reflecting the graph of $y = f(x)$ across the mirror line $y = x$.</p>
+    <ul>
+      <li>The dark portion of the graph of $y = \sin^{-1} x$ represents its <span class="keyword">principal value branch</span>, which corresponds to the range $[-\frac{\pi}{2}, \frac{\pi}{2}]$.</li>
+      <li>Similarly, the principal value branch of $y = \cos^{-1} x$ corresponds to the range $[0, \pi]$.</li>
+    </ul>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Properties of Inverse Trigonometric Functions</summary>
+    <p>The following properties and identities are valid within the principal value branches of the respective inverse trigonometric functions:</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Self-Inverse &amp; Reciprocal Identities</summary>
+      <ul>
+        <li>$\sin(\sin^{-1} x) = x$ for $x \in [-1, 1]$ and $\sin^{-1}(\sin x) = x$ for $x \in [-\frac{\pi}{2}, \frac{\pi}{2}]$</li>
+        <li>$\csc^{-1} x = \sin^{-1}(\frac{1}{x})$ for $|x| \ge 1$</li>
+        <li>$\sec^{-1} x = \cos^{-1}(\frac{1}{x})$ for $|x| \ge 1$</li>
+        <li>$\cot^{-1} x = \tan^{-1}(\frac{1}{x})$ for $x &gt; 0$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Negative Arguments &amp; Complementary Angles</summary>
+      <ul>
+        <li>$\sin^{-1}(-x) = -\sin^{-1} x$ for $x \in [-1, 1]$</li>
+        <li>$\cos^{-1}(-x) = \pi - \cos^{-1} x$ for $x \in [-1, 1]$</li>
+        <li>$\tan^{-1}(-x) = -\tan^{-1} x$ for $x \in \mathbb{R}$</li>
+        <li>$\sin^{-1} x + \cos^{-1} x = \frac{\pi}{2}$ for $x \in [-1, 1]$</li>
+        <li>$\tan^{-1} x + \cot^{-1} x = \frac{\pi}{2}$ for $x \in \mathbb{R}$</li>
+        <li>$\sec^{-1} x + \csc^{-1} x = \frac{\pi}{2}$ for $|x| \ge 1$</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Sum, Difference &amp; Double Angle Formulae</summary>
+      <ul>
+        <li>$\tan^{-1} x + \tan^{-1} y = \tan^{-1}\left(\frac{x+y}{1-xy}\right)$ if $xy &lt; 1$</li>
+        <li>$\tan^{-1} x - \tan^{-1} y = \tan^{-1}\left(\frac{x-y}{1+xy}\right)$ if $xy &gt; -1$</li>
+        <li>$2\tan^{-1} x = \sin^{-1}\left(\frac{2x}{1+x^2}\right)$ for $|x| \le 1$</li>
+        <li>$2\tan^{-1} x = \cos^{-1}\left(\frac{1-x^2}{1+x^2}\right)$ for $x \ge 0$</li>
+        <li>$2\tan^{-1} x = \tan^{-1}\left(\frac{2x}{1-x^2}\right)$ for $-1 &lt; x &lt; 1$</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Algorithmic Solved Examples</summary>
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Find the principal value of $\sin^{-1}\left(\frac{1}{\sqrt{2}}\right)$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Let $y = \sin^{-1}\left(\frac{1}{\sqrt{2}}\right)$. This $\implies \sin y = \frac{1}{\sqrt{2}}$.</li>
+        <li>We know that the principal value branch of $\sin^{-1}$ is $[-\frac{\pi}{2}, \frac{\pi}{2}]$.</li>
+        <li>Since $\sin\left(\frac{\pi}{4}\right) = \frac{1}{\sqrt{2}}$ and $\frac{\pi}{4} \in [-\frac{\pi}{2}, \frac{\pi}{2}]$, the principal value is $\frac{\pi}{4}$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $\frac{\pi}{4}$</p>
+    </blockquote>
+
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Find the principal value of $\cot^{-1}\left(-\frac{1}{\sqrt{3}}\right)$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Let $y = \cot^{-1}\left(-\frac{1}{\sqrt{3}}\right)$. This $\implies \cot y = -\frac{1}{\sqrt{3}}$.</li>
+        <li>We know that the principal value branch of $\cot^{-1}$ is $(0, \pi)$.</li>
+        <li>Since $\cot\left(\frac{\pi}{3}\right) = \frac{1}{\sqrt{3}}$, we have $\cot\left(\pi - \frac{\pi}{3}\right) = \cot\left(\frac{2\pi}{3}\right) = -\frac{1}{\sqrt{3}}$.</li>
+        <li>Since $\frac{2\pi}{3} \in (0, \pi)$, the principal value is $\frac{2\pi}{3}$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $\frac{2\pi}{3}$</p>
+    </blockquote>
+
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Show that $\sin^{-1}\left(2x\sqrt{1-x^2}\right) = 2\sin^{-1} x$ for $-\frac{1}{\sqrt{2}} \le x \le \frac{1}{\sqrt{2}}$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Let $x = \sin \theta$. Then $\theta = \sin^{-1} x$.</li>
+        <li>Substitute $x$ into the expression: $2x\sqrt{1-x^2} = 2\sin\theta\sqrt{1-\sin^2\theta} = 2\sin\theta\cos\theta = \sin 2\theta$.</li>
+        <li>Thus, $\sin^{-1}\left(2x\sqrt{1-x^2}\right) = \sin^{-1}(\sin 2\theta) = 2\theta = 2\sin^{-1} x$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $2\sin^{-1} x$</p>
+    </blockquote>
+
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Express $\tan^{-1}\left(\frac{\cos x}{1-\sin x}\right)$ in the simplest form, where $-\frac{3\pi}{2} &lt; x &lt; \frac{\pi}{2}$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Express $\cos x$ as $\cos^2\left(\frac{x}{2}\right) - \sin^2\left(\frac{x}{2}\right)$ and $1 - \sin x$ as $\left(\cos\left(\frac{x}{2}\right) - \sin\left(\frac{x}{2}\right)\right)^2$.</li>
+        <li>The fraction becomes: $\frac{\left(\cos\frac{x}{2} + \sin\frac{x}{2}\right)\left(\cos\frac{x}{2} - \sin\frac{x}{2}\right)}{\left(\cos\frac{x}{2} - \sin\frac{x}{2}\right)^2} = \frac{\cos\frac{x}{2} + \sin\frac{x}{2}}{\cos\frac{x}{2} - \sin\frac{x}{2}}$.</li>
+        <li>Divide numerator and denominator by $\cos\frac{x}{2}$ to get: $\frac{1 + \tan\frac{x}{2}}{1 - \tan\frac{x}{2}} = \tan\left(\frac{\pi}{4} + \frac{x}{2}\right)$.</li>
+        <li>Therefore, $\tan^{-1}\left(\tan\left(\frac{\pi}{4} + \frac{x}{2}\right)\right) = \frac{\pi}{4} + \frac{x}{2}$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $\frac{\pi}{4} + \frac{x}{2}$</p>
+    </blockquote>
+
+    <blockquote class="example-block">
+      <p><strong>Mathematical Problem Statement:</strong> Find the value of $\sin^{-1}\left(\sin \frac{3\pi}{5}\right)$.</p>
+      <hr>
+      <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+      <ol>
+        <li>Note that $\frac{3\pi}{5} \notin [-\frac{\pi}{2}, \frac{\pi}{2}]$, which is the principal value branch of $\sin^{-1}$.</li>
+        <li>Rewrite the expression using the identity $\sin(\pi - \theta) = \sin\theta$: $\sin\left(\frac{3\pi}{5}\right) = \sin\left(\pi - \frac{2\pi}{5}\right) = \sin\left(\frac{2\pi}{5}\right)$.</li>
+        <li>Since $\frac{2\pi}{5} \in [-\frac{\pi}{2}, \frac{\pi}{2}]$, we have $\sin^{-1}\left(\sin \frac{2\pi}{5}\right) = \frac{2\pi}{5}$.</li>
+      </ol>
+      <p><strong>Final Evaluation Output:</strong> $\frac{2\pi}{5}$</p>
+    </blockquote>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Exercises &amp; Problem Sets</summary>
+    <details class="sub-topic">
+      <summary class="sub-title">Exercise 2.1: Principal Values</summary>
+      <p>Find the principal values of the following:</p>
+      <ul>
+        <li>$\sin^{-1}\left(-\frac{1}{2}\right) = -\frac{\pi}{6}$</li>
+        <li>$\cos^{-1}\left(\frac{\sqrt{3}}{2}\right) = \frac{\pi}{6}$</li>
+        <li>$\csc^{-1}(2) = \frac{\pi}{6}$</li>
+        <li>$\tan^{-1}(-\sqrt{3}) = -\frac{\pi}{3}$</li>
+        <li>$\cos^{-1}\left(-\frac{1}{2}\right) = \frac{2\pi}{3}$</li>
+        <li>$\tan^{-1}(-1) = -\frac{\pi}{4}$</li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary class="sub-title">Exercise 2.2: Proofs and Simplifications</summary>
+      <p>Key problems include proving algebraic identities and simplifying expressions:</p>
+      <ul>
+        <li>Prove: $3\sin^{-1} x = \sin^{-1}(3x - 4x^3)$ for $x \in [-\frac{1}{2}, \frac{1}{2}]$</li>
+        <li>Prove: $3\cos^{-1} x = \cos^{-1}(4x^3 - 3x)$ for $x \in [\frac{1}{2}, 1]$</li>
+        <li>Simplify: $\tan^{-1}\left(\frac{\sqrt{1+x^2}-1}{x}\right) = \frac{1}{2}\tan^{-1} x$</li>
+        <li>Simplify: $\tan^{-1}\left(\frac{x}{\sqrt{a^2-x^2}}\right) = \sin^{-1}\left(\frac{x}{a}\right)$</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Historical Chronicle</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle / Epigraph: Indian Trigonometry &amp; Global Transmission</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context &amp; Milestones:</strong> The study of trigonometry originated in India with ancient mathematicians like Aryabhata (476-550 A.D.), Brahmagupta (598 A.D.), Bhaskara I (600 A.D.), and Bhaskara II (1114 A.D.). This knowledge was transmitted to Arabia and subsequently to Europe, replacing clumsy Greek chord-based methods with the elegant sine-based approach.</li>
+        <li><strong>Theoretical Foundations:</strong> Introduction of the sine function (<em>jya</em> or <em>ardha-jya</em> in Sanskrit, which became <em>jiba</em> in Arabic, <em>jaib</em> (gulf/fold), translated to Latin as <em>sinus</em>). Bhaskara I provided accurate approximation formulas for $\sin \theta$ for angles greater than $90^\circ$. The Malayalam work <em>Yuktibhasa</em> (16th century) contains proofs for the expansion of $\sin(A+B)$. The modern notation $\sin^{-1} x$, $\cos^{-1} x$ was suggested by astronomer Sir John F.W. Herschel in 1813. Thales (c. 600 B.C.) used shadow ratios ($\frac{H}{S} = \frac{h}{s} = \tan(\text{sun's altitude})$) to determine the heights of pyramids.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 12 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "12-1-chapter-01-relations-and-functions.html"; } else { window.location.href = "12-1-chapter-03-matrices.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
