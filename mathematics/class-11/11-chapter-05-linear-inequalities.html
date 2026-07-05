@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>
+    Mathematics: Class 11 — Chapter 5: Linear Inequalities
+  </title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
+    details.topic-box > p, details.sub-topic > p { padding-left: 14px !important; margin-left: 0 !important; }
+    details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
+    details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$', displayMath: [['$$', '$$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<body>
+<div class="chapter-container">
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">
+    ← Back
+  </a>
+  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
+  📖 Quick Menu
+</button>
+<a href="../../index.html" class="btn-nav">
+🏠 Home
+</a>
+</div>
+<h1>
+Mathematics: Class 11 — Chapter 5: Linear Inequalities
+</h1>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.1 Introduction &amp; Fundamental Concepts
+</summary>
+<p>
+  In mathematical analysis, many real-world scenarios cannot be modeled using strict equality. Instead, they involve constraints such as "at most", "at least", "less than", or "greater than". These relationships are expressed as
+  <span class="keyword">
+  inequalities
+</span>
+.
+</p>
+<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+  <p style="margin: 0 0 6px 0;">
+    <strong>
+    Epigraph: James Clerk Maxwell
+  </strong>
+</p>
+<ul style="margin: 0; padding-left: 20px;">
+  <li>
+    <strong>
+    Quote:
+  </strong>
+  "Mathematics is the art of saying many things in many different ways."
+</li>
+<li>
+  <strong>
+  Context:
+</strong>
+Highlighting the expressive power of mathematical language, which extends beyond equations to inequalities that describe constraints, boundaries, and ranges in physical and economic systems.
+</li>
+</ul>
+</div>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Formal Definition of an Inequality
+</summary>
+<p>
+  Two real numbers or two algebraic expressions related by the symbols $&lt;$, $&gt;$, $\le$, or $\ge$ form an
+  <span class="keyword">
+  inequality
+</span>
+.
+</p>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Classification of Inequalities
+</summary>
+<p>
+Inequalities can be classified based on their structure, variables, and the nature of the inequality sign:
+</p>
+<table border="1" style="width: 100%; border-collapse: collapse; margin: 10px 0; text-align: left;">
+  <thead>
+    <tr style="background-color: #f1f5f9;">
+      <th style="padding: 8px;">
+      Inequality Type
+    </th>
+    <th style="padding: 8px;">
+    Mathematical Form / Examples
+  </th>
+  <th style="padding: 8px;">
+  Key Characteristics
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="padding: 8px;">
+      <strong>
+      Numerical Inequality
+    </strong>
+  </td>
+  <td style="padding: 8px;">
+  $3 &lt; 5$, $7 &gt; 5$
+</td>
+<td style="padding: 8px;">
+Contains only real numbers without variables.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Literal Inequality
+  </strong>
+</td>
+<td style="padding: 8px;">
+$x &lt; 5$, $y &gt; 2$, $x \ge 3$
+</td>
+<td style="padding: 8px;">
+Contains one or more variables.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Double Inequality
+  </strong>
+</td>
+<td style="padding: 8px;">
+$3 &lt; x &lt; 5$, $2 &lt; y \le 4$
+</td>
+<td style="padding: 8px;">
+Expresses a variable bounded between two limits.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Strict Inequality
+  </strong>
+</td>
+<td style="padding: 8px;">
+$ax + b &lt; 0$, $ax + by &gt; c$
+</td>
+<td style="padding: 8px;">
+Uses strict relation signs ($&lt;$ or $&gt;$). Boundary is excluded.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Slack Inequality
+  </strong>
+</td>
+<td style="padding: 8px;">
+$ax + b \le 0$, $ax + by \ge c$
+</td>
+<td style="padding: 8px;">
+Uses weak relation signs ($\le$ or $\ge$). Boundary is included.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Linear Inequality in One Variable
+  </strong>
+</td>
+<td style="padding: 8px;">
+$ax + b &lt; 0$ (where $a \ne 0$)
+</td>
+<td style="padding: 8px;">
+Degree of the variable is exactly $1$.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Linear Inequality in Two Variables
+  </strong>
+</td>
+<td style="padding: 8px;">
+$ax + by &lt; c$ (where $a \ne 0, b \ne 0$)
+</td>
+<td style="padding: 8px;">
+Contains two variables of degree $1$.
+</td>
+</tr>
+<tr>
+  <td style="padding: 8px;">
+    <strong>
+    Quadratic Inequality
+  </strong>
+</td>
+<td style="padding: 8px;">
+$ax^2 + bx + c \le 0$ (where $a \ne 0$)
+</td>
+<td style="padding: 8px;">
+Degree of the variable is $2$.
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.2 Algebraic Solutions of Linear Inequalities in One Variable
+</summary>
+<p>
+  A value of the variable that makes an inequality a true statement is called a
+  <span class="keyword">
+  solution
+</span>
+of the inequality. The set of all solutions is called its
+<span class="keyword">
+solution set
+</span>
+.
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Fundamental Rules of Inequality Transformation
+</summary>
+<p>
+To solve inequalities algebraically, we apply two primary rules that preserve the validity of the inequality:
+</p>
+<ul>
+  <li>
+    <strong>
+    Rule 1 (Addition/Subtraction):
+  </strong>
+  Equal numbers may be added to (or subtracted from) both sides of an inequality without affecting the sign of inequality.
+  <br>
+  <em>
+  Algebraic Statement:
+</em>
+If $a &lt; b$, then $a + c &lt; b + c$ and $a - c &lt; b - c$ for any real number $c$.
+</li>
+<li>
+  <strong>
+  Rule 2 (Multiplication/Division):
+</strong>
+<ul>
+  <li>
+    Both sides of an inequality can be multiplied (or divided) by the same
+    <strong>
+    positive
+  </strong>
+  number without changing the inequality sign.
+  <br>
+  <em>
+  Algebraic Statement:
+</em>
+If $a &lt; b$ and $c &gt; 0$, then $ac &lt; bc$ and $\frac{a}{c} &lt; \frac{b}{c}$.
+</li>
+<li>
+  When both sides are multiplied or divided by a
+  <strong>
+  negative
+</strong>
+number, the sign of the inequality is
+<strong>
+reversed
+</strong>
+.
+<br>
+<em>
+Algebraic Statement:
+</em>
+If $a &lt; b$ and $c &lt; 0$, then $ac &gt; bc$ and $\frac{a}{c} &gt; \frac{b}{c}$.
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Algorithmic Solved Examples
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Solve $30x &lt; 200$ when:
+<br>
+(i) $x$ is a natural number,
+<br>
+(ii) $x$ is an integer.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Start with the given inequality:$$30x &lt; 200$$
+</li>
+<li>
+Divide both sides by the positive number $30$ (applying Rule 2, sign remains unchanged):$$\frac{30x}{30} &lt; \frac{200}{30}$$$$x &lt; \frac{20}{3}$$$$x &lt; 6.67$$
+</li>
+<li>
+  Evaluate the solution set based on the domain constraints:
+  <ul>
+    <li>
+      <strong>
+      Case (i): $x \in \mathbb{N}$ (Natural Numbers)
+    </strong>
+    <br>
+    The natural numbers less than $6.67$ are $1, 2, 3, 4, 5, 6$.
+    <br>
+    Solution Set: $\{1, 2, 3, 4, 5, 6\}$
+  </li>
+  <li>
+    <strong>
+    Case (ii): $x \in \mathbb{Z}$ (Integers)
+  </strong>
+  <br>
+  The integers less than $6.67$ are $\dots, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6$.
+  <br>
+  Solution Set: $\{\dots, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6\}$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+For $x \in \mathbb{N}$, solution set is $\{1, 2, 3, 4, 5, 6\}$; for $x \in \mathbb{Z}$, solution set is $\{\dots, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6\}$.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Solve $5x - 3 &lt; 3x + 1$ when:
+<br>
+(i) $x$ is an integer,
+<br>
+(ii) $x$ is a real number.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Write down the inequality:$$5x - 3 &lt; 3x + 1$$
+</li>
+<li>
+Add $3$ to both sides (Rule 1):$$5x - 3 + 3 &lt; 3x + 1 + 3$$$$5x &lt; 3x + 4$$
+</li>
+<li>
+Subtract $3x$ from both sides (Rule 1):$$5x - 3x &lt; 3x + 4 - 3x$$$$2x &lt; 4$$
+</li>
+<li>
+Divide both sides by $2$ (Rule 2):$$x &lt; 2$$
+</li>
+<li>
+  Apply domain constraints:
+  <ul>
+    <li>
+      <strong>
+      Case (i): $x \in \mathbb{Z}$
+    </strong>
+    <br>
+    The integers less than $2$ are $\dots, -3, -2, -1, 0, 1$.
+    <br>
+    Solution Set: $\{\dots, -3, -2, -1, 0, 1\}$
+  </li>
+  <li>
+    <strong>
+    Case (ii): $x \in \mathbb{R}$ (Real Numbers)
+  </strong>
+  <br>
+  All real numbers less than $2$ are represented in interval notation.
+  <br>
+  Solution Set: $(-\infty, 2)$
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+For $x \in \mathbb{R}$, the solution set is $(-\infty, 2)$.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Solve the fractional inequality:$$\frac{5 - 2x}{3} \le \frac{x}{6} - 5$$
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Write the inequality:$$\frac{5 - 2x}{3} \le \frac{x - 30}{6}$$
+</li>
+<li>
+Multiply both sides by the positive LCM of denominators, which is $6$ (Rule 2, sign remains unchanged):$$2(5 - 2x) \le x - 30$$
+</li>
+<li>
+Expand the left-hand side:$$10 - 4x \le x - 30$$
+</li>
+<li>
+Subtract $x$ from both sides:$$10 - 5x \le -30$$
+</li>
+<li>
+Subtract $10$ from both sides:$$-5x \le -40$$
+</li>
+<li>
+  Divide both sides by $-5$ and
+  <strong>
+  reverse the inequality sign
+</strong>
+(Rule 2):$$x \ge \frac{-40}{-5}$$$$x \ge 8$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The solution set for $x \in \mathbb{R}$ is $[8, \infty)$.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.3 Graphical Representation of Solutions on a Number Line
+</summary>
+<p>
+The solution set of a linear inequality in one variable can be visually represented on a real number line. This representation uses specific conventions to indicate whether the boundary point is included or excluded:
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Graphical Conventions
+</summary>
+<ul>
+  <li>
+    <strong>
+    Open Circle ($\circ$):
+  </strong>
+  Used at the boundary value $a$ for strict inequalities ($x &lt; a$ or $x &gt; a$). This indicates that the value $a$ is
+  <strong>
+  excluded
+</strong>
+from the solution set.
+</li>
+<li>
+  <strong>
+  Dark/Closed Circle ($\bullet$):
+</strong>
+Used at the boundary value $a$ for slack inequalities ($x \le a$ or $x \ge a$). This indicates that the value $a$ is
+<strong>
+included
+</strong>
+in the solution set.
+</li>
+<li>
+  <strong>
+  Thickened/Bold Line:
+</strong>
+Drawn over the portion of the number line representing the values that satisfy the inequality.
+</li>
+</ul>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Examples of Graphical Solutions
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Solve $7x + 3 &lt; 5x + 9$ and represent the solution graphically on a number line.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Simplify the inequality:$$7x - 5x &lt; 9 - 3$$$$2x &lt; 6$$$$x &lt; 3$$
+</li>
+<li>
+  Identify the boundary point: $x = 3$. Since the inequality is strict ($&lt;$), we use an
+  <strong>
+  open circle
+</strong>
+at $3$.
+</li>
+<li>
+Shade the region to the left of $3$ (towards $-\infty$) to represent all real numbers less than $3$.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Solution set is $(-\infty, 3)$, represented graphically with an open circle at $3$ and a bold line extending to the left.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Solve $\frac{3x - 4}{2} \le \frac{x + 1}{4} - 1$ and represent the solution graphically on a number line.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Simplify the right-hand side:$$\frac{3x - 4}{2} \ge \frac{x + 1 - 4}{4}$$$$\frac{3x - 4}{2} \ge \frac{x - 3}{4}$$
+</li>
+<li>
+Multiply both sides by $4$:$$2(3x - 4) \ge x - 3$$$$6x - 8 \ge x - 3$$
+</li>
+<li>
+Isolate the variable $x$:$$6x - x \ge -3 + 8$$$$5x \ge 5$$$$x \ge 1$$
+</li>
+<li>
+  Identify the boundary point: $x = 1$. Since the inequality is slack ($\ge$), we use a
+  <strong>
+  dark circle
+</strong>
+at $1$.
+</li>
+<li>
+Shade the region to the right of $1$ (towards $\infty$).
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+Solution set is $[1, \infty)$, represented graphically with a dark circle at $1$ and a bold line extending to the right.
+</p>
+</blockquote>
+</details>
+</details>
+<details class="topic-box">
+  <summary class="topic-title">
+  5.4 Systems of Linear Inequalities in One Variable &amp; Applications
+</summary>
+<p>
+  A
+  <span class="keyword">
+  system of linear inequalities
+</span>
+consists of two or more inequalities in the same variable. The solution of the system is the set of all values of the variable that satisfy
+<strong>
+all
+</strong>
+inequalities in the system simultaneously (i.e., the intersection of individual solution sets).
+</p>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Solving Systems of Inequalities
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Solve the system of inequalities:$$3x - 7 &lt; 5 + x \quad \text{and} \quad 11 - 5x \le 1$$Represent the common solution on a number line.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Solve the first inequality:$$3x - 7 &lt; 5 + x$$$$2x &lt; 12 \implies x &lt; 6 \quad \text{--- (1)}$$
+</li>
+<li>
+Solve the second inequality:$$11 - 5x \le 1$$$$-5x \le -10 \implies x \ge 2 \quad \text{--- (2)}$$
+</li>
+<li>
+Find the intersection of the two solution sets:$$\text{Intersection: } \{x \in \mathbb{R} : x \ge 2\} \cap \{x \in \mathbb{R} : x &lt; 6\}$$$$2 \le x &lt; 6$$
+</li>
+<li>
+Graphical representation: A dark circle at $2$ and an open circle at $6$, with a bold line connecting them.
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The solution set of the system is $[2, 6)$.
+</p>
+</blockquote>
+</details>
+<details class="sub-topic">
+  <summary class="sub-title">
+  Real-World Applications &amp; Word Problems
+</summary>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+Find all pairs of consecutive odd natural numbers, both of which are larger than $10$, such that their sum is less than $40$.
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+  Let the smaller consecutive odd natural number be $x$. The next consecutive odd natural number is $x + 2$.
+</li>
+<li>
+  Set up the system of inequalities based on the given conditions:
+  <ul>
+    <li>
+    Both numbers must be larger than $10$:$$x &gt; 10 \quad \text{--- (1)}$$(Since $x &gt; 10$, then automatically $x + 2 &gt; 12 &gt; 10$).
+  </li>
+  <li>
+  Their sum must be less than $40$:$$x + (x + 2) &lt; 40$$$$2x + 2 &lt; 40$$$$2x &lt; 38 \implies x &lt; 19 \quad \text{--- (2)}$$
+</li>
+</ul>
+</li>
+<li>
+Combine the inequalities:$$10 &lt; x &lt; 19$$
+</li>
+<li>
+  Since $x$ must be an
+  <strong>
+  odd natural number
+</strong>
+, the possible values for $x$ are:$$x \in \{11, 13, 15, 17\}$$
+</li>
+<li>
+  Form the pairs $(x, x + 2)$:
+  <ul>
+    <li>
+    For $x = 11$, the pair is $(11, 13)$.
+  </li>
+  <li>
+  For $x = 13$, the pair is $(13, 15)$.
+</li>
+<li>
+For $x = 15$, the pair is $(15, 17)$.
+</li>
+<li>
+For $x = 17$, the pair is $(17, 19)$.
+</li>
+</ul>
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The required pairs are $(11, 13)$, $(13, 15)$, $(15, 17)$, and $(17, 19)$.
+</p>
+</blockquote>
+<blockquote class="example-block">
+<p>
+  <strong>
+  Mathematical Problem Statement:
+</strong>
+A manufacturer has $600$ litres of a $12\\%$ solution of acid. How many litres of a $30\\%$ acid solution must be added to it so that the acid content in the resulting mixture will be more than $15\\%$ but less than $18\\%$?
+</p>
+<hr>
+<p>
+  <strong>
+  Step-by-Step Algorithmic Solution Trace:
+</strong>
+</p>
+<ol>
+  <li>
+    Let $x$ be the volume (in litres) of the $30\\%$ acid solution to be added.
+    <br>
+    Total volume of the mixture = $(x + 600)$ litres.
+  </li>
+  <li>
+  Express the total acid content in the mixture:$$\text{Total Acid} = 30\\% \text{ of } x + 12\\% \text{ of } 600 = 0.30x + 0.12(600)$$
+</li>
+<li>
+Set up the double inequality representing the constraints:$$15\\% \text{ of } (x + 600) &lt; \text{Total Acid} &lt; 18\\% \text{ of } (x + 600)$$$$0.15(x + 600) &lt; 0.30x + 72 &lt; 0.18(x + 600)$$
+</li>
+<li>
+Solve the left inequality:$$0.15x + 90 &lt; 0.30x + 72$$$$18 &lt; 0.15x \implies x &gt; 120 \quad \text{--- (1)}$$
+</li>
+<li>
+Solve the right inequality:$$0.30x + 72 &lt; 0.18x + 108$$$$0.12x &lt; 36 \implies x &lt; 300 \quad \text{--- (2)}$$
+</li>
+<li>
+Combine the results:$$120 &lt; x &lt; 300$$
+</li>
+</ol>
+<p>
+  <strong>
+  Final Evaluation Output:
+</strong>
+The manufacturer must add between $120$ and $300$ litres of the $30\\%$ acid solution.
+</p>
+</blockquote>
+</details>
+</details>
+<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="toggleModal(false)">
+    &times;
+  </span>
+  <h3 class="modal-title">
+  🧭 Navigation Assistant
+</h3>
+<p class="modal-desc">
+  You are currently viewing
+  <strong>
+  Chapter 5
+</strong>
+of the Class 11 curriculum modules.
+</p>
+<div class="modal-grid">
+  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
+  ← Previous Chapter
+</button>
+<button onclick="navigateChapterSequence(1)" class="modal-btn">
+Next Chapter →
+</button>
+<a href="../../index.html" class="modal-btn primary">
+🏠 Dashboard Main Menu
+</a>
+</div>
+<div class="accessibility-ctrl">
+  <span style="font-size: 0.9rem; color: #4a5568;">
+  Text Size:
+</span>
+<div style="display: flex; gap: 6px;">
+  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
+  A-
+</button>
+<button class="btn-scale" onclick="adjustTextSize(0.1)">
+A+
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
+  function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-04-complex-numbers-and-quadratic-equa.html"; } else { window.location.href = "11-chapter-06-permutations-and-combinations.html"; } }
+  let currentScale = 1.0;
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale
+  < 0.8) currentScale = 0.8; if (currentScale >
+  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
+</script>
+</body>
+</html>
