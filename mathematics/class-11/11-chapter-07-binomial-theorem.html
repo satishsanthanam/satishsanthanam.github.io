@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>
-    Mathematics: Class 11 — Chapter 7: Binomial Theorem
-  </title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 11 — Chapter 7: Binomial Theorem</title>
   <link rel="stylesheet" href="../../style.css">
   <style>
     /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
@@ -30,598 +28,292 @@
     .btn-scale:hover { background: #f7fafc; }
   </style>
   <script>
-    window.MathJax = { tex: { inlineMath: [['$', '$', displayMath: [['$$', '$$' }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <div class="chapter-container">
   <div class="nav-bar">
-    <a href="#" onclick="history.back(); return false;" class="btn-nav">
-    ← Back
-  </a>
-  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
-  📖 Quick Menu
-</button>
-<a href="../../index.html" class="btn-nav">
-🏠 Home
-</a>
-</div>
-<h1>
-Mathematics: Class 11 — Chapter 7: Binomial Theorem
-</h1>
-<details class='topic-box'>
-  <summary class='topic-title'>
-  Introduction &amp; Fundamental Observations
-</summary>
-<p>
-  In elementary algebra, expanding binomial expressions like $(a + b)^2$ and $(a + b)^3$ is straightforward using basic algebraic identities. However, as the exponent $n$ increases to larger positive integers (e.g., $(a + b)^5$, $(a + b)^{10}$), manual expansion via repeated multiplication becomes highly tedious and error-prone. The
-  <span class='keyword'>
-  Binomial Theorem
-</span>
-provides a systematic, algorithmic method to expand any positive integral power of a binomial expression.
-</p>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Analysis of Basic Binomial Expansions
-</summary>
-<p>
-By examining the expansions of $(a + b)^n$ for small values of $n$, we can observe several fundamental structural patterns:
-</p>
-<ul>
-  <li>
-  $(a + b)^0 = 1 \quad (a + b \neq 0)$
-</li>
-<li>
-$(a + b)^1 = a + b$
-</li>
-<li>
-$(a + b)^2 = a^2 + 2ab + b^2$
-</li>
-<li>
-$(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$
-</li>
-<li>
-$(a + b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$
-</li>
-</ul>
-<p>
-From these expansions, we establish three critical structural properties:
-</p>
-<ol>
-  <li>
-    <strong>
-    Number of Terms:
-  </strong>
-  The total number of terms in the expansion of $(a + b)^n$ is always $n + 1$ (i.e., one more than the index/exponent).
-</li>
-<li>
-  <strong>
-  Behavior of Exponents:
-</strong>
-The powers of the first quantity $a$ decrease by $1$ in successive terms, starting from $n$ and ending at $0$. Conversely, the powers of the second quantity $b$ increase by $1$, starting from $0$ and ending at $n$.
-</li>
-<li>
-  <strong>
-  Sum of Indices:
-</strong>
-In any given term of the expansion, the sum of the exponents of $a$ and $b$ is constant and always equal to the index $n$.
-</li>
-</ol>
-</details>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Pascal's Triangle (Meru Prastara)
-</summary>
-<p>
-  The coefficients of the expansions can be arranged in a highly symmetric triangular array known as
-  <span class='keyword'>
-  Pascal's Triangle
-</span>
-(historically documented as
-<span class='keyword'>
-Meru Prastara
-</span>
-by Pingla):
-</p>
-<table border='1' style='border-collapse: collapse; width: 100%; text-align: center; margin: 10px 0;'>
-  <thead>
-    <tr style='background-color: #f1f5f9;'>
-      <th>
-      Index ($n$)
-    </th>
-    <th>
-    Coefficients Array
-  </th>
-</tr>
-</thead>
-<tbody>
-  <tr>
-    <td>
-      <strong>
-      0
-    </strong>
-  </td>
-  <td>
-  1
-</td>
-</tr>
-<tr>
-  <td>
-    <strong>
-    1
-  </strong>
-</td>
-<td>
-1      1
-</td>
-</tr>
-<tr>
-  <td>
-    <strong>
-    2
-  </strong>
-</td>
-<td>
-1      2      1
-</td>
-</tr>
-<tr>
-  <td>
-    <strong>
-    3
-  </strong>
-</td>
-<td>
-1      3      3      1
-</td>
-</tr>
-<tr>
-  <td>
-    <strong>
-    4
-  </strong>
-</td>
-<td>
-1      4      6      4      1
-</td>
-</tr>
-<tr>
-  <td>
-    <strong>
-    5
-  </strong>
-</td>
-<td>
-1      5      10      10      5      1
-</td>
-</tr>
-</tbody>
-</table>
-<p>
-  <strong>
-  Generation Rule:
-</strong>
-Aside from the boundary elements which are always $1$, any coefficient in a given row is the sum of the two adjacent coefficients directly above it in the preceding row.
-</p>
-</details>
-</details>
-<details class='topic-box'>
-  <summary class='topic-title'>
-  The Binomial Theorem for Positive Integral Indices
-</summary>
-<p>
-To compute expansions for very large indices without constructing the entire Pascal's Triangle, we express the coefficients using the concept of combinations: $^nC_r = \frac{n!}{r!(n-r)!}$ for $0 \le r \le n$.
-</p>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Formal Theorem Statement
-</summary>
-<p>
-For any positive integer $n$, the expansion of a binomial $(a + b)^n$ is given by:
-</p>
-$$ (a + b)^n = ^nC_0 a^n + ^nC_1 a^{n-1}b + ^nC_2 a^{n-2}b^2 + \dots + ^nC_{n-1} a b^{n-1} + ^nC_n b^n $$
-<p>
-Using summation notation, this is compactly written as:
-</p>
-$$ (a + b)^n = \sum_{k=0}^{n} ^nC_k a^{n-k} b^k $$
-<p>
-  where the coefficients $^nC_r$ are called the
-  <span class='keyword'>
-  binomial coefficients
-</span>
-.
-</p>
-</details>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Proof by Mathematical Induction
-</summary>
-<p>
-We prove the statement $P(n): (a + b)^n = \sum_{r=0}^{n} ^nC_r a^{n-r}b^r$ for all $n \in \mathbb{N}$:
-</p>
-<ol>
-  <li>
-    <strong>
-    Base Case ($n = 1$):
-  </strong>
-  <br>
-  $P(1): (a + b)^1 = ^1C_0 a^1 + ^1C_1 b^1 = a + b$. Since this matches the algebraic identity, $P(1)$ is true.
-</li>
-<li>
-  <strong>
-  Inductive Hypothesis:
-</strong>
-<br>
-Assume $P(k)$ is true for some positive integer $k$:
-$$ (a + b)^k = ^kC_0 a^k + ^kC_1 a^{k-1}b + ^kC_2 a^{k-2}b^2 + \dots + ^kC_{k-1}ab^{k-1} + ^kC_k b^k $$
-</li>
-<li>
-  <strong>
-  Inductive Step:
-</strong>
-<br>
-We must prove that $P(k+1)$ is true. Consider $(a + b)^{k+1}$:
-$$ (a + b)^{k+1} = (a + b)(a + b)^k = a(a + b)^k + b(a + b)^k $$
-Substituting the inductive hypothesis:
-$$ = a \left( ^kC_0 a^k + ^kC_1 a^{k-1}b + \dots + ^kC_k b^k \right) + b \left( ^kC_0 a^k + ^kC_1 a^{k-1}b + \dots + ^kC_k b^k \right) $$
-Distributing and grouping like terms of the form $a^{k+1-r}b^r$:
-$$ = ^kC_0 a^{k+1} + \left( ^kC_1 + ^kC_0 \right) a^k b + \left( ^kC_2 + ^kC_1 \right) a^{k-1}b^2 + \dots + \left( ^kC_k + ^kC_{k-1} \right) a b^k + ^kC_k b^{k+1} $$
-Using the fundamental combination identity $^kC_r + ^kC_{r-1} = ^{k+1}C_r$, and noting that $^kC_0 = 1 = ^{k+1}C_0$ and $^kC_k = 1 = ^{k+1}C_{k+1}$:
-$$ (a + b)^{k+1} = ^{k+1}C_0 a^{k+1} + ^{k+1}C_1 a^k b + ^{k+1}C_2 a^{k-1}b^2 + \dots + ^{k+1}C_{k+1} b^{k+1} $$
-Thus, $P(k+1)$ is true. By the Principle of Mathematical Induction, the theorem holds for all positive integers $n$.
-</li>
-</ol>
-</details>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Special Cases &amp; Corollaries
-</summary>
-<p>
-By substituting specific values for $a$ and $b$, we derive several highly useful special cases:
-</p>
-<table border='1' style='border-collapse: collapse; width: 100%; text-align: left; margin: 10px 0;'>
-  <thead>
-    <tr style='background-color: #f1f5f9;'>
-      <th>
-      Substitution Parameters
-    </th>
-    <th>
-    Resulting Expansion Formula
-  </th>
-  <th>
-  Key Algebraic Properties
-</th>
-</tr>
-</thead>
-<tbody>
-  <tr>
-    <td>
-    $a = x$, $b = -y$
-  </td>
-  <td>
-  $(x - y)^n = ^nC_0 x^n - ^nC_1 x^{n-1}y + ^nC_2 x^{n-2}y^2 - \dots + (-1)^n ^nC_n y^n$
-</td>
-<td>
-Terms alternate in sign starting with positive.
-</td>
-</tr>
-<tr>
-  <td>
-  $a = 1$, $b = x$
-</td>
-<td>
-$(1 + x)^n = ^nC_0 + ^nC_1 x + ^nC_2 x^2 + \dots + ^nC_n x^n$
-</td>
-<td>
-Extremely useful for polynomial approximations.
-</td>
-</tr>
-<tr>
-  <td>
-  $a = 1$, $b = -x$
-</td>
-<td>
-$(1 - x)^n = ^nC_0 - ^nC_1 x + ^nC_2 x^2 - \dots + (-1)^n ^nC_n x^n$
-</td>
-<td>
-Alternating series with variable $x$.
-</td>
-</tr>
-<tr>
-  <td>
-  $a = 1$, $b = 1$
-</td>
-<td>
-$2^n = ^nC_0 + ^nC_1 + ^nC_2 + \dots + ^nC_n$
-</td>
-<td>
-The sum of all binomial coefficients of order $n$ is $2^n$.
-</td>
-</tr>
-<tr>
-  <td>
-  $a = 1$, $b = -1$
-</td>
-<td>
-$0 = ^nC_0 - ^nC_1 + ^nC_2 - \dots + (-1)^n ^nC_n$
-</td>
-<td>
-The sum of even-indexed coefficients equals the sum of odd-indexed coefficients.
-</td>
-</tr>
-</tbody>
-</table>
-</details>
-</details>
-<details class='topic-box'>
-  <summary class='topic-title'>
-  Algorithmic Solved Examples
-</summary>
-<p>
-Below are standard applications of the Binomial Theorem, demonstrating algebraic expansion, numerical evaluation, and divisibility proofs.
-</p>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Example 1: Algebraic Expansion with Fractional Terms
-</summary>
-<blockquote class='example-block'>
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Expand the expression $\left(x^2 + \frac{3}{x}\right)^4$, where $x \neq 0$.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-  Identify the parameters for the binomial formula: $a = x^2$, $b = \frac{3}{x}$, and $n = 4$.
-</li>
-<li>
-  Write down the expansion using binomial coefficients for $n = 4$:
-  $$ \left(x^2 + \frac{3}{x}\right)^4 = ^4C_0 (x^2)^4 + ^4C_1 (x^2)^3\left(\frac{3}{x}\right) + ^4C_2 (x^2)^2\left(\frac{3}{x}\right)^2 + ^4C_3 (x^2)^1\left(\frac{3}{x}\right)^3 + ^4C_4 \left(\frac{3}{x}\right)^4 $$
-</li>
-<li>
-Evaluate the binomial coefficients: $^4C_0 = 1$, $^4C_1 = 4$, $^4C_2 = 6$, $^4C_3 = 4$, $^4C_4 = 1$.
-</li>
-<li>
-  Simplify each term individually:
-  <ul>
-    <li>
-    Term 1: $1 \cdot x^8 = x^8$
-  </li>
-  <li>
-  Term 2: $4 \cdot x^6 \cdot \frac{3}{x} = 12x^5$
-</li>
-<li>
-Term 3: $6 \cdot x^4 \cdot \frac{9}{x^2} = 54x^2$
-</li>
-<li>
-Term 4: $4 \cdot x^2 \cdot \frac{27}{x^3} = \frac{108}{x}$
-</li>
-<li>
-Term 5: $1 \cdot \frac{81}{x^4} = \frac{81}{x^4}$
-</li>
-</ul>
-</li>
-<li>
-Combine the simplified terms to form the final polynomial expression.
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-</p>
-$$ \left(x^2 + \frac{3}{x}\right)^4 = x^8 + 12x^5 + 54x^2 + \frac{108}{x} + \frac{81}{x^4} $$
-</blockquote>
-</details>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Example 2: High-Power Numerical Evaluation
-</summary>
-<blockquote class='example-block'>
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Compute the exact value of $(98)^5$ using the Binomial Theorem.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-  Express the base $98$ as a difference of two numbers that are easy to compute: $98 = 100 - 2$.
-</li>
-<li>
-  Apply the binomial expansion for $(a - b)^n$ with $a = 100$, $b = 2$, and $n = 5$:
-  $$ (100 - 2)^5 = ^5C_0 (100)^5 - ^5C_1 (100)^4(2) + ^5C_2 (100)^3(2)^2 - ^5C_3 (100)^2(2)^3 + ^5C_4 (100)(2)^4 - ^5C_5 (2)^5 $$
-</li>
-<li>
-  Substitute the binomial coefficients ($1, 5, 10, 10, 5, 1$) and compute the powers:
-  $$ = 1(10,000,000,000) - 5(100,000,000)(2) + 10(1,000,000)(4) - 10(10,000)(8) + 5(100)(16) - 1(32) $$
-</li>
-<li>
-  Perform the scalar multiplications:
-  $$ = 10,000,000,000 - 1,000,000,000 + 40,000,000 - 800,000 + 8,000 - 32 $$
-</li>
-<li>
-  Group positive and negative terms to simplify arithmetic:
-  <ul>
-    <li>
-    Positive terms: $10,000,000,000 + 40,000,000 + 8,000 = 10,040,008,000$
-  </li>
-  <li>
-  Negative terms: $1,000,000,000 + 800,000 + 32 = 1,000,800,032$
-</li>
-</ul>
-</li>
-<li>
-Subtract the sums: $10,040,008,000 - 1,000,800,032 = 9,039,207,968$.
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-</p>
-$$ (98)^5 = 9,039,207,968 $$
-</blockquote>
-</details>
-<details class='sub-topic'>
-  <summary class='sub-title'>
-  Example 3: Divisibility Proof
-</summary>
-<blockquote class='example-block'>
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Prove that $6^n - 5n$ always leaves a remainder of $1$ when divided by $25$ for all positive integers $n$.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-    Express the base $6$ as $(1 + 5)$ so that powers of $5$ can be analyzed for divisibility by $25$ ($5^2$):
-    $$ 6^n = (1 + 5)^n $$
-  </li>
-  <li>
-    Expand $(1 + 5)^n$ using the binomial theorem:
-    $$ (1 + 5)^n = ^nC_0 + ^nC_1(5) + ^nC_2(5)^2 + ^nC_3(5)^3 + \dots + ^nC_n(5)^n $$
-  </li>
-  <li>
-    Substitute the known values for the first two coefficients ($^nC_0 = 1$, $^nC_1 = n$):
-    $$ 6^n = 1 + 5n + ^nC_2(25) + ^nC_3(125) + \dots + ^nC_n(5)^n $$
-  </li>
-  <li>
-    Isolate the term $6^n - 5n$ on the left-hand side:
-    $$ 6^n - 5n = 1 + 25 \left[ ^nC_2 + 5 \cdot ^nC_3 + \dots + 5^{n-2} \cdot ^nC_n \right] $$
-  </li>
-  <li>
-    Let $k = ^nC_2 + 5 \cdot ^nC_3 + \dots + 5^{n-2} \cdot ^nC_n$. Since $n$ and all binomial coefficients are integers, $k$ is a non-negative integer:
-    $$ 6^n - 5n = 25k + 1 $$
-  </li>
-  <li>
-  By definition of Euclidean division, this shows that $6^n - 5n$ divided by $25$ yields a quotient of $k$ and a remainder of $1$.
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-</p>
-$$ 6^n - 5n \equiv 1 \pmod{25} \quad \blacksquare $$
-</blockquote>
-</details>
-</details>
-<details class='topic-box'>
-  <summary class='topic-title'>
-  Historical Chronicle &amp; Epigraph
-</summary>
-<div class='thinker-profile' style='margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;'>
-  <p style='margin: 0 0 6px 0;'>
-    <strong>
-    Historical Chronicle: Evolution of Binomial Coefficients
-  </strong>
-</p>
-<ul style='margin: 0; padding-left: 20px;'>
-  <li>
-    <strong>
-    Ancient Indian Foundations:
-  </strong>
-  Long before Blaise Pascal, ancient Indian mathematicians knew how to compute binomial coefficients. Pingla (c. 200 B.C.) described the triangular arrangement in his work
-  <em>
-  Chhanda shastra
-</em>
-, calling it the
-<span class='keyword'>
-Meru Prastara
-</span>
-(staircase of Mount Meru).
-</li>
-<li>
-  <strong>
-  Global Discoveries:
-</strong>
-Similar triangular arrays were documented by the Persian mathematician Al-Karaji (953–1029) and the Chinese mathematician Chu-shi-kie in 1303.
-</li>
-<li>
-  <strong>
-  European Formalization:
-</strong>
-The term "binomial coefficient" was introduced by German mathematician Michael Stipel in 1544. Blaise Pascal (1623–1662) systematically organized these concepts in his 1665 treatise
-<em>
-Traité du triangle arithmétique
-</em>
-, which popularized the triangle in the West.
-</li>
-</ul>
-</div>
-</details>
-<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close-modal" onclick="toggleModal(false)">
-    &times;
-  </span>
-  <h3 class="modal-title">
-  🧭 Navigation Assistant
-</h3>
-<p class="modal-desc">
-  You are currently viewing
-  <strong>
-  Chapter 7
-</strong>
-of the Class 11 curriculum modules.
-</p>
-<div class="modal-grid">
-  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
-  ← Previous Chapter
-</button>
-<button onclick="navigateChapterSequence(1)" class="modal-btn">
-Next Chapter →
-</button>
-<a href="../../index.html" class="modal-btn primary">
-🏠 Dashboard Main Menu
-</a>
-</div>
-<div class="accessibility-ctrl">
-  <span style="font-size: 0.9rem; color: #4a5568;">
-  Text Size:
-</span>
-<div style="display: flex; gap: 6px;">
-  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
-  A-
-</button>
-<button class="btn-scale" onclick="adjustTextSize(0.1)">
-A+
-</button>
-</div>
-</div>
-</div>
-</div>
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 11 — Chapter 7: Binomial Theorem</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">Introduction &amp; Fundamental Observations</summary>
+    <p>In elementary algebra, expanding binomial expressions like $(a + b)^2$ and $(a + b)^3$ is straightforward using basic algebraic identities. However, as the exponent $n$ increases to larger positive integers (e.g., $(a + b)^5$, $(a + b)^{10}$), manual expansion via repeated multiplication becomes highly tedious and error-prone. The <span class="keyword">Binomial Theorem</span> provides a systematic, algorithmic method to expand any positive integral power of a binomial expression.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Analysis of Basic Binomial Expansions</summary>
+      <p>By examining the expansions of $(a + b)^n$ for small values of $n$, we can observe several fundamental structural patterns:</p>
+      <ul>
+        <li>$(a + b)^0 = 1 \quad (a + b \neq 0)$</li>
+        <li>$(a + b)^1 = a + b$</li>
+        <li>$(a + b)^2 = a^2 + 2ab + b^2$</li>
+        <li>$(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$</li>
+        <li>$(a + b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$</li>
+      </ul>
+      <p>From these expansions, we establish three critical structural properties:</p>
+      <ol>
+        <li><strong>Number of Terms:</strong> The total number of terms in the expansion of $(a + b)^n$ is always $n + 1$ (i.e., one more than the index/exponent).</li>
+        <li><strong>Behavior of Exponents:</strong> The powers of the first quantity $a$ decrease by $1$ in successive terms, starting from $n$ and ending at $0$. Conversely, the powers of the second quantity $b$ increase by $1$, starting from $0$ and ending at $n$.</li>
+        <li><strong>Sum of Indices:</strong> In any given term of the expansion, the sum of the exponents of $a$ and $b$ is constant and always equal to the index $n$.</li>
+      </ol>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Pascal's Triangle (Meru Prastara)</summary>
+      <p>The coefficients of the expansions can be arranged in a highly symmetric triangular array known as <span class="keyword">Pascal's Triangle</span> (historically documented as <span class="keyword">Meru Prastara</span> by Pingala):</p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="border-collapse: collapse; width: 100%; text-align: center; margin: 10px 0;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th>Index ($n$)</th>
+              <th>Coefficients Array</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>0</strong></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>1 &nbsp; &nbsp; &nbsp; 1</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>1 &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; 1</td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td>1 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp; &nbsp; 1</td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td>1 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; 6 &nbsp; &nbsp; &nbsp; 4 &nbsp; &nbsp; &nbsp; 1</td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td>1 &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 10 &nbsp; &nbsp; &nbsp; 10 &nbsp; &nbsp; &nbsp; 5 &nbsp; &nbsp; &nbsp; 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Generation Rule:</strong> Aside from the boundary elements which are always $1$, any coefficient in a given row is the sum of the two adjacent coefficients directly above it in the preceding row.</p>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">The Binomial Theorem for Positive Integral Indices</summary>
+    <p>To compute expansions for very large indices without constructing the entire Pascal's Triangle, we express the coefficients using the concept of combinations: ${}^nC_r = \frac{n!}{r!(n-r)!}$ for $0 \le r \le n$.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Formal Theorem Statement</summary>
+      <p>For any positive integer $n$, the expansion of a binomial $(a + b)^n$ is given by:</p>
+      $$ (a + b)^n = {}^nC_0 a^n + {}^nC_1 a^{n-1}b + {}^nC_2 a^{n-2}b^2 + \dots + {}^nC_{n-1} a b^{n-1} + {}^nC_n b^n $$
+      <p>Using summation notation, this is compactly written as:</p>
+      $$ (a + b)^n = \sum_{k=0}^{n} {}^nC_k a^{n-k} b^k $$
+      <p>where the coefficients ${}^nC_r$ are called the <span class="keyword">binomial coefficients</span>.</p>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Proof by Mathematical Induction</summary>
+      <p>We prove the statement $P(n): (a + b)^n = \sum_{r=0}^{n} {}^nC_r a^{n-r}b^r$ for all $n \in \mathbb{N}$:</p>
+      <ol>
+        <li><strong>Base Case ($n = 1$):</strong><br>$P(1): (a + b)^1 = {}^1C_0 a^1 + {}^1C_1 b^1 = a + b$. Since this matches the algebraic identity, $P(1)$ is true.</li>
+        <li><strong>Inductive Hypothesis:</strong><br>Assume $P(k)$ is true for some positive integer $k$:
+          $$ (a + b)^k = {}^kC_0 a^k + {}^kC_1 a^{k-1}b + {}^kC_2 a^{k-2}b^2 + \dots + {}^kC_{k-1}ab^{k-1} + {}^kC_k b^k $$
+        </li>
+        <li><strong>Inductive Step:</strong><br>We must prove that $P(k+1)$ is true. Consider $(a + b)^{k+1}$:
+          $$ (a + b)^{k+1} = (a + b)(a + b)^k = a(a + b)^k + b(a + b)^k $$
+          Substituting the inductive hypothesis:
+          $$ = a \left( {}^kC_0 a^k + {}^kC_1 a^{k-1}b + \dots + {}^kC_k b^k \right) + b \left( {}^kC_0 a^k + {}^kC_1 a^{k-1}b + \dots + {}^kC_k b^k \right) $$
+          Distributing and grouping like terms of the form $a^{k+1-r}b^r$:
+          $$ = {}^kC_0 a^{k+1} + \left( {}^kC_1 + {}^kC_0 \right) a^k b + \left( {}^kC_2 + {}^kC_1 \right) a^{k-1}b^2 + \dots + \left( {}^kC_k + {}^kC_{k-1} \right) a b^k + {}^kC_k b^{k+1} $$
+          Using the fundamental combination identity ${}^kC_r + {}^kC_{r-1} = {}^{k+1}C_r$, and noting that ${}^kC_0 = 1 = {}^{k+1}C_0$ and ${}^kC_k = 1 = {}^{k+1}C_{k+1}$:
+          $$ (a + b)^{k+1} = {}^{k+1}C_0 a^{k+1} + {}^{k+1}C_1 a^k b + {}^{k+1}C_2 a^{k-1}b^2 + \dots + {}^{k+1}C_{k+1} b^{k+1} $$
+          Thus, $P(k+1)$ is true. By the Principle of Mathematical Induction, the theorem holds for all positive integers $n$.
+        </li>
+      </ol>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Special Cases &amp; Corollaries</summary>
+      <p>By substituting specific values for $a$ and $b$, we derive several highly useful special cases:</p>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="border-collapse: collapse; width: 100%; min-width: 650px; text-align: left;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px;">Substitution Parameters</th>
+              <th style="padding: 8px;">Resulting Expansion Formula</th>
+              <th style="padding: 8px;">Key Algebraic Properties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;">$a = x$, $b = -y$</td>
+              <td style="padding: 8px;">$(x - y)^n = {}^nC_0 x^n - {}^nC_1 x^{n-1}y + {}^nC_2 x^{n-2}y^2 - \dots + (-1)^n {}^nC_n y^n$</td>
+              <td style="padding: 8px;">Terms alternate in sign starting with positive.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$a = 1$, $b = x$</td>
+              <td style="padding: 8px;">$(1 + x)^n = {}^nC_0 + {}^nC_1 x + {}^nC_2 x^2 + \dots + {}^nC_n x^n$</td>
+              <td style="padding: 8px;">Extremely useful for polynomial approximations.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$a = 1$, $b = -x$</td>
+              <td style="padding: 8px;">$(1 - x)^n = {}^nC_0 - {}^nC_1 x + {}^nC_2 x^2 - \dots + (-1)^n {}^nC_n x^n$</td>
+              <td style="padding: 8px;">Alternating series with variable $x$.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$a = 1$, $b = 1$</td>
+              <td style="padding: 8px;">$2^n = {}^nC_0 + {}^nC_1 + {}^nC_2 + \dots + {}^nC_n$</td>
+              <td style="padding: 8px;">The sum of all binomial coefficients of order $n$ is $2^n$.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;">$a = 1$, $b = -1$</td>
+              <td style="padding: 8px;">$0 = {}^nC_0 - {}^nC_1 + {}^nC_2 - \dots + (-1)^n {}^nC_n$</td>
+              <td style="padding: 8px;">The sum of even-indexed coefficients equals the sum of odd-indexed coefficients.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Algorithmic Solved Examples</summary>
+    <p>Below are standard applications of the Binomial Theorem, demonstrating algebraic expansion, numerical evaluation, and divisibility proofs.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Example 1: Algebraic Expansion with Fractional Terms</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Expand the expression $\left(x^2 + \frac{3}{x}\right)^4$, where $x \neq 0$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Identify the parameters for the binomial formula: $a = x^2$, $b = \frac{3}{x}$, and $n = 4$.</li>
+          <li>Write down the expansion using binomial coefficients for $n = 4$:
+            $$ \left(x^2 + \frac{3}{x}\right)^4 = {}^4C_0 (x^2)^4 + {}^4C_1 (x^2)^3\left(\frac{3}{x}\right) + {}^4C_2 (x^2)^2\left(\frac{3}{x}\right)^2 + {}^4C_3 (x^2)^1\left(\frac{3}{x}\right)^3 + {}^4C_4 \left(\frac{3}{x}\right)^4 $$
+          </li>
+          <li>Evaluate the binomial coefficients: ${}^4C_0 = 1$, ${}^4C_1 = 4$, ${}^4C_2 = 6$, ${}^4C_3 = 4$, ${}^4C_4 = 1$.</li>
+          <li>Simplify each term individually:
+            <ul>
+              <li>Term 1: $1 \cdot x^8 = x^8$</li>
+              <li>Term 2: $4 \cdot x^6 \cdot \frac{3}{x} = 12x^5$</li>
+              <li>Term 3: $6 \cdot x^4 \cdot \frac{9}{x^2} = 54x^2$</li>
+              <li>Term 4: $4 \cdot x^2 \cdot \frac{27}{x^3} = \frac{108}{x}$</li>
+              <li>Term 5: $1 \cdot \frac{81}{x^4} = \frac{81}{x^4}$</li>
+            </ul>
+          </li>
+          <li>Combine the simplified terms to form the final polynomial expression.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong></p>
+        $$ \left(x^2 + \frac{3}{x}\right)^4 = x^8 + 12x^5 + 54x^2 + \frac{108}{x} + \frac{81}{x^4} $$
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Example 2: High-Power Numerical Evaluation</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Compute the exact value of $(98)^5$ using the Binomial Theorem.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Express the base $98$ as a difference of two numbers that are easy to compute: $98 = 100 - 2$.</li>
+          <li>Apply the binomial expansion for $(a - b)^n$ with $a = 100$, $b = 2$, and $n = 5$:
+            $$ (100 - 2)^5 = {}^5C_0 (100)^5 - {}^5C_1 (100)^4(2) + {}^5C_2 (100)^3(2)^2 - {}^5C_3 (100)^2(2)^3 + {}^5C_4 (100)(2)^4 - {}^5C_5 (2)^5 $$
+          </li>
+          <li>Substitute the binomial coefficients ($1, 5, 10, 10, 5, 1$) and compute the powers:
+            $$ = 1(10,000,000,000) - 5(100,000,000)(2) + 10(1,000,000)(4) - 10(10,000)(8) + 5(100)(16) - 1(32) $$
+          </li>
+          <li>Perform the scalar multiplications:
+            $$ = 10,000,000,000 - 1,000,000,000 + 40,000,000 - 800,000 + 8,000 - 32 $$
+          </li>
+          <li>Group positive and negative terms to simplify arithmetic:
+            <ul>
+              <li>Positive terms: $10,000,000,000 + 40,000,000 + 8,000 = 10,040,008,000$</li>
+              <li>Negative terms: $1,000,000,000 + 800,000 + 32 = 1,000,800,032$</li>
+            </ul>
+          </li>
+          <li>Subtract the sums: $10,040,008,000 - 1,000,800,032 = 9,039,207,968$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong></p>
+        $$ (98)^5 = 9,039,207,968 $$
+      </blockquote>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Example 3: Divisibility Proof</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Prove that $6^n - 5n$ always leaves a remainder of $1$ when divided by $25$ for all positive integers $n$.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Express the base $6$ as $(1 + 5)$ so that powers of $5$ can be analyzed for divisibility by $25$ ($5^2$):
+            $$ 6^n = (1 + 5)^n $$
+          </li>
+          <li>Expand $(1 + 5)^n$ using the binomial theorem:
+            $$ (1 + 5)^n = {}^nC_0 + {}^nC_1(5) + {}^nC_2(5)^2 + {}^nC_3(5)^3 + \dots + {}^nC_n(5)^n $$
+          </li>
+          <li>Substitute the known values for the first two coefficients (${}^nC_0 = 1$, ${}^nC_1 = n$):
+            $$ 6^n = 1 + 5n + {}^nC_2(25) + {}^nC_3(125) + \dots + {}^nC_n(5)^n $$
+          </li>
+          <li>Isolate the term $6^n - 5n$ on the left-hand side:
+            $$ 6^n - 5n = 1 + 25 \left[ {}^nC_2 + 5 \cdot {}^nC_3 + \dots + 5^{n-2} \cdot {}^nC_n \right] $$
+          </li>
+          <li>Let $k = {}^nC_2 + 5 \cdot {}^nC_3 + \dots + 5^{n-2} \cdot {}^nC_n$. Since $n$ and all binomial coefficients are integers, $k$ is a non-negative integer:
+            $$ 6^n - 5n = 25k + 1 $$
+          </li>
+          <li>By definition of Euclidean division, this shows that $6^n - 5n$ divided by $25$ yields a quotient of $k$ and a remainder of $1$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong></p>
+        $$ 6^n - 5n \equiv 1 \pmod{25} \quad \blacksquare $$
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Historical Chronicle &amp; Epigraph</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Evolution of Binomial Coefficients</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Ancient Indian Foundations:</strong> Long before Blaise Pascal, ancient Indian mathematicians knew how to compute binomial coefficients. Pingala (c. 200 B.C.) described the triangular arrangement in his work <em>Chhanda shastra</em>, calling it the <span class="keyword">Meru Prastara</span> (staircase of Mount Meru).</li>
+        <li><strong>Global Discoveries:</strong> Similar triangular arrays were documented by the Persian mathematician Al-Karaji (953–1029) and the Chinese mathematician Chu-shi-kie in 1303.</li>
+        <li><strong>European Formalization:</strong> The term "binomial coefficient" was introduced by German mathematician Michael Stifel in 1544. Blaise Pascal (1623–1662) systematically organized these concepts in his 1665 treatise <em>Traité du triangle arithmétique</em>, which popularized the triangle in the West.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 11 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
   function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
   function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "11-chapter-06-permutations-and-combinations.html"; } else { window.location.href = "11-chapter-08-sequences-and-series.html"; } }
   let currentScale = 1.0;
-  function adjustTextSize(delta) { currentScale += delta; if (currentScale
-  < 0.8) currentScale = 0.8; if (currentScale >
-  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
 </script>
 </body>

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>
-    Mathematics: Class 12 (Book 1) — Chapter 1: Relations and Functions
-  </title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mathematics: Class 12 (Book 1) — Chapter 1: Relations and Functions</title>
   <link rel="stylesheet" href="../../style.css">
   <style>
     /* 🛡️ DEFENSIVE TEXT ALIGNMENT LAYER FOR COLLAPSIBLE ACCORDIONS */
@@ -21,7 +19,7 @@
     .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
     .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
     .modal-grid { display: flex; flex-direction: column; gap: 10px; }
-    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; \text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
     .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
     .modal-btn.primary { background: #3182ce; color: white; border: none; }
     .modal-btn.primary:hover { background: #2b6cb0; }
@@ -32,568 +30,249 @@
   <script>
     window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, chtml: { displayAlign: 'left', displayIndent: '1em' } };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <div class="chapter-container">
   <div class="nav-bar">
-    <a href="#" onclick="history.back(); return false;" class="btn-nav">
-    ← Back
-  </a>
-  <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">
-  📖 Quick Menu
-</button>
-<a href="../../index.html" class="btn-nav">
-🏠 Home
-</a>
-</div>
-<h1>
-Mathematics: Class 12 (Book 1) — Chapter 1: Relations and Functions
-</h1>
-<details class="topic-box">
-  <summary class="topic-title">
-  1.1 Introduction to Relations and Functions
-</summary>
-<p>
-Recall that the concepts of relations, functions, domain, co-domain, and range are fundamental to algebra and calculus. In Class XII, we extend these concepts to study specific types of relations and functions, composition of functions, invertible functions, and binary operations.
-</p>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Mathematical Definition of a Relation
-</summary>
-<p>
-  A
-  <span class="keyword">
-  relation
-</span>
-$R$ from a set $A$ to a set $B$ is mathematically defined as an arbitrary subset of the Cartesian product $A \\times B$.
-</p>
-<ul>
-  <li>
-  If $(a, b) \\in R$, we say that $a$ is related to $b$ under the relation $R$, denoted as $a R b$.
-</li>
-<li>
-If $(a, b) \\notin R$, then $a$ is not related to $b$ under $R$.
-</li>
-</ul>
-</details>
-</details>
-<details class="topic-box">
-  <summary class="topic-title">
-  1.2 Types of Relations
-</summary>
-<p>
-Relations can be classified based on their structural properties on a set $A$. Let $R$ be a relation in a set $A$ (i.e., a subset of $A \\times A$).
-</p>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Core Classifications of Relations
-</summary>
-<table border="1" style="width:100%; border-collapse: collapse; margin: 10px 0;">
-  <thead>
-    <tr style="background-color: #f1f5f9;">
-      <th>
-      Relation Type
-    </th>
-    <th>
-    Mathematical Condition
-  </th>
-  <th>
-  Systemic Role &amp; Limits
-</th>
-</tr>
-</thead>
-<tbody>
-  <tr>
-    <td>
-      <span class="keyword">
-      Empty Relation
-    </span>
-  </td>
-  <td>
-  $R = \\phi \\subset A \\times A$
-</td>
-<td>
-No element of $A$ is related to any element of $A$.
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    Universal Relation
-  </span>
-</td>
-<td>
-$R = A \\times A$
-</td>
-<td>
-Each element of $A$ is related to every element of $A$.
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    Reflexive Relation
-  </span>
-</td>
-<td>
-$(a, a) \\in R, \\forall a \\in A$
-</td>
-<td>
-Every element is related to itself.
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    Symmetric Relation
-  </span>
-</td>
-<td>
-$(a_1, a_2) \\in R \\implies (a_2, a_1) \\in R, \\forall a_1, a_2 \\in A$
-</td>
-<td>
-Order of elements in the relation is reversible.
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    Transitive Relation
-  </span>
-</td>
-<td>
-$(a_1, a_2) \\in R \\text{ and } (a_2, a_3) \\in R \\implies (a_1, a_3) \\in R, \\forall a_1, a_2, a_3 \\in A$
-</td>
-<td>
-Relational connectivity is chain-transmissible.
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    Equivalence Relation
-  </span>
-</td>
-<td>
-Reflexive, Symmetric, and Transitive
-</td>
-<td>
-Partitions the set into disjoint equivalence classes.
-</td>
-</tr>
-</tbody>
-</table>
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Equivalence Classes and Partitions
-</summary>
-<p>
-  Given an arbitrary
-  <span class="keyword">
-  equivalence relation
-</span>
-$R$ in a set $X$, $R$ divides $X$ into mutually disjoint subsets $A_i$ called partitions or subdivisions of $X$ satisfying:
-</p>
-<ol>
-  <li>
-  All elements of $A_i$ are related to each other, for all $i$.
-</li>
-<li>
-No element of $A_i$ is related to any element of $A_j$, where $i \\neq j$.
-</li>
-<li>
-$\\bigcup A_j = X$ and $A_i \\cap A_j = \\phi$ for $i \\neq j$.
-</li>
-</ol>
-<p>
-  The subsets $A_i$ are called
-  <span class="keyword">
-  equivalence classes
-</span>
-. The equivalence class containing an element $a$ is denoted by $[a]$.
-</p>
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Algorithmic Solved Examples
-</summary>
-<blockquote class="example-block">
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Show that the relation $R$ in the set $\\mathbf{Z}$ of integers given by $R = \\{(a, b) : 2 \\text{ divides } a - b\\}$ is an equivalence relation.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-    <strong>
-    Reflexivity:
-  </strong>
-  For any $a \\in \\mathbf{Z}$, $a - a = 0$, which is divisible by $2$. Thus, $(a, a) \\in R$ for all $a \\in \\mathbf{Z}$. Hence, $R$ is reflexive.
-</li>
-<li>
-  <strong>
-  Symmetry:
-</strong>
-Let $(a, b) \\in R$. This \implies $2$ divides $a - b$, so $a - b = 2k$ for some integer $k$. Then, $b - a = -2k = 2(-k)$, which means $2$ divides $b - a$. Thus, $(b, a) \\in R$. Hence, $R$ is symmetric.
-</li>
-<li>
-  <strong>
-  Transitivity:
-</strong>
-Let $(a, b) \\in R$ and $(b, c) \\in R$. This means $a - b = 2k$ and $b - c = 2m$ for some integers $k, m$. Adding these equations gives $a - c = (a - b) + (b - c) = 2k + 2m = 2(k + m)$. Since $k + m$ is an integer, $2$ divides $a - c$, implying $(a, c) \\in R$. Hence, $R$ is transitive.
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-Since $R$ is reflexive, symmetric, and transitive, it is an
-<span class="keyword">
-equivalence relation
-</span>
-in $\\mathbf{Z}$.
-</p>
-</blockquote>
-</details>
-</details>
-<details class="topic-box">
-  <summary class="topic-title">
-  1.3 Types of Functions
-</summary>
-<p>
-Functions are special types of relations. We classify functions based on how elements of the domain map to the co-domain.
-</p>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Core Classifications of Functions
-</summary>
-<table border="1" style="width:100%; border-collapse: collapse; margin: 10px 0;">
-  <thead>
-    <tr style="background-color: #f1f5f9;">
-      <th>
-      Function Type
-    </th>
-    <th>
-    Mathematical Condition
-  </th>
-  <th>
-  Systemic Role &amp; Evaluation Limits
-</th>
-</tr>
-</thead>
-<tbody>
-  <tr>
-    <td>
-      <span class="keyword">
-      One-One (Injective)
-    </span>
-  </td>
-  <td>
-  $f(x_1) = f(x_2) \\implies x_1 = x_2, \\forall x_1, x_2 \\in X$
-</td>
-<td>
-Distinct elements in the domain have distinct images in the co-domain.
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    Many-One
-  </span>
-</td>
-<td>
-$\\exists x_1, x_2 \\in X \\text{ such that } x_1 \\neq x_2 \\text{ but } f(x_1) = f(x_2)$
-</td>
-<td>
-Two or more distinct elements in the domain map to the same image.
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    Onto (Surjective)
-  </span>
-</td>
-<td>
-$\\forall y \\in Y, \\exists x \\in X \\text{ such that } f(x) = y$
-</td>
-<td>
-Every element in the co-domain is the image of at least one element in the domain (Range = Co-domain).
-</td>
-</tr>
-<tr>
-  <td>
-    <span class="keyword">
-    One-One and Onto (Bijective)
-  </span>
-</td>
-<td>
-Both injective and surjective
-</td>
-<td>
-Establishes a perfect one-to-one correspondence between domain and co-domain.
-</td>
-</tr>
-</tbody>
-</table>
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Algorithmic Solved Examples
-</summary>
-<blockquote class="example-block">
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Prove that the function $f : \\mathbf{R} \\r\rightarrow \\mathbf{R}$, given by $f(x) = 2x$, is one-one and onto.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-    <strong>
-    One-One (Injectivity):
-  </strong>
-  Let $x_1, x_2 \\in \\mathbf{R}$ such that $f(x_1) = f(x_2)$. This \implies $2x_1 = 2x_2$. Dividing both sides by $2$, we get $x_1 = x_2$. Thus, $f$ is one-one.
-</li>
-<li>
-  <strong>
-  Onto (Surjectivity):
-</strong>
-Let $y \\in \\mathbf{R}$ (co-domain). We want to find $x \\in \\mathbf{R}$ (domain) such that $f(x) = y$. Setting $2x = y$ gives $x = \\frac{y}{2}$. Since $y \\in \\mathbf{R}$, $x = \\frac{y}{2} \\in \\mathbf{R}$. Evaluating $f(x)$, we get $f\\left(\\frac{y}{2}\\right) = 2\\left(\\frac{y}{2}\\right) = y$. Thus, $f$ is onto.
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-The function $f(x) = 2x$ is
-<span class="keyword">
-bijective
-</span>
-(both one-one and onto).
-</p>
-</blockquote>
-</details>
-</details>
-<details class="topic-box">
-  <summary class="topic-title">
-  1.4 Composition of Functions and Invertible Functions
-</summary>
-<p>
-We can combine functions using composition and define the inverse of a function under specific conditions.
-</p>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Composition of Functions
-</summary>
-<p>
-  Let $f : A \\r\rightarrow B$ and $g : B \\r\rightarrow C$ be two functions. The
-  <span class="keyword">
-  composition
-</span>
-of $f$ and $g$, denoted by $g \\circ f$, is defined as the function $g \\circ f : A \\r\rightarrow C$ given by:
-</p>
-$$g \\circ f(x) = g(f(x)), \\quad \\forall x \\in A$$
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Invertible Functions
-</summary>
-<p>
-  A function $f : X \\r\rightarrow Y$ is defined to be
-  <span class="keyword">
-  invertible
-</span>
-if there exists a function $g : Y \\r\rightarrow X$ such that:
-</p>
-$$g \\circ f = I_X \\quad \\text{and} \\quad f \\circ g = I_Y$$
-<p>
-  where $I_X$ and $I_Y$ are identity functions on sets $X$ and $Y$ respectively. The function $g$ is called the
-  <span class="keyword">
-  inverse
-</span>
-of $f$ and is denoted by $f^{-1}$.
-</p>
-<ul>
-  <li>
-    <strong>
-    Theorem:
-  </strong>
-  A function $f : X \\r\rightarrow Y$ is invertible if and only if $f$ is one-one and onto (bijective).
-</li>
-</ul>
-</details>
-<details class="sub-topic">
-  <summary class="sub-title">
-  Algorithmic Solved Examples
-</summary>
-<blockquote class="example-block">
-<p>
-  <strong>
-  Mathematical Problem Statement:
-</strong>
-Let $f : \\mathbf{N} \\r\rightarrow Y$ be a function defined as $f(x) = 4x + 3$, where $Y = \\{y \\in \\mathbf{N} : y = 4x + 3 \\text{ for some } x \\in \\mathbf{N}\\}$. Show that $f$ is invertible. Find the inverse.
-</p>
-<hr>
-<p>
-  <strong>
-  Step-by-Step Algorithmic Solution Trace:
-</strong>
-</p>
-<ol>
-  <li>
-  Let $y$ be an arbitrary element of $Y$. By definition of $Y$, $y = 4x + 3$ for some $x \\in \\mathbf{N}$.
-</li>
-<li>
-Solve for $x$ in terms of $y$: $y - 3 = 4x \\implies x = \\frac{y - 3}{4}$.
-</li>
-<li>
-Define a function $g : Y \\r\rightarrow \\mathbf{N}$ by $g(y) = \\frac{y - 3}{4}$.
-</li>
-<li>
-Compute $g \\circ f(x)$: $g(f(x)) = g(4x + 3) = \\frac{(4x + 3) - 3}{4} = \\frac{4x}{4} = x = I_{\\mathbf{N}}(x)$.
-</li>
-<li>
-Compute $f \\circ g(y)$: $f(g(y)) = f\\left(\\frac{y - 3}{4}\\right) = 4\\left(\\frac{y - 3}{4}\\right) + 3 = (y - 3) + 3 = y = I_Y(y)$.
-</li>
-</ol>
-<p>
-  <strong>
-  Final Evaluation Output:
-</strong>
-Since $g \\circ f = I_{\\mathbf{N}}$ and $f \\circ g = I_Y$, the function $f$ is invertible, and its inverse is $f^{-1}(y) = \\frac{y - 3}{4}$.
-</p>
-</blockquote>
-</details>
-</details>
-<details class="topic-box">
-  <summary class="topic-title">
-  Historical Chronicle &amp; Summary
-</summary>
-<div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
-  <p style="margin: 0 0 6px 0;">
-    <strong>
-    Historical Chronicle: Evolution of the Concept of Function
-  </strong>
-</p>
-<ul style="margin: 0; padding-left: 20px;">
-  <li>
-    <strong>
-    Historical Context &amp; Milestones:
-  </strong>
-  <ul>
-    <li>
-      <strong>
-      R. Descartes (1596-1650):
-    </strong>
-    Used the word 'function' in 1637 to mean positive integral powers $x^n$ of a variable $x$.
-  </li>
-  <li>
-    <strong>
-    James Gregory (1636-1675):
-  </strong>
-  Defined function in 1667 as a quantity obtained from other quantities by algebraic or other operations.
-</li>
-<li>
-  <strong>
-  G. W. Leibnitz (1646-1716):
-</strong>
-Used 'function' in 1673 to mean a quantity varying from point to point on a curve (e.g., coordinates, slope, tangent).
-</li>
-<li>
-  <strong>
-  John Bernoulli (1667-1748):
-</strong>
-Introduced the notation $\\phi x$ in 1718.
-</li>
-<li>
-  <strong>
-  Leonhard Euler (1707-1783):
-</strong>
-Popularized symbols like $f, F, \\phi, \\psi$ in 1734.
-</li>
-<li>
-  <strong>
-  Lejeune Dirichlet (1805-1859):
-</strong>
-Formulated the modern definition of a function before the set-theoretic definition.
-</li>
-</ul>
-</li>
-<li>
-  <strong>
-  Theoretical Foundations:
-</strong>
-The modern set-theoretic definition of a function was established after set theory was rigorously developed by Georg Cantor (1845-1918).
-</li>
-</ul>
-</div>
-</details>
-<div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close-modal" onclick="toggleModal(false)">
-    &\times;
-  </span>
-  <h3 class="modal-title">
-  🧭 Navigation Assistant
-</h3>
-<p class="modal-desc">
-  You are currently viewing
-  <strong>
-  Chapter 1
-</strong>
-of the Class 12 curriculum modules.
-</p>
-<div class="modal-grid">
-  <button onclick="navigateChapterSequence(-1)" class="modal-btn">
-  ← Previous Chapter
-</button>
-<button onclick="navigateChapterSequence(1)" class="modal-btn">
-Next Chapter →
-</button>
-<a href="../../index.html" class="modal-btn primary">
-🏠 Dashboard Main Menu
-</a>
-</div>
-<div class="accessibility-ctrl">
-  <span style="font-size: 0.9rem; color: #4a5568;">
-  Text Size:
-</span>
-<div style="display: flex; gap: 6px;">
-  <button class="btn-scale" onclick="adjustTextSize(-0.1)">
-  A-
-</button>
-<button class="btn-scale" onclick="adjustTextSize(0.1)">
-A+
-</button>
-</div>
-</div>
-</div>
-</div>
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+
+  <h1>Mathematics: Class 12 (Book 1) — Chapter 1: Relations and Functions</h1>
+
+  <details class="topic-box">
+    <summary class="topic-title">1.1 Introduction to Relations and Functions</summary>
+    <p>Recall that the concepts of relations, functions, domain, co-domain, and range are fundamental to algebra and calculus. In Class XII, we extend these concepts to study specific types of relations and functions, composition of functions, invertible functions, and binary operations.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Mathematical Definition of a Relation</summary>
+      <p>A <span class="keyword">relation</span> $R$ from a set $A$ to a set $B$ is mathematically defined as an arbitrary subset of the Cartesian product $A \times B Concordance$.</p>
+      <ul>
+        <li>If $(a, b) \in R$, we say that $a$ is related to $b$ under the relation $R$, denoted as $a R b$.</li>
+        <li>If $(a, b) \notin R$, then $a$ is not related to $b$ under $R$.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">1.2 Types of Relations</summary>
+    <p>Relations can be classified based on their structural properties on a set $A$. Let $R$ be a relation in a set $A$ (i.e., a subset of $A \times A$).</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Core Classifications of Relations</summary>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="width:100%; min-width: 550px; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px; text-align: left;">Relation Type</th>
+              <th style="padding: 8px; text-align: left;">Mathematical Condition</th>
+              <th style="padding: 8px; text-align: left;">Systemic Role & Limits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Empty Relation</span></td>
+              <td style="padding: 8px;">$R = \phi \subset A \times A$</td>
+              <td style="padding: 8px;">No element of $A$ is related to any element of $A$.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Universal Relation</span></td>
+              <td style="padding: 8px;">$R = A \times A$</td>
+              <td style="padding: 8px;">Each element of $A$ is related to every element of $A$.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Reflexive Relation</span></td>
+              <td style="padding: 8px;">$(a, a) \in R, \forall a \in A$</td>
+              <td style="padding: 8px;">Every element is related to itself.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Symmetric Relation</span></td>
+              <td style="padding: 8px;">$(a_1, a_2) \in R \implies (a_2, a_1) \in R, \forall a_1, a_2 \in A$</td>
+              <td style="padding: 8px;">Order of elements in the relation is reversible.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Transitive Relation</span></td>
+              <td style="padding: 8px;">$(a_1, a_2) \in R \text{ and } (a_2, a_3) \in R \implies (a_1, a_3) \in R, \forall a_1, a_2, a_3 \in A$</td>
+              <td style="padding: 8px;">Relational connectivity is chain-transmissible.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Equivalence Relation</span></td>
+              <td style="padding: 8px;">Reflexive, Symmetric, and Transitive</td>
+              <td style="padding: 8px;">Partitions the set into disjoint equivalence classes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Equivalence Classes and Partitions</summary>
+      <p>Given an arbitrary <span class="keyword">equivalence relation</span> $R$ in a set $X$, $R$ divides $X$ into mutually disjoint subsets $A_i$ called partitions or subdivisions of $X$ satisfying:</p>
+      <ol>
+        <li>All elements of $A_i$ are related to each other, for all $i$.</li>
+        <li>No element of $A_i$ is related to any element of $A_j$, where $i \neq j$.</li>
+        <li>$\bigcup A_j = X$ and $A_i \cap A_j = \phi$ for $i \neq j$.</li>
+      </ol>
+      <p>The subsets $A_i$ are called <span class="keyword">equivalence classes</span>. The equivalence class containing an element $a$ is denoted by $[a]$.</p>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Show that the relation $R$ in the set $\mathbf{Z}$ of integers given by $R = \{(a, b) : 2 \text{ divides } a - b\}$ is an equivalence relation.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>Reflexivity:</strong> For any $a \in \mathbf{Z}$, $a - a = 0$, which is divisible by $2$. Thus, $(a, a) \in R$ for all $a \in \mathbf{Z}$. Hence, $R$ is reflexive.</li>
+          <li><strong>Symmetry:</strong> Let $(a, b) \in R$. This $\implies 2$ divides $a - b$, so $a - b = 2k$ for some integer $k$. Then, $b - a = -2k = 2(-k)$, which means $2$ divides $b - a$. Thus, $(b, a) \in R$. Hence, $R$ is symmetric.</li>
+          <li><strong>Transitivity:</strong> Let $(a, b) \in R$ and $(b, c) \in R$. This means $a - b = 2k$ and $b - c = 2m$ for some integers $k, m$. Adding these equations gives $a - c = (a - b) + (b - c) = 2k + 2m = 2(k + m)$. Since $k + m$ is an integer, $2$ divides $a - c$, implying $(a, c) \in R$. Hence, $R$ is transitive.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Since $R$ is reflexive, symmetric, and transitive, it is an <span class="keyword">equivalence relation</span> in $\mathbf{Z}$.</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">1.3 Types of Functions</summary>
+    <p>Functions are special types of relations. We classify functions based on how elements of the domain map to the co-domain.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Core Classifications of Functions</summary>
+      <div style="overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; margin: 12px 0;">
+        <table border="1" style="width:100%; min-width: 550px; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color: #f1f5f9;">
+              <th style="padding: 8px; text-align: left;">Function Type</th>
+              <th style="padding: 8px; text-align: left;">Mathematical Condition</th>
+              <th style="padding: 8px; text-align: left;">Systemic Role & Evaluation Limits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">One-One (Injective)</span></td>
+              <td style="padding: 8px;">$f(x_1) = f(x_2) \implies x_1 = x_2, \forall x_1, x_2 \in X$</td>
+              <td style="padding: 8px;">Distinct elements in the domain have distinct images in the co-domain.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Many-One</span></td>
+              <td style="padding: 8px;">$\exists x_1, x_2 \in X \text{ such that } x_1 \neq x_2 \text{ but } f(x_1) = f(x_2)$</td>
+              <td style="padding: 8px;">Two or more distinct elements in the domain map to the same image.</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">Onto (Surjective)</span></td>
+              <td style="padding: 8px;">$\forall y \in Y, \exists x \in X \text{ such that } f(x) = y$</td>
+              <td style="padding: 8px;">Every element in the co-domain is the image of at least one element in the domain (Range = Co-domain).</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px;"><span class="keyword">One-One and Onto (Bijective)</span></td>
+              <td style="padding: 8px;">Both injective and surjective</td>
+              <td style="padding: 8px;">Establishes a perfect one-to-one correspondence between domain and co-domain.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Prove that the function $f : \mathbf{R} \rightarrow \mathbf{R}$, given by $f(x) = 2x$, is one-one and onto.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li><strong>One-One (Injectivity):</strong> Let $x_1, x_2 \in \mathbf{R}$ such that $f(x_1) = f(x_2)$. This $\implies 2x_1 = 2x_2$. Dividing both sides by $2$, we get $x_1 = x_2$. Thus, $f$ is one-one.</li>
+          <li><strong>Onto (Surjectivity):</strong> Let $y \in \mathbf{R}$ (co-domain). We want to find $x \in \mathbf{R}$ (domain) such that $f(x) = y$. Setting $2x = y$ gives $x = \frac{y}{2}$. Since $y \in \mathbf{R}$, $x = \frac{y}{2} \in \mathbf{R}$. Evaluating $f(x)$, we get $f\left(\frac{y}{2}\right) = 2\left(\frac{y}{2}\right) = y$. Thus, $f$ is onto.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> The function $f(x) = 2x$ is <span class="keyword">bijective</span> (both one-one and onto).</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">1.4 Composition of Functions and Invertible Functions</summary>
+    <p>We can combine functions using composition and define the inverse of a function under specific conditions.</p>
+    
+    <details class="sub-topic">
+      <summary class="sub-title">Composition of Functions</summary>
+      <p>Let $f : A \rightarrow B$ and $g : B \rightarrow C$ be two functions. The <span class="keyword">composition</span> of $f$ and $g$, denoted by $g \circ f$, is defined as the function $g \circ f : A \rightarrow C$ given by:</p>
+      $$g \circ f(x) = g(f(x)), \quad \forall x \in A$$
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Invertible Functions</summary>
+      <p>A function $f : X \rightarrow Y$ is defined to be <span class="keyword">invertible</span> if there exists a function $g : Y \rightarrow X$ such that:</p>
+      $$g \circ f = I_X \quad \text{and} \quad f \circ g = I_Y$$
+      <p>where $I_X$ and $I_Y$ are identity functions on sets $X$ and $Y$ respectively. The function $g$ is called the <span class="keyword">inverse</span> of $f$ and is denoted by $f^{-1}$.</p>
+      <ul>
+        <li><strong>Theorem:</strong> A function $f : X \rightarrow Y$ is invertible if and only if $f$ is one-one and onto (bijective).</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary class="sub-title">Algorithmic Solved Examples</summary>
+      <blockquote class="example-block">
+        <p><strong>Mathematical Problem Statement:</strong> Let $f : \mathbf{N} \rightarrow Y$ be a function defined as $f(x) = 4x + 3$, where $Y = \{y \in \mathbf{N} : y = 4x + 3 \text{ for some } x \in \mathbf{N}\}$. Show that $f$ is invertible. Find the inverse.</p>
+        <hr>
+        <p><strong>Step-by-Step Algorithmic Solution Trace:</strong></p>
+        <ol>
+          <li>Let $y$ be an arbitrary element of $Y$. By definition of $Y$, $y = 4x + 3$ for some $x \in \mathbf{N}$.</li>
+          <li>Solve for $x$ in terms of $y$: $y - 3 = 4x \implies x = \frac{y - 3}{4}$.</li>
+          <li>Define a function $g : Y \rightarrow \mathbf{N}$ by $g(y) = \frac{y - 3}{4}$.</li>
+          <li>Compute $g \circ f(x)$: $g(f(x)) = g(4x + 3) = \frac{(4x + 3) - 3}{4} = \frac{4x}{4} = x = I_{\mathbf{N}}(x)$.</li>
+          <li>Compute $f \circ g(y)$: $f(g(y)) = f\left(\frac{y - 3}{4}\right) = 4\left(\frac{y - 3}{4}\right) + 3 = (y - 3) + 3 = y = I_Y(y)$.</li>
+        </ol>
+        <p><strong>Final Evaluation Output:</strong> Since $g \circ f = I_{\mathbf{N}}$ and $f \circ g = I_Y$, the function $f$ is invertible, and its inverse is $f^{-1}(y) = \frac{y - 3}{4}$.</p>
+      </blockquote>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Historical Chronicle & Summary</summary>
+    <div class="thinker-profile" style="margin: 14px 0; padding: 12px 16px; border-left: 3px solid #64748b; background-color: #f8fafc;">
+      <p style="margin: 0 0 6px 0;"><strong>Historical Chronicle: Evolution of the Concept of Function</strong></p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li><strong>Historical Context & Milestones:</strong>
+          <ul>
+            <li><strong>R. Descartes (1596-1650):</strong> Used the word 'function' in 1637 to mean positive integral powers $x^n$ of a variable $x$.</li>
+            <li><strong>James Gregory (1636-1675):</strong> Defined function in 1667 as a quantity obtained from other quantities by algebraic or other operations.</li>
+            <li><strong>G. W. Leibnitz (1646-1716):</strong> Used 'function' in 1673 to mean a quantity varying from point to point on a curve (e.g., coordinates, slope, tangent).</li>
+            <li><strong>John Bernoulli (1667-1748):</strong> Introduced the notation $\phi x$ in 1718.</li>
+            <li><strong>Leonhard Euler (1707-1783):</strong> Popularized symbols like $f, F, \phi, \psi$ in 1734.</li>
+            <li><strong>Lejeune Dirichlet (1805-1859):</strong> Formulated the modern definition of a function before the set-theoretic definition.</li>
+          </ul>
+        </li>
+        <li><strong>Theoretical Foundations:</strong> The modern set-theoretic definition of a function was established after set theory was rigorously developed by Georg Cantor (1845-1918).</li>
+      </ul>
+    </div>
+  </details>
+
+  <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+      <h3 class="modal-title">🧭 Navigation Assistant</h3>
+      <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 12 curriculum modules.</p>
+      <div class="modal-grid">
+        <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+        <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+        <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+      </div>
+      <div class="accessibility-ctrl">
+        <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+          <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
   function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
   function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "../../index.html"; } else { window.location.href = "12-1-chapter-02-inverse-trigonometric-functions.html"; } }
   let currentScale = 1.0;
-  function adjustTextSize(delta) { currentScale += delta; if (currentScale
-  < 0.8) currentScale = 0.8; if (currentScale >
-  1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
+  function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
 </script>
 </body>
