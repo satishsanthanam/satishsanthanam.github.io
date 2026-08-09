@@ -145,7 +145,14 @@ def generate_html_file(tree):
             html_out += "          </ul>\n        </details>\n      </div>\n"
         html_out += "    </details>\n  </div>\n"
 
-    html_out += "</body>\n</html>"
+    html_out += "
+
+  <!-- NCERT Site Footer -->
+  <footer class="site-footer" style="margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid #e2e8f0; text-align: center; color: #64748b; font-size: 0.875rem; font-family: system-ui, -apple-system, sans-serif;">
+      <p><strong>NCERT Notes Reference Library</strong> | Maintained &amp; published via <a href="https://ventpipe.blog/2026/06/01/ncert-textbooks-short-notes/" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: none; font-weight: 500;">ventpipe.blog</a></p>
+  </footer>
+
+</body>\n</html>"
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(html_out)
 
